@@ -842,6 +842,7 @@ acf_add_local_field_group(array (
 	'active' => 1,
 	'description' => '',
 ));
+
 acf_add_local_field_group(array (
 	'key' => 'group_557b16305d905',
 	'title' => 'Options: Company details',
@@ -1682,6 +1683,22 @@ tour_finder',
 			'disabled' => 0,
 		),
 		array (
+			'key' => 'field_58222a3756fac',
+			'label' => 'Transfergest',
+			'name' => 'transfergest',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+		array (
 			'key' => 'field_564757f5e2b00',
 			'label' => 'Style',
 			'name' => '',
@@ -2280,43 +2297,8 @@ tour_finder',
 					'min' => '',
 					'max' => '',
 				),
-
 			),
 		),
-		array (
-			'key' => 'field_29n1993k03',
-			'label' => 'Tiger LIVE',
-			'name' => '',
-			'type' => 'tab',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'placement' => 'top',
-			'endpoint' => 0,
-		),
-		array (
-			'key' => 'field_n1993k2903',
-			'label' => 'Check user ID/API Key',
-			'name' => 'check_user_id',
-			'type' => 'text',
-			'instructions' => '',
-			'placeholder' => 'Enter your user ID or API Key',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => '',
-		),
-
 	),
 	'location' => array (
 		array (
