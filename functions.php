@@ -1458,9 +1458,10 @@ function do_googleMaps($atts, $content = null) {
 add_shortcode("googlemap", "do_googleMaps");
 
 $transfergest = get_field('transfergest','option');
+
 if($transfergest && !is_admin()):
 
-include_once(dirname(__FILE__).'/includes/front/shop.php');
+//include_once(dirname(__FILE__).'/includes/front/shop.php');
 
 add_action( 'genesis_before', 'my_genesis_script' );
 
@@ -1477,14 +1478,17 @@ endif;
 
 function transfergest_init() {
     echo '<script>
-var j= jQuery.noConflict();
-j(function(){
 
-j.ajax({url: "http://localhost/wp391/wp-content/themes/tourtiger/includes/front/modals.php"})
-.done(function( html ) { j( "body" ).append(html);
+$(function(){
 
-j.ajax({url: "http://localhost/wp391/wp-content/themes/tourtiger/includes/front/shop.php"})
-.done(function( html ) { j( "#cont" ).html(html); callDefinitions();});
+$.ajax({url: "http://localhost/personal/touris/wp391/wp-content/themes/tourtiger/includes/front/modals.php"})
+.done(
+function( html ) { $( "body" ).append(html);
+
+$.ajax({url: "http://localhost/personal/touris/wp391/wp-content/themes/tourtiger/includes/front/shop.php"})
+.done(
+	function( html ) { 
+		$( "#cont" ).html(html); callDefinitions();});
 });
 
 });
