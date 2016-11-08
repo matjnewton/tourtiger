@@ -50,6 +50,9 @@ function tourtiger_scripts_method() {
         //wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(),'20120285', 'all' );
 		//wp_enqueue_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), 'v3.1.1', true );
 		//wp_register_script('ie_row_fix', get_stylesheet_directory_uri() . '/js/ie-row-fix.js', array('jquery'), '1.0', true);
+		wp_register_style('datetimepicker', get_stylesheet_directory_uri() .'/includes/front/css/bootstrap-datetimepicker.css', array(),'20120279', 'all');
+		wp_register_style('select2', get_stylesheet_directory_uri() .'/includes/front/css/select2.min.css', array(),'20120279', 'all');
+		wp_register_style('transfergestcss', get_stylesheet_directory_uri() .'/includes/front/css/style.css', array(),'20120279', 'all');
 		
 		wp_register_script('respond', get_stylesheet_directory_uri() . '/js/respond.min.js', array('jquery'), '1.4.2', true);
 		wp_register_script('respond_matchmedia', get_stylesheet_directory_uri() . '/js/respond.matchmedia.addListener.min.js', array('jquery'), '1.4.2', true);
@@ -59,6 +62,10 @@ function tourtiger_scripts_method() {
 		wp_register_script('magnific_popup', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
 		wp_register_script('flexslider_js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '2.2.2', true);
 		
+		wp_register_script('momentWithLocales', get_stylesheet_directory_uri() . '/includes/front/js/moment-with-locales.js', array('jquery'), '2.9.0', true);
+		wp_register_script('datetimepickerjs', get_stylesheet_directory_uri() . '/includes/front/js/bootstrap-datetimepicker.js', array('jquery'), '4.15.35', true);
+		wp_register_script('bootbox', get_stylesheet_directory_uri() . '/includes/front/js/bootbox.min.js', array('jquery'), '4.4.0', true);
+		wp_register_script('select2js', get_stylesheet_directory_uri() . '/includes/front/js/select2.full.min.js', array('jquery'), '4.0.3', true);
 		
 		wp_register_script('match_height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), '0.5.3', true);
 		wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array('jquery'), '2.8.3.2', false);
@@ -77,6 +84,7 @@ function tourtiger_scripts_method() {
 		$trekksoft_account = get_field('trekksoft_account','option');
 		$integrate_xola = get_field('integrate_xola_with_this_website','option');
 		$integrate_rezdy = get_field('rezdy','option');
+		$transfergest = get_field('transfergest','option');
 		
 		if($integrate_trekksoft && $trekksoft_account):
 		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), '1.0.0', false);
@@ -117,8 +125,20 @@ function tourtiger_scripts_method() {
 		wp_enqueue_script('xola_crossdomain');
 		endif;
 		
+		if($transfergest):
+		wp_enqueue_script('momentWithLocales');
+		wp_enqueue_script('datetimepickerjs');
+		wp_enqueue_script('bootbox');
+		wp_enqueue_script('select2js');
+		endif;
+		
 		wp_enqueue_style('bootstrap');
 		wp_enqueue_style('compass');
+		if($transfergest):
+        wp_enqueue_style('datetimepicker');
+        wp_enqueue_style('select2');
+        wp_enqueue_style('transfergestcss');
+        endif;
 		wp_enqueue_style('bootstrap_select');
 		wp_enqueue_style('magnific_popup_css');
 		wp_enqueue_style('flexslider_css');
@@ -1436,3 +1456,41 @@ function do_googleMaps($atts, $content = null) {
    return '<div class="video-responsive"><iframe width="'.$width.'" height="'.$height.'" frameborder="0" src="'.$src.'" style="border:0" allowfullscreen></iframe></div>';
 }
 add_shortcode("googlemap", "do_googleMaps");
+
+$transfergest = get_field('transfergest','option');
+if($transfergest && !is_admin()):
+
+include_once(dirname(__FILE__).'/includes/front/shop.php');
+
+add_action( 'genesis_before', 'my_genesis_script' );
+
+function my_genesis_script() {
+
+if ( current_filter() == 'genesis_before' ):
+
+echo '<div style=\'position: relative;top: -70px;margin-bottom: -70px;\' class=\'appear\' data-start=\'550\' data-animated=\'fadeInLeft\'>
+<div class=\'middle\'></div>
+<div id=\'cont\'></div>
+</div>';
+endif;
+}
+
+function transfergest_init() {
+    echo '<script>
+var j= jQuery.noConflict();
+j(function(){
+
+j.ajax({url: "http://localhost/wp391/wp-content/themes/tourtiger/includes/front/modals.php"})
+.done(function( html ) { j( "body" ).append(html);
+
+j.ajax({url: "http://localhost/wp391/wp-content/themes/tourtiger/includes/front/shop.php"})
+.done(function( html ) { j( "#cont" ).html(html); callDefinitions();});
+});
+
+});
+
+</script>';
+}
+add_action( 'wp_footer', 'transfergest_init', 100 );
+
+endif;
