@@ -1481,11 +1481,11 @@ function transfergest_init() {
 
 $(function(){
 
-$.ajax({url: "http://localhost/personal/touris/wp391/wp-content/themes/tourtiger/includes/front/modals.php"})
+$.ajax({url: "'.get_stylesheet_directory_uri().'/includes/front/modals.php"})
 .done(
 function( html ) { $( "body" ).append(html);
 
-$.ajax({url: "http://localhost/personal/touris/wp391/wp-content/themes/tourtiger/includes/front/shop.php"})
+$.ajax({url: "'.get_stylesheet_directory_uri().'/includes/front/shop.php"})
 .done(
 	function( html ) { 
 		$( "#cont" ).html(html); callDefinitions();});
