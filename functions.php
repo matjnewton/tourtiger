@@ -1497,21 +1497,5 @@ $.ajax({url: "'.get_stylesheet_directory_uri().'/includes/front/shop.php"})
 }
 add_action( 'wp_footer', 'transfergest_init', 100 );
 
-$allowed = 'premiumchauffeur.com';
- 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn) {
-    die("Erro ao ligar DB" . mysqli_connect_error());
-}
- 
- 
-global $allowed;
- 
-$http_origin = $_SERVER['HTTP_ORIGIN'];
-if ($http_origin == "http://".$allowed || $http_origin == "http://www.".$allowed)
-{ 
-header("Access-Control-Allow-Origin: $http_origin");
-}
-header('Access-Control-Allow-Methods: POST');
 
 endif;
