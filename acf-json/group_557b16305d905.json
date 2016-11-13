@@ -1404,6 +1404,27 @@
                             "placeholder": "",
                             "disabled": 0,
                             "readonly": 0
+                        },
+                        {
+                            "key": "field_5828b59b90e22",
+                            "label": "CTA Button::padding",
+                            "name": "cta_button_padding",
+                            "type": "text",
+                            "instructions": "",
+                            "required": "",
+                            "conditional_logic": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
                         }
                     ],
                     "min": "",
@@ -1465,5 +1486,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1478634105
+    "modified": 1479062987
 }
