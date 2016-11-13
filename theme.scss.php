@@ -72,11 +72,17 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
         $title_font_weight = get_sub_field('title_font_weight');
         $content_font_weight = get_sub_field('content_font_weight');
         $cta_button_font_weight = get_sub_field('cta_button_font_weight');
-        
+        $cta_button_padding = get_sub_field('cta_button_padding');
         ?>
     $title_font_weight: <?php echo $title_font_weight; ?>;
     $content_font_weight: <?php echo $content_font_weight; ?>;
     $cta_button_font_weight: <?php echo $cta_button_font_weight; ?>;
+    $cta_button_padding: <?php echo $cta_button_padding; ?>;
+        <?php if($cta_button_padding): ?>
+        .banner-top .btn-default.book-btn, .banner-top .book-btn{
+        	padding:$cta_button_padding !important;
+        }
+        <?php endif; ?>
     <?php
         endif; /*end hero_area*/
         if( get_row_layout() == 'menu_primary'):
