@@ -953,6 +953,12 @@ function color_picker_option_page()
 					</td>
 				</tr>
 				<tr valign="top">
+					<th width="200px" scope="row">Hero CTA Button background fill</th>
+					<td>
+    					<input name="hctabgcfill" type="checkbox" id="hctabgcfill" value="foobar" <?php checked( 'foobar', get_option( 'hctabgcfill' ) ); ?> />
+					</td>
+				</tr>
+				<tr valign="top">
 					<th width="200px" scope="row">Content CTA Button Background</th>
 					<td>	
 						<input type="text" id="sctabgc" value="<?php if((get_option('sctabgc')) != ''): echo get_option('sctabgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_sctabgc" />
@@ -1179,6 +1185,9 @@ function color_picker_option_update()
 	update_option('hcbgc', esc_html($_POST['color_picker_hcbgc']));
 	
 	update_option('hctabgc', esc_html($_POST['color_picker_hctabgc']));
+	$hcta_tweak = $_POST['hctabgcfill'] ? $_POST['hctabgcfill'] : '';
+	update_option('hctabgcfill', esc_html($hcta_tweak));
+	
 	update_option('sctabgc', esc_html($_POST['color_picker_sctabgc']));
 	
 	update_option('podfbgc', esc_html($_POST['color_picker_podfbgc']));

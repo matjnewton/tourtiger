@@ -21,6 +21,7 @@ $fbsbbgc: <?php echo get_option('fbsbbgc', 'rgba(194,39,47,1)'); ?>;
 $eabgc: <?php echo get_option('eabgc', 'rgba(51,137,215,1)'); ?>;
 <?php $facbgcbs = get_option('facbgcbs', '0'); ?>
 <?php $scbxshdw = get_option('scbxshdw', '0'); ?>
+<?php $hctabgcfill = get_option('hctabgcfill', '0'); ?>
 <?php $ftabgcfill = get_option('ftabgcfill', '0'); ?>
 <?php $fbsbbgcfill = get_option('fbsbbgcfill', '0'); ?>
 $cabgc: <?php echo get_option('cabgc', 'none'); ?>;
@@ -234,7 +235,16 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
     background: $hcbgc;
 }
 .site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{
+    <?php if (empty($hctabgcfill) || $hctabgcfill == '0'): ?>
+    background:none;
+    border-width:3px;
+    &:hover{
+        background: $hctabgc;
+    }
+    <?php endif; ?>
+    <?php if (!empty($hctabgcfill) || !$hctabgcfill == '0'): ?>
     background: $hctabgc;
+    <?php endif; ?>
 }
 .site-container .book-tour-wrapper .btn-default.book-btn, .site-container .tour-page-content .book-btn{
     background: $sctabgc;
