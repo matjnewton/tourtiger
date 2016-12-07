@@ -40,65 +40,9 @@ function tourtiger_sub_contents(){ ?>
                         <div class="center-block center-booking">
                                 <div id="booking2" class="book-tour-wrapper booking-sidebar">
                         <?php if($bbt && !$mobd): ?>
-                            <?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
-
-                                <?php if($third_party == "xola-multi-item"): ?>
-                                    <div class="xola-checkout xola-custom book-btn2" data-button-id="<?php if($bbl): echo $bbl; endif; ?>">
-                                        <div class="arrow-left"></div>
-                                        <div><?php echo $bbt; ?></div>
-                                        <div class="arrow-right"></div>
-                                    </div>
-                                <?php else: ?>
-                                    <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?> xola-custom book-btn2">
-                                        <div class="arrow-left"></div>
-                                        <div><?php echo $bbt; ?></div>
-                                        <div class="arrow-right"></div>
-                                    </div>
-                                <?php endif; ?>
-
-                            <?php elseif($integrate_peek && ($button_type == 'Use as third party integration Link')): ?>
-                            <a href="http://www.peek.com/purchase/activity/widget/<?php echo $bbl; ?>" class="peek-book-button-flat book-btn2" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $bbl; ?>" style="border-radius:0;">
-                                <div class="arrow-left"></div>
-                                <div><?php echo $bbt; ?></div>
-                                <div class="arrow-right"></div>
-                            </a>
-                            <?php else: ?>
-                            <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>" class="book-btn2">
-                                <div class="arrow-left"></div>
-                                <div><?php echo $bbt; ?></div>
-                                <div class="arrow-right"></div>
-                            </a>
-                            <?php endif; ?>
+                            <?php include(locate_template('buttons/sidebar_xs_btn.php' )); ?>
                         <?php elseif($bbt && $mobd): ?>
-                        <div class="btn-group book-btn-wrapper book-btn2">
-                            <div class="arrow-left"></div>
-                              <button type="button" class="btn-default dropdown-toggle book-btn2-inner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
-                                <?php echo $bbt; ?> <span class="caret"></span>
-                              </button>
-                            <div class="arrow-right"></div>
-                        <?php if( have_rows('button_sub_options') ): ?>
-                        	<ul class="dropdown-menu">
-                        	<?php while( have_rows('button_sub_options') ): the_row(); 
-                        		$button_text = get_sub_field('button_text');
-                                $link = get_sub_field('link');
-                        		?>
-                        		<li>
-                        		<?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
-                        		    <div id="<?php if($link): echo $link; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom">
-                                    <?php echo $button_text; ?>
-                                    </div>
-                                <?php elseif($integrate_peek && ($button_type == 'Use as third party integration Link')): ?>
-                                    <a href="http://www.peek.com/purchase/activity/widget/<?php echo $link; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $link; ?>" style="border-radius:0; text-align:left;"><?php echo $button_text; ?></a>
-                        		<?php else: ?>
-                        		    <?php if($button_text): ?>
-                                    <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                        		    <?php endif; ?>
-                                <?php endif; ?>
-                                </li>
-                        	<?php endwhile; ?>
-                        	</ul>
-                        <?php endif; ?>
-                        </div>
+                            <?php include(locate_template('buttons/sidebar_xs_mobd.php' )); ?>
                         <?php endif; ?><!-- end of button-->
                                 </div>
                         </div>
@@ -346,47 +290,9 @@ function tourtiger_sub_contents(){ ?>
                             ?>
                             <div class="book-tour-wrapper<?php if($text_align == 'Center'): echo ' text-center'; endif;?>">
                             <?php if($bbt && !$mobd): ?>
-                            <?php if($integrate_xola && $use_as_integration_link): ?>
-                                <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom book-btn"<?php if($bb_radius): echo ' style="border-radius:'.$bb_radius.'px"'; endif;?>>
-                                    <?php echo $bbt; ?>
-                                </div>
-                            <?php elseif($integrate_peek && $use_as_integration_link): ?>
-                            <a href="http://www.peek.com/purchase/activity/widget/<?php echo $bbl; ?>" class="peek-book-button-flat book-btn" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $bbl; ?>" style="border-radius:0;">
-                                <div class="arrow-left"></div>
-                                <div><?php echo $bbt; ?></div>
-                                <div class="arrow-right"></div>
-                            </a>
-                            <?php else: ?>
-                            <a href="<?php echo $bbl; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn"<?php if($bb_radius): echo ' style="border-radius:'.$bb_radius.'px"'; endif;?>><?php echo $bbt; ?></a>
-                            <?php endif; ?>
+                                <?php include(locate_template('buttons/leftcol_btn.php' )); ?>
                             <?php elseif($bbt && $mobd): ?>
-                            <div class="btn-group<?php if($text_align == 'Left'): echo ' float-left'; endif;?>">
-                              <button type="button" class="btn-default dropdown-toggle book-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <?php echo $bbt; ?> <span class="caret"></span>
-                              </button>
-                            <?php if( have_rows('button_sub_options') ): ?>
-                            	<ul class="dropdown-menu">
-                            	<?php while( have_rows('button_sub_options') ): the_row(); 
-                            		$button_text = get_sub_field('button_text');
-                                    $link = get_sub_field('link');
-                            		?>
-                            		<li>
-                            		<?php if($integrate_xola && $use_as_integration_link): ?>
-                            		    <div id="<?php if($link): echo $link; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom">
-                                        <?php echo $button_text; ?>
-                                        </div>
-                                    <?php elseif($integrate_peek && $use_as_integration_link): ?>
-                                        <a href="http://www.peek.com/purchase/activity/widget/<?php echo $link; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $link; ?>" style="border-radius:0; text-align:left;"><?php echo $button_text; ?></a>
-                            		<?php else: ?>
-                            		    <?php if($button_text): ?>
-                                        <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                            		    <?php endif; ?>
-                                    <?php endif; ?>
-                                    </li>
-                            	<?php endwhile; ?>
-                            	</ul>
-                            <?php endif; ?>
-                            </div>
+                                <?php include(locate_template('buttons/leftcol_mobd.php' )); ?>
                             <?php endif; ?>
                             <?php if($rb1 || $rb2): ?>
                             <ul>
@@ -746,55 +652,9 @@ function tourtiger_sub_contents(){ ?>
                                 $mobd = get_sub_field('multi_option_button_dropdown');
                                 ?>
                         <?php if($bbt && !$mobd): ?>
-                            <?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
-                                <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom book-btn2">
-                                    <div class="arrow-left"></div>
-                                    <div><?php echo $bbt; ?></div>
-                                    <div class="arrow-right"></div>
-                                </div>
-                            <?php elseif($integrate_peek && ($button_type == 'Use as third party integration Link')): ?>
-                            <a href="http://www.peek.com/purchase/activity/widget/<?php echo $bbl; ?>" class="peek-book-button-flat book-btn2" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $bbl; ?>" style="border-radius:0;">
-                                <div class="arrow-left"></div>
-                                <div><?php echo $bbt; ?></div>
-                                <div class="arrow-right"></div>
-                            </a>
-                            <?php else: ?>
-                            <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>" class="book-btn2">
-                            <div class="arrow-left"></div>
-                            <div><?php echo $bbt; ?></div>
-                            <div class="arrow-right"></div>
-                            </a>
-                            <?php endif; ?>
+                            <?php include(locate_template('buttons/sidebar_btn.php' )); ?>
                         <?php elseif($bbt && $mobd): ?>
-                        <div class="btn-group book-btn-wrapper book-btn2">
-                            <div class="arrow-left"></div>
-                              <button type="button" class="btn-default dropdown-toggle book-btn2-inner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
-                                <?php echo $bbt; ?> <span class="caret"></span>
-                              </button>
-                            <div class="arrow-right"></div>
-                        <?php if( have_rows('button_sub_options') ): ?>
-                        	<ul class="dropdown-menu">
-                        	<?php while( have_rows('button_sub_options') ): the_row(); 
-                        		$button_text = get_sub_field('button_text');
-                                $link = get_sub_field('link');
-                        		?>
-                        		<li>
-                        		<?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
-                        		    <div id="<?php if($link): echo $link; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom">
-                                    <?php echo $button_text; ?>
-                                    </div>
-                                <?php elseif($integrate_peek && ($button_type == 'Use as third party integration Link')): ?>
-                                    <a href="http://www.peek.com/purchase/activity/widget/<?php echo $link; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $link; ?>" style="border-radius:0; text-align:left;"><?php echo $button_text; ?></a>
-                        		<?php else: ?>
-                        		    <?php if($button_text): ?>
-                                    <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                        		    <?php endif; ?>
-                                <?php endif; ?>
-                                </li>
-                        	<?php endwhile; ?>
-                        	</ul>
-                        <?php endif; ?>
-                        </div><!-- end .btn-group-->
+                            <?php include(locate_template('buttons/sidebar_mobd.php' )); ?>
                         <?php endif; /*end of last button condition*/ ?>
                             <?php if($rb1 || $rb2): ?>
                             <div class="hidden-xs text-left">
