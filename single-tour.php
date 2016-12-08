@@ -225,7 +225,7 @@ function tourtiger_sub_contents(){ ?>
                                         <h4 class="trip-title text-center"><span><?php echo $title; ?></span></h4>
                                     <?php endif; ?>
                                     <?php if($paragraph): ?>
-                                        <?php if( in_array('Show button to hide description', $custom_options) ): ?>
+                                        <?php if(is_array($custom_options) && in_array('Show button to hide description', $custom_options) ): ?>
                                             <p style="max-height: 50px; overflow: hidden;"><?php echo $paragraph; ?></p>
                                         <?php else: ?>
                                             <p><?php echo $paragraph; ?></p>
@@ -233,7 +233,7 @@ function tourtiger_sub_contents(){ ?>
                                     <?php endif; ?>
 
                                     <?php if(have_rows('details_list')): ?>
-                                        <?php if( in_array('Show button to hide description', $custom_options) ): ?>
+                                        <?php if(is_array($custom_options) && in_array('Show button to hide description', $custom_options) ): ?>
                                             <ul class="details-row-wrapper" style="display: none">
                                         <?php else: ?>
                                             <ul class="details-row-wrapper">
@@ -255,7 +255,7 @@ function tourtiger_sub_contents(){ ?>
                                         </ul>
                                     <?php endif; ?>
 
-                                    <?php if( in_array('Show button to hide description', $custom_options) ): ?>
+                                    <?php if( is_array($custom_options) && in_array('Show button to hide description', $custom_options) ): ?>
                                         <div class="tour-see-more">
                                           <p>see details...</p>
                                         </div>
