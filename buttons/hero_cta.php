@@ -19,7 +19,7 @@
                                     <?php echo $cta_button_text; ?>
                                 </div>
                             <?php else: ?>
-                                <div id="<?php if($book_tours): echo $book_tours; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom book-btn"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
+                                <div data-button-id="<?php if($book_tours): echo $book_tours; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom book-btn"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
                                     <?php echo $cta_button_text; ?>
                                 </div>
                             <?php endif; ?>

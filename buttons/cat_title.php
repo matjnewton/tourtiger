@@ -15,7 +15,7 @@
                                     <?php elseif($third_party == "xola-multi-item"): ?>
                                         <div class="xola-checkout xola-custom" data-button-id="<?php if($link): echo $link; endif; ?>"><?php echo $headline; ?></div>
                                     <?php else: ?>
-                                        <div id="<?php if($link): echo $link; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom"><?php echo $headline; ?></div>
+                                        <div data-button-id="<?php if($link): echo $link; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom"><?php echo $headline; ?></div>
                                     <?php endif; ?>
 
                                 <?php elseif($integrate_peek && $use_as_integration_link && !$mobd): ?>

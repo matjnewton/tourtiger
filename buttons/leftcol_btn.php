@@ -18,7 +18,7 @@
                                         <?php echo $bbt; ?>
                                     </div>
                                 <?php else: ?>
-                                    <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom book-btn"<?php if($bb_radius): echo ' style="border-radius:'.$bb_radius.'px"'; endif;?>>
+                                    <div data-button-id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?>xola-custom book-btn"<?php if($bb_radius): echo ' style="border-radius:'.$bb_radius.'px"'; endif;?>>
                                         <?php echo $bbt; ?>
                                     </div>
                                 <?php endif; ?>

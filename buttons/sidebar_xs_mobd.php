@@ -32,7 +32,7 @@
                                     <?php echo $button_text; ?>
                                     </div>
                         		    <?php else: ?>
-                        		    <div id="<?php if($link): echo $link; endif; ?>" class="xola-checkout xola-custom">
+                        		    <div data-button-id="<?php if($link): echo $link; endif; ?>" class="xola-checkout xola-custom">
                                     <?php echo $button_text; ?>
                                     </div>
                                     <?php endif; ?>

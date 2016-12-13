@@ -22,7 +22,7 @@
                                         <div class="arrow-right"></div>
                                     </div>
                                 <?php else: ?>
-                                    <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?> xola-custom book-btn2">
+                                    <div data-button-id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?> xola-custom book-btn2">
                                         <div class="arrow-left"></div>
                                         <div><?php echo $bbt; ?></div>
                                         <div class="arrow-right"></div>

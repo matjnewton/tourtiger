@@ -22,7 +22,7 @@
                                 <div class="tile-tint2"></div>
                             </div>
                             <?php else: ?>
-                            <div id="<?php if($link): echo $link; endif; ?>" class="xola-checkout xola-custom tile-image">
+                            <div data-button-id="<?php if($link): echo $link; endif; ?>" class="xola-checkout xola-custom tile-image">
                                 <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />
                                 <div class="tile-tint"></div>
                                 <div class="tile-tint2"></div>
