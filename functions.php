@@ -1362,7 +1362,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             elseif($classes[1] == 'timeline'):
             	$id_attribute .= ' data-button-id="'.$xid.'"';
             else:
-                $id_attribute .= ' id="'.$xid.'"';
+                $id_attribute .= ' data-button-id="'.$xid.'"';
             endif;
             
             $item_output = $args->before;

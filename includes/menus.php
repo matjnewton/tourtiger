@@ -135,7 +135,7 @@ class split_nav_walker extends Walker_Nav_Menu {
             elseif($classes[1] == 'timeline'):
                 $id_attribute .= ' data-button-id="'.$xid.'"';
             else:
-                $id_attribute .= ' id="'.$xid.'"';
+                $id_attribute .= ' data-button-id="'.$xid.'"';
             endif;
             
             $item_output = $args->before;
