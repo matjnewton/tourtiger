@@ -2,7 +2,7 @@
 $tour_flexi_content = get_sub_field( 'tour_pc-flexi--content' );
 $tour_column_content_classes .= ' pc--c__flexi'; ?>
 
-<article
+<div
 	class="<?php echo $tour_column_content_classes; ?>" 
 	style="<?php echo $tour_column_content_styles; ?>">
 	
@@ -28,4 +28,4 @@ $tour_column_content_classes .= ' pc--c__flexi'; ?>
 
 		endif; ?>
 
-</article>
+</div>

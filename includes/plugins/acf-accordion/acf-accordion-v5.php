@@ -25,13 +25,10 @@ class acf_field_accordion extends acf_field {
 			'value'			=> false, // prevents acf_render_fields() from attempting to load value
 			'icon_class'	=> 'dashicons-arrow-right'
 		);
-		
-		$dir = plugin_dir_url( __FILE__ );
-		$dir = apply_filters( "acf/accordion/dir", $dir );
-		
+
 		// Settings
 		$this->settings = array(
-			'icons'		=>	$dir . 'icons/icons.json'
+			'icons'		=>	plugin_dir_url( __FILE__ ) . 'icons/icons.json'
 		);
 
 		$this->l10n = array();

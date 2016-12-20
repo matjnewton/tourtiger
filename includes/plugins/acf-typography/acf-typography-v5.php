@@ -14,7 +14,8 @@ class acf_field_typography extends acf_field {
 
 		// Update JSON
 		function json_update($API_KEY) {
-			$dir = plugin_dir_url( __FILE__ );
+			//$dir = plugin_dir_url( __FILE__ );
+			$dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-typography/';
 
 			$filename = $dir . 'gf.json';
 
@@ -39,7 +40,8 @@ class acf_field_typography extends acf_field {
 		}
 
 		// Load json file for extra seting
-		$dir = plugin_dir_url( __FILE__ );
+		//$dir = plugin_dir_url( __FILE__ );
+		$dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-typography/';
 		$json = file_get_contents("{$dir}gf.json");
 		$fontArray = json_decode( $json);
 		
@@ -364,7 +366,7 @@ class acf_field_typography extends acf_field {
 	 */
 	function render_field( $field ) {
 		// convert value to array
-        $field['value'] = acf_force_type_array($field['value']);
+        //$field['value'] = acf_force_type_array($field['value']);
 
 
         // add empty value (allows '' to be selected)
@@ -407,6 +409,7 @@ class acf_field_typography extends acf_field {
 		$e = '';
 
 		$defaults_fonts = $field['backupfont'];
+		$font_w = $field['stylefont'];
 
 		$fontf = preg_replace('/\s+/', '+', $field_value['font-family']);
 
@@ -429,7 +432,12 @@ class acf_field_typography extends acf_field {
 				if ($field['show_font_weight'] & $field['show_font_familys']) {
 					echo '<div class="acf-typography-subfield acf-typography-font-weight">';
 						echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Font Weight</label>';
-						echo '<input name="' . $field['name'] . '[font-weight]" id="' . $field['key'] . '" value="' . $field_value['font-weight'] . '" class="select2-container font-weight select2-weight" type="hidden" />';
+						echo '<select name="' . $field['name'] . '[font-weight]" id="' . $field['key'] . '" class="select2-container font-weight select2-weight" >';
+							//echo '<select name="' . $field['name'] . '[font_style]" id="' . $field['key'] . '-font-style"  class="js-select2 font-style">';
+							foreach ( $font_w as $k => $v) {
+								echo '<option value="' . $k . '"' . selected($field_value['font-weight'], $k, false) . ' >' . $v . '</option>' ;
+							}
+						echo '</select>';
 					echo '</div>';
 				}
 
@@ -612,7 +620,8 @@ class acf_field_typography extends acf_field {
 	 * Use this action to add CSS + JavaScript to assist your render_field() action.
 	 */
 	function input_admin_head() {
-		$dir = plugin_dir_url( __FILE__ );
+		//$dir = plugin_dir_url( __FILE__ );
+		$dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-typography/';
 
 		// register & include JS
 		wp_register_script( 'acf-input-typography', $dir . 'js/input.js' );

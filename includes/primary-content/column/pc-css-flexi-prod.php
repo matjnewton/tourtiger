@@ -316,38 +316,37 @@ function add_primary_area_fp_styles() {
 
 			/* Label position */
 			if ( get_sub_field( 'fc_style__imla_pos' ) == 'top' ) {
-				$fc_style__image_labe__css .= 'order: 1;margin-bottom: auto;';
+				$fc_style__image_labe__css .= 'order: 1;';
 			} elseif ( get_sub_field( 'fc_style__imla_pos' ) == 'center' ) {
-				$fc_style__image_labe__css .= 'order: 2;margin-top: auto;margin-bottom: auto;';
+				$fc_style__image_labe__css .= 'order: 2;';
 			} elseif ( get_sub_field( 'fc_style__imla_pos' ) == 'bottom' ) {
-				$fc_style__image_labe__css .= 'order: 3;margin-top: auto;';
+				$fc_style__image_labe__css .= 'order: 3;';
 			}
 
 			/* Label Font Field */
-			if ( get_sub_field( 'fc_style__imla_font' ) ) {
-				$fc_style__imla_font = get_sub_field( 'fc_style__imla_font' );
-				$fc_style__imla_font_color = get_sub_field( 'fc_style__imla_font-color' );
+			
+			$fc_style__imla_font = get_sub_field( 'fc_style__imla_font' );
+			$fc_style__imla_font_color = get_sub_field( 'fc_style__imla_font-color' );
 
-				if ( $fc_style__imla_font['font_family'] ) {
-					$fc_style__imla_font_family = $fc_style__imla_font['font_family'];
-				} else {
-					$fc_style__imla_font_family = '"Roboto, Arial, sans-serif"';
-				}
+			if ( $fc_style__imla_font['font_family'] ) {
+				$fc_style__imla_font_family = $fc_style__imla_font['font_family'];
+			} else {
+				$fc_style__imla_font_family = '"Roboto", Arial, sans-serif';
+			}
 
-				if ( $fc_style__imla_font['font_weight'] ) {
-					$fc_style__imla_font_weight = $fc_style__imla_font['font_weight'];
-				} else {
-					$fc_style__imla_font_weight = 400;
-				}
+			if ( $fc_style__imla_font['font_weight'] ) {
+				$fc_style__imla_font_weight = $fc_style__imla_font['font_weight'];
+			} else {
+				$fc_style__imla_font_weight = 400;
+			}
 
-				$fc_style__imla_font_set =  "font-family: " . $fc_style__imla_font_family . "; ";
-				$fc_style__imla_font_set .=  "font-weight: " . $fc_style__imla_font_weight . "; ";
-				$fc_style__imla_font_set .=  "text-align: " . $fc_style__imla_font['text_align'] . "; ";
-				$fc_style__imla_font_set .=  "font-size: " . $fc_style__imla_font['font_size'] . "px; ";
-				$fc_style__imla_font_set .=  "line-height: " . $fc_style__imla_font['line_height'] . "px; ";
-				$fc_style__imla_font_set .=  "color: " . $fc_style__imla_font_color . "; ";
-				$fc_style__imla_font_set .=  "font-style: " . $fc_style__imla_font['font_style'] . "; ";
-			} 
+			$fc_style__imla_font_set =  "font-family: " . $fc_style__imla_font_family . "; ";
+			$fc_style__imla_font_set .=  "font-weight: " . $fc_style__imla_font_weight . "; ";
+			$fc_style__imla_font_set .=  "text-align: " . $fc_style__imla_font['text_align'] . "; ";
+			$fc_style__imla_font_set .=  "font-size: " . $fc_style__imla_font['font_size'] . "px; ";
+			$fc_style__imla_font_set .=  "line-height: " . $fc_style__imla_font['line_height'] . "px; ";
+			$fc_style__imla_font_set .=  "color: " . $fc_style__imla_font_color . "; ";
+			$fc_style__imla_font_set .=  "font-style: " . $fc_style__imla_font['font_style'] . "; ";
 
 			/* Label Underline */
 			if ( get_sub_field( 'fc_style__imla_font_under' ) ) {
@@ -1039,6 +1038,7 @@ function add_primary_area_fp_styles() {
 					<?php echo $fc_style__imla_pos; ?>;
 					text-decoration: <?php echo $fc_style__imla_font_under; ?>;
 					<?php echo $fc_style__image_labe__css; ?>
+					<?php echo $fc_style__imla_font_set; ?>
 					padding: 5px 14px;
 				}	
 

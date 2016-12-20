@@ -1,6 +1,6 @@
 <?php 
 
-include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-accordion.php' );
+include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-accordion_v5.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-rgba-color/acf-rgba-color.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-typography/acf-typography.php' );
 
@@ -30,8 +30,8 @@ if ( !is_admin() ) {
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'pc-medium', 700, 700, true ); // Кадрирование изображения
-	add_image_size( 'pc-small', 500, 500, true ); // Кадрирование изображения
+	add_image_size( 'pc-medium', 700, 700, true ); 
+	add_image_size( 'pc-small', 500, 500, true ); 
 }
 
 add_action( 'wp_enqueue_scripts', 'tourtiger_styles_pca');
