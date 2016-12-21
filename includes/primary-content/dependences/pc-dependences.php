@@ -252,12 +252,18 @@ function add_primary_area_show_rows() { ?>
 
         if ( jQuery(this).hasClass('pc--c__b-image--tall') ) {
           blog_thumb_h = blog_thumb_w * 1.35;
-        } else if ( jQuery(this).hasClass('pc--c__b-image--normal') ) {
-          blog_thumb_h = blog_thumb_w / 1.35;
-        } else if ( jQuery(this).hasClass('pc--c__b-image--square') ) {
-          blog_thumb_h = blog_thumb_w;
-        } else if ( jQuery(this).hasClass('pc--c__b-image--really-tall') ) {
-          blog_thumb_h = blog_thumb_w * 2;
+        } else {
+          if ( jQuery(this).hasClass('pc--c__b-image--normal') ) {
+            blog_thumb_h = blog_thumb_w / 1.35;
+          } else { 
+            if ( jQuery(this).hasClass('pc--c__b-image--square') ) {
+              blog_thumb_h = blog_thumb_w;
+            } else { 
+              if ( jQuery(this).hasClass('pc--c__b-image--really-tall') ) {
+                blog_thumb_h = blog_thumb_w * 2;
+              }
+            }
+          }
         }
 
         jQuery(this).css( 'min-height', blog_thumb_h );

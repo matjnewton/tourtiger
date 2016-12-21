@@ -1,7 +1,7 @@
 <?php
 
 $tour_section_bg = get_sub_field( 'tour_pc-bg__select' );
-$tour_section_classes = 'pc--s pc--s_id-' . $section_count;
+$tour_section_classes = 'pc--s pc--s_id-' . $section_count . ' ' . get_sub_field( 'tour_pc-section_pad' );
 $tour_section_styles = '';
 
 if ( $tour_section_bg == 'image' ) {

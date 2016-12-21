@@ -5,11 +5,18 @@
 .pc--s {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 50px 70px;
 	width: 100%;
 	background-size: cover;
 	position: relative;
 	font-family: 'Roboto', Arial, sans-serif;
+}
+
+.pc--s__paddings {
+	padding: 50px 70px;
+}
+
+.pc--s__no-paddings {
+	padding: 0;
 }
 
 @media (max-width: 868px) {
@@ -433,7 +440,6 @@
 	outline: none;
 	-webkit-user-select: auto;
 	user-select: auto;
-	margin: 0 10px;
 }
 
 .pc--r__scroll.pc--r__mar-normal .pc--c {
