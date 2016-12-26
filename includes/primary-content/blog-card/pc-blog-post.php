@@ -49,7 +49,8 @@
 				</div>
 			</div>
 		<?php } ?>
-
-		<a href="<?php the_permalink(); ?>" class="pc--blog__button" itemprop="url">Read Article</a>
+		<?php if ( $tour_blog_show_button ) { ?>
+			<a href="<?php the_permalink(); ?>" class="pc--blog__button" itemprop="url">Read Article</a>
+		<?php } ?>
 	</div>
 </article>

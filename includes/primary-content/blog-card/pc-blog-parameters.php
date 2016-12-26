@@ -10,6 +10,7 @@
 	$tour_blog_show_date    = false;
 	$tour_blog_show_excerpt = false;
 	$tour_blog_show_image   = false;
+	$tour_blog_show_button   = false;
 
 	if ( $tour_blog_show ):
 		if ( in_array( 'blog-date', $tour_blog_show ) ) :
@@ -25,6 +26,11 @@
 		if ( in_array( 'blog-image', $tour_blog_show ) ) :
 			$tour_blog_show_image = true;
 			$tour_column_classes .= ' pc--r_blog_is-image';
+		endif;
+
+		if ( in_array( 'blog-button', $tour_blog_show ) ) :
+			$tour_blog_show_button = true;
+			$tour_column_classes .= ' pc--r_blog_is-button';
 		endif;
 	endif;
 

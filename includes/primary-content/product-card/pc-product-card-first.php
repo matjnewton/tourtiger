@@ -31,7 +31,7 @@ $tour_product_first_classes     = 'pc--c__b-first fc_style--first'; ?>
 
 			<?php if ( in_array( 'price', $show_co ) ) : ?>
 				<div class="fc_style--first_price first_price">
-					$1,199
+					1,199
 				</div>
 			<?php endif; ?>
 		</div>

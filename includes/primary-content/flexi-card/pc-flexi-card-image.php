@@ -58,7 +58,7 @@ if ( get_sub_field( 'tour_pc-flexi--url' ) ) {
 		<?php endif; ?>
 
 		<?php if ( $tour_product_image_price && in_array( 'price', $show_image ) ) : ?>
-			<div class="pc--c__b-image_price fc_style--image_price">$<?php echo $tour_product_image_price; ?></div>
+			<div class="pc--c__b-image_price fc_style--image_price"><?php echo $tour_product_image_price; ?></div>
 		<?php endif; ?>
 
 		<?php if ( $tour_product_image_label && in_array( 'label', $show_image ) ) : ?>

@@ -1,7 +1,5 @@
 <?php
-
-	$tour_column_content_classes .=  ' ' . $fc_style . ' ';
-	include_once( get_stylesheet_directory() . '/includes/primary-content/column/pc-css-flexi-prod.php' );
+	$tour_column_content_classes = ' ' . $fc_style . ' ';
 
 	if ( get_row_layout() == 'tour_pc-product' ) :
 

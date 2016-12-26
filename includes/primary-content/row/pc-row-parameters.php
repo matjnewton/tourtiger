@@ -6,6 +6,30 @@
 	 		$scroll_data		 = '';
 
 	 		$fc_style 			 = get_sub_field( 'tour_pc-col-style' );
+
+			if ( $fc_style == 'fc_style-one' ) {
+				$cc_style = 'cc_style-one';
+			} elseif ( $fc_style == 'fc_style-two' ) {
+				$cc_style = 'cc_style-two';
+			} elseif ( $fc_style == 'fc_style-three' ) {
+				$cc_style = 'cc_style-three';
+			} elseif ( $fc_style == 'fc_style-four' ) {
+				$cc_style = 'cc_style-four';
+			} elseif ( $fc_style == 'fc_style-five' ) {
+				$cc_style = 'cc_style-five';
+			} elseif ( $fc_style == 'fc_style-six' ) {
+				$cc_style = 'cc_style-six';
+			} elseif ( $fc_style == 'fc_style-seven' ) {
+				$cc_style = 'cc_style-seven';
+			} elseif ( $fc_style == 'fc_style-eight' ) {
+				$cc_style = 'cc_style-eight';
+			} elseif ( $fc_style == 'fc_style-nine' ) {
+				$cc_style = 'cc_style-nine';
+			} elseif ( $fc_style == 'fc_style-ten' ) {
+				$cc_style = 'cc_style-ten';
+			} else {
+				$cc_style = 'cc_style-error';
+			} 
 	 					
 	 		$tour_column_wrap     = get_sub_field( 'tour_pc-colums--wrap' );
 

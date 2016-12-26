@@ -261,6 +261,8 @@ function add_primary_area_show_rows() { ?>
             } else { 
               if ( jQuery(this).hasClass('pc--c__b-image--really-tall') ) {
                 blog_thumb_h = blog_thumb_w * 2;
+              } else {
+                blog_thumb_h = blog_thumb_w / 1.35;
               }
             }
           }

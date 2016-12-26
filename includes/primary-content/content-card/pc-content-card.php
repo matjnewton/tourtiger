@@ -1,5 +1,4 @@
-<?php $tour_column_content_classes .= ' pc--c__content';
-include_once( get_stylesheet_directory() . '/includes/primary-content/content-card/pc-css-content-card.php' ); ?>
+<?php $tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' '; ?>
 
 <div 
 	class="<?php echo $tour_column_content_classes; ?>" 

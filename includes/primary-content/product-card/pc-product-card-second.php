@@ -33,7 +33,7 @@ $tour_product_second_classes     = 'pc--c__b-second fc_style--second'; ?>
 
 			<?php if ( in_array( 'price', $show_ct ) ) : ?>
 				<div class="fc_style--second_price second_price">
-					$1,199
+					1,199
 				</div>
 			<?php endif; ?>
 		</div>

@@ -34,7 +34,7 @@ if ( $thumb_url ) : ?>
 		<?php endif; ?>
 
 		<?php if ( in_array( 'price', $show_image ) ) : ?>
-			<div class="pc--c__b-image_price fc_style--image_price">$1,199</div>
+			<div class="pc--c__b-image_price fc_style--image_price">1,199</div>
 		<?php endif; ?>
 
 		<?php if ( in_array( 'label', $show_image ) ) : ?>

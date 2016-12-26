@@ -16,7 +16,7 @@
         }
     } else{
     	$tour_section_classes .= ' pc--s__img_empty';
-        $tour_section_styles .= ' background-color: #999;';
+        $tour_section_styles .= ' background-color: #f3f3f3;';
     }
     
 ?>

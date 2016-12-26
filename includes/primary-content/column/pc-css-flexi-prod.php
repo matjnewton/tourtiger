@@ -5,24 +5,34 @@ function add_primary_area_fp_styles() {
 	for ( $i = 0; $i < 11; $i++ ) { 
 		if ( $i == 1 ) {
 			$fc_style = 'fc_style-one';
+			$cc_style = 'cc_style-one';
 		} elseif ( $i == 2 ) {
 			$fc_style = 'fc_style-two';
+			$cc_style = 'cc_style-two';
 		} elseif ( $i == 3 ) {
 			$fc_style = 'fc_style-three';
+			$cc_style = 'cc_style-three';
 		} elseif ( $i == 4 ) {
 			$fc_style = 'fc_style-four';
+			$cc_style = 'cc_style-four';
 		} elseif ( $i == 5 ) {
 			$fc_style = 'fc_style-five';
+			$cc_style = 'cc_style-five';
 		} elseif ( $i == 6 ) {
 			$fc_style = 'fc_style-six';
+			$cc_style = 'cc_style-six';
 		} elseif ( $i == 7 ) {
 			$fc_style = 'fc_style-seven';
+			$cc_style = 'cc_style-seven';
 		} elseif ( $i == 8 ) {
 			$fc_style = 'fc_style-eight';
+			$cc_style = 'cc_style-eight';
 		} elseif ( $i == 9 ) {
 			$fc_style = 'fc_style-nine';
+			$cc_style = 'cc_style-nine';
 		} elseif ( $i == 10 ) {
 			$fc_style = 'fc_style-ten';
+			$cc_style = 'cc_style-ten';
 		}
 
 		while ( have_rows( $fc_style, 'option' ) ) { the_row(); 
@@ -327,6 +337,11 @@ function add_primary_area_fp_styles() {
 			
 			$fc_style__imla_font = get_sub_field( 'fc_style__imla_font' );
 			$fc_style__imla_font_color = get_sub_field( 'fc_style__imla_font-color' );
+			$fc_style__imla_font_set = '';
+
+			if ( get_sub_field( 'fc_style__imla_font-bg' ) || get_sub_field( 'fc_style__imla_font-bg' ) != '' ) {
+				$fc_style__imla_font_set .= 'padding: 8px 13px; background-color:' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
+			}
 
 			if ( $fc_style__imla_font['font_family'] ) {
 				$fc_style__imla_font_family = $fc_style__imla_font['font_family'];
@@ -337,10 +352,10 @@ function add_primary_area_fp_styles() {
 			if ( $fc_style__imla_font['font_weight'] ) {
 				$fc_style__imla_font_weight = $fc_style__imla_font['font_weight'];
 			} else {
-				$fc_style__imla_font_weight = 400;
+				$fc_style__imla_font_weight = 300;
 			}
 
-			$fc_style__imla_font_set =  "font-family: " . $fc_style__imla_font_family . "; ";
+			$fc_style__imla_font_set .=  "font-family: " . $fc_style__imla_font_family . "; ";
 			$fc_style__imla_font_set .=  "font-weight: " . $fc_style__imla_font_weight . "; ";
 			$fc_style__imla_font_set .=  "text-align: " . $fc_style__imla_font['text_align'] . "; ";
 			$fc_style__imla_font_set .=  "font-size: " . $fc_style__imla_font['font_size'] . "px; ";
@@ -923,7 +938,303 @@ function add_primary_area_fp_styles() {
 			} else {
 				$fc_style__ct_butt_bord = 'none';
 				$fc_style__ct_butt_bord_hover = 'none';
-			} ?>
+			}
+
+
+		/** 
+		 * Content Card Styles
+		 */
+		while ( have_rows( $cc_style, 'option' ) ) { 
+			the_row();
+
+			/* Set BG */
+			if ( get_sub_field( 'cc_style__bg' ) == 'none' ) {
+				$cc_style__bg = 'none';
+			} elseif ( get_sub_field( 'cc_style__bg' ) == 'texture' ) {
+				$cc_style__bg = 'url(' . get_sub_field( "cc_style__bg_texture" ) . ') center center repeat';
+			} elseif ( get_sub_field( 'cc_style__bg' ) == 'color' ) {
+				$cc_style__bg = get_sub_field( 'cc_style__bg_color' );
+			}
+
+			/* Headline */
+			if ( get_sub_field( 'cc_style__headline' ) ) {
+				$cc_style__headline = get_sub_field( 'cc_style__headline' );
+				$cc_style__headline_color = get_sub_field( 'cc_style__headline-color' );
+
+				if ( $cc_style__headline['font_family'] ) {
+					$cc_style__headline_family = $cc_style__headline['font_family'];
+				} else {
+					$cc_style__headline_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__headline['font_weight'] ) {
+					$cc_style__headline_weight = $cc_style__headline['font_weight'];
+				} else {
+					$cc_style__headline_weight = 400;
+				}
+
+				$cc_style__headline_set =  "font-family:" . $cc_style__headline_family . ";";
+				$cc_style__headline_set .=  "font-weight:" . $cc_style__headline_weight . ";";
+				$cc_style__headline_set .=  "text-align:" . $cc_style__headline['text_align'] . ";";
+				$cc_style__headline_set .=  "font-size:" . $cc_style__headline['font_size'] . "px;";
+				$cc_style__headline_set .=  "line-height:" . $cc_style__headline['line_height'] . "px;";
+				$cc_style__headline_set .=  "color:" . $cc_style__headline_color . ";";
+				$cc_style__headline_set .=  "font-style:" . $cc_style__headline['font_style'] . ";";
+			}
+
+			/* Sub Headline */
+			if ( get_sub_field( 'cc_style__sub-headline' ) ) {
+				$cc_style__sub_headline = get_sub_field( 'cc_style__sub-headline' );
+				$cc_style__sub_headline_color = get_sub_field( 'cc_style__sub-headline-color' );
+
+				if ( $cc_style__sub_headline['font_family'] ) {
+					$cc_style__sub_headline_family = $cc_style__sub_headline['font_family'];
+				} else {
+					$cc_style__sub_headline_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__sub_headline['font_weight'] ) {
+					$cc_style__sub_headline_weight = $cc_style__sub_headline['font_weight'];
+				} else {
+					$cc_style__sub_headline_weight = 400;
+				}
+
+				$cc_style__sub_headline_set =  "font-family:" . $cc_style__sub_headline_family . ";";
+				$cc_style__sub_headline_set .=  "font-weight:" . $cc_style__sub_headline_weight . ";";
+				$cc_style__sub_headline_set .=  "text-align:" . $cc_style__sub_headline['text_align'] . ";";
+				$cc_style__sub_headline_set .=  "font-size:" . $cc_style__sub_headline['font_size'] . "px;";
+				$cc_style__sub_headline_set .=  "line-height:" . $cc_style__sub_headline['line_height'] . "px;";
+				$cc_style__sub_headline_set .=  "color:" . $cc_style__sub_headline_color . ";";
+				$cc_style__sub_headline_set .=  "font-style:" . $cc_style__sub_headline['font_style'] . ";";
+			}
+
+			/* Editor */
+			if ( get_sub_field( 'cc_style__editor' ) ) {
+				$cc_style__editor = get_sub_field( 'cc_style__editor' );
+				$cc_style__editor_color = get_sub_field( 'cc_style__editor-color' );
+
+				if ( $cc_style__editor['font_family'] ) {
+					$cc_style__editor_family = $cc_style__editor['font_family'];
+				} else {
+					$cc_style__editor_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__editor['font_weight'] ) {
+					$cc_style__editor_weight = $cc_style__editor['font_weight'];
+				} else {
+					$cc_style__editor_weight = 400;
+				}
+
+				$cc_style__editor_set =  "font-family:" . $cc_style__editor_family . ";";
+				$cc_style__editor_set .=  "font-weight:" . $cc_style__editor_weight . ";";
+				$cc_style__editor_set .=  "text-align:" . $cc_style__editor['text_align'] . ";";
+				$cc_style__editor_set .=  "font-size:" . $cc_style__editor['font_size'] . "px;";
+				$cc_style__editor_set .=  "line-height:" . $cc_style__editor['line_height'] . "px;";
+				$cc_style__editor_set .=  "color:" . $cc_style__editor_color . ";";
+				$cc_style__editor_set .=  "font-style:" . $cc_style__editor['font_style'] . ";";
+
+				if ( get_sub_field( 'cc_style__editor_link' ) ) {
+					$cc_style__editor_link = get_sub_field( 'cc_style__editor_link' );
+				} else {
+					$cc_style__editor_link = 'blue';
+				}
+			}
+
+			if ( get_sub_field( 'cc_style__button_label_font' ) ) {
+				$cc_style__button_font = get_sub_field( 'cc_style__button_label_font' );
+				$cc_style__button_font_color = get_sub_field( 'cc_style__button_label_font-color' );
+
+				if ( $cc_style__button_font['font_family'] ) {
+					$cc_style__button_font_family = $cc_style__button_font['font_family'];
+				} else {
+					$cc_style__button_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__button_font['font_weight'] ) {
+					$cc_style__button_font_weight = $cc_style__button_font['font_weight'];
+				} else {
+					$cc_style__button_font_weight = 400;
+				}
+
+				$cc_style__button_font_set =  "font-family: " . $cc_style__button_font_family . "; ";
+				$cc_style__button_font_set .=  "font-weight: " . $cc_style__button_font_weight . "; ";
+				$cc_style__button_font_set .=  "text-align: " . $cc_style__button_font['text_align'] . "; ";
+				$cc_style__button_font_set .=  "font-size: " . $cc_style__button_font['font_size'] . "px; ";
+				$cc_style__button_font_set .=  "line-height: " . $cc_style__button_font['line_height'] . "px; ";
+				$cc_style__button_font_set .=  "color: " . $cc_style__button_font_color . "; ";
+				$cc_style__button_font_set .=  "font-style: " . $cc_style__button_font['font_style'] . "; ";
+			} else { $cc_style__button_font_set = '// Styles for title is empty'; }
+
+			/* Set Button styles */
+			if ( get_sub_field( 'cc_style__button_style' ) == 'text' ) {
+				$cc_style__button_style = 'border-radius: 0; background: none;';
+			} elseif ( get_sub_field( 'cc_style__button_style' ) == 'square' ) {
+				$cc_style__button_style = 'border-radius: 0; padding: 4px 7px;';
+			} elseif ( get_sub_field( 'cc_style__button_style' ) == 'round' ) {
+				$cc_style__button_style = 'border-radius: 50%; padding: 4px 7px;';
+			} elseif ( get_sub_field( 'cc_style__button_style' ) == 'corner' ) {
+				$cc_style__button_style = 'border-radius: 5px; padding: 4px 7px;';
+			}
+
+			/* Button BG */
+			if ( get_sub_field( 'cc_style__button_bg' ) ) {
+				$cc_style__button_bg_color = get_sub_field( 'cc_style__button_bg' );
+			} else {
+				$cc_style__button_bg_color = 'transparent';
+			}
+
+			/* Mouseover effect */
+			$cc_style__button_hover_object = get_sub_field( 'cc_style__button_hover' );
+			$cc_style__button_hover_object_color = false;
+			$cc_style__button_hover_object_text = false;
+
+			if ( $cc_style__button_hover_object ) {
+				foreach ( $cc_style__button_hover_object as $value ) {
+					if ( $value == 'color' ) {
+						$cc_style__button_hover_object_color = true;
+					} elseif ( $value == 'text' ) {
+						$cc_style__button_hover_object_text = true;
+					}
+				}
+
+				if ( $cc_style__button_hover_object_color ) {
+					$cc_style__button_hover_bg_color = $cc_style__button_font_color;
+					$cc_style__button_hover_te_color = $cc_style__button_bg_color;
+				} else {
+					$cc_style__button_hover_bg_color = $cc_style__button_bg_color;
+					$cc_style__button_hover_te_color = $cc_style__button_font_color;
+				}
+
+				if ( $cc_style__button_hover_object_text ) {
+					$cc_style__button_hover_te_deco = 'underline';
+				} else {
+					$cc_style__button_hover_te_deco = 'none';
+				}
+			}
+
+			/* Button Position */
+			if ( get_sub_field( 'cc_style__button_pos' ) == 'left' ) {
+				$cc_style__button_pos = 'margin-right: auto;';
+			} elseif ( get_sub_field( 'cc_style__button_pos' ) == 'center' ) {
+				$cc_style__button_pos = 'margin-right: auto;';
+				$cc_style__button_pos .= 'margin-left: auto;';
+			} elseif ( get_sub_field( 'cc_style__button_pos' ) == 'right' ) {
+				$cc_style__button_pos .= 'margin-left: auto;';
+			} elseif ( get_sub_field( 'cc_style__button_pos' ) == 'detail' ) {
+
+			}
+
+			/* Set Button border */
+			if ( get_sub_field( 'cc_style__button_bor' ) == 'no' ) {
+				$cc_style__button_bor = 'none';
+				$cc_style__button_bor_hover = 'none';
+			} else {
+				$cc_style__button_bor_width = get_sub_field( 'cc_style__button_bor_width' );
+				$cc_style__button_bor_hover = $cc_style__button_bor_width . 'px solid ' . '#000';
+
+				if ( get_sub_field( 'cc_style__button_bor' ) == 'yes' ) {
+					$cc_style__button_bor = $cc_style__button_bor_width . 'px solid #fff';
+				} elseif ( get_sub_field( 'cc_style__button_bor' ) == 'hover' ) {
+					$cc_style__button_bor = $cc_style__button_bor_width . 'px solid transparent';
+				}
+			}
+
+			/* Label Shadow */
+			if ( get_sub_field( 'cc_style__button_label_sha' ) ) {
+				$cc_style__button_label_sha = '1px 1px 3px rgba(0,0,0,.3), 1px 1px 3px rgba(0,0,0,.3)';
+			} else {
+				$cc_style__button_label_sha = 'none';
+			}
+
+			$tour_line_width_percent = get_sub_field( 'cc_style__hl_width' );
+			$tour_line_color = get_sub_field( 'cc_style__hl_color' );
+			$tour_line_thi = get_sub_field( 'cc_style__hl_thi' );
+
+			/* Horizontal Line Color */
+			if ( get_sub_field( 'cc_style__hl_color' ) ) {
+				$cc_style__hl_color = get_sub_field( 'cc_style__hl_color' );
+			} else {
+				$cc_style__hl_color = '#000';
+			}
+
+			/* Horizontal Line Thchness */
+			if ( get_sub_field( 'cc_style__hl_thi' ) ) {
+				$cc_style__hl_thi = get_sub_field( 'cc_style__hl_thi' ) . 'px';
+			} else {
+				$cc_style__hl_thi = '1px';
+			}
+
+			/* Horizontal Line Width */
+			if ( get_sub_field( 'cc_style__hl_width' ) == 'full' ) {
+				$cc_style__hl_width = '100%';
+			} elseif ( get_sub_field( 'cc_style__hl_width' ) == 'three-four' ) {
+				$cc_style__hl_width = '75%';
+			} elseif ( get_sub_field( 'cc_style__hl_width' ) == 'three-four' ) {
+				$cc_style__hl_width = '50%';
+			}
+
+			/* Accordion Label Font */
+			if ( get_sub_field( 'cc_style__a-l_font' ) ) {
+				$cc_style__a_l_font = get_sub_field( 'cc_style__a-l_font' );
+				$cc_style__a_l_font_color = get_sub_field( 'cc_style__a-l_font-color' );
+
+				if ( $cc_style__a_l_font['font_family'] ) {
+					$cc_style__a_l_font_family = $cc_style__a_l_font['font_family'];
+				} else {
+					$cc_style__a_l_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__a_l_font['font_weight'] ) {
+					$cc_style__a_l_font_weight = $cc_style__a_l_font['font_weight'];
+				} else {
+					$cc_style__a_l_font_weight = 400;
+				}
+
+				$cc_style__a_l_font_set =  "font-family:" . $cc_style__a_l_font_family . ";";
+				$cc_style__a_l_font_set .=  "font-weight:" . $cc_style__a_l_font_weight . ";";
+				$cc_style__a_l_font_set .=  "text-align:" . $cc_style__a_l_font['text_align'] . ";";
+				$cc_style__a_l_font_set .=  "font-size:" . $cc_style__a_l_font['font_size'] . "px;";
+				$cc_style__a_l_font_set .=  "line-height:" . $cc_style__a_l_font['line_height'] . "px;";
+				$cc_style__a_l_font_set .=  "color:" . $cc_style__a_l_font_color . ";";
+				$cc_style__a_l_font_set .=  "font-style:" . $cc_style__a_l_font['font_style'] . ";";
+			}
+
+			/* Accordion Label Font Link Hover */
+			if ( get_sub_field( 'cc_style__a-l_font-hover' ) ) {
+				$cc_style__a_l_font_hover = get_sub_field( 'cc_style__a-l_font-hover' );
+			}
+
+			/* Accordion Paragraf Font */
+			if ( get_sub_field( 'cc_style__a-p_font' ) ) {
+				$cc_style__a_p_font = get_sub_field( 'cc_style__a-p_font' );
+				$cc_style__a_p_font_color = get_sub_field( 'cc_style__a-p_font-color' );
+
+				if ( $cc_style__a_p_font['font_family'] ) {
+					$cc_style__a_p_font_family = $cc_style__a_p_font['font_family'];
+				} else {
+					$cc_style__a_p_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__a_p_font['font_weight'] ) {
+					$cc_style__a_p_font_weight = $cc_style__a_p_font['font_weight'];
+				} else {
+					$cc_style__a_p_font_weight = 400;
+				}
+
+				$cc_style__a_p_font_set =  "font-family:" . $cc_style__a_p_font_family . ";";
+				$cc_style__a_p_font_set .=  "font-weight:" . $cc_style__a_p_font_weight . ";";
+				$cc_style__a_p_font_set .=  "text-align:" . $cc_style__a_p_font['text_align'] . ";";
+				$cc_style__a_p_font_set .=  "font-size:" . $cc_style__a_p_font['font_size'] . "px;";
+				$cc_style__a_p_font_set .=  "line-height:" . $cc_style__a_p_font['line_height'] . "px;";
+				$cc_style__a_p_font_set .=  "color:" . $cc_style__a_p_font_color . ";";
+				$cc_style__a_p_font_set .=  "font-style:" . $cc_style__a_p_font['font_style'] . ";";
+			}
+
+			/* Accordion Paragraf Font Link Hover */
+			if ( get_sub_field( 'cc_style__a-p_font-link' ) ) {
+				$cc_style__a_p_font_link = get_sub_field( 'cc_style__a-p_font-link' );
+			}
+		} ?>
 
 			<style>
 
@@ -1039,7 +1350,6 @@ function add_primary_area_fp_styles() {
 					text-decoration: <?php echo $fc_style__imla_font_under; ?>;
 					<?php echo $fc_style__image_labe__css; ?>
 					<?php echo $fc_style__imla_font_set; ?>
-					padding: 5px 14px;
 				}	
 
 				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first {
@@ -1151,10 +1461,86 @@ function add_primary_area_fp_styles() {
 					text-decoration: <?php echo $fc_style__ct_button_hover_te_deco; ?>;
 					transition: ease .3s;
 				}
-			
+
+				#pc_wrap .<?php echo $cc_style; ?>.pc--c__content {
+					background: <?php echo $cc_style__bg; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__headline > * {
+					<?php echo $cc_style__headline_set; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__subheadline > *  {
+					<?php echo $cc_style__sub_headline_set; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor {
+					<?php echo $cc_style__editor_set; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor p {
+					margin-bottom: 0;
+					margin-top: 0;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor p + p {
+					margin-top: 10px;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a {
+					color: <?php echo $cc_style__editor_link; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a:hover {
+					text-decoration: underline;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button {
+					<?php echo $cc_style__button_font_set; ?>
+					<?php echo $cc_style__button_style . $cc_style__button_pos; ?>
+					background-color: <?php echo $cc_style__button_bg_color; ?>;
+					display: block;
+					border: <?php echo $cc_style__button_bor; ?>;
+					text-shadow: <?php echo $cc_style__button_label_sha; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button:hover {
+					background-color: <?php echo $cc_style__button_hover_bg_color; ?>;
+					color: <?php echo $cc_style__button_hover_te_color; ?>;
+					text-decoration: <?php echo $cc_style__button_hover_te_deco; ?>;
+					border: <?php echo $cc_style__button_bor_hover; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__line .pc--c__line-item {
+					width: 100px;
+					margin: 0 auto;
+					border-top: <?php echo $cc_style__hl_thi . ' solid ' . $cc_style__hl_color; ?>;
+					width: <?php echo $cc_style__hl_width; ?>
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--label {
+					<?php echo $cc_style__a_l_font_set; ?>
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--label:hover {
+					color: <?php echo $cc_style__a_l_font_hover; ?>;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf {
+					<?php echo $cc_style__a_p_font_set; ?>
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a {
+					text-decoration: underline;
+				}
+
+				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a:hover {
+					color: <?php echo $cc_style__a_p_font_link; ?>;
+				}
 			</style>
 
-		<?php } 
+		<?php }
+
 	}
 
 } ?>
