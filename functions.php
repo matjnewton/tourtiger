@@ -3,6 +3,7 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 include_once( get_stylesheet_directory() . '/includes/acf_fields_primary-content.php' );
+include_once( get_stylesheet_directory() . '/includes/post_types/product.php' );
 
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'tourtiger' );
