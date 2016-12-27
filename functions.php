@@ -7,7 +7,7 @@ include_once( get_stylesheet_directory() . '/includes/acf_fields_primary-content
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'tourtiger' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
-define( 'CHILD_THEME_VERSION', '2.0.1' );
+define( 'CHILD_THEME_VERSION', '2.0.2' );
 
 
 
