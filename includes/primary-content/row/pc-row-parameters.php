@@ -2,10 +2,10 @@
 	 		$tour_row_styles = '';
 	 		$tour_column_classes = 'pc--r hidden-load'; 
 
-	 		$tour_row_type       = get_sub_field( 'tour_pc-rowtype' );
-	 		$scroll_data		 = '';
+	 		$tour_row_type = get_sub_field( 'tour_pc-rowtype' );
+	 		$scroll_data = '';
 
-	 		$fc_style 			 = get_sub_field( 'tour_pc-col-style' );
+	 		$fc_style = get_sub_field( 'tour_pc-col-style' );
 
 			if ( $fc_style == 'fc_style-one' ) {
 				$cc_style = 'cc_style-one';

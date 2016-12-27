@@ -800,6 +800,10 @@ div.pc--c__accordion + div.pc--c__accordion {
 	margin: 5px auto;
 }
 
+.pc--c__button {
+	text-decoration: none;
+}
+
 /** 
  * Flexi First content
  */

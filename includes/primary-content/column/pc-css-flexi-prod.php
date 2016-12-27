@@ -35,7 +35,11 @@ function add_primary_area_fp_styles() {
 			$cc_style = 'cc_style-ten';
 		}
 
-		while ( have_rows( $fc_style, 'option' ) ) { the_row(); 
+		while ( have_rows( $fc_style, 'option' ) ) { 
+
+			the_row(); 
+
+			$fc_style_bg = get_sub_field( 'fc_style__bg' );
 
 			/* Set background */
 			$fc_style_bg = get_sub_field( 'fc_style__bg' );
@@ -48,6 +52,13 @@ function add_primary_area_fp_styles() {
 			} elseif ( $fc_style_bg == 'color' ) {
 				$fc_style_bg_color = get_sub_field( 'fc_style__bg_color' );
 				$fc_style_bg_css = $fc_style_bg_color;
+			}
+
+			/* Set background */
+			if ( get_sub_field( 'fc_style__rad' ) == 'none' ) {
+				$fc_style_rad_css = '';
+			} else {
+				$fc_style_rad_css = 'border-radius: ' . get_sub_field( 'fc_style__rad-css' ) . '; overflow: hidden;';
 			}
 
 			/* Set border */
@@ -938,12 +949,210 @@ function add_primary_area_fp_styles() {
 			} else {
 				$fc_style__ct_butt_bord = 'none';
 				$fc_style__ct_butt_bord_hover = 'none';
-			}
+			} ?>
 
+				<style>
 
-		/** 
-		 * Content Card Styles
-		 */
+					#pc_wrap .<?php echo $fc_style; ?> {
+						position: relative;
+						box-sizing: border-box;
+						background: <?php echo $fc_style_bg_css; ?>;
+						border: <?php echo $fc_style_br_css; ?>;
+						box-shadow: <?php echo $fc_style_sh_css; ?>;
+						padding: <?php echo $fc_style_pa_css; ?>;
+						<?php echo $fc_style_rad_css; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?>:hover {
+						<?php echo $fc_style_pa_css_fix; ?>;
+						border: <?php echo $fc_style_br_css_hover; ?>;
+						box-shadow: <?php echo $fc_style_sh_css_hover; ?>;
+						padding: <?php echo $fc_style_pa_css_hover; ?>;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image {
+						position: relative;
+						border-top-right-radius: <?php echo $fc_style__imru_top; ?>;
+						border-top-left-radius: <?php echo $fc_style__imru_top; ?>;
+						border-bottom-right-radius: <?php echo $fc_style__imru_bottom; ?>;
+						border-bottom-left-radius: <?php echo $fc_style__imru_bottom; ?>;
+						text-decoration: none;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image:before {
+						position: absolute;
+						content: '';
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						pointer-events: none;
+						<?php echo $fc_style_ov_bg; ?>;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image:after {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						transform: translate(-50%, 50%);
+						-webkit-transform: translate(-50%, 50%);
+						display: <?php echo $fc_style__imbo_bet; ?>;
+						border: <?php echo $fc_style__imbo_bet_width . 'px solid ' . $fc_style__imbo_bet_color; ?>;
+						width: 100%;
+						z-index: 5;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_text {
+						background-color: <?php echo $fc_style__imte_bg; ?>;
+						position: relative;
+						z-index: 4;
+						<?php echo $fc_style__image_text__css; ?>
+						padding: 5px 0;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title {
+						position: relative;
+						padding: 5px 0;
+						text-decoration: <?php echo $fc_style__imte_und; ?>;
+						text-shadow: <?php echo $fc_style__imte_drsh; ?>;
+						<?php echo $fc_style__imte_font_set; ?>
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title:before {
+						display: inline-block;
+						position: absolute;
+						top: 0;
+						left: 50%;
+						width: 100%;
+						border-top: 1px solid #000;
+						-webkit-transform: translateX(-50%);
+						transform: translateX(-50%);
+						<?php echo $fc_style__imte_dec_top; ?>;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title:after {
+						display: inline-block;
+						position: absolute;
+						bottom: 0px;
+						left: 50%;
+						width: 100%;
+						border-top: 1px solid #000;
+						-webkit-transform: translateX(-50%);
+						transform: translateX(-50%);
+						<?php echo $fc_style__imte_dec_bot; ?>;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title + .fc_style--image_desc {
+						margin-top: 4px;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_desc {
+						padding: 5px 0;
+						text-decoration: <?php echo $fc_style__imte_und_des; ?>;
+						<?php echo $fc_style__imte_font_des_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_price {
+						background-color: <?php echo $fc_style__impr_bg; ?>;
+						text-shadow: <?php echo $fc_style__impr_shad; ?>;
+						text-decoration: <?php echo $fc_style__impr_font_under; ?>;
+						<?php echo $fc_style__impr_font_set; ?>
+						<?php echo $fc_style__image_pric__css; ?>
+						padding: 5px 14px;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_label {
+						<?php echo $fc_style__imla_pos; ?>;
+						text-decoration: <?php echo $fc_style__imla_font_under; ?>;
+						<?php echo $fc_style__image_labe__css; ?>
+						<?php echo $fc_style__imla_font_set; ?>
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first {
+						position: relative;
+						background-color: <?php echo $fc_style__co_color; ?>;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first:before {
+						<?php echo $fc_style__co_tobo_w_content; ?>;
+						position: absolute;
+						top: 0;
+						left: 50%;
+						-webkit-transform: translate(-50%, -50%);
+						transform: translate(-50%, -50%);
+						border: <?php echo $fc_style__co_tobo_t . 'px solid' . $fc_style__co_tobo_c; ?>;
+						width: <?php echo $fc_style__co_tobo_w; ?>;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_title {
+						text-decoration: <?php echo $fc_style__co_titl_under; ?>;
+						<?php echo $fc_style__co_titl_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_desc {
+						text-decoration: <?php echo $fc_style__co_desc_under; ?>;
+						<?php echo $fc_style__co_desc_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_detail {
+						text-decoration: <?php echo $fc_style__co_deta_under; ?>;
+						<?php echo $fc_style__co_deta_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_price {
+						<?php echo $fc_style__co_pric_pos; ?>;
+						text-decoration: <?php echo $fc_style__co_pric_under; ?>;
+						text-shadow: <?php echo $fc_style__co_pric_drop; ?>;
+						<?php echo $fc_style__co_pric_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_button {
+						<?php echo $fc_style__co_butt_style; ?>;
+						border: <?php echo $fc_style__co_butt_bord; ?>;
+						box-shadow: <?php echo $fc_style__co_butt_drop; ?>;
+						<?php echo $fc_style__co_butt_font_set; ?>
+						background-color: <?php echo $fc_style__co_butt_bg; ?>;
+						transition: ease .3s;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_button:hover {
+						border: <?php echo $fc_style__co_butt_bord_hover; ?>;
+						background-color: <?php echo $fc_style__co_button_hover_bg_color; ?>;
+						color: <?php echo $fc_style__co_button_hover_te_color; ?>;
+						text-decoration: <?php echo $fc_style__co_button_hover_te_deco; ?>;
+						transition: ease .3s;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second {
+						position: relative;
+						background-color: <?php echo $fc_style__ct_color; ?>;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second:before {
+						<?php echo $fc_style__ct_tobo_w_content; ?>;
+						position: absolute;
+						top: 0;
+						left: 50%;
+						-webkit-transform: translate(-50%, -50%);
+						transform: translate(-50%, -50%);
+						border: <?php echo $fc_style__ct_tobo_t . 'px solid' . $fc_style__ct_tobo_c; ?>;
+						width: <?php echo $fc_style__ct_tobo_w; ?>;
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_title {
+						text-decoration: <?php echo $fc_style__ct_titl_under; ?>;
+						<?php echo $fc_style__ct_titl_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_desc {
+						text-decoration: <?php echo $fc_style__ct_desc_under; ?>;
+						<?php echo $fc_style__ct_desc_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_detail {
+						text-decoration: <?php echo $fc_style__ct_deta_under; ?>;
+						<?php echo $fc_style__ct_deta_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_price {
+						<?php echo $fc_style__ct_pric_pos; ?>;
+						text-decoration: <?php echo $fc_style__ct_pric_under; ?>;
+						text-shadow: <?php echo $fc_style__ct_pric_drop; ?>;
+						<?php echo $fc_style__ct_pric_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_button {
+						<?php echo $fc_style__ct_butt_style; ?>;
+						border: <?php echo $fc_style__ct_butt_bord; ?>;
+						box-shadow: <?php echo $fc_style__ct_butt_drop; ?>;
+						background-color: <?php echo $fc_style__ct_butt_bg; ?>;
+						transition: ease .3s;
+						<?php echo $fc_style__ct_butt_font_set; ?>
+					}
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_button:hover {
+						border: <?php echo $fc_style__ct_butt_bord_hover; ?>;
+						background-color: <?php echo $fc_style__ct_button_hover_bg_color; ?>;
+						color: <?php echo $fc_style__ct_button_hover_te_color; ?>;
+						text-decoration: <?php echo $fc_style__ct_button_hover_te_deco; ?>;
+						transition: ease .3s;
+					}
+				</style>
+
+		<?php }
+
 		while ( have_rows( $cc_style, 'option' ) ) { 
 			the_row();
 
@@ -1233,313 +1442,72 @@ function add_primary_area_fp_styles() {
 			/* Accordion Paragraf Font Link Hover */
 			if ( get_sub_field( 'cc_style__a-p_font-link' ) ) {
 				$cc_style__a_p_font_link = get_sub_field( 'cc_style__a-p_font-link' );
-			}
-		} ?>
+			} ?>
+			
+				<style>
+					#pc_wrap .<?php echo $cc_style; ?>.pc--c__content {
+						background: <?php echo $cc_style__bg; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__headline > * {
+						<?php echo $cc_style__headline_set; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__subheadline > *  {
+						<?php echo $cc_style__sub_headline_set; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor {
+						<?php echo $cc_style__editor_set; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor p {
+						margin-bottom: 0;
+						margin-top: 0;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor p + p {
+						margin-top: 10px;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a {
+						color: <?php echo $cc_style__editor_link; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a:hover {
+						text-decoration: underline;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button {
+						<?php echo $cc_style__button_font_set; ?>
+						<?php echo $cc_style__button_style . $cc_style__button_pos; ?>
+						background-color: <?php echo $cc_style__button_bg_color; ?>;
+						display: block;
+						border: <?php echo $cc_style__button_bor; ?>;
+						text-shadow: <?php echo $cc_style__button_label_sha; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button:hover {
+						background-color: <?php echo $cc_style__button_hover_bg_color; ?>;
+						color: <?php echo $cc_style__button_hover_te_color; ?>;
+						text-decoration: <?php echo $cc_style__button_hover_te_deco; ?>;
+						border: <?php echo $cc_style__button_bor_hover; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__line .pc--c__line-item {
+						width: 100px;
+						margin: 0 auto;
+						border-top: <?php echo $cc_style__hl_thi . ' solid ' . $cc_style__hl_color; ?>;
+						width: <?php echo $cc_style__hl_width; ?>
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--label {
+						<?php echo $cc_style__a_l_font_set; ?>
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--label:hover {
+						color: <?php echo $cc_style__a_l_font_hover; ?>;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf {
+						<?php echo $cc_style__a_p_font_set; ?>
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a {
+						text-decoration: underline;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a:hover {
+						color: <?php echo $cc_style__a_p_font_link; ?>;
+					}
+				</style>
 
-			<style>
-
-				#pc_wrap .<?php echo $fc_style; ?> {
-					position: relative;
-					box-sizing: border-box;
-					background: <?php echo $fc_style_bg_css; ?>;
-					border: <?php echo $fc_style_br_css; ?>;
-					box-shadow: <?php echo $fc_style_sh_css; ?>;
-					padding: <?php echo $fc_style_pa_css; ?>;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?>:hover {
-					<?php echo $fc_style_pa_css_fix; ?>;
-					border: <?php echo $fc_style_br_css_hover; ?>;
-					box-shadow: <?php echo $fc_style_sh_css_hover; ?>;
-					padding: <?php echo $fc_style_pa_css_hover; ?>;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image {
-					position: relative;
-					border-top-right-radius: <?php echo $fc_style__imru_top; ?>;
-					border-top-left-radius: <?php echo $fc_style__imru_top; ?>;
-					border-bottom-right-radius: <?php echo $fc_style__imru_bottom; ?>;
-					border-bottom-left-radius: <?php echo $fc_style__imru_bottom; ?>;
-					text-decoration: none;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image:before {
-					position: absolute;
-					content: '';
-					bottom: 0;
-					left: 0;
-					width: 100%;
-					pointer-events: none;
-					<?php echo $fc_style_ov_bg; ?>;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image:after {
-					content: '';
-					position: absolute;
-					bottom: 0;
-					left: 50%;
-					transform: translate(-50%, 50%);
-					-webkit-transform: translate(-50%, 50%);
-					display: <?php echo $fc_style__imbo_bet; ?>;
-					border: <?php echo $fc_style__imbo_bet_width . 'px solid ' . $fc_style__imbo_bet_color; ?>;
-					width: 100%;
-					z-index: 5;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_text {
-					background-color: <?php echo $fc_style__imte_bg; ?>;
-					position: relative;
-    				z-index: 4;
-    				<?php echo $fc_style__image_text__css; ?>
-					padding: 5px 0;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title {
-					position: relative;
-					padding: 5px 0;
-					text-decoration: <?php echo $fc_style__imte_und; ?>;
-					text-shadow: <?php echo $fc_style__imte_drsh; ?>;
-					<?php echo $fc_style__imte_font_set; ?>
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title:before {
-					display: inline-block;
-					position: absolute;
-					top: 0;
-					left: 50%;
-					width: 100%;
-					border-top: 1px solid #000;
-					-webkit-transform: translateX(-50%);
-					transform: translateX(-50%);
-					<?php echo $fc_style__imte_dec_top; ?>;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title:after {
-					display: inline-block;
-					position: absolute;
-					bottom: 0px;
-					left: 50%;
-					width: 100%;
-					border-top: 1px solid #000;
-					-webkit-transform: translateX(-50%);
-					transform: translateX(-50%);
-					<?php echo $fc_style__imte_dec_bot; ?>;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title + .fc_style--image_desc {
-					margin-top: 4px;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_desc {
-					padding: 5px 0;
-					text-decoration: <?php echo $fc_style__imte_und_des; ?>;
-					<?php echo $fc_style__imte_font_des_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_price {
-					background-color: <?php echo $fc_style__impr_bg; ?>;
-					text-shadow: <?php echo $fc_style__impr_shad; ?>;
-					text-decoration: <?php echo $fc_style__impr_font_under; ?>;
-					<?php echo $fc_style__impr_font_set; ?>
-					<?php echo $fc_style__image_pric__css; ?>
-					padding: 5px 14px;
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_label {
-					<?php echo $fc_style__imla_pos; ?>;
-					text-decoration: <?php echo $fc_style__imla_font_under; ?>;
-					<?php echo $fc_style__image_labe__css; ?>
-					<?php echo $fc_style__imla_font_set; ?>
-				}	
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first {
-					position: relative;
-					background-color: <?php echo $fc_style__co_color; ?>;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first:before {
-					<?php echo $fc_style__co_tobo_w_content; ?>;
-					position: absolute;
-					top: 0;
-					left: 50%;
-					-webkit-transform: translate(-50%, -50%);
-					transform: translate(-50%, -50%);
-					border: <?php echo $fc_style__co_tobo_t . 'px solid' . $fc_style__co_tobo_c; ?>;
-					width: <?php echo $fc_style__co_tobo_w; ?>;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_title {
-					text-decoration: <?php echo $fc_style__co_titl_under; ?>;
-					<?php echo $fc_style__co_titl_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_desc {
-					text-decoration: <?php echo $fc_style__co_desc_under; ?>;
-					<?php echo $fc_style__co_desc_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_detail {
-					text-decoration: <?php echo $fc_style__co_deta_under; ?>;
-					<?php echo $fc_style__co_deta_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_price {
-					<?php echo $fc_style__co_pric_pos; ?>;
-					text-decoration: <?php echo $fc_style__co_pric_under; ?>;
-					text-shadow: <?php echo $fc_style__co_pric_drop; ?>;
-					<?php echo $fc_style__co_pric_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_button {
-					<?php echo $fc_style__co_butt_style; ?>;
-					border: <?php echo $fc_style__co_butt_bord; ?>;
-					box-shadow: <?php echo $fc_style__co_butt_drop; ?>;
-					<?php echo $fc_style__co_butt_font_set; ?>
-					background-color: <?php echo $fc_style__co_butt_bg; ?>;
-					transition: ease .3s;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--first_button:hover {
-					border: <?php echo $fc_style__co_butt_bord_hover; ?>;
-					background-color: <?php echo $fc_style__co_button_hover_bg_color; ?>;
-					color: <?php echo $fc_style__co_button_hover_te_color; ?>;
-					text-decoration: <?php echo $fc_style__co_button_hover_te_deco; ?>;
-					transition: ease .3s;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second {
-					position: relative;
-					background-color: <?php echo $fc_style__ct_color; ?>;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second:before {
-					<?php echo $fc_style__ct_tobo_w_content; ?>;
-					position: absolute;
-					top: 0;
-					left: 50%;
-					-webkit-transform: translate(-50%, -50%);
-					transform: translate(-50%, -50%);
-					border: <?php echo $fc_style__ct_tobo_t . 'px solid' . $fc_style__ct_tobo_c; ?>;
-					width: <?php echo $fc_style__ct_tobo_w; ?>;
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_title {
-					text-decoration: <?php echo $fc_style__ct_titl_under; ?>;
-					<?php echo $fc_style__ct_titl_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_desc {
-					text-decoration: <?php echo $fc_style__ct_desc_under; ?>;
-					<?php echo $fc_style__ct_desc_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_detail {
-					text-decoration: <?php echo $fc_style__ct_deta_under; ?>;
-					<?php echo $fc_style__ct_deta_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_price {
-					<?php echo $fc_style__ct_pric_pos; ?>;
-					text-decoration: <?php echo $fc_style__ct_pric_under; ?>;
-					text-shadow: <?php echo $fc_style__ct_pric_drop; ?>;
-					<?php echo $fc_style__ct_pric_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_button {
-					<?php echo $fc_style__ct_butt_style; ?>;
-					border: <?php echo $fc_style__ct_butt_bord; ?>;
-					box-shadow: <?php echo $fc_style__ct_butt_drop; ?>;
-					background-color: <?php echo $fc_style__ct_butt_bg; ?>;
-					transition: ease .3s;
-					<?php echo $fc_style__ct_butt_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $fc_style; ?> .fc_style--second_button:hover {
-					border: <?php echo $fc_style__ct_butt_bord_hover; ?>;
-					background-color: <?php echo $fc_style__ct_button_hover_bg_color; ?>;
-					color: <?php echo $fc_style__ct_button_hover_te_color; ?>;
-					text-decoration: <?php echo $fc_style__ct_button_hover_te_deco; ?>;
-					transition: ease .3s;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?>.pc--c__content {
-					background: <?php echo $cc_style__bg; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__headline > * {
-					<?php echo $cc_style__headline_set; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__subheadline > *  {
-					<?php echo $cc_style__sub_headline_set; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor {
-					<?php echo $cc_style__editor_set; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor p {
-					margin-bottom: 0;
-					margin-top: 0;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor p + p {
-					margin-top: 10px;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a {
-					color: <?php echo $cc_style__editor_link; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a:hover {
-					text-decoration: underline;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button {
-					<?php echo $cc_style__button_font_set; ?>
-					<?php echo $cc_style__button_style . $cc_style__button_pos; ?>
-					background-color: <?php echo $cc_style__button_bg_color; ?>;
-					display: block;
-					border: <?php echo $cc_style__button_bor; ?>;
-					text-shadow: <?php echo $cc_style__button_label_sha; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button:hover {
-					background-color: <?php echo $cc_style__button_hover_bg_color; ?>;
-					color: <?php echo $cc_style__button_hover_te_color; ?>;
-					text-decoration: <?php echo $cc_style__button_hover_te_deco; ?>;
-					border: <?php echo $cc_style__button_bor_hover; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__line .pc--c__line-item {
-					width: 100px;
-					margin: 0 auto;
-					border-top: <?php echo $cc_style__hl_thi . ' solid ' . $cc_style__hl_color; ?>;
-					width: <?php echo $cc_style__hl_width; ?>
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--label {
-					<?php echo $cc_style__a_l_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--label:hover {
-					color: <?php echo $cc_style__a_l_font_hover; ?>;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf {
-					<?php echo $cc_style__a_p_font_set; ?>
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a {
-					text-decoration: underline;
-				}
-
-				#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a:hover {
-					color: <?php echo $cc_style__a_p_font_link; ?>;
-				}
-			</style>
-
-		<?php }
+		<?php } 
 
 	}
 

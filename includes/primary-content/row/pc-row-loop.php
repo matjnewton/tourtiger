@@ -6,7 +6,7 @@
 
 		if ( $tour_row_type == 'blog') { 
 
-			include( get_stylesheet_directory() . '/includes/primary-content/blog-card/pc-blog-parameters.php' );
+			include( get_stylesheet_directory() . '/includes/primary-content/column/blog-card/pc-blog-parameters.php' );
 
 		} elseif ( $tour_row_type == 'content' ) { ?>
 

@@ -12,7 +12,7 @@
 			$tour_section_classes .= ' pc--s__bd_repeater_empty';
 		}
 	} elseif ( $tour_section_bd_select == 'image' ) {
-		$tour_section_bd_image = get_sub_field( 'tour_pc-bd--select__image_copy' );
+		$tour_section_bd_image = get_sub_field( 'tour_pc-bd--select__image' );
 
 		$tour_section_classes .= ' pc--s__bd_image';
 

@@ -9,95 +9,67 @@ define( 'CHILD_THEME_NAME', 'tourtiger' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
 define( 'CHILD_THEME_VERSION', '2.0.1' );
 
-/**
- * Redirect WordPress front end https URLs to http without a plugin
- *
- * Necessary when running forced SSL in admin and you don't want links to the front end to remain https.
- *
- * @link http://blackhillswebworks.com/?p=5088
- */
- 
-add_action( 'template_redirect', 'bhww_ssl_template_redirect', 1 );
-function bhww_ssl_template_redirect() {
-	if ( is_ssl() && ! is_admin() ) {
-		if ( 0 === strpos( $_SERVER['REQUEST_URI'], 'http' ) ) {
-			wp_redirect( preg_replace( '|^https://|', 'http://', $_SERVER['REQUEST_URI'] ), 301 );
-			exit();
-		} else {
-			wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 301 );
-			exit();
-		}
-	}
-}
 
 
 
-add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 1 );
+add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 999 );
 function tourtiger_scripts_method() {
         if(!is_admin()) {
         wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, '2.1.4', true);
+        wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, '1.11.4', true);
-        wp_register_script( 'jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, '2.1.4', true);
+        wp_register_script('jquery-ui',("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
+        wp_register_script( 'jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, '1.11.4', true);
+        wp_register_script('jquery-ui',("http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
 
-        wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.5', true);
-        wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),'20120285', 'all');
-        wp_register_style('compass', get_stylesheet_directory_uri() .'/css/screen.css', array(),'20120285', 'all');
-        wp_register_style('bootstrap_select', get_stylesheet_directory_uri() .'/css/bootstrap-select.css', array(),'20120285', 'all');
-        wp_register_style('magnific_popup_css', get_stylesheet_directory_uri() .'/css/magnific-popup.css', array(),'20120285', 'all');
-        wp_register_style('flexslider_css', get_stylesheet_directory_uri() .'/css/flexslider.css', array(),'20120285', 'all');
+        wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
+        wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),null, 'all');
+        wp_register_style('compass', get_stylesheet_directory_uri() .'/css/screen.css', array(),null, 'all');
+        wp_register_style('bootstrap_select', get_stylesheet_directory_uri() .'/css/bootstrap-select.css', array(),null, 'all');
+        wp_register_style('magnific_popup_css', get_stylesheet_directory_uri() .'/css/magnific-popup.css', array(),null, 'all');
+        wp_register_style('flexslider_css', get_stylesheet_directory_uri() .'/css/flexslider.css', array(),null, 'all');
         //wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(),'20120285', 'all' );
 		//wp_enqueue_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), 'v3.1.1', true );
 		//wp_register_script('ie_row_fix', get_stylesheet_directory_uri() . '/js/ie-row-fix.js', array('jquery'), '1.0', true);
-		wp_register_style('datetimepicker', get_stylesheet_directory_uri() .'/includes/front/css/bootstrap-datetimepicker.css', array(),'20120279', 'all');
-		wp_register_style('select2', get_stylesheet_directory_uri() .'/includes/front/css/select2.min.css', array(),'20120279', 'all');
-		wp_register_style('transfergestcss', get_stylesheet_directory_uri() .'/includes/front/css/style.css', array(),'20120279', 'all');
 		
-		wp_register_script('respond', get_stylesheet_directory_uri() . '/js/respond.min.js', array('jquery'), '1.4.2', true);
-		wp_register_script('respond_matchmedia', get_stylesheet_directory_uri() . '/js/respond.matchmedia.addListener.min.js', array('jquery'), '1.4.2', true);
+		wp_register_script('respond', get_stylesheet_directory_uri() . '/js/respond.min.js', array('jquery'), null, true);
+		wp_register_script('respond_matchmedia', get_stylesheet_directory_uri() . '/js/respond.matchmedia.addListener.min.js', array('jquery'), null, true);
 		
-		wp_register_script('raty', get_stylesheet_directory_uri() . '/js/jquery.raty.min.js', array('jquery'), '2.5.2', true);
-		wp_register_script('scrollit', get_stylesheet_directory_uri() . '/js/scrollIt.min.js', array('jquery'), '1.0.3', true);
-		wp_register_script('magnific_popup', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
-		wp_register_script('flexslider_js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '2.2.2', true);
+		wp_register_script('raty', get_stylesheet_directory_uri() . '/js/jquery.raty.min.js', array('jquery'), null, true);
+		wp_register_script('scrollit', get_stylesheet_directory_uri() . '/js/scrollIt.min.js', array('jquery'), null, true);
+		wp_register_script('magnific_popup', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
+		wp_register_script('flexslider_js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), null, true);
 		
-		wp_register_script('momentWithLocales', get_stylesheet_directory_uri() . '/includes/front/js/moment-with-locales.js', array('jquery'), '2.9.0', true);
-		wp_register_script('datetimepickerjs', get_stylesheet_directory_uri() . '/includes/front/js/bootstrap-datetimepicker.js', array('jquery'), '4.15.35', true);
-		wp_register_script('bootbox', get_stylesheet_directory_uri() . '/includes/front/js/bootbox.min.js', array('jquery'), '4.4.0', true);
-		wp_register_script('select2js', get_stylesheet_directory_uri() . '/includes/front/js/select2.full.min.js', array('jquery'), '4.0.3', true);
 		
-		wp_register_script('match_height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), '0.5.3', true);
-		wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array('jquery'), '2.8.3.2', false);
-		wp_register_script('browser_selector', get_stylesheet_directory_uri() . '/js/css_browser_selector.js', array('jquery'), '0.8', false);
+		wp_register_script('match_height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), null, true);
+		wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array('jquery'), null, false);
+		wp_register_script('browser_selector', get_stylesheet_directory_uri() . '/js/css_browser_selector.js', array('jquery'), null, false);
 		//wp_register_script('vendor', get_stylesheet_directory_uri() . '/js/vendor.js', array('jquery'), '2.8.3', false);
 		//wp_register_script('plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array('jquery'), '2.8.3', false);
 		
-		wp_register_script('bootstrap_selectjs', get_stylesheet_directory_uri() . '/js/bootstrap-select.js', array('jquery'), '1.6.4', true);
+		wp_register_script('bootstrap_selectjs', get_stylesheet_directory_uri() . '/js/bootstrap-select.js', array('jquery'), null, true);
 		//wp_register_script('customjs', get_stylesheet_directory_uri() . '/js/server-custom.js', array('jquery'), '1.2.8', true);
-		wp_register_script('custom_two', get_stylesheet_directory_uri() . '/js/custom2.js', array('jquery'), '1.0.0', true);
-		wp_register_script('colorbox', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/jquery.colorbox-min.js"), array('jquery'), '1.6.1', true);
-		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), '1.0.0', true);
-		wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), '1.0.0', true);
+		wp_register_script('custom_two', get_stylesheet_directory_uri() . '/js/custom2.js', array('jquery'), null, true);
+		wp_register_script('colorbox', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/jquery.colorbox-min.js"), array('jquery'), null, true);
+		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
+		wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
 		
 		$integrate_trekksoft = get_field('trekksoft','option');
 		$trekksoft_account = get_field('trekksoft_account','option');
 		$integrate_xola = get_field('integrate_xola_with_this_website','option');
 		$integrate_rezdy = get_field('rezdy','option');
-		$transfergest = get_field('transfergest','option');
 		
 		if($integrate_trekksoft && $trekksoft_account):
-		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), '1.0.0', false);
+		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
 		endif;
 		
 		if($integrate_xola):
 		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), '1.0.0', true);
-		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', '1.0.0', true);
+		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', null, true);
 		endif;
 		
-		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '1.2.9', true);
+		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), null, true);
 		
 		
 		
@@ -127,27 +99,15 @@ function tourtiger_scripts_method() {
 		wp_enqueue_script('xola_crossdomain');
 		endif;
 		
-		if($transfergest):
-		wp_enqueue_script('momentWithLocales');
-		wp_enqueue_script('datetimepickerjs');
-		wp_enqueue_script('bootbox');
-		wp_enqueue_script('select2js');
-		endif;
-		
 		wp_enqueue_style('bootstrap');
 		wp_enqueue_style('compass');
-		if($transfergest):
-        wp_enqueue_style('datetimepicker');
-        wp_enqueue_style('select2');
-        wp_enqueue_style('transfergestcss');
-        endif;
 		wp_enqueue_style('bootstrap_select');
 		wp_enqueue_style('magnific_popup_css');
 		wp_enqueue_style('flexslider_css');
-		wp_enqueue_style( 'theme', get_stylesheet_directory_uri() . '/theme.scss.php' );
+		// wp_enqueue_style( 'theme', get_stylesheet_directory_uri() . '/theme.scss.php' );
 		wp_enqueue_script( 'respond' );
 		
-		wp_register_style('ie_8', get_stylesheet_directory_uri() .'/css/ie8.css', array(),'20120285', 'all');
+		wp_register_style('ie_8', get_stylesheet_directory_uri() .'/css/ie8.css', array(),null, 'all');
 		wp_enqueue_style( 'ie_8' );
         wp_style_add_data( 'ie_8', 'conditional', 'IE 8' );
         
@@ -409,6 +369,7 @@ if(function_exists('acf_add_options_page')) {
 	acf_add_options_sub_page('Footer');
 	acf_add_options_sub_page('Company details');
 	acf_add_options_sub_page('Code snippets');
+
 }
 
 function acf_load_third_party_field_choices( $field ) {
@@ -425,7 +386,6 @@ function acf_load_third_party_field_choices( $field ) {
     $integrate_getinsellout = get_field('getinsellout','option');
     $integrate_trekksoft = get_field('trekksoft','option');
     $integrate_rezdy = get_field('rezdy','option');
-    $integrate_zaui = get_field('zaui','option');
     
     if($integrate_xola):
     $choices = get_field('xola_values', 'option', false);
@@ -439,8 +399,6 @@ function acf_load_third_party_field_choices( $field ) {
     $choices = get_field('trekksoft_values', 'option', false);
     elseif($integrate_rezdy):
     $choices = get_field('rezdy_values', 'option', false);
-    elseif($integrate_zaui):
-    $choices = get_field('zaui_values', 'option', false);
     endif;
     // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices);
@@ -955,12 +913,6 @@ function color_picker_option_page()
 					</td>
 				</tr>
 				<tr valign="top">
-					<th width="200px" scope="row">Hero CTA Button background fill</th>
-					<td>
-    					<input name="hctabgcfill" type="checkbox" id="hctabgcfill" value="foobar" <?php checked( 'foobar', get_option( 'hctabgcfill' ) ); ?> />
-					</td>
-				</tr>
-				<tr valign="top">
 					<th width="200px" scope="row">Content CTA Button Background</th>
 					<td>	
 						<input type="text" id="sctabgc" value="<?php if((get_option('sctabgc')) != ''): echo get_option('sctabgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_sctabgc" />
@@ -1187,9 +1139,6 @@ function color_picker_option_update()
 	update_option('hcbgc', esc_html($_POST['color_picker_hcbgc']));
 	
 	update_option('hctabgc', esc_html($_POST['color_picker_hctabgc']));
-	$hcta_tweak = $_POST['hctabgcfill'] ? $_POST['hctabgcfill'] : '';
-	update_option('hctabgcfill', esc_html($hcta_tweak));
-	
 	update_option('sctabgc', esc_html($_POST['color_picker_sctabgc']));
 	
 	update_option('podfbgc', esc_html($_POST['color_picker_podfbgc']));
@@ -1318,7 +1267,6 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $getinsellout_data_evt = get_field('getinsellout_data_evt','option');
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_rezdy = get_field('rezdy','option');
-        $integrate_zaui = get_field('zaui','option');
         
         // add custom data attributes for giso
         if ( $integrate_getinsellout == true && $depth == 0 && ($classes[0] == 'giso-book-btn')) { // remove if statement if depth check is not required
@@ -1344,11 +1292,6 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $attributes .= ' class="button-booking rezdy rezdy-modal"';
         }
         
-        if ( $integrate_zaui == true && $depth == 0 && ($classes[0] == 'zaui-book-btn')) {
-            $attributes .= ' onclick="return Zaui.open(event)"';
-            $attributes .= ' class="button-booking zaui-embed-button override"';
-        }
-        
         if ( $integrate_xola == true && $depth == 0 && ($classes[0] == 'xola-book-btn')) {
             $t_xid = $atts['href'];
             $xid = preg_replace('#^https?://#', '', $t_xid);
@@ -1364,7 +1307,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             elseif($classes[1] == 'timeline'):
             	$id_attribute .= ' data-button-id="'.$xid.'"';
             else:
-                $id_attribute .= ' data-button-id="'.$xid.'"';
+                $id_attribute .= ' id="'.$xid.'"';
             endif;
             
             $item_output = $args->before;
@@ -1468,45 +1411,16 @@ function do_googleMaps($atts, $content = null) {
 }
 add_shortcode("googlemap", "do_googleMaps");
 
-$transfergest = get_field('transfergest','option');
+add_action( 'wp_footer', 'add_theme_scss' );
+function add_theme_scss() { ?>
+<link rel="stylesheet" id="theme-css" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">	
+<?php }
 
-if($transfergest && !is_admin()):
-
-//include_once(dirname(__FILE__).'/includes/front/shop.php');
-
-add_action( 'genesis_before', 'my_genesis_script' );
-
-function my_genesis_script() {
-
-if ( current_filter() == 'genesis_before' ):
-
-echo '<div style=\'position: relative;top: -70px;margin-bottom: -70px;\' class=\'appear\' data-start=\'550\' data-animated=\'fadeInLeft\'>
-<div class=\'middle\'></div>
-<div id=\'cont\'></div>
-</div>';
-endif;
+// Удаление параметра ver из добавляемых скриптов и стилей
+function rem_wp_ver_css_js( $src ) {
+    if ( strpos( $src, 'ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
 }
-
-function transfergest_init() {
-    echo '<script>
-
-$(function(){
-
-$.ajax({url: "'.get_stylesheet_directory_uri().'/includes/front/modals.php"})
-.done(
-function( html ) { $( "body" ).append(html);
-
-$.ajax({url: "'.get_stylesheet_directory_uri().'/includes/front/shop.php"})
-.done(
-	function( html ) { 
-		$( "#cont" ).html(html); callDefinitions();});
-});
-
-});
-
-</script>';
-}
-add_action( 'wp_footer', 'transfergest_init', 100 );
-
-
-endif;
+add_filter( 'style_loader_src', 'rem_wp_ver_css_js', 9999 );
+add_filter( 'script_loader_src', 'rem_wp_ver_css_js', 9999 );

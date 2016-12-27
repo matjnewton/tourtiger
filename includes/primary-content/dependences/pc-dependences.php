@@ -278,6 +278,26 @@ function add_primary_area_show_rows() { ?>
         jQuery(this).css( 'max-height', blog_thumb_h );
       });
     });
+
+    !(function(){
+        jQuery(function(){
+            var section = jQuery('.pc--s__img--eqvival');
+
+            section.each(function(){
+              var href = jQuery(this).attr('style'),
+                  match_url = href.match(/http:\/\/[^\s\Z]+/i)[0].split( ');' ),
+                  img = new Image();
+
+                  img.src = match_url[0];
+
+              var img_percent = img.height / img.width * 100;
+              var img_height = screen.width / 100 * img_percent;
+
+                  $(this).css('min-height', img_height);
+                  console.log(img_height);
+            });
+        });
+    })();
   </script>
 
 <?php } ?>

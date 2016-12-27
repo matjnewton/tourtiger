@@ -9,11 +9,10 @@
 		while ( have_rows( 'tour_primary-content' ) ) { 
 
 			the_row(); 
-
 			include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-parameters.php' ); ?>
 		
 		<?php $section_count++; }  ?>
 
 	</div> 
 
-<?php } else { echo '<!-- Here you are able to place Primary Content Area via admin panel -->'; } ?>
+<?php } ?>

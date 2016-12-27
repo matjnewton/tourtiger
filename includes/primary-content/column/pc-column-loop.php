@@ -5,14 +5,14 @@
 
 	include_once( get_stylesheet_directory() . '/includes/primary-content/column/pc-css-flexi-prod.php' );
 
-	if ( get_row_layout() == 'tour_pc-content' ) :
+	if ( get_row_layout() == 'tour_pc-content' ) {
 
-		include( get_stylesheet_directory() . '/includes/primary-content/content-card/pc-content-card.php' );
+		include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card.php' );
 
-	elseif ( get_row_layout() == 'tour_pc-product' || get_row_layout() == 'tour_pc-flexi' ) :
+	} else {
 
-		include( get_stylesheet_directory() . '/includes/primary-content/column/pc-define-flexi-prod.php' );
+		include( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-flexiprod-card.php' );
 
-	endif;
+	}
 
 endwhile; ?>
