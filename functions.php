@@ -11,8 +11,6 @@ define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
 define( 'CHILD_THEME_VERSION', '2.0.2' );
 
 
-
-
 add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 999 );
 function tourtiger_scripts_method() {
         if(!is_admin()) {
@@ -1414,7 +1412,7 @@ add_shortcode("googlemap", "do_googleMaps");
 
 add_action( 'wp_footer', 'add_theme_scss' );
 function add_theme_scss() { ?>
-<!-- <link rel="stylesheet" id="theme-css" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all"> -->	
+<link rel="stylesheet" id="theme-css" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
 <?php }
 
 // Удаление параметра ver из добавляемых скриптов и стилей
