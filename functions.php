@@ -1412,7 +1412,7 @@ add_shortcode("googlemap", "do_googleMaps");
 
 add_action( 'wp_footer', 'add_theme_scss' );
 function add_theme_scss() { ?>
-<link rel="stylesheet" id="theme-css" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-css-footer" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
 <?php }
 
 // Удаление параметра ver из добавляемых скриптов и стилей
