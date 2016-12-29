@@ -1505,6 +1505,8 @@ function add_primary_area_fp_styles() {
 					#pc_wrap .<?php echo $cc_style; ?> .pc--c__accordion--paragraf a:hover {
 						color: <?php echo $cc_style__a_p_font_link; ?>;
 					}
+
+					<?php print_r( $cc_style__button_font ); ?>
 				</style>
 
 		<?php } 

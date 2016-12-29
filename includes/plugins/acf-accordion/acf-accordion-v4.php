@@ -28,9 +28,9 @@ class acf_field_accordion extends acf_field {
     	
     	// settings
 		$this->settings = array(
-			'path'		=> apply_filters('acf/helpers/get_path', CORE_PLUGINS_PATH_ACCORD),
-			'dir'		=> apply_filters('acf/helpers/get_dir', CORE_PLUGINS_URL_ACCORD),
-			'icons'		=>	CORE_PLUGINS_URL_ACCORD . 'icons/icons.json',
+			'path'		=> apply_filters('acf/helpers/get_path', __FILE__),
+			'dir'		=> apply_filters('acf/helpers/get_dir', __FILE__),
+			'icons'		=>	plugin_dir_url( __FILE__ ) . 'icons/icons.json',
 			'version'	=> '1.0.0'
 		);
 	}
@@ -170,8 +170,7 @@ class acf_field_accordion extends acf_field {
 
 	function field_group_admin_enqueue_scripts()
 	{
-		//$dir = plugin_dir_url( __FILE__ );
-		$dir = CORE_PLUGINS_URL_ACCORD;
+		$dir = plugin_dir_url( __FILE__ );
 
 		// register & include CSS
 		wp_register_style( 'acf-admin-accordion', "{$dir}css/accordion-admin.css" );

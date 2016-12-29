@@ -31,6 +31,12 @@
 	}
 }
 
+.pc--s__img--eqvival {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .pc--s__video,
 .pc--s__embed,
 .pc--s__map {

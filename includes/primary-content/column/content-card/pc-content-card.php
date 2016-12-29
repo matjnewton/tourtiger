@@ -1,4 +1,4 @@
-<?php //$tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' '; ?>
+<?php $tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' '; ?>
 
 <div 
 	class="<?php echo $tour_column_content_classes; ?>" 
