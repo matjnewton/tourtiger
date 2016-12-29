@@ -53,7 +53,6 @@ function tourtiger_scripts_method() {
 		wp_register_script('colorbox', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/jquery.colorbox-min.js"), array('jquery'), null, true);
 		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
 		wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
-		wp_enqueue_style('theme-css', get_stylesheet_directory_uri() . '/wp-content/uploads/wp-sass-cache/theme.css' );
 		
 		$integrate_trekksoft = get_field('trekksoft','option');
 		$trekksoft_account = get_field('trekksoft_account','option');
@@ -1411,11 +1410,6 @@ function do_googleMaps($atts, $content = null) {
 }
 add_shortcode("googlemap", "do_googleMaps");
 
-add_action( 'wp_footer', 'add_theme_scss' );
-function add_theme_scss() { ?>
-<link rel="stylesheet" id="theme-css-footer" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
-<?php }
-
 // Удаление параметра ver из добавляемых скриптов и стилей
 function rem_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
@@ -1424,3 +1418,10 @@ function rem_wp_ver_css_js( $src ) {
 }
 add_filter( 'style_loader_src', 'rem_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'rem_wp_ver_css_js', 9999 );
+
+
+
+add_action( 'wp_footer', 'add_theme_scss' );
+function add_theme_scss() { ?>
+<link rel="stylesheet" id="theme-css-footer" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
+<?php }
