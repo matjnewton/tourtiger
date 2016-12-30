@@ -1,0 +1,20 @@
+.acf-accordion-group .acf-field-typography {
+	background-color: #f1f1f1;
+    padding: 10px;
+} 
+.admin-subtitle {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.acf-field-rgba-color .toping {
+
+}
+.acf-field-rgba-color .rgbatext {
+    padding: 7px;
+}
+.acf-field-rgba-color .minicolors-theme-default {
+	top: -2px;
+}
+.minicolors input[type=hidden] + .minicolors-swatch {
+    height: 26px;
+}

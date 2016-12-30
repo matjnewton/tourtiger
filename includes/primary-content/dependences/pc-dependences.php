@@ -281,20 +281,26 @@ function add_primary_area_show_rows() { ?>
 
     !(function(){
         jQuery(function(){
-            var section = jQuery('.pc--s__img--eqvival');
+            var section = jQuery('.pc--s__img--eqvival'),
+                href,
+                match_url,
+                img,
+                img_percent,
+                img_height;
 
             section.each(function(){
-              var href = jQuery(this).attr('style'),
-                  match_url = href.match(/http:\/\/[^\s\Z]+/i)[0].split( ');' ),
-                  img = new Image();
+              href = jQuery(this).attr('style');
+              match_url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' );
+              img = new Image();
 
                   img.src = match_url[0];
 
-              var img_percent = img.height / img.width * 100;
-              var img_height = screen.width / 100 * img_percent;
+                  img_percent = img.height / img.width * 100;
+                  img_height = screen.width / 100 * img_percent;
 
                   $(this).css('min-height', img_height);
                   console.log(img_height);
+                  console.log(href.match(/http:\/\/[^\s]+/i)[0]);
             });
         });
     })();
