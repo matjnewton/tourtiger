@@ -272,10 +272,19 @@ function add_primary_area_show_rows() { ?>
       });
 
       jQuery('.pc--crop__video').each(function(index, thisItem){
-        var blog_thumb_w = jQuery(this).width();
-        var blog_thumb_h = blog_thumb_w / 1.75;
+        var blog_thumb_w,
+            blog_thumb_h,
+            current = jQuery(this),
+            parent = current.closest('.pc--c__video');
 
-        jQuery(this).css( 'max-height', blog_thumb_h );
+        if ( parent.hasClass('pc--c__video--full') ) {
+          current.width( parent.width() );
+        }
+
+        blog_thumb_w = current.width();
+        blog_thumb_h = blog_thumb_w / 1.75;
+
+        current.css( 'height', blog_thumb_h );
       });
     });
 

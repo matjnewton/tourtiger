@@ -1,6 +1,7 @@
 <?php 
 
-	$tour_content_content_classes .= ' pc--c__video'; ?>
+	$tour_content_content_classes .= ' pc--c__video';
+	if ( get_sub_field( 'tour_pc-coltype--video_size' ) ) $tour_content_content_classes .= ' pc--c__video--full'; ?>
 
 	<div 
 		class="<?php echo $tour_content_content_classes; ?>" 
