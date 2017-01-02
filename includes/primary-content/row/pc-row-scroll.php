@@ -131,6 +131,12 @@ function add_primary_area_row_scroll() { ?>
 
 				swipe: false
 			});
+			jQuery('.pc--c__testimonial--slider').slick({
+				swipe: false,
+				arrows: false,
+				dots: true,
+				adaptiveHeight: true
+			});
 			jQuery('.pc--r__scroll').fadeIn();
 		});
 	</script>

@@ -2,7 +2,7 @@
  
 function add_primary_area_fp_styles() { 
 
-	for ( $i = 0; $i < 11; $i++ ) { 
+	for ( $i = 1; $i < 11; $i++ ) { 
 		if ( $i == 1 ) {
 			$fc_style = 'fc_style-one';
 			$cc_style = 'cc_style-one';
@@ -1442,7 +1442,96 @@ function add_primary_area_fp_styles() {
 			/* Accordion Paragraf Font Link Hover */
 			if ( get_sub_field( 'cc_style__a-p_font-link' ) ) {
 				$cc_style__a_p_font_link = get_sub_field( 'cc_style__a-p_font-link' );
-			} ?>
+			}
+
+			/* Testimonial title Font */
+			if ( get_sub_field( 'cc_style__test_title_f' ) ) {
+				$cc_style_tes_ti_font = get_sub_field( 'cc_style__test_title_f' );
+				$cc_style__tes_ti_font_color = get_sub_field( 'cc_style__test_title_c' );
+
+				if ( $cc_style_tes_ti_font['font_family'] ) {
+					$cc_style_tes_ti_font_family = $cc_style_tes_ti_font['font_family'];
+				} else {
+					$cc_style_tes_ti_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style_tes_ti_font['font_weight'] ) {
+					$cc_style_tes_ti_font_weight = $cc_style_tes_ti_font['font_weight'];
+				} else {
+					$cc_style_tes_ti_font_weight = 300;
+				}
+
+				$cc_style_tes_ti_font_set =  "font-family:" . $cc_style_tes_ti_font_family . ";";
+				$cc_style_tes_ti_font_set .=  "font-weight:" . $cc_style_tes_ti_font_weight . ";";
+				$cc_style_tes_ti_font_set .=  "text-align:" . $cc_style_tes_ti_font['text_align'] . ";";
+				$cc_style_tes_ti_font_set .=  "font-size:" . $cc_style_tes_ti_font['font_size'] . "px;";
+				$cc_style_tes_ti_font_set .=  "line-height:" . $cc_style_tes_ti_font['line_height'] . "px;";
+				$cc_style_tes_ti_font_set .=  "color:" . $cc_style_tes_ti_font_color . ";";
+				$cc_style_tes_ti_font_set .=  "font-style:" . $cc_style_tes_ti_font['font_style'] . ";";
+			}
+
+			/* Excerpt title Font */
+			if ( get_sub_field( 'cc_style__test_excerpt_f' ) ) {
+				$cc_style_tes_ex_font = get_sub_field( 'cc_style__test_excerpt_f' );
+				$cc_style__tes_ex_font_color = get_sub_field( 'cc_style__test_excerpt_c' );
+
+				if ( $cc_style_tes_ex_font['font_family'] ) {
+					$cc_style_tes_ex_font_family = $cc_style_tes_ex_font['font_family'];
+				} else {
+					$cc_style_tes_ex_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style_tes_ex_font['font_weight'] ) {
+					$cc_style_tes_ex_font_weight = $cc_style_tes_ex_font['font_weight'];
+				} else {
+					$cc_style_tes_ex_font_weight = 300;
+				}
+
+				$cc_style_tes_ex_font_set =  "font-family:" . $cc_style_tes_ex_font_family . ";";
+				$cc_style_tes_ex_font_set .=  "font-weight:" . $cc_style_tes_ex_font_weight . ";";
+				$cc_style_tes_ex_font_set .=  "text-align:" . $cc_style_tes_ex_font['text_align'] . ";";
+				$cc_style_tes_ex_font_set .=  "font-size:" . $cc_style_tes_ex_font['font_size'] . "px;";
+				$cc_style_tes_ex_font_set .=  "line-height:" . $cc_style_tes_ex_font['line_height'] . "px;";
+				$cc_style_tes_ex_font_set .=  "color:" . $cc_style_tes_ex_font_color . ";";
+				$cc_style_tes_ex_font_set .=  "font-style:" . $cc_style_tes_ex_font['font_style'] . ";";
+			}
+
+			/* Excerpt title Font */
+			if ( get_sub_field( 'cc_style__test_link_f' ) ) {
+				$cc_style_tes_li_font = get_sub_field( 'cc_style__test_link_f' );
+				$cc_style__tes_li_font_color = get_sub_field( 'cc_style__test_link_c' );
+				$cc_style__tes_li_font_color_h = get_sub_field( 'cc_style__test_link_c-h' );
+
+				if ( $cc_style_tes_li_font['font_family'] ) {
+					$cc_style_tes_li_font_family = $cc_style_tes_li_font['font_family'];
+				} else {
+					$cc_style_tes_li_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style_tes_li_font['font_weight'] ) {
+					$cc_style_tes_li_font_weight = $cc_style_tes_li_font['font_weight'];
+				} else {
+					$cc_style_tes_li_font_weight = 300;
+				}
+
+				$cc_style_tes_li_font_set =  "font-family:" . $cc_style_tes_li_font_family . ";";
+				$cc_style_tes_li_font_set .=  "font-weight:" . $cc_style_tes_li_font_weight . ";";
+				$cc_style_tes_li_font_set .=  "text-align:" . $cc_style_tes_li_font['text_align'] . ";";
+				$cc_style_tes_li_font_set .=  "font-size:" . $cc_style_tes_li_font['font_size'] . "px;";
+				$cc_style_tes_li_font_set .=  "line-height:" . $cc_style_tes_li_font['line_height'] . "px;";
+				$cc_style_tes_li_font_set .=  "color:" . $cc_style_tes_li_font_color . ";";
+				$cc_style_tes_li_font_set .=  "font-style:" . $cc_style_tes_li_font['font_style'] . ";";
+			}
+
+			if ( in_array( 'quotes', get_sub_field( 'cc_style__test_show' ) ) ) {
+				$cc_style_tes_qu_font_c = get_sub_field( 'cc_style__test_quotes_c' );
+				$cc_style_tes_qu_font_o = 1;
+			} else {
+				$cc_style_tes_qu_font_c = '#666';
+				$cc_style_tes_qu_font_o = 0;
+			}
+
+			?>
 			
 				<style>
 					#pc_wrap .<?php echo $cc_style; ?>.pc--c__content {
@@ -1506,7 +1595,55 @@ function add_primary_area_fp_styles() {
 						color: <?php echo $cc_style__a_p_font_link; ?>;
 					}
 
-					<?php print_r( $cc_style__button_font ); ?>
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--slider:before,
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--slider:after {
+						font-family: Dosis;
+						font-size: 200px;
+						font-weight: 500;
+						font-style: normal;
+						font-stretch: normal;
+						text-align: center;
+						color: <?php echo $cc_style_tes_qu_font_c; ?>;
+						position: absolute;
+						top: 0;
+						line-height: 1;
+						opacity: <?php echo $cc_style_tes_qu_font_o; ?>
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--slider:before {
+						content: '“';
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--slider:after {
+						content: '”';
+						right: 0;
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--slider .slick-dots button {
+						background-color: #d8d8d8;
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--slider .slick-dots .slick-active button {
+						background-color: <?php echo $cc_style_tes_qu_font_c; ?>;
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--title {
+						<?php echo $cc_style_tes_ti_font_set; ?>
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--excerpt {
+						<?php echo $cc_style_tes_ex_font_set; ?>
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--link {
+						<?php echo $cc_style_tes_li_font_set; ?>
+						transition: ease .3s;
+					}
+
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--link:hover {
+						color: <?php echo $cc_style__tes_li_font_color_h; ?>;
+						transition: ease .3s;
+					}
 				</style>
 
 		<?php } 

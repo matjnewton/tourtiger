@@ -972,6 +972,39 @@ acf_add_local_field_group(array (
 																	'min' => '',
 																	'max' => '',
 																),
+																array (
+																	'key' => 'testi1fe58061',
+																	'name' => 'tour_pc-coltype--testimonial',
+																	'label' => 'Testimonial',
+																	'display' => 'table',
+																	'sub_fields' => array (
+																		array (
+																			'key' => 'testi1fe580611',
+																			'label' => 'Choose Testimonial',
+																			'name' => 'tour_pc-coltype--testimonial_ob',
+																			'type' => 'post_object',
+																			'instructions' => '',
+																			'required' => 0,
+																			'conditional_logic' => '',
+																			'wrapper' => array (
+																				'width' => '',
+																				'class' => '',
+																				'id' => '',
+																			),
+																			'post_type' => array (
+																				'testimonial'
+																			),
+																			'taxonomy' => array (
+																			),
+																			'allow_null' => 0,
+																			'multiple' => 1,
+																			'return_format' => 'object',
+																			'ui' => 1,
+																		),
+																	),
+																	'min' => '',
+																	'max' => '',
+																),
 															),
 														),
 													),

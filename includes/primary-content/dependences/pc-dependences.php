@@ -300,7 +300,7 @@ function add_primary_area_show_rows() { ?>
 
                   $(this).css('min-height', img_height);
                   console.log(img_height);
-                  console.log(href.match(/http:\/\/[^\s]+/i)[0]);
+                  console.log(match_url[0]);
             });
         });
     })();

@@ -1,4 +1,11 @@
-<?php $tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' '; ?>
+<?php 
+	$tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' ';
+
+	while ( have_rows( $cc_style, 'option' ) ) : 
+		the_row();
+		$cc_style__test_show = get_sub_field( 'cc_style__test_show' );
+	endwhile;
+?>
 
 <div 
 	class="<?php echo $tour_column_content_classes; ?>" 
@@ -54,6 +61,10 @@
 			} elseif ( get_row_layout() == 'tour_pc-coltype--accordion' ) {
 
 				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-accordion.php' );
+
+			} elseif ( get_row_layout() == 'tour_pc-coltype--testimonial' ) {
+
+				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-testimonial.php' );
 
 			}
 

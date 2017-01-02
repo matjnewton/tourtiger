@@ -810,6 +810,69 @@ div.pc--c__accordion + div.pc--c__accordion {
 	text-decoration: none;
 }
 
+.pc--c__col.pc--c__testimonial {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.pc--c__testimonial--slider .slick-dots {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	margin-top: 25px;
+}
+
+.pc--c__testimonial--slider .slick-dots li {
+	margin: 0 10px;
+	height: 8px;
+	outline: none;
+	font-size: 0;
+}
+
+.pc--c__testimonial--slider .slick-dots button {
+    color: transparent;
+    border: none;
+    background-color: #333;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    outline: none;
+    font-size: 0;
+}
+
+.pc--c__testimonial--description {
+	margin: 0;
+}
+
+.pc--c__testimonial--logo + *,
+.pc--c__testimonial--title + *,
+.pc--c__testimonial--description + *,
+.pc--c__testimonial--link + * {
+	margin-top: 25px;
+	display: block;
+}
+
+.pc--c__testimonial--slider .pc--c__testimonial--title {
+	font-weight: 300;
+	color: #797979;
+	font-size: 20px;
+}
+
+.pc--c__testimonial--description {
+	font-weight: 300;
+	color: #797979;
+	font-size: 24px;
+	font-style: italic;
+}
+
+.pc--c__testimonial--slider .pc--c__testimonial--link {
+	font-weight: 300;
+	color: #797979;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
 /** 
  * Flexi First content
  */
@@ -884,3 +947,4 @@ div.pc--c__accordion + div.pc--c__accordion {
 	font-size: 12px;
 	color: #4a4a4a;
 }
+

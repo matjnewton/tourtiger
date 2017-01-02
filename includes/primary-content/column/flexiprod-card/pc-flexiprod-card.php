@@ -15,7 +15,8 @@ if ( get_row_layout() == 'tour_pc-flexi' ) {
 	$tour_column_content_classes .= ' pc--c__product'; 
 
 	if( get_sub_field( 'tour_pc-product--object' ) ) : 
-		setup_postdata( get_sub_field( 'tour_pc-product--object' ) ); 
+		$post = get_sub_field( 'tour_pc-product--object' );
+		setup_postdata( $post ); 
 
 		$tour_flexiprod_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(),'full', true);
 		$tour_flexiprod_tag_url = get_permalink();
@@ -36,7 +37,7 @@ if ( get_row_layout() == 'tour_pc-flexi' ) {
 	class="<?php echo $tour_column_content_classes; ?>" 
 	style="<?php echo $tour_column_content_styles; ?>">
 	
-		<?php if ( have_rows( $tour_flexi_content ) ) :
+		<?php  if ( have_rows( $tour_flexi_content ) ) :
 
 			while ( have_rows( $tour_flexi_content ) ) : the_row();
 

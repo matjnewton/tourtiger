@@ -17,7 +17,7 @@ if ( $tour_flexiprod_image_url ) :
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-height' );
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-aligment' );
 
-	if ( $tour_flexi_content == 'tour_pc-flexi--content' ) ) :
+	if ( $tour_flexi_content == 'tour_pc-flexi--content' ) :
 		while ( have_rows( $tour_flexi_content . '--image-row' ) ) : the_row(); 
 			$title   = get_sub_field( $tour_flexi_content . '--image-row__title' );
 			$desc    = get_sub_field( $tour_flexi_content . '--image-row__description' );
@@ -26,16 +26,14 @@ if ( $tour_flexiprod_image_url ) :
 		endwhile;
 	endif;
 
-/* Url */
-if ( $tour_flexiprod_tag_url ) {
-	$image_tag_open = 'a href="' . $tour_flexiprod_tag_url . '"';
-	$image_tag_close = 'a';
-} else {
-	$image_tag_open = 'div';
-	$image_tag_close = 'div';
-}
-
-?>
+	/* Url */
+	if ( $tour_flexiprod_tag_url ) {
+		$image_tag_open = 'a href="' . $tour_flexiprod_tag_url . '"';
+		$image_tag_close = 'a';
+	} else {
+		$image_tag_open = 'div';
+		$image_tag_close = 'div';
+	} ?>
 
 	<<?php echo $image_tag_open; ?> class="<?php echo $tour_flexiprod_image_classes; ?>">
 		<img class="pc--c__b-image_thumb" src="<?php echo $thumb_img; ?>" alt="<?php echo $tour_flexiprod_image_title; ?>">
