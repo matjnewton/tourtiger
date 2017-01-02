@@ -349,9 +349,14 @@ function add_primary_area_fp_styles() {
 			$fc_style__imla_font = get_sub_field( 'fc_style__imla_font' );
 			$fc_style__imla_font_color = get_sub_field( 'fc_style__imla_font-color' );
 			$fc_style__imla_font_set = '';
+			$fc_style__image_labe_in = '';
 
 			if ( get_sub_field( 'fc_style__imla_font-bg' ) || get_sub_field( 'fc_style__imla_font-bg' ) != '' ) {
 				$fc_style__imla_font_set .= 'padding: 8px 13px; background-color:' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
+			
+				if ( in_array( 'color', get_sub_field( 'fc_style__imla_butt_hovef' ) ) ) {
+					$fc_style__image_labe_in = 'background-color: ' . $fc_style__imla_font_color . '; color: ' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
+				} 
 			}
 
 			if ( $fc_style__imla_font['font_family'] ) {
@@ -363,7 +368,7 @@ function add_primary_area_fp_styles() {
 			if ( $fc_style__imla_font['font_weight'] ) {
 				$fc_style__imla_font_weight = $fc_style__imla_font['font_weight'];
 			} else {
-				$fc_style__imla_font_weight = 300;
+				$fc_style__imla_font_weight = 400;
 			}
 
 			$fc_style__imla_font_set .=  "font-family: " . $fc_style__imla_font_family . "; ";
@@ -374,11 +379,11 @@ function add_primary_area_fp_styles() {
 			$fc_style__imla_font_set .=  "color: " . $fc_style__imla_font_color . "; ";
 			$fc_style__imla_font_set .=  "font-style: " . $fc_style__imla_font['font_style'] . "; ";
 
-			/* Label Underline */
-			if ( get_sub_field( 'fc_style__imla_font_under' ) ) {
-				$fc_style__imla_font_under = 'underline';
-			} else {
-				$fc_style__imla_font_under = 'none';
+			/* Label: Mouse over effects */
+			$fc_style__image_labe_lh_h = 'text-decoration: none;';
+
+			if ( in_array( 'text', get_sub_field( 'fc_style__imla_butt_hovef' ) ) ) {
+				$fc_style__image_labe_lh_h = 'text-decoration: underline;';
 			}
 
 			/**
@@ -1051,9 +1056,14 @@ function add_primary_area_fp_styles() {
 					}	
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_label {
 						<?php echo $fc_style__imla_pos; ?>;
-						text-decoration: <?php echo $fc_style__imla_font_under; ?>;
 						<?php echo $fc_style__image_labe__css; ?>
 						<?php echo $fc_style__imla_font_set; ?>
+						<?php echo $fc_style__image_labe_lh; ?>
+						transition: ease .1s;
+					}	
+					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_label:hover {
+						<?php echo $fc_style__image_labe_lh_h; echo $fc_style__image_labe_in; ?>
+						transition: ease .1s;
 					}	
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first {
 						position: relative;

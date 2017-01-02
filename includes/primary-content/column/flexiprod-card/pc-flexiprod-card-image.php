@@ -4,9 +4,18 @@ $tour_flexiprod_image_classes = 'pc--c__b-image fc_style--image pc--crop__thumb'
 
 /* Image URL */
 
+if ( $tour_flexi_content == 'tour_pc-flexi' ) :
+
+	$tour_flexiprod_image_url = get_sub_field( 'tour_pc-flexi--image-add' );
+
+endif;
+
 if ( $tour_flexiprod_image_url ) :
 
-	if ( get_sub_field( $tour_flexi_content . '--image-height' ) == 'pc--c__b-image--tall' ) {
+	if ( 
+		get_sub_field( $tour_flexi_content . '--image-height' ) == 'pc--c__b-image--tall' 
+		|| get_sub_field( $tour_flexi_content . '--image-height' ) == 'pc--c__b-image--really-tall' 
+	) {
 		$thumb_height = $thumb_width * 1.35;
 	} else {
 		$thumb_height = $thumb_height_normal;
@@ -17,12 +26,12 @@ if ( $tour_flexiprod_image_url ) :
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-height' );
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-aligment' );
 
-	if ( $tour_flexi_content == 'tour_pc-flexi--content' ) :
-		while ( have_rows( $tour_flexi_content . '--image-row' ) ) : the_row(); 
-			$title   = get_sub_field( $tour_flexi_content . '--image-row__title' );
-			$desc    = get_sub_field( $tour_flexi_content . '--image-row__description' );
-			$price   = get_sub_field( $tour_flexi_content . '--image-row__price' );
-			$label   = get_sub_field( $tour_flexi_content . '--image-row__label' );
+	if ( $tour_flexi_content == 'tour_pc-flexi' ) :
+		while ( have_rows( 'tour_pc-flexi--image-row' ) ) : the_row(); 
+			$title   = get_sub_field( 'tour_pc-flexi--image-row__title' );
+			$desc    = get_sub_field( 'tour_pc-flexi--image-row__description' );
+			$price   = get_sub_field( 'tour_pc-flexi--image-row__price' );
+			$label   = get_sub_field( 'tour_pc-flexi--image-row__label' );
 		endwhile;
 	endif;
 
@@ -34,7 +43,6 @@ if ( $tour_flexiprod_image_url ) :
 		$image_tag_open = 'div';
 		$image_tag_close = 'div';
 	} ?>
-
 	<<?php echo $image_tag_open; ?> class="<?php echo $tour_flexiprod_image_classes; ?>">
 		<img class="pc--c__b-image_thumb" src="<?php echo $thumb_img; ?>" alt="<?php echo $tour_flexiprod_image_title; ?>">
 		<?php if ( in_array( 'text', $show_image ) && ( $title || $desc ) ) :  ?>

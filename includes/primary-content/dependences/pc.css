@@ -780,7 +780,7 @@ div.pc--c__accordion + div.pc--c__accordion {
  	display: flex;
  	flex-direction: column;
  	justify-content: space-around;
- 	padding: 7%;
+ 	padding: 20px;
 }
 
 .pc--c__b-image_thumb {

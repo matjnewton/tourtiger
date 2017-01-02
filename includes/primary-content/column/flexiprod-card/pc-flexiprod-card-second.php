@@ -2,7 +2,7 @@
 /* get variables */
 $tour_product_second_classes     = 'pc--c__b-second fc_style--second';
 
-if ( $tour_flexi_content == 'tour_pc-flexi--content' ) {
+if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 	while ( have_rows( 'tour_pc-flexi--second-row' ) ) { the_row();
 		$title = get_sub_field( 'tour_pc-flexi--second-row__title' );
 		$desc = get_sub_field( 'tour_pc-flexi--second-row__description' );
