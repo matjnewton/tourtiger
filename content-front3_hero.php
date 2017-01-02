@@ -25,11 +25,19 @@ if( have_rows('hero_area') ):
         $mobd = get_sub_field('multi_option_button_dropdown');
         $video_button_link = get_sub_field('video_button_link');
     ?>
+
+    <!-- update dgamoni get search settings -->
+    <?php global $search_content; ?>
+    <?php get_template_part( 'page-templates/search/search_box_settings' ); ?>
+
      <section class="banner"<?php if($text_align == 'Center'): echo ' style="text-align:center;"'; endif;?>>
         <?php if( $button_type == 'Play Video'): ?>
          <a href="<?php if($video_button_link): echo $video_button_link; else: echo '#'; endif; ?>" class="video-play popup-video">
          <?php endif; ?>
         <div class="banner-top">
+
+        <!-- update dgamoni  print search -->
+        <?php  echo $search_content; ?>
         
         <div class="flxslider-wrapper">
                         <?php $images = get_sub_field('hero_slides');

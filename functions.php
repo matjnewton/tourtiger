@@ -3,9 +3,9 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 include_once( get_stylesheet_directory() . '/includes/acf_fields_primary-content.php' );
-include_once( get_stylesheet_directory() . '/includes/acf/acf_fields_product.php' );
-include_once( get_stylesheet_directory() . '/includes/functions/product_functions.php' );
-include_once( get_stylesheet_directory() . '/includes/post_types/cpt_product.php' );
+// include_once( get_stylesheet_directory() . '/includes/acf/acf_fields_product.php' );
+// include_once( get_stylesheet_directory() . '/includes/functions/product_functions.php' );
+// include_once( get_stylesheet_directory() . '/includes/post_types/cpt_product.php' );
 
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'tourtiger' );
@@ -1427,3 +1427,6 @@ add_action( 'wp_footer', 'add_theme_scss', 9999 );
 function add_theme_scss() { ?>
 <link rel="stylesheet" id="theme-css-footer" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
 <?php }
+
+/* update dgamoni */
+require_once 'inc/load.php'; 

@@ -1,3 +1,4 @@
+
 <!-- headline layout -->
 <?php if( get_row_layout() == 'primary_content_headline'):
 	$primary_content_headline_title = get_sub_field('primary_content_headline_title');
