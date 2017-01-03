@@ -14,7 +14,8 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 
 ?>
 
-<div class="<?php echo $tour_product_first_classes; ?>">
+<div class="<?php echo $tour_product_first_classes . ' ' . $show_co; ?>">
+
 	<?php if ( 
 		   ( in_array( 'title', $show_co ) && $title )
 		|| ( in_array( 'desc', $show_co ) && $desc )
@@ -50,7 +51,7 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 			<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" style="margin-left: auto;" class="fc_style--first_button first_button"><?php echo $label; ?></a>
 		<?php elseif ( $fc_style__co_butt_pos == 'rigt-d' && $detail ) : ?>
 			<div class="fc_style--first__details fc_style--first__button_details">
-				<div class="fc_style--first__button_detail first_detail"><span><?php echo $detail; ?></span></div>
+				<div class="fc_style--first__button_detail first_detail"><span class="fc_style--first_detail"><?php echo $detail; ?></span></div>
 				<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" class="fc_style--first_button first_button" style="margin-top: 0;"><?php echo $label; ?></a>
 			</div>
 		<?php endif; ?>

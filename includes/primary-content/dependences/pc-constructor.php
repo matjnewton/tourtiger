@@ -221,7 +221,7 @@ acf_add_local_field_group(array (
 												'fc_style-five' => '5 Style',
 												'fc_style-six' => '6 Style',
 												'fc_style-seven' => '7 Style',
-												'fc_style-eigth' => '8 Style',
+												'fc_style-eight' => '8 Style',
 												'fc_style-nine' => '9 Style',
 												'fc_style-ten' => '10 Style',
 											),
@@ -547,7 +547,7 @@ acf_add_local_field_group(array (
 																			'name' => 'tour_pc-coltype--image_add',
 																			'type' => 'image',
 																			'instructions' => '',
-																			'required' => 1,
+																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
 																				'width' => '',
@@ -564,6 +564,29 @@ acf_add_local_field_group(array (
 																			'max_height' => '',
 																			'max_size' => '',
 																			'mime_types' => '',
+																		),
+																		array (
+																			'key' => 'field_cir492141e631',
+																			'label' => 'Image shape',
+																			'name' => 'tour_pc-coltype--image_cir',
+																			'type' => 'radio',
+																			'instructions' => '',
+																			'required' => 0,
+																			'conditional_logic' => '',
+																			'wrapper' => array (
+																				'width' => '',
+																				'class' => '',
+																				'id' => '',
+																			),
+																			'choices' => array (
+																				'no-circle' => 'Auto',
+																				'circle' => 'Circle'
+																			),
+																			'allow_null' => 0,
+																			'other_choice' => 0,
+																			'save_other_choice' => 0,
+																			'default_value' => 'no-circle',
+																			'layout' => 'horizontal',
 																		),
 																		array (
 																			'key' => 'field_582492141e631',

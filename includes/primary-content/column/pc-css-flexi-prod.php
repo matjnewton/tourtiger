@@ -659,10 +659,10 @@ function add_primary_area_fp_styles() {
 			/* Set border */
 			if ( get_sub_field( 'fc_style__co_butt_bord' ) == 'yes' || get_sub_field( 'fc_style__co_butt_bord' ) == 'hover' ) {
 				$fc_style__co_butt_bord_width = get_sub_field( 'fc_style__co_butt_bord_width' );
-				$fc_style__co_butt_bord_hover = $fc_style__co_butt_bord_width . 'px solid #000';
+				$fc_style__co_butt_bord_hover = $fc_style__co_butt_bord_width . 'px solid ' . $fc_style__co_butt_bg;
 
 				if ( get_sub_field( 'fc_style__co_butt_bord' ) == 'yes' ) {
-			 		$fc_style__co_butt_bord = $fc_style__co_butt_bord_width . 'px solid #000';
+			 		$fc_style__co_butt_bord = $fc_style__co_butt_bord_width . 'px solid ' . $fc_style__co_butt_font_color;
 				} elseif ( get_sub_field( 'fc_style__co_butt_bord' ) == 'hover' ) {
 					$fc_style__co_butt_bord = $fc_style__co_butt_bord_width . 'px solid transparent';
 				}

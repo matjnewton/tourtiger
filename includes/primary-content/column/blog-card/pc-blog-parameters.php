@@ -1,9 +1,14 @@
 <?php 
 
-	include_once( get_stylesheet_directory() . '/includes/primary-content/blog-card/pc-blog-css.php' );
+	include_once( get_stylesheet_directory() . '/includes/primary-content/column/blog-card/pc-blog-css.php' );
 
 	$tour_column_classes .= 'pc--r_blog';
 	$tour_blog_pullcount = get_sub_field( 'tour_pc-blog--pull' );
+
+	while ( have_rows( 'bc_style-one', 'option' ) ) : the_row();
+		$bc_style__title_pos = get_sub_field( 'bc_style__title-pos' );
+		$bc_style__date_pos = get_sub_field( 'bc_style__date-pos' );
+	endwhile;
 
 	/* get variables */
 	$tour_blog_show     	= get_sub_field( 'tour_pc-rowtype--blog-show' );
@@ -41,12 +46,11 @@
 	class="<?php echo $tour_column_classes; ?>"
 	style="<?php echo $tour_row_styles; ?>"
 	<?php echo $scroll_data; ?>>
-
 	<?php if  ( $blog_query->have_posts() ) {
 		while ( $blog_query->have_posts() ) {
 			$blog_query->the_post();
 
-			include( get_stylesheet_directory() . '/includes/primary-content/blog-card/pc-blog-post.php' ); 
+			include( get_stylesheet_directory() . '/includes/primary-content/column/blog-card/pc-blog-post.php' ); 
 
 		}  
 	} wp_reset_postdata(); ?>

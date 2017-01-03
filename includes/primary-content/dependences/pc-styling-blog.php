@@ -806,6 +806,29 @@ acf_add_local_field_group(array (
 					),
 				),
 				array (
+					'key' => 'field_5837pos5btitl',
+					'label' => 'Title position',
+					'name' => 'bc_style__title-pos',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'normal' => 'Below Image',
+						'image' => 'On Image'
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => '',
+					'layout' => 'horizontal',
+				),
+				array (
 					'key' => 'field_58370e85298c4',
 					'label' => 'Excerpt',
 					'name' => 'excerpt',

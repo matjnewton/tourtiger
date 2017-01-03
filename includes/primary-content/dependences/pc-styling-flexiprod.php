@@ -348,7 +348,15 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'type' => 'radio',
 				'instructions' => '',
 				'required' => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'fc_' . $i . '_ld_58356537e9566',
+							'operator' => '==',
+							'value' => 'no'
+						)
+					)
+				),
 				'wrapper' => array (
 					'width' => '',
 					'class' => '',
@@ -377,6 +385,11 @@ for ( $i = 1; $i < 11; $i++ ) {
 							'field' => 'fc_' . $i . '_ld_5835629usdira',
 							'operator' => '==',
 							'value' => 'yep'
+						),
+						array(
+							'field' => 'fc_' . $i . '_ld_58356537e9566',
+							'operator' => '==',
+							'value' => 'no'
 						)
 					)
 				),
@@ -6115,7 +6128,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'line_height' => 25,
 				'show_letter_spacing' => 0,
 				'letter_spacing' => 0,
-				'show_color_picker' => 1,
+				'show_color_picker' => 0,
 				'text_color' => '#000000',
 				'show_font_style' => 1,
 				'font_style' => 'normal',
@@ -8774,6 +8787,11 @@ for ( $i = 1; $i < 11; $i++ ) {
 							'field' => 'fc_' . $i . '_ld_58358b696aa30',
 							'operator' => '==',
 							'value' => 'button',
+						),
+						array (
+							'field' => 'fc_' . $i . '_ld_5835a0f02a144',
+							'operator' => '!=',
+							'value' => 'no',
 						),
 					),
 				),

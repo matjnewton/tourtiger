@@ -53,7 +53,7 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 			<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" style="margin-left: auto;" class="fc_style--second_button second_button"><?php echo $label; ?></a>
 		<?php elseif ( $fc_style__ct_butt_pos == 'rigt-d' && $detail ) : ?>
 			<div class="fc_style--second__button_details">
-				<div class="fc_style--second__button_detail second_detail"><span><?php echo $detail; ?></span></div>
+				<div class="fc_style--second__button_detail second_detail"><span class="fc_style--second_detail"><?php echo $detail; ?></span></div>
 				<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" class="fc_style--second_button second_button" style="margin-top: 0;"><?php echo $label; ?></a>
 			</div>
 		<?php endif; ?>

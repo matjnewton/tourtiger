@@ -12,7 +12,7 @@
 	} else {
 
 		include( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-flexiprod-card.php' );
-
+	
 	}
 
 endwhile; ?>

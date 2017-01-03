@@ -1,11 +1,5 @@
 <?php
 
-if ( have_rows( 'bc_style-one', 'option' ) ) {
-	while ( have_rows( 'bc_style-one', 'option' ) ) { the_row();
-		$bc_style__date_pos = get_sub_field( 'bc_style__date-pos' );
-	}
-} 
-
 add_action( "wp_footer", "add_primary_area_blog_card" );
  
 function add_primary_area_blog_card() { ?>
