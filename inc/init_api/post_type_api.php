@@ -11,7 +11,19 @@ function getWqsApiUrl()
 }
 function getWqsCurrentUrl()
 {
-    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    // fix protocol
+    $isSecure = false;
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+        $isSecure = true;
+    }
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' || !empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] == 'on') {
+        $isSecure = true;
+    }
+    $REQUEST_PROTOCOL = $isSecure ? 'https' : 'http';
+    //end fix
+
+    $actual_link = $REQUEST_PROTOCOL."://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    //$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     if($actual_link != null) {
         return $actual_link;
     }
