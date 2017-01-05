@@ -1259,6 +1259,59 @@ function add_primary_area_fp_styles() {
 				}
 			}
 
+			/* Support 1 */
+			if ( get_sub_field( 'cc_style__button_supone_font' ) ) {
+				$cc_style__button_supone_font = get_sub_field( 'cc_style__button_supone_font' );
+				$cc_style__button_supone_font_color = get_sub_field( 'cc_style__button_supone_font-color' );
+
+				if ( $cc_style__button_supone_font['font_family'] ) {
+					$cc_style__button_supone_font_family = $cc_style__button_supone_font['font_family'];
+				} else {
+					$cc_style__button_supone_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__button_supone_font['font_weight'] ) {
+					$cc_style__button_supone_font_weight = $cc_style__button_supone_font['font_weight'];
+				} else {
+					$cc_style__button_supone_font_weight = 400;
+				}
+
+				$cc_style__button_supone_font_set =  "font-family: " . $cc_style__button_supone_font_family . "; ";
+				$cc_style__button_supone_font_set .=  "font-weight: " . $cc_style__button_supone_font_weight . "; ";
+				$cc_style__button_supone_font_set .=  "text-align: " . $cc_style__button_supone_font['text_align'] . "; ";
+				$cc_style__button_supone_font_set .=  "font-size: " . $cc_style__button_supone_font['font_size'] . "px; ";
+				$cc_style__button_supone_font_set .=  "line-height: " . $cc_style__button_supone_font['line_height'] . "px; ";
+				$cc_style__button_supone_font_set .=  "color: " . $cc_style__button_supone_font_color . "; ";
+				$cc_style__button_supone_font_set .=  "font-style: " . $cc_style__button_supone_font['font_style'] . "; ";
+			} else { $cc_style__button_supone_font_set = '// Styles for title is empty'; }
+
+			/* Support 2 */
+			if ( get_sub_field( 'cc_style__button_suptwo_font' ) ) {
+				$cc_style__button_suptwo_font = get_sub_field( 'cc_style__button_suptwo_font' );
+				$cc_style__button_suptwo_font_color = get_sub_field( 'cc_style__button_suptwo_font-color' );
+
+				if ( $cc_style__button_suptwo_font['font_family'] ) {
+					$cc_style__button_suptwo_font_family = $cc_style__button_suptwo_font['font_family'];
+				} else {
+					$cc_style__button_suptwo_font_family = '"Open Sans", Arial, sans-serif';
+				}
+
+				if ( $cc_style__button_suptwo_font['font_weight'] ) {
+					$cc_style__button_suptwo_font_weight = $cc_style__button_suptwo_font['font_weight'];
+				} else {
+					$cc_style__button_suptwo_font_weight = 400;
+				}
+
+				$cc_style__button_suptwo_font_set =  "font-family: " . $cc_style__button_suptwo_font_family . "; ";
+				$cc_style__button_suptwo_font_set .=  "font-weight: " . $cc_style__button_suptwo_font_weight . "; ";
+				$cc_style__button_suptwo_font_set .=  "text-align: " . $cc_style__button_suptwo_font['text_align'] . "; ";
+				$cc_style__button_suptwo_font_set .=  "font-size: " . $cc_style__button_suptwo_font['font_size'] . "px; ";
+				$cc_style__button_suptwo_font_set .=  "line-height: " . $cc_style__button_suptwo_font['line_height'] . "px; ";
+				$cc_style__button_suptwo_font_set .=  "color: " . $cc_style__button_suptwo_font_color . "; ";
+				$cc_style__button_suptwo_font_set .=  "font-style: " . $cc_style__button_suptwo_font['font_style'] . "; ";
+			} else { $cc_style__button_suptwo_font_set = '// Styles for title is empty'; }
+
+			/* Button lable */
 			if ( get_sub_field( 'cc_style__button_label_font' ) ) {
 				$cc_style__button_font = get_sub_field( 'cc_style__button_label_font' );
 				$cc_style__button_font_color = get_sub_field( 'cc_style__button_label_font-color' );
@@ -1284,22 +1337,29 @@ function add_primary_area_fp_styles() {
 				$cc_style__button_font_set .=  "font-style: " . $cc_style__button_font['font_style'] . "; ";
 			} else { $cc_style__button_font_set = '// Styles for title is empty'; }
 
+			$cc_style__button_style_pad = 'padding: 0';
+
 			/* Set Button styles */
 			if ( get_sub_field( 'cc_style__button_style' ) == 'text' ) {
-				$cc_style__button_style = 'border-radius: 0; background: none;';
+				$cc_style__button_style = 'border-radius: 0; background: none!important;';
 			} elseif ( get_sub_field( 'cc_style__button_style' ) == 'square' ) {
-				$cc_style__button_style = 'border-radius: 0; padding: 4px 7px;';
+				$cc_style__button_style = 'border-radius: 0;';
+				$cc_style__button_style_pad = 'padding: .4em .7em;';
 			} elseif ( get_sub_field( 'cc_style__button_style' ) == 'round' ) {
-				$cc_style__button_style = 'border-radius: 50%; padding: 4px 7px;';
+				$cc_style__button_style = 'border-radius: 50%; padding: .4em .7em;';
+				$cc_style__button_style_pad = 'padding: .4em .7em;';
 			} elseif ( get_sub_field( 'cc_style__button_style' ) == 'corner' ) {
-				$cc_style__button_style = 'border-radius: 5px; padding: 4px 7px;';
+				$cc_style__button_style = 'border-radius: 5px;';
+				$cc_style__button_style_pad = 'padding: .4em .7em;';
 			}
 
 			/* Button BG */
 			if ( get_sub_field( 'cc_style__button_bg' ) ) {
 				$cc_style__button_bg_color = get_sub_field( 'cc_style__button_bg' );
+				$cc_style__button_bo_color = get_sub_field( 'cc_style__button_bg' );
 			} else {
 				$cc_style__button_bg_color = 'transparent';
+				$cc_style__button_bo_color = $cc_style__button_font_color;
 			}
 
 			/* Mouseover effect */
@@ -1331,28 +1391,21 @@ function add_primary_area_fp_styles() {
 				}
 			}
 
-			/* Button Position */
-			if ( get_sub_field( 'cc_style__button_pos' ) == 'left' ) {
-				$cc_style__button_pos = 'margin-right: auto;';
-			} elseif ( get_sub_field( 'cc_style__button_pos' ) == 'center' ) {
-				$cc_style__button_pos = 'margin-right: auto;';
-				$cc_style__button_pos .= 'margin-left: auto;';
-			} elseif ( get_sub_field( 'cc_style__button_pos' ) == 'right' ) {
-				$cc_style__button_pos .= 'margin-left: auto;';
-			} elseif ( get_sub_field( 'cc_style__button_pos' ) == 'detail' ) {
-
-			}
-
 			/* Set Button border */
 			if ( get_sub_field( 'cc_style__button_bor' ) == 'no' ) {
 				$cc_style__button_bor = 'none';
 				$cc_style__button_bor_hover = 'none';
 			} else {
 				$cc_style__button_bor_width = get_sub_field( 'cc_style__button_bor_width' );
-				$cc_style__button_bor_hover = $cc_style__button_bor_width . 'px solid ' . '#000';
+				if ( $cc_style__button_hover_object_color ) {
+					$cc_style__button_bor_hover = $cc_style__button_bor_width . 'px solid ' . $cc_style__button_hover_bg_color;
+				} else {
+					$cc_style__button_bor_hover = $cc_style__button_bor_width . 'px solid ' . $cc_style__button_bo_color;
+				}
+				$cc_style__button_style_pad = 'padding: .4em .7em;';
 
 				if ( get_sub_field( 'cc_style__button_bor' ) == 'yes' ) {
-					$cc_style__button_bor = $cc_style__button_bor_width . 'px solid #fff';
+					$cc_style__button_bor = $cc_style__button_bor_width . 'px solid ' . $cc_style__button_font_color;
 				} elseif ( get_sub_field( 'cc_style__button_bor' ) == 'hover' ) {
 					$cc_style__button_bor = $cc_style__button_bor_width . 'px solid transparent';
 				}
@@ -1476,7 +1529,7 @@ function add_primary_area_fp_styles() {
 				$cc_style_tes_ti_font_set .=  "text-align:" . $cc_style_tes_ti_font['text_align'] . ";";
 				$cc_style_tes_ti_font_set .=  "font-size:" . $cc_style_tes_ti_font['font_size'] . "px;";
 				$cc_style_tes_ti_font_set .=  "line-height:" . $cc_style_tes_ti_font['line_height'] . "px;";
-				$cc_style_tes_ti_font_set .=  "color:" . $cc_style_tes_ti_font_color . ";";
+				$cc_style_tes_ti_font_set .=  "color:" . $cc_style__tes_ti_font_color . ";";
 				$cc_style_tes_ti_font_set .=  "font-style:" . $cc_style_tes_ti_font['font_style'] . ";";
 			}
 
@@ -1502,11 +1555,11 @@ function add_primary_area_fp_styles() {
 				$cc_style_tes_ex_font_set .=  "text-align:" . $cc_style_tes_ex_font['text_align'] . ";";
 				$cc_style_tes_ex_font_set .=  "font-size:" . $cc_style_tes_ex_font['font_size'] . "px;";
 				$cc_style_tes_ex_font_set .=  "line-height:" . $cc_style_tes_ex_font['line_height'] . "px;";
-				$cc_style_tes_ex_font_set .=  "color:" . $cc_style_tes_ex_font_color . ";";
+				$cc_style_tes_ex_font_set .=  "color:" . $cc_style__tes_ex_font_color . ";";
 				$cc_style_tes_ex_font_set .=  "font-style:" . $cc_style_tes_ex_font['font_style'] . ";";
 			}
 
-			/* Excerpt title Font */
+			/* Link title Font */
 			if ( get_sub_field( 'cc_style__test_link_f' ) ) {
 				$cc_style_tes_li_font = get_sub_field( 'cc_style__test_link_f' );
 				$cc_style__tes_li_font_color = get_sub_field( 'cc_style__test_link_c' );
@@ -1529,7 +1582,7 @@ function add_primary_area_fp_styles() {
 				$cc_style_tes_li_font_set .=  "text-align:" . $cc_style_tes_li_font['text_align'] . ";";
 				$cc_style_tes_li_font_set .=  "font-size:" . $cc_style_tes_li_font['font_size'] . "px;";
 				$cc_style_tes_li_font_set .=  "line-height:" . $cc_style_tes_li_font['line_height'] . "px;";
-				$cc_style_tes_li_font_set .=  "color:" . $cc_style_tes_li_font_color . ";";
+				$cc_style_tes_li_font_set .=  "color:" . $cc_style__tes_li_font_color . ";";
 				$cc_style_tes_li_font_set .=  "font-style:" . $cc_style_tes_li_font['font_style'] . ";";
 			}
 
@@ -1569,19 +1622,28 @@ function add_primary_area_fp_styles() {
 					#pc_wrap .<?php echo $cc_style; ?> div.pc--c__editor a:hover {
 						text-decoration: underline;
 					}
-					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button {
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button-link {
 						<?php echo $cc_style__button_font_set; ?>
-						<?php echo $cc_style__button_style . $cc_style__button_pos; ?>
+						<?php echo $cc_style__button_style; ?>
 						background-color: <?php echo $cc_style__button_bg_color; ?>;
-						display: block;
+						display: inline-block;
 						border: <?php echo $cc_style__button_bor; ?>;
 						text-shadow: <?php echo $cc_style__button_label_sha; ?>;
+						<?php echo $cc_style__button_style_pad; ?>;
+						transition: ease .3s;
 					}
-					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button button:hover {
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button-link:hover {
 						background-color: <?php echo $cc_style__button_hover_bg_color; ?>;
 						color: <?php echo $cc_style__button_hover_te_color; ?>;
 						text-decoration: <?php echo $cc_style__button_hover_te_deco; ?>;
 						border: <?php echo $cc_style__button_bor_hover; ?>;
+						transition: ease .3s;
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button-supone {
+						<?php echo $cc_style__button_supone_font_set; ?>
+					}
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__button-suptwo {
+						<?php echo $cc_style__button_suptwo_font_set; ?>
 					}
 					#pc_wrap .<?php echo $cc_style; ?> .pc--c__line .pc--c__line-item {
 						width: 100px;
@@ -1637,20 +1699,20 @@ function add_primary_area_fp_styles() {
 						background-color: <?php echo $cc_style_tes_qu_font_c; ?>;
 					}
 
-					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--title {
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--title {
 						<?php echo $cc_style_tes_ti_font_set; ?>
 					}
 
-					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--excerpt {
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--description {
 						<?php echo $cc_style_tes_ex_font_set; ?>
 					}
 
-					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--link {
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--link {
 						<?php echo $cc_style_tes_li_font_set; ?>
 						transition: ease .3s;
 					}
 
-					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonials--link:hover {
+					#pc_wrap .<?php echo $cc_style; ?> .pc--c__testimonial--link:hover {
 						color: <?php echo $cc_style__tes_li_font_color_h; ?>;
 						transition: ease .3s;
 					}

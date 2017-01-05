@@ -820,7 +820,8 @@ acf_add_local_field_group(array (
 					),
 					'choices' => array (
 						'normal' => 'Below Image',
-						'image' => 'On Image'
+						'image' => 'On bottom of Image',
+						'image-top' => 'On top of Image'
 					),
 					'allow_null' => 0,
 					'other_choice' => 0,
@@ -2448,6 +2449,27 @@ acf_add_local_field_group(array (
 					),
 					'placement' => 'left',
 					'endpoint' => 0,
+				),
+				array (
+					'key' => 'field_btbt0ecb298c6',
+					'label' => 'Button text',
+					'name' => 'bc_style__button_text',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => 'Read article',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
 				),
 				array (
 					'key' => 'fblog_58370ecb298c6',

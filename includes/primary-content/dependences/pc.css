@@ -556,22 +556,28 @@
 	width: 100%;
 }
 
-.pc--blog__header .pc--blog__wrap {
+.pc--blog__header .pc--blog__wrap_top {
 	position: absolute;
 	left: 0;
-	bottom: -20px;
+	top: 0;
 	width: 100%;
-	padding: 20px;
+	padding: 10px 20px;
 	z-index: 2;
-	opacity: 0;
-	transition: ease .3s;
-}
-
-.pc--blog__header:hover .pc--blog__wrap {
 	opacity: 1;
 	transition: ease .3s;
+	background-color: rgba(0,0,0,.4);
+}
+
+.pc--blog__header .pc--blog__wrap_bottom {
+	position: absolute;
+	left: 0;
 	bottom: 0;
-} 
+	width: 100%;
+	padding: 10px 20px;
+	z-index: 2;
+	opacity: 1;
+	transition: ease .3s;
+}
 
 .pc--blog__header .pc--blog__title {
 	color: #fff !important;
@@ -979,3 +985,34 @@ div.pc--c__accordion + div.pc--c__accordion {
 	color: #4a4a4a;
 }
 
+.pc--c__button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.pc--c__button-center {
+	text-align: center;
+}
+
+.pc--c__button-left {
+	text-align: left;
+}
+
+.pc--c__button-right {
+	text-align: right;
+}
+
+.pc--c__button-supone,
+.pc--c__button-suptwo {
+	margin: 0;
+}
+.pc--c__button-supone + .pc--c__button-suptwo {
+	margin-top: 10px;
+}
+
+.pc--c__button-link,
+.pc--c__button-support {
+	margin: 5px;
+}

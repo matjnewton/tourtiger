@@ -8,6 +8,7 @@
 	while ( have_rows( 'bc_style-one', 'option' ) ) : the_row();
 		$bc_style__title_pos = get_sub_field( 'bc_style__title-pos' );
 		$bc_style__date_pos = get_sub_field( 'bc_style__date-pos' );
+		$bc_style__button_text = get_sub_field( 'bc_style__button_text' );
 	endwhile;
 
 	/* get variables */

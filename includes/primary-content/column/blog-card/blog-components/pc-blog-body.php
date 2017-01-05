@@ -28,6 +28,6 @@
 	<?php }
 
 	if ( $tour_blog_show_button ) { ?>
-		<a href="<?php the_permalink(); ?>" class="pc--blog__button" itemprop="url">Read Article</a>
+		<a href="<?php the_permalink(); ?>" class="pc--blog__button" itemprop="url"><?php echo $bc_style__button_text; ?></a>
 	<?php } ?>
 </div>
