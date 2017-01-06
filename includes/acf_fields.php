@@ -2482,6 +2482,57 @@ tour_finder',
 			'default_value' => '',
 		),
 		array (
+			'key' => 'field_5707bc2f30382_rezdy_cat',
+			'label' => 'use Rezdy category?',
+			'name' => 'rezdy_cat',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			//'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_5707bc2f30382',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+		array (
+			'key' => 'field_n1993k2903_category',
+			'label' => 'Rezdy category ID',
+			'name' => 'rezdy_cat_id',
+			'type' => 'text',
+			'instructions' => '<a href="../wp-content/themes/tourtiger/images/help_rezdy_category.png" target="_blank">help</a>',
+			'placeholder' => 'Enter Rezdy category ID',
+			'required' => 0,
+			//'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_5707bc2f30382_rezdy_cat',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => '',
+		),
+		array (
 			'key' => 'field_n1993k2903_xola',
 			'label' => 'Xola user ID',
 			'name' => 'check_user_id_xola',

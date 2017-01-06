@@ -12,8 +12,20 @@ function get_rezdy_tour_select($field) {
     $results = $wpdb->get_row($query);
     $api_key = $results->option_value;
 
+    // category rezdy option
+    $rezdy_cat = get_field('rezdy_cat', 'option');
+    $rezdy_cat_id = '';
+    $rezdy_category ='';
+    if ($rezdy_cat) {
+        $rezdy_cat_id = get_field('rezdy_cat_id', 'option');
+        $rezdy_category = '/categories/'.$rezdy_cat_id;
+    } else {
+        $rezdy_cat_id = '';
+        $rezdy_category ='';
+    }
+
     //$api_key = get_field('field_n1993k2903', 'option');
-    $product_url = "https://api.rezdy.com/v1/categories/924/products?limit=100&apiKey=".$api_key;
+    $product_url = "https://api.rezdy.com/v1".$rezdy_category."/products?limit=100&apiKey=".$api_key;
 
     $json = file_get_contents($product_url);
     $rezdy = json_decode($json);

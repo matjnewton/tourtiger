@@ -65,10 +65,18 @@
     // enable load animations
          $scope.loading = true;
 
-
+    // load rezdy category
+    	//console.log(js_var.rezdy_cat_id);
+    	var rezdy_cat_id = js_var.rezdy_cat_id;
+    	var rezdy_category = '';
+    	if (rezdy_cat_id) {
+    		rezdy_category = '/categories/'+rezdy_cat_id;
+    	} else {
+    		rezdy_category = '';
+    	}
 	
 	// get rezdy product list  
-	    $http.get('https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/categories/924/products?limit=100&apiKey='+js_var.apikey+'')
+	    $http.get('https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1'+rezdy_category+'/products?limit=100&apiKey='+js_var.apikey+'')
 		// load api_products
 	    .then(function(response){
 	        var api_products = {};
@@ -115,7 +123,7 @@
 
 		    $scope.loading = true;
 
-			$http.get('https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/categories/924/products?limit=100&apiKey='+js_var.apikey+'')
+			$http.get('https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1'+rezdy_category+'/products?limit=100&apiKey='+js_var.apikey+'')
 			    .then(function(response){
 			        var api_products = {};
 			        api_products = response.data;
@@ -149,7 +157,7 @@
 
 		    $scope.loading = true;
 
-			$http.get('https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/categories/924/products?limit=100&apiKey='+js_var.apikey+'')
+			$http.get('https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1'+rezdy_category+'/products?limit=100&apiKey='+js_var.apikey+'')
 			    .then(function(response){
 			        var api_products = {};
 			        api_products = response.data;

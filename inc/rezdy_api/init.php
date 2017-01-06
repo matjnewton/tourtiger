@@ -15,14 +15,21 @@ function wqs_load_scripts_rezdyapi()
     wp_enqueue_script('wqs_functions_for_search_box_rezdyapi');
     wp_enqueue_script('wqs_functions_for_check_available_rezdyapi');
 
+    $rezdy_cat = get_field('rezdy_cat', 'option');
+    $rezdy_cat_id = '';
+    if ($rezdy_cat) {
+        $rezdy_cat_id = get_field('rezdy_cat_id', 'option');
+    } else {
+        $rezdy_cat_id = '';
+    }
+
     wp_localize_script( 'wqs_functions_rezdyapi', 'js_var', 
         array( 
             'apikey' => get_field('field_n1993k2903', 'option'),
-            // 'userid_key' => get_field('field_n1993k2903_xola', 'option'),
-            // 'integrate_rezdy' => get_field('rezdy', 'option'),
-            // 'integrate_xola' => get_field('integrate_xola_with_this_website', 'option'),
+            'rezdy_cat_id' => $rezdy_cat_id,
              )
     );
+
 }
 
 add_action('wp_enqueue_scripts', 'wqs_load_scripts_rezdyapi');

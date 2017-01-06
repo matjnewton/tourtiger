@@ -262,8 +262,21 @@ function get_check_product( $offset, $limit, $startTime, $endTime) {
 
       // key
       $api_key = get_field('field_n1993k2903', 'option');
+    
+	    // category rezdy option
+	    $rezdy_cat = get_field('rezdy_cat', 'option');
+	    $rezdy_cat_id = '';
+	    $rezdy_category ='';
+	    if ($rezdy_cat) {
+	        $rezdy_cat_id = get_field('rezdy_cat_id', 'option');
+	        $rezdy_category = '/categories/'.$rezdy_cat_id;
+	    } else {
+	        $rezdy_cat_id = '';
+	        $rezdy_category ='';
+	    }
+
       // query url
-      $url = "https://api.rezdy.com/v1/categories/924/products?limit=".$limit."&offset=".$offset."&startDate=".$startTime."&endDate=".$endTime."&apiKey=".$api_key;
+      $url = "https://api.rezdy.com/v1".$rezdy_category."/products?limit=".$limit."&offset=".$offset."&startDate=".$startTime."&endDate=".$endTime."&apiKey=".$api_key;
       // transient name
       $transientname  = 'products_'.$startTime.'_'.$endTime.'_'.$limit.'_'.$offset;
       // interval
