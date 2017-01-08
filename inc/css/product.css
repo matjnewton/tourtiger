@@ -729,9 +729,23 @@ body.custom-background.page-template-rezdy_search {
     font-size: 13px;
     color: #9b9b9b;
         width: 30%; /*new design*/
+      display: flex;
+    flex-flow: row wrap;
+}
+.search-descript-departure-custom {
+  position: absolute;
+    bottom: 15px;
+    font-size: 13px;
+    color: #9b9b9b;
+    width: 30%; /*new design*/
+}
+.search-descript-departure-custom-element {
+    display: flex;
+    flex-flow: row wrap;
 }
 .search-descript-departure-text {
   color: black;
+  flex-basis: 70px;
 }
 .search-descript-button {
       position: absolute;
@@ -762,6 +776,7 @@ body.custom-background.page-template-rezdy_search {
 }
 .search-descript-departure-label {
     color: #9b9b9b;
+    flex-basis: 90px;
 }
 #filter_tour_cat select {
     width: 100%;
