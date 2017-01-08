@@ -51,7 +51,7 @@ function tourtiger_archive(){
          
     }  //end if search  ?>
 
-    <section class="tour-page-content" ng-app="wqs">
+    <section class="tour-page-content" ng-app="wqs" ng-cloak>
             <div class="container" ng-controller="wqs_search_controller">
             <input type="hidden" id="wqs_api_url" value="<?php echo getWqsApiUrl();?>">
 <!--                 <div class="row">
@@ -76,7 +76,7 @@ function tourtiger_archive(){
 
                         <div ng-repeat = "products in api_availability track by $index">
                                 <span ng-repeat="productss in products" class="productss">
-                                    <span ng-if="(productss.startTime | asDate) == (timearrays | asDate) " class="productss-startTime">
+                                    <span ng-if="(productss.startTimeLocal | asDate) == (timearrays | asDate) " class="productss-startTime">
                                         
                                         <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0" ng-class="{'cpt-avail' :  cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0}" class="cptproducts">
                                             
@@ -94,13 +94,13 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">Spots</span><span ng-if="productss.seatsAvailable==1">Spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript">{{cptproducts.descript}}</div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
-                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTime  | asTime }}</span>
-                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTime,productss.endTime)}} hours</span>
+                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
+                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure">
                                                             <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
@@ -129,13 +129,13 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">Spots</span><span ng-if="productss.seatsAvailable==1">Spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript">{{cptproducts.descript}}</div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
-                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTime  | asTime }}</span>
-                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTime,productss.endTime)}} hours</span>
+                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
+                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure">
                                                             <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
@@ -179,7 +179,7 @@ function tourtiger_archive(){
 
                         <div ng-repeat = "products in api_availability_more track by $index">
                                 <span ng-repeat="productss in products" class="productss">
-                                    <span ng-if="(productss.startTime | asDate) == (timearrays | asDate) " class="productss-startTime">
+                                    <span ng-if="(productss.startTimeLocal | asDate) == (timearrays | asDate) " class="productss-startTime">
                                         
                                         <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0" ng-class="{'cpt-avail' :  cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0}" class="cptproducts">
                                             
@@ -197,13 +197,13 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">Spots</span><span ng-if="productss.seatsAvailable==1">Spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript">{{cptproducts.descript}}</div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
-                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTime  | asTime }}</span>
-                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTime,productss.endTime)}} hours</span>
+                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
+                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure">
                                                             <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
@@ -232,13 +232,13 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">Spots</span><span ng-if="productss.seatsAvailable==1">Spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript">{{cptproducts.descript}}</div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
-                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTime  | asTime }}</span>
-                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTime,productss.endTime)}} hours</span>
+                                                             <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
+                                                             <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure">
                                                             <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
@@ -290,7 +290,7 @@ function tourtiger_archive(){
 
         <div ng-repeat = "products in api_availability_more track by $index">
                 <span ng-repeat="productss in products" class="productss">
-                    <span ng-if="(productss.startTime | asDate) == (timearrays | asDate) " class="productss-startTime">
+                    <span ng-if="(productss.startTimeLocal | asDate) == (timearrays | asDate) " class="productss-startTime">
 
                         <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0" ng-class="{'cpt-avail' :  cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0}" class="cptproducts">
                             
@@ -303,8 +303,8 @@ function tourtiger_archive(){
                                     <p class="rezdDesc">
                                         {{cptproducts.descript}}
                                         <br>seatsAvailable: {{productss.seatsAvailable}}
-                                        <br>date: {{productss.startTime  | asDate }} - {{productss.endTime | asDate}}
-                                        <br>time: {{productss.startTime  | asTime }} - {{productss.endTime | asTime}}
+                                        <br>date: {{productss.startTimeLocal  | asDate }} - {{productss.endTimeLocal | asDate}}
+                                        <br>time: {{productss.startTimeLocal  | asTime }} - {{productss.endTimeLocal | asTime}}
                                     </p>
                                 </div>
                                 <a href="{{cptproducts.link}}" class="btn btn-default pull-right viewtour">View Tour</a>
@@ -320,8 +320,8 @@ function tourtiger_archive(){
                                         {{cptproducts.descript}}
                                         <br>cat: {{search_tour_cat}} 
                                         <br>seatsAvailable: {{productss.seatsAvailable}}
-                                        <br>date: {{productss.startTime  | asDate }} - {{productss.endTime | asDate}}
-                                        <br>time: {{productss.startTime  | asTime }} - {{productss.endTime | asTime}}
+                                        <br>date: {{productss.startTimeLocal  | asDate }} - {{productss.endTimeLocal | asDate}}
+                                        <br>time: {{productss.startTimeLocal  | asTime }} - {{productss.endTimeLocal | asTime}}
                                     </p>
                                 </div>
                                 <a href="{{cptproducts.link}}" class="btn btn-default pull-right viewtour">View Tour</a>

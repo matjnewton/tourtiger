@@ -81,8 +81,14 @@
     $scope.duration = function(start, end ) {
 		var timestamp1 = new Date(start).getTime();
 		var timestamp2 = new Date(end).getTime();
-		var diff = timestamp1 - timestamp2
+		var diff = 0;
+		if (timestamp1 > timestamp2) {
+			diff = timestamp1 - timestamp2;
+		} else {
+			diff = timestamp2 - timestamp1;
+		}
 		return $filter('date')(new Date(diff), 'h', 'UTC');
+		//return $filter('date')(new Date(diff), 'h');
 	}
 
     // click availability use factory dataServiceAjax.getData
@@ -370,7 +376,10 @@
 			    // startTime
 			    var startTime = getUrlParameter('startTime');
 			    
-
+			    //startTime_minus1
+			    var startTime_minus1 = new Date(startTime);
+			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
 
 			    startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
 			    
@@ -405,7 +414,7 @@
 				//$('.timearrayLoadmore').hide();
 
 				// get
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus1+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -446,6 +455,11 @@
 			    //console.log(startTime);
 			    startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
 
+			    //startTime_minus1
+			    var startTime_minus1 = new Date(startTime);
+			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
+
 			    
 			    //var endTime = getUrlParameter('endTime');
 				var endTime = datepicker_to;
@@ -464,7 +478,7 @@
 
 
 
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus1+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -508,7 +522,13 @@
 			    startTime = new Date(startTime);
 				startTime.setDate(startTime.getDate() + 1);
 				startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
-				console.log('startTime '+startTime);
+				console.log('startTime11 '+startTime11);
+
+				//startTime_minus1
+			    var startTime_minus1 = new Date(startTime11);
+			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
+				console.log('next startTime_minus1 '+startTime_minus1);
 			    
 			    //var endTime = getUrlParameter('endTime');
 				var endTime = datepicker_to;
@@ -535,7 +555,7 @@
 	   //      	$("#datepicker-to-input").val(endTime_plus11);
 
 
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime11+'&endTime='+endTime_plus11+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus1+'&endTime='+endTime_plus11+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -581,6 +601,12 @@
 				startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
 				console.log('startTime '+startTime);
 			    
+			    //startTime_minus2
+			    var startTime_minus2 = new Date(startTime11);
+			    startTime_minus2.setDate(startTime_minus2.getDate() - 2);
+				startTime_minus2 = $filter('date')(new Date(startTime_minus2), 'yyyy-MM-dd');
+				console.log('next startTime_minus2 '+startTime_minus2);
+
 			    //var endTime = getUrlParameter('endTime');
 				var endTime = datepicker_to;
 				console.log('endTime '+endTime);
@@ -606,7 +632,7 @@
 	   //      	$("#datepicker-to-input").val(endTime_plus11);
 
 
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus2+'&endTime='+endTime+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -645,6 +671,11 @@
 			    var startTime = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore[0];
 			    console.log(startTime);
 			    //startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
+			
+			//startTime_minus1
+			    var startTime_minus1 = new Date(startTime);
+			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
 
 			// load endtime
 			    var length = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore.length;
@@ -656,7 +687,7 @@
  				endTime_plus1 = $filter('date')(new Date(endTime_plus1), 'yyyy-MM-dd');
 
 			// get
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus1+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -678,7 +709,8 @@
 	});
  	wqs.filter("asTime", function ($filter) {
 	    return function (input) {
-	        return $filter('date')(new Date(input), 'hh:mm a', 'UTC');
+	        //return $filter('date')(new Date(input), 'hh:mm a', 'UTC');
+	        return $filter('date')(new Date(input), 'hh:mm a');
 	    }
 	});
 	wqs.filter("asDateTitle", function ($filter) {
