@@ -63,11 +63,23 @@ if ($search_settings_type_category) {
 
 $search_content = null; 
 
+// margin for serch box
+$hero_margin = get_field('hero_headline_top_margin');
+$home_page_search_margin = '';
+if ($hero_margin) {
+   $home_page_search_margin = 'margin-top:'. ($hero_margin+20) .'px;';
+} else {
+   $home_page_search_margin = '';
+}
+
         if($search_aviliable != ''){
             $search_content = '
             <style>
               div.book-btn-wrapper{
                  display:none !important;
+              }
+              .home_page_search {
+                '. $home_page_search_margin .'
               }
             </style>
 
