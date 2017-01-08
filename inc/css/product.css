@@ -1059,6 +1059,8 @@ line-height: 40px;
     font-size: 13px;
     color: #9b9b9b;
         width: 30%; /*new design*/
+    display: flex;
+    flex-flow: row wrap;
 }
 .styles .site-container .tour-page-content {
     font-family: Roboto, sans-serif;

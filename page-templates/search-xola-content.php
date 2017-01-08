@@ -51,7 +51,7 @@ function tourtiger_archive_xola(){
          
     }  //end if search  ?>
 
-    <section class="tour-page-content" ng-app="wqs_xola">
+    <section class="tour-page-content" ng-app="wqs_xola" ng-cloak>
             <div class="container" ng-controller="wqs_search_controller">
             <input type="hidden" id="wqs_api_url" value="<?php echo getWqsApiUrl();?>">
 <!--                 <div class="row">
@@ -90,21 +90,20 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">Spots</span><span ng-if="get_all_seat(api_availability)==1">Spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-                                                    <!-- <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span> -->
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0">
-                                                    <!-- <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0"> -->
-                                                         <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
-                                                        <!--  <span class="search-descript-departure-label">Seats</span> <span class="search-descript-departure-text">{{api_availability2}}</span> -->
-                                                         <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
+
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
+                                                        <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
                                                     
 
-                                                    <div class="search-descript-departure">
-                                                        <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <div class="search-descript-departure-custom">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -130,20 +129,21 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">Spots</span><span ng-if="get_all_seat(api_availability)==1">Spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <!-- <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span> -->
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0">
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
                                                          <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
                                                         <!--  <span class="search-descript-departure-label">Seats</span> <span class="search-descript-departure-text">{{api_availability2}}</span> -->
                                                          <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
                                                     
 
-                                                    <div class="search-descript-departure">
-                                                        <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <div class="search-descript-departure-custom">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -193,20 +193,20 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">Spots</span><span ng-if="get_all_seat(api_availability)==1">Spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-                                                    <!-- <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span> -->
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0">
+                                                   
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
                                                          <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
-                                                        <!--  <span class="search-descript-departure-label">Seats</span> <span class="search-descript-departure-text">{{api_availability2}}</span> -->
                                                          <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
                                                     
 
-                                                    <div class="search-descript-departure">
-                                                        <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <div class="search-descript-departure-custom">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -232,20 +232,21 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">Spots</span><span ng-if="get_all_seat(api_availability)==1">Spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <!-- <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span> -->
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0">
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
                                                          <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
                                                         <!--  <span class="search-descript-departure-label">Seats</span> <span class="search-descript-departure-text">{{api_availability2}}</span> -->
                                                          <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
                                                     
 
-                                                    <div class="search-descript-departure">
-                                                        <span ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <div class="search-descript-departure-custom">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -287,7 +288,7 @@ function tourtiger_archive_xola(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">Spots</span><span ng-if="productss.seatsAvailable==1">Spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript">{{cptproducts.descript}}</div>
    
@@ -322,7 +323,7 @@ function tourtiger_archive_xola(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">Spots</span><span ng-if="productss.seatsAvailable==1">Spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability'">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript">{{cptproducts.descript}}</div>
    
