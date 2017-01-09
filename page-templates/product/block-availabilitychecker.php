@@ -17,8 +17,8 @@
 	                    </div>
 	                    <div class="add-on">
 	                    	<span ng-repeat = "products in api_availability track by $index">
-								<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTime | asDate) == (timearray | asDate)">
-									<input class="form-control rezdy_date" value="{{productss.startTime | asTime}}">
+								<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray | asDate)">
+									<input class="form-control rezdy_date" value="{{productss.startTimeLocal | asTimeLocal}}">
 								</span>
 							</span>
 	                    </div>
@@ -77,9 +77,9 @@
 
 					<ul class="availability_checker_options">
 						<span ng-repeat = "products in api_availability track by $index">
-							<li ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTime | asDate) == (timearray | asDate)">
+							<li ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray | asDate)">
 
-								<span class="availability_checker_col checker_date customstyle">{{productss.startTime | asDateTitleYears}}</span>
+								<span class="availability_checker_col checker_date customstyle">{{productss.startTimeLocal | asDateTitleYears}}</span>
 								<span class="availability_checker_col checker_avail customstyle" ng-if="productss.seatsAvailable !=0">
 									<i class="fa fa-check"></i>
 									<span class="checker_date_label">Available</span>
@@ -131,11 +131,30 @@
             <script type="text/javascript">
                 jQuery(function() {
 
+    // search page timepiker 
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    var check_date = getUrlParameter('check_date');
+    
                     jQuery("#startTime_check").daterangepicker({
                             locale: {
                               format: "YYYY-MM-DD"
                             },
                             singleDatePicker: true,
+                            startDate: check_date
                     });
 
                 });

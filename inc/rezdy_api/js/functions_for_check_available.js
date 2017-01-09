@@ -292,6 +292,11 @@
 
 			    startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
 			    
+			    //startTime_minus1
+			    var startTime_minus1 = new Date(startTime);
+			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+ 				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
+			    
 
 
 			    // endTime
@@ -331,7 +336,7 @@
 				//$('.timearrayLoadmore').hide();
 
 				// get
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus1+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -373,6 +378,10 @@
 			    //console.log(startTime);
 			    startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
 
+			    //startTime_minus1
+			    var startTime_minus1 = new Date(startTime);
+			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+ 				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
 			    
 			    //var endTime = getUrlParameter('endTime');
 				var endTime = startTime;
@@ -391,7 +400,7 @@
 
 
 
-                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime_minus1+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
                  success(function(data, status, headers, config) {
                     deferred.resolve(data.sessions);
                 }).
@@ -464,6 +473,11 @@
  	wqs_3.filter("asTime", function ($filter) {
 	    return function (input) {
 	        return $filter('date')(new Date(input), 'hh:mm a', 'UTC');
+	    }
+	});
+	wqs_3.filter("asTimeLocal", function ($filter) {
+	    return function (input) {
+	        return $filter('date')(new Date(input), 'hh:mm a');
 	    }
 	});
 	wqs_3.filter("asDateTitle", function ($filter) {
