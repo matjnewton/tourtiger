@@ -143,7 +143,7 @@
 
     // click availability use factory dataServiceAjax.getData
     $scope.check_availability_xola= function() {
-    	console.log('click xola');
+    	console.log('click xola check_availability_xola');
     	var promises_click = [];
 		$scope.loading = true;
 		//$scope.api_availability_xola = null; // clear
@@ -705,7 +705,13 @@
 				    daysOfYear.push( $filter('date')(new Date(d), 'yyyy-MM-dd') );
 				}
 
-
+				// load timearray for Loadmore 
+				var daysOfYearMore = [];
+				var endTime_plus2 = new Date(endTime_plus1);
+				endTime_plus2.setDate(endTime_plus2.getDate() + 1);
+				//daysOfYearMore.push( endTime );
+				daysOfYearMore.push( endTime_plus1 );
+				angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore = daysOfYearMore;
 
 
                 //$http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://api.rezdy.com/v1/availability?limit=100&offset=0&productCode='+productCode+'&startTime='+startTime+'&endTime='+endTime_plus1+'&apiKey='+js_var.apikey}).
