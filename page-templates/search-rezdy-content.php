@@ -97,7 +97,7 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
-                                                        <div class="search-descript-descript">{{cptproducts.descript}}</div>
+                                                        <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
@@ -133,7 +133,7 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
-                                                        <div class="search-descript-descript">{{cptproducts.descript}}</div>
+                                                        <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
@@ -202,7 +202,7 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
-                                                        <div class="search-descript-descript">{{cptproducts.descript}}</div>
+                                                        <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
@@ -238,7 +238,7 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
-                                                        <div class="search-descript-descript">{{cptproducts.descript}}</div>
+                                                        <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
                                                         <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
