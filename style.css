@@ -31,42 +31,24 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 #flags_language_selector a img{
     margin:2px 1px;
 }
-div:not(.split-menu) .menu-languages-container, .menu-sprachen-container{
+
+.menu-languages-container, .menu-sprachen-container{
     display:inline-block;
     float:right;
     margin-left:15px !important;
 }
-div:not(.split-menu) .menu-languages-container .lang-nav li, 
-div:not(.split-menu) .menu-sprachen-container .lang-nav li{
+.menu-languages-container .lang-nav li, 
+.menu-sprachen-container .lang-nav li{
     margin-left:5px;
 }
-div:not(.split-menu) .menu-languages-container .lang-nav li:first-child, 
-div:not(.split-menu) .menu-sprachen-container .lang-nav li:first-child{
+.menu-languages-container .lang-nav li:first-child, 
+.menu-sprachen-container .lang-nav li:first-child{
     margin-left:0;
 }
-.split-menu{
-    position:relative;
+.split-menu .mnws>.menu-languages-container{
+    display:none;
 }
-.split-menu .menu-languages-container{
-    position:absolute;
-    right:0;
-    top:50%;
-}
-.split-menu .lang-nav{
-    margin-top:-6px;
-}
-.split-menu .menu-languages-container li{
-    height:12px;
-    display:inline-block;
-    float:left;
-}
-.split-menu .menu-languages-container a{
-    display:block;
-    line-height:8px;
-}
-.split-menu .menu-languages-container img{
-    margin:0;
-}
+
 .validation_message{
     color:red;
 }
