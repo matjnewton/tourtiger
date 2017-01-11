@@ -131,10 +131,15 @@
 		}
 
 		
-	    $scope.changedValue = function(item){       
+	    $scope.changedValue = function(item){
+	    	$scope.loading = true;       
 		   console.log(item);
 		   $scope.timeSelected = item;
 		   //console.log($scope.timeSelected);
+			$timeout(function(){
+		        $scope.loading = false;
+		    },1000);
+
 		   console.log($scope);
 		}
 	    //duration 
@@ -189,6 +194,7 @@
     // click availability use factory dataServiceAjax.getData
     $scope.check_availability_xola= function() {
     	console.log('click xola');
+    	$(".timeSelected option:eq(0)").prop('selected', true);
     	var promises_click = [];
 		$scope.loading = true;
 		//$scope.api_availability_xola = null; // clear
@@ -229,6 +235,7 @@
 			        },2000);
 
 			        $scope.initAvailable();
+			        // $(".timeSelected option:eq(0)").prop('selected', true);
 					
 		        });
 

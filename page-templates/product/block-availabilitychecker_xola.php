@@ -4,7 +4,7 @@
 	        $our_tours_checker = get_sub_field('our_tours_checker'); ?>
 	        <?php //var_dump($our_tours_checker); ?>
 
-	        <div class="product_content_wrapper primary_content_availability_checker " ng-app="wqs_xola_check">
+	        <div class="product_content_wrapper primary_content_availability_checker " ng-app="wqs_xola_check" ng-cloak>
 				<div class="container_availability_checker" ng-controller="wqs_search_controller">	
 					
 					<input type="hidden" id="wqs_api_url" value="<?php echo getWqsApiUrl(); ?>">
@@ -41,6 +41,9 @@
 
 					<!-- seats -->
 	                    <ul class="availability_checker_options">
+
+	                    	<div id="ajax_preLoading3" class="preLoading3" ng-show="loading"></div>
+
 	                    	<li class="productss" ng-repeat="(key, api_availability_) in api_availability_xola[0] track by $index" ng-if="(key | asDate) == (timearray[0] | asDate) ">
 	                    		
 		                    	<span class="availability_checker_col checker_date customstyle">{{timearray[0] | asDateTitleYears}}</span>
@@ -62,12 +65,32 @@
 
             <script type="text/javascript">
                 jQuery(function() {
+    
+			    // search page timepiker 
+			    var getUrlParameter = function getUrlParameter(sParam) {
+			        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+			            sURLVariables = sPageURL.split('&'),
+			            sParameterName,
+			            i;
+
+			        for (i = 0; i < sURLVariables.length; i++) {
+			            sParameterName = sURLVariables[i].split('=');
+
+			            if (sParameterName[0] === sParam) {
+			                return sParameterName[1] === undefined ? true : sParameterName[1];
+			            }
+			        }
+			    };
+
+			    var check_date = getUrlParameter('check_date');
+
 
                     jQuery("#startTime_check").daterangepicker({
                             locale: {
                               format: "YYYY-MM-DD"
                             },
                             singleDatePicker: true,
+                            startDate: check_date
                     });
 
                 });
