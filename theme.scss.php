@@ -140,10 +140,17 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
 .site-container .site-header .secondary-menu-wrapper{
     background: $smbg;
 }
+.main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container > .sm-inner,
 .main-nav-wrapper .genesis-nav-menu .sub-menu a{
     background: $pmsbgc;
 }
+.main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container a{
+    background:none;
+}
 .main-nav-wrapper{
+    .genesis-nav-menu .megamenu:hover .megalink-wrap > a:after{
+        border-color: transparent transparent $pmsbgc transparent;
+    }
     .genesis-nav-menu > .menu-item > .sub-menu{
         &:before{
             border-color: transparent transparent darken($pmsbgc, 7%) transparent; 
@@ -174,6 +181,15 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
         }
         border-bottom:4px solid darken($pmsbgc, 7%);
     }
+    .genesis-nav-menu > .megamenu.menu-item > .sm-container > .sm-inner{
+        .menu-item{
+            a{
+                &:hover{
+                    background:none; 
+                }
+            }
+        }
+    }
     .genesis-nav-menu .sub-menu{
         .menu-item{
             a{
@@ -194,6 +210,9 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
                 }
             }
         }
+    }
+    .genesis-nav-menu > .megamenu.menu-item > .sm-container a{
+        border-width:0;
     }
     .genesis-nav-menu .sub-menu a{
         border-width:0 1px 1px 1px;
