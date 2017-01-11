@@ -17,7 +17,7 @@
                     </div>
                 </div>
             <?php endif; ?>    
-                <nav class="text-center <?php if($use_logo == true): echo 'col-sm-12 col-md-12 col-lg-12 use-logo'; else: echo 'col-sm-12 col-md-12 col-lg-12'; endif; ?>">
+                <nav class="above-menu text-center <?php if($use_logo == true): echo 'col-sm-12 col-md-12 col-lg-12 use-logo'; else: echo 'col-sm-12 col-md-12 col-lg-12'; endif; ?>">
                     <div class="main-nav-wrapper<?php if($all_caps == true): ?> all-caps<?php endif; ?>" style="display:inline-block;">
                         
                         <?php if($secondary_menu != true): ?>
