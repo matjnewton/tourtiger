@@ -1,33 +1,25 @@
 <?php 
-
+$fc_style = get_sub_field( 'tour_flexiprod-style' );
 $tour_column_content_classes .= ' ' . $fc_style . ' ';
+
+while ( have_rows( $fc_style, 'option' ) ) : the_row();
+
+	$show_image = get_sub_field( 'fc_style__imdis' );
+	$show_co = get_sub_field( 'fc_style__co' ); 
+	$show_ct = get_sub_field( 'fc_style__ct' ); 
+
+	$fc_style__co_butt_pos = get_sub_field( 'fc_style__co_butt_pos' );
+	$fc_style__ct_butt_pos = get_sub_field( 'fc_style__ct_butt_pos' );
+
+endwhile;
 
 if ( get_row_layout() == 'tour_pc-flexi' ) {
 
-	$tour_flexi_content = 'tour_pc-flexi';
-	$tour_column_content_classes .= ' pc--c__flexi'; 
-	$tour_flexiprod_image_url = get_sub_field( 'tour_pc-flexi--image-add' );
-	$tour_flexiprod_tag_url = get_sub_field( 'tour_pc-flexi--url' );
+	include( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-flexi-card.php' );
 
 } elseif ( get_row_layout() == 'tour_pc-product' ) {
 
-	$tour_flexi_content = 'tour_pc-product';
-	$tour_column_content_classes .= ' pc--c__product'; 
-
-	if( get_sub_field( 'tour_pc-product--object' ) ) : 
-		$post = get_sub_field( 'tour_pc-product--object' );
-		setup_postdata( $post ); 
-
-		$tour_flexiprod_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(),'full', true);
-		$tour_flexiprod_tag_url = get_permalink();
-
-		$title = get_the_title();
-		$desc  = the_excerpt_max_charlength();
-		$price = '$199';
-		$label = 'View more';
-
-		wp_reset_postdata();
-	endif;
+	include( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-product-card.php' );
 
 }
 
@@ -38,6 +30,11 @@ if ( get_row_layout() == 'tour_pc-flexi' ) {
 	style="<?php echo $tour_column_content_styles; ?>">
 	
 		<?php  if ( have_rows( $tour_flexi_content . '--content' ) ) :
+		
+			if ( !in_array( $fc_style, $fc_styles_arr ) ) {
+				$fc_styles_arr[] = $fc_style;
+				get_pc_flexiprod_card_style( $fc_style );
+			}
 		
 			while ( have_rows( $tour_flexi_content . '--content' ) ) : the_row();
 

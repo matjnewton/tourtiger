@@ -1,6 +1,6 @@
 <?php
 
-	$tour_column_classes .= ' pc--r__col-1';
+	$tour_column_classes .= ' pc--r__col-1 pc--r__col-1_' . get_sub_field( 'tour_pc-colums--align' );
 
 	if ( $tour_column_wrap == 'scroll' ) {
 		$scroll_data = 'data-slick=\'{"adaptiveHeight": true, "slidesToShow": 1}\'';
@@ -24,20 +24,6 @@
 		$thumb_height = 600;
 		$thumb_height_normal = 600;
 		$thumb_upload = 'large';
-	}
-
-	if ( get_sub_field( 'tour_pc-colums--align' ) == 'left' ) {
-
-		$tour_column_classes .= ' pc--r__col-1_left';
-
-	} elseif ( get_sub_field( 'tour_pc-colums--align' ) == 'center' ) {
-
-		$tour_column_classes .= ' pc--r__col-1_center';
-
-	} elseif ( get_sub_field( 'tour_pc-colums--align' ) == 'right' ) {
-
-		$tour_column_classes .= ' pc--r__col-1_right';
-
 	}
 
 ?>

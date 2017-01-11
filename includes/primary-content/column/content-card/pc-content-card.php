@@ -1,10 +1,8 @@
 <?php 
+
+	$cc_style = get_sub_field( 'tour_content-style' );
 	$tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' ';
 
-	while ( have_rows( $cc_style, 'option' ) ) : 
-		the_row();
-		$cc_style__test_show = get_sub_field( 'cc_style__test_show' );
-	endwhile;
 ?>
 
 <div 
@@ -17,10 +15,14 @@
 	 */
 	if ( have_rows( 'tour_pc-content--content' ) ) {
 
+		if ( !in_array( $cc_style, $cc_styles_arr ) ) {
+			$cc_styles_arr[] = $cc_style;
+			get_pc_content_card_style( $cc_style );
+		}
+
 		while ( have_rows( 'tour_pc-content--content' ) ) : the_row();
 		 	$tour_content_content_classes = 'pc--c__col';
 		 	$tour_content_content_styles = ''; 
-
 
 		 	if ( get_row_layout() == 'tour_pc-coltype--headline' ) { 
 

@@ -331,9 +331,9 @@ for ( $i = 1; $i < 11; $i++ ) {
 					'id' => '',
 				),
 				'choices' => array (
-					'large' => 'Large',
-					'medium' => 'Medium',
-					'small' => 'Small',
+					'large' => '20px',
+					'medium' => '12px',
+					'small' => '5px',
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,

@@ -631,7 +631,7 @@
 	margin-bottom: 0;
 }
 
-.pc--c__content > * + * {
+.pc--c__content > *:not(style) + * {
 	margin-top: 10px;
 }
 
@@ -837,10 +837,6 @@ div.pc--c__accordion + div.pc--c__accordion {
 	margin: 5px auto;
 }
 
-.pc--c__button {
-	text-decoration: none;
-}
-
 .pc--c__col.pc--c__testimonial {
 	padding-top: 25px;
 	padding-bottom: 25px;
@@ -913,6 +909,15 @@ div.pc--c__accordion + div.pc--c__accordion {
 /** 
  * Flexi First content
  */
+
+.fc_style--image {
+	position: relative;
+	text-decoration: none;
+}
+
+#pc_wrap .fc_style--image_title + .fc_style--image_desc {
+	margin-top: 4px;
+}
 
  .fc_style--first_wrap,
  .fc_style--second_wrap {
@@ -990,10 +995,16 @@ div.pc--c__accordion + div.pc--c__accordion {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
+	text-decoration: none;
 }
 
 .pc--c__button-center {
 	text-align: center;
+	flex-direction: column;
+}
+
+.pc--c__button-center > .pc--c__button-support + .pc--c__button-link {
+	margin-top: 15px;
 }
 
 .pc--c__button-left {
@@ -1002,6 +1013,14 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc--c__button-right {
 	text-align: right;
+}
+
+.pc--c__button-right .pc--c__button-link {
+	order: 1;
+}
+
+.pc--c__button-right .pc--c__button-support {
+	order: 2;
 }
 
 .pc--c__button-supone,

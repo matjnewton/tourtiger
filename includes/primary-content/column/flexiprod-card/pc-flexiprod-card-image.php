@@ -44,7 +44,14 @@ if ( $tour_flexiprod_image_url ) :
 		$image_tag_close = 'div';
 	} ?>
 	<<?php echo $image_tag_open; ?> class="<?php echo $tour_flexiprod_image_classes; ?>">
-		<img class="pc--c__b-image_thumb" src="<?php echo $thumb_img; ?>" alt="<?php echo $tour_flexiprod_image_title; ?>">
+
+		<img 
+			class="pc--c__b-image_thumb" 
+			data-aload="<?php echo $thumb_img; ?>" 
+			width="<?php echo $thumb_width; ?>" 
+			height="<?php echo $thumb_height; ?>" 
+			alt="<?php echo $tour_flexiprod_image_title; ?>" />
+
 		<?php if ( in_array( 'text', $show_image ) && ( $title || $desc ) ) :  ?>
 			<div class="fc_style--image_text">
 				<?php if ( $title ) : ?>

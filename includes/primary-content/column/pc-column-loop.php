@@ -3,11 +3,10 @@
 	$tour_column_content_classes = 'pc--c ';
 	$tour_column_content_styles = '';
 
-	include_once( get_stylesheet_directory() . '/includes/primary-content/column/pc-css-flexi-prod.php' );
 
 	if ( get_row_layout() == 'tour_pc-content' ) {
 
-		include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card.php' );
+		//include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card.php' );
 
 	} else {
 
