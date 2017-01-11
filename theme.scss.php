@@ -140,7 +140,8 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
 .site-container .site-header .secondary-menu-wrapper{
     background: $smbg;
 }
-.main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container > .sm-inner,
+.main-nav-wrapper .genesis-nav-menu .sub-menu .megamenu .sub-menu a,
+.main-nav-wrapper .genesis-nav-menu > .megamenu > .sm-container > .sm-inner,
 .main-nav-wrapper .genesis-nav-menu .sub-menu a{
     background: $pmsbgc;
 }
