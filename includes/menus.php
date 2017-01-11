@@ -94,6 +94,14 @@ class split_nav_walker extends Walker_Nav_Menu {
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_zaui = get_field('zaui','option');
         
+        // get thumbnail
+        $thumbnail = '';
+        if ( has_post_thumbnail( $item->object_id ) && $classes[0] == 'megamenu-item') {
+            $thumb = get_post_thumbnail_id( $item->object_id );
+            $img_url = wp_get_attachment_url( $thumb,'full' );
+            $thumbnail = aq_resize( $img_url, 355, 207, true );
+        }
+        
         // add custom data attributes for giso
         if ( $integrate_getinsellout == true && $depth == 0 && ($classes[0] == 'giso-book-btn')) { // remove if statement if depth check is not required
             // These lines adds your custom class and attribute
@@ -189,6 +197,18 @@ class split_nav_walker extends Walker_Nav_Menu {
 // ]]></script>';
             endif;
             $item_output .= $args->after;
+        } elseif($classes[0] == 'megamenu') {
+            $item_output = $args->before;
+            $item_output .= '<div class="megalink-wrap"><a'. $attributes .'>';
+            $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+            $item_output .= '</a></div><div class="sm-container"><div class="sm-inner">';
+            $item_output .= $args->after;
+        } elseif(has_post_thumbnail( $item->object_id ) && $classes[0] == 'megamenu-item'){
+            $item_output = $args->before;
+            $item_output .= '<a'. $attributes .'><div><img src="'.$thumbnail.'" class="img-responsive" /></div><span>';
+            $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+            $item_output .= '</span></a>';
+            $item_output .= $args->after;
         } else {
             $item_output = $args->before;
             $item_output .= '<a'. $attributes .'>';
@@ -198,5 +218,23 @@ class split_nav_walker extends Walker_Nav_Menu {
         }
         
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+    
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $class_names = $value = '';
+
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
+
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+        
+        $output .= apply_filters( 'walker_nav_menu_end_el', $item_output, $item, $depth, $args );
+        if($classes[0] == 'megamenu'){
+            $output .= "</div></div></li>\n";
+        } else {
+            $output .= "</li>\n";
+        }
+        
     }
 }
