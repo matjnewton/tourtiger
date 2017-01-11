@@ -2533,6 +2533,31 @@ tour_finder',
 			'default_value' => '',
 		),
 		array (
+			'key' => 'field_5707bc2f30382_rezdy_price_options',
+			'label' => 'use Price options?',
+			'name' => 'rezdy_price_options',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			//'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_5707bc2f30382',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+		array (
 			'key' => 'field_n1993k2903_xola',
 			'label' => 'Xola user ID',
 			'name' => 'check_user_id_xola',

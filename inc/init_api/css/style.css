@@ -75,6 +75,24 @@ div.preLoading2{
         width: 128px;
     height: 128px;
 }
+div.preLoading3{
+    background-image: url("images/load2.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+        width: 128px;
+    height: 128px;
+    transform: scale(0.5,0.5);
+}
+#ajax_preLoading3 {
+/*    position: absolute;
+    z-index: 100;
+    left: 39%;*/
+        position: absolute;
+    z-index: 100;
+    left: 39%;
+    top: 20%;
+    opacity: 0.5;
+}
 #ajax_preLoading {
     position: fixed;
     left: 50%;

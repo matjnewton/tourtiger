@@ -102,11 +102,77 @@
 
 				$scope.selects = $scope.select();
 				$scope.runscript();
+				$scope.initAvailable();
 	        });
 
 	    }); //end then
 		console.log($scope);
     // end auto load part
+
+	$scope.initAvailable = function() {
+		//console.log('initAvailable');
+		// init seats available for first time
+			$scope.timeSelected = '';
+			angular.forEach($scope.api_availability, function(api_availability, key) {
+	        	angular.forEach(api_availability, function(api_availability2, key) {
+	        			var index = 0;
+	        			if ($scope.wqs_productcode==api_availability2.productCode) {
+	        				// console.log(api_availability2.productCode);
+	        				// console.log(api_availability2.startTimeLocal);
+	        				// console.log(api_availability2.seatsAvailable);
+	        				$scope.timeSelected = api_availability2.seatsAvailable;
+	        			}
+	        			
+
+
+	        	 });
+	        });
+	}
+
+	$scope.productUndefined = function() {
+		var undefinedd;
+
+		angular.forEach($scope.api_availability, function(api_availability, key) {
+        	angular.forEach(api_availability, function(api_availability2, key) {
+
+          			if ($scope.wqs_productcode===api_availability2.productCode) {
+						undefinedd = true;
+        			} else {
+						
+        			}
+        	 });
+        });
+        //console.log(undefinedd);
+        return undefinedd;
+	}
+
+	$scope.changedValue = function(item){ 
+		$scope.loading = true;      
+	   console.log(item);
+
+	   angular.forEach($scope.api_availability, function(api_availability, key) {
+	        	angular.forEach(api_availability, function(api_availability2, key) {
+	        			if ($scope.wqs_productcode==api_availability2.productCode) {
+	        				//console.log(api_availability2);
+	        				angular.forEach(api_availability2.priceOptions, function(priceOptions, key) {
+	        					//console.log(priceOptions.id);
+	        					if(priceOptions.id ==item) {
+	        						$scope.timeSelected = api_availability2.seatsAvailable/priceOptions.seatsUsed;
+	        					}
+	        				});
+	        				
+	        			}
+	        	 });
+	        });
+
+	   // $scope.timeSelected = item;
+	   //console.log($scope.timeSelected);
+	   console.log($scope);
+		$timeout(function(){
+	        $scope.loading = false;
+	    },1000);
+	}
+
 
     //duration 
     $scope.duration = function(start, end ) {
