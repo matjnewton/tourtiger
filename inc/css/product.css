@@ -1121,8 +1121,11 @@ line-height: 40px;
 
 .availability_checker_options {
   min-height: 33px;
+  position: relative;
 }
 .availability_checker_options .notour {
   text-align: center;
   display: block;
 }
+
+select.form-control.rezdy_date.timeSelected  option:empty { display:none }

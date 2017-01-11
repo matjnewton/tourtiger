@@ -90,7 +90,8 @@ div.preLoading3{
         position: absolute;
     z-index: 100;
     left: 39%;
-    top: 20%;
+    /*top: 20%;*/
+    top: -50px;
     opacity: 0.5;
 }
 #ajax_preLoading {

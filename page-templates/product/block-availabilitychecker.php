@@ -24,9 +24,9 @@
 		                    <div class="add-on multitime">
 		                    	<span ng-repeat = "products in api_availability track by $index">
 		                    		<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray | asDate)">
-		                    			<select class="form-control rezdy_date timeSelected" ng-init="timeSelected=0" ng-model="timeSelected" ng-change="changedValue(timeSelected)">
-										    <option  ng-selected="$first" ng-repeat="priceOptions in productss.priceOptions track by $index" ng-if="$index==0" ng-selected=""  value="{{priceOptions.id}}" class="timeSelected_options">{{priceOptions.label}} (${{priceOptions.price}})</option>
-										    <option  ng-repeat="priceOptions in productss.priceOptions track by $index" ng-if="$index!=0" ng-selected=""  value="{{priceOptions.id}}" class="timeSelected_options">{{priceOptions.label}} (${{priceOptions.price}})</option>
+		                    			<select class="form-control rezdy_date timeSelected" ng-init="timeSelected='0'" ng-model="timeSelected" ng-change="changedValue(timeSelected)">
+										    <option  ng-selected="$first" ng-repeat="priceOptions in productss.priceOptions track by $index" ng-if="$index==0" value="{{priceOptions.id}}" class="timeSelected_options">{{priceOptions.label}} (${{priceOptions.price}})</option>
+										    <!-- <option  ng-selected="$first" ng-repeat="priceOptions in productss.priceOptions track by $index" ng-if="$index!=0"  value="{{priceOptions.id}}" class="timeSelected_options">{{priceOptions.label}} (${{priceOptions.price}})</option> -->
 										</select>
 									</span>
 								</span>

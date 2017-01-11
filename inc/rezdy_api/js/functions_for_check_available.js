@@ -116,7 +116,7 @@
 			angular.forEach($scope.api_availability, function(api_availability, key) {
 	        	angular.forEach(api_availability, function(api_availability2, key) {
 	        			var index = 0;
-	        			if ($scope.wqs_productcode==api_availability2.productCode) {
+	        			if ( $scope.wqs_productcode==api_availability2.productCode &&  $filter('date')(new Date(api_availability2.startTimeLocal), 'yyyy-MM-dd')==$filter('date')(new Date($scope.timearray), 'yyyy-MM-dd') ){
 	        				// console.log(api_availability2.productCode);
 	        				// console.log(api_availability2.startTimeLocal);
 	        				// console.log(api_availability2.seatsAvailable);
@@ -128,6 +128,7 @@
 	        	 });
 	        });
 	}
+	
 
 	$scope.productUndefined = function() {
 		var undefinedd;
@@ -209,7 +210,7 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
-
+						$scope.initAvailable();
 			        });
 			    }); //end then
 			console.log($scope);
