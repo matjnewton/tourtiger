@@ -990,6 +990,23 @@ div.pc--c__accordion + div.pc--c__accordion {
 	color: #4a4a4a;
 }
 
+#pc_wrap div.pc--c__editor p {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+#pc_wrap div.pc--c__editor p + p {
+	margin-top: 10px;
+}
+
+#pc_wrap div.pc--c__editor a:hover {
+	text-decoration: underline;
+}
+
+}
+#pc_wrap .pc--c__accordion--paragraf a {
+	text-decoration: underline;
+}
+
 .pc--c__button {
 	display: flex;
 	justify-content: space-between;
@@ -1034,4 +1051,35 @@ div.pc--c__accordion + div.pc--c__accordion {
 .pc--c__button-link,
 .pc--c__button-support {
 	margin: 5px;
+}
+
+#pc_wrap .pc--c__testimonial--slider:before,
+#pc_wrap .pc--c__testimonial--slider:after {
+	font-family: Dosis;
+	font-size: 200px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	line-height: 1;
+}
+
+#pc_wrap .pc--c__testimonial--slider:before {
+	content: '“';
+}
+
+#pc_wrap .pc--c__testimonial--slider:after {
+	content: '”';
+	right: 0;
+}
+
+#pc_wrap .pc--c__testimonial--slider .slick-dots button {
+	background-color: #d8d8d8;
+}
+
+#pc_wrap .pc--c__testimonial--link,
+#pc_wrap .pc--c__testimonial--link:hover {
+	transition: ease .3s;
 }
