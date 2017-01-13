@@ -19,18 +19,19 @@
 									    <?php echo $row['primary_content_expandable_content_editor']; ?>
 									    
 									    <!-- gallery -->
-<!-- 									    <?php if ( $row['primary_content_expandable_content_image_gallery'] ) : ?>
+									    <?php if ( $row['primary_content_expandable_content_image_gallery_'] ) : ?>
+									    	<?php //var_dump($row['primary_content_expandable_content_image_gallery_']); ?>
 									    	<div class="gallery">
                                     			<div class="photo-gallery">
 											    	<?php $params_expand_image = array( 'width' => 250, 'height' => 250 ); ?>
-													<?php foreach ( $row['primary_content_expandable_content_image_gallery'] as $key => $gallery) { ?>
+													<?php foreach ( $row['primary_content_expandable_content_image_gallery_'] as $keygallery => $gallery) { ?>
 												    	<a href="<?php echo $gallery['url']; ?>" class="w-inline-block photo-thumbnail">
 				                                            <img src="<?php echo bfi_thumb( $gallery['url'], $params_expand_image ); ?>" alt="" class="image-thumb img-responsive">
 				                                        </a>
 											    	<?php } ?>
 											    </div>
 											</div>
-	                                    <?php endif; ?> -->
+	                                    <?php endif; ?> 
 
 									  </div>
 									</div>
