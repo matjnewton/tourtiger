@@ -300,20 +300,22 @@ padding-bottom: 11px;
 }
 
 .primary_trip_details_label {
-    display: inline-block;
-    width: 40%;
+    /*display: inline-block;*/
+    /*width: 40%;*/
     vertical-align: top;
     color: #797979;
     line-height: 26px;
+    flex-basis: 40%;
 }
 .primary_trip_details_label.include_icon {
   padding-left: 37px;
 }
 .primary_trip_details_detail {
-      display: inline-block;
+     /* display: inline-block;*/
       font-size: 15px;
       font-weight: 600;
       color: #3d3d3d;
+      flex-basis: 60%;
 }
 .trip_details_options i {
     font-size: 25px;
@@ -321,11 +323,14 @@ padding-bottom: 11px;
     vertical-align: top;
     position: absolute;
 }
+.trip_details_options li {
+  display: flex;
+}
 .primary_content_additional_link_label {
     color: #abc545;
     text-decoration: underline;
-    margin-left: 40%;
-    padding-left: 5px;
+/*    margin-left: 40%;
+    padding-left: 5px;*/
 }
 .primary_content_additional_link_label:hover {
   cursor: pointer;

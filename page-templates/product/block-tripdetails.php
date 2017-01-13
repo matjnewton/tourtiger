@@ -20,20 +20,20 @@
 										<?php $include_icon = ''; ?>
 									<?php endif; ?>
 									<span class="primary_trip_details_label <?php echo $include_icon; ?> customstyle"><?php echo $row['primary_trip_details_label']; ?></span>
-									<span class="primary_trip_details_detail customstyle"><?php echo $row['primary_trip_details_detail']; ?></span>
-								    
-								   <?php if ($row['primary_content_additional_detail']) : ?>
-										<div class="primary_content_additional_link_label" type="button" data-toggle="collapse" data-target="#primary_content_additional_content_<?php echo $key; ?>" aria-expanded="false" aria-controls="primary_content_additional_content">
-										   <?php echo $row['primary_content_additional_link_label']; ?>
-										</div>
+									<span class="primary_trip_details_detail customstyle">
+									   <?php echo $row['primary_trip_details_detail']; ?>
+									   <?php if ($row['primary_content_additional_detail']) : ?>
+											<div class="primary_content_additional_link_label" type="button" data-toggle="collapse" data-target="#primary_content_additional_content_<?php echo $key; ?>" aria-expanded="false" aria-controls="primary_content_additional_content">
+											   <?php echo $row['primary_content_additional_link_label']; ?>
+											</div>
 
-										<div class="collapse" id="primary_content_additional_content_<?php echo $key; ?>">
-										  <div class="">
-										    <?php echo $row['primary_content_additional_content']; ?>
-										  </div>
-										</div>
-									<?php endif; ?>
-
+											<div class="collapse" id="primary_content_additional_content_<?php echo $key; ?>">
+											  <div class="">
+											    <?php echo $row['primary_content_additional_content']; ?>
+											  </div>
+											</div>
+										<?php endif; ?>
+									</span>
 								</li>
 							<?php } ?>
 						</ul>
