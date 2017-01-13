@@ -1129,3 +1129,19 @@ line-height: 40px;
 }
 
 select.form-control.rezdy_date.timeSelected  option:empty { display:none }
+
+/*fix New Tour Page Design Feedback*/
+.product_content_wrapper.primary_content_maingallery_slides {
+  padding: 0px;
+}
+.product_content_wrapper.primary_content_maingallery_slides  ul li {
+  padding: 0px;
+}
+.primary_content_maingallery_slides .bx-wrapper .bx-viewport {
+/*  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border:  5px solid #fff;
+  left: -5px;
+  background: #fff;*/
+}

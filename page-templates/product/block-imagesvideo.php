@@ -33,7 +33,7 @@
 
                 // gallery
                 $slides_images = get_sub_field('primary_content_images_video_gallery');
-				$params_full = array( 'width' => 727, 'height' => 484 );
+				$params_full = array( 'width' => 757, 'height' => 484 );
 				$params = array( 'width' => 110, 'height' => 73 );
 				global $primary_content_options_count;
 
@@ -45,17 +45,90 @@
 								<li><img src="<?php echo bfi_thumb( $slides_image['url'], $params_full ); ?>" /></li>
 							<?php } ?>
 						</ul>
-						<div id="bx-pager-<?php echo $primary_content_options_count; ?>">
+<!--  						<div id="bx-pager-<?php echo $primary_content_options_count; ?>">
 							<?php foreach ($slides_images as $key => $slides_image_p) { ?>
 								<a data-slide-index="<?php echo $key; ?>" href=""><img src="<?php echo bfi_thumb( $slides_image_p['url'], $params ); ?>" /></a>
 							<?php } ?>
-						</div>
+						</div>  -->
+						<ul id="bx-pager-<?php echo $primary_content_options_count; ?>">
+							<?php foreach ($slides_images as $key => $slides_image_p) { ?>
+								<li data-slideIndex="<?php echo $key; ?>">
+									<a href="">
+										<img src="<?php echo bfi_thumb( $slides_image_p['url'], $params ); ?>">
+									</a>
+								</li>
+							<?php } ?>
+						</ul>
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function(){
-								$('.bxslider-<?php echo $primary_content_options_count; ?>').bxSlider({
-								  pagerCustom: '#bx-pager-<?php echo $primary_content_options_count; ?>'
-								});
+								// $('.bxslider-<?php echo $primary_content_options_count; ?>').bxSlider({
+								//   pagerCustom: '#bx-pager-<?php echo $primary_content_options_count; ?>',
+								//   slideMargin: 0,
+								// });
+
+								// new bxslider
+								var realSlider= $("ul.bxslider-<?php echo $primary_content_options_count; ?>").bxSlider({
+								      speed:1000,
+								      pager:false,
+								      nextText:'',
+								      prevText:'',
+								      infiniteLoop:false,
+								      hideControlOnEnd:true,
+								      onSlideBefore:function($slideElement, oldIndex, newIndex){
+								        changeRealThumb(realThumbSlider,newIndex);
+								        
+								      }
+								      
+								    });
+								    
+								    var realThumbSlider=$("ul#bx-pager-<?php echo $primary_content_options_count; ?>").bxSlider({
+								      minSlides: 4,
+								      maxSlides: 7,
+								      slideWidth: 110,
+								      slideMargin: 0,
+								      moveSlides: 1,
+								      pager:false,
+								      speed:1000,
+								      infiniteLoop:false,
+								      hideControlOnEnd:true,
+								      nextText:'<span></span>',
+								      prevText:'<span></span>',
+								      controls: false,
+								      onSlideBefore:function($slideElement, oldIndex, newIndex){
+								        /*$j("#sliderThumbReal ul .active").removeClass("active");
+								        $slideElement.addClass("active"); */
+
+								      }
+								    });
+								    
+								    linkRealSliders(realSlider,realThumbSlider);
+
+								    if($("#bx-pager-<?php echo $primary_content_options_count; ?> li").length<5){
+								      $("#bx-pager-<?php echo $primary_content_options_count; ?> .bx-next").hide();
+								    }
+
+								// sincronizza sliders realizzazioni
+								function linkRealSliders(bigS,thumbS){
+								  
+								  $("ul#bx-pager-<?php echo $primary_content_options_count; ?>").on("click","a",function(event){
+								    event.preventDefault();
+								    var newIndex=$(this).parent().attr("data-slideIndex");
+								        bigS.goToSlide(newIndex);
+								  });
+								}
+
+								//slider!=$thumbSlider. slider is the realslider
+								function changeRealThumb(slider,newIndex){
+								  
+								  var $thumbS=$("#bx-pager-<?php echo $primary_content_options_count; ?>");
+								  $thumbS.find('.active').removeClass("active");
+								  $thumbS.find('li[data-slideIndex="'+newIndex+'"]').addClass("active");
+								  
+								  if(slider.getSlideCount()-newIndex>=1)slider.goToSlide(newIndex);
+								  else slider.goToSlide(slider.getSlideCount()-1);
+
+								}
 						}); //end ready 
 					</script>
 					<?php
