@@ -164,9 +164,9 @@ padding-bottom: 11px;
 .sidebar_links_options li {
 	    font-size: 15px;
     color: #797979;
-    margin-left: 30px;
+   /* margin-left: 30px;*/
     position: relative;
-    padding-bottom: 11px;
+    /*padding-bottom: 11px;*/
     line-height: 37px;
 }
 .sidebar_links_options i {
@@ -1219,4 +1219,19 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
 }
 .primary_content_testimonials .bx-wrapper .bx-pager.bx-default-pager a {
     background: #d8d8d8;
+}
+.sidebar_links_row ul li:not(:last-child) {
+  border-bottom: solid 2px #ebe7e5;
+}
+.book-tour-wrapper_product_row.sidebar_links_row {
+  padding: 0;
+}
+.sidebar_links_options {
+  padding: 13px 0px 13px 0px;
+}
+.sidebar_links_options_wrap {
+    padding: 0px 15px 0px 42px;
+}
+.sidebar_links_options li {
+  padding: 11px 0;
 }

@@ -80,15 +80,17 @@
 									//var_dump($reason_icon);
 									 ?>
 
-									<li class="">
-										<?php if($link_label ): 
-											if ($link_icon) {
-												echo '<i class="fa '.$link_icon.'"></i>';
-											} ?>
-											<a href="<?php echo $link_url; ?>">
-												<?php echo $link_label; ?></span>
-											</a>
-										<?php endif; ?>
+									<li class="sidebar_links_options_list">
+										<div class="sidebar_links_options_wrap">
+											<?php if($link_label ): 
+												if ($link_icon) {
+													echo '<i class="fa '.$link_icon.'"></i>';
+												} ?>
+												<a href="<?php echo $link_url; ?>">
+													<?php echo $link_label; ?></span>
+												</a>
+											<?php endif; ?>
+										</div>
 									</li>
 
 								<?php endwhile; ?>
