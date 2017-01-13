@@ -12,7 +12,7 @@
 								<li class="primary_content_expandable_content_options_li">
 						        	<h3 class="primary_content_subhead line customstyle"><?php echo $row['primary_content_expandable_content_label']; ?></h3>
 								    <a class="primary_content_expandable_content_toggle line collapsed customstyle" data-close="<?php echo $row['primary_content_expandable_content_label_close']; ?>" data-open="<?php echo $row['primary_content_expandable_content_label_open']; ?>" data-toggle="collapse" href="#primary_content_expandable_content_editor_<?php echo $key.'_'.$primary_content_options_count; ?>" aria-expanded="false" aria-controls="cprimary_content_expandable_content_editor_<?php echo $key.'_'.$primary_content_options_count; ?>">
-								       <?php echo $row['primary_content_expandable_content_label_open']; ?>
+								       <span><?php echo $row['primary_content_expandable_content_label_open']; ?></span>
 								    </a>
 									<div class="collapse" id="primary_content_expandable_content_editor_<?php echo $key.'_'.$primary_content_options_count; ?>">
 									  <div class="primary_content_expandable_content_editor_wrap">

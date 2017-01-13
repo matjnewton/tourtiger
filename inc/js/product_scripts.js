@@ -19,7 +19,7 @@ $(document).ready(function(){
 		var close = $(this).attr('data-close');
 		var open = $(this).attr('data-open');
 
-	    $(this).text(function(i,old){
+	    $(this).children('span').text(function(i,old){
 	        return old==close ?  open : close;
 	    });
 	});
