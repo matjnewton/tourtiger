@@ -1506,7 +1506,30 @@ acf_add_local_field_group(array (
 					'label' => 'Trip Details',
 					'display' => 'row',
 					'sub_fields' => array (
-												//repeater
+						// title
+						array (
+							'key' => 'field_538caa676f58c_primary_content_trip_details_title',
+							'label' => 'Title',
+							'name' => 'primary_content_trip_details_title',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						//repeater
 						array (
 							'key' => 'field_55c88c72c96ca_trip_details_options',
 							'label' => 'Trip Details',

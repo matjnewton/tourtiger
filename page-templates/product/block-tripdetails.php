@@ -1,10 +1,11 @@
 <!-- trip_details layout -->
         <?php if( get_row_layout() == 'primary_content_trip_details'):
-	        $primary_content_columns = get_sub_field('primary_content_columns'); ?>
+	        $primary_content_columns = get_sub_field('primary_content_columns');
+	        $primary_content_trip_details_title = get_sub_field('primary_content_trip_details_title'); ?>
 	        
 	        <div class="product_content_wrapper primary_content_trip_details">
 	        	
-	        	<h3 class="primary_content_subhead">Essential info</h3>
+	        	<h3 class="primary_content_subhead"><?php echo $primary_content_trip_details_title; ?></h3>
 
 	        	<?php $trip_details_options = get_sub_field('trip_details_options');
 					if($trip_details_options) : ?>
