@@ -384,7 +384,8 @@ padding-bottom: 11px;
    padding: 0;
 }
 .style2 .primary_content_content_card_editor {
-  padding: 30px 50px 30px 50px;
+  /*padding: 30px 50px 30px 50px;*/
+  padding: 27px 27px 27px 27px;
 }
 .styles .site-inner .content .style2 .primary_content_content_card_editor p {
 /*  font-size: 15px;
