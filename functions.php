@@ -433,6 +433,7 @@ include_once(dirname(__FILE__).'/includes/acf_fields.php');
 
 //include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
 include_once(dirname(__FILE__).'/includes/menus.php');
+include_once(dirname(__FILE__).'/includes/mobile-menus.php');
 require_once(dirname(__FILE__).'/includes/aq_resizer.php');
 
 function tourtiger_background_inline_css() {

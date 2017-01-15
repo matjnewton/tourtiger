@@ -112,7 +112,7 @@ if($custom_header == true): ?>
                             </div>
                             
                     		<div class="collapse navbar-collapse" id="navbar-ex1-collapse">
-                                    <?php wp_nav_menu( array( 'theme_location' => 'mobile', 'menu_class' => 'nav navbar-nav mobile-nav', 'fallback_cb'    => false ) ); ?>
+                                    <?php wp_nav_menu( array( 'theme_location' => 'mobile', 'menu_class' => 'nav navbar-nav mobile-nav', 'fallback_cb'    => false, 'walker'  => new Wpse8170mobile_Menu_Walker() ) ); ?>
                     		</div><!-- end .navbar-ex1-collapse-->			
                     </nav>
                 </div>
