@@ -2,9 +2,9 @@
 	$tour_content_content_classes .= ' pc--c__testimonial';
 	$pc_content_testimonial = 'tour_pc-coltype--testimonial_ob';
 
-	while ( have_rows( $cc_style ) ) {
+	while ( have_rows( $cc_style, 'option' ) ) {
 		the_row();
-		
+
 		$cc_style__test_show = get_sub_field( 'cc_style__test_show' );
 	}
 
@@ -30,6 +30,7 @@
 
 						<?php if ( 
 							get_the_title($post_object->ID) 
+							&& in_array( 'title', $cc_style__test_show )
 						) { ?>
 							<h3 class="pc--c__testimonial--title">
 								<?php echo get_the_title($post_object->ID); ?>
