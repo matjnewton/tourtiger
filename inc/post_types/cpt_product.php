@@ -58,9 +58,9 @@ add_action( 'init', 'product_post_type', 0 );
 function taxonomy_rezdy_cat() {
 
 	$labels = array(
-		'name'                       => _x( 'Categories Rezdy', 'Categories Rezdy', 'borasite' ),
-		'singular_name'              => _x( 'Categories Rezdy', 'Categories Rezdy', 'borasite' ),
-		'menu_name'                  => __( 'Categories Rezdy', 'borasite' ),
+		'name'                       => _x( 'Product Category', 'Product Category', 'borasite' ),
+		'singular_name'              => _x( 'Product Category', 'Product Category', 'borasite' ),
+		'menu_name'                  => __( 'Product Category', 'borasite' ),
 		'all_items'                  => __( 'All Items', 'borasite' ),
 		'parent_item'                => __( 'Parent Item', 'borasite' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'borasite' ),

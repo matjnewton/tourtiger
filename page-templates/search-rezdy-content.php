@@ -116,7 +116,7 @@ function tourtiger_archive(){
                                                 
                                             </div>
 
-                                            <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.slug == search_tour_cat"> 
+                                            <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
                                                 <div class="col-md-4 search-tumb-wrap">
                                                     <img src="{{cptproducts.image2}}">
                                                     <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
@@ -221,7 +221,7 @@ function tourtiger_archive(){
                                                 
                                             </div>
 
-                                            <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.slug == search_tour_cat"> 
+                                            <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
                                                 <div class="col-md-4 search-tumb-wrap">
                                                     <img src="{{cptproducts.image2}}">
                                                     <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
@@ -314,7 +314,7 @@ function tourtiger_archive(){
                                 <a href="{{cptproducts.link}}" class="btn btn-default pull-right viewtour">View Tour</a>
                             </div>
 
-                            <div class="anrow" ng-if="search_tour_cat != 'all' && cptproducts.term.slug == search_tour_cat">
+                            <div class="anrow" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat">
                                 <div class="col-md-4">
                                     <div class="rezdImg" style="background-image:url('{{cptproducts.image}}');"></div>
                                 </div>

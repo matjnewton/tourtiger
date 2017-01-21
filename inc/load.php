@@ -25,6 +25,9 @@ require_once CORE_PLUGINS_PATH.'/advanced-custom-fields-font-awesome/acf-font-aw
 // acf-typography
 //include_once( CORE_PLUGINS_PATH.'/acf-typography/acf-typography-v5.php' );
 
+// acf-advanced_taxonomy_selector
+include_once( CORE_PLUGINS_PATH.'/acf-advanced-taxonomy-selector/acf-advanced_taxonomy_selector.php' );
+
 // add plugins bfi tumb
 require_once CORE_PLUGINS_PATH.'/BFI_Thumb.php';
 

@@ -433,7 +433,7 @@ function checkbox_term($taxonomy, $id, $current) {
 
 }
 
-function select_term($taxonomy, $id, $current) {
+function select_term_forslug($taxonomy, $id, $current) {
 
 	$args = array(
 		'taxonomy' => $taxonomy,
@@ -449,6 +449,27 @@ function select_term($taxonomy, $id, $current) {
 		    	$checked = ($term->slug == $current) ? 'selected' : '';
 		    }
 		    echo "<option class='checkbox_term' ".$checked." name='term-" . $term->slug . "' value = " . $term->slug . ">" . $term->name . "</option>";
+		}
+	echo "</select>";
+
+}
+
+function select_term($taxonomy, $id, $current) {
+
+	$args = array(
+		'taxonomy' => $taxonomy,
+		'hide_empty' => false,
+	);
+	$terms = get_terms( $args );
+	//echo "<select size='1' multiple name = 'name[]'>";
+	echo "<select>";
+		echo "<option class='checkbox_term' selected name='term-all' value = ''>for All</option>";
+		foreach($terms as $term){
+		    $checked = (has_term($term->term_id, 'tour', $id)) ? 'selected' : '';
+		    if ($current) {
+		    	$checked = ($term->term_id == $current) ? 'selected' : '';
+		    }
+		    echo "<option class='checkbox_term' ".$checked." name='term-" . $term->slug . "' value = " . $term->term_id . ">" . $term->name . "</option>";
 		}
 	echo "</select>";
 

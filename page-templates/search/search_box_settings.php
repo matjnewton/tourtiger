@@ -18,6 +18,7 @@ $search_tour_cat = get_the_terms( $post->ID, 'tour_cat' )[0]->slug;
 $search_settings_type = get_sub_field('search_settings_type');
 $search_settings_type_category_select = get_sub_field('search_settings_type_category_select');
 $search_settings_type_category = get_sub_field('search_settings_type_category');
+$search_settings_type_category_hide_option = get_sub_field('search_settings_type_category_hide_option');
 
 if ($search_settings_type =='Search by one date') {
     $search_by_onedate = true; 
@@ -46,7 +47,8 @@ if ($search_settings_type_category) {
     if ($search_settings_type_category_select) {
         $category_list = array();
         foreach ($search_settings_type_category_select as $key => $value) {
-            $category_list[] = $value->slug;
+            //$category_list[] = $value->slug;
+            $category_list[] = $value->term_id;
         }
         $category = implode(",", $category_list);
 
@@ -60,6 +62,14 @@ if ($search_settings_type_category) {
 } else {
     $search_tour_for_category ='';
 }
+
+
+if ($search_settings_type_category && $search_settings_type_category_hide_option) {
+    $hide_option = '<input type="hidden" name="hide_option" id="hide_option" value="true"/>';
+} else {
+    $hide_option ='';
+}
+
 
 $search_content = null; 
 
@@ -111,7 +121,7 @@ if ($hero_margin) {
                             <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 rezdy_box">
                             </div>
                             <input type="hidden" name="view_type" id="view_type" value="'.$search_aviliable.'"/>
-                            '.$search_tour_for_category.$type_search.'
+                            '.$search_tour_for_category.$type_search.$hide_option.'
                         </form>
                     </div>
                 </div>

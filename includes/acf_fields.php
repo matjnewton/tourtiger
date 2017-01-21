@@ -468,12 +468,42 @@ acf_add_local_field_group(array (
 							'message' => '',
 							'default_value' => 0,
 						),
+						// array (
+						// 	'key' => 'field_58252299a702f_settings_type_category_select',
+						// 	'label' => 'Select categories',
+						// 	'name' => 'search_settings_type_category_select',
+						// 	'type' => 'taxonomy',
+						// 	'instructions' => 'the default is the current category',
+						// 	'required' => 0,
+						// 	'conditional_logic' => array (
+						// 		array (
+						// 			array (
+						// 				'field' => 'field_552061311b125_settings_type_category',
+						// 				'operator' => '==',
+						// 				'value' => '1',
+						// 			),
+						// 		),
+						// 	),
+						// 	'wrapper' => array (
+						// 		'width' => '',
+						// 		'class' => '',
+						// 		'id' => '',
+						// 	),
+						// 	'taxonomy' => 'tour_cat',
+						// 	'field_type' => 'multi_select',
+						// 	'allow_null' => 1,
+						// 	'add_term' => 1,
+						// 	'save_terms' => 0,
+						// 	'load_terms' => 0,
+						// 	'return_format' => 'object',
+						// 	'multiple' => 0,
+						// ),
 						array (
 							'key' => 'field_58252299a702f_settings_type_category_select',
 							'label' => 'Select categories',
 							'name' => 'search_settings_type_category_select',
-							'type' => 'taxonomy',
-							'instructions' => 'the default is the current category',
+							'type' => 'advanced_taxonomy_selector',
+							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => array (
 								array (
@@ -489,14 +519,43 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'taxonomy' => 'tour_cat',
-							'field_type' => 'multi_select',
+							'data_type' => 'terms',
+							'taxonomies' => array (
+								0 => 'rezdy_cat',
+								1 => 'tour_cat',
+							),
+							'post_type' => array (
+								0 => 'product',
+								1 => 'tour',
+							),
+							//'field_type' => 'multiselect',
+							'field_type' => 'select',
 							'allow_null' => 1,
-							'add_term' => 1,
-							'save_terms' => 0,
-							'load_terms' => 0,
-							'return_format' => 'object',
-							'multiple' => 0,
+							'return_value' => 'object',
+						),
+						array (
+							'key' => 'field_552061311b125_settings_type_category_hide_option',
+							'label' => 'Hide categories option in search result page',
+							'name' => 'search_settings_type_category_hide_option',
+							'type' => 'true_false',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_552061311b125_settings_type_category',
+										'operator' => '==',
+										'value' => '1',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'message' => '',
+							'default_value' => 0,
 						),
 						// end search set
 						array (

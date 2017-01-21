@@ -34,9 +34,7 @@ function getWqsApi() {
     if(getWqsCurrentUrl()==WQS_API_URL)  :
 
         $args = array(
-            // 'post_type' => array('product'),
             'post_type' => array('tour','product'),
-            //'post_type' => array('tour'),
             'posts_per_page' => -1
         );
         $mainObj=array();
@@ -63,7 +61,13 @@ function getWqsApi() {
 
             $id=get_the_id();
             //$cur_terms = get_the_terms( $id, 'rezdy_cat' );
-            $cur_terms = get_the_terms( $id, 'tour_cat' );
+            //$cur_terms = get_the_terms( $id, 'tour_cat' );
+            $posttype = get_post_type( $post->ID );
+            if ($posttype == 'tour') {
+                $cur_terms = get_the_terms( $id, 'tour_cat' );
+            } else if ($posttype == 'product') {
+                $cur_terms = get_the_terms( $id, 'rezdy_cat' );
+            }
             //$cur_terms = wp_get_object_terms($id, 'tour_cat', array( 'fields' => 'ids' ));
             //$cur_terms = wp_get_object_terms($post->ID, 'tour_cat');
             $productcode = get_field('productcode', $post->ID);
@@ -124,6 +128,7 @@ function getWqsApi() {
             $tempArray['details'] = $details;
             $tempArray['integration_availability'] = $integration_availability;
             $tempArray['custom_button_link'] = $custom_button_link;
+            $tempArray['post_type'] = get_post_type( $post->ID );
 
             array_push($mainObj,$tempArray);
         endwhile;
