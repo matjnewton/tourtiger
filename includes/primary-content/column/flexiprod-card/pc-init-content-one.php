@@ -1,9 +1,9 @@
 <?php 
 
 if ( get_sub_field( 'fc_style__co_color' ) ) {
-	echo '#pc_wrap .<?php echo ' . $fc_style . ' .fc_style--first {position: relative;background-color:' . get_sub_field( "fc_style__co_color" ) . ';}';
+	echo '#pc_wrap .' . $fc_style . ' .fc_style--first {position: relative;background-color:' . get_sub_field( "fc_style__co_color" ) . ';}';
 } else {
-	echo '#pc_wrap .<?php echo ' . $fc_style . ' .fc_style--first {position: relative;background-color:transparent;}';
+	echo '#pc_wrap .' . $fc_style . ' .fc_style--first {position: relative;background-color:transparent;}';
 }
 
 if ( in_array( 'top-border', $show_co ) )

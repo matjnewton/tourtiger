@@ -8845,7 +8845,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'fc_' . $i . '_ld_5835a281e1993',
+				'key' => 'fc_' . $i . '_ld_5835ch81oobox',
 				'label' => 'Choose what would you like to styling',
 				'name' => 'fc_style__ct',
 				'type' => 'checkbox',
@@ -8880,7 +8880,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'top-border',
 						),
@@ -8905,7 +8905,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'top-border',
 						),
@@ -8936,7 +8936,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'desc',
 						),
@@ -8961,7 +8961,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'top-border',
 						),
@@ -8990,7 +8990,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'desc',
 						),
@@ -9745,7 +9745,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'desc',
 						),
@@ -9771,7 +9771,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'top-border',
 						),
@@ -9802,7 +9802,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'desc',
 						),
@@ -9826,7 +9826,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'title',
 						),
@@ -10616,7 +10616,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'detail',
 						),
@@ -11371,7 +11371,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'detail',
 						),
@@ -11397,7 +11397,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'detail',
 						),
@@ -11421,7 +11421,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'price',
 						),
@@ -11446,7 +11446,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'price',
 						),
@@ -11479,7 +11479,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'price',
 						),
@@ -12234,7 +12234,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'price',
 						),
@@ -12260,7 +12260,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'price',
 						),
@@ -12284,7 +12284,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'price',
 						),
@@ -12333,7 +12333,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -12366,7 +12366,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -12396,7 +12396,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -12429,7 +12429,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -13184,7 +13184,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -13210,7 +13210,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -13236,7 +13236,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -13260,7 +13260,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'button',
 						),
@@ -13292,7 +13292,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'conditional_logic' => array (
 					array (
 						array (
-							'field' => 'fc_' . $i . '_ld_5835a281e1993',
+							'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 							'operator' => '==',
 							'value' => 'top-border',
 						),

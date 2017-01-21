@@ -1,6 +1,6 @@
 <?php
 /* get variables */
-$tour_product_second_classes     = 'pc--c__b-second fc_style--second';
+$tour_product_second_classes = 'pc--c__b-second fc_style--second';
 
 if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 	while ( have_rows( 'tour_pc-flexi--second-row' ) ) { the_row();
@@ -14,7 +14,7 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 
 ?>
 
-<div class="<?php echo $tour_product_second_classes; ?>" style="background-color: <?php echo $bg_color; ?>;">
+<div class="<?php echo $tour_product_second_classes; ?>">
 	<?php if ( 
 		   ( in_array( 'title', $show_ct ) && $title )
 		|| ( in_array( 'desc', $show_ct ) && $desc )
@@ -54,7 +54,9 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 		<?php elseif ( $fc_style__ct_butt_pos == 'rigt-d' && $detail ) : ?>
 			<div class="fc_style--second__button_details">
 				<div class="fc_style--second__button_detail second_detail"><span class="fc_style--second_detail"><?php echo $detail; ?></span></div>
-				<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" class="fc_style--second_button second_button" style="margin-top: 0;"><?php echo $label; ?></a>
+				<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" class="fc_style--second_button second_button" style="margin-top: 0;">
+					<span><?php echo $label; ?></span>
+				</a>
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>

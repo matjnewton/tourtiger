@@ -1,0 +1,55 @@
+<div class="banner-wrapper-inner">
+
+    <?php
+    $hero_headline_dropshadow = get_field('hero_headline_dropshadow', 'option');
+    $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
+
+
+    $headline = get_sub_field( 'pc_headline' );
+    $content_editor = get_sub_field( 'pc_content_editor' );
+    $cta_button_text = get_sub_field( 'pc_cta_button_text' );
+    $button_type = get_sub_field( 'pc_button_link_type' );
+
+    $book_tours = get_sub_field( 'pc_book_tours_link' );
+    $cta_button_radius = get_sub_field( 'pc_cta_button_radius' );
+    $text_align = get_sub_field( 'pc_text_align' );
+    $integrate_xola = get_field( 'pc_integrate_xola_with_this_website', 'option' );
+    $integrate_peek = get_field( 'pc_integrate_peek_with_this_website', 'option' );
+    $third_party = get_sub_field( 'pc_third_party' );
+
+    $banner_type = get_sub_field( 'pc_image_type' ); ?>
+
+    <section class="pc_hero-area__banner">
+        <div class="pc_hero-area__wrapper">  
+
+            <?php if ( $banner_type == 'Single image' ) :
+                include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-image.php' );
+            elseif ( $banner_type == 'Slider images' ) :
+                include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-slider.php' );
+            elseif ( $banner_type == 'Background video' ) :
+                include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-video.php' );
+            endif ?>
+        
+        </div>
+
+<?php $banner_divi = get_sub_field( 'pc_ha_bd' );
+
+        if ( $banner_divi == 'repeater' ) {
+            $banner_divi_сss = 'background: url(' . get_sub_field( 'pc_ha_bd_repeater' ) . ') 50% 50%;';
+            echo $banner_divi_сss ? '<div style="' . $banner_divi_сss . '" id="pc_ha_' . $banner_divi . '"></div>' : '';
+        } elseif ( $banner_divi == 'image' ) {
+            $banner_divi_сss = 'background: none;';
+            $banner_divi_content = '<img src="' . get_sub_field( 'pc_ha_bd_image' ) . '" alt="" />';
+            echo $banner_divi_сss ? '<div style="' . $banner_divi_сss . '" id="pc_ha_' . $banner_divi . '">' . $banner_divi_content . '</div>' : '';
+        } elseif ( $banner_divi == 'gradient' ) {
+            $banner_divi_сss = ' 
+                background: ' . get_sub_field( 'pc_ha_bd_gradient' ) . ';
+                background: -moz-linear-gradient(top, ' . get_sub_field( 'pc_ha_bd_gradient' ) . ' 0%, rgba(255,255,255,0) 100%);
+                background: -webkit-linear-gradient(top, ' . get_sub_field( 'pc_ha_bd_gradient' ) . ' 0%, rgba(255,255,255,0) 100%);
+                background: linear-gradient(to bottom, ' . get_sub_field( 'pc_ha_bd_gradient' ) . ' 0%, rgba(255,255,255,0) 100%);  
+            ';
+            echo $banner_divi_сss ? '<div style="' . $banner_divi_сss . '" id="pc_ha_' . $banner_divi . '"></div>' : '';
+        } ?>
+
+    </section>
+</div>   

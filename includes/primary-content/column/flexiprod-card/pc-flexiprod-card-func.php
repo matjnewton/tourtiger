@@ -53,7 +53,7 @@ function get_pc_flexiprod_card_style( $fc_style ) {
 				|| in_array( 'price', $show_ct ) 
 				|| in_array( 'button', $show_ct ) 
 			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content-two.php' );
-
+		
 			echo '</style>';
 
 		}

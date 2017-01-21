@@ -39,6 +39,13 @@ function tourtiger_styles_pca() {
   	wp_enqueue_style( 'pc-roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700' );
 }
 
+function google_api_acf_init() {
+	
+	acf_update_setting( 'google_api_key', 'AIzaSyBPKkzpIMMXwxRMfArXDyzKZiRqdBVsfu0' );
+}
+
+add_action('acf/init', 'google_api_acf_init');
+
 if(function_exists('acf_add_options_sub_page')) { 
 	$primary_content = acf_add_options_page(array(
 		'page_title'   => 'Primary Styles',
@@ -70,6 +77,7 @@ if(function_exists('acf_add_options_sub_page')) {
 if( function_exists('acf_add_local_field_group') ):
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-constructor.php' );
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-styling-cards.php' );
+	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
 endif;
 
 ?>

@@ -1845,7 +1845,7 @@ acf_add_local_field_group(array (
 											'required' => 0,
 											'conditional_logic' => 0,
 											'wrapper' => array (
-												'width' => '',
+												'width' => '33',
 												'class' => '',
 												'id' => '',
 											),
@@ -1877,7 +1877,7 @@ acf_add_local_field_group(array (
 											'required' => 0,
 											'conditional_logic' => 0,
 											'wrapper' => array (
-												'width' => '',
+												'width' => '33',
 												'class' => '',
 												'id' => '',
 											),
@@ -1901,11 +1901,11 @@ acf_add_local_field_group(array (
 											'label' => 'Margin',
 											'name' => 'tour_pc-colums--margin',
 											'type' => 'select',
-											'instructions' => 'If none, there will be no margin at all between the columns',
+											'instructions' => '',
 											'required' => 0,
 											'conditional_logic' => 0,
 											'wrapper' => array (
-												'width' => '',
+												'width' => '33',
 												'class' => '',
 												'id' => '',
 											),
@@ -1925,6 +1925,43 @@ acf_add_local_field_group(array (
 											'readonly' => 0,
 										),
 										array (
+											'key' => 'field_co21era9ti5od',
+											'label' => 'The ratio of rows',
+											'name' => 'tour_pc-colums--ratio',
+											'type' => 'radio',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e28ff659a',
+														'operator' => '==',
+														'value' => '2',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '==',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'equal' => 'Equal width',
+												'left' => 'Two thirds left',
+												'right' => 'Two thirds right',
+											),
+											'allow_null' => 0,
+											'other_choice' => 0,
+											'save_other_choice' => 0,
+											'default_value' => 'Equal width',
+											'layout' => 'horizontal',
+										),
+										array (
 											'key' => 'field_5821e359f659d',
 											'label' => 'Width',
 											'name' => 'tour_pc-colums--width',
@@ -1941,7 +1978,7 @@ acf_add_local_field_group(array (
 												),
 											),
 											'wrapper' => array (
-												'width' => '',
+												'width' => '33',
 												'class' => '',
 												'id' => '',
 											),
@@ -1973,7 +2010,7 @@ acf_add_local_field_group(array (
 												),
 											),
 											'wrapper' => array (
-												'width' => '',
+												'width' => '66',
 												'class' => '',
 												'id' => '',
 											),

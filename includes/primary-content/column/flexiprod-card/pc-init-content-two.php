@@ -1,9 +1,9 @@
 <?php 
 
 if ( get_sub_field( 'fc_style__ct_color' ) ) {
-	echo '#pc_wrap ' . $fc_style . ' .fc_style--second {position: relative;background-color:' . get_sub_field( "fc_style__ct_color" ) . ';';
+	echo '#pc_wrap .' . $fc_style . ' .fc_style--second {position: relative;background-color:' . get_sub_field( "fc_style__ct_color" ) . ';}';
 } else {
-	echo '#pc_wrap ' . $fc_style . ' .fc_style--second {position: relative;background-color:transparent;';
+	echo '#pc_wrap .' . $fc_style . ' .fc_style--second {position: relative;background-color:transparent;}';
 }
 
 if ( in_array( 'top-border', $show_ct ) )

@@ -294,7 +294,11 @@ function above_header(){
 remove_action('genesis_header', 'genesis_do_header');
 add_action('genesis_header', 'tourtiger_header');
 function tourtiger_header(){
-    require(CHILD_DIR.'/tourtiger-header.php');
+    if ( !is_page_template( 'page-templates/test-pc.php' ) ) {
+    	require(CHILD_DIR.'/tourtiger-header.php');
+    } else {
+    	require(CHILD_DIR.'/includes/primary-content/pc-header.php');
+    }
 }
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
