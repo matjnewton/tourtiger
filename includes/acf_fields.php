@@ -431,7 +431,7 @@ acf_add_local_field_group(array (
 							),
 							'wrapper' => array (
 								'width' => '',
-								'class' => '',
+								'class' => 'search_settings_style',
 								'id' => '',
 							),
 							'choices' => array (
@@ -462,7 +462,7 @@ acf_add_local_field_group(array (
 							),
 							'wrapper' => array (
 								'width' => '',
-								'class' => '',
+								'class' => 'search_settings_style',
 								'id' => '',
 							),
 							'message' => '',
@@ -486,7 +486,7 @@ acf_add_local_field_group(array (
 						// 	),
 						// 	'wrapper' => array (
 						// 		'width' => '',
-						// 		'class' => '',
+						// 		'class' => 'search_settings_style',
 						// 		'id' => '',
 						// 	),
 						// 	'taxonomy' => 'tour_cat',
@@ -512,11 +512,16 @@ acf_add_local_field_group(array (
 										'operator' => '==',
 										'value' => '1',
 									),
+									array (
+										'field' => 'field_53d247c8b4b03',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
 								),
 							),
 							'wrapper' => array (
 								'width' => '',
-								'class' => '',
+								'class' => 'search_settings_style',
 								'id' => '',
 							),
 							'data_type' => 'terms',
@@ -547,15 +552,50 @@ acf_add_local_field_group(array (
 										'operator' => '==',
 										'value' => '1',
 									),
+									array (
+										'field' => 'field_53d247c8b4b03',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
 								),
 							),
 							'wrapper' => array (
 								'width' => '',
-								'class' => '',
+								'class' => 'search_settings_style',
 								'id' => '',
 							),
 							'message' => '',
 							'default_value' => 0,
+						),
+						//special message above search results
+						array (
+							'key' => 'field_54e613c087d24_special_message',
+							'label' => 'Special message above search results',
+							'name' => 'search_settings_type_special_message',
+							'type' => 'textarea',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_53d247c8b4b03',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => 'search_settings_style',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'maxlength' => '',
+							'rows' => '',
+							'new_lines' => '',
+							'readonly' => 0,
+							'disabled' => 0,
 						),
 						// end search set
 						array (

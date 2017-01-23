@@ -45,6 +45,17 @@ function tourtiger_archive(){
                 $product_id = null;
             }
 
+            //special_message
+            if(isset($_GET["special_message"])){
+                $special_message_id = $_GET["special_message"];
+                $special_message_id = intval($special_message_id);
+                $search_settings_special_message = get_field('special_message',$special_message_id);
+                $search_settings_special_message_content = '<div id="search_settings_special_message_content">'.$search_settings_special_message.'</div>';
+            }
+            else{
+                $search_settings_special_message_content = '';
+            }
+
             // response
             //$rezdy = get_check_product( $offset, $limit, $startTime, $endTime);
             //$rezdy_availiability = get_check_availiability( $offset, $limit, $startTime, $endTime, $rezdy, $search_tour_cat, $product_id);
@@ -67,6 +78,8 @@ function tourtiger_archive(){
                  <!--  <div id="ajax_preLoading" class="preLoading2"></div> -->
 
                 <div class="col-md-9 search-content-wrap" id="mainContentAng">
+                
+                    <?php echo $search_settings_special_message_content; ?>
 
                     <div id="ajax_preLoading" class="preLoading2" ng-show="loading"></div>
 

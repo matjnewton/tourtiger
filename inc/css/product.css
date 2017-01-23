@@ -1239,3 +1239,9 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
 .primary_content_expandable_content_editor_wrap .gallery {
     margin-top: 10px;
 }
+
+#search_settings_special_message_content {
+    color: #4a4a4a;
+    font-size: 20px;
+    padding: 12px;
+}

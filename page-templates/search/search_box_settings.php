@@ -19,6 +19,7 @@ $search_settings_type = get_sub_field('search_settings_type');
 $search_settings_type_category_select = get_sub_field('search_settings_type_category_select');
 $search_settings_type_category = get_sub_field('search_settings_type_category');
 $search_settings_type_category_hide_option = get_sub_field('search_settings_type_category_hide_option');
+$search_settings_type_special_message = get_sub_field('search_settings_type_special_message');
 
 if ($search_settings_type =='Search by one date') {
     $search_by_onedate = true; 
@@ -70,6 +71,12 @@ if ($search_settings_type_category && $search_settings_type_category_hide_option
     $hide_option ='';
 }
 
+if ($search_settings_type_special_message != null) {
+    $special_message = '<input type="hidden" name="special_message" id="special_message" value="'.$post->ID.'"/>';
+    update_post_meta( $post->ID, 'special_message', $search_settings_type_special_message );
+} else {
+    $special_message ='';
+}
 
 $search_content = null; 
 
@@ -121,7 +128,7 @@ if ($hero_margin) {
                             <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 rezdy_box">
                             </div>
                             <input type="hidden" name="view_type" id="view_type" value="'.$search_aviliable.'"/>
-                            '.$search_tour_for_category.$type_search.$hide_option.'
+                            '.$search_tour_for_category.$type_search.$hide_option.$special_message.'
                         </form>
                     </div>
                 </div>

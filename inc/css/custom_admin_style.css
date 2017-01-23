@@ -18,3 +18,9 @@
 .minicolors input[type=hidden] + .minicolors-swatch {
     height: 26px;
 }
+.search_settings_style {
+	background-color: rgba(204, 204, 204, 0.4);
+}
+.search_settings_style .acf-label label {
+	color: #006799;
+}
