@@ -1254,7 +1254,8 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
     height: 40px;
 }*/
 .single-product.styles .ginput_container input[type='text'],
-.single-product .ginput_container input[type='text'] {
+.single-product .ginput_container input[type='text'],
+.single-product .left-col .ginput_container input[type=text] {
     border-radius: 10px;
     border: solid 1px #ebe7e5;
     background-color: white;
@@ -1264,7 +1265,8 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
     height: 40px;
 }
 .single-product.styles .ginput_container textarea,
-.single-product .ginput_container textarea {
+.single-product .ginput_container textarea,
+.single-product .left-col .ginput_container textarea {
     border-radius: 10px;
     border: solid 1px #ebe7e5;
     background-color: white;
@@ -1276,7 +1278,11 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
 .single-product.styles .ginput_container input[type='text']:focus,
 .single-product.styles .ginput_container textarea:focus,
 .single-product .ginput_container input[type='text']:focus,
-.single-product .ginput_container textarea:focus {
+.single-product .ginput_container textarea:focus,
+.single-product.styles .left-col .ginput_container input[type='text']:focus,
+.single-product.styles .left-col .ginput_container textarea:focus,
+.single-product .left-col .ginput_container input[type='text']:focus,
+.single-product .left-col .ginput_container textarea:focus {
     background-color: white;
 }
 .single-product .gform_footer input[type='submit'] {
