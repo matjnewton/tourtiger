@@ -48,7 +48,8 @@
 	}
 }
 @media screen and (max-width: 400px) {
-	.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail {
+	.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail,
+	.site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail {
 	    flex: none;
 	}
 	.product_content_wrapper ul.availability_checker_options li {

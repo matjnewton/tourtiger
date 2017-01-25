@@ -54,7 +54,9 @@ if ($style_sub_tab_results_font_all != '') : ?>
 	} ?>
 	body.custom-background.page-template-rezdy_search,
 	.styles .content .search-descript-wrap h3,
-	.styles .site-inner .content p.cDate2 {
+	.styles .site-inner .content p.cDate2,
+	.content .search-descript-wrap h3,
+	.site-inner .content p.cDate2  {
 	    font-family: <?php echo $style_sub_tab_results_font_all['font-family']; ?>, sans-serif;
 	}
 	</style>
@@ -66,6 +68,8 @@ if ($style_sub_tab_results_text_color != '') : ?>
 	<style>
 	.styles .site-inner .content p.cDate2,
 	.styles .content .search-descript-wrap h3,
+	.site-inner .content p.cDate2,
+	.content .search-descript-wrap h3,
 	#searchfilter .datepicker-instructions,
 	.search-descript-descript,
 	.search-descript-departure-text {
@@ -74,7 +78,8 @@ if ($style_sub_tab_results_text_color != '') : ?>
 	.page-template-rezdy_search .cDate2 {
 	    border-bottom: 2px solid <?php echo $style_sub_tab_results_text_color; ?>;
 	}
-	.styles .content .search-descript-wrap h3 {
+	.styles .content .search-descript-wrap h3,
+	.content .search-descript-wrap h3  {
 	    border-bottom: solid 1px <?php echo $style_sub_tab_results_text_color; ?>;
 	}
 	</style>

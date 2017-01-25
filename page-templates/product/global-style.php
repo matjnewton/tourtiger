@@ -204,7 +204,13 @@ if ($style_sub_tab_product_font_headline) : ?>
 		.styles .content .product_title_area.customstyle h3,
 		.styles .content .product_title_area.customstyle h4,
 		.styles .content .product_title_area.customstyle h5,
-		.styles .content .product_title_area.customstyle h6 {
+		.styles .content .product_title_area.customstyle h6,
+		.content .product_title_area.customstyle h1,
+		.content .product_title_area.customstyle h2,
+		.content .product_title_area.customstyle h3,
+		.content .product_title_area.customstyle h4,
+		.content .product_title_area.customstyle h5,
+		.content .product_title_area.customstyle h6 {
 		  font-family: '<?php echo $style_sub_tab_product_font_headline['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_headline['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_headline['font-weight']; ?>;
@@ -220,7 +226,8 @@ if ($style_sub_tab_product_font_headline_details) : ?>
 		<?php if ($style_sub_tab_product_font_headline_details['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_headline_details['font-family']."';";
 		} ?>
-		.styles .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span {
+		.styles .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span,
+		.site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span {
 		  font-family: '<?php echo $style_sub_tab_product_font_headline_details['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_headline_details['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_headline_details['font-weight']; ?>;
@@ -242,7 +249,13 @@ if ($style_sub_tab_product_font_sub_headline) : ?>
 .styles .content h3.primary_content_subhead.customstyle,
 .styles .content h4.primary_content_subhead.customstyle,
 .styles .content h5.primary_content_subhead.customstyle,
-.styles .content h6.primary_content_subhead.customstyle {
+.styles .content h6.primary_content_subhead.customstyle,
+.content h1.primary_content_subhead.customstyle,
+.content h2.primary_content_subhead.customstyle,
+.content h3.primary_content_subhead.customstyle,
+.content h4.primary_content_subhead.customstyle,
+.content h5.primary_content_subhead.customstyle,
+.content h6.primary_content_subhead.customstyle  {
 		  font-family: '<?php echo $style_sub_tab_product_font_sub_headline['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_sub_headline['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_sub_headline['font-weight']; ?>;
@@ -259,7 +272,8 @@ if ($style_sub_tab_product_font_special_content) : ?>
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_special_content['font-family']."';";
 		} ?>
 
-.styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p {
+.styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p,
+.site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p {
 		  font-family: '<?php echo $style_sub_tab_product_font_special_content['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_special_content['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_special_content['font-weight']; ?>;
@@ -276,7 +290,8 @@ if ($style_sub_tab_product_font_highlights) : ?>
 		<?php if ($style_sub_tab_product_font_highlights['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_highlights['font-family']."';";
 		} ?>
-		.styles .site-inner .content .product_content_wrapper .highlights_options.customstyle span {
+		.styles .site-inner .content .product_content_wrapper .highlights_options.customstyle span,
+		.site-inner .content .product_content_wrapper .highlights_options.customstyle span  {
 		  font-family: '<?php echo $style_sub_tab_product_font_highlights['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_highlights['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_highlights['font-weight']; ?>;
@@ -292,7 +307,8 @@ if ($style_sub_tab_product_font_tripdetailslabel) : ?>
 		<?php if ($style_sub_tab_product_font_tripdetailslabel['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_tripdetailslabel['font-family']."';";
 		} ?>
-		.styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle {
+		.styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle,
+		.site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle {
 		  font-family: '<?php echo $style_sub_tab_product_font_tripdetailslabel['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_tripdetailslabel['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_tripdetailslabel['font-weight']; ?>;
@@ -309,7 +325,8 @@ if ($style_sub_tab_product_font_tripdetails_content) : ?>
 		<?php if ($style_sub_tab_product_font_tripdetails_content['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_tripdetails_content['font-family']."';";
 		} ?>
-		.styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle {
+		.styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle,
+		.site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle  {
 		  font-family: '<?php echo $style_sub_tab_product_font_tripdetails_content['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_tripdetails_content['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_tripdetails_content['font-weight']; ?>;
@@ -331,7 +348,13 @@ if ($style_sub_tab_product_font_expandablecontent_title) : ?>
 .styles .content .primary_content_expandable_content_options_li h3.primary_content_subhead.customstyle,
 .styles .content .primary_content_expandable_content_options_li h4.primary_content_subhead.customstyle,
 .styles .content .primary_content_expandable_content_options_li h5.primary_content_subhead.customstyle,
-.styles .content .primary_content_expandable_content_options_li h6.primary_content_subhead.customstyle {
+.styles .content .primary_content_expandable_content_options_li h6.primary_content_subhead.customstyle,
+.content .primary_content_expandable_content_options_li h1.primary_content_subhead.customstyle,
+.content .primary_content_expandable_content_options_li h2.primary_content_subhead.customstyle,
+.content .primary_content_expandable_content_options_li h3.primary_content_subhead.customstyle,
+.content .primary_content_expandable_content_options_li h4.primary_content_subhead.customstyle,
+.content .primary_content_expandable_content_options_li h5.primary_content_subhead.customstyle,
+.content .primary_content_expandable_content_options_li h6.primary_content_subhead.customstyle {
 		  font-family: '<?php echo $style_sub_tab_product_font_expandablecontent_title['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_expandablecontent_title['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_expandablecontent_title['font-weight']; ?>;
@@ -356,10 +379,13 @@ if ($style_sub_tab_product_font_expandablecontent_label) : ?>
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_expandablecontent_label['font-family']."';";
 		} ?>
 .styles .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after,
-.styles .site-inner .content a.primary_content_expandable_content_toggle::after {
+.styles .site-inner .content a.primary_content_expandable_content_toggle::after,
+.site-inner .content a.primary_content_expandable_content_toggle.collapsed::after,
+.site-inner .content a.primary_content_expandable_content_toggle::after {
 		  color: <?php echo $style_sub_tab_product_font_expandablecontent_label['text-color']; ?>;
 }
-.styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle {
+.styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle,
+.site-inner .content a.primary_content_expandable_content_toggle.customstyle {
 		  font-family: '<?php echo $style_sub_tab_product_font_expandablecontent_label['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_expandablecontent_label['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_expandablecontent_label['font-weight']; ?>;
@@ -378,6 +404,7 @@ if ($style_sub_tab_product_font_paragraph_content) : ?>
 		} ?>
 
 .styles .site-inner .content .product_content_wrapper p,
+.site-inner .content .product_content_wrapper p,
 .product_content_wrapper ul li {
 		  font-family: '<?php echo $style_sub_tab_product_font_paragraph_content['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_paragraph_content['font_size']; ?>px;
@@ -391,7 +418,8 @@ if ($style_sub_tab_product_font_paragraph_content) : ?>
 // link_color
 if ($style_sub_tab_product_link_color) : ?>
 	<style>
-		.styles .site-inner .content .product_content_wrapper a {
+		.styles .site-inner .content .product_content_wrapper a,
+		.site-inner .content .product_content_wrapper a {
 			color: <?php echo $style_sub_tab_product_link_color; ?>;
 		} 
 	</style>
@@ -403,7 +431,10 @@ if ($style_sub_tab_product_link_color_hover) : ?>
 	<style>
 		.styles .site-inner .content .product_content_wrapper a:hover,
 		.styles .site-inner .content .product_content_wrapper a:focus,
-		.styles .site-inner .content .product_content_wrapper a:active {
+		.styles .site-inner .content .product_content_wrapper a:active,
+		.site-inner .content .product_content_wrapper a:hover,
+		.site-inner .content .product_content_wrapper a:focus,
+		.site-inner .content .product_content_wrapper a:active {
 			color: <?php echo $style_sub_tab_product_link_color_hover; ?>;
 		} 
 	</style>
@@ -413,7 +444,8 @@ if ($style_sub_tab_product_link_color_hover) : ?>
 // color_visited
 if ($style_sub_tab_product_link_color_visited) : ?>
 	<style>
-		.styles .site-inner .content .product_content_wrapper a:visited {
+		.styles .site-inner .content .product_content_wrapper a:visited,
+		.site-inner .content .product_content_wrapper a:visited {
 			color: <?php echo $style_sub_tab_product_link_color_visited; ?>;
 		} 
 	</style>
