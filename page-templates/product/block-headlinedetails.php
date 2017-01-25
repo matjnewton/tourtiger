@@ -6,7 +6,8 @@ if( get_row_layout() == 'primary_content_headline_details'):
 		<div class="product_content_wrapper product_title_area_details">
 			<ul class="primary_content_headline_details_options customstyle">
 				<?php foreach($details_options as $row) { ?>
-					<li style="width:<?php echo round(100/count($details_options)-1); ?>%;">
+					<!-- <li style="width:<?php echo round(100/count($details_options)-1); ?>%;"> -->
+					<li>
 						<i class="fa <?php echo $row['primary_content_headline_details_icon']; ?>"></i>
 						<span><?php echo $row['primary_content_headline_details_text']; ?></span>
 					</li>

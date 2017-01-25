@@ -1,0 +1,66 @@
+
+@media screen and (max-width: 991px) {
+	.availability_checker_options_date .multitime .rezdy_date {
+	    width: inherit;
+	}
+}
+@media screen and (max-width: 767px) {
+	.single-product .site-inner {
+	    margin-top: 0;
+	}
+	.single-product .banner-wrapper {
+	    height: inherit;
+	}
+	.primary_content_headline_details_options {
+	    flex-direction: column;
+	}
+
+	.trip_details_options li {
+	    flex-direction: column;
+	}
+	.primary_trip_details_label {
+	    flex-basis: 100%;
+	}
+	.primary_trip_details_detail {
+	    flex-basis: 100%;
+	}
+} 
+@media screen and (max-width: 500px) {
+	.availability_checker_options_date {
+	    display: inline-block;
+	    width: 100%;
+	}
+	.availability_checker_options_date .add-on.col-startTime {
+	    flex: none;
+	    display: inline-block;
+	    width: 49%;
+	}
+	.availability_checker_options_date .add-on.multitime {
+	    flex: none;
+	    display: inline-block;
+	    width: 49%;
+	}
+	.availability_checker_options_date .add-on.col-book-btn2-product {
+		margin-top: 5px;
+	}
+	.availability_checker_options_date .multitime .rezdy_date {
+	    width: 100%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail {
+	    flex: none;
+	}
+	.product_content_wrapper ul.availability_checker_options li {
+	    flex-direction: column;
+	    justify-content: space-between;
+	}
+	.availability_checker_options_date .rezdy_date {
+	    width: 165px;
+	    margin-bottom: 5px;
+	}
+	.availability_checker_options_date .add-on.col-startTime {
+	    /*width: 100%;*/
+	}
+
+}

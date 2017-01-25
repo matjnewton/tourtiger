@@ -31,6 +31,9 @@ body.custom-background.single-product {
     font-weight: normal;
     line-height: 1.4;
 }
+.styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.include_icon {
+  line-height: 1.7;
+}
 .product_content_wrapper ul li {
     font-size: 13px;
     color: #797979;
@@ -66,6 +69,10 @@ body.custom-background.single-product {
     padding: 0px 27px 27px 27px;
 }
 /*headline_details*/
+.primary_content_headline_details_options {
+  display: flex;
+  justify-content: space-around;
+}
 .primary_content_headline_details_options li {
   display: inline-block;
 /*  font-size: 20px;
@@ -74,6 +81,8 @@ body.custom-background.single-product {
 .primary_content_headline_details_options li i {
 /*	color: #abc545;*/
     padding-right: 10px;
+    min-width: 30px;
+    text-align: center;
 }
 /*hero*/
 .single-product .banner-wrapper-inner{
@@ -287,6 +296,7 @@ padding-bottom: 11px;
     padding-bottom: 11px;
     line-height: 37px;
     display: inline-block;
+    vertical-align: text-top;
 }
 
 /*trip_details*/
@@ -309,6 +319,7 @@ padding-bottom: 11px;
 }
 .primary_trip_details_label.include_icon {
   padding-left: 37px;
+  /*padding-bottom: 5px;*/
 }
 .primary_trip_details_detail {
      /* display: inline-block;*/
@@ -322,6 +333,8 @@ padding-bottom: 11px;
     color: #abc545;
     vertical-align: top;
     position: absolute;
+    min-width: 25px;
+    text-align: center;
 }
 .trip_details_options li {
   display: flex;
@@ -496,8 +509,14 @@ ul.primary_content_expandable_content_options li:last-child {
   font-size: 20px;
   text-align: center;
   color: #abc545;
-  display: block;
+  /*display: block;*/
   line-height: 44px;
+
+  display: flex;
+    justify-content: center;
+    padding-left: 75px;
+    padding-right: 75px;
+    align-items: baseline;
 }
 .styles .site-inner .content a.testimonial_title {
   color: #abc545;

@@ -13,6 +13,8 @@ function product_scripts_method() {
 	wp_enqueue_script( 'bxslider_min_js' );
 	wp_register_style('bxslider_css', CORE_URL .'/css/jquery.bxslider.css', array(),'', 'all');
 	wp_enqueue_style('bxslider_css');
+    wp_register_style('product_css_adaptive', CORE_URL .'/css/adaptive.css', array(),null, 'all');
+    wp_enqueue_style('product_css_adaptive');
 } 
 
 function custom_admin_theme_style() {
