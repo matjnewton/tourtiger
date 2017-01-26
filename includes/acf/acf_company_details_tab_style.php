@@ -194,6 +194,24 @@ acf_add_local_field(
 		)
 );
 acf_add_local_field(
+        array (
+			'key' => 'field_5877aece158e5',
+			'label' => 'Transparent Background',
+			'name' => 'transparent_background',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		)
+);
+acf_add_local_field(
 		array (
 			'key' => 'field_55a662010ce66',
 			'label' => 'Customize',
