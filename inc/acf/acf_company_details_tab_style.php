@@ -199,6 +199,7 @@ acf_add_local_field(
 			'label' => 'Transparent Background',
 			'name' => 'transparent_background',
 			'type' => 'true_false',
+			'parent'       => 'group_557b16305d905',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
