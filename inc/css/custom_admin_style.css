@@ -24,3 +24,6 @@
 .search_settings_style .acf-label label {
 	color: #006799;
 }
+.acf-field.primary_trip_details_detail textarea{
+	height: 28px;
+}

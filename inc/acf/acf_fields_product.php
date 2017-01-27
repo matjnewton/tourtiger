@@ -1580,7 +1580,7 @@ acf_add_local_field_group(array (
 									'conditional_logic' => 0,
 									'wrapper' => array (
 										'width' => '',
-										'class' => '',
+										'class' => 'primary_trip_details_detail',
 										'id' => '',
 									),
 									'default_value' => '',
