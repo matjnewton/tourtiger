@@ -68,6 +68,10 @@
 
 				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-testimonial.php' );
 
+			} elseif ( get_row_layout() == 'tour_pc-coltype--form' ) {
+
+				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-form.php' );
+
 			}
 
 		endwhile; 

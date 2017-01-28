@@ -1,7 +1,7 @@
 <?php 
 
 acf_add_local_field_group(array (
-	'key' => 'group_557b163001178_you_need_use_unique_key',
+	'key' => 'group_557b163001178',
 	'title' => 'Hero',
 	'fields' => array (
 		array (

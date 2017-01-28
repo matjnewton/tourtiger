@@ -1,6 +1,6 @@
 <?php 
 $fc_style = get_sub_field( 'tour_flexiprod-style' );
-$tour_column_content_classes .= ' ' . $fc_style . ' ';
+$tour_column_content_classes .= ' ' . $fc_style;
 
 while ( have_rows( $fc_style, 'option' ) ) : the_row();
 
@@ -36,7 +36,8 @@ if ( get_row_layout() == 'tour_pc-flexi' ) {
 				get_pc_flexiprod_card_style( $fc_style );
 			}
 		
-			while ( have_rows( $tour_flexi_content . '--content' ) ) : the_row();
+			while ( have_rows( $tour_flexi_content . '--content' ) ) : 
+				the_row();
 
 				if ( get_row_layout() ==  $tour_flexi_content . '--content--image' ) :
 				

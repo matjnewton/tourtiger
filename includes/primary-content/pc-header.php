@@ -1,10 +1,9 @@
 <?php
-/**
- * Tourtiger Header
- */
-?>
+/* =======================
+ * PC: Header
+ * ==================== */
 
-<?php $custom_header = get_field( 'include_custom_header', 'option' );
+$custom_header = get_field( 'include_custom_header', 'option' );
 
 include ( get_stylesheet_directory() . '/includes/primary-content/head/pc-panel.php' );
 
