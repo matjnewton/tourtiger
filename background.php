@@ -309,6 +309,12 @@ else:
 $elements_margin = get_field('hero_elements_top_margin');
     if($elements_margin):
 ?>
+@media (max-width: 480px) {
+.banner-top .hero-elements-wrapper{
+    margin-top:0 !important;
+}
+}
+
 .banner-top .hero-elements-wrapper{
     margin-top:<?php echo $elements_margin; ?>px;
 }
