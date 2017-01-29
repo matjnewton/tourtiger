@@ -3,6 +3,8 @@
 	$tour_section_bd_repeater = '';
 	$tour_section_bd_image = '';
 
+	$tour_section_classes .= ' pc--s__bottom-divider_' . get_sub_field( 'tour_pc-bd--cover' );
+
 	if ( $tour_section_bd_select == 'repeater' ) {
 		$tour_section_bd_repeater = get_sub_field( 'tour_pc-bd--select__repeater' );
 

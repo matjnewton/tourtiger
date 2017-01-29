@@ -2708,7 +2708,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '',
+								'width' => '40',
 								'class' => '',
 								'id' => '',
 							),
@@ -2727,6 +2727,52 @@ acf_add_local_field_group(array (
 							'placeholder' => '',
 							'disabled' => 0,
 							'readonly' => 0,
+						),
+						array (
+							'key' => 'field_coveretopd0f11',
+							'label' => 'Cover Section',
+							'name' => 'tour_pc-td--cover',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => '',
+							'conditional_logic' => '',
+							'wrapper' => array (
+								'width' => '40',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array (
+								'cover-full' => 'Cover',
+								'cover-part' => 'Partial Cover',
+								'cover-out' => 'Out of current section'
+							),
+							'default_value' => array (
+								0 => 'over-full',
+							),
+							'allow_null' => 0,
+							'multiple' => 0,
+							'ui' => 0,
+							'ajax' => 0,
+							'placeholder' => '',
+							'disabled' => 0,
+							'readonly' => 0,
+						),
+						array (
+							'key' => 'field_heightopd0f11',
+							'label' => 'Height',
+							'name' => 'tour_pc-td--height',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => '',
+							'conditional_logic' => '',
+							'wrapper' => array (
+								'width' => '20',
+								'class' => '',
+								'id' => '',
+							),
+							'placeholder' => '10',
+							'append' => 'px',
+							'min' => '10'
 						),
 						array (
 							'key' => 'field_5821e00cabd7e',
@@ -2817,7 +2863,7 @@ acf_add_local_field_group(array (
 							'required' => '',
 							'conditional_logic' => '',
 							'wrapper' => array (
-								'width' => '',
+								'width' => '40',
 								'class' => '',
 								'id' => '',
 							),
@@ -2836,6 +2882,52 @@ acf_add_local_field_group(array (
 							'placeholder' => '',
 							'disabled' => 0,
 							'readonly' => 0,
+						),
+						array (
+							'key' => 'field_covere14dd0f11',
+							'label' => 'Cover Section',
+							'name' => 'tour_pc-bd--cover',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => '',
+							'conditional_logic' => '',
+							'wrapper' => array (
+								'width' => '40',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array (
+								'cover-full' => 'Cover',
+								'cover-part' => 'Partial Cover',
+								'cover-out' => 'Out of current section'
+							),
+							'default_value' => array (
+								0 => 'over-full',
+							),
+							'allow_null' => 0,
+							'multiple' => 0,
+							'ui' => 0,
+							'ajax' => 0,
+							'placeholder' => '',
+							'disabled' => 0,
+							'readonly' => 0,
+						),
+						array (
+							'key' => 'field_heighbottomd0f11',
+							'label' => 'Height',
+							'name' => 'tour_pc-bd--height',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => '',
+							'conditional_logic' => '',
+							'wrapper' => array (
+								'width' => '20',
+								'class' => '',
+								'id' => '',
+							),
+							'placeholder' => '10',
+							'append' => 'px',
+							'min' => '10'
 						),
 						array (
 							'key' => 'field_5821e1b1d0f13',

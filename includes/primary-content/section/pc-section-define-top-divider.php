@@ -2,6 +2,8 @@
 
 	$tour_section_td_repeater = '';
 	$tour_section_td_image = '';
+
+	$tour_section_classes .= ' pc--s__top-divider_' . get_sub_field( 'tour_pc-td--cover' );
 	
 	if ( $tour_section_td_select == 'repeater' ) {
 		$tour_section_td_repeater = get_sub_field( 'tour_pc-td--select__repeater' );
