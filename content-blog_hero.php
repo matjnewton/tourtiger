@@ -64,7 +64,7 @@ if( have_rows('hero_area', 'option') ):
                     </h1>
                     <?php endif; ?>
                     <?php if($content_editor): ?>
-                    <div class="c-editor subheadline<?php if($hero_content_dropshadow == 'Light'): echo ' light'; elseif($hero_headline_dropshadow == 'Medium'): echo ' medium-shadow'; elseif($hero_headline_dropshadow == 'Strong'): echo ' strong'; elseif($hero_headline_dropshadow == 'Extra Strong'): echo ' extra-strong'; else: echo ' none'; endif;?>">
+                    <div class="hidden-xs c-editor subheadline<?php if($hero_content_dropshadow == 'Light'): echo ' light'; elseif($hero_headline_dropshadow == 'Medium'): echo ' medium-shadow'; elseif($hero_headline_dropshadow == 'Strong'): echo ' strong'; elseif($hero_headline_dropshadow == 'Extra Strong'): echo ' extra-strong'; else: echo ' none'; endif;?>">
                         <?php echo $content_editor; ?>
                     </div>
                     <?php endif; ?>
