@@ -82,6 +82,9 @@ function add_primary_area_show_rows() { ?>
         $( '.pc--form' ).find('.ginput_container_time').closest('.clear-multi').addClass('clear-multi_tel');
         $( '.pc--form' ).find('.ginput_container_time').find('i').detach();
         $( '.pc--form__nowrap' ).find('.gfield_label, .gfield_description').detach();
+        $( '.pc--form__hide-labels' ).find('.gfield_label').detach();
+        $( '.pc--form__hide-desc' ).find('.gfield_description').detach();
+        $( '.pc--form__hide-labels-desc' ).find('.gfield_label, .gfield_description').detach();
         $( '.pc--form__head-title' ).find('.gform_description').detach();
         $( '.pc--form__head-hide' ).find('.gform_heading').detach();
 

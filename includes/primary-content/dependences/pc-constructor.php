@@ -1117,7 +1117,7 @@ acf_add_local_field_group(array (
 																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
-																				'width' => '45',
+																				'width' => '',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -1146,7 +1146,7 @@ acf_add_local_field_group(array (
 																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
-																				'width' => '45',
+																				'width' => '',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -1157,6 +1157,44 @@ acf_add_local_field_group(array (
 																			),
 																			'default_value' => array (
 																				0 => 'pc--form__head-all',
+																			),
+																			'allow_null' => 0,
+																			'multiple' => 0,
+																			'ui' => 0,
+																			'ajax' => 0,
+																			'placeholder' => '',
+																			'disabled' => 0,
+																			'readonly' => 0,
+																		),
+																		array (
+																			'key' => 'forclefe580611',
+																			'label' => 'Input labels',
+																			'name' => 'tour_pc-coltype--form_le',
+																			'type' => 'select',
+																			'instructions' => '',
+																			'required' => 0,
+																			'conditional_logic' => array (
+																				array (
+																					array (
+																						'field' => 'forcolfe580611',
+																						'operator' => '!=',
+																						'value' => 'pc--form__nowrap',
+																					),
+																				),
+																			),
+																			'wrapper' => array (
+																				'width' => '',
+																				'class' => '',
+																				'id' => '',
+																			),
+																			'choices' => array (
+																				'pc--form__labels-desc' => 'Show all',
+																				'pc--form__hide-labels' => 'Hide labels',
+																				'pc--form__hide-desc' => 'Hide descriptions',
+																				'pc--form__hide-labels-desc' => 'Hide labels and descriptions'
+																			),
+																			'default_value' => array (
+																				0 => 'pc--form__labels-desc',
 																			),
 																			'allow_null' => 0,
 																			'multiple' => 0,
