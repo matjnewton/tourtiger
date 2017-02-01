@@ -66,6 +66,7 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_rezdy = get_field('rezdy','option');
         $integrate_zaui = get_field('zaui','option');
+        $integrate_regiondo = get_field('regiondo','option');
         
         // get thumbnail
         $thumbnail = '';
@@ -174,6 +175,14 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
 (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") .setAttrib("entryPoint", "'.$entryPoint.'") .registerOnClick("#menubtn_trekksoft_' . $format1 .'"); })();
 // ]]></script>';
             endif;
+            $item_output .= $args->after;
+        } elseif($integrate_regiondo == true && $depth == 0 && ($classes[0] == 'regiondo-book-btn')) {
+            $t_rid = $atts['href'];
+            $url_attribute = ' data-url="'.$t_rid.'"';
+            $item_output = $args->before;
+            $item_output .= '<a class="regiondo-button"'.$url_attribute.'>';
+            $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+            $item_output .= '</a>';
             $item_output .= $args->after;
         } else {
             $item_output = $args->before;
