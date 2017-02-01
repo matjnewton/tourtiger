@@ -2,18 +2,18 @@
 
 	$tour_section_td_repeater = '';
 	$tour_section_td_image = '';
-
-	$tour_section_classes .= ' pc--s__top-divider_' . get_sub_field( 'tour_pc-td--cover' );
+	$tour_section_td_class = 'pc_divider pc_divider__top';
 	
-	if ( $tour_section_td_select == 'repeater' ) {
+	if ( get_sub_field( 'tour_pc-td--select' ) == 'repeater' ) {
 		$tour_section_td_repeater = get_sub_field( 'tour_pc-td--select__repeater' );
 
 		$tour_section_classes .= ' pc--s__td_repeater';
+		$tour_section_td_class .= ' js-divider';
 
 		if ( !$tour_section_td_repeater ) {
 			$tour_section_classes .= ' pc--s__td_repeater_empty';
 		}
-	} elseif ( $tour_section_td_select == 'image' ) {
+	} elseif ( get_sub_field( 'tour_pc-td--select' ) == 'image' ) {
 		$tour_section_td_image = get_sub_field( 'tour_pc-td--select__image' );
 
 		$tour_section_classes .= ' pc--s__td_image';

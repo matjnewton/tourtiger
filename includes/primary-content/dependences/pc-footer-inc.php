@@ -111,6 +111,26 @@ function add_primary_area_show_rows() { ?>
               $(this).css('min-height', img_height);
         });
 
+        /**
+         * Divider repeater
+         */
+        
+        var divider = $('.js-divider'),
+            href,
+            url,
+            img;
+        
+        divider.each(function(){
+            href =  $(this).attr('style'),
+            url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' ),
+            img = new Image(),
+            img.src = url[0];
+
+            divider.height(img.height);
+
+        });
+
+
       });
     })( jQuery );
 
