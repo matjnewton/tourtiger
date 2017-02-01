@@ -66,8 +66,8 @@ function tourtiger_scripts_method() {
 		endif;
 		
 		if($integrate_xola):
-		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, true);
-		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), null, true);
+		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
+		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), null, false);
 		endif;
 		
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), null, true);
