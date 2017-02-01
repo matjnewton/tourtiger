@@ -1462,12 +1462,5 @@ function rem_wp_ver_css_js( $src ) {
 add_filter( 'style_loader_src', 'rem_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'rem_wp_ver_css_js', 9999 );
 
-
-
-add_action( 'wp_footer', 'add_theme_scss', 9999 );
-function add_theme_scss() { ?>
-<link rel="stylesheet" id="theme-css-footer" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
-<?php }
-
 /* update dgamoni */
 require_once 'inc/load.php'; 
