@@ -366,7 +366,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
 .navbar-collapse .mobile-nav .sub-menu.dropdown-menu a{
     font-weight:$submenu_item_font_weight;
 }
-.main-nav-wrapper .genesis-nav-menu .rezdy-book-btn a, .main-nav-wrapper .genesis-nav-menu .trekksoft-book-btn a, .main-nav-wrapper .genesis-nav-menu .fareharbor-book-btn a, .main-nav-wrapper .genesis-nav-menu .xola-book-btn div, .main-nav-wrapper .genesis-nav-menu .peek-book-btn a, .main-nav-wrapper .genesis-nav-menu .giso-book-btn a, .main-nav-wrapper .genesis-nav-menu .book-btn a, .navbar-collapse .mobile-nav .book-btn a{
+.main-nav-wrapper .genesis-nav-menu .regiondo-book-btn a, .main-nav-wrapper .genesis-nav-menu .rezdy-book-btn a, .main-nav-wrapper .genesis-nav-menu .trekksoft-book-btn a, .main-nav-wrapper .genesis-nav-menu .fareharbor-book-btn a, .main-nav-wrapper .genesis-nav-menu .xola-book-btn div, .main-nav-wrapper .genesis-nav-menu .peek-book-btn a, .main-nav-wrapper .genesis-nav-menu .giso-book-btn a, .main-nav-wrapper .genesis-nav-menu .book-btn a, .navbar-collapse .mobile-nav .book-btn a{
     font-weight:$cta_button_font_weight !important;
 }
 .trip-list .trip-item{
@@ -379,7 +379,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
 .trip-item li:first-child{
     border-top:none;
 }
-.site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{
+.site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{
     border:3px solid $ftabgc;
     <?php if (empty($ftabgcfill) || $ftabgcfill == '0'): ?>
     background:none;
