@@ -1911,7 +1911,51 @@ tour_finder',
 			'message' => '',
 			'default_value' => 0,
 		),
-
+        array (
+			'key' => 'field_5892349bcb690',
+			'label' => 'Regiondo',
+			'name' => 'regiondo',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+		array (
+			'key' => 'field_589234dc88df3',
+			'label' => 'Regiondo values',
+			'name' => 'regiondo_values',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_5892349bcb690',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'regiondo',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => 4,
+			'new_lines' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
 // moved to acf/acf_company_details_tab_style.php
 		// array (
 		// 	'key' => 'field_564757f5e2b00',
