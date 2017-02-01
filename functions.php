@@ -60,6 +60,7 @@ function tourtiger_scripts_method() {
 		$trekksoft_account = get_field('trekksoft_account','option');
 		$integrate_xola = get_field('integrate_xola_with_this_website','option');
 		$integrate_rezdy = get_field('rezdy','option');
+		$integrate_regiondo = get_field('regiondo','option');
 		
 		if($integrate_trekksoft && $trekksoft_account):
 		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
@@ -73,7 +74,9 @@ function tourtiger_scripts_method() {
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), null, true);
 		
 		
-		
+		if($integrate_regiondo):
+		wp_register_script('regiondo_btn', ("https://cdn.regiondo.net/js/integration/regiondo-button.js"), array(), null, true);
+		endif;
 		
 		wp_enqueue_script( 'jquery' );
 		/*wp_register_script('ie8js', get_stylesheet_directory_uri() .'/js/ie8.js', array('jquery'), '1.0', false);
@@ -98,6 +101,10 @@ function tourtiger_scripts_method() {
 		if($integrate_xola):
 		wp_enqueue_script('xola_checkout');
 		wp_enqueue_script('xola_crossdomain');
+		endif;
+		
+		if($integrate_regiondo):
+		wp_enqueue_script('regiondo_btn');
 		endif;
 		
 		wp_enqueue_style('bootstrap');
@@ -151,6 +158,14 @@ function bgmpShortcodeCalled()
             add_filter( 'bgmp_map-shortcode-called', '__return_true' );
 }
 add_action( 'wp', 'bgmpShortcodeCalled' );
+
+function regiondo_script_loader_tag( $tag, $handle ){
+    if ( $handle == 'regiondo_btn' ) {
+        return str_replace( '<script', '<script id="regiondo-button-js" async defer', $tag );
+    }
+    return $tag;    
+}
+add_filter( 'script_loader_tag', 'regiondo_script_loader_tag', 10 ,2 );
 
 //* Enqueue Lato Google font
 /*add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
@@ -391,6 +406,7 @@ function acf_load_third_party_field_choices( $field ) {
     $integrate_getinsellout = get_field('getinsellout','option');
     $integrate_trekksoft = get_field('trekksoft','option');
     $integrate_rezdy = get_field('rezdy','option');
+    $integrate_regiondo = get_field('regiondo','option');
     
     if($integrate_xola):
     $choices = get_field('xola_values', 'option', false);
@@ -404,6 +420,8 @@ function acf_load_third_party_field_choices( $field ) {
     $choices = get_field('trekksoft_values', 'option', false);
     elseif($integrate_rezdy):
     $choices = get_field('rezdy_values', 'option', false);
+    elseif($integrate_regiondo):
+    $choices = get_field('regiondo_values', 'option', false);
     endif;
     // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices);
@@ -1273,6 +1291,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $getinsellout_data_evt = get_field('getinsellout_data_evt','option');
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_rezdy = get_field('rezdy','option');
+        $integrate_regiondo = get_field('regiondo','option');
         
         // get thumbnail
         $thumbnail = '';
@@ -1374,6 +1393,14 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
 (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") .setAttrib("entryPoint", "'.$entryPoint.'") .registerOnClick("#menubtn_trekksoft_' . $format1 .'"); })();
 // ]]></script>';
             endif;
+            $item_output .= $args->after;
+        } elseif($integrate_regiondo == true && $depth == 0 && ($classes[0] == 'regiondo-book-btn')) {
+            $t_rid = $atts['href'];
+            $url_attribute = ' data-url="'.$t_rid.'"';
+            $item_output = $args->before;
+            $item_output .= '<a class="regiondo-button"'.$url_attribute.'>';
+            $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+            $item_output .= '</a>';
             $item_output .= $args->after;
         } elseif($classes[0] == 'megamenu') {
             $item_output = $args->before;
