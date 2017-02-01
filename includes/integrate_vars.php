@@ -10,4 +10,5 @@
     $integrate_trekksoft = get_field('trekksoft','option');
     $integrate_rezdy = get_field('rezdy','option');
     $integrate_zaui = get_field('zaui','option');
+    $integrate_regiondo = get_field('regiondo','option');
 ?>
