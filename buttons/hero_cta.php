@@ -50,9 +50,13 @@
                                 <a onclick="return Zaui.open(event)" class="button-booking zaui-embed-button override book-btn" href="<?php echo $book_tours; ?>">
                                     <?php echo $cta_button_text; ?>
                                 </a>
-                            <?php else: ?>
+                    <?php elseif($integrate_regiondo && ($button_type == 'Use as third party integration Link')): ?>
+                        <a class="regiondo-button book-btn" data-url="<?php echo $book_tours; ?>">
+                            <?php echo $cta_button_text; ?>
+                        </a>
+                    <?php else: ?>
                     <a <?php if($button_type == 'Link to Featured tours'): ?>data-scroll-nav='110'<?php endif; ?> href="<?php if($button_type == 'Link to Featured tours'): echo '#'; else: echo $book_tours; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
                             <?php echo $cta_button_text; ?>
                         </a>
-                        <?php endif; ?>
+                    <?php endif; ?>
                     </div><!-- end .book-btn-wrapper-->
