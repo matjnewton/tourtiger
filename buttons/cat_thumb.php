@@ -63,6 +63,11 @@
                                 <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />
                                 <div class="tile-tint"></div>
                             </a>
+                        <?php elseif($integrate_regiondo && $use_as_integration_link && !$mobd): ?>
+                            <a class="regiondo-button" data-url="<?php if($link): echo $link; endif; ?>">
+                                <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />
+                                <div class="tile-tint"></div>
+                            </a>
                         <?php elseif($use_as_integration_link && $mobd): ?>
                         <div class="tile-image">
                             <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />

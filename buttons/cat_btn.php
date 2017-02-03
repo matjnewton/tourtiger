@@ -53,6 +53,10 @@
                                 <a onclick="return Zaui.open(event)" class="button-booking zaui-embed-button override" href="<?php if($link): echo $link; endif; ?>">
                                     <?php echo $button_label; ?>
                                 </a>
+                            <?php elseif($integrate_regiondo && $use_as_integration_link): ?>
+                                <a class="regiondo-button" data-url="<?php if($link): echo $link; endif; ?>">
+                                    <?php echo $button_label; ?>
+                                </a>
                             <?php else: ?>
                                 <a href="<?php if($link): echo $link; else: echo '#'; endif; ?>">
                                     <?php echo $button_label; ?>
