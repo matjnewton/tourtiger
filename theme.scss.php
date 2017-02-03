@@ -290,7 +290,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
 .booking-sidebar .trigger-txt{
     color:#000;
 }
-.site-container .book-btn-wrapper .dropdown-menu, .book-btn-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-btn-wrapper .dropdown-menu > li > a.giso_btn{
+.book-btn-wrapper .dropdown-menu > li > .regiondo-button, .site-container .book-btn-wrapper .dropdown-menu, .book-btn-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-btn-wrapper .dropdown-menu > li > a.giso_btn{
     background-color: rgba($hctabgc, 1);
 }
 .site-container .book-tour-wrapper .dropdown-menu, .book-tour-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-tour-wrapper .dropdown-menu > li > a.giso_btn{
