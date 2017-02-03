@@ -1,7 +1,7 @@
 <?php 
 
 acf_add_local_field_group(array (
-	'key' => 'group_557b163001178',
+	'key' => 'pc_hero_area_root',
 	'title' => 'Hero',
 	'fields' => array (
 		array (
