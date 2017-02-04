@@ -25,7 +25,7 @@ function add_primary_area_blog_card() { ?>
 					$bc_style__title_weight = 400;
 				}
 
-				$bc_style__title_set =  "font-family: " . $bc_style__title_family . "; ";
+				$bc_style__title_set =  "font-family: '" . $bc_style__title_family . "';";
 				$bc_style__title_set .=  "font-weight: " . $bc_style__title_weight . "; ";
 				$bc_style__title_set .=  "text-align: " . $bc_style__title['text_align'] . "; ";
 				$bc_style__title_set .=  "font-size: " . $bc_style__title['font_size'] . "px; ";
@@ -50,7 +50,7 @@ function add_primary_area_blog_card() { ?>
 					$bc_style__excerpt_weight = 400;
 				}
 
-				$bc_style__excerpt_set =  "font-family:" . $bc_style__excerpt_family . ";";
+				$bc_style__excerpt_set =  "font-family:'" . $bc_style__excerpt_family . "';";
 				$bc_style__excerpt_set .=  "font-weight:" . $bc_style__excerpt_weight . ";";
 				$bc_style__excerpt_set .=  "text-align:" . $bc_style__excerpt['text_align'] . ";";
 				$bc_style__excerpt_set .=  "font-size:" . $bc_style__excerpt['font_size'] . "px;";
@@ -86,7 +86,7 @@ function add_primary_area_blog_card() { ?>
 					$bc_style__date_set = "padding: 8px 13px; background-color: " . $bc_style__date_bg_color . "; ";
 				}
 
-				$bc_style__date_set .=  "font-family:" . $bc_style__date_family . ";";
+				$bc_style__date_set .=  "font-family:'" . $bc_style__date_family . "';";
 				$bc_style__date_set .=  "font-weight:" . $bc_style__date_weight . ";";
 				$bc_style__date_set .=  "text-align:" . $bc_style__date['text_align'] . ";";
 				$bc_style__date_set .=  "font-size:" . $bc_style__date['font_size'] . "px;";
@@ -132,7 +132,7 @@ function add_primary_area_blog_card() { ?>
 					$bc_style__button_weight = 400;
 				}
 
-				$bc_style__button_set =  "font-family:" . $bc_style__button_family . ";";
+				$bc_style__button_set =  "font-family:'" . $bc_style__button_family . "';";
 				$bc_style__button_set .=  "font-weight:" . $bc_style__button_weight . ";";
 				$bc_style__button_set .=  "text-align:" . $bc_style__button['text_align'] . ";";
 				$bc_style__button_set .=  "font-size:" . $bc_style__button['font_size'] . "px;";
@@ -171,19 +171,23 @@ function add_primary_area_blog_card() { ?>
 ?>
 
 	<style>
-		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__title['font-family'] . "');"; ?>
+		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__title['font-family'] . "';"; ?>
 
 		.pc_wrap .pc--blog__post .pc--blog__title { 
 			<?php echo $bc_style__title_set; ?>
 		}
+	</style>
 
-		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__excerpt['font-family'] . "');"; ?>
+	<style>
+		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__excerpt['font-family'] . "';"; ?>
 
 		.pc_wrap .pc--blog__post .pc--blog__excerpt { 
 			<?php echo $bc_style__excerpt_set; ?> 
 		}
+	</style>
 
-		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__date['font-family'] . "');"; ?>
+	<style>
+		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__date['font-family'] . "';"; ?>
 
 		.pc_wrap .pc--blog__post .pc--blog__date { 
 			<?php echo $bc_style__date_set; ?>
@@ -215,8 +219,10 @@ function add_primary_area_blog_card() { ?>
 		.pc_wrap .pc--blog__post .pc--blog__date.beneath {
 			position: relative;
 		}
+	</style>
 
-		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__button['font-family'] . "');"; ?>
+	<style>
+		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__button['font-family'] . "';"; ?>
 
 		.pc_wrap .pc--blog__post .pc--blog__button { 
 			margin-top: 15px;	

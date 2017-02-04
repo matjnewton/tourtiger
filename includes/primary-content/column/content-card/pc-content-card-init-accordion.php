@@ -18,7 +18,7 @@ if ( get_sub_field( 'cc_style__a-l_font' ) ) {
 		$cc_style__a_l_font_weight = 400;
 	}
 
-	$cc_style__ccc_css .=  "font-family:" . $cc_style__a_l_font_family . ";";
+	$cc_style__ccc_css .=  "font-family:'" . $cc_style__a_l_font_family . "';";
 	$cc_style__ccc_css .=  "font-weight:" . $cc_style__a_l_font_weight . ";";
 	$cc_style__ccc_css .=  "text-align:" . $cc_style__a_l_font['text_align'] . ";";
 	$cc_style__ccc_css .=  "font-size:" . $cc_style__a_l_font['font_size'] . "px;";
@@ -26,7 +26,7 @@ if ( get_sub_field( 'cc_style__a-l_font' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__a-l_font-color' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style__a_l_font['font_style'] . ";";
 
-	echo "@import url('https://fonts.googleapis.com/css?family=" . $cc_style__a_l_font['font-family'] . "');";
+	echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__a_l_font['font-family'] . "');";
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--label {' . $cc_style__ccc_css . ';}';
 }
 
@@ -54,7 +54,7 @@ if ( get_sub_field( 'cc_style__a-p_font' ) ) {
 		$cc_style__a_p_font_weight = 400;
 	}
 
-	$cc_style__ccc_css .=  "font-family:" . $cc_style__a_p_font_family . ";";
+	$cc_style__ccc_css .=  "font-family:'" . $cc_style__a_p_font_family . "';";
 	$cc_style__ccc_css .=  "font-weight:" . $cc_style__a_p_font_weight . ";";
 	$cc_style__ccc_css .=  "text-align:" . $cc_style__a_p_font['text_align'] . ";";
 	$cc_style__ccc_css .=  "font-size:" . $cc_style__a_p_font['font_size'] . "px;";
@@ -62,7 +62,7 @@ if ( get_sub_field( 'cc_style__a-p_font' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__a-p_font-color' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style__a_p_font['font_style'] . ";";
 
-	echo "@import url('https://fonts.googleapis.com/css?family=" . $cc_style__a_p_font['font-family'] . "');";
+	echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__a_p_font['font-family'] . "');";
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--paragraf {' . $cc_style__ccc_css . ';}';
 }
 

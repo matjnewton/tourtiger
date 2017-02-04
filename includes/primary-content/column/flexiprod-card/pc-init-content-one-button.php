@@ -29,7 +29,7 @@ if ( get_sub_field( 'fc_style__co_butt_font' ) ) {
 		$fc_style__fcc_butt_font_weight = 400;
 	}
 
-	$fc_style__fcc_css .=  "font-family: " . $fc_style__fcc_butt_font_family . "; ";
+	$fc_style__fcc_css .=  "font-family: '" . $fc_style__fcc_butt_font_family . "'; ";
 	$fc_style__fcc_css .=  "font-weight: " . $fc_style__fcc_butt_font_weight . "; ";
 	$fc_style__fcc_css .=  "text-align: center; ";
 	$fc_style__fcc_css .=  "font-size: " . $fc_style__fcc_butt_font['font_size'] . "px; ";
@@ -82,7 +82,7 @@ if (
 	}
 } 
 
-echo "@import url('https://fonts.googleapis.com/css?family=" . $fc_style__fcc_butt_font['font-family'] . "');";
+echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $fc_style__fcc_butt_font['font-family'] . "');";
 echo '#pc_wrap .' . $fc_style . ' .fc_style--first_button{' . $fc_style__fcc_css . '}';
 echo '#pc_wrap .' . $fc_style . ' .fc_style--first_button:hover{' . $fc_style__fcc_css_hover . '}';
 

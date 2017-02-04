@@ -28,14 +28,14 @@ if ( get_sub_field( 'fc_style__imla_font-bg' ) || get_sub_field( 'fc_style__imla
 	} 
 }
 
-if ( $fc_style__imla_font['font_family'] ) {
-	$fc_style__imla_font_family = $fc_style__imla_font['font_family'];
+if ( $fc_style__imla_font['font-family'] ) {
+	$fc_style__imla_font_family = $fc_style__imla_font['font-family'];
 } else {
 	$fc_style__imla_font_family = '"Roboto", Arial, sans-serif';
 }
 
-if ( $fc_style__imla_font['font_weight'] ) {
-	$fc_style__imla_font_weight = $fc_style__imla_font['font_weight'];
+if ( $fc_style__imla_font['font-weight'] ) {
+	$fc_style__imla_font_weight = $fc_style__imla_font['font-weight'];
 } else {
 	$fc_style__imla_font_weight = 400;	
 }
@@ -52,6 +52,7 @@ if ( in_array( 'text', get_sub_field( 'fc_style__imla_butt_hovef' ) ) ) {
 	$fc_style__fcc_css .= 'text-decoration: underline;';
 }
 
+echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $fc_style__imla_font['font-family'] . "');";
 echo '#pc_wrap .' . $fc_style . ' .fc_style--image_label { ' . $fc_style__fcc_css . '}';	
 echo '#pc_wrap .' . $fc_style . ' .fc_style--image_label:hover { ' . $fc_style__fcc_css . '}';	
 

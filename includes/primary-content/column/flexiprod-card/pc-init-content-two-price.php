@@ -19,7 +19,7 @@ if ( get_sub_field( 'fc_style__ct_pric_font' ) ) {
 		$fc_style__ct_pric_font_weight = 400;
 	}
 
-	$fc_style__fcc_css .=  "font-family: " . $fc_style__ct_pric_font_family . "; ";
+	$fc_style__fcc_css .=  "font-family: '" . $fc_style__ct_pric_font_family . "'; ";
 	$fc_style__fcc_css .=  "font-weight: " . $fc_style__ct_pric_font_weight . "; ";
 	$fc_style__fcc_css .=  "text-align: " . $fc_style__ct_pric_font['text_align'] . "; ";
 	$fc_style__fcc_css .=  "font-size: " . $fc_style__ct_pric_font['font_size'] . "px; ";
@@ -42,7 +42,7 @@ if ( get_sub_field( 'fc_style__ct_butt_pos' ) == 'rigt-d' ) {
 	$fc_style__fcc_css .= 'padding:4px 7px;';
 }
 
-echo "@import url('https://fonts.googleapis.com/css?family=" . $fc_style__ct_pric_font['font-family'] . "');";
+echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $fc_style__ct_pric_font['font-family'] . "');";
 echo '#pc_wrap .' . $fc_style . ' .fc_style--second_price {' . $fc_style__fcc_css . '}';
 
 ?>

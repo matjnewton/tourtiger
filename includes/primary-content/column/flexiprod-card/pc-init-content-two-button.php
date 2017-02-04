@@ -17,19 +17,19 @@ if ( get_sub_field( 'fc_style__ct_butt_font' ) ) {
 	$fc_style__fcc_butt_font = get_sub_field( 'fc_style__ct_butt_font' );
 	$fc_style__fcc_butt_font_color = get_sub_field( 'fc_style__ct_butt_font-color' );
 
-	if ( $fc_style__fcc_butt_font['font_family'] ) {
-		$fc_style__fcc_butt_font_family = $fc_style__fcc_butt_font['font_family'];
+	if ( $fc_style__fcc_butt_font['font-family'] ) {
+		$fc_style__fcc_butt_font_family = $fc_style__fcc_butt_font['font-family'];
 	} else {
 		$fc_style__fcc_butt_font_family = '"Roboto", Arial, sans-serif';
 	}
 
-	if ( $fc_style__fcc_butt_font['font_weight'] ) {
-		$fc_style__fcc_butt_font_weight = $fc_style__fcc_butt_font['font_weight'];
+	if ( $fc_style__fcc_butt_font['font-weight'] ) {
+		$fc_style__fcc_butt_font_weight = $fc_style__fcc_butt_font['font-weight'];
 	} else {
 		$fc_style__fcc_butt_font_weight = 400;
 	}
 
-	$fc_style__fcc_css .=  "font-family: " . $fc_style__fcc_butt_font_family . "; ";
+	$fc_style__fcc_css .=  "font-family: '" . $fc_style__fcc_butt_font_family . "'; ";
 	$fc_style__fcc_css .=  "font-weight: " . $fc_style__fcc_butt_font_weight . "; ";
 	$fc_style__fcc_css .=  "text-align: center; ";
 	$fc_style__fcc_css .=  "font-size: " . $fc_style__fcc_butt_font['font_size'] . "px; ";
@@ -82,6 +82,7 @@ if (
 	}
 } 
 
+echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $fc_style__fcc_butt_font['font-family'] . "');";
 echo '#pc_wrap .' . $fc_style . ' .fc_style--second_button{' . $fc_style__fcc_css . '}';
 echo '#pc_wrap .' . $fc_style . ' .fc_style--second_button:hover{' . $fc_style__fcc_css_hover . '}';
 
