@@ -52,8 +52,8 @@ $(document).ready(function(){
 	var realSlider= $("ul#bxslider").bxSlider({
 	      speed:1000,
 	      pager:false,
-	      nextText:'',
-	      prevText:'',
+	      nextText:'<i class="fa fa-angle-right"></i>',
+	      prevText:'<i class="fa fa-angle-left"></i>',
 	      infiniteLoop:false,
 	      hideControlOnEnd:true,
 	      onSlideBefore:function($slideElement, oldIndex, newIndex){

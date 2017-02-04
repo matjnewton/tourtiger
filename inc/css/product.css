@@ -11,7 +11,8 @@ body.custom-background.single-product {
 .product_content_wrapper {
   border-radius: 10px;
   background-color: #ffffff;
-  padding: 27px 27px 27px 27px;
+  /*padding: 27px 27px 27px 27px;*/
+  padding: 30px 50px 30px 50px;
   font-family: 'Roboto', sans-serif; 
   /*margin-bottom: 30px;*/
   margin-bottom: -15px;
@@ -75,12 +76,17 @@ body.custom-background.single-product {
 
 /*product_title_area_detail*/
 .product_content_wrapper.product_title_area_details {
-    padding: 0px 27px 27px 27px;
+    /*padding: 0px 27px 27px 27px;*/
+    padding: 0px 50px 27px 50px;
 }
 /*headline_details*/
 .primary_content_headline_details_options {
   display: flex;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
+  justify-content: space-between;
+}
+.primary_content_headline_details_options.count_details_options_2 {
+
 }
 .primary_content_headline_details_options li {
   display: inline-block;
@@ -110,7 +116,7 @@ body.custom-background.single-product {
   border-radius: 5px;
   background-color: #ffffff;
   border: solid 1px #ebe7e5;
-  padding: 30px 15px 16px 15px;
+  padding: 30px 15px 17px 15px; /*bottom 17+11=28*/
 }
 
 /*button row*/
@@ -209,6 +215,13 @@ padding-bottom: 11px;
 /*phone row*/
 .book-tour-wrapper_product .sidebar_phone_row {
 	margin-top: 60px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  border: solid 1px #abc545;
+}
+.book-tour-wrapper_product .sidebar_phone_row.sidebar_phone_label {
+  padding-top: 42px;
+  padding-bottom: 42px;
 }
 .book-tour-wrapper_product > .sidebar_phone_row ~ .sidebar_phone_row  {
 	margin-top: 10px;
@@ -315,7 +328,9 @@ padding-bottom: 11px;
 }
 .product_content_wrapper .highlights_options li {
     position: relative;
-    padding-bottom: 11px;
+    /*padding-bottom: 11px;*/
+    padding-bottom: 3px;
+    padding-top: 0;
     line-height: 37px;
     display: inline-block;
     vertical-align: text-top;
@@ -426,7 +441,8 @@ padding-bottom: 11px;
 }
 .style2 .primary_content_content_card_editor {
   /*padding: 30px 50px 30px 50px;*/
-  padding: 27px 27px 27px 27px;
+  /*padding: 27px 27px 27px 27px;*/
+  padding: 30px 50px 30px 50px;
 }
 .styles .site-inner .content .style2 .primary_content_content_card_editor p,
 .site-inner .content .style2 .primary_content_content_card_editor p  {
@@ -450,7 +466,8 @@ padding-bottom: 11px;
   padding: 0;
 }
 .product_content_wrapper.style1 .primary_content_content_card_wrap {
-      padding: 27px 27px 0px 27px;
+      /*padding: 27px 27px 0px 27px;*/
+      padding: 27px 50px 0px 50px;
 }
 .style1 .primary_content_content_card_hr_line {
   border-top: 1px solid #abc545;
@@ -506,7 +523,8 @@ ul.primary_content_expandable_content_options {
 .product_content_wrapper ul li.primary_content_expandable_content_options_li {
   border-bottom: 1px solid #ebe7e5;
   /*padding: 28px 43px 28px 53px;*/
-  padding: 27px 43px 27px 27px;
+  /*padding: 27px 43px 27px 27px;*/
+  padding: 27px 43px 27px 50px;
   list-style: none;
   margin: 0;
 }

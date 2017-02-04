@@ -108,7 +108,7 @@
                     $phone_number = get_sub_field('phone_number');
                     ?>
 
-                	<div class="book-tour-wrapper_product_row sidebar_phone_row">
+                	<div class="book-tour-wrapper_product_row sidebar_phone_row <?php if ($phone_label) { echo 'sidebar_phone_label';} ?>">
                 		<?php if ($phone_label) { ?>
                 			<div class="phone_label"><?php echo $phone_label; ?></div>
                 		<?php } ?>

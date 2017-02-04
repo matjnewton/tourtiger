@@ -4,7 +4,7 @@ if( get_row_layout() == 'primary_content_headline_details'):
 	$details_options = get_sub_field('primary_content_headline_details_options');
 	if($details_options) : ?>
 		<div class="product_content_wrapper product_title_area_details">
-			<ul class="primary_content_headline_details_options customstyle">
+			<ul class="primary_content_headline_details_options customstyle count_details_options_<?php echo count($details_options); ?>">
 				<?php foreach($details_options as $row) { ?>
 					<!-- <li style="width:<?php echo round(100/count($details_options)-1); ?>%;"> -->
 					<li>
