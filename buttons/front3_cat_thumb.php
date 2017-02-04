@@ -57,7 +57,7 @@
                                 <div class="tile-tint2"></div>
                             </a>
                         <?php elseif($integrate_regiondo && $use_as_integration_link): ?>
-                            <a class="regiondo-button" data-url="<?php echo $link; ?>">
+                            <a class="regiondo-button tile-image" data-url="<?php echo $link; ?>">
                                 <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />
                                 <div class="tile-tint"></div>
                                 <div class="tile-tint2"></div>
