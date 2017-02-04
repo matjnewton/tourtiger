@@ -7,14 +7,14 @@ if ( get_sub_field( 'fc_style__co_pric_font' ) ) {
 	$fc_style__co_pric_font = get_sub_field( 'fc_style__co_pric_font' );
 	$fc_style__co_pric_font_color = get_sub_field( 'fc_style__co_pric_font-color' );
 
-	if ( $fc_style__co_pric_font['font_family'] ) {
-		$fc_style__co_pric_font_family = $fc_style__co_pric_font['font_family'];
+	if ( $fc_style__co_pric_font['font-family'] ) {
+		$fc_style__co_pric_font_family = $fc_style__co_pric_font['font-family'];
 	} else {
 		$fc_style__co_pric_font_family = '"Roboto", Arial, sans-serif';
 	}
 
-	if ( $fc_style__co_pric_font['font_weight'] ) {
-		$fc_style__co_pric_font_weight = $fc_style__co_pric_font['font_weight'];
+	if ( $fc_style__co_pric_font['font-weight'] ) {
+		$fc_style__co_pric_font_weight = $fc_style__co_pric_font['font-weight'];
 	} else {
 		$fc_style__co_pric_font_weight = 400;
 	}
@@ -42,6 +42,7 @@ if ( get_sub_field( 'fc_style__co_butt_pos' ) == 'rigt-d' ) {
 	$fc_style__fcc_css .= 'padding:4px 7px;';
 }
 
+echo "@import url('https://fonts.googleapis.com/css?family=" . $fc_style__co_pric_font['font-family'] . "');";
 echo '#pc_wrap .' . $fc_style . ' .fc_style--first_price {' . $fc_style__fcc_css . '}';
 
 ?>

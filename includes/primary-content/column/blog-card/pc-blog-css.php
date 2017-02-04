@@ -13,14 +13,14 @@ function add_primary_area_blog_card() { ?>
 				$bc_style__title = get_sub_field( 'bc_style__title' );
 				$bc_style__title_color = get_sub_field( 'bc_style__title-color' );
 
-				if ( $bc_style__title['font_family'] ) {
-					$bc_style__title_family = $bc_style__title['font_family'];
+				if ( $bc_style__title['font-family'] ) {
+					$bc_style__title_family = $bc_style__title['font-family'];
 				} else {
 					$bc_style__title_family = '"Open Sans", Arial, sans-serif';
 				}
 
-				if ( $bc_style__title['font_weight'] ) {
-					$bc_style__title_weight = $bc_style__title['font_weight'];
+				if ( $bc_style__title['font-weight'] ) {
+					$bc_style__title_weight = $bc_style__title['font-weight'];
 				} else {
 					$bc_style__title_weight = 400;
 				}
@@ -38,14 +38,14 @@ function add_primary_area_blog_card() { ?>
 				$bc_style__excerpt = get_sub_field( 'bc_style__excerpt' );
 				$bc_style__excerpt_color = get_sub_field( 'bc_style__excerpt-color' );
 
-				if ( $bc_style__excerpt['font_family'] ) {
-					$bc_style__excerpt_family = $bc_style__excerpt['font_family'];
+				if ( $bc_style__excerpt['font-family'] ) {
+					$bc_style__excerpt_family = $bc_style__excerpt['font-family'];
 				} else {
 					$bc_style__excerpt_family = '"Open Sans", Arial, sans-serif';
 				}
 
-				if ( $bc_style__excerpt['font_weight'] ) {
-					$bc_style__excerpt_weight = $bc_style__excerpt['font_weight'];
+				if ( $bc_style__excerpt['font-weight'] ) {
+					$bc_style__excerpt_weight = $bc_style__excerpt['font-weight'];
 				} else {
 					$bc_style__excerpt_weight = 400;
 				}
@@ -64,14 +64,14 @@ function add_primary_area_blog_card() { ?>
 				$bc_style__date_color = get_sub_field( 'bc_style__date-color' );
 				$bc_style__date_bg_color = get_sub_field( 'bc_style__date-bg-color' );
 
-				if ( $bc_style__date['font_family'] ) {
-					$bc_style__date_family = $bc_style__date['font_family'];
+				if ( $bc_style__date['font-family'] ) {
+					$bc_style__date_family = $bc_style__date['font-family'];
 				} else {
 					$bc_style__date_family = '"Open Sans", Arial, sans-serif';
 				}
 
-				if ( $bc_style__date['font_weight'] ) {
-					$bc_style__date_weight = $bc_style__date['font_weight'];
+				if ( $bc_style__date['font-weight'] ) {
+					$bc_style__date_weight = $bc_style__date['font-weight'];
 				} else {
 					$bc_style__date_weight = 400;
 				}
@@ -120,13 +120,13 @@ function add_primary_area_blog_card() { ?>
 					$bc_style__button_bg_decor_hover = 'none';
 				}
 
-				if ( $bc_style__button['font_family'] ) {
-					$bc_style__button_family = $bc_style__button['font_family'];
+				if ( $bc_style__button['font-family'] ) {
+					$bc_style__button_family = $bc_style__button['font-family'];
 				} else {
 					$bc_style__button_family = '"Open Sans", Arial, sans-serif';
 				}	
 
-				if ( $bc_style__button['font_weight'] ) {
+				if ( $bc_style__button['font-weight'] ) {
 					$bc_style__button_weight = $bc_style__button['	font_weight'];
 				} else {
 					$bc_style__button_weight = 400;
@@ -171,13 +171,19 @@ function add_primary_area_blog_card() { ?>
 ?>
 
 	<style>
+		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__title['font-family'] . "');"; ?>
+
 		.pc_wrap .pc--blog__post .pc--blog__title { 
 			<?php echo $bc_style__title_set; ?>
 		}
 
+		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__excerpt['font-family'] . "');"; ?>
+
 		.pc_wrap .pc--blog__post .pc--blog__excerpt { 
 			<?php echo $bc_style__excerpt_set; ?> 
 		}
+
+		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__date['font-family'] . "');"; ?>
 
 		.pc_wrap .pc--blog__post .pc--blog__date { 
 			<?php echo $bc_style__date_set; ?>
@@ -209,6 +215,8 @@ function add_primary_area_blog_card() { ?>
 		.pc_wrap .pc--blog__post .pc--blog__date.beneath {
 			position: relative;
 		}
+
+		<?php echo "@import url('https://fonts.googleapis.com/css?family=" . $bc_style__button['font-family'] . "');"; ?>
 
 		.pc_wrap .pc--blog__post .pc--blog__button { 
 			margin-top: 15px;	

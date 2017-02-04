@@ -7,14 +7,14 @@ if ( get_sub_field( 'fc_style__ct_titl_font' ) ) {
 	$fc_style__ct_titl_font = get_sub_field( 'fc_style__ct_titl_font' );
 	$fc_style__ct_titl_font_color = get_sub_field( 'fc_style__ct_titl_font-color' );
 
-	if ( $fc_style__ct_titl_font['font_family'] ) {
-		$fc_style__ct_titl_font_family = $fc_style__ct_titl_font['font_family'];
+	if ( $fc_style__ct_titl_font['font-family'] ) {
+		$fc_style__ct_titl_font_family = $fc_style__ct_titl_font['font-family'];
 	} else {
 		$fc_style__ct_titl_font_family = '"Roboto", Arial, sans-serif';
 	}
 
-	if ( $fc_style__ct_titl_font['font_weight'] ) {
-		$fc_style__ct_titl_font_weight = $fc_style__ct_titl_font['font_weight'];
+	if ( $fc_style__ct_titl_font['font-weight'] ) {
+		$fc_style__ct_titl_font_weight = $fc_style__ct_titl_font['font-weight'];
 	} else {
 		$fc_style__ct_titl_font_weight = 700;
 	}
@@ -33,6 +33,7 @@ if ( get_sub_field( 'fc_style__ct_titl_under' ) ) {
 	$fc_style__fcc_css .= 'text-decoration:underline;';
 }
 
+echo "@import url('https://fonts.googleapis.com/css?family=" . $fc_style__ct_titl_font['font-family'] . "');";
 echo '#pc_wrap .' . $fc_style . ' .fc_style--second_title {' . $fc_style__fcc_css . '}';
 
 ?>

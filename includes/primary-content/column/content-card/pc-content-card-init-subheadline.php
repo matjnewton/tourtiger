@@ -6,14 +6,14 @@ $cc_style__ccc_css = '';
 if ( get_sub_field( 'cc_style__sub-headline' ) ) {
 	$cc_style__sub_headline = get_sub_field( 'cc_style__sub-headline' );
 
-	if ( $cc_style__sub_headline['font_family'] ) {
-		$cc_style__sub_headline_family = $cc_style__sub_headline['font_family'];
+	if ( $cc_style__sub_headline['font-family'] ) {
+		$cc_style__sub_headline_family = $cc_style__sub_headline['font-family'];
 	} else {
 		$cc_style__sub_headline_family = '"Open Sans", Arial, sans-serif';
 	}
 
-	if ( $cc_style__sub_headline['font_weight'] ) {
-		$cc_style__sub_headline_weight = $cc_style__sub_headline['font_weight'];
+	if ( $cc_style__sub_headline['font-weight'] ) {
+		$cc_style__sub_headline_weight = $cc_style__sub_headline['font-weight'];
 	} else {
 		$cc_style__sub_headline_weight = 400;
 	}
@@ -26,5 +26,6 @@ if ( get_sub_field( 'cc_style__sub-headline' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__sub-headline-color' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style__sub_headline['font_style'] . ";";
 
+	echo "@import url('https://fonts.googleapis.com/css?family=" . $cc_style__sub_headline['font-family'] . "');";
 	echo '#pc_wrap .' . $cc_style . ' div.pc--c__subheadline > *  {' . $cc_style__ccc_css . ';}';
 }

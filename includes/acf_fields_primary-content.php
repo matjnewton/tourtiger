@@ -34,7 +34,7 @@ function acf_typography_dir( $dir ) {
  * Turn On Chaching
  */
 if ( !is_admin() ) {
-	include( get_stylesheet_directory() . '/includes/primary-content/pc-cache.php' );
+	#include( get_stylesheet_directory() . '/includes/primary-content/pc-cache.php' );
 }
 
 /**
@@ -103,5 +103,33 @@ if( function_exists('acf_add_local_field_group') ):
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-styling-cards.php' );
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
 endif;
+
+
+/**
+ * This function builds css styles for forms
+ * @param  string $font       Font ACF Fiels 
+ * @param  string $color      Color value
+ * @param  string $background Color value
+ * @param  string $border     Color value
+ * @return string             return string with styles
+ */
+function pc_content_init_form( $font='', $color='', $background='', $border='' ) {
+	if ( $font['font-family'] ) {
+		$css[0] = "@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+	 	$css[1] .= "font-family:" . $font['font-family'] . ";";
+	}
+
+	$css[1] .= $font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
+	$css[1] .= $font['font_size'] ? "font-size:" . $font['font_size'] . "px;" : '';
+	$css[1] .= $font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
+	$css[1] .= $font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
+	$css[1] .= $font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
+
+	$css[1] .= $color ? 'color:' . $color . ';' : '';
+	$css[1] .= $background ? 'background-color:' . $background . ';' : '';
+	$css[1] .= $border ? 'border-color:' . $border . ';' : '';
+
+	return $css;
+}
 
 ?>

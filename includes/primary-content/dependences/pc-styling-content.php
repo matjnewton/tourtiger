@@ -9076,7 +9076,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				'endpoint' => 0,
 			),
 			array (
-				'key' => 'cc' . $i . '_tit12for43ont',
+				'key' => 'cc' . $i . '_tit12for43ont098',
 				'label' => 'Title font',
 				'name' => 'cc_style__fo_tit_f',
 				'type' => 'typography',
@@ -9823,7 +9823,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_titleform92',
+				'key' => 'cc' . $i . '_titlefor98792',
 				'label' => 'Title color',
 				'name' => 'cc_style__fo_tit_c',
 				'type' => 'rgba_color',
@@ -9841,7 +9841,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_ti3t4for43ont',
+				'key' => 'cc' . $i . '123t4for43ont',
 				'label' => 'Description font',
 				'name' => 'cc_style__fo_titd_f',
 				'type' => 'typography',
@@ -10588,7 +10588,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_titledform92',
+				'key' => 'cc' . $i . '_titl1234m92',
 				'label' => 'Description color',
 				'name' => 'cc_style__fo_titd_c',
 				'type' => 'rgba_color',
@@ -10606,7 +10606,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_fobufont',
+				'key' => 'cc' . $i . '_fformstyler123432font',
 				'label' => 'Submit font',
 				'name' => 'cc_style__fo_su_f',
 				'type' => 'typography',
@@ -11353,7 +11353,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5focol292',
+				'key' => 'cc' . $i . '_5foco2bcfjzf292',
 				'label' => 'Submit Button color',
 				'name' => 'cc_style__fo_su_c',
 				'type' => 'rgba_color',
@@ -11371,7 +11371,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_fonefont',
+				'key' => 'cc' . $i . '_fnefont123ont',
 				'label' => 'Next button font',
 				'name' => 'cc_style__fo_ne_f',
 				'type' => 'typography',
@@ -12118,7 +12118,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5fonext292',
+				'key' => 'cc' . $i . '_5fone123c92',
 				'label' => 'Next Button color',
 				'name' => 'cc_style__fo_ne_c',
 				'type' => 'rgba_color',
@@ -12136,7 +12136,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_foprfont',
+				'key' => 'cc' . $i . '_fop1234lalant',
 				'label' => 'Previous button font',
 				'name' => 'cc_style__fo_pr_f',
 				'type' => 'typography',
@@ -12883,7 +12883,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5foprev292',
+				'key' => 'cc' . $i . '_5foppreverp292',
 				'label' => 'Previous Button color',
 				'name' => 'cc_style__fo_pr_c',
 				'type' => 'rgba_color',
@@ -13684,7 +13684,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5fotext292',
+				'key' => 'cc' . $i . '_5fotexwfcxzt292',
 				'label' => 'Field text color',
 				'name' => 'cc_style__fo_te_c',
 				'type' => 'rgba_color',
@@ -13720,7 +13720,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_fofdxznt',
+				'key' => 'cc' . $i . '_fofd123fwqontt',
 				'label' => 'Field label font',
 				'name' => 'cc_style__fo_lab_f',
 				'type' => 'typography',
@@ -14467,7 +14467,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5fotdsew92',
+				'key' => 'cc' . $i . '_5f1234sew92',
 				'label' => 'Field label color',
 				'name' => 'cc_style__fo_lab_c',
 				'type' => 'rgba_color',
@@ -14485,7 +14485,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_fofdxdes',
+				'key' => 'cc' . $i . '_fofieldlabeldes',
 				'label' => 'Field label font',
 				'name' => 'cc_style__fo_des_f',
 				'type' => 'typography',
@@ -15232,7 +15232,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5dessew92',
+				'key' => 'cc' . $i . '_5decolor92',
 				'label' => 'Field label color',
 				'name' => 'cc_style__fo_des_c',
 				'type' => 'rgba_color',
@@ -15250,7 +15250,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_fostepstitle',
+				'key' => 'cc' . $i . '_fos12232tle',
 				'label' => 'Steps title font',
 				'name' => 'cc_style__fo_stt_f',
 				'type' => 'typography',
@@ -15997,7 +15997,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5dsteps92',
+				'key' => 'cc' . $i . '123_stecolor2ps92',
 				'label' => 'Steps title color',
 				'name' => 'cc_style__fo_stt_c',
 				'type' => 'rgba_color',
@@ -16015,7 +16015,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_fostepstitle',
+				'key' => 'cc' . $i . '_fosfont_sa5tle',
 				'label' => 'Steps progress font',
 				'name' => 'cc_style__fo_stp_f',
 				'type' => 'typography',
@@ -16762,7 +16762,7 @@ for ( $i = 1; $i < 11; $i++ ) {
 				),
 			),
 			array (
-				'key' => 'cc' . $i . '_5progeps92',
+				'key' => 'cc' . $i . '_5p2343alofonts92',
 				'label' => 'Steps progress color',
 				'name' => 'cc_style__fo_stp_c',
 				'type' => 'rgba_color',

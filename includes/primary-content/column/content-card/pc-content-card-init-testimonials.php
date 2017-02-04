@@ -6,14 +6,14 @@ $cc_style__ccc_css = '';
 if ( get_sub_field( 'cc_style__test_title_f' ) ) {
 	$cc_style_tes_ti_font = get_sub_field( 'cc_style__test_title_f' );
 
-	if ( $cc_style_tes_ti_font['font_family'] ) {
-		$cc_style_tes_ti_font_family = $cc_style_tes_ti_font['font_family'];
+	if ( $cc_style_tes_ti_font['font-family'] ) {
+		$cc_style_tes_ti_font_family = $cc_style_tes_ti_font['font-family'];
 	} else {
 		$cc_style_tes_ti_font_family = '"Open Sans", Arial, sans-serif';
 	}
 
-	if ( $cc_style_tes_ti_font['font_weight'] ) {
-		$cc_style_tes_ti_font_weight = $cc_style_tes_ti_font['font_weight'];
+	if ( $cc_style_tes_ti_font['font-weight'] ) {
+		$cc_style_tes_ti_font_weight = $cc_style_tes_ti_font['font-weight'];
 	} else {
 		$cc_style_tes_ti_font_weight = 300;
 	}
@@ -26,6 +26,7 @@ if ( get_sub_field( 'cc_style__test_title_f' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__test_title_c' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style_tes_ti_font['font_style'] . ";";
 
+	echo "@import url('https://fonts.googleapis.com/css?family=" . $cc_style_tes_ti_font['font-family'] . "');";
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--title {' . $cc_style__ccc_css . ';}';
 }
 
@@ -33,14 +34,14 @@ if ( get_sub_field( 'cc_style__test_title_f' ) ) {
 if ( get_sub_field( 'cc_style__test_excerpt_f' ) ) {
 	$cc_style_tes_ex_font = get_sub_field( 'cc_style__test_excerpt_f' );
 
-	if ( $cc_style_tes_ex_font['font_family'] ) {
-		$cc_style_tes_ex_font_family = $cc_style_tes_ex_font['font_family'];
+	if ( $cc_style_tes_ex_font['font-family'] ) {
+		$cc_style_tes_ex_font_family = $cc_style_tes_ex_font['font-family'];
 	} else {
 		$cc_style_tes_ex_font_family = '"Open Sans", Arial, sans-serif';
 	}
 
-	if ( $cc_style_tes_ex_font['font_weight'] ) {
-		$cc_style_tes_ex_font_weight = $cc_style_tes_ex_font['font_weight'];
+	if ( $cc_style_tes_ex_font['font-weight'] ) {
+		$cc_style_tes_ex_font_weight = $cc_style_tes_ex_font['font-weight'];
 	} else {
 		$cc_style_tes_ex_font_weight = 300;
 	}
@@ -53,6 +54,7 @@ if ( get_sub_field( 'cc_style__test_excerpt_f' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__test_excerpt_c' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style_tes_ex_font['font_style'] . ";";
 
+	echo "@import url('https://fonts.googleapis.com/css?family=" . $cc_style_tes_ex_font['font-family'] . "');";
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--description {' . $cc_style__ccc_css . ';}';
 }
 
@@ -61,14 +63,14 @@ if ( get_sub_field( 'cc_style__test_link_f' ) ) {
 	$cc_style_tes_li_font = get_sub_field( 'cc_style__test_link_f' );
 	$cc_style__ccc_css_hover = 'color:' . get_sub_field( 'cc_style__test_link_c-h' ) . ';';
 
-	if ( $cc_style_tes_li_font['font_family'] ) {
-		$cc_style_tes_li_font_family = $cc_style_tes_li_font['font_family'];
+	if ( $cc_style_tes_li_font['font-family'] ) {
+		$cc_style_tes_li_font_family = $cc_style_tes_li_font['font-family'];
 	} else {
 		$cc_style_tes_li_font_family = '"Open Sans", Arial, sans-serif';
 	}
 
-	if ( $cc_style_tes_li_font['font_weight'] ) {
-		$cc_style_tes_li_font_weight = $cc_style_tes_li_font['font_weight'];
+	if ( $cc_style_tes_li_font['font-weight'] ) {
+		$cc_style_tes_li_font_weight = $cc_style_tes_li_font['font-weight'];
 	} else {
 		$cc_style_tes_li_font_weight = 300;
 	}
@@ -81,6 +83,7 @@ if ( get_sub_field( 'cc_style__test_link_f' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__test_link_c' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style_tes_li_font['font_style'] . ";";
 
+	echo "@import url('https://fonts.googleapis.com/css?family=" . $cc_style_tes_li_font['font-family'] . "');";
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--link {' . $cc_style__ccc_css . ';}';
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--link:hover {' . $cc_style__ccc_css_hover . ';}';
 }
