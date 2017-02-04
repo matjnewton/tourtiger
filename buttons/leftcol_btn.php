@@ -55,6 +55,10 @@
                             <a onclick="return Zaui.open(event)" class="button-booking zaui-embed-button override book-btn" href="<?php if($bbl): echo $bbl; endif; ?>">
                                 <?php echo $bbt; ?>
                             </a>
+                            <?php elseif($integrate_regiondo && $use_as_integration_link): ?>
+                            <a class="regiondo-button book-btn" data-url="<?php if($bbl): echo $bbl; endif; ?>">
+                                <?php echo $bbt; ?>
+                            </a>
                             <?php else: ?>
                             <a href="<?php echo $bbl; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn"<?php if($bb_radius): echo ' style="border-radius:'.$bb_radius.'px"'; endif;?>><?php echo $bbt; ?></a>
                             <?php endif; ?>
