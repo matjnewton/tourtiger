@@ -58,9 +58,15 @@
         (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") <?php if($third_party == "tour_details"): ?> .setAttrib("entryPoint", "tour_details") .setAttrib("tourId", "<?php echo $format2; ?>") <?php elseif($third_party == "tour_finder"): ?> .setAttrib("entryPoint", "tour_finder")<?php endif;?> .registerOnClick("#<?php if($link): echo 'smobd'.$smobd_counter.'_trekksoft_' . $format1; endif; ?>"); })();
         // ]]></script>
                         		<?php elseif($integrate_rezdy && ($button_type == 'Use as third party integration Link')): ?>
-                        		    <a class="button-booking rezdy rezdy-modal" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
+                        		    <a class="button-booking rezdy rezdy-modal" href="<?php echo $link; ?>">
+                                    <?php echo $button_text; ?>
+                                    </a>
                                 <?php elseif($integrate_zaui && ($button_type == 'Use as third party integration Link')): ?>
                                     <a onclick="return Zaui.open(event)" class="button-booking zaui-embed-button override" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
+                        		<?php elseif($integrate_regiondo && ($button_type == 'Use as third party integration Link')): ?>
+                        		    <a class="regiondo-button" data-url="<?php echo $link; ?>">
+                                    <?php echo $button_text; ?>
+                        		    </a>
                         		<?php else: ?>
                         		    <?php if($button_text): ?>
                                     <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>

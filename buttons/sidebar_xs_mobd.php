@@ -59,6 +59,10 @@
                         		    <a class="button-booking rezdy rezdy-modal" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
                         		<?php elseif($integrate_zaui && ($button_type == 'Use as third party integration Link')): ?>
                         		    <a onclick="return Zaui.open(event)" class="button-booking zaui-embed-button override" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
+                        		<?php elseif($integrate_regiondo && ($button_type == 'Use as third party integration Link')): ?>
+                        		    <a class="regiondo-button" data-url="<?php echo $link; ?>">
+                                    <?php echo $button_text; ?>
+                        		    </a>
                         		<?php else: ?>
                         		    <?php if($button_text): ?>
                                     <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>

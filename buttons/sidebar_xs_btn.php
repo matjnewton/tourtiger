@@ -69,6 +69,12 @@
                                 <div><?php echo $bbt; ?></div>
                                 <div class="arrow-right"></div>
                             </a>
+                            <?php elseif($integrate_regiondo && ($button_type == 'Use as third party integration Link')): ?>
+                            <a class="regiondo-button book-btn2" data-url="<?php echo $bbl; ?>">
+                                <div class="arrow-left"></div>
+                                <div><?php echo $bbt; ?></div>
+                                <div class="arrow-right"></div>
+                            </a>
                             <?php else: ?>
                             <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2">
                                 <div class="arrow-left"></div>
