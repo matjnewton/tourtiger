@@ -147,13 +147,13 @@
         return undefinedd;
 	}
 
-	$scope.changedValue = function(item){ 
+	$scope.changedValue = function(item,timearray){ 
 		$scope.loading = true;      
-	   console.log(item);
-
+	    //console.log('item');console.log(item);
+		//console.log('timearray');console.log(timearray);
 	   angular.forEach($scope.api_availability, function(api_availability, key) {
 	        	angular.forEach(api_availability, function(api_availability2, key) {
-	        			if ($scope.wqs_productcode==api_availability2.productCode) {
+	        			if ($scope.wqs_productcode==api_availability2.productCode && $filter('date')(new Date(api_availability2.startTimeLocal)) == $filter('date')(new Date(timearray)) ) {
 	        				//console.log(api_availability2);
 	        				angular.forEach(api_availability2.priceOptions, function(priceOptions, key) {
 	        					//console.log(priceOptions.id);
