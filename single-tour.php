@@ -183,13 +183,16 @@ function tourtiger_sub_contents(){ ?>
                                     </div><!-- end .itinerary-inner-->
                                     </div>
                                 </div><!-- end .row -->
-                                <?php $i ++; ?>
+                                <?php $i++; ?>
                                 <?php endwhile; ?>
                                 </div><!-- end .classic-itinerary-list-->
                                 <?php endif; ?>
                             <?php endif; ?>
                             
                             <?php if( get_row_layout() == 'multiple_trip_details'): ?>
+                                <?php
+                                $gal_num = 1; 
+                                $gn = (int)$gal_num; ?>
                                 <?php if(have_rows('trip_list')): ?>
                                 <div class="trip-list">
                                 <?php while(have_rows('trip_list')): the_row(); ?>
@@ -199,7 +202,6 @@ function tourtiger_sub_contents(){ ?>
                                 $image = aq_resize( $img_url, 715, 303, true );
                                 $images = get_sub_field('gallery');
                                 $paragraph = get_sub_field('paragraph');
-
                                 $custom_options = get_sub_field('custom_options');
                                 ?>
                                     <div class="trip-item">
@@ -208,7 +210,7 @@ function tourtiger_sub_contents(){ ?>
                                     <?php endif; ?>
                                 <?php if( $images ): ?>
                                 <div class="gallery">
-                                    <div class="photo-gallery">
+                                    <div class="photo-gallery gallery-one gallery-<?php echo $gn; ?>">
                                         <?php foreach( $images as $image ): ?>
                             <?php 
                                 $img_url = $image['url'];
@@ -261,6 +263,7 @@ function tourtiger_sub_contents(){ ?>
                                         </div>
                                     <?php endif ?>
                                     </div><!-- end .trip-item-->
+                                    <?php $gn++; ?>
                                 <?php endwhile; ?>
                                 </div>
                                 <?php endif; ?>
@@ -484,13 +487,14 @@ function tourtiger_sub_contents(){ ?>
                             <?php endif; ?>
                             
                             <?php if( get_row_layout() == 'image_gallery'): ?>
-                                <?php $images = get_sub_field('gallery'); 
-                                    
-                                    
+                                <?php $images = get_sub_field('gallery');   
                                 ?>
+                                <?php
+                                $gal_num2 = 1; 
+                                $gn2 = (int)$gal_num2; ?>
                                 <?php if( $images ): ?>
                                 <div class="gallery">
-                                    <div class="photo-gallery">
+                                    <div class="photo-gallery gallery-two gallery2-<?php echo $gn2; ?>">
                                         <?php foreach( $images as $image ): ?>
                             <?php 
                                 $img_url = $image['url'];
@@ -499,6 +503,7 @@ function tourtiger_sub_contents(){ ?>
                                         <a href="<?php echo $img_url; ?>" class="w-inline-block photo-thumbnail">
                                             <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']; ?>" class="image-thumb img-responsive" />
                                         </a>
+                                        <?php $gn2++; ?>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
