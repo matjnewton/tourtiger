@@ -191,7 +191,7 @@ function tourtiger_sub_contents(){ ?>
                             
                             <?php if( get_row_layout() == 'multiple_trip_details'): ?>
                                 <?php
-                                $gal_num = 1; 
+                                $gal_num = 0; 
                                 $gn = (int)$gal_num; ?>
                                 <?php if(have_rows('trip_list')): ?>
                                 <div class="trip-list">
@@ -490,7 +490,7 @@ function tourtiger_sub_contents(){ ?>
                                 <?php $images = get_sub_field('gallery');   
                                 ?>
                                 <?php
-                                $gal_num2 = 1; 
+                                $gal_num2 = 0; 
                                 $gn2 = (int)$gal_num2; ?>
                                 <?php if( $images ): ?>
                                 <div class="gallery">
