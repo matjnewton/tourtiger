@@ -4,7 +4,6 @@ $fc_styles_arr = array();
 
 function get_pc_flexiprod_card_style( $fc_style ) {
 
-
 	if ( have_rows( $fc_style, 'option' ) ) {
 
 		while ( have_rows( $fc_style, 'option' ) ) { 
@@ -58,10 +57,9 @@ function get_pc_flexiprod_card_style( $fc_style ) {
 
 		}
 
+		return $fc_style;
+
 	}
-
-	return $fc_styles_arr;
-
 
 }
 
