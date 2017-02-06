@@ -104,6 +104,32 @@ if( function_exists('acf_add_local_field_group') ):
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
 endif;
 
+/**
+ * Get css via ACF Font
+ * @param  string $font - ACF Field
+ * @return array        - [0] - Link to Google font; [1] - css styles  
+ */
+function pc_init_font_css( $font = '' ) {
+	if ( $font ) {
+		$css = array( false, '' );
+
+		if ( $font['font-family'] ) {
+			$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+			$css[1] .= "font-family:'" . $font['font-family'] . "';";
+		}
+
+		$css[1] .= $font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
+		$css[1] .= $font['font_size'] ? "font-size:" . $font['font_size'] . "px;" : '';
+		$css[1] .= $font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
+		$css[1] .= $font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
+		$css[1] .= $font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
+
+		return $css;
+
+	} else {
+		return false;
+	}
+}
 
 /**
  * This function builds css styles for forms
@@ -115,8 +141,8 @@ endif;
  */
 function pc_content_init_form( $font='', $color='', $background='', $border='' ) {
 	if ( $font['font-family'] ) {
-		$css[0] = "@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
-	 	$css[1] .= "font-family:" . $font['font-family'] . ";";
+		$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+	 	$css[1] .= "font-family:'" . $font['font-family'] . "';";
 	}
 
 	$css[1] .= $font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
