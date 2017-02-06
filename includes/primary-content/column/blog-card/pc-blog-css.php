@@ -9,235 +9,96 @@ function add_primary_area_blog_card() { ?>
 	if ( have_rows( 'bc_style-one', 'option' ) ) {
 		while ( have_rows( 'bc_style-one', 'option' ) ) { the_row();
 
-			if ( get_sub_field( 'bc_style__title' ) ) {
-				$bc_style__title = get_sub_field( 'bc_style__title' );
-				$bc_style__title_color = get_sub_field( 'bc_style__title-color' );
+			echo '<style>';
 
-				if ( $bc_style__title['font-family'] ) {
-					$bc_style__title_family = $bc_style__title['font-family'];
-				} else {
-					$bc_style__title_family = '"Open Sans", Arial, sans-serif';
-				}
+			/*
+				Title
+			 */
+			$bc_style__title_set = pc_init_font_css( get_sub_field( 'bc_style__title' ) );
+			$bc_style__title_set[1] .= get_sub_field( 'bc_style__title-color' ) ? "color:" . get_sub_field( 'bc_style__title-color' ) . ";" :'';
 
-				if ( $bc_style__title['font-weight'] ) {
-					$bc_style__title_weight = $bc_style__title['font-weight'];
-				} else {
-					$bc_style__title_weight = 400;
-				}
+			echo $bc_style__title_set[0] ? $bc_style__title_set[0] : '';
+			echo $bc_style__title_set[1] ? '.pc_wrap .pc--blog__post .pc--blog__title {' . $bc_style__title_set[1] . '}' : '';
 
-				$bc_style__title_set =  "font-family: '" . $bc_style__title_family . "';";
-				$bc_style__title_set .=  "font-weight: " . $bc_style__title_weight . "; ";
-				$bc_style__title_set .=  "text-align: " . $bc_style__title['text_align'] . "; ";
-				$bc_style__title_set .=  "font-size: " . $bc_style__title['font_size'] . "px; ";
-				$bc_style__title_set .=  "line-height: " . $bc_style__title['line_height'] . "px; ";
-				$bc_style__title_set .=  "color: " . $bc_style__title_color . "; ";
-				$bc_style__title_set .=  "font-style: " . $bc_style__title['font_style'] . "; ";
-			} 
+			/*
+				Excerpt
+			 */
+			$bc_style__excerpt_set = pc_init_font_css( get_sub_field( 'bc_style__excerpt' ) );
+			$bc_style__excerpt_set[1] .= get_sub_field( 'bc_style__excerpt-color' ) ? "color:" . get_sub_field( 'bc_style__excerpt-color' ) . ";" :''; 
 
-			if ( get_sub_field( 'bc_style__excerpt' ) ) {
-				$bc_style__excerpt = get_sub_field( 'bc_style__excerpt' );
-				$bc_style__excerpt_color = get_sub_field( 'bc_style__excerpt-color' );
+			echo $bc_style__excerpt_set[0] ? $bc_style__excerpt_set[0] : '';
+			echo $bc_style__excerpt_set[1] ? '.pc_wrap .pc--blog__post .pc--blog__excerpt {' . $bc_style__excerpt_set[1] . '}' : '';
 
-				if ( $bc_style__excerpt['font-family'] ) {
-					$bc_style__excerpt_family = $bc_style__excerpt['font-family'];
-				} else {
-					$bc_style__excerpt_family = '"Open Sans", Arial, sans-serif';
-				}
+			/*
+				Date
+			 */
+			$bc_style__date_set = pc_init_font_css( get_sub_field( 'bc_style__date' ) );
+			$bc_style__date_set[1] .= get_sub_field( 'bc_style__excerpt-color' ) ? "color:" . get_sub_field( 'bc_style__date-color' ) . ";" :''; 
+			$bc_style__date_bg_color = get_sub_field( 'bc_style__date-bg-color' );
 
-				if ( $bc_style__excerpt['font-weight'] ) {
-					$bc_style__excerpt_weight = $bc_style__excerpt['font-weight'];
-				} else {
-					$bc_style__excerpt_weight = 400;
-				}
-
-				$bc_style__excerpt_set =  "font-family:'" . $bc_style__excerpt_family . "';";
-				$bc_style__excerpt_set .=  "font-weight:" . $bc_style__excerpt_weight . ";";
-				$bc_style__excerpt_set .=  "text-align:" . $bc_style__excerpt['text_align'] . ";";
-				$bc_style__excerpt_set .=  "font-size:" . $bc_style__excerpt['font_size'] . "px;";
-				$bc_style__excerpt_set .=  "line-height:" . $bc_style__excerpt['line_height'] . "px;";
-				$bc_style__excerpt_set .=  "color:" . $bc_style__excerpt_color . ";";
-				$bc_style__excerpt_set .=  "font-style:" . $bc_style__excerpt['font_style'] . ";";
+			if ( 
+				   $bc_style__date_bg_color == '' 
+				|| $bc_style__date_bg_color == 'transparent' 
+				|| !$bc_style__date_bg_color 
+			) {
+				$bc_style__date_set[1] .= "padding: 0; background-color: transparent; ";
+			} else {
+				$bc_style__date_set[1] .= "padding: 8px 13px; background-color: " . $bc_style__date_bg_color . "; ";
 			}
 
-			if ( get_sub_field( 'bc_style__date' ) ) {
-				$bc_style__date = get_sub_field( 'bc_style__date' );
-				$bc_style__date_color = get_sub_field( 'bc_style__date-color' );
-				$bc_style__date_bg_color = get_sub_field( 'bc_style__date-bg-color' );
+			echo $bc_style__date_set[0] ? $bc_style__date_set[0] : '';
+			echo $bc_style__date_set[1] ? '.pc_wrap .pc--blog__post .pc--blog__date {' . $bc_style__date_set[1] . '}' : '';
 
-				if ( $bc_style__date['font-family'] ) {
-					$bc_style__date_family = $bc_style__date['font-family'];
-				} else {
-					$bc_style__date_family = '"Open Sans", Arial, sans-serif';
-				}
+			/*
+				Button
+			 */
+			$bc_style__button_color = get_sub_field( 'bc_style__button-color' );
+			$bc_style__button_bg_color = get_sub_field( 'bc_style__button-bg-color' );
 
-				if ( $bc_style__date['font-weight'] ) {
-					$bc_style__date_weight = $bc_style__date['font-weight'];
-				} else {
-					$bc_style__date_weight = 400;
-				}
+			$bc_style__button_set = pc_init_font_css( get_sub_field( 'bc_style__button' ) );
+			$bc_style__button_set[1] .= $bc_style__button_color ? "color:" . $bc_style__button_color . ";" :''; 
+			$bc_style__button_set_hover = '';
+			$bc_style__button = get_sub_field( 'bc_style__button' );
+			$bc_style__button_bg_color = $bc_style__button_bg_color ? 'backgrond-color:' . $bc_style__button_bg_color . ';':'';
 
-				if ( 
-					   $bc_style__date_bg_color == '' 
-					|| $bc_style__date_bg_color == 'transparent' 
-					|| !$bc_style__date_bg_color 
-				) {
-					$bc_style__date_set = "padding: 0; background-color: transparent; ";
-				} else {
-					$bc_style__date_set = "padding: 8px 13px; background-color: " . $bc_style__date_bg_color . "; ";
-				}
-
-				$bc_style__date_set .=  "font-family:'" . $bc_style__date_family . "';";
-				$bc_style__date_set .=  "font-weight:" . $bc_style__date_weight . ";";
-				$bc_style__date_set .=  "text-align:" . $bc_style__date['text_align'] . ";";
-				$bc_style__date_set .=  "font-size:" . $bc_style__date['font_size'] . "px;";
-				$bc_style__date_set .=  "line-height:" . $bc_style__date['line_height'] . "px;";
-				$bc_style__date_set .=  "color:" . $bc_style__date_color . ";";
-				$bc_style__date_set .=  "font-style:" . $bc_style__date['font_style'] . ";";
+			if ( in_array( 'invert', get_sub_field( 'bc_type__button_hover' ) ) ) {
+				$bc_style__button_set_hover .= $bc_style__button_color ? 'background-color:' . $bc_style__button_color . ';':'';
+				$bc_style__button_set_hover .= $bc_style__button_bg_color ? 'color:' . $bc_style__button_bg_color . ';':'';
+			} else {
+				$bc_style__button_set_hover .= $bc_style__button_bg_color ? 'background-color:' . $bc_style__button_bg_color . ';':'';
+				$bc_style__button_set_hover .= $bc_style__button_color ? 'color:' . $bc_style__button_color . ';':'';
 			}
 
-			if ( get_sub_field( 'bc_type__button' ) ){
-				$bc_style__button = get_sub_field( 'bc_style__button' );
-				$bc_style__button_color = get_sub_field( 'bc_style__button-color' );
-				$bc_style__button_set_hover = '';
+			if ( in_array( 'decor', get_sub_field( 'bc_type__button_hover' ) ) ) $bc_style__button_set_hover .= 'text-decoration:underline;';
 
-				if ( get_sub_field( 'bc_style__button-bg-color' ) ) {
-					$bc_style__button_bg_color = get_sub_field( 'bc_style__button-bg-color' );
-				} else {
-					$bc_style__button_bg_color = "#fff";
-				}
 
-				if ( in_array( 'invert', get_sub_field( 'bc_type__button_hover' ) ) ) {
-					$bc_style__button_bg_color_hover = $bc_style__button_color;
-					$bc_style__button_color_hover = $bc_style__button_bg_color;
-				} else {
-					$bc_style__button_bg_color_hover = $bc_style__button_bg_color;
-					$bc_style__button_color_hover = $bc_style__button_color;
-				}
+			if ( get_sub_field( 'bc_type__button' ) == 'text' ) {
+				$bc_style__button_set[1] .= '';
+			} elseif ( get_sub_field( 'bc_type__button' ) == 'square' ) {
+				$bc_style__button_set[1] .= 'padding: 4px 7px; border-radius: 0;';
+			} elseif ( get_sub_field( 'bc_type__button' ) == 'round' ) {
+				$bc_style__button_set[1] .= 'padding: 4px 7px; border-radius: 50%;';
+			} elseif ( get_sub_field( 'bc_type__button' ) == 'corner' ) {
+				$bc_style__button_set[1] .= 'padding: 4px 7px; border-radius: 4px;';
+			}
 
-				if ( in_array( 'decor', get_sub_field( 'bc_type__button_hover' ) ) ) {
-					$bc_style__button_bg_decor_hover = 'underline';
-				} else {
-					$bc_style__button_bg_decor_hover = 'none';
-				}
+			if ( get_sub_field( 'bc_style__button_drop' ) ) $bc_style__button_set[1] .= 'text-shadow: 1px 1px 2px rgba(0,0,0,.2);';
 
-				if ( $bc_style__button['font-family'] ) {
-					$bc_style__button_family = $bc_style__button['font-family'];
-				} else {
-					$bc_style__button_family = '"Open Sans", Arial, sans-serif';
-				}	
+			if ( get_sub_field( 'bc_style__button_bor' ) != 'no' ) {
+				$bc_style__button_set[1] .= 'border:' . get_sub_field( 'bc_style__button_thi' ) . 'px solid transparent;';
+				$bc_style__button_set_hover .= 'border-color:' . $bc_style__button_color_hover;
 
-				if ( $bc_style__button['font-weight'] ) {
-					$bc_style__button_weight = $bc_style__button['	font_weight'];
-				} else {
-					$bc_style__button_weight = 400;
-				}
-
-				$bc_style__button_set =  "font-family:'" . $bc_style__button_family . "';";
-				$bc_style__button_set .=  "font-weight:" . $bc_style__button_weight . ";";
-				$bc_style__button_set .=  "text-align:" . $bc_style__button['text_align'] . ";";
-				$bc_style__button_set .=  "font-size:" . $bc_style__button['font_size'] . "px;";
-				$bc_style__button_set .=  "line-height:" . $bc_style__button['line_height'] . "px;";
-				$bc_style__button_set .=  "color:" . $bc_style__button_color . ";";
-				$bc_style__button_set .=  "background-color:" . $bc_style__button_bg_color . ";";
-				$bc_style__button_set .=  "font-style:" . $bc_style__button['font_style'] . ";";
-				$bc_style__button_set .=  "text-decoration: none;";
-
-				if ( get_sub_field( 'bc_type__button' ) == 'text' ) {
-					$bc_style__button_set .= '';
-				} elseif ( get_sub_field( 'bc_type__button' ) == 'square' ) {
-					$bc_style__button_set .= 'padding: 4px 7px; border-radius: 0;';
-				} elseif ( get_sub_field( 'bc_type__button' ) == 'round' ) {
-					$bc_style__button_set .= 'padding: 4px 7px; border-radius: 50%;';
-				} elseif ( get_sub_field( 'bc_type__button' ) == 'corner' ) {
-					$bc_style__button_set .= 'padding: 4px 7px; border-radius: 4px;';
-				}
-
-				if ( get_sub_field( 'bc_style__button_drop' ) ) {
-					$bc_style__button_set .= 'text-shadow: 1px 1px 2px rgba(0,0,0,.2);';
-				}
-
-				if ( get_sub_field( 'bc_style__button_bor' ) != 'no' ) {
-					$bc_style__button_set .= 'border:' . get_sub_field( 'bc_style__button_thi' ) . 'px solid transparent;';
-					$bc_style__button_set_hover .= 'border-color:' . $bc_style__button_color_hover;
-
-					if ( get_sub_field( 'bc_style__button_bor' ) == 'yes' ) {
-						$bc_style__button_set .= 'border-color:' . $bc_style__button_color . ';';
-					}
+				if ( get_sub_field( 'bc_style__button_bor' ) == 'yes' ) {
+					$bc_style__button_set[1] .= 'border-color:' . $bc_style__button_color . ';';
 				}
 			}
+
+			echo $bc_style__button_set[0] ? $bc_style__button_set[0] : '';
+			echo $bc_style__button_set[1] ? '.pc_wrap .pc--blog__post .pc--blog__button {' . $bc_style__button_set[1] . '}' : '';
+			echo $bc_style__button_set_hover ? '.pc_wrap .pc--blog__post .pc--blog__button:hover {' . $bc_style__button_set_hover . '}' : '';
+
+			echo '</style>';
 
 		}
 	}
-?>
-
-	<style>
-		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__title['font-family'] . "';"; ?>
-
-		.pc_wrap .pc--blog__post .pc--blog__title { 
-			<?php echo $bc_style__title_set; ?>
-		}
-	</style>
-
-	<style>
-		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__excerpt['font-family'] . "';"; ?>
-
-		.pc_wrap .pc--blog__post .pc--blog__excerpt { 
-			<?php echo $bc_style__excerpt_set; ?> 
-		}
-	</style>
-
-	<style>
-		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__date['font-family'] . "';"; ?>
-
-		.pc_wrap .pc--blog__post .pc--blog__date { 
-			<?php echo $bc_style__date_set; ?>
-			z-index: 3;
-		}
-
-		.pc_wrap .pc--blog__post .pc--blog__date.top-left {
-			position: absolute;
-			top: 20px;
-			left: 0;
-			padding: 8px 12px;
-			color: #fff; 
-			background-color: rgba(0,0,0,.5);
-		}
-
-		.pc_wrap .pc--blog__post .pc--blog__date.top-left {
-			position: absolute;
-			top: 20px;
-			right: 0;
-			padding: 8px 12px;
-			color: #fff; 
-			background-color: rgba(0,0,0,.5);
-		}
-
-		.pc_wrap .pc--blog__post .pc--blog__date.above {
-			position: relative;
-		}
-
-		.pc_wrap .pc--blog__post .pc--blog__date.beneath {
-			position: relative;
-		}
-	</style>
-
-	<style>
-		<?php echo "@import 'https://fonts.googleapis.com/css?family=" . $bc_style__button['font-family'] . "';"; ?>
-
-		.pc_wrap .pc--blog__post .pc--blog__button { 
-			margin-top: 15px;	
-			display: inline-block;
-			<?php echo $bc_style__button_set; ?>;
-			transition: ease .3s;
-		}
-
-		.pc_wrap .pc--blog__post .pc--blog__button:hover {
-			background-color: <?php echo $bc_style__button_bg_color_hover; ?>;
-			color: <?php echo $bc_style__button_color_hover; ?>;
-			<?php echo $bc_style__button_set_hover; ?>
-			transition: ease .3s;
-		}
-	</style>
-
-
-<?php } ?>
+} ?>

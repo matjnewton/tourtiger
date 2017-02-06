@@ -1635,3 +1635,43 @@ div.pc--c__accordion + div.pc--c__accordion {
 .pc_divider__bottom {
 	bottom: 0;
 }
+
+.pc_wrap .pc--blog__post .pc--blog__date {
+	z-index: 3;
+}
+
+.pc_wrap .pc--blog__post .pc--blog__date.top-left {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	padding: 8px 12px;
+	color: #fff; 
+	background-color: rgba(0,0,0,.5);
+}
+
+.pc_wrap .pc--blog__post .pc--blog__date.top-left {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	padding: 8px 12px;
+	color: #fff; 
+	background-color: rgba(0,0,0,.5);
+}
+
+.pc_wrap .pc--blog__post .pc--blog__date.above {
+	position: relative;
+}
+
+.pc_wrap .pc--blog__post .pc--blog__date.beneath {
+	position: relative;
+}
+
+.pc_wrap .pc--blog__post .pc--blog__button { 
+	margin-top: 15px;	
+	display: inline-block;
+	transition: ease .3s;
+}
+
+.pc_wrap .pc--blog__post .pc--blog__button:hover {
+	transition: ease .3s;
+}
