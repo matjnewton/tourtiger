@@ -1,15 +1,14 @@
 <?php 
 
-$fc_style__fcc_css = '';
-
 if ( 
-	in_array( 'top-border', get_sub_field( 'fc_style__co' ) ) 
-	&& get_sub_field( 'fc_style__ct_tobo-w' ) 
+	get_sub_field( 'fc_style__ct_tobo-w' ) 
 	&& get_sub_field( 'fc_style__ct_tobo-c' ) 
 	&& get_sub_field( 'fc_style__ct_tobo-t' ) 
 ) {
 
-	$fc_style__fcc_css .= 'content: ""';
+	$fc_style__fcc_css = '';
+
+	$fc_style__fcc_css .= 'content: "";';
 
 	/* Border Width */
 	if ( get_sub_field( 'fc_style__ct_tobo-w' ) == 'full' ) {
@@ -27,12 +26,12 @@ if (
 
 	/* Border thickness */
 	if ( get_sub_field( 'fc_style__ct_tobo-t' ) ) {
-		$fc_style__fcc_css .= 'border-width:' . get_sub_field( 'fc_style__ct_tobo-c' ) . 'px;';
+		$fc_style__fcc_css .= 'border-width:' . get_sub_field( 'fc_style__ct_tobo-t' ) . 'px;';
 	} else {
 		$fc_style__fcc_css .= 'border-width:0px;';
 	}
-} 
 
-echo '#pc_wrap .' . $fc_style . ' .fc_style--second:before {' . $fc_style__fcc_css . '}';
+	echo '#pc_wrap .' . $fc_style . ' .fc_style--second:before {' . $fc_style__fcc_css . '}';
+} 
 
 ?>

@@ -15,9 +15,6 @@ if ( in_array( 'title', $show_ct ) )
 if ( in_array( 'desc', $show_ct ) )
 	include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content-two-desc.php' );
 
-if ( in_array( 'detail', $show_ct ) )
-	include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content-two-detail.php' );
-
 if ( in_array( 'price', $show_ct ) )
 	include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content-two-price.php' );
 

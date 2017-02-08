@@ -575,14 +575,20 @@
 /* Cols in Row - ONE */
 .pc--r__col-1_full {
 	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pc--r__col-1_part {
 	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pc--r__col-1_half {
 	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media (max-width: 992px) {
@@ -602,20 +608,27 @@
 }
 
 .pc--r__col-1_left {
-	margin-right: auto;
+	text-align: left;
 }
 
 .pc--r__col-1_center {
-	margin-left: auto;
-	margin-right: auto;
+	text-align: center;
+}
+
+.pc--r__col-1_right {
+	text-align: right;
 }
 
 .pc--r__col-1_center .pc--c__video {
 	text-align: center;
 }
 
-.pc--r__col-1_right {
-	margin-left: auto;
+.pc--r__col-1_left .pc--c__video {
+	text-align: left;
+}
+
+.pc--r__col-1_right .pc--c__video {
+	text-align: right;
 }
 
 .pc--r__mar-normal.pc--r__wrap.pc--r__col-1 .pc--c {
@@ -1674,4 +1687,14 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc_wrap .pc--blog__post .pc--blog__button:hover {
 	transition: ease .3s;
+}
+
+.pc_wrap .fc_style--first:before {
+	position: absolute;
+    top: 0;
+    display: inline-block;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border-style: solid;
 }

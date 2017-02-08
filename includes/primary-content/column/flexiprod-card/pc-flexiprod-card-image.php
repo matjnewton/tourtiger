@@ -52,7 +52,13 @@ if ( $tour_flexiprod_image_url ) :
 			height="<?php echo $thumb_height; ?>" 
 			alt="<?php echo $tour_flexiprod_image_title; ?>" />
 
-		<?php if ( in_array( 'text', $show_image ) && ( $title || $desc ) ) :  ?>
+		<?php if ( 
+			( 
+				in_array( 'title', $show_image ) 
+				|| in_array( 'desc', $show_image ) 
+			) 
+			&& ( $title || $desc ) ) :  ?>
+
 			<div class="fc_style--image_text">
 				<?php if ( $title ) : ?>
 					<div class="pc--c__b-image_title fc_style--image_title">

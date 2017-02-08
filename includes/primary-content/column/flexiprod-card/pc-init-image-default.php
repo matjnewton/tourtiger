@@ -26,10 +26,10 @@ if ( get_sub_field( 'fc_style__imbo_bet' ) ) {
 
 /* Set Radius */
 if ( get_sub_field( 'fc_style__imru' ) ) {
-	$fc_style__fcc_css = 'border-top-right-radius:' . get_sub_field( "fc_style__imru_top" ) . ';';
-	$fc_style__fcc_css .= 'border-top-left-radius:' . get_sub_field( "fc_style__imru_top" ) . ';';
-	$fc_style__fcc_css .= 'border-bottom-right-radius:' . get_sub_field( "fc_style__imru_bottom" ) . ';';
-	$fc_style__fcc_css .= 'border-bottom-left-radius:' . get_sub_field( "fc_style__imru_bottom" ) . ';';
+	$fc_style__fcc_css = 'border-top-right-radius:' . get_sub_field( "fc_style__imru_top" ) . 'px;';
+	$fc_style__fcc_css .= 'border-top-left-radius:' . get_sub_field( "fc_style__imru_top" ) . 'px;';
+	$fc_style__fcc_css .= 'border-bottom-right-radius:' . get_sub_field( "fc_style__imru_bottom" ) . 'px;';
+	$fc_style__fcc_css .= 'border-bottom-left-radius:' . get_sub_field( "fc_style__imru_bottom" ) . 'px;';
 
 	echo '#pc_wrap .' . $fc_style . ' .fc_style--image {' . $fc_style__fcc_css . '}';
 }

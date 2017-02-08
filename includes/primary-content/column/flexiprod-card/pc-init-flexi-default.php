@@ -41,7 +41,7 @@ if ( get_sub_field( 'fc_style__pa' ) == 'hover' ) {
 	$fc_style__fcc_css .= 'padding:' . get_sub_field( "fc_style__pa_yes" ) . ';';
 }
 
-echo '#pc_wrap .' . $fc_style . ' {' . $fc_style__fcc_css . '}';
-echo '#pc_wrap .' . $fc_style . ':hover {' . $fc_style__fcc_css_hover . '}';
+echo $fc_style__fcc_css ? '#pc_wrap .' . $fc_style . ' {' . $fc_style__fcc_css . '}' : '';
+echo $fc_style__fcc_css_hover ? '#pc_wrap .' . $fc_style . ':hover {' . $fc_style__fcc_css_hover . '}' : '';
 
 ?>

@@ -8,7 +8,7 @@ if ( get_sub_field( 'cc_style__editor' ) ) {
 	if ( $cc_style__editor['font-family'] ) {
 		$cc_style__editor_family = $cc_style__editor['font-family'];
 	} else {
-		$cc_style__editor_family = '"Open Sans", Arial, sans-serif';
+		$cc_style__editor_family = 'Open Sans';
 	}
 
 	if ( $cc_style__editor['font-weight'] ) {
@@ -19,7 +19,6 @@ if ( get_sub_field( 'cc_style__editor' ) ) {
 
 	$cc_style__ccc_css .=  "font-family:'" . $cc_style__editor_family . "';";
 	$cc_style__ccc_css .=  "font-weight:" . $cc_style__editor_weight . ";";
-	$cc_style__ccc_css .=  "text-align:" . $cc_style__editor['text_align'] . ";";
 	$cc_style__ccc_css .=  "font-size:" . $cc_style__editor['font_size'] . "px;";
 	$cc_style__ccc_css .=  "line-height:" . $cc_style__editor['line_height'] . "px;";
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__editor-color' ) . ";";

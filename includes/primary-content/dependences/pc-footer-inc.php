@@ -91,24 +91,25 @@ function add_primary_area_show_rows() { ?>
         /**
          * Set min-height equvival width
          */
-        var section = $('.pc--s__img--eqvival'),
-            href,
-            match_url,
-            img,
-            img_percent,
-            img_height;
+        $(window).load(function () {
+          var href,
+              match_url,
+              img,
+              img_percent,
+              img_height;
 
-        section.each(function(){
-          href = $(this).attr('style');
-          match_url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' );
-          img = new Image();
+          $('.pc--s__img--eqvival').each(function(){
+            href = $(this).attr('style');
+            match_url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' );
+            img = new Image();
 
-              img.src = match_url[0];
+                img.src = match_url[0];
 
-              img_percent = img.height / img.width * 100;
-              img_height = screen.width / 100 * img_percent;
+                img_percent = img.height / img.width * 100;
+                img_height = screen.width / 100 * img_percent;
 
-              $(this).css('min-height', img_height);
+                $(this).css('min-height', img_height);
+          });
         });
 
         /**
