@@ -33,6 +33,10 @@ $(document).ready(function(){
 	$('.primary_content_separation_grey_gap').prev('.product_content_wrapper').addClass('product_content_wrapper_end');
 	$('.product_content_wrapper').first().addClass('product_content_wrapper_header');
 	$('.product_content_wrapper').last().addClass('product_content_wrapper_footer');
+	$('.product_content_wrapper.primary_content_trip_details').next('.product_content_wrapper.primary_content_expandable_content').addClass('trip_details_plus_expandable');
+	$('.product_content_wrapper.primary_content_content_card').next('.product_content_wrapper.primary_content_trip_details').addClass('content_card_plus_trip_details');
+
+
 }); //end ready 
 
 jQuery.fn.extend(

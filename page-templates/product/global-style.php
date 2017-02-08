@@ -326,7 +326,11 @@ if ($style_sub_tab_product_font_tripdetails_content) : ?>
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_tripdetails_content['font-family']."';";
 		} ?>
 		.styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle,
-		.site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle  {
+		.site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle,
+		.styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p,
+		.site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p,
+		.site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p,
+		.styles .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p {
 		  font-family: '<?php echo $style_sub_tab_product_font_tripdetails_content['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_tripdetails_content['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_tripdetails_content['font-weight']; ?>;
@@ -385,7 +389,10 @@ if ($style_sub_tab_product_font_expandablecontent_label) : ?>
 		  color: <?php echo $style_sub_tab_product_font_expandablecontent_label['text-color']; ?>;
 }
 .styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle,
-.site-inner .content a.primary_content_expandable_content_toggle.customstyle {
+.site-inner .content a.primary_content_expandable_content_toggle.customstyle,
+.styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span, 
+.site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span
+ {
 		  font-family: '<?php echo $style_sub_tab_product_font_expandablecontent_label['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_expandablecontent_label['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_expandablecontent_label['font-weight']; ?>;

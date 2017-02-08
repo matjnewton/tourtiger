@@ -17,7 +17,7 @@
 	        		<?php if ($primary_content_content_card_hr_line) {  ?>
 						<hr class="primary_content_content_card_hr_line">
 	        		<?php } ?>
-	        		<div class="primary_content_content_card_wrap">
+	        		<div class="primary_content_content_card_wrap primary_content_content_card_wrap_style1_image <?php if ($primary_content_content_card_hr_line) { echo 'wrap_before_hr_line'; } ?>">
 	        			<img src="<?php echo bfi_thumb( $primary_content_content_card_image['url'], $params_card_image ); ?>" class="img-responsive"/>
 	        		</div>
 	        		<?php if ( $primary_content_content_card_editor) : ?>
@@ -25,8 +25,8 @@
 		        			<?php echo $primary_content_content_card_editor; ?>
 		        		</div>
 		        	<?php endif; ?>
-	        		<div class="primary_content_content_card_wrap">
-	        		</div>
+<!-- 	        		<div class="primary_content_content_card_wrap">
+	        		</div> -->
 	        	</div>
 	        <?php elseif ($primary_content_content_card_style == 'Style 2') : ?>
 		        <div class="product_content_wrapper primary_content_content_card style2">

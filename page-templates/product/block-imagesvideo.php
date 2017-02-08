@@ -1,5 +1,5 @@
 <!-- primary_content_images_video -->
-<?php global $primary_content_options_count; ?>
+<?php global $primary_content_options_count; global $post; ?>
 
         <?php if( get_row_layout() == 'primary_content_images_video'): 
 	        
@@ -19,7 +19,7 @@
 				if ( $primary_content_images_video_carousel ) : ?>
 				<div class="product_content_wrapper primary_content_images_video_carousel_wrap">
 			    	<div class="gallery">
-            			<div class="photo-gallery">
+            			<div class="photo-gallery gallery<?php echo $post->ID.'-'.$primary_content_options_count; ?>">
 					    	<?php $params_carousel_image = array( 'width' => 250, 'height' => 250 ); ?>
 							<?php foreach ( $primary_content_images_video_carousel as $key => $gallery) { ?>
 						    	<a href="<?php echo $gallery['url']; ?>" class="w-inline-block photo-thumbnail">
@@ -62,6 +62,11 @@
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function(){
+
+							$(".single-product").length>0&&$(".photo-gallery").length>0&&$(".gallery<?php echo $post->ID.'-'.$primary_content_options_count; ?>").magnificPopup({delegate:"a",type:"image",gallery:{enabled:!0}});
+							
+
+
 								// $('.bxslider-<?php echo $primary_content_options_count; ?>').bxSlider({
 								//   pagerCustom: '#bx-pager-<?php echo $primary_content_options_count; ?>',
 								//   slideMargin: 0,

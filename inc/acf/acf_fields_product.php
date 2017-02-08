@@ -1224,7 +1224,7 @@ acf_add_local_field_group(array (
 
 					),
 				),// end Images/Video
-
+				
 				//seperate
 				array (
 					'key' => '57fe33ac7b26f_separation_grey_gap_row',
@@ -2348,6 +2348,30 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
+								array (
+									'key' => 'field_58001856f00e1_full_width',
+									'label' => 'Full width',
+									'name' => 'primary_content_additional_detail_full_width',
+									'type' => 'true_false',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => array (
+										array (
+											array (
+												'field' => 'field_58001856f00e1',
+												'operator' => '==',
+												'value' => '1',
+											),
+										),
+									),
+									'wrapper' => array (
+										'width' => '',
+										'class' => '',
+										'id' => '',
+									),
+									'message' => '',
+									'default_value' => 0,
+								),
 							
 							),//end sub
 						),//end repeater
@@ -2359,6 +2383,28 @@ acf_add_local_field_group(array (
 					'label' => 'Highlights',
 					'display' => 'row',
 					'sub_fields' => array (
+						array (
+							'key' => 'field_538caa676f58c_primary_content_highlights_title',
+							'label' => 'Title',
+							'name' => 'primary_content_highlights_title',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
 						array (
 							'key' => 'field_57fe344a71cb8_columns',
 							'label' => 'Columns',

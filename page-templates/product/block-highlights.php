@@ -1,9 +1,11 @@
 		<!-- highlights layout -->
         <?php if( get_row_layout() == 'primary_content_highlights'):
-	        $primary_content_columns = get_sub_field('primary_content_columns'); ?>
+	        $primary_content_columns = get_sub_field('primary_content_columns');
+	        $primary_content_highlights_title = get_sub_field('primary_content_highlights_title'); ?>
 	        <div class="product_content_wrapper primary_content_highlights">
-	        	<h3 class="primary_content_subhead">Highlights</h3>
-
+	        	<?php if($primary_content_highlights_title): ?>
+	        		<h3 class="primary_content_subhead"><?php echo $primary_content_highlights_title; ?></h3>
+	        	<?php endif; ?>
 	        	<?php $highlights_options = get_sub_field('highlights_options');
 					if($highlights_options) : ?>
 						<ul class="highlights_options customstyle">

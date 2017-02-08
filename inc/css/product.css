@@ -1,5 +1,5 @@
 
-@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300i,400,500,700,900';
 @import 'https://fonts.googleapis.com/css?family=Dosis';
 /*main style*/
 .single-product .site-inner .content {
@@ -65,7 +65,8 @@ body.custom-background.single-product {
 .content .product_title_area h5,
 .content .product_title_area h6 {
   font-family: 'Roboto', sans-serif;
-  font-size: 35px;
+  /*font-size: 35px;*/
+  font-size: 34px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -340,6 +341,11 @@ padding-bottom: 11px;
 .product_content_wrapper.primary_content_trip_details ul li {
   padding: 14px 0;
   list-style: none;
+  flex-flow: row wrap;
+}
+.primary_trip_details_detail_collapse_full_width img {
+  width: 100%;
+  height: 100%;
 }
 .primary_content_trip_details ul li:not(:last-child) {
 /*.primary_content_trip_details ul li {*/
@@ -467,7 +473,14 @@ padding-bottom: 11px;
 }
 .product_content_wrapper.style1 .primary_content_content_card_wrap {
       /*padding: 27px 27px 0px 27px;*/
-      padding: 27px 50px 0px 50px;
+      /*padding: 27px 50px 0px 50px;*/
+      padding: 27px 50px 1px 50px;
+}
+.product_content_wrapper.style1 .primary_content_content_card_wrap.primary_content_content_card_wrap_style1_image {
+      padding: 0px 50px 0px 50px;
+}
+.product_content_wrapper.style1 .primary_content_content_card_wrap.primary_content_content_card_wrap_style1_image.wrap_before_hr_line {
+      padding: 20px 50px 0px 50px;
 }
 .style1 .primary_content_content_card_hr_line {
   border-top: 1px solid #abc545;
@@ -482,13 +495,13 @@ padding-bottom: 11px;
 }
 .styles .site-inner .content a.primary_content_expandable_content_toggle,
 .site-inner .content a.primary_content_expandable_content_toggle {
-  font-size: 18px;
+  /*font-size: 18px;*/
   color: #9b9b9b;
   /*text-decoration: underline;*/
 }
 .styles .site-inner .content a.primary_content_expandable_content_toggle span,
 .site-inner .content a.primary_content_expandable_content_toggle span {
-  font-size: 18px;
+  /*font-size: 18px;*/
   color: #9b9b9b;
   text-decoration: underline;
 }
@@ -553,7 +566,8 @@ ul.primary_content_expandable_content_options li:last-child {
   font-style: italic;
   text-align: center;
   color: #797979;
-      padding-bottom: 30px;
+      /*padding-bottom: 30px;*/
+      padding-bottom: 10px;
     padding-top: 20px;
     padding-left: 66px;
     padding-right: 66px;
@@ -604,7 +618,8 @@ ul.primary_content_expandable_content_options li:last-child {
     background: #abc545;
 }
 .primary_content_testimonials .bx-wrapper .bx-pager {
-    bottom: -50px;
+   /* bottom: -50px;*/
+    bottom: -25px;
   }
 
   .testimonial_title:after, .testimonial_title:before {
@@ -1317,6 +1332,9 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
 .single-product .gfield_label {
   display: none;
 }
+.primary_content_testimonials .bx-wrapper {
+  margin: 0 auto 25px;
+}
 .primary_content_testimonials .bx-wrapper .bx-pager.bx-default-pager a {
     background: #d8d8d8;
 }
@@ -1343,4 +1361,10 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
     color: #4a4a4a;
     font-size: 20px;
     padding: 12px;
+}
+.trip_details_plus_expandable {
+  border-top: 1px solid #ebe7e5;
+}
+.content_card_plus_trip_details {
+      padding-top: 0;
 }
