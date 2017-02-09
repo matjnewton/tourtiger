@@ -24,7 +24,7 @@
                                     </div>
                                 <?php endif; ?>
                             <?php elseif($integrate_peek && $use_as_integration_link): ?>
-                                <a href="http://www.peek.com/purchase/activity/widget/<?php if($link): echo $link; endif; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="<?php echo $button_label; ?>" data-activity-gid="<?php if($link): echo $link; endif; ?>" style="border-radius:0;">
+                                <a href="<?php if($link): echo $link; endif; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="<?php echo $button_label; ?>" data-activity-gid="<?php if($link): echo $link; endif; ?>" style="border-radius:0;">
                                     <?php echo $button_label; ?>
                                 </a>
                             <?php elseif($integrate_fareharbor && $use_as_integration_link): ?>

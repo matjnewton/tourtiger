@@ -28,7 +28,7 @@
                                     </div>
                                 <?php endif; ?>
                             <?php elseif($integrate_peek && ($button_type == 'Use as third party integration Link')): ?>
-                            <a href="http://www.peek.com/purchase/activity/widget/<?php echo $bbl; ?>" class="peek-book-button-flat book-btn2" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $bbl; ?>" style="border-radius:0;">
+                            <a href="<?php echo $bbl; ?>" class="peek-book-button-flat book-btn2" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php echo $bbl; ?>" style="border-radius:0;">
                                 <div class="arrow-left"></div>
                                 <div><?php echo $bbt; ?></div>
                                 <div class="arrow-right"></div>

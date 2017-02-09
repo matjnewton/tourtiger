@@ -28,7 +28,7 @@
 
                         <?php elseif($integrate_peek && $use_as_integration_link && !$mobd): ?>
                             <?php if ($image_url): ?>
-                            <a href="http://www.peek.com/purchase/activity/widget/<?php if($link): echo $link; endif; ?>" class="peek-book-button-flat tile-image" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php if($link): echo $link; endif; ?>" style="padding:0; width:100%;">
+                            <a href="<?php if($link): echo $link; endif; ?>" class="peek-book-button-flat tile-image" data-purchase-type="activity" data-button-text="" data-activity-gid="<?php if($link): echo $link; endif; ?>" style="padding:0; width:100%;">
                                 <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive center-block" />
                                 <div class="tile-tint"></div>
                             </a>

@@ -19,7 +19,7 @@
                                     <?php endif; ?>
 
                                 <?php elseif($integrate_peek && $use_as_integration_link && !$mobd): ?>
-                                <a href="http://www.peek.com/purchase/activity/widget/<?php if($link): echo $link; endif; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="<?php echo $headline; ?>" data-activity-gid="<?php if($link): echo $link; endif; ?>"><?php echo $headline; ?></a>
+                                <a href="<?php if($link): echo $link; endif; ?>" class="peek-book-button-flat" data-purchase-type="activity" data-button-text="<?php echo $headline; ?>" data-activity-gid="<?php if($link): echo $link; endif; ?>"><?php echo $headline; ?></a>
                                 <?php elseif($integrate_fareharbor && $use_as_integration_link && !$mobd): ?>
                                 <a href="<?php if($fareharbor_shortname): ?>https://fareharbor.com/<?php echo $fareharbor_shortname; ?>/items/<?php if($third_party == 'all-availability'): ?>calendar/<?php endif; ?><?php if($third_party == 'tour-item'): echo $link.'/'; endif; ?><?php if($third_party == 'tour-item-calendar'): echo $link.'/calendar/'; endif; ?><?php else: echo '#'; endif; ?>" onclick="<?php if($fareharbor_shortname): ?>FH.open({ shortname: '<?php echo $fareharbor_shortname; ?>',<?php if($third_party == 'all-availability'): ?> view: 'all-availability',<?php endif; ?><?php if($third_party == 'tour-item' || $third_party == 'tour-item-calendar'): ?> view: { item: <?php echo $link; ?> }<?php endif; ?><?php if(!$third_party == 'tour-item-calendar'): ?>, fullItems: 'yes'<?php endif; ?> }); return false;<?php endif; ?>">
                                     <?php echo $headline; ?>
