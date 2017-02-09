@@ -187,6 +187,7 @@ add_theme_support( 'custom-background' );
 
 add_post_type_support('tour','genesis-seo');
 add_post_type_support('tour','genesis-layouts');
+add_post_type_support('tour','genesis-scripts' );
 add_post_type_support('section','genesis-layouts');
 add_post_type_support('testimonial','genesis-layouts');
 
