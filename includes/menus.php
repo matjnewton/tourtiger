@@ -115,7 +115,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
             $gid = preg_replace('#^https?://#', '', $t_gid);
-            $attributes .= ' href="http://www.peek.com/purchase/activity/widget/'.$gid.'"';
+            $attributes .= ' href="'.$gid.'"';
             $attributes .= ' class="peek-book-button-flat"';
             $attributes .= ' data-purchase-type="activity"';
             $attributes .= ' data-button-text="'.$item->title.'"';
