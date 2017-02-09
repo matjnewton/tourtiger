@@ -22,7 +22,7 @@
 									    <?php if ( $row['primary_content_expandable_content_image_gallery_'] ) : ?>
 									    	<?php //var_dump($row['primary_content_expandable_content_image_gallery_']); ?>
 									    	<div class="gallery">
-                                    			<div class="photo-gallery gallery<?php echo $post->ID.'-'.$primary_content_options_count; ?>">
+                                    			<div class="photo-gallery gallery<?php echo $post->ID.'-'.$primary_content_options_count.'-'.$key; ?>">
 											    	<?php $params_expand_image = array( 'width' => 250, 'height' => 250 ); ?>
 													<?php foreach ( $row['primary_content_expandable_content_image_gallery_'] as $keygallery => $gallery) { ?>
 												    	<a href="<?php echo $gallery['url']; ?>" class="w-inline-block photo-thumbnail">
@@ -33,7 +33,7 @@
 											</div>
 											<script type="text/javascript">
 												$(document).ready(function(){
-													$(".single-product").length>0&&$(".photo-gallery").length>0&&$(".gallery<?php echo $post->ID.'-'.$primary_content_options_count; ?>").magnificPopup({delegate:"a",type:"image",gallery:{enabled:!0}});
+													$(".single-product").length>0&&$(".photo-gallery").length>0&&$(".gallery<?php echo $post->ID.'-'.$primary_content_options_count.'-'.$key; ?>").magnificPopup({delegate:"a",type:"image",gallery:{enabled:!0}});
 												}); //end ready 
 											</script>
 	                                    <?php endif; ?> 
