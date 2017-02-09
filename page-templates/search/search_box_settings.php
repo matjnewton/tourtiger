@@ -20,7 +20,42 @@ $search_settings_type_category_select = get_sub_field('search_settings_type_cate
 $search_settings_type_category = get_sub_field('search_settings_type_category');
 $search_settings_type_category_hide_option = get_sub_field('search_settings_type_category_hide_option');
 $search_settings_type_special_message = get_sub_field('search_settings_type_special_message');
-
+// position
+$search_settings_type_datepicker_position = get_sub_field('search_settings_type_datepicker_position');
+$datepicker_position = '';
+$datepicker_style = '';
+if( $search_settings_type_datepicker_position ):
+     foreach( $search_settings_type_datepicker_position as $position ): 
+        if ($position =='drop-up') {
+            $datepicker_position .= ' dropup ';
+            $datepicker_style = '
+            <style>
+                #vinetrekker_piker.daterangepicker {
+                    margin-top: -8px;
+                }
+                #vinetrekker_piker.daterangepicker:after {
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid #fff;
+                    border-bottom: none;
+                    top: initial;
+                    bottom: -10px;   
+                }
+                #vinetrekker_piker.daterangepicker:before {
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid #ccc;
+                    border-bottom: none;
+                    top: initial;
+                    bottom: -10px;
+                }
+            </style>';
+        }
+        // if ($position =='left') {
+        //     $datepicker_position .= ' pull-right ';
+        // }
+     endforeach; 
+endif; 
+ 
 if ($search_settings_type =='Search by one date') {
     $search_by_onedate = true; 
     $type_search= '<input type="hidden" name="type_search" id="type_search" value="one_date"/>';
@@ -91,6 +126,7 @@ if ($hero_margin) {
 
         if($search_aviliable != ''){
             $search_content = '
+            '.$datepicker_style.'
             <style>
               div.book-btn-wrapper{
                  display:none !important;
@@ -109,13 +145,13 @@ if ($hero_margin) {
                             </div>
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 rezdy_box ">
                                 <div class="add-on">
-                                    <input name="startTime" id="startTime" class="form-control rezdy_date" type="text" placeholder="Start Day" />
+                                    <input name="startTime" id="startTime" class="form-control rezdy_date '.$datepicker_position.'" type="text" placeholder="Start Day" />
                                     <i class="fa fa-calendar cal" aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 rezdy_box endTime-wrap">
                                 <div class="add-on">
-                                    <input name="endTime" id="endTime" class="form-control rezdy_date" type="text" placeholder="End Day" />
+                                    <input name="endTime" id="endTime" class="form-control rezdy_date '.$datepicker_position.'" type="text" placeholder="End Day" />
                                     <i class="fa fa-calendar cal" aria-hidden="true"></i>
                                 </div>
                             </div>

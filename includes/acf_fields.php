@@ -597,6 +597,36 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
+						array (
+							'key' => 'field_589c6dc1d2748_datepicker_position',
+							'label' => 'Datepicker position',
+							'name' => 'search_settings_type_datepicker_position',
+							'type' => 'checkbox',
+							'instructions' => 'Default drop down and open right',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_53d247c8b4b03',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => 'search_settings_style',
+								'id' => '',
+							),
+							'choices' => array (
+								'drop-up' => 'drop-up',
+								// 'left' => 'left',
+							),
+							'default_value' => array (
+							),
+							'layout' => 'horizontal',
+							'toggle' => 0,
+						),
 						// end search set
 						array (
 							'key' => 'field_5614fa0802309',
