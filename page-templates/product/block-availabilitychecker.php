@@ -112,7 +112,7 @@
 									<span class="checker_date_label">Not Available</span>
 								</span>		
 								<!-- <span class="availability_checker_col checker_count customstyle" ng-if="productss.seatsAvailable !=0">Only {{productss.seatsAvailable}} spots Left for this Date</span> -->
-								<span class="availability_checker_col checker_count customstyle" ng-if="productss.seatsAvailable !=0">Only {{timeSelected}} spots Left for this Date</span>
+								<span class="availability_checker_col checker_count customstyle" ng-if="productss.seatsAvailable !=0">{{timeSelected}} Available</span>
 								<span class="availability_checker_col checker_count customstyle" ng-if="productss.seatsAvailable ==0"></span>
 						
 <!-- 									productss.startTime: {{productss.startTime | asDateTitleYears}}

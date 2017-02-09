@@ -55,7 +55,7 @@
 									<i class="fa fa-close"></i>
 									<span class="checker_date_label">Not Available</span>
 								</span>
-								<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="timeSelected !=0">Only {{timeSelected}} Spots Left for this Date</span>	
+								<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="timeSelected !=0">{{timeSelected}} Available</span>	
 		                    	<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="timeSelected ==0"></span>	
 		                    </li>
 	                    </ul>
