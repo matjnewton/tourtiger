@@ -33,7 +33,7 @@
         this.element = $(element);
         this.startDate = moment().startOf('day');
         this.endDate = moment().endOf('day');
-        this.minDate = false;
+        this.minDate = moment().startOf('day');
         this.maxDate = false;
         this.dateLimit = false;
         this.autoApply = false;
