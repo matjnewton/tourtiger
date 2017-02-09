@@ -9,7 +9,7 @@ if ( get_sub_field( 'cc_style__button_supone_font' ) ) {
 	if ( $cc_style__button_supone_font['font-family'] ) {
 		$cc_style__button_supone_font_family = $cc_style__button_supone_font['font-family'];
 	} else {
-		$cc_style__button_supone_font_family = '"Open Sans", Arial, sans-serif';
+		$cc_style__button_supone_font_family = 'Open Sans';
 	}
 
 	if ( $cc_style__button_supone_font['font-weight'] ) {
@@ -26,7 +26,7 @@ if ( get_sub_field( 'cc_style__button_supone_font' ) ) {
 	$cc_style__ccc_css .=  "color: " . get_sub_field( 'cc_style__button_supone_font-color' ) . "; ";
 	$cc_style__ccc_css .=  "font-style: " . $cc_style__button_supone_font['font_style'] . "; ";
 
-	echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__button_supone_font['font-family'] . "');";
+	echo $cc_style__button_supone_font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__button_supone_font['font-family'] . "');" : '';
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__button-supone {' . $cc_style__ccc_css . '}';
 } 
 
@@ -39,7 +39,7 @@ if ( get_sub_field( 'cc_style__button_suptwo_font' ) ) {
 	if ( $cc_style__button_suptwo_font['font-family'] ) {
 		$cc_style__button_suptwo_font_family = $cc_style__button_suptwo_font['font-family'];
 	} else {
-		$cc_style__button_suptwo_font_family = '"Open Sans", Arial, sans-serif';
+		$cc_style__button_suptwo_font_family = 'Open Sans';
 	}
 
 	if ( $cc_style__button_suptwo_font['font-weight'] ) {
@@ -57,7 +57,7 @@ if ( get_sub_field( 'cc_style__button_suptwo_font' ) ) {
 	$cc_style__ccc_css .=  "font-style: " . $cc_style__button_suptwo_font['font_style'] . "; ";
 
 
-	echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__button_suptwo_font['font-family'] . "');";
+	echo $cc_style__button_suptwo_font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__button_suptwo_font['font-family'] . "');" : '';
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__button-suptwo {' . $cc_style__ccc_css . '}';
 }
 
@@ -71,7 +71,7 @@ if ( get_sub_field( 'cc_style__button_label_font' ) ) {
 	if ( $cc_style__button_font['font-family'] ) {
 		$cc_style__button_font_family = $cc_style__button_font['font-family'];
 	} else {
-		$cc_style__button_font_family = '"Open Sans", Arial, sans-serif';
+		$cc_style__button_font_family = 'Open Sans';
 	}
 
 	if ( $cc_style__button_font['font-weight'] ) {
@@ -153,6 +153,6 @@ if ( get_sub_field( 'cc_style__button_label_sha' ) ) {
 	$cc_style__ccc_css .= 'text-shadow: 1px 1px 3px rgba(0,0,0,.3), 1px 1px 3px rgba(0,0,0,.3);';
 }
 
-echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__button_font['font-family'] . "');";
+echo $cc_style__button_font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__button_font['font-family'] . "');" : '';
 echo '#pc_wrap .' . $cc_style . ' .pc--c__button-link {' . $cc_style__ccc_css . '}';
 echo '#pc_wrap .' . $cc_style . ' .pc--c__button-link:hover {' . $cc_style__ccc_css . '}';

@@ -1,29 +1,7 @@
 <?php 
 
-$cc_style__ccc_css = '';
+$cc_style__ccc_css = pc_init_font_css( get_sub_field( 'cc_style__headline' ) );
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__headline-color' ) ? 'color:' . get_sub_field( 'cc_style__headline-color' ) . ';' : '';
 
-if ( get_sub_field( 'cc_style__headline' ) ) {
-	$cc_style__headline = get_sub_field( 'cc_style__headline' );
-
-	if ( $cc_style__headline['font-family'] ) {
-		$cc_style__headline_family = $cc_style__headline['font-family'];
-	} else {
-		$cc_style__headline_family = 'Open Sans';
-	}
-
-	if ( $cc_style__headline['font-weight'] ) {
-		$cc_style__headline_weight = $cc_style__headline['font-weight'];
-	} else {
-		$cc_style__headline_weight = 400;
-	}
-
-	$cc_style__ccc_css .=  "font-family:'" . $cc_style__headline_family . "';";
-	$cc_style__ccc_css .=  "font-weight:" . $cc_style__headline_weight . ";";
-	$cc_style__ccc_css .=  "font-size:" . $cc_style__headline['font_size'] . "px;";
-	$cc_style__ccc_css .=  "line-height:" . $cc_style__headline['line_height'] . "px;";
-	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__headline-color' ) . ";";
-	$cc_style__ccc_css .=  "font-style:" . $cc_style__headline['font_style'] . ";";
-
-	$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__headline['font-family'] . "');";
-	echo '#pc_wrap .' . $cc_style . ' div.pc--c__headline > * {' . $cc_style__ccc_css . ';}';
-}
+echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' div.pc--c__headline > * {' . $cc_style__ccc_css[1] . '}' : '';

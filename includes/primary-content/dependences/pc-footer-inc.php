@@ -89,49 +89,48 @@ function add_primary_area_show_rows() { ?>
         $( '.pc--form__head-hide' ).find('.gform_heading').detach();
 
         /**
-         * Set min-height equvival width
-         */
-        $(window).load(function () {
-          var href,
-              match_url,
-              img,
-              img_percent,
-              img_height;
-
-          $('.pc--s__img--eqvival').each(function(){
-            href = $(this).attr('style');
-            match_url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' );
-            img = new Image();
-
-                img.src = match_url[0];
-
-                img_percent = img.height / img.width * 100;
-                img_height = screen.width / 100 * img_percent;
-
-                $(this).css('min-height', img_height);
-          });
-        });
-
-        /**
          * Divider repeater
          */
         
-        var divider = $('.js-divider'),
-            href,
+        var href,
             url,
             img;
         
-        divider.each(function(){
+        $('.pc--s__divider_repeater').find('.js-divider').each(function(){
             href =  $(this).attr('style'),
-            url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' ),
+            url = href.match(/http:\/\/[^\s]+/i)[0].split( '");' ),
             img = new Image(),
             img.src = url[0];
 
-            divider.height(img.height);
+            $(this).height(img.height);
 
         });
 
 
+      });
+
+      /**
+       * Set min-height equvival width
+       */
+      $(window).load(function () {
+        var href,
+            match_url,
+            img,
+            img_percent,
+            img_height;
+
+        $('.pc--s__img--eqvival').each(function(){
+          href = $(this).attr('style');
+          match_url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' );
+          img = new Image();
+
+              img.src = match_url[0];
+
+              img_percent = img.height / img.width * 100;
+              img_height = screen.width / 100 * img_percent;
+
+              $(this).css('min-height', img_height);
+        });
       });
     })( jQuery );
 

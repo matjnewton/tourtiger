@@ -33,13 +33,7 @@ if ( get_sub_field( 'tour_pc-bd--select' ) != 'none' ) {
 	class="<?php echo $tour_section_classes; ?>"
 	style="<?php echo $tour_section_styles; ?>">
 
-	<?php if ( $tour_section_bg == 'map' ) {
-		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-map.php' );
-	} elseif ( $tour_section_bg == 'video' ) {
-		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-video.php' );
-	} elseif ( $tour_section_bg == 'video-embed' ) {
-		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-embed.php' );
-	}
+	<?php 
 
 	if ( get_sub_field( 'tour_pc-td--select' ) != 'none' ) {
 		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-top-divider.php' );
@@ -47,6 +41,14 @@ if ( get_sub_field( 'tour_pc-bd--select' ) != 'none' ) {
 
 	if ( get_sub_field( 'tour_pc-bd--select' ) != 'none' ) {
 		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-bottom-divider.php' );
+	}
+
+	if ( $tour_section_bg == 'map' ) {
+		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-map.php' );
+	} elseif ( $tour_section_bg == 'video' ) {
+		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-video.php' );
+	} elseif ( $tour_section_bg == 'video-embed' ) {
+		include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-insert-embed.php' );
 	}
 
 	if ( have_rows( 'tour_pc-rows' ) ) { 

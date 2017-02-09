@@ -24,7 +24,7 @@ if ( get_sub_field( 'cc_style__editor' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__editor-color' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style__editor['font_style'] . ";";
 
-	echo "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__editor['font-family'] . "');";
+	echo $cc_style__editor['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__editor['font-family'] . "');" : '';
 	echo '#pc_wrap .' . $cc_style . ' div.pc--c__editor {' . $cc_style__ccc_css . '};';
 
 	if ( get_sub_field( 'cc_style__editor_link' ) )

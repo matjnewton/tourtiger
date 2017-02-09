@@ -114,7 +114,7 @@ function pc_init_font_css( $font = '' ) {
 		$css = array( false, '' );
 
 		if ( $font['font-family'] ) {
-			$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+			$css[0] = $font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
 			$css[1] .= "font-family:'" . $font['font-family'] . "';";
 		}
 
