@@ -92,19 +92,18 @@ function add_primary_area_show_rows() { ?>
          * Divider repeater
          */
         
-        var href,
-            url,
-            img;
-        
-        $('.pc--s__divider_repeater').find('.js-divider').each(function(){
-            href =  $(this).attr('style'),
-            url = href.match(/http:\/\/[^\s]+/i)[0].split( '");' ),
-            img = new Image(),
-            img.src = url[0];
+	        $('.pc--s__divider_repeater').find('.js-divider').each(function(){
+		        var element = $(this), 
+		            href =  element.attr('style'),
+		            url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' ),
+					img = new Image();
 
-            $(this).height(img.height);
+		            img.src = url[0];
 
-        });
+		            img.onload = function(){
+			            element.height(img.height);
+		            }
+	        });
 
 
       });
