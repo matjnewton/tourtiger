@@ -186,6 +186,13 @@ if ($hero_margin) {
                             singleDatePicker: true,
                     });
 
+                    jQuery("#startTime").change(function(event) {
+                            var start = $("#startTime").val();
+                            start = new Date(start);
+                            start.setDate(start.getDate() + 1);
+                            jQuery("#endTime").data("daterangepicker").setStartDate(start);
+                    });
+
                 });
             </script>';
         }
