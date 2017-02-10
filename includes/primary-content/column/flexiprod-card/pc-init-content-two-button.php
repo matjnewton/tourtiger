@@ -16,6 +16,8 @@ if ( get_sub_field( 'fc_style__ct_butt_style' ) == 'square' ) {
 	$fc_style__fcc_css[1] .= 'padding: 15px 20px;border-radius: 50%;';
 } elseif ( get_sub_field( 'fc_style__ct_butt_style' ) == 'corner' ) {
 	$fc_style__fcc_css[1] .= 'padding: 15px 20px;border-radius: 4px;';
+} else {
+	$fc_style__fcc_css[1] .= 'padding: 15px 20px;';
 }
 
 /* Button effect */
