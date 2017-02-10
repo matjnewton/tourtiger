@@ -2,7 +2,7 @@
 
 	$tour_section_td_repeater = '';
 	$tour_section_td_image = '';
-	$tour_section_td_class = 'pc_divider pc_divider__top js-divider';
+	$tour_section_td_class = 'pc_divider pc_divider__top';
 	
 	if ( get_sub_field( 'tour_pc-td--select' ) == 'repeater' ) {
 		$tour_section_td_repeater = get_sub_field( 'tour_pc-td--select__repeater' );
