@@ -1,10 +1,6 @@
 <?php
 
-if ( 
-	in_array( 'title', $show_image )
-	|| in_array( 'desc', $show_image )
-) 
-	include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image-text.php' );
+include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image-text.php' );
 
 if ( in_array( 'title', $show_image ) ) 
 	include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image-title.php' );

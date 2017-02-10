@@ -24,7 +24,8 @@ function get_pc_flexiprod_card_style( $fc_style ) {
 			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image-default.php' );
 
 			if ( 
-				in_array( 'text', $show_image ) 
+				in_array( 'title', $show_image ) 
+				|| in_array( 'desc', $show_image ) 
 				|| in_array( 'price', $show_image ) 
 				|| in_array( 'label', $show_image ) 
 			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image.php' );
