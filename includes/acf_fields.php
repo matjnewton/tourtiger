@@ -3832,7 +3832,7 @@ acf_add_local_field_group(array (
 			'label' => 'Testimonial Quote',
 			'name' => 'testimonial_quote',
 			'type' => 'text',
-			'instructions' => 'You can not exceed 125 characters in this field',
+			'instructions' => 'You can not exceed 400 characters in this field',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
@@ -3844,7 +3844,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'prepend' => '',
 			'append' => '',
-			'maxlength' => 125,
+			'maxlength' => 400,
 			'readonly' => 0,
 			'disabled' => 0,
 		),
