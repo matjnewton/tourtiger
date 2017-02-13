@@ -2124,7 +2124,7 @@ acf_add_local_field_group(array (
 										),
 										array (
 											'key' => 'field_5821e419f659e',
-											'label' => 'Alignment',
+											'label' => 'Text Alignment',
 											'name' => 'tour_pc-colums--align',
 											'type' => 'select',
 											'instructions' => '',
@@ -2139,7 +2139,44 @@ acf_add_local_field_group(array (
 												),
 											),
 											'wrapper' => array (
-												'width' => '66',
+												'width' => '33',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'left' => 'Left',
+												'center' => 'Center',
+												'right' => 'Right',
+											),
+											'default_value' => array (
+												0 => 'left',
+											),
+											'allow_null' => 0,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 0,
+										),
+										array (
+											'key' => 'field_5821eelementali34',
+											'label' => 'Element Aligment',
+											'name' => 'tour_pc-colums--align-element',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e28ff659a',
+														'operator' => '==',
+														'value' => '1',
+													),
+												),
+											),
+											'wrapper' => array (
+												'width' => '33',
 												'class' => '',
 												'id' => '',
 											),

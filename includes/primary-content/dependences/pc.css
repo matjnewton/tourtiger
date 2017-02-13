@@ -607,6 +607,20 @@
 	}
 }
 
+.pc--r__col-1_element-left {
+	margin-left: 0;
+}
+
+.pc--r__col-1_element-center {
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.pc--r__col-1_element-right {
+	margin-right: 0;
+}
+
 .pc--r__col-1_left {
 	text-align: left;
 }
