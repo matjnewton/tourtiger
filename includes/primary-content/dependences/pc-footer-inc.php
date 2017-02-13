@@ -28,27 +28,50 @@ function add_primary_area_show_rows() { ?>
         /**
          * Set thumb size for different types of Image Content
          */
-        $('.pc--crop__thumb').each(function(index, thisItem){
-          var blog_thumb_w = $(this).width(),
-              blog_thumb_h = '';
 
-          if ( $(this).hasClass('pc--c__b-image--tall') ) {
-            blog_thumb_h = blog_thumb_w * 1.35;
-          } else {
-            if ( $(this).hasClass('pc--c__b-image--normal') ) {
-              blog_thumb_h = blog_thumb_w / 1.35;
-            } else { 
-              if ( $(this).hasClass('pc--c__b-image--square') ) {
-                blog_thumb_h = blog_thumb_w;
+        $('.pc--r').find('.pc--crop__thumb').each(function(index, thisItem){
+          var blog_thumb_w = $(this).width(),
+              blog_thumb_h = '',
+              parent = $(this).closest('.pc--r');
+ 
+          if ( parent.hasClass('pc--r__col-2') || parent.hasClass('pc--r__col-1') || parent.hasClass('pc--r__col-3') ) {
+            if ( $(this).hasClass('pc--c__b-image--tall') ) {
+              blog_thumb_h = blog_thumb_w * 0.7;
+            } else {
+              if ( $(this).hasClass('pc--c__b-image--normal') ) {
+                blog_thumb_h = blog_thumb_w * 0.5;
               } else { 
-                if ( $(this).hasClass('pc--c__b-image--really-tall') ) {
-                  blog_thumb_h = blog_thumb_w * 2;
-                } else {
-                  blog_thumb_h = blog_thumb_w / 1.35;
+                if ( $(this).hasClass('pc--c__b-image--square') ) {
+                  blog_thumb_h = blog_thumb_w;
+                } else { 
+                  if ( $(this).hasClass('pc--c__b-image--really-tall') ) {
+                    blog_thumb_h = blog_thumb_w * 0.8;
+                  } else {
+                    blog_thumb_h = blog_thumb_w * 0.5;
+                  }
+                }
+              }
+            }
+          } else {
+            if ( $(this).hasClass('pc--c__b-image--tall') ) {
+              blog_thumb_h = blog_thumb_w * 1.35;
+            } else {
+              if ( $(this).hasClass('pc--c__b-image--normal') ) {
+                blog_thumb_h = blog_thumb_w / 1.35;
+              } else { 
+                if ( $(this).hasClass('pc--c__b-image--square') ) {
+                  blog_thumb_h = blog_thumb_w;
+                } else { 
+                  if ( $(this).hasClass('pc--c__b-image--really-tall') ) {
+                    blog_thumb_h = blog_thumb_w * 2;
+                  } else {
+                    blog_thumb_h = blog_thumb_w / 1.35;
+                  }
                 }
               }
             }
           }
+
 
           $(this).css( 'min-height', blog_thumb_h );
         });
