@@ -104,12 +104,14 @@
 		        			angular.forEach(api_availability2, function(seats, key) {
 		        				if(index == 0){
 		        					$scope.timeSelected = seats;
-		        					//console.log(seats);
+		        					//console.log(key);
 		        				}
-		        				
+		        				//console.log(seats);
 		        				index = index + 1;
 		        			});
-
+		        			//console.log($filter('objLength')(api_availability2));
+		        			var minheight = $filter('objLength')(api_availability2);
+		        			$('.availability_checker_options').css('min-height', 33*minheight);
 		        		}
 		        	 });
 		        });//end init
@@ -130,8 +132,7 @@
 		    return total;
 		}
 
-		
-	    $scope.changedValue = function(item){
+		$scope.changedValue = function(item){
 	    	$scope.loading = true;       
 		   console.log(item);
 		   $scope.timeSelected = item;
@@ -139,6 +140,28 @@
 			$timeout(function(){
 		        $scope.loading = false;
 		    },1000);
+
+		   console.log($scope);
+		}
+	    $scope.changedValueNext = function(item, time = 0){
+	    	$scope.loading = true;       
+		   console.log(item);
+		    // correct time
+		    var correct = new Date(item);
+		    correct.setDate(correct.getDate() + time);
+	        correct =  $filter('date')(new Date(correct), 'yyyy-MM-dd', 'UTC');
+	        console.log(correct);
+	        $('#startTime_check').val(correct);
+
+		   // $scope.timeSelected = item;
+		   $scope.timeSelected = correct;
+		   //console.log($scope.timeSelected);
+		   $scope.check_availability_xola();
+			$timeout(function(){
+				
+		        $scope.loading = false;
+		    },2000);
+		   
 
 		   console.log($scope);
 		}
@@ -1292,6 +1315,16 @@
 	    return $sce.trustAsHtml(htmlCode);
 	  }
 	}]);
+	wqs_xola_check.filter('objLength', function() {
+		 return function(object) {
+		  var count = 0;
+
+		  for(var i in object){
+		   count++;
+		  }
+		  return count;
+		 }
+	});
 
 
 })();

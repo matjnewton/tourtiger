@@ -17,7 +17,7 @@
 	                    </div>
 
 						<!-- timeSelected -->
-	                    <div class="add-on">
+<!-- 	                    <div class="add-on">
                             <span ng-repeat="(key, api_availability) in api_availability_xola track by $index" >
                             	<span class="_search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" >
                             		<span ng-if="key != 'productCode'">
@@ -27,7 +27,7 @@
                             		</span>
                             	</span>
                             </span>
-	                    </div>
+	                    </div> -->
 
 	                    <div class="add-on col-book-btn2-product">
 							<span class="book-btn2-product">
@@ -44,8 +44,8 @@
 
 	                    	<div id="ajax_preLoading3" class="preLoading3" ng-show="loading"></div>
 
-	                    	<li class="productss" ng-repeat="(key, api_availability_) in api_availability_xola[0] track by $index" ng-if="(key | asDate) == (timearray[0] | asDate) ">
-	                    		
+	                    	<!-- old template checker -->
+<!-- 	                    	<li class="productss" ng-repeat="(key, api_availability_) in api_availability_xola[0] track by $index" ng-if="(key | asDate) == (timearray[0] | asDate) ">
 		                    	<span class="availability_checker_col checker_date customstyle">{{timearray[0] | asDateTitleYears}}</span>
 		                    	<span class="availability_checker_col checker_avail customstyle" ng-if="timeSelected !=0">
 									<i class="fa fa-check"></i>
@@ -57,8 +57,31 @@
 								</span>
 								<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="timeSelected !=0">{{timeSelected}} Available</span>	
 		                    	<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="timeSelected ==0"></span>	
-		                    </li>
+		                    </li> -->
+		                    <!-- end old template checker -->
+
+							<!-- new template checker -->
+							<span class="productss" ng-repeat="(keys, api_availability_new) in api_availability_xola[0] track by $index"  ng-if="(keys | asDate) == (timearray[0] | asDate) ">
+								<li class="availability_checker_col checker_date customstyle" ng-repeat="(time, seats) in api_availability_new">
+									<span class="availability_checker_col checker_date customstyle">
+										{{timearray[0] | asDateTitleYears}}
+										<span class="checkertime">{{parseFloat(time)}}</span>
+										<span class="checkertime" ng-if="parseFloat(time)>12">PM</span>
+										<span class="checkertime" ng-if="parseFloat(time)<=12">AM</span>
+									</span>
+									<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="seats !=0">{{seats}} Available</span>
+									<span class="availability_checker_col checker_avail not customstyle" ng-if="seats ==0">
+										<i class="fa fa-close"></i>
+										<span class="checker_date_label">Not Available</span>
+									</span>
+								</li>
+							</span>
+							<!-- end new template checker -->
 	                    </ul>
+	                    	<!-- next prev -->
+						<div class="availability_checker_check">
+							<span class="availability_checker_check_prev" ng-click="changedValueNext(timearray[0],-1);">Previous Day </span> | <span class="availability_checker_check_next" ng-click="changedValueNext(timearray[0],+1);"> Next Day</span>
+						</div>
 
 				</div>
 	        </div>

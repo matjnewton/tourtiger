@@ -916,6 +916,14 @@ body.custom-background.page-template-rezdy_search {
 
 
 /*availability checker layout*/
+.availability_checker_check {
+  padding: 15px 0 5px 0;
+    text-align: center;
+}
+.availability_checker_check_prev:hover,
+.availability_checker_check_next:hover {
+  cursor: pointer;
+}
 .product_content_wrapper ul.availability_checker_options li {
     border-bottom: solid 1px #ebe7e5;
     list-style: none;
@@ -993,6 +1001,11 @@ line-height: 40px;
     color: #797979;
     flex: 10 0 30%;
 }
+.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_date .checkertime,
+.site-inner .content .product_content_wrapper span.availability_checker_col.checker_date .checkertime{
+    color: #3d3d3d;
+    font-weight: 500;
+}
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail {
    text-align: left;
@@ -1009,7 +1022,8 @@ line-height: 40px;
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail.not,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail.not {
-   text-align: left;
+   /*text-align: left;*/
+   text-align: center;
    /*color: #ca2127;*/
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail.not .checker_date_label,
@@ -1023,7 +1037,8 @@ line-height: 40px;
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count {
-    color: #ca2127;
+    /*color: #ca2127;*/
+        color: #abc545;
 }
 
 /*
@@ -1379,4 +1394,8 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
 }
 .content_card_plus_trip_details {
       padding-top: 0;
+}
+.checkdisabled {
+   pointer-events: none;
+   cursor: not-allowed;
 }
