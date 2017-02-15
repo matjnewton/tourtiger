@@ -90,7 +90,7 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} available for this date</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
@@ -129,7 +129,7 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} available for this date</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
@@ -193,7 +193,7 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} available for this date</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
@@ -232,7 +232,7 @@ function tourtiger_archive_xola(){
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} <span ng-if="get_all_seat(api_availability)!=1">spots</span><span ng-if="get_all_seat(api_availability)==1">spot</span> available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)<10">Only {{get_all_seat(api_availability)}} available for this date</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && get_all_seat(api_availability)>=10">Still available on this date.</div>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>

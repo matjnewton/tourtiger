@@ -107,7 +107,7 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
@@ -143,7 +143,7 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
@@ -212,7 +212,7 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
@@ -248,7 +248,7 @@ function tourtiger_archive(){
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
                                                     </span>
-                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} <span ng-if="productss.seatsAvailable!=1">spots</span><span ng-if="productss.seatsAvailable==1">spot</span> available for this date</div>
+                                                        <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
