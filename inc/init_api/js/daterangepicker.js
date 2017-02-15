@@ -523,6 +523,26 @@
             this.updateMonthsInView();
         },
 
+        // dgamoni 
+        setMinDate: function(minDate) {
+            if (typeof minDate === 'string')
+                this.minDate = moment(minDate, this.locale.format);
+
+            if (typeof minDate === 'object')
+                this.minDate = moment(minDate);
+
+            if (!this.timePicker)
+                this.minDate = this.minDate.startOf('day');
+
+            if (this.timePicker && this.timePickerIncrement)
+                this.minDate.minute(Math.round(this.minDate.minute() / this.timePickerIncrement) * this.timePickerIncrement);
+
+            if (!this.isShowing)
+                this.updateElement();
+
+            this.updateMonthsInView();
+        },
+        
         isInvalidDate: function() {
             return false;
         },

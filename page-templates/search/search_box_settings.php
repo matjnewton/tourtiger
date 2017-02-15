@@ -179,18 +179,36 @@ if ($hero_margin) {
                             singleDatePicker: true,
                     });
 
+                    var startplus = moment().startOf("day");
+                    startplus = new Date(startplus);
+                    startplus.setDate(startplus.getDate() + 1);
+
                     jQuery("#endTime").daterangepicker({
                             locale: {
                               format: "YYYY-MM-DD"
                             },
                             singleDatePicker: true,
+                            startDate: startplus,
+                            minDate: startplus,
                     });
 
-                    jQuery("#startTime").change(function(event) {
-                            var start = $("#startTime").val();
+                    //jQuery("#startTime").change(function(event) {
+                            // var start = $("#startTime").val();
+                            // start = new Date(start);
+                            // start.setDate(start.getDate() + 1);
+                            // jQuery("#endTime").data("daterangepicker").setStartDate(start);
+                            // jQuery("#endTime").data("daterangepicker").setEndDate(start);
+                            // jQuery("#endTime").data("daterangepicker").setMinDate(start);
+                    //});
+                    jQuery("#startTime").on("apply.daterangepicker", function(ev, picker) {
+                            //console.log(picker.startDate.format("YYYY-MM-DD"));
+                            var start = picker.startDate;
                             start = new Date(start);
                             start.setDate(start.getDate() + 1);
+                            //console.log(start);
                             jQuery("#endTime").data("daterangepicker").setStartDate(start);
+                            jQuery("#endTime").data("daterangepicker").setEndDate(start);
+                            jQuery("#endTime").data("daterangepicker").setMinDate(start);
                     });
 
                 });
