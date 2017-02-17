@@ -795,6 +795,10 @@ function tourtiger_sub_contents(){ ?>
                             $heading = get_sub_field('heading');
                             $content_editor = get_sub_field('content_editor');
                             $embed = get_sub_field('embed');
+                            $enable_expandable_content = get_sub_field('enable_expandable_content');
+                            $open_label = get_sub_field('open_label');
+                            //$close_label = get_sub_field('close_label');
+                            $expandable_content = get_sub_field('expandable_content');
                         ?>
                     <div class="container">
                         <div class="testimonials c-editor-wrapper">
@@ -813,6 +817,14 @@ function tourtiger_sub_contents(){ ?>
                                 <?php endif; ?>
                                 <?php if($embed):?>
                                         <?php echo $embed; ?>
+                                <?php endif; ?>
+                                <?php if($enable_expandable_content): ?>
+                                   <div class="slideout" data-ref="1">
+                                   <?php echo $expandable_content;  ?>
+                                   </div>
+                                   <p style="text-align: center;">
+                                        <a id="read-more-btn" class="button slideouttrigger" href="#" data-ref="1"><?php echo $open_label; ?></a>
+                                    </p>
                                 <?php endif; ?>
                                 </div>    
                             </div>
