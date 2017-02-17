@@ -822,9 +822,7 @@ function tourtiger_sub_contents(){ ?>
                                    <div class="slideout" data-ref="1">
                                    <?php echo $expandable_content;  ?>
                                    </div>
-                                   <p style="text-align: center;">
-                                        <a id="read-more-btn" class="button slideouttrigger" href="#" data-ref="1"><?php echo $open_label; ?></a>
-                                    </p>
+                                   <a class="button slideouttrigger" href="#" data-ref="1"><?php echo $open_label; ?></a>
                                 <?php endif; ?>
                                 </div>    
                             </div>

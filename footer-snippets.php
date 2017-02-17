@@ -23,37 +23,43 @@ endif; ?>
                     ?>
                     <?php if($enable_expandable_content): ?>
 <script type="text/javascript">
+function gatherHeights(){
+		var output = [];
+		$('.slideout').each(function(){
+			$(this).css('height', 'auto');
+			output[$(this).attr('data-ref')] = $(this).outerHeight();
+			$(this).css('height', 0);
+		});
+		return output;
+	}
+var slideoutHeights = [];
+	$(window).load(function(){
+        slideoutHeights = gatherHeights();
+    });
 jQuery(document).ready(function() {
-	var minheight = '41';
 	var moretext = '<?php echo $open_label; ?>';
 	var lesstext = '<?php echo $close_label; ?>';
-	$("#read-more-btn").click(function(){
-		if ($(".read-more").height()!=minheight)
-			$(".read-more").animate({
-				height: minheight+"px"
-			}, 400, function() {
-			// Animation complete.
-			});
-		else  {
-			var childrenHeight = 0;
-			$(".read-more").children().each(function() {
-                        childrenHeight += $(this).outerHeight(true);
-                    })
-			$(".read-more").animate({
-				height: childrenHeight
-			}, 400, function() {
-			// Animation complete.
-			});
-			}
-		if($(this).hasClass("less")) {
-			$(this).removeClass("less");
-			$(this).html(moretext);
-		} else {
-			$(this).addClass("less");
-			$(this).html(lesstext);
-		}
-		return false;
-	});
+	
+	if(!$('.slideouttrigger').hasClass('active')){
+            $('.slideouttrigger').clone(true).appendTo(".c-editor > p");
+        }
+        $('.slideouttrigger').click(function(e){
+            e.preventDefault();
+            var ref = $(this).attr('data-ref');
+            var h = slideoutHeights[ref];
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+                $('.slideout[data-ref="' + ref + '"]').removeClass('active').animate({'height': 0});
+                $(".slideout > p:last-child .slideouttrigger").remove();
+                $('.slideouttrigger').clone(true).appendTo(".c-editor > p").text(moretext).hide().fadeIn();
+            }
+            else{
+                $(this).addClass('active');
+                $('.slideout[data-ref="' + ref + '"]').addClass('active').animate({'height': h});
+                $(this).clone(true).appendTo(".slideout > p:last-child").text(lesstext).hide().fadeIn();
+                $(".c-editor > p .slideouttrigger").remove();
+            }
+        });
 });
 </script>
                     <?php endif; ?>   
