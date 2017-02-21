@@ -23,7 +23,7 @@
 	                    <?php if($rezdy_price_options): ?>
 		                    <div class="add-on multitime">
 		                    	<span ng-repeat = "products in api_availability track by $index">
-		                    		<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray | asDate)">
+		                    		<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray[0] | asDate)">
 		                    			<select class="form-control rezdy_date timeSelected" ng-init="timeSelected='0'" ng-model="timeSelected" ng-change="changedValue(timeSelected,timearray)">
 										    <option  ng-selected="$first" ng-repeat="priceOptions in productss.priceOptions track by $index" ng-if="$index==0" value="{{priceOptions.id}}" class="timeSelected_options">{{priceOptions.label}} (${{priceOptions.price}})</option>
 											<option  ng-repeat="priceOptions in productss.priceOptions track by $index" ng-if="$index!=0"  value="{{priceOptions.id}}" class="timeSelected_options">{{priceOptions.label}} (${{priceOptions.price}})</option>
@@ -34,7 +34,7 @@
 		                <?php else : ?>
 			                <div class="add-on">
 		                    	<span ng-repeat = "products in api_availability track by $index">
-									<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray | asDate)">
+									<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray[0] | asDate)">
 										<input class="form-control rezdy_date" value="{{productss.startTimeLocal | asTimeLocal}}">
 									</span>
 								</span>
@@ -100,7 +100,7 @@
 						<li ng-if="productUndefined()!=true" ng-hide="loading" class="notour">No tour on this date</li>	
 						<span ng-repeat = "products in api_availability track by $index">
 
-							<li ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray | asDate)">
+							<li ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray[0] | asDate)">
 
 								<span class="availability_checker_col checker_date customstyle">{{productss.startTimeLocal | asDateTitleYears}}</span>
 								<span class="availability_checker_col checker_avail customstyle" ng-if="productss.seatsAvailable !=0">
@@ -173,6 +173,9 @@
     };
 
     var check_date = getUrlParameter('check_date');
+    // if (!check_date){
+    // 	check_date = moment.utc().add(1, 'days');
+    // }
     
                     jQuery("#startTime_check").daterangepicker({
                             locale: {

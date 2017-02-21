@@ -929,16 +929,24 @@ body.custom-background.page-template-rezdy_search {
     list-style: none;
       display: flex;
       flex-direction: row;
+      display: -webkit-flex; /* Safari */
+      -webkit-flex-direction: row; /* Safari 6.1+ */
 }
 .availability_checker_options_date {
-        display: flex;
+      display: flex;
       flex-direction: row;
+      display: -webkit-flex; /* Safari */
+      -webkit-flex-direction: row; /* Safari 6.1+ */
 }
 .availability_checker_options_date .add-on {
     flex: 0 0 30%;
+    -webkit-flex: 0 0 30%; /* Safari 6.1+ */
+    -ms-flex: 0 0 30%; /* IE 10 */
 }
 .availability_checker_options_date .add-on.multitime {
     flex: 0 0 37%;
+    -webkit-flex: 0 0 37%; /* Safari 6.1+ */
+    -ms-flex: 0 0 37%; /* IE 10 */
 }
 .availability_checker_options_date .add-on.col-book-btn2-product .book-btn2-product-title {
     padding: 9px;
@@ -949,6 +957,8 @@ body.custom-background.page-template-rezdy_search {
 }
 .availability_checker_options_date .add-on.col-startTime {
     flex: 10 0 30%;
+    -webkit-flex: 10 0 30%; /* Safari 6.1+ */
+    -ms-flex: 10 0 30%; /* IE 10 */
 }
 .availability_checker_options_date .cal {
       color: #797979;
@@ -982,16 +992,22 @@ line-height: 40px;
 .site-inner .content .product_content_wrapper .design2 span.availability_checker_col.checker_date {
   text-align: center;
     flex: 0 0 30%;
+    -webkit-flex: 0 0 30%; /* Safari 6.1+ */
+    -ms-flex: 0 0 30%; /* IE 10 */
 }
 .styles .site-inner .content .product_content_wrapper .design2 span.availability_checker_col.checker_avail,
 .site-inner .content .product_content_wrapper .design2 span.availability_checker_col.checker_avail {
     flex: 10 0 30%;
+    -webkit-flex: 10 0 30%; /* Safari 6.1+ */
+    -ms-flex: 10 0 30%; /* IE 10 */
 }
 
 /*end design2*/
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col,
 .site-inner .content .product_content_wrapper span.availability_checker_col {
     flex: 0 0 30%;
+    -webkit-flex: 0 0 30%; /* Safari 6.1+ */
+    -ms-flex: 0 0 30%; /* IE 10 */
     text-align: center;
     line-height: 22px;
 }
@@ -1000,6 +1016,8 @@ line-height: 40px;
     text-align: left;
     color: #797979;
     flex: 10 0 30%;
+    -webkit-flex: 10 0 30%; /* Safari 6.1+ */
+    -ms-flex: 10 0 30%; /* IE 10 */
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_date .checkertime,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_date .checkertime{

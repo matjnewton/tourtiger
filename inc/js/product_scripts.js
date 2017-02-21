@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
 	$("#booking_product").sticky({
 		topSpacing:130,
@@ -51,7 +51,7 @@ jQuery.fn.extend(
   }
 });
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	// bxslider
 	var realSlider= $("ul#bxslider").bxSlider({
 	      speed:1000,

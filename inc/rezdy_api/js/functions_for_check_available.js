@@ -110,16 +110,18 @@
     // end auto load part
 
 	$scope.initAvailable = function() {
-		//console.log('initAvailable');
+		//console.log('initAvailable crossfix');
 		// init seats available for first time
 			$scope.timeSelected = '';
 			angular.forEach($scope.api_availability, function(api_availability, key) {
 	        	angular.forEach(api_availability, function(api_availability2, key) {
 	        			var index = 0;
-	        			if ( $scope.wqs_productcode==api_availability2.productCode &&  $filter('date')(new Date(api_availability2.startTimeLocal), 'yyyy-MM-dd')==$filter('date')(new Date($scope.timearray), 'yyyy-MM-dd') ){
-	        				// console.log(api_availability2.productCode);
-	        				// console.log(api_availability2.startTimeLocal);
-	        				// console.log(api_availability2.seatsAvailable);
+	        			//console.log('api_availability2.startTimeLocal = ');console.log(moment(api_availability2.startTimeLocal).format('YYYY-MM-DD'));
+	        			//console.log('$scope.timearray+moment = ');console.log(moment($scope.timearray[0]).format('YYYY-MM-DD'));
+	        			//if ( $scope.wqs_productcode==api_availability2.productCode &&  $filter('date')(new Date(api_availability2.startTimeLocal), 'yyyy-MM-dd')==$filter('date')(new Date($scope.timearray), 'yyyy-MM-dd') ){ //crossfix
+	        			if ( $scope.wqs_productcode==api_availability2.productCode &&  moment(api_availability2.startTimeLocal).format('YYYY-MM-DD') == moment($scope.timearray[0]).format('YYYY-MM-DD') ){ //crossfix
+	        				//console.log('api_availability2.startTimeLocal');console.log(moment(api_availability2.startTimeLocal).format('YYYY-MM-DD'));
+	        				//console.log('$scope.timearray[0]');console.log(moment($scope.timearray[0]).format('YYYY-MM-DD'));
 	        				$scope.timeSelected = api_availability2.seatsAvailable;
 	        			}
 	        			
@@ -357,45 +359,48 @@
 			    }
 			    //console.log(startTime+' startTime2');
 
-			    startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
+			    //startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd'); //crossfix
 			    
 			    //startTime_minus1
-			    var startTime_minus1 = new Date(startTime);
-			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+			    // var startTime_minus1 = new Date(startTime); //crossfix
+			    // startTime_minus1.setDate(startTime_minus1.getDate() - 1); //crossfix
+			    var startTime_minus1 = moment(startTime).subtract(1, 'days'); //crossfix
  				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
 			    
 
 
 			    // endTime
-			    // var endTime = getUrlParameter('endTime');
-			    // //console.log();
-			    // if(!endTime){
-			    // 	//console.log('startTime undefined');
-			    // 	endTime = $('#endTime').val();
-			    // 	var endTime_u = new Date(endTime);
-			    // 	endTime_u.setDate(endTime_u.getDate() + 14);
-			    // 	endTime = endTime_u;
-			    // }
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
 			    var endTime = startTime;
 			    
 			    // endTime + 1
-			    var endTime_plus1 = new Date(endTime);
-			    endTime_plus1.setDate(endTime_plus1.getDate() + 1);
+			    // var endTime_plus1 = new Date(endTime); //crossfix
+			    // endTime_plus1.setDate(endTime_plus1.getDate() + 1); //crossfix
+			    var endTime_plus1 = moment(endTime).add(1, 'days'); //crossfix
  				endTime_plus1 = $filter('date')(new Date(endTime_plus1), 'yyyy-MM-dd');
 
  				// load timearray
-			    var now = new Date(endTime);
+			    //var now = new Date(endTime); //crossfix
 				var daysOfYear = [];
-				for (var d = new Date(startTime); d <= now; d.setDate(d.getDate() + 1)) {
-				    daysOfYear.push( $filter('date')(new Date(d), 'yyyy-MM-dd') );
-				}
+				// for (var d = new Date(startTime); d <= now; d.setDate(d.getDate() + 1)) { //crossfix
+				//     daysOfYear.push( $filter('date')(new Date(d), 'yyyy-MM-dd') ); //crossfix
+				// } //crossfix
+				daysOfYear.push( startTime ); //crossfix
 				angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
 
 				// load timearray for Loadmore 
 				var daysOfYearMore = [];
-				var endTime_plus2 = new Date(endTime_plus1);
-				endTime_plus2.setDate(endTime_plus2.getDate() + 1);
-				//daysOfYearMore.push( endTime );
+				//var endTime_plus2 = new Date(endTime_plus1); //crossfix
+				//endTime_plus2.setDate(endTime_plus2.getDate() + 1); //crossfix
+				
 				daysOfYearMore.push( endTime_plus1 );
 				angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore = daysOfYearMore;
 
@@ -417,7 +422,7 @@
         }
     });
 
-// dataServiceAjax for click (!not cleare)
+// dataServiceAjax for click 
     wqs_3.factory('dataServiceAjax', function($http, $q, $filter){
         return{
             getData: function(productCode,startTime,endTime){
@@ -443,27 +448,29 @@
 			    //var startTime = getUrlParameter('startTime');
 			    var startTime = datepicker_from;
 			    //console.log(startTime);
-			    startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
+			    //startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd'); //crossfix
 
 			    //startTime_minus1
-			    var startTime_minus1 = new Date(startTime);
-			    startTime_minus1.setDate(startTime_minus1.getDate() - 1);
+			    //var startTime_minus1 = new Date(startTime); //crossfix
+			    //startTime_minus1.setDate(startTime_minus1.getDate() - 1); //crossfix
+			    var startTime_minus1 = moment(startTime).subtract(1, 'days'); //crossfix
  				startTime_minus1 = $filter('date')(new Date(startTime_minus1), 'yyyy-MM-dd');
 			    
 			    //var endTime = getUrlParameter('endTime');
 				var endTime = startTime;
 				//console.log(endTime);
 			    
-			    var endTime_plus1 = new Date(endTime);
-			    endTime_plus1.setDate(endTime_plus1.getDate() + 1);
+			    //var endTime_plus1 = new Date(endTime); //crossfix
+			    //endTime_plus1.setDate(endTime_plus1.getDate() + 1); //crossfix
+			    var endTime_plus1 = moment(endTime).add(1, 'days'); //crossfix
  				endTime_plus1 = $filter('date')(new Date(endTime_plus1), 'yyyy-MM-dd');
 
-			    var now = new Date(endTime);
+			    //var now = new Date(endTime); //crossfix
 				var daysOfYear = [];
-				for (var d = new Date(startTime); d <= now; d.setDate(d.getDate() + 1)) {
-				    daysOfYear.push( $filter('date')(new Date(d), 'yyyy-MM-dd') );
-				}
-
+				// for (var d = new Date(startTime); d <= now; d.setDate(d.getDate() + 1)) { //crossfix
+				//     daysOfYear.push( $filter('date')(new Date(d), 'yyyy-MM-dd') ); //crossfix
+				// } //crossfix
+				daysOfYear.push( startTime ); //crossfix
 
 
 
@@ -534,7 +541,8 @@
 
 	wqs_3.filter("asDate", function ($filter) {
 	    return function (input) {
-	        return $filter('date')(new Date(input), 'yyyy-MM-dd', 'UTC');
+	    	return moment.utc(input).format('YYYY-MM-DD');
+	        //return $filter('date')(new Date(input), 'yyyy-MM-dd', 'UTC');
 	    }
 	});
  	wqs_3.filter("asTime", function ($filter) {
@@ -544,7 +552,8 @@
 	});
 	wqs_3.filter("asTimeLocal", function ($filter) {
 	    return function (input) {
-	        return $filter('date')(new Date(input), 'hh:mm a');
+	        //return $filter('date')(new Date(input), 'hh:mm a');
+	        return moment.utc(input).format('hh:mm A');
 	    }
 	});
 	wqs_3.filter("asDateTitle", function ($filter) {
@@ -554,7 +563,8 @@
 	});
 	wqs_3.filter("asDateTitleYears", function ($filter) {
 	    return function (input) {
-	        return $filter('date')(new Date(input), 'dd MMMM yyyy', 'UTC');
+	        //return $filter('date')(new Date(input), 'dd MMMM yyyy', 'UTC');
+	        return moment.utc(input).format('DD MMMM YYYY');
 	    }
 	});
 	wqs_3.filter("trust", ['$sce', function($sce) {

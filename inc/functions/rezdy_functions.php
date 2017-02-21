@@ -233,7 +233,7 @@ add_filter('acf/load_field/name=interval_rezdy_tours_2', 'interval_rezdy_tours_2
 // include script
 add_action( 'wp_enqueue_scripts', 'rezdy_scripts_method' ); 
 function rezdy_scripts_method() {
-	wp_enqueue_script( 'rezdy_scripts', CORE_URL . '/js/rezdy_scripts.js' );
+	wp_enqueue_script( 'rezdy_scripts', CORE_URL . '/js/rezdy_scripts.js', array('jquery') );
 	wp_localize_script( 'rezdy_scripts', 'localize_var', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 
