@@ -177,6 +177,37 @@
 	}
 
 
+
+	    $scope.changedValueNext = function(item, time){
+	       $scope.loading = true;       
+		   //console.log(item);
+	       var correct = moment.utc(item).add(time, 'days').format('YYYY-MM-DD'); //crosfix
+	       console.log(correct);
+	       //$('#startTime_check').val(correct);
+	       $('#startTime_check').data('daterangepicker').setStartDate(correct);
+	       $('#startTime_check').data('daterangepicker').setEndDate(correct);
+		   $scope.timeSelected = correct;
+		   $scope.check_availability_angular();
+			$timeout(function(){
+		        $scope.loading = false;
+		    },2000);
+		   console.log($scope);
+		}
+		$scope.changedValuePrev = function(item, time){
+	       $scope.loading = true;       
+		   //console.log(item);
+	       var correct = moment.utc(item).subtract(time, 'days').format('YYYY-MM-DD'); //crosfix
+	       console.log(correct);
+	       //$('#startTime_check').val(correct);
+	       $('#startTime_check').data('daterangepicker').setStartDate(correct);
+	       $('#startTime_check').data('daterangepicker').setEndDate(correct);
+		   $scope.timeSelected = correct;
+		   $scope.check_availability_angular();
+			$timeout(function(){
+		        $scope.loading = false;
+		    },2000);
+		   console.log($scope);
+		}
     //duration 
     $scope.duration = function(start, end ) {
 		var timestamp1 = new Date(start).getTime();

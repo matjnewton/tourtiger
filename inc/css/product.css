@@ -1040,8 +1040,8 @@ line-height: 40px;
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail.not,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail.not {
-   /*text-align: left;*/
-   text-align: center;
+   text-align: left;
+   /*text-align: center;*/
    /*color: #ca2127;*/
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail.not .checker_date_label,
@@ -1054,7 +1054,9 @@ line-height: 40px;
    color: #ca2127;
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count,
-.site-inner .content .product_content_wrapper span.availability_checker_col.checker_count {
+.site-inner .content .product_content_wrapper span.availability_checker_col.checker_count,
+.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count span,
+.site-inner .content .product_content_wrapper span.availability_checker_col.checker_count span {
     /*color: #ca2127;*/
         color: #abc545;
 }
