@@ -35,6 +35,34 @@ $fbbcv1: <?php echo get_option('fbbcv1', 'rgba(255,255,255,1)'); ?>;
 $fbbcv2: <?php echo get_option('fbbcv2', 'rgba(255,255,255,1)'); ?>;
 $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
 
+<?php $transparent_background = get_field('transparent_background', 'option'); ?>
+<?php if($transparent_background): ?>
+.site-header .header-bar-wrapper{
+    @media (min-width: 768px) {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:20;
+    }        
+    box-shadow: 0 1px 7px -3px rgba(0,0,0,0);
+}
+.site-container .site-header .header-bar-wrapper{
+    @media (min-width: 768px) {
+        background:none !important;
+    }
+}
+.site-container .above-split-bar,
+.main-nav-wrapper .genesis-nav-menu .xola-book-btn div, 
+.main-nav-wrapper .genesis-nav-menu a, 
+.main-nav-wrapper .genesis-nav-menu span{
+    text-shadow: 1px 1px 1px rgba(1, 2, 2, 0.65);
+}
+.banner .hero-elements-wrapper .headline,
+.banner .hero-elements-wrapper .subheadline{
+    text-shadow: 1px 2px 2px rgba(1, 2, 2, 0.65);
+}
+<?php endif; ?>
 <?php 
     if(get_field('customize', 'option')): 
     if( have_rows('customize', 'option') ):
