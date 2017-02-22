@@ -4,9 +4,9 @@
 ?>
 
 <div class="secondary-menu-wrapper">
-<div class="hidden-xs container">
+<div class="<?php if(!function_exists('icl_object_id')): ?>hidden-xs <?php endif; ?>container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 hidden-xs">
             <div class="above-split-bar">
             <span class="motto">
         <?php if($motto): echo $motto; endif; ?>
@@ -57,7 +57,7 @@
                         <?php if($phone_number): ?>
         <?php $phone = preg_replace('/\D+/', '', $phone_number); ?>
                             <div class="phone">
-                                <i class="fa fa-phone"></i>
+                                <i class="fa fa-phone hidden-xs"></i>
                                 <a href="tel:<?php echo $phone; ?>">
                                 
                                 <?php echo $phone_number; ?>
