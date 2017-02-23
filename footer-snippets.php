@@ -39,9 +39,10 @@ var slideoutHeights = [];
 jQuery(document).ready(function() {
 	var moretext = '<?php echo $open_label; ?>';
 	var lesstext = '<?php echo $close_label; ?>';
+	var startEl = $('.slideouttrigger').siblings("p");
 	
 	if(!$('.slideouttrigger').hasClass('active')){
-            $('.slideouttrigger').clone(true).appendTo(".c-editor > p");
+            $('.slideouttrigger').clone(true).appendTo(startEl);
         }
         $('.slideouttrigger').click(function(e){
             e.preventDefault();
@@ -51,13 +52,13 @@ jQuery(document).ready(function() {
                 $(this).removeClass('active');
                 $('.slideout[data-ref="' + ref + '"]').removeClass('active').animate({'height': 0});
                 $(".slideout > p:last-child .slideouttrigger").remove();
-                $('.slideouttrigger').clone(true).appendTo(".c-editor > p").text(moretext).hide().fadeIn();
+                $('.slideouttrigger').clone(true).appendTo(startEl).text(moretext).hide().fadeIn();
             }
             else{
                 $(this).addClass('active');
                 $('.slideout[data-ref="' + ref + '"]').addClass('active').animate({'height': h});
                 $(this).clone(true).appendTo(".slideout > p:last-child").text(lesstext).hide().fadeIn();
-                $(".c-editor > p .slideouttrigger").remove();
+                startEl.find(".slideouttrigger").remove();
             }
         });
 });
