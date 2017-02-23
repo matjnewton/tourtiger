@@ -3,12 +3,18 @@
  * Primary Content Area
  * ==================== */
 
+
+
+define( "PCA_DIR", get_stylesheet_directory() . '/includes/primary-content' );
+define( "STYLING_MANAGER_DIR", PCA_DIR . '/styling/acf-styling-manager-field' );
+
 /**
  * Include ACF Plugins
  */
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-accordion.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-rgba-color/acf-rgba-color.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-typography/acf-typography.php' );
+include_once( STYLING_MANAGER_DIR . '/acf-styling-manager.php' );
 
 add_filter( 'acf/accordion/dir', 'acf_accordion_dir' );
 function acf_accordion_dir( $dir ) {
@@ -34,7 +40,7 @@ function acf_typography_dir( $dir ) {
  * Turn On Chaching
  */
 if ( !is_admin() ) {
-	#include( get_stylesheet_directory() . '/includes/primary-content/pc-cache.php' );
+	include( get_stylesheet_directory() . '/includes/primary-content/pc-cache.php' );
 }
 
 /**
@@ -68,6 +74,7 @@ add_action('acf/init', 'google_api_acf_init');
  * ACF Global Options
  */
 if(function_exists('acf_add_options_sub_page')) { 
+
 	$primary_content = acf_add_options_page(array(
 		'page_title'   => 'Primary Styles',
 		'menu_title'   => 'Primary Styles',
@@ -75,34 +82,17 @@ if(function_exists('acf_add_options_sub_page')) {
 		'icon_url'     => 'dashicons-align-left',
 	));
 
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Blog',
-		'menu_title' 	=> 'Blog styles',
-		'parent_slug' 	=> $primary_content['menu_slug'],
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Flexi & Product',
-		'menu_title' 	=> 'Flexi & Product styles',
-		'parent_slug' 	=> $primary_content['menu_slug'],
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Content Card',
-		'menu_title' 	=> 'Content Card styles',
-		'parent_slug' 	=> $primary_content['menu_slug'],
-	));
-
-}
-
 /**
  * ACF Fielad PHP
  */
 if( function_exists('acf_add_local_field_group') ):
+	include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-styling-cards.php' );
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-constructor.php' );
-	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-styling-cards.php' );
 	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
 endif;
+
+
+}
 
 /**
  * Get css via ACF Font
@@ -156,6 +146,59 @@ function pc_content_init_form( $font='', $color='', $background='', $border='' )
 	$css[1] .= $border ? 'border-color:' . $border . ';' : '';
 
 	return $css;
+}
+
+
+
+function create_style_prefix( $i = '' ) {
+	switch ( $i ) {
+		case 1:
+			$prefix = 'one';
+			break;
+		case 2:
+			$prefix = 'two';
+			break;
+		case 3:
+			$prefix = 'three';
+			break;
+		case 4:
+			$prefix = 'four';
+			break;
+		case 5:
+			$prefix = 'five';
+			break;
+		case 6:
+			$prefix = 'six';
+			break;
+		case 7:
+			$prefix = 'seven';
+			break;
+		case 8:
+			$prefix = 'eight';
+			break;
+		case 9:
+			$prefix = 'nine';
+			break;
+		case 10:
+			$prefix = 'ten';
+			break;
+		default:
+			$prefix = 'zero';
+			break;
+	}
+
+	return $prefix;
+}
+
+/**
+ * Transform name for using in strings
+ * @return string
+ */
+function transform_name( $name = '', $type = '' ) {
+	$word = array( ' ' => $type, '&' => '' );
+	$new = strtr( $name, $word );
+    $new = strtolower( $new );
+    return $new;
 }
 
 ?>

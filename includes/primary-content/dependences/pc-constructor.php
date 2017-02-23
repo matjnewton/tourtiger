@@ -1,5 +1,22 @@
 <?php 
 
+/**
+ * The loop beneath initialithes array of styles for Flexi Card 
+ */
+
+$flexi_counter_array = array();
+
+// $flexi_counter = flexi_card_get_styles_count();
+// $flexi_counter_array = array (); 
+
+// for ( $i = 1; $i <= $flexi_counter; $i++ ) {
+// 	$c = create_style_prefix($i);
+
+// 	$flexi_counter_array['fc_style-' . $c] = $i . ' Style';
+// }
+
+
+
 acf_add_local_field_group(array (
 	'key' => 'group_5829d7835eb2b',
 	'title' => 'Primary content area',
@@ -160,6 +177,34 @@ acf_add_local_field_group(array (
 											'disabled' => 0,
 										),
 										array (
+											'key' => 'field_blogchoose-style',
+											'label' => 'Column Style',
+											'name' => 'tour_blog-style',
+											'type' => 'radio',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e72dd49fe',
+														'operator' => '==',
+														'value' => 'blog',
+													),
+												),
+											),
+											'wrapper' => array (
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => get_pc_styles_list( 'blog_card' ),
+											'allow_null' => 0,
+											'other_choice' => 0,
+											'save_other_choice' => 0,
+											'default_value' => 'fc_style-one',
+											'layout' => 'horizontal',
+										),
+										array (
 											'key' => 'field_5821e799d4a00',
 											'label' => 'Show Info',
 											'name' => 'tour_pc-rowtype--blog-show',
@@ -236,22 +281,11 @@ acf_add_local_field_group(array (
 																'class' => '',
 																'id' => '',
 															),
-															'choices' => array (
-																'cc_style-one' => '1 Style',
-																'cc_style-two' => '2 Style',
-																'cc_style-three' => '3 Style',
-																'cc_style-four' => '4 Style',
-																'cc_style-five' => '5 Style',
-																'cc_style-six' => '6 Style',
-																'cc_style-seven' => '7 Style',
-																'cc_style-eight' => '8 Style',
-																'cc_style-nine' => '9 Style',
-																'cc_style-ten' => '10 Style',
-															),
+															'choices' => get_pc_styles_list( 'content_card' ),
 															'allow_null' => 0,
 															'other_choice' => 0,
 															'save_other_choice' => 0,
-															'default_value' => 'cc_style-one',
+															'default_value' => 'style-one',
 															'layout' => 'horizontal',
 														),
 														array (
@@ -1233,18 +1267,7 @@ acf_add_local_field_group(array (
 																'class' => '',
 																'id' => '',
 															),
-															'choices' => array (
-																'fc_style-one' => '1 Style',
-																'fc_style-two' => '2 Style',
-																'fc_style-three' => '3 Style',
-																'fc_style-four' => '4 Style',
-																'fc_style-five' => '5 Style',
-																'fc_style-six' => '6 Style',
-																'fc_style-seven' => '7 Style',
-																'fc_style-eight' => '8 Style',
-																'fc_style-nine' => '9 Style',
-																'fc_style-ten' => '10 Style',
-															),
+															'choices' => get_pc_styles_list( 'flexi_card' ),
 															'allow_null' => 0,
 															'other_choice' => 0,
 															'save_other_choice' => 0,

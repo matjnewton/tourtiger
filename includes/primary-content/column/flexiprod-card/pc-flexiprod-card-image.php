@@ -60,13 +60,13 @@ if ( $tour_flexiprod_image_url ) :
 			&& ( $title || $desc ) ) :  ?>
 
 			<div class="fc_style--image_text">
-				<?php if ( $title ) : ?>
+				<?php if ( $title && in_array( 'title', $show_image ) ) : ?>
 					<div class="pc--c__b-image_title fc_style--image_title">
 						<?php echo $title; ?>	
 					</div>
 				<?php endif; ?>
-
-				<?php if ( $desc ) : ?>
+ 
+				<?php if ( $desc && in_array( 'desc', $show_image )  ) : ?>
 					<div class="pc--c__b-image_description fc_style--image_desc">
 						<?php echo $desc; ?>
 					</div>

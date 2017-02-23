@@ -8,7 +8,7 @@ $fc_style__fcc_css = pc_init_font_css( get_sub_field( 'fc_style__imte_font' ) );
 $fc_style__imte_font_color = get_sub_field( 'fc_style__imte_font-color' );
 
 $fc_style__fcc_css[1] .= $fc_style__imte_font_color ? 'color:' . $fc_style__imte_font_color . ';' : '';
-$fc_style__fcc_css[1] .= 'position: relative;padding: 5px 0;';
+$fc_style__fcc_css[1] .= 'position: relative;padding: 8px 0 10px;';
 
 if ( get_sub_field( 'fc_style__imte_drsh' ) ) $fc_style__fcc_css[1] .= 'text-shadow:1px 1px 2px rgba(0,0,0,.3), 1px 1px 2px rgba(0,0,0,.3);';
 if ( get_sub_field( 'fc_style__imte_und' ) ) $fc_style__fcc_css[1] .= 'text-decoration:underline;';

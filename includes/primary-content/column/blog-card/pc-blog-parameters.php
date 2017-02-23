@@ -1,8 +1,7 @@
 <?php 
 
-	include_once( get_stylesheet_directory() . '/includes/primary-content/column/blog-card/pc-blog-css.php' );
-
-	$tour_column_classes .= 'pc--r_blog';
+	$bc_style = get_sub_field( 'tour_blog-style' );
+	$tour_column_classes .= ' pc--r_blog ' . $bc_style;
 	$tour_blog_pullcount = get_sub_field( 'tour_pc-blog--pull' );
 
 	while ( have_rows( 'bc_style-one', 'option' ) ) : the_row();
@@ -39,6 +38,8 @@
 			$tour_column_classes .= ' pc--r_blog_is-button';
 		endif;
 	endif;
+
+	include( get_stylesheet_directory() . '/includes/primary-content/column/blog-card/pc-blog-css.php' );
 
 	$blog_query = new WP_Query( array( 'postype' => 'post', 'posts_per_page' => $tour_blog_pullcount ) ); 
 ?>

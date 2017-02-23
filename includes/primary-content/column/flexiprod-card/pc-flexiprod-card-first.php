@@ -37,7 +37,7 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 
 	<?php }
 
-	if ( in_array( 'button', $show_co ) ) : ?>
+	if ( in_array( 'button', $show_co ) && $label ) : ?>
 		<?php if ( $fc_style__co_butt_pos == 'left' ): ?>
 			<a href="<?php echo get_sub_field( 'tour_pc-flexi--url' ); ?>" style="margin-right: auto;" class="fc_style--first_button first_button"><?php echo $label; ?></a>
 		<?php elseif ( $fc_style__co_butt_pos == 'center' ) : ?>
