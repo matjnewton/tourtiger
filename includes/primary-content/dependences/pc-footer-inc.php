@@ -16,36 +16,36 @@ function add_primary_area_show_rows() { ?>
 
     !(function( $ ){
 
+      function pc_circlize_image() {
+          $('.pc_circle-image--wrapper').each(function(){
+
+                var item = $(this),
+                    img_w = item.find('img').width(),
+                    img_h = item.find('img').height(),
+                    item_w = item.width(),
+                    item_h = item.height();
+
+                if ( img_w > img_h ) {
+                  img_w = img_h;
+                } else if ( img_w <= img_h ) {
+                  img_h = img_w;
+                }
+
+                if ( img_w > item_w ) {
+                  item.find('img').height(item_w);
+                } else {
+                  item.find('img').height(img_h);
+                  item.width(img_h);
+                }
+                  
+                item.height(img_h);
+
+          });
+      }
+
+      $(window).resize(pc_circlize_image());
+
       $(function(){
-
-        function pc_circlize_image() {
-            $('.pc_circle-image--wrapper').each(function(){
-
-                  var item = $(this),
-                      img_w = item.find('img').width(),
-                      img_h = item.find('img').height(),
-                      item_w = item.width(),
-                      item_h = item.height();
-
-                  if ( img_w > img_h ) {
-                    img_w = img_h;
-                  } else if ( img_w <= img_h ) {
-                    img_h = img_w;
-                  }
-
-                  if ( img_w > item_w ) {
-                    item.find('img').height(item_w);
-                  } else {
-                    item.find('img').height(img_h);
-                    item.width(img_h);
-                  }
-                    
-                  item.height(img_h);
-
-            });
-        }
-
-        $(window).resize(pc_circlize_image());
 
         pc_circlize_image();
 
