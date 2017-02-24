@@ -201,4 +201,24 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
+
+function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false ) {
+
+	if ( $circle ) {
+		if ( $width > $height ) { 
+			$width = $height;
+		} else { 
+			$height = $width;
+		}
+
+		echo '<div class="pc_circle-image--wrapper">';
+	}
+
+	echo $link ? "<a href='{$link}'>":'';
+	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
+	echo $link ? '</a>':'';
+
+	if ( $circle ) '</div>'; 
+}
+
 ?>

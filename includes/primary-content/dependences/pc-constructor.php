@@ -648,7 +648,7 @@ acf_add_local_field_group(array (
 																			'required' => '',
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => '',
+																				'width' => '50',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -660,6 +660,26 @@ acf_add_local_field_group(array (
 																			'readonly' => 0,
 																			'disabled' => 0,
 																		),
+																		array (
+																			'key' => 'field_581ds32width32',
+																			'label' => 'Size',
+																			'name' => 'tour_pc-coltype--image_size',
+																			'type' => 'number',
+																			'instructions' => '',
+																			'required' => '',
+																			'conditional_logic' => '',
+																			'wrapper' => array (
+																				'width' => '50',
+																				'class' => '',
+																				'id' => '',
+																			),
+																			'default_value' => '100',
+																			'placeholder' => '100',
+																			'prepend' => '',
+																			'append' => '%',
+																			'min' => '1',
+																			'max' => '100'
+																		)
 																	),
 																	'min' => '',
 																	'max' => '',

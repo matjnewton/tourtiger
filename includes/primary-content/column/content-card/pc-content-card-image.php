@@ -5,23 +5,21 @@ if ( $tour_image ) :
 	$tour_content_content_classes .= ' pc--c__image';
 	$tour_image_url = get_sub_field( 'tour_pc-coltype--image_url' ); 
 	$tour_image_circl = get_sub_field( 'tour_pc-coltype--image_cir' );
+	$tour_image_size = get_sub_field( 'tour_pc-coltype--image_size' ) / 100;
 
-	if ( $tour_image_circl == 'circle' ) $tour_content_content_classes .= ' pc--c__image--circle'; ?>
+	$tour_content_content_styles .= "transform: scale({$tour_image_size});";
+
+	if ( $tour_image_circl == 'circle' ) { $tour_content_content_classes .= ' pc--c__image--circle'; $circle = true; } ?>
 
 		<div 
-			class="<?php echo $tour_content_content_classes; ?>" 
-			style="<?php echo $tour_content_content_styles; ?>"
+			class="<?=$tour_content_content_classes;?>" 
+			style="<?=$tour_content_content_styles;?>"
 			align="center">
+				<?php
 
-			<?php
+				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, null, $circle ); 
 
-			$w = $tour_image_circl != 'circle' ? $thumb_width : $thumb_height;
-			$h = $thumb_height;
-
-			pc_image( $tour_image, $w, $h, $tour_image_url ); 
-
-			?>
-
+				?>
 		</div>
 
 <?php endif; ?>
