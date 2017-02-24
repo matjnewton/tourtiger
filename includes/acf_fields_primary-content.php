@@ -218,7 +218,7 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
 	echo $link ? '</a>':'';
 
-	if ( $circle ) '</div>'; 
+	if ( $circle ) echo '</div>'; 
 }
 
 ?>
