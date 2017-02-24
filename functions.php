@@ -1166,6 +1166,10 @@ function color_picker_option_update()
 	update_option('hcbgc', esc_html($_POST['color_picker_hcbgc']));
 	
 	update_option('hctabgc', esc_html($_POST['color_picker_hctabgc']));
+	
+	$hcta_tweak = $_POST['hctabgcfill'] ? $_POST['hctabgcfill'] : '';
+	update_option('hctabgcfill', esc_html($hcta_tweak));
+	
 	update_option('sctabgc', esc_html($_POST['color_picker_sctabgc']));
 	
 	update_option('podfbgc', esc_html($_POST['color_picker_podfbgc']));
