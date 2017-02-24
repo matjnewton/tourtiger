@@ -71,3 +71,18 @@ jQuery(document).ready(function() {
                         
     <?php endwhile; ?>
 <?php endif; ?>
+
+<?php if(have_rows('page_specific_footer_snippets', 'option')): ?>
+<?php while(have_rows('page_specific_footer_snippets', 'option')): the_row(); ?>
+<?php 
+    $page_id = get_sub_field('page');
+    $snippet = get_sub_field('snippet'); 
+?>
+<?php
+    $queried_object = get_queried_object();
+   if ($snippet && ($queried_object->ID == $page_id)):
+        echo $snippet;
+   endif;    
+?>
+<?php endwhile; ?>
+<?php endif; ?>
