@@ -934,6 +934,12 @@ function color_picker_option_page()
 					</td>
 				</tr>
 				<tr valign="top">
+					<th width="200px" scope="row">Hero CTA Button background fill</th>
+					<td>
+    					<input name="hctabgcfill" type="checkbox" id="hctabgcfill" value="foobar" <?php checked( 'foobar', get_option( 'hctabgcfill' ) ); ?> />
+					</td>
+				</tr>
+				<tr valign="top">
 					<th width="200px" scope="row">Content CTA Button Background</th>
 					<td>	
 						<input type="text" id="sctabgc" value="<?php if((get_option('sctabgc')) != ''): echo get_option('sctabgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_sctabgc" />
