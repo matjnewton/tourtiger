@@ -21,8 +21,6 @@ if ( $tour_flexiprod_image_url ) :
 		$thumb_height = $thumb_height_normal;
 	}
 
-	$thumb_img = thumb_crop_etrange( $tour_flexiprod_image_url, $thumb_width, $thumb_height );
-
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-height' );
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-aligment' );
 
@@ -45,12 +43,7 @@ if ( $tour_flexiprod_image_url ) :
 	} ?>
 	<<?php echo $image_tag_open; ?> class="<?php echo $tour_flexiprod_image_classes; ?>">
 
-		<img 
-			class="pc--c__b-image_thumb" 
-			data-aload="<?php echo $thumb_img; ?>" 
-			width="<?php echo $thumb_width; ?>" 
-			height="<?php echo $thumb_height; ?>" 
-			alt="<?php echo $tour_flexiprod_image_title; ?>" />
+		<?php pc_image( $tour_flexiprod_image_url, $thumb_width, $thumb_height, false, array( 'class' => 'pc--c__b-image_thumb' ) ); ?>
 
 		<?php if ( 
 			( 

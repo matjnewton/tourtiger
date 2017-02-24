@@ -12,18 +12,12 @@
 		$thumb_height = 900; 
 		$thumb_height_normal = 900; 
 		$thumb_upload = 'full';
-	} elseif ( get_sub_field( 'tour_pc-colums--width' ) == 'three-four' ) {
+	} else {
 		$tour_column_classes .= ' pc--r__col-1_part';
 		$thumb_width = 1100;
 		$thumb_height = 700;
 		$thumb_height_normal = 700;
 		$thumb_upload = 'large';
-	} elseif ( get_sub_field( 'tour_pc-colums--width' ) == 'one-two' ) {
-		$tour_column_classes .= ' pc--r__col-1_half';
-		$thumb_width = 800;
-		$thumb_height = 600;
-		$thumb_height_normal = 600;
-		$thumb_upload = 'large';
-	}
+	} 
 
 ?>

@@ -1,16 +1,10 @@
 <header class="pc--blog__header">
 
-	<?php   
-		$thumb_id = get_post_thumbnail_id();
-	   	$thumb_url = wp_get_attachment_image_src( $thumb_id,'full', true );
-		$thumb_img = thumb_crop_etrange( $thumb_url[0], $thumb_width, $thumb_height );
-	?>
-
 	<a 
 		title="<?php echo $bc_style__date_pos; ?>" 
 		href="<?php the_permalink(); ?>" 
 		class="pc--blog__thumb pc--crop__thumb">
-		<img src="<?php echo $thumb_img; ?>" alt="<?php the_title(); ?>" class="pc--blog__image">
+		<?php pc_image( get_post_thumbnail_id(), $thumb_width, $thumb_height, false, array( 'class' => 'pc--blog__image' ) ); ?>
 	</a>
 
 	<?php if ( $bc_style__title_pos == 'image-top' ) {

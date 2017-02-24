@@ -200,7 +200,7 @@ function mr_delete_resized_images($post_id) {
 }
 
 function thumb_crop_etrange($url, $width, $height=0, $align='') {
-  return mr_image_resize($url, $width, $height, true, $align, false);
+  return mr_image_resize($url, $width, $height, false, $align, true);
 }
 
 function the_excerpt_max_charlength($charlength) {

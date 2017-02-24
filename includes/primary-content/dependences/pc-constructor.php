@@ -1,22 +1,5 @@
 <?php 
 
-/**
- * The loop beneath initialithes array of styles for Flexi Card 
- */
-
-$flexi_counter_array = array();
-
-// $flexi_counter = flexi_card_get_styles_count();
-// $flexi_counter_array = array (); 
-
-// for ( $i = 1; $i <= $flexi_counter; $i++ ) {
-// 	$c = create_style_prefix($i);
-
-// 	$flexi_counter_array['fc_style-' . $c] = $i . ' Style';
-// }
-
-
-
 acf_add_local_field_group(array (
 	'key' => 'group_5829d7835eb2b',
 	'title' => 'Primary content area',
@@ -622,7 +605,7 @@ acf_add_local_field_group(array (
 																				'class' => '',
 																				'id' => '',
 																			),
-																			'return_format' => 'url',
+																			'return_format' => 'id',
 																			'preview_size' => 'rpwe-thumbnail',
 																			'library' => 'all',
 																			'min_width' => '',
@@ -1310,7 +1293,7 @@ acf_add_local_field_group(array (
 																				'class' => '',
 																				'id' => '',
 																			),
-																			'return_format' => 'url',
+																			'return_format' => 'id',
 																			'preview_size' => 'full',
 																			'library' => 'all',
 																			'min_width' => '',
