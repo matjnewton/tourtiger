@@ -3,7 +3,7 @@
                 <?php if(!$logo_covers_both_menus): ?>
                 <?php include(locate_template('menus/logo.php' )); ?>
                 <?php endif; ?>    
-                <nav class="regular-type <?php if($use_logo == true && !$logo_covers_both_menus): echo 'col-sm-10 col-md-9 col-lg-9 use-logo'; else: echo 'col-sm-12 col-md-12 col-lg-12'; endif; ?>">
+                <nav class="regular-type <?php if(($use_logo == true) && !($logo_covers_both_menus)): echo 'col-sm-10 col-md-9 col-lg-9 use-logo'; else: echo 'col-sm-12 col-md-12 col-lg-12'; endif; ?>">
                     <div class="main-nav-wrapper<?php if($all_caps == true): ?> all-caps<?php endif; ?>">
                         
                         <?php if($secondary_menu != true): ?>
