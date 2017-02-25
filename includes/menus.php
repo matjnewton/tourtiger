@@ -61,7 +61,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo text-center"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
         //if( $this->break_point == $item->menu_order )
         if( $this->break_point == $this->displayed )
-            $output .= $indent . '</li></ul></div>'.$logo_item.'<div class="col-sm-12 col-md-5 col-lg-5 right-menu-part main-nav-wrapper"><div class="above-split-bar">'.$right_secondary_menu.'</div><ul class="menu genesis-nav-menu main-nav"><li' . $id . $value . $class_names .'>';
+            $output .= $indent . '</li></ul></div>'.$logo_item.'<div class="col-sm-12 col-md-5 col-lg-5 right-menu-part main-nav-wrapper"><div class="above-split-bar">'.$right_secondary_menu.'</div><ul class="menu genesis-nav-menu main-nav hidden-xs hidden-sm" style="clear:both;"><li' . $id . $value . $class_names .'>';
         else
             $output .= $indent . '<li' . $id . $value . $class_names .'>';
 
