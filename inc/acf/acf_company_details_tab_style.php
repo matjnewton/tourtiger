@@ -110,6 +110,25 @@ acf_add_local_field(
 		)
 );
 acf_add_local_field(
+        array (
+			'key' => 'field_58b199f194179',
+			'label' => 'Logo Covers Both Menus',
+			'name' => 'logo_covers_both_menus',
+			'type' => 'true_false',
+			'parent'       => 'group_557b16305d905',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+);
+acf_add_local_field(
 		array (
 			'key' => 'field_55dc77cac5ef8',
 			'label' => 'Testimonials Type',
