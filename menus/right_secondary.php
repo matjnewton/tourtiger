@@ -43,8 +43,8 @@
                         <?php endif; ?>
                         <?php if($phone_number): ?>
         <?php $phone = preg_replace('/\D+/', '', $phone_number); ?>
-                            <div class="phone">
-                                <i class="fa fa-phone hidden-xs"></i>
+                            <div class="phone hidden-xs">
+                                <i class="fa fa-phone"></i>
                                 <a href="tel:<?php echo $phone; ?>">
                                 
                                 <?php echo $phone_number; ?>
