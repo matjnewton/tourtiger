@@ -8,7 +8,7 @@
                         <?php 
                         $use_media = get_field('use_social_media_in_main_nav', 'option');
                         if(get_field('social_media', 'option') && ($use_media == true)): ?>
-                        <div class="social-media">
+                        <div class="social-media hidden-xs">
                         <ul class="genesis-nav-menu">
                            <?php while(has_sub_field('social_media', 'option')): ?>
                            <li>
