@@ -1,24 +1,9 @@
-<div class="hidden-xs hidden-sm container">
+<?php $logo_covers_both_menus = get_field('logo_covers_both_menus', 'option'); ?>
             <div class="row">
-            <?php 
-            $use_logo = get_field('use_logo_image', 'option');
-            if($use_logo == true): ?>
-                <div class="col-sm-2 col-md-3 col-lg-3">
-                    <div class="logo">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <?php 
-                                $logo_url = wp_get_attachment_url( get_field('logo_image', 'option'),'full');
-                                $logo = aq_resize( $logo_url, 362, 64, false );
-                                ?>
-                            <?php if($logo_url): ?>
-                            <div class="logo-container" style="background-image: url(<?=$logo_url?>);"></div>
-                            <!--<img src="<?=$logo_url?>" alt="<?=$logo?>" />-->
-                            <?php endif; ?>
-                        </a>
-                    </div>
-                </div>
-            <?php endif; ?>    
-                <nav class="regular-type <?php if($use_logo == true): echo 'col-sm-10 col-md-9 col-lg-9 use-logo'; else: echo 'col-sm-12 col-md-12 col-lg-12'; endif; ?>">
+                <?php if(!$logo_covers_both_menus): ?>
+                <?php include(locate_template('menus/logo.php' )); ?>
+                <?php endif; ?>    
+                <nav class="regular-type <?php if($use_logo == true && !$logo_covers_both_menus): echo 'col-sm-10 col-md-9 col-lg-9 use-logo'; else: echo 'col-sm-12 col-md-12 col-lg-12'; endif; ?>">
                     <div class="main-nav-wrapper<?php if($all_caps == true): ?> all-caps<?php endif; ?>">
                         
                         <?php if($secondary_menu != true): ?>
@@ -69,4 +54,4 @@
                     </div>
                 </nav>
             </div>
-        </div>    
+            

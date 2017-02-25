@@ -62,13 +62,30 @@ if($custom_header == true): ?>
     <div class="header-bar-wrapper<?php if($sticky_menu == true): ?> sticky<?php endif; ?><?php if($background_placement=='Under Header' && $slides_images && !$sticky_menu): ?> pos-abs<?php endif; ?>">
     <div class="header-bar">
         <?php 
+        $logo_covers_both_menus = get_field('logo_covers_both_menus', 'option');
         $secondary_menu = get_field('include_secondary_menu', 'option');
-        if($secondary_menu == true): ?>
+        if(($secondary_menu == true) && ($logo_covers_both_menus == false)): ?>
+        <div class="secondary-menu-wrapper">
+            <div class="<?php if(!function_exists('icl_object_id')): ?>hidden-xs <?php endif; ?>container">
             <?php include(locate_template('menus/secondary_menu.php' )); ?>
+            </div>
+        </div>
         <?php endif; ?>
         <?php $menu_type = get_field('menu_type', 'option'); ?>
         <?php if($menu_type == 'Regular'): ?>
-            <?php include(locate_template('menus/regular_menu.php' )); ?>
+            <div class="hidden-xs hidden-sm container">
+            <?php if($logo_covers_both_menus): ?>
+            <div class="row">
+                <?php include(locate_template('menus/logo.php' )); ?>
+                <div class="col-sm-10 col-md-9 col-lg-9">
+                    <?php include(locate_template('menus/secondary_menu.php' )); ?>
+                    <?php include(locate_template('menus/regular_menu.php' )); ?>
+                </div>
+            </div>
+            <?php else: ?>
+                <?php include(locate_template('menus/regular_menu.php' )); ?>
+            <?php endif; ?>
+        </div>
         <?php elseif($menu_type == 'Split by Logo in center'):?>
             <?php include(locate_template('menus/split_menu.php' )); ?>
         <?php elseif($menu_type == 'Logo Centered & Above Menu'):?>

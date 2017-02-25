@@ -2,9 +2,6 @@
     $phone_number = get_field('phone_number','option');
     $motto = get_field('motto', 'option');    
 ?>
-
-<div class="secondary-menu-wrapper">
-<div class="<?php if(!function_exists('icl_object_id')): ?>hidden-xs <?php endif; ?>container">
     <div class="row">
         <div class="col-sm-6 hidden-xs">
             <div class="above-split-bar">
@@ -67,5 +64,3 @@
             </div>
         </div>
     </div><!-- .row-->
-</div>
-</div>
