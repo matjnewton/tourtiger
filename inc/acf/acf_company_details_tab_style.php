@@ -126,7 +126,7 @@ acf_add_local_field(
 			),
 			'message' => '',
 			'default_value' => 0,
-		),
+		)
 );
 acf_add_local_field(
 		array (
