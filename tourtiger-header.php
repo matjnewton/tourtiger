@@ -89,7 +89,11 @@ if($custom_header == true): ?>
             <?php endif; ?>
         </div>
         <?php elseif($menu_type == 'Split by Logo in center'):?>
-            <?php include(locate_template('menus/split_menu.php' )); ?>
+            <?php if($logo_covers_both_menus): ?>
+                <?php include(locate_template('menus/cover_split_menu.php' )); ?>
+            <?php else: ?>
+                <?php include(locate_template('menus/split_menu.php' )); ?>
+            <?php endif; ?>
         <?php elseif($menu_type == 'Logo Centered & Above Menu'):?>
             <?php include(locate_template('menus/above_menu.php' )); ?>
         <?php endif; ?>
