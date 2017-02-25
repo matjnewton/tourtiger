@@ -78,7 +78,9 @@ if($custom_header == true): ?>
             <div class="row">
                 <?php include(locate_template('menus/logo.php' )); ?>
                 <div class="col-sm-10 col-md-9 col-lg-9">
+                    <?php if(($secondary_menu == true): ?>
                     <?php include(locate_template('menus/secondary_menu.php' )); ?>
+                    <?php endif; ?>
                     <?php include(locate_template('menus/regular_menu.php' )); ?>
                 </div>
             </div>
