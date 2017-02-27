@@ -34,7 +34,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
         $class_names = $value = '';
-
+        
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
@@ -58,10 +58,10 @@ class split_nav_walker extends Walker_Nav_Menu {
         $right_secondary_menu = '';
         endif;
         
-        $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo text-center"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
+        $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
         //if( $this->break_point == $item->menu_order )
         if( $this->break_point == $this->displayed )
-            $output .= $indent . '</li></ul></div>'.$logo_item.'<div class="col-sm-12 col-md-5 col-lg-5 right-menu-part main-nav-wrapper"><div class="above-split-bar">'.$right_secondary_menu.'</div><ul class="menu genesis-nav-menu main-nav hidden-xs hidden-sm" style="clear:both;"><li' . $id . $value . $class_names .'>';
+            $output .= $indent . '</li></ul></div>'.$logo_item.'<div class="col-sm-12 col-md-5 col-lg-5 right-menu-part main-nav-wrapper"><div class="secondary-menu-wrapper"><div class="above-split-bar">'.$right_secondary_menu.'</div></div><ul class="menu genesis-nav-menu main-nav hidden-xs hidden-sm"><li' . $id . $value . $class_names .'>';
         else
             $output .= $indent . '<li' . $id . $value . $class_names .'>';
 
@@ -124,18 +124,19 @@ class split_nav_walker extends Walker_Nav_Menu {
         if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
             $gid = preg_replace('#^https?://#', '', $t_gid);
-            $attributes .= ' href="'.$gid.'"';
+            $attributes .= ' href="http://www.peek.com/purchase/activity/widget/'.$gid.'"';
             $attributes .= ' class="peek-book-button-flat"';
             $attributes .= ' data-purchase-type="activity"';
             $attributes .= ' data-button-text="'.$item->title.'"';
             $attributes .= ' data-activity-gid="'.$gid.'"';
         }
         
-        
         if ( $integrate_zaui == true && $depth == 0 && ($classes[0] == 'zaui-book-btn')) {
             $attributes .= ' onclick="return Zaui.open(event)"';
             $attributes .= ' class="button-booking zaui-embed-button override"';
         }
+        
+        
         
         if ( $integrate_xola == true && $depth == 0 && ($classes[0] == 'xola-book-btn')) {
             $t_xid = $atts['href'];
@@ -217,7 +218,7 @@ class split_nav_walker extends Walker_Nav_Menu {
             $item_output .= '<a'. $attributes .'><div><img src="'.$thumbnail.'" class="img-responsive" /></div><span>';
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
             $item_output .= '</span></a>';
-            $item_output .= $args->after;
+            $item_output .= $args->after;    
         } else {
             $item_output = $args->before;
             $item_output .= '<a'. $attributes .'>';
