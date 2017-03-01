@@ -17,7 +17,7 @@
         }
 
         if ( $tour_section_bg_image_expanded == 'yep' ) {
-            $tour_section_classes .= ' pc--s__img--eqvival';
+            $tour_section_classes .= ' pc--s__img--eqvival is-full-image';
         }
     } else{
     	$tour_section_classes .= ' pc--s__img_empty';

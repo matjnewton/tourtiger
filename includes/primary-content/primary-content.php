@@ -11,18 +11,21 @@ if ( have_rows( 'tour_primary-content' ) ) { ?>
 		/**
 		 * Indlude Dependences
 		 */
+		
+		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-footer-inc.php' );
 		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-dependences.php' );
 
-		$section_count = 1;
+		ob_start();
 
-		while ( have_rows( 'tour_primary-content' ) ) { the_row();
+		while ( have_rows( 'tour_primary-content' ) ) :
+			the_row();
 
-			/**
-			 * Output Sections
-			 */
 			include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-parameters.php' );
 
-		$section_count++; }  ?>
+			if ($section_count == $number) break;
+		endwhile; 
+
+		echo ob_get_clean();  ?>
 
 	</div> 
 

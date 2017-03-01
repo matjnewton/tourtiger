@@ -3,8 +3,7 @@
 	$iframe = get_sub_field('tour_pc-bg__select-videoembed');
 
 	preg_match('/src="(.+?)"/', $iframe, $matches);
-	$src_true = $matches[1];
-	$src = 'javascript:false';
+	$src = $matches[1];
 
 	$params = array(
 	    'controls'    => 0,
@@ -13,7 +12,6 @@
 	    'showinfo'    => 0,
 	    'controls'	  => 0,
 	    'loop'        => 1,
-	    'data-aload'  => $src_true
 	);
 
 	$new_src = add_query_arg($params, $src);

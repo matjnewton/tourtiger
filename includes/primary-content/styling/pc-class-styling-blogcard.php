@@ -87,7 +87,7 @@ class BlogCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -96,7 +96,7 @@ class BlogCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '584e990889f75',
@@ -197,7 +197,7 @@ class BlogCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -206,7 +206,7 @@ class BlogCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '584e995389f76',
@@ -283,7 +283,7 @@ class BlogCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -292,7 +292,7 @@ class BlogCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '584e9a2089f77',
@@ -479,7 +479,7 @@ class BlogCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -488,7 +488,7 @@ class BlogCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '584e9a7989f78',

@@ -3,6 +3,7 @@
 	$tour_column_classes .= ' pc--r__col-4';
 	
 	$thumb_width = 400;
+	$thumb_width_normal = 400;
 	$thumb_height = 400;
 	$thumb_height_normal = 300;
 	$thumb_upload = 'pc-small';

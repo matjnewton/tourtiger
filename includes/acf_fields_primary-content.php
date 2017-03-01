@@ -15,6 +15,7 @@ include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-rgba-color/acf-rgba-color.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-typography/acf-typography.php' );
 include_once( STYLING_MANAGER_DIR . '/acf-styling-manager.php' );
+include_once( get_stylesheet_directory() . '/includes/primary-content/dependences/ajax-loading.php' );
 
 add_filter( 'acf/accordion/dir', 'acf_accordion_dir' );
 function acf_accordion_dir( $dir ) {
@@ -47,6 +48,7 @@ if ( !is_admin() ) {
  * Add custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'pc-large', 1100, 1100, true ); 
 	add_image_size( 'pc-medium', 700, 700, true ); 
 	add_image_size( 'pc-small', 500, 500, true ); 
 }

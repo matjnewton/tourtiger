@@ -16,7 +16,8 @@ if ( $tour_flexiprod_image_url ) :
 		get_sub_field( $tour_flexi_content . '--image-height' ) == 'pc--c__b-image--tall' 
 		|| get_sub_field( $tour_flexi_content . '--image-height' ) == 'pc--c__b-image--really-tall' 
 	) {
-		$thumb_height = $thumb_width * 1.35;
+		$thumb_height = $thumb_width * 1.4;
+		$thumb_width = $thumb_width * 1.4;
 	} else {
 		$thumb_height = $thumb_height_normal;
 	}
@@ -25,12 +26,10 @@ if ( $tour_flexiprod_image_url ) :
 	$tour_flexiprod_image_classes .= ' ' . get_sub_field( $tour_flexi_content . '--image-aligment' );
 
 	if ( $tour_flexi_content == 'tour_pc-flexi' ) :
-		while ( have_rows( 'tour_pc-flexi--image-row' ) ) : the_row(); 
-			$title   = get_sub_field( 'tour_pc-flexi--image-row__title' );
-			$desc    = get_sub_field( 'tour_pc-flexi--image-row__description' );
-			$price   = get_sub_field( 'tour_pc-flexi--image-row__price' );
-			$label   = get_sub_field( 'tour_pc-flexi--image-row__label' );
-		endwhile;
+		$title   = get_sub_field( 'tour_pc-flexi--image-row__title' );
+		$desc    = get_sub_field( 'tour_pc-flexi--image-row__description' );
+		$price   = get_sub_field( 'tour_pc-flexi--image-row__price' );
+		$label   = get_sub_field( 'tour_pc-flexi--image-row__label' );
 	endif;
 
 	/* Url */

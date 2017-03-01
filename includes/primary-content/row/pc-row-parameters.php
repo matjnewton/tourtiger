@@ -1,6 +1,6 @@
 <?php
 	$tour_row_styles = '';
-	$tour_column_classes = 'pc--r hidden-load'; 
+	$tour_column_classes = 'pc--r'; 
 
 	$tour_row_type = get_sub_field( 'tour_pc-rowtype' );
 	$scroll_data = '';
@@ -18,8 +18,7 @@
 	if ( $tour_column_wrap == 'wrap' ) {
 		$tour_column_classes .= ' pc--r__wrap';
 	} elseif ( $tour_column_wrap == 'scroll' ) {
-		$tour_column_classes .= ' pc--r__scroll';
-		include_once( get_stylesheet_directory() . '/includes/primary-content/row/pc-row-scroll.php' );
+		$tour_column_classes .= ' pc--r__scroll js-new-slider';
 	}
 
 	if ( get_sub_field( 'tour_pc-colums--margin' ) == 'none' ) {

@@ -1,5 +1,5 @@
 <?php 
-	$tour_content_content_classes .= ' pc--c__testimonial';
+	$tour_content_content_classes .= ' pc--c__testimonial js-new-slider';
 	$pc_content_testimonial = 'tour_pc-coltype--testimonial_ob';
 
 	while ( have_rows( $cc_style, 'option' ) ) {

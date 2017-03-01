@@ -832,7 +832,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -841,7 +841,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_58357042e87a0-color',
@@ -942,7 +942,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -951,7 +951,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_583571d34dbc6-color',
@@ -1160,7 +1160,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1169,7 +1169,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_58357pri7d25-color',
@@ -1327,7 +1327,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1336,7 +1336,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835aeff-hover',
@@ -1690,7 +1690,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1699,7 +1699,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835918633638-color',
@@ -1825,7 +1825,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1834,7 +1834,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_583592663363c-color',
@@ -1993,7 +1993,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2002,7 +2002,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_583598f442425-color',
@@ -2248,7 +2248,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2257,7 +2257,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a0312a141-color',
@@ -2484,7 +2484,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2493,7 +2493,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_58359391976e2-color',
@@ -2811,7 +2811,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2820,7 +2820,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a295e1999-color',
@@ -2889,7 +2889,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2898,7 +2898,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a2a3e199c-color',
@@ -2999,7 +2999,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -3008,7 +3008,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a2abe199f-color',
@@ -3167,7 +3167,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -3176,7 +3176,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a2b7e19a3-color',
@@ -3422,7 +3422,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -3431,7 +3431,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a2cbe19aa-color',
@@ -3621,7 +3621,7 @@ class FlexiCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -3630,7 +3630,7 @@ class FlexiCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a2abe199f-color',

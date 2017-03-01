@@ -169,7 +169,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -178,7 +178,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec57e15147',
@@ -255,7 +255,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -264,7 +264,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec59115148',
@@ -341,7 +341,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -350,7 +350,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec5be15149',
@@ -572,7 +572,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -581,7 +581,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec5de1514a',
@@ -658,7 +658,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -667,7 +667,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec5de1sup1',
@@ -728,7 +728,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -737,7 +737,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec5de1sup2',
@@ -895,7 +895,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -904,7 +904,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec6251514b',
@@ -983,7 +983,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -992,7 +992,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_584ec63a1514c',
@@ -1122,7 +1122,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1131,7 +1131,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_techtitccc44b',
@@ -1208,7 +1208,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1217,7 +1217,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_techexcccc44b',
@@ -1294,7 +1294,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1303,7 +1303,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_techlinccc44b',
@@ -1440,7 +1440,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1449,7 +1449,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_titlefor98792',
@@ -1510,7 +1510,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1519,7 +1519,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_titl1234m92',
@@ -1580,7 +1580,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1589,7 +1589,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5foco2bcfjzf292',
@@ -1650,7 +1650,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1659,7 +1659,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5fone123c92',
@@ -1720,7 +1720,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1729,7 +1729,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5foppreverp292',
@@ -1790,7 +1790,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1799,7 +1799,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5fobor292',
@@ -1914,7 +1914,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1923,7 +1923,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5f1234sew92',
@@ -1984,7 +1984,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -1993,7 +1993,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5decolor92',
@@ -2054,7 +2054,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2063,7 +2063,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '123_stecolor2ps92',
@@ -2124,7 +2124,7 @@ class ContentCard extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => STYLING_FONTS,
+					'font_familys' => self::FONTS,
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -2133,7 +2133,7 @@ class ContentCard extends StylingCard {
 						700 => 700,
 						800 => 800,
 					),
-					'backupfont' => STYLING_BACK_FONTS,
+					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_5p2343alofonts92',
