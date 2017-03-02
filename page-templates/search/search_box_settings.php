@@ -59,15 +59,20 @@ endif;
 if ($search_settings_type =='Search by one date') {
     $search_by_onedate = true; 
     $type_search= '<input type="hidden" name="type_search" id="type_search" value="one_date"/>';
+    
     ?>
     <script>
         jQuery(function() {
             $(".endTime-wrap").hide();
             $(".one_date_hide").hide();
-            $('#startTime').change(function(event) {
-                $start = $('#startTime').val();
-                $('#endTime').val($start);
-            });
+            // var startt = $('#startTime').val();
+            // startt = moment(startt).format('YYYY-MM-DD');
+
+            // $('#startTime').change(function(event) {
+            //     // $start = $('#startTime').val();
+            //     $('#endTime').val(startt);
+            // });
+
            
         });
     </script>
