@@ -2424,6 +2424,11 @@ class FlexiCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'right-d',
 							),
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'button',
+							),
 						),
 					),
 					'wrapper' => array (
@@ -2448,6 +2453,11 @@ class FlexiCard extends StylingCard {
 								'field' => 'fc_' . $i . '_ld_58359c265dfbb',
 								'operator' => '==',
 								'value' => 'right-d',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'button',
 							),
 						),
 					),
@@ -2509,6 +2519,11 @@ class FlexiCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'right-d',
 							),
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'button',
+							),
 						),
 					),
 					'wrapper' => array (
@@ -2534,6 +2549,11 @@ class FlexiCard extends StylingCard {
 								'field' => 'fc_' . $i . '_ld_58359c265dfbb',
 								'operator' => '==',
 								'value' => 'right-d',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'button',
 							),
 						),
 					),
@@ -2661,31 +2681,6 @@ class FlexiCard extends StylingCard {
 					'layout' => 'horizontal',
 				),
 				array (
-					'key' => 'fc_' . $i . '_ld_5835a2a0e199b',
-					'label' => 'Description',
-					'name' => 'description',
-					'type' => 'message',
-					'instructions' => '',
-					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
-								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
-								'operator' => '==',
-								'value' => 'desc',
-							),
-						),
-					),
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'message' => 'Set parameters for description',
-					'new_lines' => '',
-					'esc_html' => 0,
-				),
-				array (
 					'key' => 'fc_' . $i . '_ld_5835a28ce1996',
 					'label' => 'Top Border Color',
 					'name' => 'fc_style__ct_tobo-c',
@@ -2777,7 +2772,15 @@ class FlexiCard extends StylingCard {
 					'type' => 'typography',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'title',
+							),
+						),
+					),
 					'wrapper' => array (
 						'width' => '',
 						'class' => '',
@@ -2829,7 +2832,15 @@ class FlexiCard extends StylingCard {
 					'type' => 'rgba_color',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'title',
+							),
+						),
+					),
 					'wrapper' => array (
 						'width' => '',
 						'class' => '',
@@ -2839,6 +2850,31 @@ class FlexiCard extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => 'fc_' . $i . '_ld_5835a2a0e199b',
+					'label' => 'Description',
+					'name' => 'description',
+					'type' => 'message',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
+								'operator' => '==',
+								'value' => 'desc',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Set parameters for description',
+					'new_lines' => '',
+					'esc_html' => 0,
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_5835a2a3e199c',
@@ -2939,116 +2975,6 @@ class FlexiCard extends StylingCard {
 								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 								'operator' => '==',
 								'value' => 'desc',
-							),
-						),
-					),
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'message' => 'Enable Underline',
-					'default_value' => 0,
-				),
-				array (
-					'key' => 'fc_' . $i . '_ld_5835a2abe199f',
-					'label' => 'Detail Font',
-					'name' => 'fc_style__ct_deta_font',
-					'type' => 'typography',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
-								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
-								'operator' => '==',
-								'value' => 'detail',
-							),
-						),
-					),
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'show_font_familys' => 1,
-					'font-family' => '',
-					'show_font_weight' => 1,
-					'font-weight' => 400,
-					'show_backup_font' => 1,
-					'backup-font' => 'Arial, Helvetica, sans-serif',
-					'show_text_align' => 1,
-					'text_align' => 'left',
-					'show_text_direction' => 0,
-					'direction' => 'ltr',
-					'show_font_size' => 1,
-					'font_size' => 20,
-					'show_line_height' => 1,
-					'line_height' => 25,
-					'show_letter_spacing' => 0,
-					'letter_spacing' => 0,
-					'show_color_picker' => 0,
-					'text_color' => '#000000',
-					'show_font_style' => 1,
-					'font_style' => 'normal',
-					'show_preview_text' => 0,
-					'default_value' => '',
-					'new_lines' => '',
-					'maxlength' => '',
-					'placeholder' => '',
-					'readonly' => 0,
-					'disabled' => 0,
-					'rows' => '',
-					'font_familys' => self::FONTS,
-					'stylefont' => array (
-						100 => 100,
-						300 => 300,
-						400 => 400,
-						600 => 600,
-						700 => 700,
-						800 => 800,
-					),
-					'backupfont' => self::BACK_FONTS,
-				),
-				array (
-					'key' => 'fc_' . $i . '_ld_5835a2abe199f-color',
-					'label' => 'Detail Font Color',
-					'name' => 'fc_style__ct_deta_font-color',
-					'type' => 'rgba_color',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
-								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
-								'operator' => '==',
-								'value' => 'detail',
-							),
-						),
-					),
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'rgba' => '',
-					'return_value' => 0,
-					'ext_value' => array (
-					),
-				),
-				array (
-					'key' => 'fc_' . $i . '_ld_5835a2afe19a0',
-					'label' => 'Detail Underline',
-					'name' => 'fc_style__ct_deta_under',
-					'type' => 'true_false',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
-								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
-								'operator' => '==',
-								'value' => 'detail',
 							),
 						),
 					),
@@ -3262,7 +3188,7 @@ class FlexiCard extends StylingCard {
 					'conditional_logic' => array (
 						array (
 							array (
-								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
 								'operator' => '==',
 								'value' => 'button',
 							),
@@ -3586,6 +3512,11 @@ class FlexiCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'right-d',
 							),
+							array (
+								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
+								'operator' => '==',
+								'value' => 'button',
+							),
 						),
 					),
 					'wrapper' => array (
@@ -3646,6 +3577,11 @@ class FlexiCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'right-d',
 							),
+							array (
+								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
+								'operator' => '==',
+								'value' => 'button',
+							),
 						),
 					),
 					'wrapper' => array (
@@ -3671,6 +3607,11 @@ class FlexiCard extends StylingCard {
 								'field' => 'fc_' . $i . '_ld_5835a2c9e19a9',
 								'operator' => '==',
 								'value' => 'right-d',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
+								'operator' => '==',
+								'value' => 'button',
 							),
 						),
 					),

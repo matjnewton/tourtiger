@@ -28,10 +28,6 @@
 
 		 		include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-headline.php' );
 
-		 	} elseif ( get_row_layout() == 'tour_pc-coltype--subheadline' ) {
-
-		 		include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-subheadline.php' );
-
 			} elseif ( get_row_layout() == 'tour_pc-coltype--editor' ) {
 
 				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-editor.php' );

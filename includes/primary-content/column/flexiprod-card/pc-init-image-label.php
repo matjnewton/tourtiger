@@ -17,7 +17,7 @@ if ( get_sub_field( 'fc_style__imla_pos' ) == 'top' ) {
 }
 
 if ( get_sub_field( 'fc_style__imla_font-bg' ) || get_sub_field( 'fc_style__imla_font-bg' ) != '' ) {
-	$fc_style__fcc_css[1] .= 'padding: 8px 13px; background-color:' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
+	$fc_style__fcc_css[1] .= 'padding: .78em 1.1em; background-color:' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
 
 	if ( in_array( 'color', get_sub_field( 'fc_style__imla_butt_hovef' ) ) ) {
 		$fc_style__fcc_css_hover .= 'background-color: ' . get_sub_field( 'fc_style__imla_font-color' ) . ';';

@@ -4,11 +4,8 @@ $tour_flexiprod_image_classes = 'pc--c__b-image fc_style--image pc--crop__thumb'
 
 /* Image URL */
 
-if ( $tour_flexi_content == 'tour_pc-flexi' ) :
-
+if ( $tour_flexi_content == 'tour_pc-flexi' )
 	$tour_flexiprod_image_url = get_sub_field( 'tour_pc-flexi--image-add' );
-
-endif;
 
 if ( $tour_flexiprod_image_url ) :
 
@@ -46,19 +43,19 @@ if ( $tour_flexiprod_image_url ) :
 
 		<?php if ( 
 			( 
-				in_array( 'title', $show_image ) 
-				|| in_array( 'desc', $show_image ) 
+				in_array( 'title', $flexi_attr['image'] ) 
+				|| in_array( 'desc', $flexi_attr['image'] ) 
 			) 
 			&& ( $title || $desc ) ) :  ?>
 
 			<div class="fc_style--image_text">
-				<?php if ( $title && in_array( 'title', $show_image ) ) : ?>
+				<?php if ( $title && in_array( 'title', $flexi_attr['image'] ) ) : ?>
 					<div class="pc--c__b-image_title fc_style--image_title">
 						<?php echo $title; ?>	
 					</div>
 				<?php endif; ?>
  
-				<?php if ( $desc && in_array( 'desc', $show_image )  ) : ?>
+				<?php if ( $desc && in_array( 'desc', $flexi_attr['image'] )  ) : ?>
 					<div class="pc--c__b-image_description fc_style--image_desc">
 						<?php echo $desc; ?>
 					</div>
@@ -66,11 +63,11 @@ if ( $tour_flexiprod_image_url ) :
 			</div>
 		<?php endif; ?>
 
-		<?php if ( $price && in_array( 'price', $show_image ) ) : ?>
+		<?php if ( $price && in_array( 'price', $flexi_attr['image'] ) ) : ?>
 			<div class="pc--c__b-image_price fc_style--image_price"><?php echo $price; ?></div>
 		<?php endif; ?>
 
-		<?php if ( $label && in_array( 'label', $show_image ) ) : ?>
+		<?php if ( $label && in_array( 'label', $flexi_attr['image'] ) ) : ?>
 			<div class="pc--c__b-image_label fc_style--image_label">
 				<?php echo $label; ?>
 			</div>

@@ -1,8 +1,24 @@
 <?php
+	
+/**
+ * $flexi_attr['image'] -> array can contain these strings: title, desc, price, label
+ * $flexi_attr['co'] and $flexi_attr['ct'] -> array can contain these strings: title, desc, price, label
+ * $flexi_attr['co_btn'] and $flexi_attr['ct_btn'] -> can be one of strings: left, center, right, right-d
+ * 
+ * @var array
+ */
 
-$show_image = get_sub_field( 'fc_style__imdis' );
-$show_co = get_sub_field( 'fc_style__co' ); 
-$show_ct = get_sub_field( 'fc_style__ct' ); 
+$flexi_attr = array();
+
+$flexi_attr = array(
+	'image'  => get_sub_field( 'fc_style__imdis' ),
+	'co'     => get_sub_field( 'fc_style__co' ),
+	'ct'     => get_sub_field( 'fc_style__ct' ),
+	'co_btn' => get_sub_field( 'fc_style__co_butt_pos' ),
+	'ct_btn' => get_sub_field( 'fc_style__ct_butt_pos' ),
+	'prefix' => '',
+	'name' => ''
+); 
 
 $fc_style__fcc_css = '';
 $fc_style__fcc_css_hover = '';

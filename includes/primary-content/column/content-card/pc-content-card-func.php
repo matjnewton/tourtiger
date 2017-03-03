@@ -16,8 +16,6 @@ function get_pc_content_card_style( $cc_style ) {
 
 				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-headline.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-subheadline.php' );
-
 				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-editor.php' );
 
 				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-line.php' );

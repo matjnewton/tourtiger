@@ -1,9 +1,21 @@
 <?php
 
-if ( $count == false ) $count = 0;
+if ( $count == false || $count === null ) $count = 0;
+
+$paddings = get_sub_field( 'tour_pc-section_pad' ); 
+
+if ( count( $paddings ) > 0 ) {
+	$paddings_css = '';
+
+	foreach ( $paddings as $id => $class ) {
+		$paddings_css .= ' ' . $class;
+	}
+} else {
+	$paddings_css = ' pc--s__no-paddings';
+}
 
 $tour_section_bg = get_sub_field( 'tour_pc-bg__select' );
-$tour_section_classes = 'pc--s pc--s_id-' . $count . ' ' . get_sub_field( 'tour_pc-section_pad' );
+$tour_section_classes = 'pc--s pc--s_id-' . $count . $paddings_css;
 $tour_section_styles = '';
 
 if ( $tour_section_bg == 'image' ) {

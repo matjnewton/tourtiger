@@ -24,35 +24,31 @@ function get_pc_flexiprod_card_style( $fc_style ) {
 			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image-default.php' );
 
 			if ( 
-				in_array( 'title', $show_image ) 
-				|| in_array( 'desc', $show_image ) 
-				|| in_array( 'price', $show_image ) 
-				|| in_array( 'label', $show_image ) 
+				in_array( 'title', $flexi_attr['image'] ) 
+				|| in_array( 'desc', $flexi_attr['image'] ) 
+				|| in_array( 'price', $flexi_attr['image'] ) 
+				|| in_array( 'label', $flexi_attr['image'] ) 
 			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-image.php' );
 
 			/**
-			 * Contet 1
+			 * Contet
 			 */
-			if ( 
-				in_array( 'top-border', $show_co ) 
-				|| in_array( 'title', $show_co ) 
-				|| in_array( 'desc', $show_co ) 
-				|| in_array( 'detail', $show_co ) 
-				|| in_array( 'price', $show_co ) 
-				|| in_array( 'button', $show_co ) 
-			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content-one.php' );
 
-			/**
-			 * Contet 2
-			 */
-			if ( 
-				in_array( 'top-border', $show_ct ) 
-				|| in_array( 'title', $show_ct ) 
-				|| in_array( 'desc', $show_ct ) 
-				|| in_array( 'detail', $show_ct ) 
-				|| in_array( 'price', $show_ct ) 
-				|| in_array( 'button', $show_ct ) 
-			) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content-two.php' );
+			foreach ( array( 'co' => 'first', 'ct' => 'second' ) as $prefix => $name ) :
+
+				$flexi_attr['prefix'] = $prefix;
+				$flexi_attr['name'] = $name;
+
+				if ( 
+					in_array( 'top-border', $flexi_attr[$prefix] ) 
+					|| in_array( 'title', $flexi_attr[$prefix] ) 
+					|| in_array( 'desc', $flexi_attr[$prefix] ) 
+					|| in_array( 'detail', $flexi_attr[$prefix] ) 
+					|| in_array( 'price', $flexi_attr[$prefix] ) 
+					|| in_array( 'button', $flexi_attr[$prefix] ) 
+				) include ( get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-init-content.php' );
+
+			endforeach;
 		
 			echo '</style>';
 
