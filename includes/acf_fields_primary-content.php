@@ -40,7 +40,7 @@ function acf_typography_dir( $dir ) {
 /**
  * Turn On Chaching
  */
-if ( !is_admin() ) {
+if ( !is_admin() && 1 === 2 ) {
 	include( get_stylesheet_directory() . '/includes/primary-content/pc-cache.php' );
 }
 
@@ -206,7 +206,7 @@ function transform_name( $name = '', $type = '' ) {
 
 function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false ) {
 
-	if ( $circle ) {
+	if ( $circle !== false ) {
 		if ( $width > $height ) { 
 			$width = $height;
 		} else { 
@@ -220,7 +220,7 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
 	echo $link ? '</a>':'';
 
-	if ( $circle ) echo '</div>'; 
+	if ( $circle !== false ) echo '</div>'; 
 }
 
 ?>

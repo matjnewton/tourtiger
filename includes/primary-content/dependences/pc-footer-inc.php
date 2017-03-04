@@ -104,22 +104,24 @@ $section_count = 0;
                   var img_w = item.find('img').width();
                   var img_h = item.find('img').height();
                   var item_w = item.width();
-                  var item_h = item.height();
+
+                  item.removeClass('js-no-touched');
 
                   if ( img_w > img_h ) {
-                    img_w = img_h;
-                  } else if ( img_w <= img_h ) {
-                    img_h = img_w;
-                  }
-
-                  if ( img_w > item_w ) {
-                    item.find('img').height(item_w);
+                      if ( img_h > item_w ) {
+                        item.find('img').height(item_h);
+                      } else {
+                        item.height(img_h);
+                        item.width(img_h);
+                      }
                   } else {
-                    item.find('img').height(img_h);
-                    item.width(img_h);
+                      if ( img_w > item_w ) {
+                        item.find('img').width(item_w);
+                      } else {
+                        item.height(img_w);
+                        item.width(img_w);
+                      }
                   }
-                    
-                  item.height(img_h);
 
             });
 

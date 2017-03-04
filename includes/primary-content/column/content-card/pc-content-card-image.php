@@ -9,7 +9,12 @@ if ( $tour_image ) :
 
 	$tour_content_content_styles .= "transform: scale({$tour_image_size});";
 
-	if ( $tour_image_circl == 'circle' ) { $tour_content_content_classes .= ' pc--c__image--circle'; $circle = true; } ?>
+	$circle = false;
+
+	if ( $tour_image_circl == 'circle' ) { 
+		$tour_content_content_classes .= ' pc--c__image--circle'; 
+		$circle = true; 
+	} ?>
 
 		<div 
 			class="<?=$tour_content_content_classes;?>" 
