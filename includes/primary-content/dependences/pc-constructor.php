@@ -1079,7 +1079,7 @@ acf_add_local_field_group(array (
 																			'required' => 0,
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => '10',
+																				'width' => '20',
 																				'class' => '',
 																				'id' => '',
 																			),
