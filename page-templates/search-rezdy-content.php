@@ -84,9 +84,11 @@ function tourtiger_archive(){
                     <div id="ajax_preLoading" class="preLoading2" ng-show="loading"></div>
 
                     <div ng-repeat = "timearrays in timearray track by $index | unique:'timearray'" class="timearray">
-
+                        
                         <p class="cDate2" >{{timearrays | asDateTitle }}</p>
-
+                        
+                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false">No tours scheduled for this date for your search</span>
+                        
                         <div ng-repeat = "products in api_availability track by $index">
                                 <span ng-repeat="productss in products" class="productss">
                                     <span ng-if="(productss.startTimeLocal | asDate) == (timearrays | asDate) " class="productss-startTime">
@@ -175,6 +177,8 @@ function tourtiger_archive(){
                     <div ng-repeat = "timearrays in timearrayLoadmore track by $index | unique:'timearrayLoadmore'"  ng-hide="scrollindex == 1" class="timearrayLoadmore">
 
                         <p class="cDate2" >{{timearrays | asDateTitle }}</p>
+
+                        <span class="search_noavailable_message" ng-if="timearrayLoadmore_seat.indexOf(timearrays) == -1 && loading == false">No tours scheduled for this date for your search</span>
 
                         <div ng-repeat = "products in api_availability_more track by $index">
                                 <span ng-repeat="productss in products" class="productss">

@@ -1419,3 +1419,6 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
    pointer-events: none;
    cursor: not-allowed;
 }
+.search_noavailable_message {
+  padding: 12px;
+}

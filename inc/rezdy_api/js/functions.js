@@ -24,6 +24,8 @@
 	        	var cpt_product ={};
 	        	cpt_product = response.data;
 	            $scope.cpt_product = response.data;
+	            $scope.message();
+	            console.log($scope);
 	            return cpt_product;
 	    });
 
@@ -71,12 +73,71 @@
 				$timeout(function(){
 		            $scope.loading = false;
 		        },2000);
+		        //$scope.message();
 	        });
 
 	    }); //end then
 		console.log($scope);
     // end auto load part
 
+    //message  if not tour
+    $scope.message = function() {
+		var row_seat = [];
+		angular.forEach($scope.timearray, function(timearrays, key) {
+			angular.forEach($scope.api_availability, function(products) {
+				angular.forEach(products , function(productss, key) {
+					if( $filter('asDate')(productss.startTimeLocal)  == $filter('asDate')(timearrays) ) {
+						var yes = 0;
+						angular.forEach($scope.cpt_product , function(cptproducts, key) {
+							 if(cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0 && $scope.search_tour_cat == 'all'){
+							 	yes = 1;
+							 }
+							 else if(cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0 && $scope.search_tour_cat != 'all'){
+								if( typeof cptproducts.term !== 'undefined'  && cptproducts.term.term_id == $scope.search_tour_cat[0])
+								yes = 1;
+							 }
+						});
+
+						if (yes == 1){
+						 	row_seat.push(timearrays);
+						 }
+
+					}
+				});
+			});
+
+		});
+		$scope.timearray_seat = row_seat;
+	}
+    //message  if not tour Loadmore
+    $scope.messageLoadmore = function() {
+		var row_seat_Loadmore = [];
+		angular.forEach($scope.timearrayLoadmore, function(timearrays, key) {
+			angular.forEach($scope.api_availability_more, function(products) {
+				angular.forEach(products , function(productss, key) {
+					if( $filter('asDate')(productss.startTimeLocal)  == $filter('asDate')(timearrays) ) {
+						var yes = 0;
+						angular.forEach($scope.cpt_product , function(cptproducts, key) {
+							 if(cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0 && $scope.search_tour_cat == 'all'){
+							 	yes = 1;
+							 }
+							 else if(cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0 && $scope.search_tour_cat != 'all'){
+								if( typeof cptproducts.term !== 'undefined'  && cptproducts.term.term_id == $scope.search_tour_cat[0])
+								yes = 1;
+							 }
+						});
+
+						if (yes == 1){
+						 	row_seat_Loadmore.push(timearrays);
+						 }
+
+					}
+				});
+			});
+
+		});
+		$scope.timearrayLoadmore_seat = row_seat_Loadmore;
+	}
     //+duration (new Date not fix but works)
     $scope.duration = function(start, end ) {
 		var timestamp1 = new Date(start).getTime();
@@ -118,6 +179,7 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+				        $scope.message();
 			        });
 			    }); //end then
 			console.log($scope);
@@ -151,6 +213,7 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+				        $scope.message();
 
 					var startTime_next = $("#datepicker-from-input").val();
 					startTime_next = moment.utc(startTime_next).add(1, 'days').format('YYYY-MM-DD');
@@ -194,6 +257,7 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+				        $scope.message();
 
 					var startTime_prev = $("#datepicker-from-input").val();
 					console.log('startTime_prev from picker');console.log(startTime_prev);
@@ -241,6 +305,8 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+						$scope.messageLoadmore();
+	            		console.log($scope);
 			        });
 			    }); //end then
 			//console.log($scope);
