@@ -27,6 +27,7 @@ function wqs_load_scripts_rezdyapi()
         array( 
             'apikey' => get_field('field_n1993k2903', 'option'),
             'rezdy_cat_id' => $rezdy_cat_id,
+            'wqs_api_url' => get_home_url( null, 'wp-json/wqs-api/tour_product_api'),
              )
     );
 

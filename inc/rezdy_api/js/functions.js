@@ -18,7 +18,8 @@
     wqs.controller('wqs_search_controller', function ($scope, $http, $q, dataService, dataServiceAjax, dataServiceAjaxmore, $timeout, $filter, $window, dataServiceAjaxNext, dataServiceAjaxPrev, GetUrlParameter,TimeArray) {
 
 	// load cpt product
-	    var wqs_api_url = jQuery('#wqs_api_url').val(); 
+	    var wqs_api_url = jQuery('#wqs_api_url').val();
+	    //var wqs_api_url = js_var.wqs_api_url;  
 	      $http.get(wqs_api_url)
 	        .then(function(response){
 	        	var cpt_product ={};
