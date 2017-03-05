@@ -25,8 +25,8 @@
 	        	var cpt_product ={};
 	        	cpt_product = response.data;
 	            $scope.cpt_product = response.data;
-	            $scope.message();
-	            console.log($scope);
+	            //$scope.message();
+	            //console.log($scope);
 	            return cpt_product;
 	    });
 
@@ -74,7 +74,7 @@
 				$timeout(function(){
 		            $scope.loading = false;
 		        },2000);
-		        //$scope.message();
+		        $scope.message();
 	        });
 
 	    }); //end then
