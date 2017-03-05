@@ -34,7 +34,11 @@ if (isset($_GET["search_tour_cat"])) {
     <div class="datepicker-instructions">Search by categories</div>
       <?php $search_tour_cat_sidebar = $_GET["search_tour_cat"]; ?>
       <?php //checkbox_term('tour_cat', $post->ID, $search_tour_cat_sidebar); ?>
-      <?php select_term('tour_cat', $post->ID, $search_tour_cat_sidebar); ?>
+      <?php //select_term('tour_cat', $post->ID, $search_tour_cat_sidebar); ?>
+      <?php 
+          $tax  = get_term($search_tour_cat_sidebar)->taxonomy;
+          select_term($tax, $post->ID, $search_tour_cat_sidebar);
+      ?>
   </div>
 <?php endif; ?>
 
