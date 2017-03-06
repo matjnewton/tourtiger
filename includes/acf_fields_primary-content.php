@@ -84,14 +84,21 @@ if(function_exists('acf_add_options_sub_page')) {
 		'icon_url'     => 'dashicons-align-left',
 	));
 
-/**
- * ACF Fielad PHP
- */
-if( function_exists('acf_add_local_field_group') ):
-	include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-styling-cards.php' );
-	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-constructor.php' );
-	include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
-endif;
+	acf_add_options_sub_page(array(
+		'page_title' => 'API Keys',
+		'menu_title' => 'API Keys',
+		'post_id' => 'apikey'
+	));
+
+	/**
+	 * ACF Fielad PHP
+	 */
+	if( function_exists('acf_add_local_field_group') ):
+		include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-styling-cards.php' );
+		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-constructor.php' );
+		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
+		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-options-admin-tab.php' );
+	endif;
 
 
 }

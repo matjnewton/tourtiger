@@ -9,7 +9,7 @@ $section_count = 0;
 
 ?>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPKkzpIMMXwxRMfArXDyzKZiRqdBVsfu0"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps','apikey'); ?>"></script>
 <script type="text/javascript">
   function aload(t){"use strict";var e="data-aload";return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t}
 
