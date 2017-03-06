@@ -72,7 +72,11 @@ function tourtiger_archive_xola(){
                     
                     <!-- xola  template -->
                     <div ng-repeat = "timearrays in timearray track by $index | unique:'timearray'" class="timearray">
+                        
                         <p class="cDate2" >{{timearrays | asDateTitle }}</p>
+                        
+                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false">No tours scheduled for this date for your search</span>
+                        
                         <div ng-repeat = "(key, products) in api_products_xola.products track by $index">
                                 <span ng-repeat="(key, api_availability) in api_availability_xola[$index]" ng-if="(key | asDate) == (timearrays | asDate) &&  get_all_seat(api_availability) !=0">
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
@@ -163,7 +167,11 @@ function tourtiger_archive_xola(){
 
                     <!-- xola  LoadMore -->
                     <div ng-repeat = "timearrays in timearrayLoadmore track by $index | unique:'timearrayLoadmore'" ng-hide="scrollindex == 1" class="timearrayLoadmore">
+                        
                         <p class="cDate2" >{{timearrays | asDateTitle }}</p>
+                        
+                        <span class="search_noavailable_message" ng-if="timearrayLoadmore_seat.indexOf(timearrays) == -1 && loading == false">No tours scheduled for this date for your search</span>
+
                         <div ng-repeat = "(key, products) in api_products_xola.products track by $index">
                                 <span ng-repeat="(key, api_availability) in api_availability_xola_more[$index]" ng-if="(key | asDate) == (timearrays | asDate) &&  get_all_seat(api_availability) !=0">
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">

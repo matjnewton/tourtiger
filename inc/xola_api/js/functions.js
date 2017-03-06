@@ -24,6 +24,8 @@
 	        	var cpt_product ={};
 	        	cpt_product = response.data;
 	            $scope.cpt_product = response.data;
+	            //$scope.message();
+	            //console.log($scope);
 	            return cpt_product;
 	    });
 
@@ -75,7 +77,7 @@
 					$timeout(function(){
 			            $scope.loading = false;
 			        },2000);
-					
+					$scope.message();
 		        });
 
 		}); //end then
@@ -140,6 +142,58 @@
 			return all_seat;
 			//return row_seat;
 		}
+	    $scope.message = function() {
+			var row_seat = [];
+			angular.forEach($scope.timearray, function(timearrays, key) {
+				angular.forEach($scope.api_products_xola.products, function(products, index) {
+					angular.forEach($scope.api_availability_xola[index] , function(api_availability, keys) {
+						if ( $filter('asDate')(keys) == $filter('asDate')(timearrays) &&  $scope.get_all_seat(api_availability) !=0 ) {
+							var yes = 0;
+							angular.forEach($scope.cpt_product , function(cptproducts, keyss) {
+								if( (cptproducts.xola_id == products.id) && (cptproducts.xola_id != null) && $scope.search_tour_cat == 'all') {
+									yes = 1;
+								} else if( (cptproducts.xola_id == products.id) && (cptproducts.xola_id != null) && $scope.search_tour_cat != 'all' && typeof cptproducts.term !== 'undefined' && cptproducts.term.term_id == $scope.search_tour_cat){
+									yes = 1;
+								} else {
+									yes = 0;
+								}
+								if (yes == 1){
+								 	row_seat.push(timearrays);
+								 }
+							});
+						}
+					});
+				});
+
+			});
+			$scope.timearray_seat = row_seat;
+		}
+	    $scope.messageLoadmore = function() {
+			var row_seat_Loadmore = [];
+			angular.forEach($scope.timearrayLoadmore, function(timearrays, key) {
+				angular.forEach($scope.api_products_xola.products, function(products, index) {
+					angular.forEach($scope.api_availability_xola_more[index] , function(api_availability, keys) {
+						if ( $filter('asDate')(keys) == $filter('asDate')(timearrays) &&  $scope.get_all_seat(api_availability) !=0 ) {
+							var yes = 0;
+							angular.forEach($scope.cpt_product , function(cptproducts, keyss) {
+								if( (cptproducts.xola_id == products.id) && (cptproducts.xola_id != null) && $scope.search_tour_cat == 'all') {
+									yes = 1;
+								} else if( (cptproducts.xola_id == products.id) && (cptproducts.xola_id != null) && $scope.search_tour_cat != 'all' && typeof cptproducts.term !== 'undefined' && cptproducts.term.term_id == $scope.search_tour_cat){
+									yes = 1;
+								} else {
+									yes = 0;
+								}
+								if (yes == 1){
+								 	row_seat_Loadmore.push(timearrays);
+								 }
+							});
+						}
+					});
+				});
+
+			});
+			$scope.timearrayLoadmore_seat = row_seat_Loadmore;
+		}
 
     //+ click availability use factory dataServiceAjax.getData
     $scope.check_availability_xola= function() {
@@ -174,7 +228,7 @@
 					$timeout(function(){
 			            $scope.loading = false;
 			        },2000);
-					
+					$scope.message();
 		        });
 
 		}); //end then
@@ -215,7 +269,7 @@
 					$timeout(function(){
 			            $scope.loading = false;
 			        },2000);
-					
+					$scope.messageLoadmore();
 		        });
 
 		}); //end then
@@ -257,7 +311,7 @@
 					$timeout(function(){
 			            $scope.loading = false;
 			        },2000);
-					
+					$scope.message();
 
 					var startTime_next = $("#datepicker-from-input").val();
 					startTime_next = moment.utc(startTime_next).add(1, 'days').format('YYYY-MM-DD');
@@ -306,7 +360,7 @@
 					$timeout(function(){
 			            $scope.loading = false;
 			        },2000);
-					
+					$scope.message();
 
 					var startTime_prev = $("#datepicker-from-input").val();
 					//console.log('startTime_prev from picker');console.log(startTime_prev);
