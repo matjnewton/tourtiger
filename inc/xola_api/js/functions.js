@@ -542,7 +542,7 @@ wqs_xola.factory('TimeArray', function () {
         return{
             getData: function(productCode,startTime,endTime){
                 var deferred = $q.defer();
-        	//console.log('dataServiceXolaAjax 01');
+        	//console.log('dataServiceXolaAjax 02');
 
 	        var datepicker_from = $("#datepicker-from-input").val();
 	        var datepicker_to = $("#datepicker-to-input").val();
@@ -569,6 +569,9 @@ wqs_xola.factory('TimeArray', function () {
 			var toDate = moment.utc(endTime);
 			daysOfYear = TimeArray.EnumerateDaysBetweenDates(fromDate, toDate);
 			angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
+				
+			//set scrollindex
+			angular.element('[ng-controller=wqs_search_controller]').scope().scrollindex = 1;
 
 			// load timearray for Loadmore 
 			var daysOfYearMore = [];
