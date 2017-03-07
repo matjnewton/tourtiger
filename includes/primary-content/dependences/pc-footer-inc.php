@@ -217,16 +217,17 @@ $section_count = 0;
             
             $('.pc--s__divider_repeater').find('.js-divider').each(function(){
               var element = $(this), 
-                  href =  element.attr('style'),
-                  url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' ),
+                  url =  element.attr('data-bg'),
                   img = new Image();
 
                   img.onload = function(){
                     element.height(img.height);
-                    console.log('Image height: ' + img.height + ', Url: ' + url[0]);
+                    console.log('Image height: ' + img.height + ', Url: ' + url);
                   }
 
-                  img.src = url[0];
+                  img.src = url;
+
+                  $(this).css('background-image', 'url(' + url + ')' );
             });
 
             /**
@@ -238,19 +239,22 @@ $section_count = 0;
                 img_percent,
                 img_height;
 
-            $('.pc--s__img--eqvival.is-full-image').each(function(){
-                  href = $(this).attr('style');
-                  match_url = href.match(/http:\/\/[^\s]+/i)[0].split( ');' );
-                  img = new Image();
+            $('.pc--s__img--eqvival').each(function(){
+                if ( $(this).hasClass('is-full-image') ) {
+                    match_url = $(this).attr('data-expanded');
+                    img = new Image();
 
-                  img.src = match_url[0];
+                    img.src = match_url;
 
-                  img_percent = img.height / img.width * 100;
-                  img_height = screen.width / 100 * img_percent;
+                    img_percent = img.height / img.width * 100;
+                    img_height = screen.width / 100 * img_percent;
 
-                  $(this).animate({
-                    'min-height': img_height
-                  }, 500).removeClass('is-full-image');
+                    $(this).css('background-image', 'url(' + match_url + ')');
+
+                      $(this).animate({
+                        'min-height': img_height, 
+                      }, 500).removeClass('is-full-image');
+                }
             });
 
         }    

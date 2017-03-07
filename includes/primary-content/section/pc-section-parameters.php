@@ -17,6 +17,7 @@ if ( count( $paddings ) > 0 ) {
 $tour_section_bg = get_sub_field( 'tour_pc-bg__select' );
 $tour_section_classes = 'pc--s pc--s_id-' . $count . $paddings_css;
 $tour_section_styles = '';
+$tour_section_attr = '';
 
 if ( $tour_section_bg == 'image' ) {
 	include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-define-image.php' );
@@ -45,7 +46,8 @@ if ( get_sub_field( 'tour_pc-bd--select' ) != 'none' ) {
 <section 
 	id="pc--s_id-<?php echo $count; ?>"
 	class="<?php echo $tour_section_classes; ?>"
-	style="<?php echo $tour_section_styles; ?>">
+	style="<?php echo $tour_section_styles; ?>"
+	<?php echo $tour_section_attr; ?>>
 
 	<?php 
 

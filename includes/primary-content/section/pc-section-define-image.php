@@ -12,13 +12,13 @@
         if ( $tour_section_bg_image_fixed == 'yep' && $tour_section_bg_image ) { 
         	$tour_section_classes .= ' pc--s__img_fixed';
         	$tour_section_styles .= ' background: url(' . $tour_section_bg_image . ') center center no-repeat; background-attachment: fixed;background-size: cover;';
-        } elseif ( $tour_section_bg_image_fixed != 'yep' && $tour_section_bg_image ) {
+        } elseif ( $tour_section_bg_image_fixed != 'yep' && $tour_section_bg_image && $tour_section_bg_image_expanded != 'yep' ) {
         	$tour_section_styles .= ' background-image: url(' . $tour_section_bg_image . ');';
+        } elseif ( $tour_section_bg_image_expanded == 'yep'  && $tour_section_bg_image ) {
+            $tour_section_classes .= ' pc--s__img--eqvival is-full-image';
+            $tour_section_attr .= ' data-expanded="' . $tour_section_bg_image . '"';
         }
 
-        if ( $tour_section_bg_image_expanded == 'yep' ) {
-            $tour_section_classes .= ' pc--s__img--eqvival is-full-image';
-        }
     } else{
     	$tour_section_classes .= ' pc--s__img_empty';
         $tour_section_styles .= ' background-color: #f3f3f3;';
