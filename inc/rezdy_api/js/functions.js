@@ -503,6 +503,9 @@ wqs.factory('TimeArray', function () {
 				daysOfYear = TimeArray.EnumerateDaysBetweenDates(fromDate, toDate);
 				angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
 
+				//set scrollindex
+				angular.element('[ng-controller=wqs_search_controller]').scope().scrollindex = 1;
+
 				// load timearray for Loadmore 
 				var daysOfYearMore = [];
 				daysOfYearMore.push( endTime_plus1 );
