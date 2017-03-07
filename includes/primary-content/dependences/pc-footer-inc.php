@@ -109,7 +109,7 @@ $section_count = 0;
 
                   if ( img_w > img_h ) {
                       if ( img_h > item_w ) {
-                        item.find('img').height(item_h);
+                        item.find('img').height(item_w);
                       } else {
                         item.height(img_h);
                         item.width(img_h);
