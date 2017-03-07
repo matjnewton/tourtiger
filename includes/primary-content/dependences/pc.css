@@ -1312,6 +1312,10 @@ div.pc--c__accordion + div.pc--c__accordion {
 	margin: 5px;
 }
 
+#pc_wrap .pc--c__testimonial--slider {
+	padding: 0 75px;
+}
+
 #pc_wrap .pc--c__testimonial--slider:before,
 #pc_wrap .pc--c__testimonial--slider:after {
 	font-family: Dosis;
@@ -1327,11 +1331,14 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 #pc_wrap .pc--c__testimonial--slider:before {
 	content: '“';
+	left: 0;
+	transform: translateY(-14%);
 }
 
 #pc_wrap .pc--c__testimonial--slider:after {
 	content: '”';
 	right: 0;
+	transform: translateY(4%);
 }
 
 #pc_wrap .pc--c__testimonial--slider .slick-dots button {

@@ -220,7 +220,7 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 			$height = $width;
 		}
 
-		echo '<div class="pc_circle-image--wrapper">';
+		echo '<div class="pc_circle-image--wrapper js-new-circle">';
 	}
 
 	echo $link ? "<a href='{$link}'>":'';

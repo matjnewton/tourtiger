@@ -1,5 +1,5 @@
 <?php 
-	$tour_content_content_classes .= ' pc--c__testimonial js-new-slider';
+	$tour_content_content_classes .= ' pc--c__testimonial';
 	$pc_content_testimonial = 'tour_pc-coltype--testimonial_ob';
 
 	while ( have_rows( $cc_style, 'option' ) ) {
@@ -12,7 +12,7 @@
 		<div 
 			class="<?php echo $tour_content_content_classes; ?>" 
 			style="<?php echo $tour_content_content_styles; ?>">
-			<div class="pc--c__testimonial--slider">
+			<div class="pc--c__testimonial--slider js-new-slider">
 				
 			 	<?php foreach( get_sub_field( $pc_content_testimonial ) as $post_object): ?>
 					<div class="pc--c__testimonial--item" align="center">
