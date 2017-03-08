@@ -230,4 +230,28 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	if ( $circle !== false ) echo '</div>'; 
 }
 
+function get_pc_content_card_border( $border = array() ) {
+
+	if ( $border['is'] == 'pc--c__border-left' ) {
+
+		$attr = "border-left: {$border['width']} {$border['style']} {$border['color']};left: 0;height: {$border['size']};";
+		echo "<div class='pc--c__border pc--c__border-side_left' style='{$attr}'></div>";
+
+	} elseif ( $border['is'] == 'pc--c__border-right' ) {
+
+		$attr = "border-right: {$border['width']} {$border['style']} {$border['color']};right: 0;height: {$border['size']};";
+		echo "<div class='pc--c__border pc--c__border-side_right' style='{$attr}'></div>";
+
+	} elseif ( $border['is'] == 'pc--c__border-both' ) {
+
+		$attr = "border-right: {$border['width']} {$border['style']} {$border['color']};height: {$border['size']};";
+		echo "<div class='pc--c__border pc--c__border-side_left' style='{$attr} left: 0;'></div>";
+		echo "<div class='pc--c__border pc--c__border-side_right' style='{$attr} right: 0;'></div>";
+
+	} else {
+		return false;
+	}
+
+}
+
 ?>

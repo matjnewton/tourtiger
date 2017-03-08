@@ -3,6 +3,16 @@
 	$cc_style = get_sub_field( 'tour_content-style' );
 	$tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' ';
 
+	$border = array ( 
+		'is' => get_sub_field( 'tour_content-border' ),
+		'width' => get_sub_field( 'tour_content-border-width' ) . 'px',
+		'style' => get_sub_field( 'tour_content-border-style' ),
+		'color' => get_sub_field( 'tour_content-border-color' ),
+		'size' => get_sub_field( 'tour_content-border-size' )
+	);
+
+	$tour_column_content_classes .= $border['is'];
+
 ?>
 
 <div 
@@ -18,6 +28,10 @@
 		if ( !in_array( $cc_style, $cc_styles_arr ) ) {
 			$cc_styles_arr[] = $cc_style;
 			get_pc_content_card_style( $cc_style );
+		}
+
+		if ( $border['is'] != 'pc--c__border-none' && $border['is'] != false ) {
+			get_pc_content_card_border( $border );
 		}
 
 		while ( have_rows( 'tour_pc-content--content' ) ) : the_row();
