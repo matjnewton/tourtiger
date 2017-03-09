@@ -3,10 +3,6 @@
  * PC: Header
  * ==================== */
 
-$custom_header = get_field( 'include_custom_header', 'option' );
-
-include ( get_stylesheet_directory() . '/includes/primary-content/head/pc-panel.php' );
-
 if( have_rows('pc_hero_area') ):
     while ( have_rows('pc_hero_area') ) : the_row();
         $background_placement = get_sub_field( 'pc_background_position' );

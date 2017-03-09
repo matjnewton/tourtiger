@@ -102,6 +102,12 @@ $section_count = 0;
                 });
             }
 
+            $('.pc--c__accordion--label').on('click', function(){
+                $(this).toggleClass('is_active');
+                $(this).closest('.slick-slide').height("auto");
+                $(this).closest('.pc--r__scroll').slick('setOption', 'height', null, true);
+            });
+
             if ( $('.pc_circle-image--wrapper.js-new-circle').length > 0 ) {
 
                 $('.pc_circle-image--wrapper.js-new-circle').each(function(){

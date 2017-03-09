@@ -1,34 +1,9 @@
 <?php 
 
-$cc_style__ccc_css = '';
-
-/* Accordion Label Font */
-if ( get_sub_field( 'cc_style__a-l_font' ) ) {
-	$cc_style__a_l_font = get_sub_field( 'cc_style__a-l_font' );
-
-	if ( $cc_style__a_l_font['font-family'] ) {
-		$cc_style__a_l_font_family = $cc_style__a_l_font['font-family'];
-	} else {
-		$cc_style__a_l_font_family = '"Open Sans", Arial, sans-serif';
-	}
-
-	if ( $cc_style__a_l_font['font-weight'] ) {
-		$cc_style__a_l_font_weight = $cc_style__a_l_font['font-weight'];
-	} else {
-		$cc_style__a_l_font_weight = 400;
-	}
-
-	$cc_style__ccc_css .=  "font-family:'" . $cc_style__a_l_font_family . "';";
-	$cc_style__ccc_css .=  "font-weight:" . $cc_style__a_l_font_weight . ";";
-	$cc_style__ccc_css .=  "text-align:" . $cc_style__a_l_font['text_align'] . ";";
-	$cc_style__ccc_css .=  "font-size:" . $cc_style__a_l_font['font_size'] . "px;";
-	$cc_style__ccc_css .=  "line-height:" . $cc_style__a_l_font['line_height'] . "px;";
-	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__a-l_font-color' ) . ";";
-	$cc_style__ccc_css .=  "font-style:" . $cc_style__a_l_font['font_style'] . ";";
-
-	echo $cc_style__a_l_font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__a_l_font['font-family'] . "');" : '';
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--label {' . $cc_style__ccc_css . ';}';
-}
+$cc_style__ccc_css = get_sub_field( 'cc_style__a-l_font' );
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__a-l_font-color' ) ? 'color:' . get_sub_field( 'cc_style__a-l_font-color' ) . ';' : '';
+echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--c__accordion--label {' . $cc_style__ccc_css[1] . '}' : '';
 
 /* Accordion Label Font Link Hover */
 if ( get_sub_field( 'cc_style__a-l_font-hover' ) ) {
@@ -36,35 +11,10 @@ if ( get_sub_field( 'cc_style__a-l_font-hover' ) ) {
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--label:hover {' . $cc_style__ccc_css . ';}';
 }
 
-$cc_style__ccc_css = '';
-
-/* Accordion Paragraf Font */
-if ( get_sub_field( 'cc_style__a-p_font' ) ) {
-	$cc_style__a_p_font = get_sub_field( 'cc_style__a-p_font' );
-
-	if ( $cc_style__a_p_font['font-family'] ) {
-		$cc_style__a_p_font_family = $cc_style__a_p_font['font-family'];
-	} else {
-		$cc_style__a_p_font_family = '"Open Sans", Arial, sans-serif';
-	}
-
-	if ( $cc_style__a_p_font['font-weight'] ) {
-		$cc_style__a_p_font_weight = $cc_style__a_p_font['font-weight'];
-	} else {
-		$cc_style__a_p_font_weight = 400;
-	}
-
-	$cc_style__ccc_css .=  "font-family:'" . $cc_style__a_p_font_family . "';";
-	$cc_style__ccc_css .=  "font-weight:" . $cc_style__a_p_font_weight . ";";
-	$cc_style__ccc_css .=  "text-align:" . $cc_style__a_p_font['text_align'] . ";";
-	$cc_style__ccc_css .=  "font-size:" . $cc_style__a_p_font['font_size'] . "px;";
-	$cc_style__ccc_css .=  "line-height:" . $cc_style__a_p_font['line_height'] . "px;";
-	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__a-p_font-color' ) . ";";
-	$cc_style__ccc_css .=  "font-style:" . $cc_style__a_p_font['font_style'] . ";";
-
-	echo $cc_style__a_p_font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__a_p_font['font-family'] . "');" : '';
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--paragraf {' . $cc_style__ccc_css . ';}';
-}
+$cc_style__ccc_css = get_sub_field( 'cc_style__a-p_font' );
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__a-p_font-color' ) ? 'color:' . get_sub_field( 'cc_style__a-p_font-color' ) . ';' : '';
+echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--c__accordion--paragraf {' . $cc_style__ccc_css[1] . '}' : '';
 
 /* Accordion Paragraf Font Link Hover */
 if ( get_sub_field( 'cc_style__a-p_font-link' ) ) {

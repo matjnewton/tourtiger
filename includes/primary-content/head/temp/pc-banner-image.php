@@ -15,7 +15,7 @@
                     -webkit-background-size: cover;
                     background-size: cover;
                     width: 100%; 
-                    <?php echo get_sub_field( 'pc_ha_image-fixed' ) ? 'background-attachment: fixed;' : ''; ?>">
+                    <?php echo get_sub_field( 'pc_ha_image-fixed' ) == 'yes' ? 'background-attachment: fixed;' : ''; ?>">
 
                     <?php include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-elements.php' ); ?>
 

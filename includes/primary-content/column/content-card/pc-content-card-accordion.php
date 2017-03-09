@@ -1,8 +1,4 @@
-<?php
-	include_once( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-accordion-script.php' );
-
-	$tour_content_content_classes .= ' pc--c__accordion';
-?>
+<?php $tour_content_content_classes .= ' pc--c__accordion'; ?>
 
 <div 
 	class="<?php echo $tour_content_content_classes; ?>" 
