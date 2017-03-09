@@ -446,8 +446,8 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'choices' => array (
-								'hero-area_image_fixed-no' => 'No',
-								'hero-area_image_fixed' => 'Yes',
+								'no' => 'No',
+								'yes' => 'Yes',
 							),
 							'other_choice' => 0,
 							'save_other_choice' => 0,
