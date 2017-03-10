@@ -176,8 +176,8 @@ function tourtiger_archive(){
                         </div> 
 
                         <!-- group tours -->
-                        <span ng-repeat="groups in groupsTimeArray_[(timearrays | asDate)] track by $index" ng-if="rezdy_group_tours == true" class="groups">
-                                <div ng-repeat = "cptproducts in cpt_product " ng-if="cptproducts.enable_group_product == true && inCodeArray(groups.code, cptproducts.productcode_group) == 0" class="cptproducts">
+                        <span ng-repeat="groups in groupsTimeArray_[(timearrays | asDate)] | uniqueID:'cpt_id'" ng-if="rezdy_group_tours == true" class="groups">
+                                <div ng-repeat = "cptproducts in cpt_product" ng-if="cptproducts.enable_group_product == true && inCodeArray(groups.code, cptproducts.productcode_group) != -1" class="cptproducts">
                                             
                                     <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                         <div class="col-md-4 search-tumb-wrap">
@@ -349,8 +349,8 @@ function tourtiger_archive(){
                         </div> 
 
                         <!-- group tours -->
-                        <span ng-repeat="groups in groupsTimeArrayMore_[(timearrays | asDate)] track by $index" ng-if="rezdy_group_tours == true" class="groups">
-                                <div ng-repeat = "cptproducts in cpt_product " ng-if="cptproducts.enable_group_product == true && inCodeArray(groups.code, cptproducts.productcode_group) == 0" class="cptproducts">
+                        <span ng-repeat="groups in groupsTimeArrayMore_[(timearrays | asDate)] | uniqueID:'cpt_id'" ng-if="rezdy_group_tours == true" class="groups">
+                                <div ng-repeat = "cptproducts in cpt_product " ng-if="cptproducts.enable_group_product == true && inCodeArray(groups.code, cptproducts.productcode_group) != -1" class="cptproducts">
                                             
                                     <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                         <div class="col-md-4 search-tumb-wrap">

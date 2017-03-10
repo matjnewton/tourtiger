@@ -908,7 +908,22 @@ wqs.factory('TimeArray', function () {
 	    return $sce.trustAsHtml(htmlCode);
 	  }
 	}]);
-
+	wqs.filter("uniqueID", function() {
+	  return function(collection, keyname) {
+	  	// console.log(collection);
+	  	// console.log(keyname);
+	    var output = [],
+	      keys = [];
+	    angular.forEach(collection, function(item) {
+	      var key = item[keyname];
+	      if (keys.indexOf(key) === -1) {
+	        keys.push(key);
+	        output.push(item);
+	      }
+	    });
+	    return output;
+	  };
+	});
 
 })();
 
