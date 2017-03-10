@@ -39,6 +39,7 @@ function get_rezdy_tour_select($field) {
 
 } 
 add_filter('acf/load_field/name=our_tours_rezdy', 'get_rezdy_tour_select');
+add_filter('acf/load_field/name=our_tours_rezdy_group', 'get_rezdy_tour_select');//group
 
 function get_cpt_tours_select($field) {
 	$field['choices'] = array();
@@ -63,7 +64,7 @@ function get_cpt_tours_select($field) {
 	 return $field;
 } 
 add_filter('acf/load_field/name=our_tours', 'get_cpt_tours_select');
-
+add_filter('acf/load_field/name=our_tours_group', 'get_cpt_tours_select');//group
 
 function get_cpt_tours_select_checker($field) {
 	$field['choices'] = array();
@@ -172,6 +173,26 @@ function save_sync() {
 					$postid = $matching_product['field_57eb6b9ad8aaf'];
 					$productcode = $matching_product['field_57eb6b9ad8aaf_rezdy'];
 					update_field('productcode', $productcode, $postid);
+				}
+		}
+		// rezdy group
+		$matching_products_group = $_POST['acf']['field_57eb6b8fd8aae_group'];
+		if ($matching_products_group) {
+				foreach ($matching_products_group as $key => $matching_product_group) {
+
+					$postid_group = $matching_product_group['field_57eb6b9ad8aaf_group'];
+					$productcode_group = $matching_product_group['field_57eb6b9ad8aaf_rezdy_group'];
+					
+					update_field('productcode_group', $productcode_group, $postid_group);
+					update_field('enable_group_product', true, $postid_group);
+					// no sync
+					if ($productcode_group[0] === "0" ) {  
+						// print_r($productcode_group[0] );
+						// die();
+						update_field('enable_group_product', false, $postid_group);
+					} else {
+						update_field('productcode', null, $postid_group); // execude in single 
+					}
 				}
 		}
 

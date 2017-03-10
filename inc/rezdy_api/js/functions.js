@@ -20,20 +20,54 @@
 	// load cpt product
 	    var wqs_api_url = jQuery('#wqs_api_url').val();
 	    //var wqs_api_url = js_var.wqs_api_url;  
-	      $http.get(wqs_api_url)
-	        .then(function(response){
-	        	var cpt_product ={};
-	        	cpt_product = response.data;
-	            $scope.cpt_product = response.data;
-	            //$scope.message();
-	            //console.log($scope);
-	            return cpt_product;
-	    });
+	    
+	    // $http.get(wqs_api_url)
+	    //     .then(function(response){
+	    //     	var cpt_product ={};
+	    //     	cpt_product = response.data;
+	    //         $scope.cpt_product = response.data;
+	    //         //$scope.message();
+	    //         console.log($scope);
+	    //         return cpt_product;
+	    // });
 
 	// var
 		var data = {};
         var promises = [];
 		var promises_click = [];
+
+	//enable group tour function 
+	var rezdy_group_tours = js_var.rezdy_group_tours;
+	if (rezdy_group_tours) {
+		$scope.rezdy_group_tours = true;
+	} else {
+		$scope.rezdy_group_tours = false;
+	}
+	
+	// load new cpt product
+		var getCPT = function() { 
+	    	var deferred = $q.defer();
+		    $http.get(wqs_api_url)
+		        .then(function(response){
+		        	deferred.resolve(response.data);
+		    });
+		    return deferred.promise;
+		}
+
+	    $q.all([getCPT()]).then(function(value) {
+	        $scope.cpt_product = value[0]; 
+    		console.log('promis cpt load');
+    		
+    		//LOCAL! load group
+			// $scope.LoadGroup();
+			// $scope.message();
+			// $scope.messageGroup();
+   //          console.log($scope);
+            
+            //console.log($scope);     
+	    }, function(reason) {
+	        $scope.cpt_product = reason;
+		});
 
 	// load api key
         //console.log(js_var.apikey);
@@ -74,12 +108,103 @@
 				$timeout(function(){
 		            $scope.loading = false;
 		        },2000);
+		        $scope.LoadGroup();
 		        $scope.message();
+		        $scope.messageGroup();
+
 	        });
 
 	    }); //end then
 		console.log($scope);
     // end auto load part
+
+    //group product 
+    $scope.group = function(cptproducts, api_availability,timearrays) {
+    	var groups = [];
+    	var groups_id = [];
+    		//console.log('start group');
+	    	angular.forEach(api_availability, function(products, key) {
+	    		//console.log('forEach api_availability');console.log(key);
+		    	angular.forEach(products, function(productss, key) {
+		    		//console.log('productss');console.log(productss);
+		    		//console.log('productss.startTimeLocal');console.log(productss.startTimeLocal);
+		    		if (  $filter('asDate')(productss.startTimeLocal)  == $filter('asDate')(timearrays) ) {
+				    	angular.forEach(cptproducts, function(cptproductss, key) {
+					         angular.forEach(cptproductss.productcode_group, function(group_codes, key) {
+					         	if (group_codes == productss.productCode && productss.seatsAvailable != 0) {
+					         		groups.push({ cpt_id : cptproductss.id, seats : productss.seatsAvailable, code : productss.productCode, time : $filter('asDate')(timearrays), product : productss, term : cptproductss.term.term_id, });
+					         		groups_id.push(cptproductss.id);
+					         	}
+							 });
+							 
+						 });
+					}
+			    });
+			 });	    	
+
+    	//console.log('groups load');
+    	//console.log(timearrays);
+		//console.log(groups);
+
+		console.log($scope);
+		return groups;
+	}
+	//group Load
+	$scope.LoadGroup = function(){
+	    var obj = {};
+		angular.forEach($scope.timearray, function(time, key) {
+			obj[time] = $scope.group($scope.cpt_product, $scope.api_availability,time);
+        });
+        $scope.groupsTimeArray_ = obj;
+	}
+	//group LoadMore
+	$scope.LoadGroupMore = function(){
+	    var obj = {};
+		angular.forEach($scope.timearrayLoadmore, function(time, key) {
+			obj[time] = $scope.group($scope.cpt_product, $scope.api_availability_more,time);
+         });
+        $scope.groupsTimeArrayMore_ = obj;
+	}
+	// get cpt id in group for date
+	$scope.inCodeArray = function(code, arrayCode) {
+	    return jQuery.inArray(code, arrayCode);
+	};
+	// get all seats for group
+	$scope.getGroupSeats = function(cpt_id, timearrays) {
+		var allseats = 0;
+		angular.forEach($scope.groupsTimeArray_, function(group, key) {
+			if(key == timearrays){
+				//console.log(key);
+				angular.forEach(group, function(thisgroup) {
+					if(thisgroup.cpt_id == cpt_id){
+						//console.log(thisgroup);
+						allseats += thisgroup.seats;
+					}
+				});
+
+			}
+
+		});
+		return allseats;
+	}
+	// get all seats for group More
+	$scope.getGroupSeatsMore = function(cpt_id, timearrays) {
+		var allseats = 0;
+		angular.forEach($scope.groupsTimeArrayMore_, function(group, key) {
+			if(key == timearrays){
+				//console.log(key);
+				angular.forEach(group, function(thisgroup) {
+					if(thisgroup.cpt_id == cpt_id){
+						//console.log(thisgroup);
+						allseats += thisgroup.seats;
+					}
+				});
+
+			}
+
+		});
+		return allseats;
+	}
 
     //message  if not tour
     $scope.message = function() {
@@ -139,6 +264,76 @@
 		});
 		$scope.timearrayLoadmore_seat = row_seat_Loadmore;
 	}
+	//message  if not tour
+    $scope.messageGroup = function() {
+    	var row_seat_group = [];
+    	var yes_group;
+		angular.forEach($scope.timearray, function(timearrays, key) {
+			yes_group = 0;
+			angular.forEach($scope.groupsTimeArray_, function(group, key) {
+				
+				if(key == timearrays){
+					//console.log(key);
+					angular.forEach(group, function(thisgroup) {
+						if($scope.search_tour_cat !="all" && thisgroup.term == $scope.search_tour_cat[0]){
+							//console.log('yes');
+							//console.log(thisgroup.term);
+							//console.log( $scope.search_tour_cat[0]);
+
+							yes_group = 1;
+						} else if($scope.search_tour_cat == "all"){
+							//console.log('no');
+							yes_group = 1;
+						}
+					});
+
+				}
+
+			});
+
+			if (yes_group == 1){
+			 	row_seat_group.push(timearrays);
+			 }
+
+
+		});
+		$scope.timearray_seat_group = row_seat_group;
+	}
+		//message  if not tour
+    $scope.messageGroupMore = function() {
+    	var row_seat_group_more = [];
+    	var yes_group_more;
+		angular.forEach($scope.timearrayLoadmore, function(timearrays, key) {
+			yes_group_more = 0;
+			angular.forEach($scope.groupsTimeArrayMore_, function(group, key) {
+				
+				if(key == timearrays){
+					//console.log(key);
+					angular.forEach(group, function(thisgroup) {
+						if($scope.search_tour_cat !="all" && thisgroup.term == $scope.search_tour_cat[0]){
+							//console.log('yes');
+							//console.log(thisgroup.term);
+							//console.log( $scope.search_tour_cat[0]);
+
+							yes_group_more = 1;
+						} else if($scope.search_tour_cat == "all"){
+							//console.log('no');
+							yes_group_more = 1;
+						}
+					});
+
+				}
+
+			});
+			//console.log('yes_group_more');console.log(yes_group_more);
+			if (yes_group_more == 1){
+			 	row_seat_group_more.push(timearrays);
+			 }
+
+
+		});
+		$scope.timearray_seat_group_more = row_seat_group_more;
+	}
     //+duration (new Date not fix but works)
     $scope.duration = function(start, end ) {
 		var timestamp1 = new Date(start).getTime();
@@ -180,7 +375,10 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+						$scope.LoadGroup();
 				        $scope.message();
+				        $scope.messageGroup();
+
 			        });
 			    }); //end then
 			console.log($scope);
@@ -214,7 +412,9 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+				        $scope.LoadGroup();
 				        $scope.message();
+				        $scope.messageGroup();
 
 					var startTime_next = $("#datepicker-from-input").val();
 					startTime_next = moment.utc(startTime_next).add(1, 'days').format('YYYY-MM-DD');
@@ -258,7 +458,9 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+				        $scope.LoadGroup();
 				        $scope.message();
+				        $scope.messageGroup();
 
 					var startTime_prev = $("#datepicker-from-input").val();
 					console.log('startTime_prev from picker');console.log(startTime_prev);
@@ -306,7 +508,9 @@
 						$timeout(function(){
 				            $scope.loading = false;
 				        },2000);
+				        $scope.LoadGroupMore();
 						$scope.messageLoadmore();
+						$scope.messageGroupMore();
 	            		console.log($scope);
 			        });
 			    }); //end then

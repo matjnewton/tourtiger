@@ -2946,6 +2946,112 @@ tour_finder',
 
             ),
         ),
+        //Group Tours
+        array (
+			'key' => 'field_5707bc2f30382_rezdy_group_tours',
+			'label' => 'Group tours',
+			'name' => 'rezdy_group_tours',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_5707bc2f30382',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+		array(
+            "key"=> "field_57eb6b8fd8aae_group",
+            "label"=> "Matching Group Products for Rezdy",
+            "name"=> "matching_products_group",
+            "type"=> "repeater",
+            "instructions"=> "",
+            "required"=> 0,
+             "conditional_logic" => array (
+				array (
+					array (
+						"field" => "field_5707bc2f30382",
+						"operator" => "==",
+						"value" => "1",
+					),
+					array (
+						"field" => "field_5707bc2f30382_rezdy_group_tours",
+						"operator" => "==",
+						"value" => "1",
+					),
+				),
+			),
+            "wrapper"=> array(
+                "width"=> "",
+                "class"=> "",
+                "id"=> ""
+            ),
+            "collapsed"=> "field_57eb6b9ad8aaf_group",
+            "min"=> "",
+            "max"=> "",
+            "layout"=> "block",
+            "button_label"=> "Add Row",
+            "sub_fields"=> array(
+                array(
+                    "key"=> "field_57eb6b9ad8aaf_group",
+                    "label"=> "Our Tours",
+                    "name"=> "our_tours_group",
+                    "type"=> "select",
+                    "instructions"=> "",
+                    "required"=> 0,
+                    "conditional_logic"=> 0,
+                    "wrapper"=> array(
+                        "width"=> "",
+                        "class"=> "",
+                        "id"=> "",
+                    ),
+                    "choices"=> array(),
+                    "default_value"=> array(),
+                    "allow_null"=> 0,
+                    "multiple"=> 0,
+                    "ui"=> 0,
+                    "ajax"=> 0,
+                    "placeholder"=> "",
+                    "disabled"=> 0,
+                    "readonly"=> 0,
+                ),
+                array(
+                    "key"=> "field_57eb6b9ad8aaf_rezdy_group",
+                    "label"=> "sync Group Rezdy Tours",
+                    "name"=> "our_tours_rezdy_group",
+                    "type"=> "select",
+                    "instructions"=> "required user ID/API Key",
+                    "required"=> 0,
+                    "conditional_logic"=> 0,
+                    "wrapper"=> array(
+                        "width"=> "",
+                        "class"=> "",
+                        "id"=> "",
+                    ),
+                    "choices"=> array(),
+                    "default_value"=> array(),
+                    "allow_null"=> 0,
+                    "multiple"=> 1,
+                    "ui"=> 0,
+                    "ajax"=> 0,
+                    "placeholder"=> "",
+                    "disabled"=> 0,
+                    "readonly"=> 0,
+                ),
+
+            ),
+        ),
         //matching_products_xola
         array(
             "key"=> "field_57eb6b8fd8aae_xola",

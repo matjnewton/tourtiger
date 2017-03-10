@@ -72,6 +72,9 @@ function getWqsApi() {
             //$cur_terms = wp_get_object_terms($post->ID, 'tour_cat');
             $productcode = get_field('productcode', $post->ID);
             $xola_id = get_field('xola_id', $post->ID);
+            // group tour option
+            $productcode_group = get_field('productcode_group', $post->ID);
+            $enable_group_product = get_field('enable_group_product', $post->ID);
             
             $integration_flag = get_field('integration_flag', $post->ID);
             $integration_price = get_field('integration_price', $post->ID);
@@ -118,6 +121,10 @@ function getWqsApi() {
             }
             
             $tempArray['productcode'] = $productcode;
+            // add group
+            $tempArray['enable_group_product'] = $enable_group_product;
+            $tempArray['productcode_group'] = $productcode_group;
+
             $tempArray['xola_id'] = $xola_id;
             $tempArray['descript'] = $descript;
 
@@ -186,6 +193,9 @@ function wqs_api_get_tour_product() {
             //$cur_terms = wp_get_object_terms($post->ID, 'tour_cat');
             $productcode = get_field('productcode', $post->ID);
             $xola_id = get_field('xola_id', $post->ID);
+            // group tour option
+            $productcode_group = get_field('productcode_group', $post->ID);
+            $enable_group_product = get_field('enable_group_product', $post->ID);
             
             $integration_flag = get_field('integration_flag', $post->ID);
             $integration_price = get_field('integration_price', $post->ID);
@@ -232,6 +242,10 @@ function wqs_api_get_tour_product() {
             }
             
             $tempArray['productcode'] = $productcode;
+            // add group
+            $tempArray['enable_group_product'] = $enable_group_product;
+            $tempArray['productcode_group'] = $productcode_group;
+
             $tempArray['xola_id'] = $xola_id;
             $tempArray['descript'] = $descript;
 
