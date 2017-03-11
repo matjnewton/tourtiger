@@ -108,9 +108,13 @@ function tourtiger_archive(){
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
                                                     </span>
+                                                    <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                        $ {{productss.priceOptions[0].price}} 
+                                                    </span>                                                    
+                                                    <!-- old price                                                    
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
-                                                    </span>
+                                                    </span> -->
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -143,10 +147,14 @@ function tourtiger_archive(){
                                                     <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
+                                                    </span>
+                                                    <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                        $ {{productss.priceOptions[0].price}} 
                                                     </span>                                                    
+                                                    <!-- old price                                                                                                        
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
-                                                    </span>
+                                                    </span>-->
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -190,9 +198,13 @@ function tourtiger_archive(){
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
                                             </span>
+                                            <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                $ {{groups.product.priceOptions[0].price}} 
+                                            </span>                                                    
+                                            <!-- old price                                            
                                             <span  ng-repeat = "price in groups.product.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{price.price}} 
-                                            </span> 
+                                            </span> -->
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeats(groups.cpt_id,(timearrays | asDate))<10">Only {{getGroupSeats(groups.cpt_id,(timearrays | asDate))}} available for this date</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeats(groups.cpt_id,(timearrays | asDate))>=10">Still available on this date.</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -225,10 +237,14 @@ function tourtiger_archive(){
                                             <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
+                                            </span>
+                                            <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                $ {{groups.product.priceOptions[0].price}} 
                                             </span>                                                    
+                                            <!-- old price
                                             <span  ng-repeat = "price in groups.product.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{price.price}} 
-                                            </span> 
+                                            </span> --> 
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeats(groups.cpt_id,(timearrays | asDate))<10">Only {{getGroupSeats(groups.cpt_id,(timearrays | asDate))}} available for this date</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeats(groups.cpt_id,(timearrays | asDate))>=10">Still available on this date.</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -282,9 +298,13 @@ function tourtiger_archive(){
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
                                                     </span>
+                                                    <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                        $ {{productss.priceOptions[0].price}} 
+                                                    </span>                                                    
+                                                    <!-- old price                                                    
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
-                                                    </span>
+                                                    </span> -->
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -317,10 +337,14 @@ function tourtiger_archive(){
                                                     <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
+                                                    </span>
+                                                    <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                        $ {{productss.priceOptions[0].price}} 
                                                     </span>                                                    
+                                                    <!-- old price                                                                                                
                                                     <span  ng-repeat = "price in productss.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{price.price}}
-                                                    </span>
+                                                    </span> -->
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable<10">Only {{productss.seatsAvailable}} available for this date</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && productss.seatsAvailable>=10">Still available on this date.</div>
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -363,9 +387,13 @@ function tourtiger_archive(){
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
                                             </span>
+                                            <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                $ {{groups.product.priceOptions[0].price}} 
+                                            </span>                                                    
+                                            <!-- old price
                                             <span  ng-repeat = "price in groups.product.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{price.price}} 
-                                            </span> 
+                                            </span> -->
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeatsMore(groups.cpt_id,(timearrays | asDate))<10">Only {{getGroupSeatsMore(groups.cpt_id,(timearrays | asDate))}} available for this date</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeatsMore(groups.cpt_id,(timearrays | asDate))>=10">Still available on this date.</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
@@ -398,10 +426,14 @@ function tourtiger_archive(){
                                             <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
+                                            </span>
+                                            <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                                $ {{groups.product.priceOptions[0].price}} 
                                             </span>                                                    
+                                            <!-- old price                                                    
                                             <span  ng-repeat = "price in groups.product.priceOptions track by $index" ng-if="price.label=='Adult' && !cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{price.price}} 
-                                            </span> 
+                                            </span> -->
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeatsMore(groups.cpt_id,(timearrays | asDate))<10">Only {{getGroupSeatsMore(groups.cpt_id,(timearrays | asDate))}} available for this date</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && getGroupSeatsMore(groups.cpt_id,(timearrays | asDate))>=10">Still available on this date.</div>
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
