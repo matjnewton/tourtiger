@@ -90,6 +90,51 @@ if(function_exists('acf_add_options_sub_page')) {
 		'post_id' => 'apikey'
 	));
 
+	acf_add_local_field_group(array (
+		'key' => 'group_58bd2428c1dee',
+		'title' => 'API Keys',
+		'fields' => array (
+			array (
+				'key' => 'field_58bd243c84681',
+				'label' => 'Google Maps',
+				'name' => 'google_maps',
+				'type' => 'text',
+				'instructions' => 'get_field(\'google_maps\',\'apikey\');',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'readonly' => 0,
+				'disabled' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-api-keys',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => 1,
+		'description' => '',
+	));
+
 	/**
 	 * ACF Fielad PHP
 	 */
