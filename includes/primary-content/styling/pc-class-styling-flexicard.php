@@ -2537,6 +2537,37 @@ class FlexiCard extends StylingCard {
 					),
 				),
 				array (
+					'key' => 'fc_' . $i . '_ld_58359391976e2-bg',
+					'label' => 'Detail Background Color',
+					'name' => 'fc_style__co_deta_font-bg',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_58359c265dfbb',
+								'operator' => '==',
+								'value' => 'right-d',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'button',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
 					'key' => 'fc_' . $i . '_ld_583593c3976e3',
 					'label' => 'Detail Underline',
 					'name' => 'fc_style__co_deta_under',
@@ -3567,6 +3598,37 @@ class FlexiCard extends StylingCard {
 					'key' => 'fc_' . $i . '_ld_5835a2abe199f-color',
 					'label' => 'Detail Font Color',
 					'name' => 'fc_style__ct_deta_font-color',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_5835a2c9e19a9',
+								'operator' => '==',
+								'value' => 'right-d',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_5835ch81oobox',
+								'operator' => '==',
+								'value' => 'button',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => 'fc_' . $i . '_ld_5835a2abe199f-bg',
+					'label' => 'Detail Background Color',
+					'name' => 'fc_style__ct_deta_font-bg',
 					'type' => 'rgba_color',
 					'instructions' => '',
 					'required' => 0,

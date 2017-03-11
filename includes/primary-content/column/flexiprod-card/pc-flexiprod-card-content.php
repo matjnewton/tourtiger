@@ -51,9 +51,9 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 
 			<div class="<?= 'fc_style--' . $flexi_attr['name'] . '__details ' . 'fc_style--' . $flexi_attr['name'] . '__button_details'; ?>">
 
-				<div class="<?= 'fc_style--' . $flexi_attr['name'] . '__button_detail ' . $flexi_attr['name'] . '_detail'; ?>">
+				<div class="<?= 'fc_style--' . $flexi_attr['name'] . '__button_detail ' . $flexi_attr['name'] . '_detail'; ?> fc_style--<?= $flexi_attr['name']; ?>_detail">
 
-					<span class="fc_style--<?= $flexi_attr['name']; ?>_detail"><?php echo $detail; ?></span>
+					<span><?php echo $detail; ?></span>
 
 				</div>
 

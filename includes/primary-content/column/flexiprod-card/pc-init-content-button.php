@@ -63,8 +63,9 @@ echo '#pc_wrap .' . $fc_style . ' .fc_style--' . $flexi_attr['name'] . '_button:
 
 $fc_style__fcc_css = pc_init_font_css( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_font' ) );
 
-if ( get_sub_field( 'fc_style__' . $flexi_attr['name'] . '_deta_font-color' ) ) $fc_style__fcc_css[1] .= 'color:' . get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_font-color' ) . ';';
-if ( get_sub_field( 'fc_style__' . $flexi_attr['name'] . '_deta_under' ) ) $fc_style__fcc_css[1] .= 'text-decoration:underline;';
+if ( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_font-color' ) ) $fc_style__fcc_css[1] .= 'color:' . get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_font-color' ) . ';';
+if ( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_font-bg' ) ) $fc_style__fcc_css[1] .= 'background-color:' . get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_font-bg' ) . ';';
+if ( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_deta_under' ) ) $fc_style__fcc_css[1] .= 'text-decoration:underline;';
 
 echo $fc_style__fcc_css[0] ? $fc_style__fcc_css[0] : '';
 echo '#pc_wrap .' . $fc_style . ' .fc_style--' . $flexi_attr['name'] . '_detail {' . $fc_style__fcc_css[1] . '}';
