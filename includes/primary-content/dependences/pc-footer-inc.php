@@ -104,20 +104,44 @@ $section_count = 0;
 
             if ( $('.pc_circle-image--wrapper.js-new-circle').length > 0 ) {
 
-                $('.pc_circle-image--wrapper.js-new-circle').each(function(){
+                setTimeout(function(){
 
-                      const item = $(this);
-                      let img_w = item.find('img').width();
-                      let img_h = item.find('img').height();
-                      let item_w = item.width();
+                  $('.pc_circle-image--wrapper.js-new-circle').each(function(){
 
-                      if ( img_w == 0 || img_h == 0 ) {
-                        setTimeout(function(){
+                        const item = $(this);
+                        let img_w = item.find('img').width();
+                        let img_h = item.find('img').height();
+                        let item_w = item.width();
+
+                        if ( img_w == 0 || img_h == 0 ) {
+                          setTimeout(function(){
+
+                              if ( img_w > img_h ) {
+                                  if ( img_h > item_w ) {
+                                    item.find('img').height(item_w);
+                                  } else if ( img_h <= item_w )  {
+                                    item.height(img_h);
+                                    item.width(img_h);
+                                  }
+                              } else if ( img_w <= img_h ) {
+                                  if ( img_w > item_w ) {
+                                    item.find('img').width(item_w);
+                                    item.height(item_w);
+                                  } else if ( img_w <= item_w ) {
+                                    item.height(img_w);
+                                    item.width(img_w);
+                                  }
+                              }
+
+                              item.removeClass('js-new-circle');
+
+                          }, 10);
+                        } else {
 
                             if ( img_w > img_h ) {
                                 if ( img_h > item_w ) {
                                   item.find('img').height(item_w);
-                                } else if ( img_h <= item_w )  {
+                                } else if ( img_h <= item_w ) {
                                   item.height(img_h);
                                   item.width(img_h);
                                 }
@@ -133,31 +157,11 @@ $section_count = 0;
 
                             item.removeClass('js-new-circle');
 
-                        }, 10);
-                      } else {
+                        }
 
-                          if ( img_w > img_h ) {
-                              if ( img_h > item_w ) {
-                                item.find('img').height(item_w);
-                              } else if ( img_h <= item_w ) {
-                                item.height(img_h);
-                                item.width(img_h);
-                              }
-                          } else if ( img_w <= img_h ) {
-                              if ( img_w > item_w ) {
-                                item.find('img').width(item_w);
-                                item.height(item_w);
-                              } else if ( img_w <= item_w ) {
-                                item.height(img_w);
-                                item.width(img_w);
-                              }
-                          }
-
-                          item.removeClass('js-new-circle');
-
-                      }
-
-                });
+                  });
+                  
+                }, 100);
 
             }
 
