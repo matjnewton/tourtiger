@@ -16,6 +16,7 @@
     $integrate_xola = get_field( 'pc_integrate_xola_with_this_website', 'option' );
     $integrate_peek = get_field( 'pc_integrate_peek_with_this_website', 'option' );
     $third_party = get_sub_field( 'pc_third_party' );
+    $pc_cta_onclick = get_sub_field( 'pc_cta_onclick' );
 
     $banner_type = get_sub_field( 'pc_image_type' ); ?>
 

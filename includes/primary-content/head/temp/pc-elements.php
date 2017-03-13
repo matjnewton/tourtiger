@@ -16,9 +16,11 @@
                 $hr_w = get_sub_field( 'pc_ha_' . $i . '-tit_hr-w' );
                 $hr_i = get_sub_field( 'pc_ha_' . $i . '-tit_hr-i' ) ? get_sub_field( 'pc_ha_' . $i . '-tit_hr-i' ) : '';
 
-                echo $title ? '<' . $tag . '>' . $title . '</' . $tag . '>' : '';
-                echo $hr && !$hr_i ? '<hr class="pc_ha_hr pc_ha_hr-' . $hr_w . '" style="color:' . $hr_c . ';">' : '';
-                echo $hr && $hr_i ? '<img class="pc_ha_hr-img" src="'. $hr_i . '" alt="" />' : $hr_i;
+                if ( $title ) {
+                    echo $title ? '<' . $tag . '>' . $title . '</' . $tag . '>' : '';
+                    echo $hr && !$hr_i ? '<hr class="pc_ha_hr pc_ha_hr-' . $hr_w . '" style="color:' . $hr_c . ';">' : '';
+                    echo $hr && $hr_i ? '<img class="pc_ha_hr-img" src="'. $hr_i . '" alt="" />' : '';
+                }
             }
         ?>
 

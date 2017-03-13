@@ -109,37 +109,44 @@ $section_count = 0;
                       const item = $(this);
                       let img_w = item.find('img').attr('width');
                       let img_h = item.find('img').attr('height');
-                      let item_w = item.width();
-                      let item_h = item.height();
 
-                      if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) {
-
-                          if ( item_w < item_h ) { 
-                            item.height(item_w);
-                          } else {
-                            item.width(item_h);
-                          }
-
+                      if ( item.width() == 0 || item.height() == 0 ) {
+                        
                       } else {
 
-                          if ( img_w > img_h ) {
-                              if ( img_h > item_w ) {
-                                item.find('img').height(item_w);
-                              } else if ( img_h <= item_w ) {
-                                item.height(img_h);
-                                item.width(img_h);
-                              }
-                          } else if ( img_w <= img_h ) {
-                              if ( img_w > item_w ) {
-                                item.find('img').width(item_w);
-                                item.height(item_w);
-                              } else if ( img_w <= item_w ) {
-                                item.height(img_w);
-                                item.width(img_w);
-                              }
-                          }
+                        let item_w = item.width();
+                        let item_h = item.height();
 
-                          item.removeClass('js-new-circle');
+                        if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) {
+
+                              if ( item_w < item_h ) { 
+                                item.height(item_w);
+                              } else {
+                                item.width(item_h);
+                              }
+
+                        } else {
+
+                            if ( img_w > img_h ) {
+                                if ( img_h > item_w ) {
+                                  item.find('img').height(item_w);
+                                } else if ( img_h <= item_w ) {
+                                  item.height(img_h);
+                                  item.width(img_h);
+                                }
+                            } else if ( img_w <= img_h ) {
+                                if ( img_w > item_w ) {
+                                  item.find('img').width(item_w);
+                                  item.height(item_w);
+                                } else if ( img_w <= item_w ) {
+                                  item.height(img_w);
+                                  item.width(img_w);
+                                }
+                            }
+
+                        }
+
+                        item.removeClass('js-new-circle');
 
                       }
 

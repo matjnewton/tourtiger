@@ -1528,6 +1528,17 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc_hero-area__book-btn {
 	display: inline-block;
+    padding: 1em 1.36em 1.09em;
+    background-color: #0066ff;
+    color: #fff;
+}
+
+.pc_hero-area__book-btn:hover,
+.pc_hero-area__book-btn:active {
+	color: #fff;
+}
+
+* + .pc_hero-area__book-btn {
 	margin-top: 20px;
 }
 
