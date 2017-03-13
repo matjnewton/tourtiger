@@ -9,7 +9,11 @@ $section_count = 0;
 
 ?>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps','apikey'); ?>"></script>
+
+<?php if ( get_field('google_maps','apikey') ) : ?>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps','apikey'); ?>"></script>
+<?php endif ?>
+
 <script type="text/javascript">
   function aload(t){"use strict";var e="data-aload";return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t}
 
@@ -92,6 +96,8 @@ $section_count = 0;
                 }, 100);
             }
 
+            <?php if ( get_field('google_maps','apikey') ) : ?>
+
             if ( $('.js-new-map').length > 0 ) {
                 $('.acf-map.js-new-map').each(function(){
 
@@ -102,6 +108,8 @@ $section_count = 0;
                 });
             }
 
+            <?php endif; ?>
+
             if ( $('.pc_circle-image--wrapper.js-new-circle').length > 0 ) {
 
                 $('.pc_circle-image--wrapper.js-new-circle').each(function(){
@@ -111,7 +119,10 @@ $section_count = 0;
                       let img_h = item.find('img').attr('height');
 
                       if ( item.width() == 0 || item.height() == 0 ) {
-                        
+
+                        item.css('width', '100%');
+                        item.css('height', item.width());
+
                       } else {
 
                         let item_w = item.width();
@@ -324,6 +335,8 @@ $section_count = 0;
 
     });
 
+
+<?php if ( get_field('google_maps','apikey') ) : ?>
   /*
   *  new_map
   *
@@ -491,6 +504,7 @@ $section_count = 0;
 
   })
 
+<?php endif; ?>
 
 
     var Slick = window.Slick || {};
