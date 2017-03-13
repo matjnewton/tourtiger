@@ -107,12 +107,12 @@ $section_count = 0;
                 $('.pc_circle-image--wrapper.js-new-circle').each(function(){
 
                       const item = $(this);
-                      let img_w = item.find('img').attr('data-width');
-                      let img_h = item.find('img').attr('data-height');
+                      let img_w = item.find('img').attr('width');
+                      let img_h = item.find('img').attr('height');
                       let item_w = item.width();
                       let item_h = item.height();
 
-                      if ( img_w == 0 || img_h == 0 ) {
+                      if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) {
 
                           if ( item_w < item_h ) { 
                             item.height(item_w);
