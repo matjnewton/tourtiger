@@ -31,14 +31,14 @@
 
 
 	// load cpt product
-	    var wqs_api_url = jQuery('#wqs_api_url').val(); 
-	      $http.get(wqs_api_url)
-	        .then(function(response){
-	        	var cpt_product ={};
-	        	cpt_product = response.data;
-	            $scope.cpt_product = response.data;
-	            return cpt_product;
-	    });
+	    // var wqs_api_url = jQuery('#wqs_api_url').val(); 
+	    //   $http.get(wqs_api_url)
+	    //     .then(function(response){
+	    //     	var cpt_product ={};
+	    //     	cpt_product = response.data;
+	    //         $scope.cpt_product = response.data;
+	    //         return cpt_product;
+	    // });
 
 	// var
 		var data = {};
@@ -46,6 +46,114 @@
 		var promises_click = [];
 		var wqs_productcode = $('#wqs_productcode').val();
 		$scope.wqs_productcode = wqs_productcode;
+		
+		//enable group tour function 
+		var rezdy_group_tours = js_var.rezdy_group_tours;
+		if (rezdy_group_tours) {
+			$scope.rezdy_group_tours = true;
+		} else {
+			$scope.rezdy_group_tours = false;
+		}
+
+		// load new cpt product
+		//var wqs_api_url = jQuery('#wqs_api_url').val();
+	    var wqs_api_url = js_var.wqs_api_url; 
+		var getCPT = function() { 
+	    	var deferred = $q.defer();
+		    $http.get(wqs_api_url)
+		        .then(function(response){
+		        	deferred.resolve(response.data);
+		    });
+		    return deferred.promise;
+		}
+
+	    $q.all([getCPT()]).then(function(value) {
+	        $scope.cpt_product = value[0]; 
+    		console.log('promis cpt load');
+    		
+    		//LOCAL! load group
+			//if (rezdy_group_tours) { $scope.LoadGroup();}
+			
+			// $scope.message();
+			// $scope.messageGroup();
+            console.log($scope);
+            
+            //console.log($scope);     
+	    }, function(reason) {
+	        $scope.cpt_product = reason;
+		});
+
+
+
+		// load group id
+		var group_cpt_id = jQuery('#group_cpt_id').val();
+		$scope.group_cpt_id = group_cpt_id;
+		//console.log(group_cpt_id);
+
+	    //group product 
+	    $scope.group = function(cptproducts, api_availability,timearrays, group_cpt_id) {
+	    	var groups = [];
+	    	var groups_id = [];
+	    		//console.log('start group');
+		    	angular.forEach(api_availability, function(products, key) {
+		    		//console.log('forEach api_availability');console.log(key);
+			    	angular.forEach(products, function(productss, key) {
+			    		//console.log('productss');console.log(productss);
+			    		//console.log('productss.startTimeLocal');console.log(productss.startTimeLocal);
+			    		if (  $filter('asDate')(productss.startTimeLocal)  == $filter('asDate')(timearrays) ) {
+					    	angular.forEach(cptproducts, function(cptproductss, key) {
+					    		//console.log(cptproductss);
+						         angular.forEach(cptproductss.productcode_group, function(group_codes, key) {
+						         	//console.log(group_codes);
+						         	if (group_codes == productss.productCode && cptproductss.id == group_cpt_id) {
+						         		groups.push({ cpt_id : cptproductss.id, seats : productss.seatsAvailable, code : productss.productCode, time : $filter('asDate')(timearrays), product : productss, term : cptproductss.term.term_id, });
+						         		groups_id.push(cptproductss.id);
+						         	}
+								 });
+								 
+							 });
+						}
+				    });
+				 });	    	
+
+	  //   	console.log('groups load');
+	  //   	console.log(timearrays);
+			// console.log(groups);
+
+			console.log($scope);
+			return groups;
+		}
+		//group Load
+		$scope.LoadGroup = function(){
+		    var obj = {};
+			angular.forEach($scope.timearray, function(time, key) {
+				obj[time] = $scope.group($scope.cpt_product, $scope.api_availability,time, group_cpt_id);
+				obj['allseats'] = '';
+	        });
+	        $scope.groupsTimeArray_ = obj;
+			$scope.getGroupSeats(group_cpt_id, $scope.timearray[0]);
+		}
+
+		// get all seats for group
+		$scope.getGroupSeats = function(cpt_id, timearrays) {
+			var allseats = 0;
+			angular.forEach($scope.groupsTimeArray_, function(group, key) {
+				//console.log(key);console.log(timearrays);
+				if(key == timearrays){
+					//console.log(key);
+					angular.forEach(group, function(thisgroup) {
+						//if(thisgroup.cpt_id == cpt_id){
+							console.log(thisgroup);
+							allseats += thisgroup.seats;
+						//}
+					});
+
+				}
+
+			});
+			$scope.groupsTimeArray_allseats = allseats;
+			return allseats;
+		}
 
 		$scope.select = function() {
 			var ss = [];
@@ -103,6 +211,7 @@
 				$scope.selects = $scope.select();
 				$scope.runscript();
 				$scope.initAvailable();
+				if (rezdy_group_tours) { $scope.LoadGroup();}
 	        });
 
 	    }); //end then
@@ -244,6 +353,7 @@
 				            $scope.loading = false;
 				        },2000);
 						$scope.initAvailable();
+						if (rezdy_group_tours) { $scope.LoadGroup();}
 			        });
 			    }); //end then
 			console.log($scope);

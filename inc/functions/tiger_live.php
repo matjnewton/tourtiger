@@ -71,9 +71,11 @@ function get_cpt_tours_select_checker($field) {
 
 	$tours_array = array();
 	$our_tours = array(); 
+	$our_tours_group = array(); 
 
 	$integrate_xola_with_this_website = get_field('integrate_xola_with_this_website', 'option');
 	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
+	$rezdy_group_tours = get_field('rezdy_group_tours', 'option');
 
 	//xola
 	if( have_rows('matching_products_xola', 'option') && $integrate_xola_with_this_website ): 
@@ -88,6 +90,16 @@ function get_cpt_tours_select_checker($field) {
 			$our_tours[] = get_sub_field('our_tours');
 		endwhile; 
 	endif;
+
+	// rezdy Group
+	if( have_rows('matching_products_group', 'option') && $integrate_rezdy_with_this_website ): 
+		while( have_rows('matching_products_group', 'option') ): the_row(); 
+			$our_tours_group[] = get_sub_field('our_tours_group');
+		endwhile; 
+	endif;
+	if ($rezdy_group_tours) {
+		$our_tours = array_merge($our_tours,$our_tours_group);
+	}
 
 
 	foreach ($our_tours as $res){

@@ -4,6 +4,8 @@
 	        $our_tours_checker = get_sub_field('our_tours_checker'); 
 	        $rezdy_price_options = get_field('rezdy_price_options', 'options');
 	        //var_dump($rezdy_price_options);
+	        $enable_group_product = get_field("enable_group_product", $our_tours_checker);
+	        //var_dump($enable_group_product);
 	         ?>
 	        <?php //var_dump($our_tours_checker); ?>
 
@@ -12,6 +14,10 @@
 					
 					<input type="hidden" id="wqs_api_url" value="<?php echo getWqsApiUrl(); ?>">
                 	<input type="hidden" id="wqs_productcode" value="<?php echo get_field("productcode", $our_tours_checker); ?>">
+                	
+                	<?php if($enable_group_product) : ?>
+                		<input type="hidden" id="group_cpt_id" value="<?php echo $our_tours_checker ?>">
+                	<?php endif; ?>
 
 					<div class="availability_checker_options_date">
 	                    <div class="add-on col-startTime">
@@ -20,18 +26,22 @@
 	                    </div>
 
 		                <div class="add-on">
+		                <?php if($enable_group_product) : ?>
+
+		                <?php else : ?>
 	                    	<span ng-repeat = "products in api_availability track by $index">
 								<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray[0] | asDate)">
 									<input class="form-control rezdy_date" value="{{productss.startTimeLocal | asTimeLocal}}">
 								</span>
 							</span>
+						<?php endif; ?>
 	                    </div>
 
 	                    <div class="add-on col-book-btn2-product">
 							<span class="book-btn2-product">
-	                            <div class="book-btn2-product-title" ng-click="check_availability_angular(); $event.stopPropagation();">
-	                                <span>CHECK AVAILABILITY</span>
-	                            </div>    
+		                            <div class="book-btn2-product-title" ng-click="check_availability_angular(); $event.stopPropagation();">
+		                                <span>CHECK AVAILABILITY</span>
+		                            </div>
 	                        </span>
 	                    </div>
 	                </div>
@@ -39,9 +49,9 @@
 					<ul class="availability_checker_options">
 
 						<div id="ajax_preLoading3" class="preLoading3" ng-show="loading"></div>
-						<li ng-if="productUndefined()!=true" ng-hide="loading" class="notour">No tour on this date</li>	
+						<li ng-if="productUndefined()!=true && !rezdy_group_tours" ng-hide="loading" class="notour">No tour on this date</li>	
 						
-						<?php if($rezdy_price_options): ?>
+						<?php if($rezdy_price_options && !$enable_group_product): ?>
 							<!-- new template checker -->
 							<span ng-repeat = "products in api_availability track by $index">
 								<span ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray[0] | asDate)">
@@ -57,6 +67,32 @@
 								</span>
 							</span>
 							<!-- end new template checker -->
+						<!-- group enable  -->
+						<?php elseif($rezdy_price_options && $enable_group_product): ?>
+							<li class="productss" >
+								<span class="availability_checker_col checker_date customstyle">{{timearray[0] | asDateTitleYears}}</span>
+								<span class="availability_checker_col checker_avail customstyle" ng-if="groupsTimeArray_allseats >0">
+									<!-- <i class="fa fa-check"></i> -->
+									<span class="checker_date_label"> {{groupsTimeArray_allseats}} Available</span>
+								</span>
+								<span class="availability_checker_col checker_avail not customstyle" ng-if="groupsTimeArray_allseats ==0">
+									<i class="fa fa-close"></i>
+									<span class="checker_date_label">Not Available</span>
+								</span>			                		
+		                	</li>
+						<?php elseif(!$rezdy_price_options && $enable_group_product): ?>
+							<li class="productss" >
+								<span class="availability_checker_col checker_date customstyle">{{timearray[0] | asDateTitleYears}}</span>
+								<span class="availability_checker_col checker_avail customstyle" ng-if="groupsTimeArray_allseats >0">
+									<!-- <i class="fa fa-check"></i> -->
+									<span class="checker_date_label"> {{groupsTimeArray_allseats}} Available</span>
+								</span>
+								<span class="availability_checker_col checker_avail not customstyle" ng-if="groupsTimeArray_allseats ==0">
+									<i class="fa fa-close"></i>
+									<span class="checker_date_label">Not Available</span>
+								</span>			                		
+		                	</li>
+						<!-- end group -->
 						<?php else : ?>
 							<span ng-repeat = "products in api_availability track by $index">
 								<li ng-repeat="productss in products" class="productss" ng-if="wqs_productcode == productss.productCode && (productss.startTimeLocal | asDate) == (timearray[0] | asDate)">
