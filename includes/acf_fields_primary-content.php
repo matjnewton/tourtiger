@@ -255,7 +255,16 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
-
+/**
+ * Image insert
+ * @param  integer $id     
+ * @param  integer $width  
+ * @param  integer $height 
+ * @param  boolean $link   optional
+ * @param  [type]  $attr   
+ * @param  boolean $circle 
+ * @return null         
+ */
 function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false ) {
 
 	if ( $circle !== false ) {
@@ -273,25 +282,34 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	echo $link ? '</a>':'';
 
 	if ( $circle !== false ) echo '</div>'; 
+
 }
 
+/**
+ * Column borders
+ * @param  array  $border 
+ * @return boolean
+ */
 function get_pc_content_card_border( $border = array() ) {
 
 	if ( $border['is'] == 'pc--c__border-left' ) {
 
 		$attr = "border-left: {$border['width']} {$border['style']} {$border['color']};left: 0;height: {$border['size']};";
 		echo "<div class='pc--c__border pc--c__border-side_left' style='{$attr}'></div>";
+		return true;
 
 	} elseif ( $border['is'] == 'pc--c__border-right' ) {
 
 		$attr = "border-right: {$border['width']} {$border['style']} {$border['color']};right: 0;height: {$border['size']};";
 		echo "<div class='pc--c__border pc--c__border-side_right' style='{$attr}'></div>";
+		return true;
 
 	} elseif ( $border['is'] == 'pc--c__border-both' ) {
 
 		$attr = "border-right: {$border['width']} {$border['style']} {$border['color']};height: {$border['size']};";
 		echo "<div class='pc--c__border pc--c__border-side_left' style='{$attr} left: 0;'></div>";
 		echo "<div class='pc--c__border pc--c__border-side_right' style='{$attr} right: 0;'></div>";
+		return true;
 
 	} else {
 		return false;
