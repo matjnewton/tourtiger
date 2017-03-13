@@ -110,10 +110,15 @@ $section_count = 0;
                       let img_w = item.find('img').attr('data-width');
                       let img_h = item.find('img').attr('data-height');
                       let item_w = item.width();
+                      let item_h = item.height();
 
                       if ( img_w == 0 || img_h == 0 ) {
 
-                        console.log('Catch error: ' . item.find('img'));
+                          if ( item_w < item_h ) { 
+                            item.height(item_w);
+                          } else {
+                            item.width(item_h);
+                          }
 
                       } else {
 

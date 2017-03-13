@@ -14,8 +14,9 @@ define( "STYLING_MANAGER_DIR", PCA_DIR . '/styling/acf-styling-manager-field' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-accordion.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-rgba-color/acf-rgba-color.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-typography/acf-typography.php' );
+
 include_once( STYLING_MANAGER_DIR . '/acf-styling-manager.php' );
-include_once( get_stylesheet_directory() . '/includes/primary-content/dependences/ajax-loading.php' );
+include_once( PCA_DIR . '/dependences/ajax-loading.php' );
 
 add_filter( 'acf/accordion/dir', 'acf_accordion_dir' );
 function acf_accordion_dir( $dir ) {
@@ -41,7 +42,7 @@ function acf_typography_dir( $dir ) {
  * Turn On Chaching
  */
 if ( !is_admin() && 1 === 2 ) {
-	include( get_stylesheet_directory() . '/includes/primary-content/pc-cache.php' );
+	include( PCA_DIR . '/pc-cache.php' );
 }
 
 /**
@@ -139,10 +140,10 @@ if(function_exists('acf_add_options_sub_page')) {
 	 * ACF Fielad PHP
 	 */
 	if( function_exists('acf_add_local_field_group') ):
-		include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-styling-cards.php' );
-		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-constructor.php' );
-		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-hero-area.php' );
-		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-options-admin-tab.php' );
+		include( PCA_DIR . '/styling/pc-styling-cards.php' );
+		include( PCA_DIR . '/dependences/pc-constructor.php' );
+		include( PCA_DIR . '/dependences/pc-hero-area.php' );
+		include( PCA_DIR . '/dependences/pc-options-admin-tab.php' );
 	endif;
 
 

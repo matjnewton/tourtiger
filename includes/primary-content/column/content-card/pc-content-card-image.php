@@ -6,6 +6,10 @@ if ( $tour_image ) :
 	$tour_image_url = get_sub_field( 'tour_pc-coltype--image_url' ); 
 	$tour_image_circl = get_sub_field( 'tour_pc-coltype--image_cir' );
 	$tour_image_size = get_sub_field( 'tour_pc-coltype--image_size' ) / 100;
+	$tour_image_attr = array(
+		'data-width' => $thumb_width,
+		'data-height' => $thumb_height
+	);
 
 	$tour_content_content_styles .= "transform: scale({$tour_image_size});";
 
@@ -22,7 +26,7 @@ if ( $tour_image ) :
 			align="center">
 				<?php
 
-				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, null, $circle ); 
+				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, $tour_image_attr, $circle ); 
 
 				?>
 		</div>

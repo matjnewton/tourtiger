@@ -26,6 +26,8 @@ if( have_rows('pc_hero_area') ):
             $hero_height_n = 650;
         }
 
-        include ( get_stylesheet_directory() . '/includes/primary-content/head/pc-banner.php' );
+        include ( PCA_DIR . '/head/pc-banner-scripts.php' );
+
+        include ( PCA_DIR . '/head/pc-banner.php' );
     endwhile;
 endif; ?>
