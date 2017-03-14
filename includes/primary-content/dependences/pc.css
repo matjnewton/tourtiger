@@ -1023,7 +1023,7 @@ div.pc--c__accordion {
 	        flex-direction: column;
 }
 
-* + div.pc--c__accordion {
+*:not(style) + div.pc--c__accordion {
 	margin-top: 25px;
 }
 
@@ -1032,8 +1032,8 @@ div.pc--c__accordion + div.pc--c__accordion {
 }
 
 .pc--c__accordion--label {
-	border: 1px solid #999;
-	background-color: #f6f6f6;
+	border: none;
+	background-color: transparent;
 	padding: 8px 12px;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1044,6 +1044,8 @@ div.pc--c__accordion + div.pc--c__accordion {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+	outline: none;
+	text-align: left;
 }
 
 .pc--c__accordion--label + .pc--c__accordion--paragraf,
@@ -1065,7 +1067,7 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc--c__accordion--paragraf {
 	padding: 10px 15px;
-	background-color: #f9f9f9; 
+	background-color: transparent; 
 }
 
 .pc--c__accordion--paragraf * {
@@ -2108,4 +2110,9 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc--c {
 	position: relative;
+}
+
+.pc--c__content .pc--c__accordion + .pc--c__accordion {
+	border-top: 1px solid #ebe7e5;
+	margin-top: 0;
 }

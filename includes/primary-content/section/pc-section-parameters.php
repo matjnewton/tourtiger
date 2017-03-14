@@ -20,6 +20,8 @@ $tour_section_styles = '';
 $tour_section_attr = '';
 $tour_selection_id = 'pc--s_id-' . $count;
 
+$paddings_css = null;
+
 if ( $tour_section_bg == 'image' ) {
 	include( PCA_DIR . '/section/pc-section-define-image.php' );
 } elseif ( $tour_section_bg == 'texture' ) {

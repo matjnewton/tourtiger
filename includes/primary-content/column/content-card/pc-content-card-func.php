@@ -14,19 +14,23 @@ function get_pc_content_card_style( $cc_style ) {
 
 				echo '<style>';
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-headline.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-bg.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-editor.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-radius.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-line.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-headline.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-button.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-editor.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-accordion.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-line.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-testimonials.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-button.php' );
 
-				include ( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-init-form.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-accordion.php' );
+
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-testimonials.php' );
+
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-form.php' );
 
 				echo '</style>';
 			} 

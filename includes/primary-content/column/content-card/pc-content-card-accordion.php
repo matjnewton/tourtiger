@@ -23,7 +23,7 @@ $accordion_id = $tour_selection_id . '-accordion-' . $accordion_cound;
 	</script>
 
 	<button id="<?php echo $accordion_id; ?>" class="pc--c__accordion--label">
-		<span><?php echo get_sub_field( 'tour_pc-coltype--accordion_label' ); ?></span>
+		<span class="pc--c__accordion--label_question"><?php echo get_sub_field( 'tour_pc-coltype--accordion_label' ); ?></span>
 		<span class="pc--c__accordion--status pc--c__accordion--status_opened"><?php echo get_sub_field( 'tour_pc-coltype--accordion_open' ); ?></span>
 		<span class="pc--c__accordion--status pc--c__accordion--status_closed"><?php echo get_sub_field( 'tour_pc-coltype--accordion_close' ); ?></span>
 	</button>

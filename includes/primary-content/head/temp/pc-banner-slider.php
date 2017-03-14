@@ -14,8 +14,6 @@
                         background-repeat: no-repeat; 
                         background-size: 1440px auto; 
                         background-position: center center; 
-                        -webkit-background-size: cover;
-                        background-size: cover;
                         width: 100%; ">                      
 
                         <?php include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-elements.php' ); ?>

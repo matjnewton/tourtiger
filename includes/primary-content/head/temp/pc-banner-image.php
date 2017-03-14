@@ -12,8 +12,6 @@
                     background-repeat: no-repeat; 
                     background-size: 1440px auto; 
                     background-position: center center; 
-                    -webkit-background-size: cover;
-                    background-size: cover;
                     width: 100%; 
                     <?php echo get_sub_field( 'pc_ha_image-fixed' ) == 'yes' ? 'background-attachment: fixed;' : ''; ?>">
 
