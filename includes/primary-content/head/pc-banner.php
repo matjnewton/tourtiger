@@ -24,11 +24,11 @@
         <div class="pc_hero-area__wrapper">  
 
             <?php if ( $banner_type == 'Single image' ) :
-                include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-image.php' );
+                include ( PCA_DIR . '/head/temp/pc-banner-image.php' );
             elseif ( $banner_type == 'Slider images' ) :
-                include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-slider.php' );
+                include ( PCA_DIR . '/head/temp/pc-banner-slider.php' );
             elseif ( $banner_type == 'Background video' ) :
-                include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-video.php' );
+                include ( PCA_DIR . '/head/temp/pc-banner-video.php' );
             endif ?>
         
         </div>

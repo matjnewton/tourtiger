@@ -24,7 +24,7 @@
             }
         ?>
 
-        <?php if ( $cta_button_text ) include( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-elements-button.php' ); ?>
+        <?php if ( $cta_button_text ) include( PCA_DIR . '/head/temp/pc-elements-button.php' ); ?>
     </div>
 
-<?php include( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-banner-addons.php' ); ?>
+<?php include( PCA_DIR . '/head/temp/pc-banner-addons.php' ); ?>

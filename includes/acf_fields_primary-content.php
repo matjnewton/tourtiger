@@ -68,7 +68,7 @@ function tourtiger_styles_pca() {
  */
 function google_api_acf_init() {
 	
-	acf_update_setting( 'google_api_key', 'AIzaSyBPKkzpIMMXwxRMfArXDyzKZiRqdBVsfu0' );
+	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
 }
 
 add_action('acf/init', 'google_api_acf_init');
