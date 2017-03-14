@@ -116,9 +116,9 @@ $section_count = 0;
 
 	                $('.pc_circle-image--wrapper.js-new-circle').each(function(){
 
-	                      const item = $(this);
-	                      let img_w = item.find('img').attr('width');
-	                      let img_h = item.find('img').attr('height');
+	                      var item = $(this);
+	                      var img_w = item.find('img').attr('width');
+	                      var img_h = item.find('img').attr('height');
 
 	                      if ( item.width() == 0 || item.height() == 0 ) {
 
@@ -127,8 +127,8 @@ $section_count = 0;
 
 	                      } else {
 
-	                        let item_w = item.width();
-	                        let item_h = item.height();
+	                        var item_w = item.width();
+	                        var item_h = item.height();
 
 	                        if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) {
 
@@ -174,10 +174,10 @@ $section_count = 0;
 
 	              $('.pc--r').find('.pc--crop__thumb').each(function(index, thisItem){
 
-	                const item = $(this);
-	                const blog_thumb_w = item.width();
-	                let blog_thumb_h = '';
-	                const parent = item.closest('.pc--r');
+	                var item = $(this);
+	                var blog_thumb_w = item.width();
+	                var blog_thumb_h = '';
+	                var parent = item.closest('.pc--r');
 
 	                if ( parent.hasClass('pc--r__col-2') || parent.hasClass('pc--r__col-1') || parent.hasClass('pc--r__col-3') ) {
 	                  if ( item.hasClass('pc--c__b-image--tall') ) {
@@ -228,15 +228,15 @@ $section_count = 0;
 	             */
 	            if ( $('.pc--crop__video').length > 0 ) {
 	                $('.pc--crop__video').each(function(index, thisItem){
-	                  const current = $(this);
-	                  const parent = current.closest('.pc--c__video');
+	                  var current = $(this);
+	                  var parent = current.closest('.pc--c__video');
 
 	                  if ( parent.hasClass('pc--c__video--full') ) {
 	                    current.width( parent.width() );
 	                  }
 
-	                  const blog_thumb_w = current.width();
-	                  const blog_thumb_h = blog_thumb_w / 1.75;
+	                  var blog_thumb_w = current.width();
+	                  var blog_thumb_h = blog_thumb_w / 1.75;
 
 	                  current.animate( { 'height' : blog_thumb_h }, 500 );
 	                });
@@ -249,8 +249,8 @@ $section_count = 0;
 	             */
 	            if ( $( '.pc--form' ).length > 0 ) {
 
-	                const $form = $( '.pc--form' );
-	                const $horizontal = $( '.pc--form__horizontal' );
+	                var $form = $( '.pc--form' );
+	                var $horizontal = $( '.pc--form__horizontal' );
 
 	                $horizontal.find('.textarea').closest('.gfield').animate({'min-width' : '100%'}, 500);
 	                $horizontal.find('.gfield_checkbox, .gfield_radio').closest('.gfield').animate({'flex-grow' : '0'}, 500);
@@ -273,9 +273,9 @@ $section_count = 0;
 	            if ( $('.js-divider').length > 0 ) {
 
 	                $('.pc--s__divider_repeater').find('.js-divider').each(function(){
-	                    const element = $(this); 
-	                    const url =  element.attr('data-bg');
-	                    const img = new Image();
+	                    var element = $(this); 
+	                    var url =  element.attr('data-bg');
+	                    var img = new Image();
 
 	                      img.onload = function(){
 	                        element.height(img.height);
@@ -295,15 +295,15 @@ $section_count = 0;
 
 	                $('.pc--s__img--eqvival').each(function(){
 	                    if ( $(this).hasClass('is-full-image') ) {
-	                        const $item = $(this);
+	                        var $item = $(this);
 
-	                        const match_url = $item.attr('data-expanded');
-	                        const img = new Image();
+	                        var match_url = $item.attr('data-expanded');
+	                        var img = new Image();
 
 	                        img.src = match_url;
 
-	                        const img_percent = img.height / img.width * 100;
-	                        const img_height = screen.width / 100 * img_percent;
+	                        var img_percent = img.height / img.width * 100;
+	                        var img_height = screen.width / 100 * img_percent;
 
 	                        $item.css('background-image', 'url(' + match_url + ')');
 
