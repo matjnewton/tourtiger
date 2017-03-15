@@ -88,7 +88,11 @@ $section_count = 0;
 	                  swipe: false,
 	                  arrows: false,
 	                  dots: true,
-	                  adaptiveHeight: true
+	                  adaptiveHeight: true,
+	                  fade: true,
+					  slidesToScroll: 1,
+					  autoplay: true,
+					  autoplaySpeed: 5000,
 	                });
 
 	                $('.pc--r__scroll.js-new-slider').fadeIn();
