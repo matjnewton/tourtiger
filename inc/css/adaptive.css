@@ -1,10 +1,74 @@
-
+@media screen and (max-width: 1199px) {
+/*search template*/
+	#searchfilter .datepicker-instructions {
+		/*font-size: 15px;*/
+		text-align: center;
+		
+	}
+	#searchfilter .btn-datepicker {
+    	
+    }
+    .search-descript-departure {
+	    line-height: 14px;
+	}
+	.search-descript-descript {
+	    line-height: 14px;
+	}
+}
 @media screen and (max-width: 991px) {
-	.availability_checker_options_date .multitime .rezdy_date {
+/*search template*/
+	#searchfilter .datepicker-instructions {
+		font-size: 20px;
+	}
+	.page-template-rezdy_search #vinetrekker_piker.daterangepicker {
+	    margin-left: 22%;
+	}
+	.search-sidebar-wrap {
+	    margin-top: 0;
+	}
+	.page-template-rezdy_search .search-content-wrap #ajax_preLoading {
+	    margin-left: -72px;
+	}
+	.styles .content .search-descript-wrap h3, .content .search-descript-wrap h3 {
+		font-size: 20px;
+	    margin-bottom: 2px;
+	    line-height: 21px;
+	    padding-bottom: 4px;
+	}
+	.search-descript-button {
+	    right: 11px;
+	    width: 70%;
+	    display: flex;
+	}
+/*availability_checker*/
+	.availability_checker_options_date .multitime .rezdy_date { 
 	    width: inherit;
 	}
 }
 @media screen and (max-width: 767px) {
+/*search template*/
+	.page-template-rezdy_search .anrow2 div.search-tumb-wrap img {
+		width: 100%;
+	    height: 200px;
+	    object-fit: cover;
+	}
+	.styles .content .search-descript-wrap h3, .content .search-descript-wrap h3 {
+	    font-size: 26px;
+	    margin-bottom: 10px;
+	    line-height: 26px;
+	    padding-bottom: 10px;
+	}
+	.search-descript-button {
+	    width: 50%;
+	}
+	.styles .site-inner .content p.cDate2, .site-inner .content p.cDate2 {
+	    margin-top: 30px;
+	    display: inline-block;
+	}
+	.page-template-rezdy_search .anrow2 div.search-tumb-wrap {
+		margin-top: 20px;
+	}
+/*product page*/
 	.single-product .site-inner {
 	    margin-top: 0;
 	}
@@ -26,6 +90,16 @@
 	}
 } 
 @media screen and (max-width: 500px) {
+	.styles .content .search-descript-wrap h3, .content .search-descript-wrap h3 {
+	    font-size: 20px;
+	    margin-bottom: 4px;
+	    line-height: 20px;
+	    padding-bottom: 10px;
+	}
+	.search-descript-departure, search-descript-departure-custom {
+		width: 50%;
+	}
+/*availability_checker*/
 	.availability_checker_options_date {
 	    display: inline-block;
 	    width: 100%;
@@ -54,6 +128,28 @@
 	}
 }
 @media screen and (max-width: 400px) {
+	.search-descript-button {
+		width: 96%;
+    	left: 8px;
+	}
+	.search-descript-departure, .search-descript-departure-custom {
+	       position: initial;
+    	width: 100%;
+    	    line-height: 22px;
+	}
+	.search-descript-descript {
+		display: none;
+	}
+	.search-tumb-price {
+		top: -48px;
+	    background-color: white;
+	    padding: 5px;
+	    right: 0;
+	}
+	.styles .content .search-descript-wrap h3, .content .search-descript-wrap h3 {
+		    padding-right: 0;
+	}
+/*availability_checker*/
 	.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail,
 	.site-inner .content .product_content_wrapper span.availability_checker_col.checker_avail {
 	    flex: none;

@@ -98,12 +98,12 @@ function tourtiger_archive(){
                                         <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0" ng-class="{'cpt-avail' :  cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0}" class="cptproducts">
                                              
                                             <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
-                                                <div class="col-md-4 search-tumb-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                     <img src="{{cptproducts.image2}}">
                                                     <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                                 </div>
 
-                                                <div class="col-md-8 search-descript-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                     <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
@@ -138,12 +138,12 @@ function tourtiger_archive(){
                                             </div>
                                             
                                             <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat[0]"> 
-                                                <div class="col-md-4 search-tumb-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                     <img src="{{cptproducts.image2}}">
                                                     <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                                 </div>
 
-                                                <div class="col-md-8 search-descript-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                     <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
@@ -188,12 +188,12 @@ function tourtiger_archive(){
                                 <div ng-repeat = "cptproducts in cpt_product" ng-if="cptproducts.enable_group_product == true && inCodeArray(groups.code, cptproducts.productcode_group) != -1" class="cptproducts">
                                             
                                     <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
-                                        <div class="col-md-4 search-tumb-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                             <img src="{{cptproducts.image2}}">
                                             <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                         </div>
 
-                                        <div class="col-md-8 search-descript-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                             <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
@@ -228,12 +228,12 @@ function tourtiger_archive(){
                                     </div>
                                     
                                     <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat[0]"> 
-                                        <div class="col-md-4 search-tumb-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                             <img src="{{cptproducts.image2}}">
                                             <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                         </div>
 
-                                        <div class="col-md-8 search-descript-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                             <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
@@ -288,12 +288,12 @@ function tourtiger_archive(){
                                         <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0" ng-class="{'cpt-avail' :  cptproducts.productcode ==productss.productCode && cptproducts.productcode != null && productss.seatsAvailable != 0}" class="cptproducts">
                                             
                                             <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
-                                                <div class="col-md-4 search-tumb-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                     <img src="{{cptproducts.image2}}">
                                                     <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                                 </div>
 
-                                                <div class="col-md-8 search-descript-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                     <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
@@ -328,12 +328,12 @@ function tourtiger_archive(){
                                             </div>
                                             
                                             <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat[0]"> 
-                                                <div class="col-md-4 search-tumb-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                     <img src="{{cptproducts.image2}}">
                                                     <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                                 </div>
 
-                                                <div class="col-md-8 search-descript-wrap">
+                                                <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                     <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                     <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                         $ {{cptproducts.integration_price}}
@@ -377,12 +377,12 @@ function tourtiger_archive(){
                                 <div ng-repeat = "cptproducts in cpt_product " ng-if="cptproducts.enable_group_product == true && inCodeArray(groups.code, cptproducts.productcode_group) != -1" class="cptproducts">
                                             
                                     <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
-                                        <div class="col-md-4 search-tumb-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                             <img src="{{cptproducts.image2}}">
                                             <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                         </div>
 
-                                        <div class="col-md-8 search-descript-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                             <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
@@ -417,12 +417,12 @@ function tourtiger_archive(){
                                     </div>
                                     
                                     <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat[0]"> 
-                                        <div class="col-md-4 search-tumb-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                             <img src="{{cptproducts.image2}}">
                                             <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                         </div>
 
-                                        <div class="col-md-8 search-descript-wrap">
+                                        <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                             <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                             <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                 $ {{cptproducts.integration_price}}
