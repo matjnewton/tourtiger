@@ -1276,6 +1276,12 @@ div.pc--c__accordion + div.pc--c__accordion {
 	margin-left: auto;
 }
 
+#pc_wrap .button_type_full {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+}
+
 .fc_style--image {
 	position: relative;
 	text-decoration: none;

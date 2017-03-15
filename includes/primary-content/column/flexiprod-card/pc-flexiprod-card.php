@@ -105,10 +105,6 @@ if ( get_row_layout() == 'tour_pc-flexi' ) {
 						$prefix = 'ct';
 						$flexi_attr['name'] = 'second';
 
-					} else {
-						$flexi_attr['prefix'] = 'co';
-						$prefix = 'co';
-						$flexi_attr['name'] = 'first';
 					}
 
 					$flexi_attr['button'] = $flexi_attr[$prefix . '_btn'];
