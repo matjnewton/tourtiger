@@ -1611,8 +1611,8 @@ div.pc--c__accordion + div.pc--c__accordion {
 	margin-top: 5px;
 }
 
-#pc_wrap .pc--form .gfield input.inputDefault,
-#pc_wrap .pc--form .gfield input.inputDefault:focus,
+#pc_wrap .pc--form .gfield input,
+#pc_wrap .pc--form .gfield input:focus,
 #pc_wrap .pc--form .gfield .dropdown-toggle,
 #pc_wrap .pc--form .gfield .dropdown-toggle:active,
 #pc_wrap .pc--form .gfield .textarea,
@@ -1625,7 +1625,7 @@ div.pc--c__accordion + div.pc--c__accordion {
 	font-family: 'Open Sans', sans-serif;
 }
 
-#pc_wrap .pc--form .gfield input.inputDefault:focus,
+#pc_wrap .pc--form .gfield input:focus,
 #pc_wrap .pc--form .gfield .textarea:focus {
 	border-color: #d4d4d4;
 }
@@ -1649,7 +1649,7 @@ div.pc--c__accordion + div.pc--c__accordion {
 	margin-right: 3px;
 }
 
-#pc_wrap .pc--form .gfield .inputDefault,
+#pc_wrap .pc--form .gfield input,
 #pc_wrap .pc--form .gfield textarea,
 #pc_wrap .pc--form .gfield .dropdown-toggle,
 #pc_wrap .pc--form .gfield .btn-group,
