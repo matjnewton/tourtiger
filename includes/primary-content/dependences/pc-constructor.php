@@ -1233,7 +1233,7 @@ acf_add_local_field_group(array (
 																			'label' => 'Form layout',
 																			'name' => 'tour_pc-coltype--form_la',
 																			'type' => 'select',
-																			'instructions' => '',
+																			'instructions' => 'HINT: [1] Head --> Title and Description; [2] Body --> all fields; [3] Footer --> Submit, Next, Previous buttons area. ',
 																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
@@ -1244,7 +1244,8 @@ acf_add_local_field_group(array (
 																			'choices' => array (
 																				'pc--form__horizontal' => 'Horizontal',
 																				'pc--form__column' => 'Column',
-																				'pc--form__nowrap' => 'Nowrap'
+																				'pc--form__nowrap' => 'Nowrap Head, Body and Footer',
+																				'pc--form__nowrap-fields-and-buttons' => 'Nowrap Body and Footer'
 																			),
 																			'default_value' => array (
 																				0 => 'pc--form__horizontal',

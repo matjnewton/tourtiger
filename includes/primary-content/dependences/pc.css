@@ -2082,3 +2082,41 @@ div.pc--c__accordion + div.pc--c__accordion {
 	border-top: 1px solid #ebe7e5;
 	margin-top: 0;
 }
+
+.pc--form__nowrap-fields-and-buttons form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.pc--form__nowrap-fields-and-buttons .gform_heading {
+	width: 100%;
+}
+
+.pc--form__nowrap-fields-and-buttons .gform_body {
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+}
+
+.pc--form__nowrap-fields-and-buttons ul.gform_fields {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.pc--form__nowrap-fields-and-buttons .gfield {
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+}
+
+#pc_wrap .pc--form.pc--form__nowrap-fields-and-buttons .gfield:not(:first-child) {
+	margin-left: 10px;
+}
+
+.pc--form__nowrap-fields-and-buttons .gform_footer .gform_button {
+	margin: 15px 0 5px 10px;	
+}
