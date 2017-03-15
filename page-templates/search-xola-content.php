@@ -81,11 +81,11 @@ function tourtiger_archive_xola(){
                                 <span ng-repeat="(key, api_availability) in api_availability_xola[$index]" ng-if="(key | asDate) == (timearrays | asDate) &&  get_all_seat(api_availability) !=0">
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
                                         <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
-                                            <div class="col-md-4 search-tumb-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                 <img src="{{cptproducts.image2}}">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
-                                            <div class="col-md-8 search-descript-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                 <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                 <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                     $ {{cptproducts.integration_price}}
@@ -120,11 +120,11 @@ function tourtiger_archive_xola(){
 
                                         <!-- for carrent category -->
                                         <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
-                                            <div class="col-md-4 search-tumb-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                 <img src="{{cptproducts.image2}}">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
-                                            <div class="col-md-8 search-descript-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                 <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                 <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                     $ {{cptproducts.integration_price}}
@@ -176,11 +176,11 @@ function tourtiger_archive_xola(){
                                 <span ng-repeat="(key, api_availability) in api_availability_xola_more[$index]" ng-if="(key | asDate) == (timearrays | asDate) &&  get_all_seat(api_availability) !=0">
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
                                         <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
-                                            <div class="col-md-4 search-tumb-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                 <img src="{{cptproducts.image2}}">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
-                                            <div class="col-md-8 search-descript-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                 <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                 <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                     $ {{cptproducts.integration_price}}
@@ -215,11 +215,11 @@ function tourtiger_archive_xola(){
 
                                         <!-- for carrent category -->
                                         <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
-                                            <div class="col-md-4 search-tumb-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
                                                 <img src="{{cptproducts.image2}}">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
-                                            <div class="col-md-8 search-descript-wrap">
+                                            <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
                                                 <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
                                                 <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
                                                     $ {{cptproducts.integration_price}}

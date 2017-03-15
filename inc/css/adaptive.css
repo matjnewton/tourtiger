@@ -8,11 +8,12 @@
 	#searchfilter .btn-datepicker {
     	
     }
-    .search-descript-departure {
+    .search-descript-departure, .search-descript-departure-custom, .search-descript-departure-xola {
 	    line-height: 14px;
 	}
 	.search-descript-descript {
-	    line-height: 14px;
+	    /*line-height: 14px;*/
+	    line-height: 17px;
 	}
 }
 @media screen and (max-width: 991px) {
@@ -33,7 +34,7 @@
 		font-size: 20px;
 	    margin-bottom: 2px;
 	    line-height: 21px;
-	    padding-bottom: 4px;
+	    /*padding-bottom: 4px;*/
 	}
 	.search-descript-button {
 	    right: 11px;
@@ -96,7 +97,7 @@
 	    line-height: 20px;
 	    padding-bottom: 10px;
 	}
-	.search-descript-departure, search-descript-departure-custom {
+	.search-descript-departure, search-descript-departure-custom, .search-descript-departure-xola {
 		width: 50%;
 	}
 /*availability_checker*/
@@ -132,7 +133,7 @@
 		width: 96%;
     	left: 8px;
 	}
-	.search-descript-departure, .search-descript-departure-custom {
+	.search-descript-departure, .search-descript-departure-custom, .search-descript-departure-xola {
 	       position: initial;
     	width: 100%;
     	    line-height: 22px;
