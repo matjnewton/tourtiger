@@ -2250,17 +2250,9 @@ acf_add_local_field_group(array (
 											'type' => 'select',
 											'instructions' => '',
 											'required' => 0,
-											'conditional_logic' => array(
-												array(
-													array(
-														'field' => 'field_5821e6f3d49fc',
-														'operatior' => '==',
-														'value' => 'wrap' 
-													)
-												)
-											),
+											'conditional_logic' => 0,
 											'wrapper' => array (
-												'width' => '',
+												'width' => '50',
 												'class' => '',
 												'id' => '',
 											),
@@ -2278,6 +2270,48 @@ acf_add_local_field_group(array (
 											'ui' => 0,
 											'ajax' => 0,
 											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 0,
+										),
+										array (
+											'key' => 'field_58slides21e77scroll',
+											'label' => 'How many columns to scroll',
+											'name' => 'tour_pc-scroll-slides',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e28ff659a',
+														'operator' => '!=',
+														'value' => '1',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '!=',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '50',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												1 => 'One',
+												2 => 'Two',
+												3 => 'Three',
+												4 => 'Four',
+												5 => 'Five',
+												6 => 'Six',
+											),
+											'allow_null' => 1,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => 'Auto',
 											'disabled' => 0,
 											'readonly' => 0,
 										),

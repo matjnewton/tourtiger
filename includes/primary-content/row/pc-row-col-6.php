@@ -9,27 +9,39 @@
 	$thumb_upload = 'medium';
 
 	if ( $tour_column_wrap == 'scroll' ) {
-		$scroll_data = 'data-slick=\'{"adaptiveHeight": true, "slidesToShow": 6, "responsive" : [{
-	      "breakpoint": 1150,
-	      "settings": {
-	        "slidesToShow": 5
-	      }
-	    },{
-	      "breakpoint": 992,
-	      "settings": {
-	        "slidesToShow": 4
-	      }
-	    },{
-	      "breakpoint": 868,
-	      "settings": {
-	        "slidesToShow": 3
-	      }
-	    },{
-	      "breakpoint": 678,
-	      "settings": {
-	        "slidesToShow": 1
-	      }
-	    }] }\'';
+		$scroll_slides = get_sub_field( 'tour_pc-scroll-slides' );
+		$scroll_slides_str = $scroll_slides ? $scroll_slides : 6;
+
+		$scroll_data = "data-slick='{
+			\"adaptiveHeight\": true, 
+			\"slidesToShow\": 6, 
+			\"slidesToShow\": {$scroll_slides_str},
+			\"responsive\" : [{
+	      		\"breakpoint\": 1150,
+	      		\"settings\": {
+	        		'slidesToShow': 5,
+					'slidesToScroll': 5
+	      		}
+    		},{
+	      		\"breakpoint\": 992,
+	      		\"settings\": {
+	        		\"slidesToShow\": 4,
+					\"slidesToScroll\": 4
+	      		}
+	    	},{
+	      		\"breakpoint\": 868,
+	      		\"settings\": {
+	        		\"slidesToShow\": 3,
+					\"slidesToScroll\": 3
+	      		}
+	    	},{
+	      		\"breakpoint\": 678,
+	      		\"settings\": {
+	        		\"slidesToShow\": 1,
+					\"slidesToScroll\": 1
+	      		}
+	    	}] 
+	    }'";
 	}
 
 ?>

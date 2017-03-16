@@ -49,9 +49,9 @@ if ( !is_admin() && 1 === 2 ) {
  * Add custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'pc-large', 1100, 1100, true ); 
-	add_image_size( 'pc-medium', 700, 700, true ); 
-	add_image_size( 'pc-small', 500, 500, true ); 
+	add_image_size( 'pc-large', 1100, 1100, false ); 
+	add_image_size( 'pc-medium', 700, 700, false ); 
+	add_image_size( 'pc-small', 500, 500, false ); 
 }
 
 /**

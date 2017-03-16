@@ -950,7 +950,11 @@
 	z-index: 1;
 	position: relative;
     height: auto;
-    width: auto;
+    max-width: 100%;
+}
+
+.pc_circle-image--wrapper img {
+	max-width: none;
 }
 
 .pc--c__video iframe {
