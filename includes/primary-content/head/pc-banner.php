@@ -1,4 +1,4 @@
-<div class="banner-wrapper-inner">
+<div id="pc_hero-area" class="banner-wrapper-inner <?php echo $ha_style; ?>">
 
     <?php
     $hero_headline_dropshadow = get_field('hero_headline_dropshadow', 'option');

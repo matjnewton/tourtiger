@@ -17,7 +17,7 @@
                 $hr_i = get_sub_field( 'pc_ha_' . $i . '-tit_hr-i' ) ? get_sub_field( 'pc_ha_' . $i . '-tit_hr-i' ) : '';
 
                 if ( $title ) {
-                    echo $title ? '<' . $tag . '>' . $title . '</' . $tag . '>' : '';
+                    echo $title ? '<' . $tag . ' class="hero-area_title-' . $i . '">' . $title . '</' . $tag . '>' : '';
                     echo $hr && !$hr_i ? '<hr class="pc_ha_hr pc_ha_hr-' . $hr_w . '" style="color:' . $hr_c . ';">' : '';
                     echo $hr && $hr_i ? '<img class="pc_ha_hr-img" src="'. $hr_i . '" alt="" />' : '';
                 }
