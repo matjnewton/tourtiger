@@ -23,6 +23,10 @@
     z-index: 6;
 }
 
+.pc-hero-content > * + * {
+	margin-top: 30px;
+}
+
 .pc-hero-content__short {
 	min-height: 250px;	
 }

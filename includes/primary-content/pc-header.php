@@ -36,60 +36,9 @@ if( have_rows('pc_hero_area') ):
             $hero_height_n = 650;
         }
 
-        if ( have_rows( $ha_style, 'option' ) ) :
+        include ( PCA_DIR . '/head/pc-banner-assets.php' );
 
-            echo '<style>';
-
-                while ( have_rows( $ha_style, 'option' ) ) : the_row();
-
-                    /**
-                     * Title styles
-                    */
-
-                    for ( $ii = 1; $ii < 4; $ii++ ) {
-
-                        if ( $title[$ii] ) {
-                            $color = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_color' );
-
-                            $css = pc_init_font_css( get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] ) );
-                            $css[1] .= $color ? 'color:' . $color . ';' : '';
-
-                            echo $css[0];
-                            echo '#pc_hero-area.' . $ha_style . ' ' . $tag[$ii] . '.hero-area_title-' . $ii . ' {' . $css[1] . '}';
-                        }
-
-                    }
-
-                endwhile;
-
-            echo '</style>';
-
-        endif;
-
-        ?>
-
-        <script>
-            
-        !(function( $ ){
-
-            $(function(){
-
-                $('.go_to').click( function(){ 
-                    var scroll_el = $(this).attr('href');
-                    if ($(scroll_el).length != 0) { 
-                        $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); 
-                    }
-                    return false; 
-                });
-
-            });
-
-        })(jQuery);
-
-        </script>
-
-
-        <?php include ( PCA_DIR . '/head/pc-banner.php' );
+        include ( PCA_DIR . '/head/pc-banner.php' );
 
     endwhile;
 endif; ?>
