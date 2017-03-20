@@ -449,7 +449,7 @@ acf_add_local_field_group(array (
 																			'name' => 'tour_pc-coltype--headline_text',
 																			'type' => 'text',
 																			'instructions' => '',
-																			'required' => 1,
+																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
 																				'width' => '',
@@ -470,7 +470,7 @@ acf_add_local_field_group(array (
 																			'name' => 'tour_pc-coltype--headline_seo-tag',
 																			'type' => 'radio',
 																			'instructions' => 'HINT: Don\'t use H1 tag more than one time in the page. ',
-																			'required' => 1,
+																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
 																				'width' => '',
@@ -1414,7 +1414,7 @@ acf_add_local_field_group(array (
 																			'name' => 'tour_pc-flexi--image-height',
 																			'type' => 'radio',
 																			'instructions' => '',
-																			'required' => 1,
+																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
 																				'width' => '',
@@ -1907,7 +1907,7 @@ acf_add_local_field_group(array (
 																			'name' => 'tour_pc-product--image-aligment',
 																			'type' => 'select',
 																			'instructions' => '',
-																			'required' => 1,
+																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
 																				'width' => '',
@@ -2315,6 +2315,197 @@ acf_add_local_field_group(array (
 											'disabled' => 0,
 											'readonly' => 0,
 										),
+										array (
+											'key' => 'fiard_arr123ype28ff659a',
+											'label' => 'Arrow source type',
+											'name' => 'tour_pc-arrow-type',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '!=',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '20',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'pc-auto-arrow' => '- Auto -',
+												'pc-custom-arrow' => 'Custom'
+											),
+											'default_value' => array (
+												0 => 'pc-custom-arrow',
+											),
+											'allow_null' => 0,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 1,
+										),
+										array (
+											'key' => 'fiard_arsisizesize9a',
+											'label' => 'Arrows size',
+											'name' => 'tour_pc-arrows-size',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'fiard_arr123ype28ff659a',
+														'operator' => '==',
+														'value' => 'pc-custom-arrow',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '!=',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '15',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'pc-small-arrow' => 'Small',
+												'pc-medium-arrow' => 'Medium',
+												'pc-large-arrow' => 'Large'
+											),
+											'default_value' => array (
+												0 => 'pc-medium-arrow',
+											),
+											'allow_null' => 0,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 0,
+										),
+										array (
+											'key' => 'fiard_arrweightolor9a',
+											'label' => 'Arrows weight',
+											'name' => 'tour_pc-arrows-weight',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'fiard_arr123ype28ff659a',
+														'operator' => '==',
+														'value' => 'pc-custom-arrow',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '!=',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '15',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'pc-thin-arrow' => 'Thin',
+												'pc-normal-arrow' => 'Normal',
+												'pc-bold-arrow' => 'Bold'
+											),
+											'default_value' => array (
+												0 => 'normal',
+											),
+											'allow_null' => 0,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 0,
+										),
+										array (
+											'key' => 'fiard_arposhtolor9a',
+											'label' => 'Arrows Position',
+											'name' => 'tour_pc-arrows-position',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'fiard_arr123ype28ff659a',
+														'operator' => '==',
+														'value' => 'pc-custom-arrow',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '!=',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '15',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'pc-within-arrow' => 'Within Row',
+												'pc-out-arrow' => 'Out of Row'
+											),
+											'default_value' => array (
+												0 => 'within',
+											),
+											'allow_null' => 0,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 0,
+										),
+										array (
+											'key' => 'fiearro123o_lor8a49e2',
+											'label' => 'Arrows Color',
+											'name' => 'tour_pc-arrows-color',
+											'type' => 'rgba_color',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'fiard_arr123ype28ff659a',
+														'operator' => '==',
+														'value' => 'pc-custom-arrow',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '!=',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '35',
+												'class' => '',
+												'id' => '',
+											),
+											'rgba' => 'rgba(255,255,255,1)',
+											'return_value' => 0
+										),
+
 										array (
 											'key' => 'field_5821e990a49df',
 											'label' => 'Row Background',

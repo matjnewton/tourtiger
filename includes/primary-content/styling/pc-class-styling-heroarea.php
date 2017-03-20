@@ -908,7 +908,7 @@ class HeroArea extends StylingCard {
 
 				array (
 					'key' => 'ha_' . $i . '_he56title_threeb',
-					'label' => 'Thitd title',
+					'label' => 'Third title',
 					'name' => 'Third',
 					'type' => 'tab',
 					'instructions' => '',

@@ -79,7 +79,7 @@ $section_count = 0;
 	                $('.pc--r__scroll.js-new-slider').slick({
 	                  prevArrow: '<div class="pc__c--arrow-p"><img width="20" src="<?php bloginfo( 'url' ); ?>/wp-content/themes/tourtiger/includes/primary-content/assets/img/slider/arrow-left.png" /></div>',
 
-	                  nextArrow: '<div class="pc__c--arrow-n"><img width="20" src="<?php bloginfo( 'url' ); ?>/wp-content/themes/tourtiger/includes/primary-content/assets/img/slider/arrow-right.png" /></div>',
+	                  nextArrow: '<div class="pc__c--arrow-n"><img width="20" src="" /></div>',
 
 	                  swipe: false
 	                });
