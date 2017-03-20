@@ -76,30 +76,32 @@ $section_count = 0;
 	        init: function () {
 
 	            if ( $('.js-new-slider').length > 0 ) {
-	                $('.pc--r__scroll.js-new-slider').slick({
-	                  prevArrow: '<div class="pc__c--arrow-p"><img width="20" src="<?php bloginfo( 'url' ); ?>/wp-content/themes/tourtiger/includes/primary-content/assets/img/slider/arrow-left.png" /></div>',
+	            	setTimeout(function(){
+		                $('.pc--r__scroll.js-new-slider').slick({
+		                  prevArrow: '<div class="pc__c--arrow-p"><img width="20" src="<?php bloginfo( 'url' ); ?>/wp-content/themes/tourtiger/includes/primary-content/assets/img/slider/arrow-left.png" /></div>',
 
-	                  nextArrow: '<div class="pc__c--arrow-n"><img width="20" src="" /></div>',
+		                  nextArrow: '<div class="pc__c--arrow-n"><img width="20" src="<?php bloginfo( 'url' ); ?>/wp-content/themes/tourtiger/includes/primary-content/assets/img/slider/arrow-right.png" /></div>',
 
-	                  swipe: false
-	                });
+		                  swipe: false
+		                });
 
-	                $('.pc--c__testimonial--slider.js-new-slider').slick({
-	                  swipe: false,
-	                  arrows: false,
-	                  dots: true,
-	                  adaptiveHeight: true,
-	                  fade: true,
-					  slidesToScroll: 1,
-					  autoplay: true,
-					  autoplaySpeed: 5000,
-	                });
+		                $('.pc--c__testimonial--slider.js-new-slider').slick({
+		                  swipe: false,
+		                  arrows: false,
+		                  dots: true,
+		                  adaptiveHeight: true,
+		                  fade: true,
+						  slidesToScroll: 1,
+						  autoplay: true,
+						  autoplaySpeed: 5000,
+		                });
 
-	                $('.pc--r__scroll.js-new-slider').fadeIn();
+		                $('.pc--r__scroll.js-new-slider').fadeIn();
+	                }, 100);
 
 	                setTimeout(function(){
 	                  $('.pc--r__scroll, .pc--c__testimonial--slider').removeClass('js-new-slider');
-	                }, 100);
+	                }, 200);
 	            }
 
 	            <?php if ( get_field('google_maps','apikey') ) : ?>
@@ -222,7 +224,7 @@ $section_count = 0;
 	                }
 
 
-	                item.animate( {'min-height': blog_thumb_h}, 500 );
+	                item.animate( {'min-height': blog_thumb_h}, 50 );
 	              });
 
 	            }

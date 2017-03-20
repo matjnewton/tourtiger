@@ -37,12 +37,10 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 
 	if ( in_array( 'button', $flexi_attr[$prefix] ) && $label ) :
 
-		$url = get_sub_field( 'tour_pc-flexi--url' );
-
 		if ( $flexi_attr['button'] != 'right-d' ) : ?>
 
 			<a 
-				href="<?= $url; ?>" 
+				href="<?= $tour_flexiprod_tag_url; ?>" 
 				class="fc_style--<?= $flexi_attr['name']; ?>_button <?= $flexi_attr['name']; ?>_button button_type_inline-block button_type_<?= $flexi_attr['button']; ?>">
 					<?php echo $label; ?>
 			</a>
@@ -58,7 +56,7 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 				</div>
 
 				<a 
-					href="<?= $url; ?>" 
+					href="<?= $tour_flexiprod_tag_url; ?>" 
 					class="<?= 'fc_style--' . $flexi_attr['name'] . '_button ' . $flexi_attr['name'] . '_button'; ?> button_type_<?= $flexi_attr['button']; ?>">
 
 					<span><?php echo $label; ?></span>
