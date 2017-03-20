@@ -15,6 +15,7 @@ if( have_rows('pc_hero_area') ):
 
         $hero_height = get_sub_field( 'pc_hero_area_size' );
         $hero_align_h = get_sub_field( 'pc_hero_area_align' );
+        $hero_align_t = get_sub_field( 'pc_hero_area_text-align' );
         $hero_width = get_sub_field( 'pc_hero_area_width' );
         $hero_align_v = get_sub_field( 'pc_hero_area_vertical' );
 
