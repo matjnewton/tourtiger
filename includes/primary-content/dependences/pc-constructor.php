@@ -2134,7 +2134,7 @@ acf_add_local_field_group(array (
 											'allow_null' => 0,
 											'other_choice' => 0,
 											'save_other_choice' => 0,
-											'default_value' => 'Equal width',
+											'default_value' => 'equal',
 											'layout' => 'horizontal',
 										),
 										array (

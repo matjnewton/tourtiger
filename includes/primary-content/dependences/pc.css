@@ -2264,3 +2264,33 @@ div.pc--c__accordion + div.pc--c__accordion {
 .pc-custom-arrow .pc__c--arrow-n img {
 	display: none;
 }
+
+#pc_wrap .slick-track {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#pc_wrap .pc--r_pos-stretch .slick-track {
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+#pc_wrap .pc--r_pos-top .slick-track {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+#pc_wrap .pc--r_pos-middle .slick-track {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#pc_wrap .pc--r_pos-bottom .slick-track {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
