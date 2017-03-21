@@ -16,10 +16,11 @@ if ( have_rows( $ha_style, 'option' ) ) :
             for ( $ii = 1; $ii < 4; $ii++ ) {
 
                 if ( $title[$ii] ) {
-                    $color = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_color' );
+                    $color = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_shadow' );
 
                     $css = pc_init_font_css( get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] ) );
                     $css[1] .= $color ? 'color:' . $color . ';' : '';
+                    $css[1] .= $shadow ? 'text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);' : '';
 
                     echo $css[0];
                     echo '#pc_hero-area.' . $ha_style . ' ' . $tag[$ii] . '.hero-area_title-' . $ii . ' {' . $css[1] . '}';

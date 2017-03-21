@@ -118,6 +118,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57efishadow-h1',
+					'label' => 'H1 Dropshadow',
+					'name' => 'ha_style__headline-1-h1_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcf8bfi-h2',
 					'label' => 'H2 Font',
 					'name' => 'ha_style__headline-1-h2',
@@ -186,6 +202,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57efishadow-h2',
+					'label' => 'H2 Dropshadow',
+					'name' => 'ha_style__headline-1-h2_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcfi-h3',
@@ -258,6 +290,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57efishadow-h3',
+					'label' => 'H3 Dropshadow',
+					'name' => 'ha_style__headline-1-h3_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcfi-h4',
 					'label' => 'H4 Font',
 					'name' => 'ha_style__headline-1-h4',
@@ -326,6 +374,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57efishadow-h4',
+					'label' => 'H4 Dropshadow',
+					'name' => 'ha_style__headline-1-h4_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8fi2-h5',
@@ -398,6 +462,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57efishadow-h5',
+					'label' => 'H5 Dropshadow',
+					'name' => 'ha_style__headline-1-h5_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cfifi-h6',
 					'label' => 'H6 Font',
 					'name' => 'ha_style__headline-1-h6',
@@ -466,6 +546,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57efishadow-h6',
+					'label' => 'H6 Dropshadow',
+					'name' => 'ha_style__headline-1-h6_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 
 				array (
@@ -556,6 +652,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57eseshadow-h1',
+					'label' => 'H1 Dropshadow',
+					'name' => 'ha_style__headline-2-h1_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcf8bse-h2',
 					'label' => 'H2 Font',
 					'name' => 'ha_style__headline-2-h2',
@@ -624,6 +736,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57eseshadow-h2',
+					'label' => 'H2 Dropshadow',
+					'name' => 'ha_style__headline-2-h2_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcse-h3',
@@ -696,6 +824,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57eseshadow-h3',
+					'label' => 'H3 Dropshadow',
+					'name' => 'ha_style__headline-2-h3_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcse-h4',
 					'label' => 'H4 Font',
 					'name' => 'ha_style__headline-2-h4',
@@ -764,6 +908,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57eseshadow-h4',
+					'label' => 'H4 Dropshadow',
+					'name' => 'ha_style__headline-2-h4_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8se2-h5',
@@ -836,6 +996,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57eseshadow-h5',
+					'label' => 'H5 Dropshadow',
+					'name' => 'ha_style__headline-2-h5_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cfise-h6',
 					'label' => 'H6 Font',
 					'name' => 'ha_style__headline-2-h6',
@@ -904,6 +1080,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57eseshadow-h6',
+					'label' => 'H6 Dropshadow',
+					'name' => 'ha_style__headline-2-h6_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 
 				array (
@@ -994,6 +1186,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57etishadow-h1',
+					'label' => 'H1 Dropshadow',
+					'name' => 'ha_style__headline-3-h1_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcf8bti-h2',
 					'label' => 'H2 Font',
 					'name' => 'ha_style__headline-3-h2',
@@ -1062,6 +1270,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57etishadow-h2',
+					'label' => 'H2 Dropshadow',
+					'name' => 'ha_style__headline-3-h2_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcti-h3',
@@ -1134,6 +1358,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57etishadow-h3',
+					'label' => 'H3 Dropshadow',
+					'name' => 'ha_style__headline-3-h3_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcti-h4',
 					'label' => 'H4 Font',
 					'name' => 'ha_style__headline-3-h4',
@@ -1202,6 +1442,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57etishadow-h4',
+					'label' => 'H4 Dropshadow',
+					'name' => 'ha_style__headline-3-h4_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8ti2-h5',
@@ -1274,6 +1530,22 @@ class HeroArea extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_584ec57etishadow-h5',
+					'label' => 'H5 Dropshadow',
+					'name' => 'ha_style__headline-3-h5_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836ctiti-h6',
 					'label' => 'H6 Font',
 					'name' => 'ha_style__headline-3-h6',
@@ -1342,6 +1614,22 @@ class HeroArea extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_584ec57etishadow-h6',
+					'label' => 'H6 Dropshadow',
+					'name' => 'ha_style__headline-3-h6_shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 
 				array (
