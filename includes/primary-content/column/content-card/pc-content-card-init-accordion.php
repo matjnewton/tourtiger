@@ -41,8 +41,8 @@ if ( get_sub_field( 'cc_style__a-s_font-hover' ) ) {
 if ( get_sub_field( 'cc_style__a-arrow' ) ) {
 	$color = get_sub_field( 'cc_style__a-l_font-color' ) ? get_sub_field( 'cc_style__a-l_font-color' ) : '#777';
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--status:after {transition:.3s;content:"";width:0;height:0;border: 4px solid transparent;display:inline-block;margin-left:5px;}';
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--status_opened:after {border-bottom:9px solid ' . $color .  ';}';
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--status_closed:after {border-top:9px solid ' . $color .  ';position: relative;transform: translateY(25%);}';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--status_closed:after {border-bottom:9px solid ' . $color .  ';}';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__accordion--status_opened:after {border-top:9px solid ' . $color .  ';position: relative;transform: translateY(25%);}';
 }
 
 /**
