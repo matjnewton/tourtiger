@@ -11,7 +11,7 @@ $section_count = 0;
 
 
 <?php if ( get_field('google_maps','apikey') ) : ?>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps','apikey'); ?>"></script>
+  <script src="//maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps','apikey'); ?>"></script>
 <?php endif; ?>
 
 <script type="text/javascript">
@@ -299,25 +299,27 @@ $section_count = 0;
 	             */
 	            if ( $('.pc--s__img--eqvival').length > 0 ) {
 
-	                $('.pc--s__img--eqvival').each(function(){
-	                    if ( $(this).hasClass('is-full-image') ) {
-	                        var $item = $(this);
+	            	setTimeout(function(){
+		                $('.pc--s__img--eqvival').each(function(){
+		                    if ( $(this).hasClass('is-full-image') ) {
+		                        var $item = $(this);
 
-	                        var match_url = $item.attr('data-expanded');
-	                        var img = new Image();
+		                        var match_url = $item.attr('data-expanded');
+		                        var img = new Image();
 
-	                        img.src = match_url;
+		                        img.src = match_url;
 
-	                        var img_percent = img.height / img.width * 100;
-	                        var img_height = screen.width / 100 * img_percent;
+		                        var img_percent = img.height / img.width * 100;
+		                        var img_height = screen.width / 100 * img_percent;
 
-	                        $item.css('background-image', 'url(' + match_url + ')');
+		                        $item.css('background-image', 'url(' + match_url + ')');
 
-	                        $item.animate({
-	                          'min-height': img_height, 
-	                        }, 500).removeClass('is-full-image');
-	                    }
-	                });
+		                        $item.animate({
+		                          'min-height': img_height, 
+		                        }, 500).removeClass('is-full-image');
+		                    }
+		                });
+	            	}, 100);
 
 	            }
 

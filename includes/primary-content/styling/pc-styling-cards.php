@@ -195,5 +195,6 @@ include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-clas
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-flexicard.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-contentcard.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-heroarea.php' );
+include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-productpage.php' );
 
 ?>

@@ -66,12 +66,12 @@ function tourtiger_styles_pca() {
 /**
  * Enqueue Google Maps API
  */
-function google_api_acf_init() {
+// function google_api_acf_init() {
 	
-	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
-}
+// 	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
+// }
 
-add_action('acf/init', 'google_api_acf_init');
+// add_action('acf/init', 'google_api_acf_init');
 
 /**
  * ACF Global Options

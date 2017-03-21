@@ -13,6 +13,7 @@ if( have_rows('pc_hero_area') ):
         $full_video_poster = get_sub_field( 'pc_video_poster' );
         $poster_url = wp_get_attachment_url( $full_video_poster, 'full' );
 
+        $hero_width_box = get_sub_field( 'pc_hero_area_banner-width' ); 
         $hero_height = get_sub_field( 'pc_hero_area_size' );
         $hero_align_h = get_sub_field( 'pc_hero_area_align' );
         $hero_align_t = get_sub_field( 'pc_hero_area_text-align' );
