@@ -251,6 +251,22 @@ class ContentCard extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_5836cbfshadow82-h1',
+					'label' => 'H1 Dropshadow',
+					'name' => 'cc_style__headline-shadow-h1',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcf8b82-h2',
 					'label' => 'H2 Font',
 					'name' => 'cc_style__headline-h2',
@@ -319,6 +335,22 @@ class ContentCard extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5836cbfshadow82-h2',
+					'label' => 'H2 Dropshadow',
+					'name' => 'cc_style__headline-shadow-h2',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8b82-h3',
@@ -391,6 +423,22 @@ class ContentCard extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_5836cbfshadow82-h3',
+					'label' => 'H3 Dropshadow',
+					'name' => 'cc_style__headline-shadow-h3',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcf8b82-h4',
 					'label' => 'H4 Font',
 					'name' => 'cc_style__headline-h4',
@@ -459,6 +507,22 @@ class ContentCard extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5836cbfshadow82-h4',
+					'label' => 'H4 Dropshadow',
+					'name' => 'cc_style__headline-shadow-h4',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8b82-h5',
@@ -531,6 +595,22 @@ class ContentCard extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_5836cbfshadow82-h5',
+					'label' => 'H5 Dropshadow',
+					'name' => 'cc_style__headline-shadow-h5',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_5836cbfcf8b82-h6',
 					'label' => 'H6 Font',
 					'name' => 'cc_style__headline-h6',
@@ -600,7 +680,22 @@ class ContentCard extends StylingCard {
 					'ext_value' => array (
 					),
 				),
-
+				array (
+					'key' => $this->slug . $i . '_5836cbfshadow82-h6',
+					'label' => 'H6 Dropshadow',
+					'name' => 'cc_style__headline-shadow-h6',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
 				array (
 					'key' => $this->slug . $i . '_5836ce6811449',
 					'label' => 'Editor',
@@ -686,6 +781,22 @@ class ContentCard extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5836csha3editor24dsor',
+					'label' => 'Text Dropshadow',
+					'name' => 'cc_style__editor-shadow',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5837001a7a445',

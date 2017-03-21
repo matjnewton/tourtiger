@@ -38,6 +38,10 @@
 	margin-top: 30px;
 }
 
+.pc-hero-content > * {
+	width: 100%;
+}
+
 .pc-hero-content__short {
 	min-height: 250px;	
 }
