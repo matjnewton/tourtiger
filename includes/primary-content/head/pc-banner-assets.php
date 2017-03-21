@@ -16,7 +16,8 @@ if ( have_rows( $ha_style, 'option' ) ) :
             for ( $ii = 1; $ii < 4; $ii++ ) {
 
                 if ( $title[$ii] ) {
-                    $color = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_shadow' );
+                    $color = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_color' );
+                    $shadow = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_shadow' );
 
                     $css = pc_init_font_css( get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] ) );
                     $css[1] .= $color ? 'color:' . $color . ';' : '';
