@@ -63,6 +63,28 @@ acf_add_local_field_group(array (
 							'default_value' => 'style-one',
 						),
 						array (
+							'key' => 'pc_ha_003-width',
+							'label' => 'Hero Width',
+							'name' => 'pc_hero_area_banner-width',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array (
+								'site-grid' => 'Fit in site grid',
+								'full' => 'Full width'
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'save_other_choice' => 0,
+							'default_value' => 'site-grid',
+						),
+						array (
 							'key' => 'pc_ha_003',
 							'label' => 'Hero Height',
 							'name' => 'pc_hero_area_size',
@@ -71,7 +93,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '20',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -94,7 +116,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '20',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -117,7 +139,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '20',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -140,7 +162,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '20',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -163,7 +185,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '20',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),

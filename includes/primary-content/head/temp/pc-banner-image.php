@@ -10,7 +10,7 @@
                 <li style="
                     background-image: url(<?php echo $simage; ?>); 
                     background-repeat: no-repeat; 
-                    background-size: 1440px auto; 
+                    background-size: 100% auto; 
                     background-position: center center; 
                     width: 100%; 
                     <?php echo get_sub_field( 'pc_ha_image-fixed' ) == 'yes' ? 'background-attachment: fixed;' : ''; ?>">
