@@ -72,6 +72,11 @@ function tourtiger_scripts_method() {
 		endif;
 		
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), null, true);
+
+
+		if ( get_field('google_maps','apikey') ) :
+		  wp_register_script( "api-key-maps", "https://maps.googleapis.com/maps/api/js?key=" . get_field('google_maps','apikey'), array(), null, true);
+		endif;
 		
 		
 		if($integrate_regiondo):
@@ -136,6 +141,8 @@ function tourtiger_scripts_method() {
 		//wp_enqueue_script( 'customjs' );
 		//wp_enqueue_script( 'custom_two' );
 		wp_enqueue_script( 'mainjs' );
+
+		wp_enqueue_script( 'api-key-maps' );
 		
 		}
 }

@@ -9,11 +9,6 @@ $section_count = 0;
 
 ?>
 
-
-<?php if ( get_field('google_maps','apikey') ) : ?>
-  <script src="//maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps','apikey'); ?>"></script>
-<?php endif; ?>
-
 <script type="text/javascript">
 
 
