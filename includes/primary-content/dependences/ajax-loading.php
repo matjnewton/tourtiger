@@ -19,6 +19,7 @@ function pc_show_more_sections() {
 	$start = $_POST['offset'];
 	$end = $start + $show;
 	$post_id = $_POST['post_id'];
+	$ajax_form_id = false;
 
 	ob_start();
 
@@ -30,6 +31,9 @@ function pc_show_more_sections() {
 
 		while ( have_rows( 'tour_primary-content', $post_id ) ) :
 			the_row();
+
+			if ( !defined('PCA_AJAX_LOADING_CONTENT') )
+				define( 'PCA_AJAX_LOADING_CONTENT', true );
 
 			if ( $count < $start ) {
 				$count++;
@@ -48,7 +52,7 @@ function pc_show_more_sections() {
 	$more = false;
 	if ($total > $count) $more = true;
 
-	echo json_encode( array( 'content' => $content, 'more' => $more, 'offset' => $end ) );
+	echo json_encode( array( 'content' => $content, 'more' => $more, 'offset' => $end, 'new_form' => $ajax_form_id ) );
 	exit;
 } 
 

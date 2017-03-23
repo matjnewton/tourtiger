@@ -2302,3 +2302,33 @@ div.pc--c__accordion + div.pc--c__accordion {
     -ms-flex-align: end;
     align-items: flex-end;
 }
+
+@media (max-width: 568px) {
+	.pc--form__nowrap-fields-and-buttons ul.gform_fields,
+	#pc_wrap .pc--form.pc--form__nowrap .gform_heading {
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	        -ms-flex-direction: column;
+	            flex-direction: column;
+	}
+
+	#pc_wrap .pc--form .gfield, 
+	#pc_wrap .ginput_complex > span, 
+	#pc_wrap .clear-multi > .ginput_container_date,
+	#pc_wrap .content_card_style-one .pc--form .gform_button {
+		margin-left: 0!important;
+	}
+
+	#pc_wrap .pc--form .gform_footer .gform_button, 
+	#pc_wrap .pc--form .gform_page_footer .gform_next_button, 
+	#pc_wrap .pc--form .gform_page_footer .gform_button, 
+	#pc_wrap .pc--form .gform_page_footer .gform_previous_button {
+		width: 100%;
+	}
+
+	#pc_wrap .pc--form .gform_footer, 
+	.gform_page_footer {
+		width: 100%;
+		margin-top: 0;
+	}
+}

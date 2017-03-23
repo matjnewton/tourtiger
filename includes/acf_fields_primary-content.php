@@ -66,12 +66,12 @@ function tourtiger_styles_pca() {
 /**
  * Enqueue Google Maps API
  */
-// function google_api_acf_init() {
+function google_api_acf_init() {
 	
-// 	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
-// }
+	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
+}
 
-// add_action('acf/init', 'google_api_acf_init');
+add_action('acf/init', 'google_api_acf_init');
 
 /**
  * ACF Global Options
@@ -317,5 +317,55 @@ function get_pc_content_card_border( $border = array() ) {
 	}
 
 }
+
+// Hook up the AJAX actions
+add_action( 'wp_ajax_nopriv_gf_button_get_form', 'gf_button_get_form' );
+add_action( 'wp_ajax_gf_button_get_form', 'gf_button_get_form' );
+
+// Add the "button" action to the gravityforms shortcode
+// e.g. [gravityforms action="button" id=1 text="button text"]
+add_filter( 'gform_shortcode_ajax', 'gf_button_shortcode', 10, 3 );
+
+function gf_button_shortcode( $shortcode_string, $attributes, $content ){
+	$a = shortcode_atts( array(
+		'id' => 0,
+		'title' => '',
+		'desc' => '',
+	), $attributes );
+
+	$form_id = absint( $a['id'] );
+	$form_title = absint( $a['title'] );
+	$form_desc = absint( $a['desc'] );
+
+	if ( $form_id < 1 ) {
+		return 'Missing the ID attribute.';
+	}
+
+	// Enqueue the scripts and styles
+	gravity_form_enqueue_scripts( $form_id, false );
+
+	$ajax_url = admin_url( 'admin-ajax.php' );
+
+	$html = "<script>
+				(function (SHFormLoader, $) {
+				$.get('{$ajax_url}?action=gf_button_get_form&form_id={$form_id}',function(response){
+					$('#pca_form_id-{$form_id}').html(response).fadeIn();
+					$('#pca_form_id-{$form_id}').closest('.pc--r__scroll').slick('setOption', 'height', null, true);
+					$('#pca_form_id-{$form_id}').closest('.slick-list').height('auto');
+					if(window['gformInitDatepicker']) {gformInitDatepicker();}
+				});
+			}(window.SHFormLoader = window.SHFormLoader || {}, jQuery));
+			</script>";
+	return $html;
+}
+
+function gf_button_get_form(){
+	$form_id = isset( $_GET['form_id'] ) ? absint( $_GET['form_id'] ) : 0;
+	// Render an AJAX-enabled form.
+	// https://www.gravityhelp.com/documentation/article/embedding-a-form/#function-call
+	gravity_form( $form_id, true, true, false, false, true );
+	die();
+}
+
 
 ?>

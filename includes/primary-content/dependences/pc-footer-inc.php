@@ -11,7 +11,6 @@ $section_count = 0;
 
 <script type="text/javascript">
 
-
 	function aload(t){"use strict";var e="data-aload";return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t}
 
 	window.onload = function () {
@@ -55,6 +54,10 @@ $section_count = 0;
 
 	          if (json['more']) {
 	            pc_show_more_js();
+	          }
+
+	          if (json['new_form']) {
+	            // TODO: Add ajax script to get GF
 	          }
 
 	          $(document).primaryContent( 'init' );
@@ -292,27 +295,25 @@ $section_count = 0;
 	            /**
 	             * Set min-height equvival width
 	             */
-	            if ( $('.pc--s__img--eqvival').length > 0 ) {
+	            if ( $('.pc--s__img--eqvival.is-full-image').length > 0 ) {
 
 	            	setTimeout(function(){
-		                $('.pc--s__img--eqvival').each(function(){
-		                    if ( $(this).hasClass('is-full-image') ) {
-		                        var $item = $(this);
+		                $('.pc--s__img--eqvival.is-full-image').each(function(){
+	                        var $item = $(this);
 
-		                        var match_url = $item.attr('data-expanded');
-		                        var img = new Image();
+	                        var match_url = $item.attr('data-expanded');
+	                        var img = new Image();
 
-		                        img.src = match_url;
+	                        img.src = match_url;
 
-		                        var img_percent = img.height / img.width * 100;
-		                        var img_height = screen.width / 100 * img_percent;
+	                        var img_percent = img.height / img.width * 100;
+	                        var img_height = screen.width / 100 * img_percent;
 
-		                        $item.css('background-image', 'url(' + match_url + ')');
+	                        $item.css('background-image', 'url(' + match_url + ')');
 
-		                        $item.animate({
-		                          'min-height': img_height, 
-		                        }, 500).removeClass('is-full-image');
-		                    }
+	                        $item.animate({
+	                          'min-height': img_height, 
+	                        }, 500).removeClass('is-full-image');
 		                });
 	            	}, 100);
 

@@ -7,8 +7,21 @@
 	$form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 ?>
 
-<div class="<?php echo $tour_content_content_classes; ?>">
+<div id="pca_form_id-<?php echo $form_id; ?>" class="<?php echo $tour_content_content_classes; ?>">
 
-	<?php echo do_shortcode( '[gravityform id="' . $form_id . '" title="true" description="true"]' ); ?>
+	<?php
+
+	if ( defined('PCA_AJAX_LOADING_CONTENT') ) {
+
+		echo do_shortcode( '[gravityform action="ajax" id="' . $form_id . '" title="true" description="true"]' );
+
+	} else {
+
+		echo do_shortcode( '[gravityform id="' . $form_id . '" title="true" description="true"]' );
+
+	}
+
+
+	?>
 
 </div>
