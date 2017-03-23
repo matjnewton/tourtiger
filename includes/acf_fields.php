@@ -3129,6 +3129,113 @@ tour_finder',
                 ),
 
             ),
+        ),
+        //Group Tours Xola
+        array (
+			'key' => 'field_5707bc2f30382_xola_group_tours',
+			'label' => 'Group tours',
+			'name' => 'xola_group_tours',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_55ba67ba63250',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
+		// Matching Group Products xola
+		array(
+            "key"=> "field_57eb6b8fd8aae_group_xola",
+            "label"=> "Matching Group Products for Xola",
+            "name"=> "matching_products_group_xola",
+            "type"=> "repeater",
+            "instructions"=> "",
+            "required"=> 0,
+             "conditional_logic" => array (
+				array (
+					array (
+						"field" => "field_55ba67ba63250",
+						"operator" => "==",
+						"value" => "1",
+					),
+					array (
+						"field" => "field_5707bc2f30382_xola_group_tours",
+						"operator" => "==",
+						"value" => "1",
+					),
+				),
+			),
+            "wrapper"=> array(
+                "width"=> "",
+                "class"=> "",
+                "id"=> ""
+            ),
+            "collapsed"=> "field_57eb6b9ad8aaf_group_xola",
+            "min"=> "",
+            "max"=> "",
+            "layout"=> "block",
+            "button_label"=> "Add Row",
+            "sub_fields"=> array(
+                array(
+                    "key"=> "field_57eb6b9ad8aaf_group_xola",
+                    "label"=> "Our Tours",
+                    "name"=> "our_tours_group_xola",
+                    "type"=> "select",
+                    "instructions"=> "",
+                    "required"=> 0,
+                    "conditional_logic"=> 0,
+                    "wrapper"=> array(
+                        "width"=> "",
+                        "class"=> "",
+                        "id"=> "",
+                    ),
+                    "choices"=> array(),
+                    "default_value"=> array(),
+                    "allow_null"=> 0,
+                    "multiple"=> 0,
+                    "ui"=> 0,
+                    "ajax"=> 0,
+                    "placeholder"=> "",
+                    "disabled"=> 0,
+                    "readonly"=> 0,
+                ),
+                array(
+                    "key"=> "field_57eb6b9ad8aaf_xola_group",
+                    "label"=> "sync Group Xola Tours",
+                    "name"=> "our_tours_xola_group",
+                    "type"=> "select",
+                    "instructions"=> "required user ID/API Key",
+                    "required"=> 0,
+                    "conditional_logic"=> 0,
+                    "wrapper"=> array(
+                        "width"=> "",
+                        "class"=> "",
+                        "id"=> "",
+                    ),
+                    "choices"=> array(),
+                    "default_value"=> array(),
+                    "allow_null"=> 0,
+                    "multiple"=> 1,
+                    "ui"=> 0,
+                    "ajax"=> 0,
+                    "placeholder"=> "",
+                    "disabled"=> 0,
+                    "readonly"=> 0,
+                ),
+
+            ),
         ), 
     // end Tiger tab
 	),

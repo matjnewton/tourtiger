@@ -65,6 +65,7 @@ function get_cpt_tours_select($field) {
 } 
 add_filter('acf/load_field/name=our_tours', 'get_cpt_tours_select');
 add_filter('acf/load_field/name=our_tours_group', 'get_cpt_tours_select');//group
+add_filter('acf/load_field/name=our_tours_group_xola', 'get_cpt_tours_select');//group
 
 function get_cpt_tours_select_checker($field) {
 	$field['choices'] = array();
@@ -157,6 +158,7 @@ function get_api_xola_tour($field) {
 } 
 
 add_filter('acf/load_field/name=our_tours_apixola', 'get_api_xola_tour');
+add_filter('acf/load_field/name=our_tours_xola_group', 'get_api_xola_tour');
 
 function save_sync() {
 	$screen = get_current_screen();
@@ -195,6 +197,33 @@ function save_sync() {
 					$postid_group = $matching_product_group['field_57eb6b9ad8aaf_group'];
 					$productcode_group = $matching_product_group['field_57eb6b9ad8aaf_rezdy_group'];
 					
+					update_field('productcode_group', $productcode_group, $postid_group);
+					update_field('enable_group_product', true, $postid_group);
+					// no sync
+					if ($productcode_group[0] === "0" ) {  
+						// print_r($productcode_group[0] );
+						// die();
+						update_field('enable_group_product', false, $postid_group);
+					} else {
+						update_field('productcode', null, $postid_group); // execude in single 
+					}
+				}
+		}
+
+		// Xola group
+		$matching_products_group_xola = $_POST['acf']['field_57eb6b8fd8aae_group_xola'];
+		// print_r($matching_products_group_xola);
+		// die();
+		if ($matching_products_group_xola) {
+					// print_r($matching_products_group_xola);
+					// die();
+				foreach ($matching_products_group_xola as $key => $matching_product_group) {
+
+					$postid_group = $matching_product_group['field_57eb6b9ad8aaf_group_xola'];
+					$productcode_group = $matching_product_group['field_57eb6b9ad8aaf_xola_group'];
+					// print_r($productcode_group);
+					// print_r($postid_group);
+					//die();
 					update_field('productcode_group', $productcode_group, $postid_group);
 					update_field('enable_group_product', true, $postid_group);
 					// no sync
