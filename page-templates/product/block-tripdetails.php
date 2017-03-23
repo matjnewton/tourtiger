@@ -28,9 +28,9 @@
 										<!-- additional_detail full-->
 										<span class="primary_trip_details_detail customstyle">
 										   <?php echo $row['primary_trip_details_detail']; ?>
-												<div class="primary_content_additional_link_label" type="button" data-toggle="collapse" data-target="#primary_content_additional_content_<?php echo $key; ?>" aria-expanded="false" aria-controls="primary_content_additional_content">
+												<a href="javascript:" class="primary_content_additional_link_label" type="button" data-toggle="collapse" data-target="#primary_content_additional_content_<?php echo $key; ?>" aria-expanded="false" aria-controls="primary_content_additional_content">
 												   <?php echo $row['primary_content_additional_link_label']; ?>
-												</div>
+												</a>
 										</span>
 										<div class="collapse primary_trip_details_detail_collapse_full_width customstyle" id="primary_content_additional_content_<?php echo $key; ?>">
 										  <div class="">
@@ -42,9 +42,9 @@
 										<span class="primary_trip_details_detail customstyle">
 										   <?php echo $row['primary_trip_details_detail']; ?>
 										   <?php if ($row['primary_content_additional_detail']) : ?>
-												<div class="primary_content_additional_link_label" type="button" data-toggle="collapse" data-target="#primary_content_additional_content_<?php echo $key; ?>" aria-expanded="false" aria-controls="primary_content_additional_content">
+												<a href="javascript:" class="primary_content_additional_link_label" type="button" data-toggle="collapse" data-target="#primary_content_additional_content_<?php echo $key; ?>" aria-expanded="false" aria-controls="primary_content_additional_content">
 												   <?php echo $row['primary_content_additional_link_label']; ?>
-												</div>
+												</a>
 
 												<div class="collapse" id="primary_content_additional_content_<?php echo $key; ?>">
 												  <div class="">
