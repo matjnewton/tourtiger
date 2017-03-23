@@ -2331,4 +2331,57 @@ div.pc--c__accordion + div.pc--c__accordion {
 		width: 100%;
 		margin-top: 0;
 	}
+
+	#pc_hero-area .flxslider-wrapper #slider .slides li {
+	    height: auto!important; 
+	    min-height: auto!important; 
+	    background-size: auto !important;
+	}
+
+	.pc-hero-content,
+	.banner, .banner-top, .flxslider-wrapper,
+	.pc-hero-content__tall {
+		height: auto!important;
+		min-height: auto!important;
+	}
+
+	.pc-hero-content {
+		width: 100%;
+	}
+
+	.site-container h1, 
+	.site-container h2, 
+	.site-container h3, 
+	.site-container h4, 
+	.site-container h5, 
+	.site-container h6 {
+		margin-top: 10px;
+	}
+
+	.banner-wrapper {
+	    max-height: none !important;
+	} 
+}
+
+@media (max-width: 480px) {
+	#pc_hero-area .flxslider-wrapper #slider ul.slides li {
+	    height: auto!important; 
+	    min-height: auto!important; 
+	    background-size: auto !important;
+	}
+
+	.pc-hero-content,
+	.banner, .banner-top, .flxslider-wrapper,
+	.pc-hero-content__tall {
+		height: auto!important;
+		min-height: auto!important;
+	}
+}
+
+#pc_hero-area .pc_hero-area__action-btn {
+	display: inline-block;
+}
+
+.pc_hero-area__action {
+	text-align: center;
 }
