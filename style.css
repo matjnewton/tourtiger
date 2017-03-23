@@ -64,5 +64,29 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 }
 .title-excerpt .giso_btn{
     padding:0; 
-    background:none;
+    background: none;
+}
+
+.primary_content_content_editor img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (amx-width: 568px) {
+    .product_content_wrapper .highlights_options li {
+        width: 100%!important;
+    }
+
+    .product_content_wrapper {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .product_title_area {
+        text-align: center;
+    }
+
+    .pc--c__accordion--status > .pc--c__accordion--status__text {
+        display: none;
+    }
 }
