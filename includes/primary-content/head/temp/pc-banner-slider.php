@@ -12,7 +12,7 @@
                     <li style="
                         background-image: url(<?php echo $simage; ?>); 
                         background-repeat: no-repeat; 
-                        background-size: 100% auto; 
+                        background-size: cover; 
                         background-position: center center; 
                         width: 100%; ">                      
 

@@ -2303,7 +2303,7 @@ div.pc--c__accordion + div.pc--c__accordion {
     align-items: flex-end;
 }
 
-@media (max-width: 568px) {
+@media (max-width: 768px) {
 	.pc--form__nowrap-fields-and-buttons ul.gform_fields,
 	#pc_wrap .pc--form.pc--form__nowrap .gform_heading {
 	    -webkit-box-orient: vertical;
@@ -2361,6 +2361,31 @@ div.pc--c__accordion + div.pc--c__accordion {
 	.banner-wrapper {
 	    max-height: none !important;
 	} 
+
+	.pc--c__button,
+	.pc--c__button > * {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	        -ms-flex-direction: column;
+	            flex-direction: column;
+	}
+
+	.pc--c__button .pc--c__button-support {
+	    -ms-flex-order: 1;
+	    order: 1; 
+	}
+
+	#pc_wrap .pc--c__testimonial--slider {
+	    padding: 0;
+	}
+
+	#pc_wrap .pc--c__testimonial--slider:before, 
+	#pc_wrap .pc--c__testimonial--slider:after {
+	    font-size: 60px;
+	}
 }
 
 @media (max-width: 480px) {
@@ -2375,6 +2400,19 @@ div.pc--c__accordion + div.pc--c__accordion {
 	.pc-hero-content__tall {
 		height: auto!important;
 		min-height: auto!important;
+	}
+
+	#pc_wrap .pc--c__testimonial--title {
+	    font-size: 17px!important;
+	}
+
+	#pc_wrap .pc--c__testimonial--description {
+		font-size: 14px!important;
+		line-height: 20px!important;
+	}
+
+	.pc--c__testimonial--logo + *, .pc--c__testimonial--title + *, .pc--c__testimonial--description + *, .pc--c__testimonial--link + * {
+		margin-top: 10px;
 	}
 }
 

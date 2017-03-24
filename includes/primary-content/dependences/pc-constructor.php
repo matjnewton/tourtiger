@@ -575,7 +575,7 @@ acf_add_local_field_group(array (
 																			'key' => 'field_58248f351e62a',
 																			'label' => 'Aligment',
 																			'name' => 'tour_pc-coltype--button_align',
-																			'type' => 'radio',
+																			'type' => 'select',
 																			'instructions' => '',
 																			'required' => 0,
 																			'conditional_logic' => 0,
@@ -592,8 +592,7 @@ acf_add_local_field_group(array (
 																			'allow_null' => 0,
 																			'other_choice' => 0,
 																			'save_other_choice' => 0,
-																			'default_value' => '',
-																			'layout' => 'vertical',
+																			'default_value' => 'pc--c__button-right',
 																		),
 																		array (
 																			'key' => 'field_58248fe71e62b',
