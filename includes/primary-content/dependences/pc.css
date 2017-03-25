@@ -2436,3 +2436,11 @@ div.pc--c__accordion + div.pc--c__accordion {
 	    -ms-flex-align: end;
 	        align-items: flex-end;
 }
+
+#pc_hero-area[align="left"] .pc_hero-area__action {
+	text-align: left;
+}
+
+#pc_hero-area[align="right"] .pc_hero-area__action {
+	text-align: right;
+}
