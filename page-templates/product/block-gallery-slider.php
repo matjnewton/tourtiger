@@ -14,7 +14,9 @@ if( get_row_layout() == 'primary_content_maingallery_area'):
 							<div class="product_content_wrapper primary_content_maingallery_slides">
 								<ul id="bxslider" class="bxslider">
 									<?php foreach ($slides_images as $key => $slides_image) { ?>
-										<li><img src="<?php echo bfi_thumb( $slides_image['url'], $params_full ); ?>" /></li>
+										<li>
+											<?php tourtiger_image( $slides_image['id'], $params_full['width'], $params_full['height'] ); ?>
+										</li>
 									<?php } ?>
 								</ul>
 <!-- 								<div id="bx-pager">

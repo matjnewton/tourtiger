@@ -1511,5 +1511,35 @@ function add_theme_scss() { ?>
 <?php }
 }
 
+/**
+ * Image insert
+ * @param  integer $id     
+ * @param  integer $width  
+ * @param  integer $height 
+ * @param  boolean $link   optional
+ * @param  [type]  $attr   
+ * @param  boolean $circle 
+ * @return null         
+ */
+function tourtiger_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false ) {
+
+	if ( $circle !== false ) {
+		if ( $width > $height ) { 
+			$width = $height;
+		} else { 
+			$height = $width;
+		}
+
+		echo '<div class="pc_circle-image--wrapper js-new-circle">';
+	}
+
+	echo $link ? "<a href='{$link}'>":'';
+	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
+	echo $link ? '</a>':'';
+
+	if ( $circle !== false ) echo '</div>'; 
+
+}
+
 /* update dgamoni */
 require_once 'inc/load.php'; 
