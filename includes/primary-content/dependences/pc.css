@@ -1708,7 +1708,7 @@ div.pc--c__accordion + div.pc--c__accordion {
 	width: 300px;
 	max-width: 100%;
 	background-color: orange;
-	border: 0px solid orange;
+	border: 1px solid orange;
 	padding: 14px 22px;
 	outline: none;
 	font-size: 18px;
@@ -2422,4 +2422,13 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc_hero-area__action {
 	text-align: center;
+}
+
+#pc_wrap .pc--form .gform_footer, .gform_page_footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
 }
