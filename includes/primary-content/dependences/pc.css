@@ -1035,6 +1035,10 @@ div.pc--c__accordion + div.pc--c__accordion {
 	text-align: left;
 }
 
+.pc--c__accordion--label > .pc--c__accordion--status {
+	float: right;
+}
+
 .pc--c__accordion--label + .pc--c__accordion--paragraf,
 .pc--c__accordion--label > .pc--c__accordion--status_closed {
 	display: none;
