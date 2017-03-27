@@ -26,6 +26,7 @@ function tourtiger_scripts_method() {
 
         wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
         wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),null, 'all');
+        wp_register_style('theme_prdctn', '/wp-content/uploads/wp-sass-cache/theme.css', array(),'all');
         wp_register_style('compass', get_stylesheet_directory_uri() .'/css/screen.css', array(),null, 'all');
         wp_register_style('bootstrap_select', get_stylesheet_directory_uri() .'/css/bootstrap-select.css', array(),null, 'all');
         wp_register_style('magnific_popup_css', get_stylesheet_directory_uri() .'/css/magnific-popup.css', array(),null, 'all');
@@ -117,7 +118,12 @@ function tourtiger_scripts_method() {
 		wp_enqueue_style('bootstrap_select');
 		wp_enqueue_style('magnific_popup_css');
 		wp_enqueue_style('flexslider_css');
+		$spctrmdev = get_option('spctrmdev', '0');
+		if (!empty($spctrmdev) || !$spctrmdev == '0'):
 		wp_enqueue_style( 'theme', get_stylesheet_directory_uri() . '/theme.scss.php' );
+		else:
+		wp_enqueue_style('theme_prdctn');
+		endif;
 		wp_enqueue_script( 'respond' );
 		
 		wp_register_style('ie_8', get_stylesheet_directory_uri() .'/css/ie8.css', array(),null, 'all');
@@ -828,6 +834,15 @@ function color_picker_option_page()
 				<thead><tr><th colspan="2">&nbsp;</th></tr></thead>
 				<tbody>
 				<tr>
+    				<td colspan="2"><h3>Dev Mode</h3></td>
+				</tr>
+				<tr valign="top">
+					<th width="200px" scope="row">On</th>
+					<td>
+    					<input name="spctrmdev" type="checkbox" id="spctrmdev" value="dvn" <?php checked( 'dvn', get_option( 'spctrmdev' ) ); ?> />
+					</td>
+				</tr>
+				<tr>
     				<td colspan="2"><h3>Base</h3></td>
 				</tr>
 				<tr valign="top">
@@ -1192,6 +1207,9 @@ function color_picker_option_update()
 	$scshdw = $_POST['scbxshdw'] ? $_POST['scbxshdw'] : '';
 	update_option('scbxshdw', esc_html($scshdw));
 	
+	$devmode = $_POST['spctrmdev'] ? $_POST['spctrmdev'] : '';
+	update_option('spctrmdev', esc_html($devmode));
+	
 	$tweak = $_POST['ftabgcfill'] ? $_POST['ftabgcfill'] : '';
 	update_option('ftabgcfill', esc_html($tweak));
 	
@@ -1503,13 +1521,6 @@ function rem_wp_ver_css_js( $src ) {
 add_filter( 'style_loader_src', 'rem_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'rem_wp_ver_css_js', 9999 );
 
-/*we need this if Wp Rocket plugin is active*/
-if (function_exists('rocket_clean_domain')) {
-add_action( 'wp_footer', 'add_theme_scss', 9999 );
-function add_theme_scss() { ?>
-<link rel="stylesheet" id="theme-css-footer" href="<?php bloginfo( 'url' ); ?>/wp-content/uploads/wp-sass-cache/theme.css" type="text/css" media="all">
-<?php }
-}
 
 /**
  * Image insert
