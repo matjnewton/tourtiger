@@ -2249,7 +2249,15 @@ acf_add_local_field_group(array (
 											'type' => 'select',
 											'instructions' => '',
 											'required' => 0,
-											'conditional_logic' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e28ff659a',
+														'operator' => '!=',
+														'value' => '1',
+													),
+												),
+											),
 											'wrapper' => array (
 												'width' => '50',
 												'class' => '',
