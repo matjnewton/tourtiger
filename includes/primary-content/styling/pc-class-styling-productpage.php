@@ -300,27 +300,10 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-
-				array (
-					'key' => 'pp_' . $i . '_prpelemtnedkjge51',
-					'label' => 'Content elements',
-					'name' => 'content-elements',
-					'type' => 'tab',
-					'instructions' => '',
-					'required' => '',
-					'conditional_logic' => '',
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'placement' => 'left',
-					'endpoint' => 0,
-				),
 				array (
 					'key' => $this->slug . '_i123on-lo32r96_' . $i,
 					'label' => 'Icon Color',
-					'name' => 'cont-el_icon-color',
+					'name' => 'content_icon-color',
 					'type' => 'color_picker',
 					'instructions' => '',
 					'required' => 0,
@@ -335,7 +318,7 @@ class ProductPage extends StylingCard {
 				array (
 					'key' => $this->slug . '_i12h-rlo32r96_' . $i,
 					'label' => 'HR line Color',
-					'name' => 'cont-el_hr-color',
+					'name' => 'content_hr-color',
 					'type' => 'color_picker',
 					'instructions' => '',
 					'required' => 0,
@@ -350,7 +333,7 @@ class ProductPage extends StylingCard {
 				array (
 					'key' => $this->slug . '_i12h-rlo32r96_' . $i,
 					'label' => 'HR line Thickness',
-					'name' => 'cont-el_hr-thickness',
+					'name' => 'content_hr-thickness',
 					'type' => 'number',
 					'instructions' => '',
 					'required' => 0,
@@ -966,6 +949,277 @@ class ProductPage extends StylingCard {
 
 		return $fc_options_array;
 
+	}
+
+	/**
+	 * Get styles
+	 * 
+	 * @var    string   $style       style number
+	 * @var    string   $component   name of component   
+	 * @return string  
+	 */
+	public static function get_styles( $style = '' ) {
+		$css = '';
+
+		if ( have_rows( $style, 'option' ) ) {
+			while ( have_rows( $style, 'option' ) ) {
+
+				$css .= '<style>';
+
+				/**
+				 * Background
+				 */
+
+				$background_color = get_sub_field( 'background-color' );
+
+				if ( $background_color ) {
+					$css .= ".single-product .site-inner .content {background:{$background_color};}";
+					$css .= "body.custom-background.single-product {background-color:{$background_color};}";
+				}
+
+				$background_texture = get_sub_field( 'background-texture' );
+				$background_repeat = get_sub_field( 'background-repeat' ) ? 'repeat' : 'no-repeat';
+
+				if ( $background_texture ) {
+					$css .= '.single-product .site-inner .content {';
+						$css .= "background-image: url({$background_texture['url']});";
+						$css .= "background-repeat: {$background_repeat};";
+					$css .= '}';
+				}
+
+				/**
+				 * Content
+				 */
+
+				$css .= '.product_content_wrapper{';
+
+					$content_bg_color = get_sub_field( 'content_bg-color' );
+
+					$css .= $content_bg_color ? "background-color:{$content_bg_color};" : '';
+
+					$content_bg_texture = get_sub_field( 'content_bg-texture' );
+
+					if ( $content_bg_texture ) {
+						$content_bg_repeat = get_sub_field( 'content_bg-repeat' ) ? 'repeat' : 'no-repeat';
+
+						$css .= "background-image: url({$content_bg_texture['url']});";
+						$css .= "background-repeat: {$content_bg_repeat};";
+					}
+
+					$content_bo_radius = get_sub_field( 'content_border-radius' );
+
+					$css .= $content_bo_radius ? "border-radius:{$content_bo_radius}px;" : '';
+
+					$content_dropshadow = get_sub_field( 'content_dropshadow' );
+
+					$css .= $content_dropshadow == 'none' ? 'box-shadow: none;' : 'box-shadow: 0 0 {$content_dropshadow}px rgba(0,0,0,0.1);';
+
+					$content_bo = get_sub_field( 'content_border' );
+					$content_bo_color = get_sub_field( 'content_border-color' );
+					$content_bo_thikness = get_sub_field( 'content_border-thikness' );
+
+					if ( $content_bo ) {
+						$css .= "border-left: {$content_bo_thikness}xp solid {$content_bo_color};";
+						$css .= "border-right: {$content_bo_thikness}xp solid {$content_bo_color};";
+					}
+
+				$css .= '}';
+
+				$css .= '.product_content_wrapper.product_content_wrapper_first,.product_content_wrapper.product_content_wrapper_header {';
+					$css .= $content_bo ? "border-top: {$content_bo_thikness}xp solid {$content_bo_color};":'';
+				$css .= '}';
+
+				$css .= '.product_content_wrapper.product_content_wrapper_end,.product_content_wrapper.product_content_wrapper_footer {';
+					$css .= $content_bo ? "border-bottom: {$content_bo_thikness}px solid {$content_bo_color};" : '';
+				$css .= '}';
+
+				$content_icon_color = get_sub_field( 'content_icon-color' );
+
+				$css .= '.product_content_wrapper i {';
+					$css .= $content_icon_color ? "color:{$content_icon_color};":'';
+				$css .= '}';
+
+				$content_hr_color = get_sub_field( 'content_hr-color' ) || 1;
+				$content_hr_thickness = get_sub_field( 'content_hr-thickness' ) || '#abc545';
+
+				$css .= '.primary_content_content_card_hr_line,.product_content_wrapper hr{';
+					$css .= "border-top: {$content_hr_color} solid {$content_hr_thickness};";
+				$css .= '}';
+
+				$font_style_headline = get_sub_field( 'font-style_headline' );
+
+				if ( $font_style_headline ) {
+					$css .= $font_style_headline['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .content .product_title_area.customstyle h1, .styles .content .product_title_area.customstyle h2, .styles .content .product_title_area.customstyle h3, .styles .content .product_title_area.customstyle h4, .styles .content .product_title_area.customstyle h5, .styles .content .product_title_area.customstyle h6, .content .product_title_area.customstyle h1, .content .product_title_area.customstyle h2, .content .product_title_area.customstyle h3, .content .product_title_area.customstyle h4, .content .product_title_area.customstyle h5, .content .product_title_area.customstyle h6{';
+
+						$css .= "font-family: '{$font_style_headline['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_headline['font_size']}px;";
+						$css .= "font-weight: {$font_style_headline['font-weight']};";
+						$css .= "color: {$font_style_headline['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_h_details = get_sub_field( 'font-style_h-details' );
+
+				if ( $font_style_h_details ) {
+					$css .= $font_style_h_details['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span, .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span{';
+
+						$css .= "font-family: '{$font_style_h_details['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_h_details['font_size']}px;";
+						$css .= "font-weight: {$font_style_h_details['font-weight']};";
+						$css .= "color: {$font_style_h_details['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_h_sub = get_sub_field( 'font-style_h-sub' );
+
+				if ( $font_style_h_sub ) {
+					$css .= $font_style_h_sub['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .content h1.primary_content_subhead.customstyle, .styles .content h2.primary_content_subhead.customstyle, .styles .content h3.primary_content_subhead.customstyle, .styles .content h4.primary_content_subhead.customstyle, .styles .content h5.primary_content_subhead.customstyle, .styles .content h6.primary_content_subhead.customstyle, .content h1.primary_content_subhead.customstyle, .content h2.primary_content_subhead.customstyle, .content h3.primary_content_subhead.customstyle, .content h4.primary_content_subhead.customstyle, .content h5.primary_content_subhead.customstyle, .content h6.primary_content_subhead.customstyle{';
+
+						$css .= "font-family: '{$font_style_h_sub['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_h_sub['font_size']}px;";
+						$css .= "font-weight: {$font_style_h_sub['font-weight']};";
+						$css .= "color: {$font_style_h_sub['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_special_content = get_sub_field( 'font-style_special-content' );
+
+				if ( $font_style_special_content ) {
+					$css .= $font_style_special_content['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p, .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p{';
+
+						$css .= "font-family: '{$font_style_special_content['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_special_content['font_size']}px;";
+						$css .= "font-weight: {$font_style_special_content['font-weight']};";
+						$css .= "color: {$font_style_special_content['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_hightlights = get_sub_field( 'font-style_hightlights' );
+
+				if ( $font_style_hightlights ) {
+					$css .= $font_style_hightlights['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span{';
+
+						$css .= "font-family: '{$font_style_hightlights['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_hightlights['font_size']}px;";
+						$css .= "font-weight: {$font_style_hightlights['font-weight']};";
+						$css .= "color: {$font_style_hightlights['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_trip_details = get_sub_field( 'font-style_trip-details' );
+
+				if ( $font_style_trip_details ) {
+					$css .= $font_style_trip_details['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle, .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle{';
+
+						$css .= "font-family: '{$font_style_trip_details['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_trip_details['font_size']}px;";
+						$css .= "font-weight: {$font_style_trip_details['font-weight']};";
+						$css .= "color: {$font_style_trip_details['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_td_content = get_sub_field( 'font-style_td-content' );
+
+				if ( $font_style_td_content ) {
+					$css .= $font_style_td_content['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p, .styles .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p{';
+
+						$css .= "font-family: '{$font_style_td_content['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_td_content['font_size']}px;";
+						$css .= "font-weight: {$font_style_td_content['font-weight']};";
+						$css .= "color: {$font_style_td_content['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_exco_title = get_sub_field( 'font-style_exco-title' );
+
+				if ( $font_style_exco_title ) {
+					$css .= $font_style_exco_title['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .content .primary_content_expandable_content_options_li h1.primary_content_subhead.customstyle, .styles .content .primary_content_expandable_content_options_li h2.primary_content_subhead.customstyle, .styles .content .primary_content_expandable_content_options_li h3.primary_content_subhead.customstyle, .styles .content .primary_content_expandable_content_options_li h4.primary_content_subhead.customstyle, .styles .content .primary_content_expandable_content_options_li h5.primary_content_subhead.customstyle, .styles .content .primary_content_expandable_content_options_li h6.primary_content_subhead.customstyle, .content .primary_content_expandable_content_options_li h1.primary_content_subhead.customstyle, .content .primary_content_expandable_content_options_li h2.primary_content_subhead.customstyle, .content .primary_content_expandable_content_options_li h3.primary_content_subhead.customstyle, .content .primary_content_expandable_content_options_li h4.primary_content_subhead.customstyle, .content .primary_content_expandable_content_options_li h5.primary_content_subhead.customstyle, .content .primary_content_expandable_content_options_li h6.primary_content_subhead.customstyle{';
+
+						$css .= "font-family: '{$font_style_exco_title['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_exco_title['font_size']}px;";
+						$css .= "font-weight: {$font_style_exco_title['font-weight']};";
+						$css .= "color: {$font_style_exco_title['text-color']};";
+
+					$css .= '}';
+
+					$css .= '.styles .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, .styles .site-inner .content a.primary_content_expandable_content_toggle::after, .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, .site-inner .content a.primary_content_expandable_content_toggle::after {';
+						$css .= "color: {$font_style_exco_title['text-color']};";
+					$css .= '}';
+				}
+
+				$font_style_exco_label = get_sub_field( 'font-style_exco-label' );
+
+				if ( $font_style_exco_label ) {
+					$css .= $font_style_exco_label['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle, .site-inner .content a.primary_content_expandable_content_toggle.customstyle, .styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span,  .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span{';
+
+						$css .= "font-family: '{$font_style_exco_label['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_exco_label['font_size']}px;";
+						$css .= "font-weight: {$font_style_exco_label['font-weight']};";
+						$css .= "color: {$font_style_exco_label['text-color']};";
+
+					$css .= '}';
+				}
+
+				$font_style_pa_content = get_sub_field( 'font-style_pa-content' );
+
+				if ( $font_style_pa_content ) {
+					$css .= $font_style_pa_content['font-family'] != 'Roboto' ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+					$css .= '.styles .site-inner .content .product_content_wrapper p, .site-inner .content .product_content_wrapper p, .product_content_wrapper ul li{';
+
+						$css .= "font-family: '{$font_style_pa_content['font-family']};', sans-serif;";
+						$css .= "font-size: {$font_style_pa_content['font_size']}px;";
+						$css .= "font-weight: {$font_style_pa_content['font-weight']};";
+						$css .= "color: {$font_style_pa_content['text-color']};";
+
+					$css .= '}';
+				}
+
+				/**
+				 * Link color
+				 */
+
+				$link_color = get_sub_field( 'link_color' );
+				$link_hover_color = get_sub_field( 'link_hover_color' );
+				$link_visited_color = get_sub_field( 'link_visited_color' );
+
+				$css .= $link_color ? ".styles .site-inner .content .product_content_wrapper a,.site-inner .content .product_content_wrapper a {color: {$link_color};}" : '';
+
+				if ( $link_hover_color ) {
+					$css .= '.styles .site-inner .content .product_content_wrapper a:hover, .styles .site-inner .content .product_content_wrapper a:focus, .styles .site-inner .content .product_content_wrapper a:active, .site-inner .content .product_content_wrapper a:hover, .site-inner .content .product_content_wrapper a:focus, .site-inner .content .product_content_wrapper a:active{';
+						$css .= "color:{$link_hover_color};";
+					$css .= '}';
+				} 
+
+				if ( $link_visited_color ) {
+					$css .= '.styles .site-inner .content .product_content_wrapper a:visited, .site-inner .content .product_content_wrapper a:visited{';
+						$css .= "color:{$link_visited_color};";
+					$css .= '}';
+				} 
+
+				$css .= '</style>';
+
+			}
+		} else {
+			$css = '<!-- There are not styles for this style group. -->';
+		}
+
+		return $css;
 	}
 	
 }
