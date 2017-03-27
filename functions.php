@@ -479,7 +479,7 @@ function tourtiger_background_inline_css() {
 
 add_action('wp_head', 'tourtiger_background_inline_css', 49);
 
-if(!function_exists('kirki_autoload_classes')){
+//if(!function_exists('kirki_autoload_classes')){
 function tourtiger_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
@@ -1232,7 +1232,7 @@ function color_picker_option_update()
 
 add_action( 'customize_register', 'tourtiger_customize_register' );
 
-}/*end of if function_exists kirki*/
+//}/*end of if function_exists kirki*/
 
 function tourtiger_customize_register( $wp_customize ) {
 
@@ -1253,7 +1253,7 @@ function language_selector_flags(){
     }
 }
 
-include_once(dirname(__FILE__).'/includes/kirki_fields.php');
+//include_once(dirname(__FILE__).'/includes/kirki_fields.php');
 
 add_filter('acf/compatibility/field_wrapper_class', '__return_true');
 // Include the class (unless you are using the script as a plugin)
