@@ -10,6 +10,7 @@
 					$params_images_video_image = array( 'width' => 757, 'height' => 250 ); ?>
 					<div class="product_content_wrapper primary_content_images_video_image_wrap">
 						<img src="<?php echo bfi_thumb( $primary_content_images_video_image['url'], $params_images_video_image ); ?>" class="img-responsive"/>
+						<?php tourtiger_image( $primary_content_images_video_image['id'], $params_images_video_image['width'], $params_images_video_image['height'], false, array( 'class' => 'img-responsive' ) ); ?>
 					</div>
 				<?php endif; 
 

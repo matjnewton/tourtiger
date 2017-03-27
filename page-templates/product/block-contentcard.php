@@ -44,7 +44,7 @@
 
 				    <div class="row">
 		               <div class="col-md-5">
-		               		<img src="<?php echo bfi_thumb( $primary_content_content_card_image['url'], $params_card_image_style3 ); ?>" class="img-responsive"/>
+		               		<?php tourtiger_image( $primary_content_content_card_image['id'], $params_card_image_style3['width'], $params_card_image_style3['height'], false, array( 'class' => 'img-responsive' ) ); ?>
 		               	</div>
 		                <div class="col-md-7">
 		                	<<?php echo $primary_content_content_card_seo_tag; ?> class="primary_content_subhead primary_content_content_card_headline <?php echo $hr_line;?>"><?php echo $primary_content_content_card_headline; ?></<?php echo $primary_content_content_card_seo_tag; ?>>
