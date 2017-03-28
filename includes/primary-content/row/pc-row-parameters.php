@@ -1,11 +1,6 @@
 <?php
 	$tour_row_styles = '';
-	$tour_column_classes = 'pc--r ' . get_sub_field( 'tour_pc-arrow-type' );
-	$tour_column_classes .= get_sub_field( 'tour_pc-arrows-weight' ) ? ' ' . get_sub_field( 'tour_pc-arrows-weight' ) : ''; 
-	$tour_column_classes .= get_sub_field( 'tour_pc-arrows-position' ) ? ' ' . get_sub_field( 'tour_pc-arrows-position' ) : ''; 
-	$tour_column_classes .= get_sub_field( 'tour_pc-arrows-size' ) ? ' ' . get_sub_field( 'tour_pc-arrows-size' ) : '';
-	$pc_arrow_color = get_sub_field( 'tour_pc-arrows-color' ) ? get_sub_field( 'tour_pc-arrows-color' ) : '#fff'; 
-	$tour_row_styles .= "color: {$pc_arrow_color};";
+	$tour_column_classes = 'pc--r ';
 
 	$tour_row_type = get_sub_field( 'tour_pc-rowtype' ) ;
 	$scroll_data = '';

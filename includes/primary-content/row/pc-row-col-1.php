@@ -1,5 +1,12 @@
 <?php
 
+	$tour_column_classes .= get_sub_field( 'tour_pc-arrow-type' ) ? ' ' . get_sub_field( 'tour_pc-arrow-type' ) : '';
+	$tour_column_classes .= get_sub_field( 'tour_pc-arrows-weight' ) ? ' ' . get_sub_field( 'tour_pc-arrows-weight' ) : ''; 
+	$tour_column_classes .= get_sub_field( 'tour_pc-arrows-position' ) ? ' ' . get_sub_field( 'tour_pc-arrows-position' ) : ''; 
+	$tour_column_classes .= get_sub_field( 'tour_pc-arrows-size' ) ? ' ' . get_sub_field( 'tour_pc-arrows-size' ) : '';
+	$pc_arrow_color = get_sub_field( 'tour_pc-arrows-color' ) ? get_sub_field( 'tour_pc-arrows-color' ) : '#fff'; 
+	$tour_row_styles .= "color: {$pc_arrow_color};";
+
 	$tour_column_classes .= ' pc--r__col-1 pc--r__col-1_' . get_sub_field( 'tour_pc-colums--align' ) . ' pc--r__col-1_element-' . get_sub_field( 'tour_pc-colums--align-element' );
 
 	if ( $tour_column_wrap == 'scroll' ) {

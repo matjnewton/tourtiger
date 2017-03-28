@@ -2408,6 +2408,7 @@ div.pc--c__accordion + div.pc--c__accordion {
 	#pc_hero-area .flxslider-wrapper #slider ul.slides li {
 	    height: auto!important; 
 	    min-height: auto!important; 
+	    background-size: cover!important;
 	}
 
 	.pc-hero-content,
