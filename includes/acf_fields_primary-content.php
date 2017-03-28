@@ -52,6 +52,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'pc-large', 1100, 1100, false ); 
 	add_image_size( 'pc-medium', 700, 700, false ); 
 	add_image_size( 'pc-small', 500, 500, false ); 
+	add_image_size( 'pc-fit-iphone', 320, 320, false ); 
 }
 
 /**
