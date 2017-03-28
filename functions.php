@@ -1552,5 +1552,12 @@ function tourtiger_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $
 
 }
 
+/**
+ * Add custom image size for product image
+ */
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'product-slider', 757, 484, false ); 
+}
+
 /* update dgamoni */
 require_once 'inc/load.php'; 
