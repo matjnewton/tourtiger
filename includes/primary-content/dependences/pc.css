@@ -1037,6 +1037,13 @@ div.pc--c__accordion + div.pc--c__accordion {
 	        align-items: center;
 	outline: none;
 	text-align: left;
+	width: 100%;
+}
+
+#pc_wrap .pc--c__accordion--label_question {
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
 }
 
 .pc--c__accordion--label > .pc--c__accordion--status {
@@ -2343,7 +2350,6 @@ div.pc--c__accordion + div.pc--c__accordion {
 	#pc_hero-area .flxslider-wrapper #slider .slides li {
 	    height: auto!important; 
 	    min-height: auto!important; 
-	    background-size: auto !important;
 	}
 
 	.pc-hero-content,
@@ -2400,7 +2406,6 @@ div.pc--c__accordion + div.pc--c__accordion {
 	#pc_hero-area .flxslider-wrapper #slider ul.slides li {
 	    height: auto!important; 
 	    min-height: auto!important; 
-	    background-size: auto !important;
 	}
 
 	.pc-hero-content,
@@ -2447,4 +2452,43 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 #pc_hero-area[align="right"] .pc_hero-area__action {
 	text-align: right;
+}
+
+@media (max-width: 568px) {
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content [class*="hero-area_title-"] {
+		line-height: 1.8;
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content h1[class*="hero-area_title-"] {
+		font-size: 20px;   
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content h2[class*="hero-area_title-"] {
+		font-size: 14px;
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content h3[class*="hero-area_title-"] {
+		font-size: 13.5px;
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content h4[class*="hero-area_title-"] {
+		font-size: 13px;
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content h5[class*="hero-area_title-"] {
+		font-size: 12.5px;
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] .pc-hero-content h5[class*="hero-area_title-"] {
+		font-size: 12px;
+	}
+
+	#pc_hero-area[class*="hero_area_style-"] a.pc_hero-area__action-btn {
+	    font-size: 16px;
+	    line-height: 1.2;
+	}
+
+	.pc-hero-content > * + * {
+		margin-top: 10px;
+	}
 }
