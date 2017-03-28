@@ -143,7 +143,7 @@ if(function_exists('acf_add_options_sub_page')) {
 		include( PCA_DIR . '/styling/pc-styling-cards.php' );
 		include( PCA_DIR . '/dependences/pc-constructor.php' );
 		include( PCA_DIR . '/dependences/pc-hero-area.php' );
-		include( PCA_DIR . '/dependences/pc-options-admin-tab.php' );
+		include_once( PCA_DIR . '/dependences/pc-options-admin-tab.php' ); //fix dgamoni
 	endif;
 
 
