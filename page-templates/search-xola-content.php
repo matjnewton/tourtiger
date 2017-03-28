@@ -75,8 +75,9 @@ function tourtiger_archive_xola(){
                         
                         <p class="cDate2" >{{timearrays | asDateTitle }}</p>
                         
-                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false">No tours scheduled for this date for your search</span>
-                        
+                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false && xola_group_tours == false">No tours scheduled for this date for your search</span>
+                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false && xola_group_tours == true && timearray_seat_group.indexOf(timearrays) == -1">No tours scheduled for this date for your search</span>
+
                         <div ng-repeat = "(key, products) in api_products_xola.products track by $index">
                                 <span ng-repeat="(key, api_availability) in api_availability_xola[$index]" ng-if="(key | asDate) == (timearrays | asDate) &&  get_all_seat(api_availability) !=0">
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
@@ -162,16 +163,101 @@ function tourtiger_archive_xola(){
 
                                 </span> <!-- end api_availability_xola[$index] -->
                         </div> <!--  end api_products_xola.products -->
+                        
+                        <!-- group tours -->
+                        <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.enable_group_product == true && group_available_seat(cptproducts.id, timearrays) > 0" class="cptproducts">
+                            <div ng-repeat = "group_xola in groupxola track by $index" ng-if="(group_xola.time | asDate) == (timearrays | asDate) && group_xola.cpt_id == cptproducts.id">
+                                
+                                <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
+                                    <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
+                                        <img src="{{cptproducts.image2}}">
+                                        <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
+                                    </div> <!-- end search-tumb-wrap -->
+                                    <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
+                                        <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
+                                        <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{cptproducts.integration_price}}
+                                        </span>
+                                        <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{group_xola.price[0].price[0].price}}
+                                        </span>
+
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seat(cptproducts.id, timearrays)<10">Only {{group_available_seat(cptproducts.id, timearrays)}} available for this date</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seat(cptproducts.id, timearrays)>=10">Still available on this date.</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                            <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
+                                            
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                                <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
+                                                <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
+                                            </span>
+                                            
+
+                                            <div class="search-descript-departure-custom">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
+                                                </span>
+                                            </div>
+                                            <div class="search-descript-button">
+                                                <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}" class="viewtour button-viewtour">View Tour</a>
+                                                <a href="{{cptproducts.custom_button_link}}" class="viewtour button-viewtour button-book">Book now</a>
+                                            </div>
+                                    </div> <!-- end search-descript-wrap -->
+                                </div> <!-- end anrow2 -->
+
+                                <!-- for carrent category -->
+                                <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
+                                    <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
+                                        <img src="{{cptproducts.image2}}">
+                                        <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
+                                    </div> <!-- end search-tumb-wrap -->
+                                    <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
+                                        <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
+                                        <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{cptproducts.integration_price}}
+                                        </span>
+                                        <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{group_xola.price[0].price[0].price}}
+                                        </span>
+                                         
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seat(cptproducts.id, timearrays)<10">Only {{group_available_seat(cptproducts.id, timearrays)}} available for this date</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seat(cptproducts.id, timearrays)>=10">Still available on this date.</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                            <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
+                                            
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                                <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
+                                                <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
+                                            </span>
+                                            
+
+                                            <div class="search-descript-departure-custom">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
+                                                </span>
+                                            </div>
+                                            <div class="search-descript-button">
+                                                <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}" class="viewtour button-viewtour">View Tour</a>
+                                                <a href="{{cptproducts.custom_button_link}}" class="viewtour button-viewtour button-book">Book now</a>
+                                            </div>
+                                    </div> <!-- end search-descript-wrap -->
+                                </div> <!-- end anrow2 -->
+                            </div>
+                        </div>
+                        <!-- end group tours -->
+
                     </div> 
                     <!--  end xola  template -->
 
+ 
                     <!-- xola  LoadMore -->
                     <div ng-repeat = "timearrays in timearrayLoadmore track by $index | unique:'timearrayLoadmore'" ng-hide="scrollindex == 1" class="timearrayLoadmore">
                         
                         <p class="cDate2" >{{timearrays | asDateTitle }}</p>
                         
-                        <span class="search_noavailable_message" ng-if="timearrayLoadmore_seat.indexOf(timearrays) == -1 && loading == false">No tours scheduled for this date for your search</span>
-
+                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false && xola_group_tours == false">No tours scheduled for this date for your search</span>
+                        <span class="search_noavailable_message" ng-if="timearray_seat.indexOf(timearrays) == -1 && loading == false && xola_group_tours == true && timearray_seat_group_more.indexOf(timearrays) == -1">No tours scheduled for this date for your search</span>
+                        
                         <div ng-repeat = "(key, products) in api_products_xola.products track by $index">
                                 <span ng-repeat="(key, api_availability) in api_availability_xola_more[$index]" ng-if="(key | asDate) == (timearrays | asDate) &&  get_all_seat(api_availability) !=0">
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
@@ -257,6 +343,90 @@ function tourtiger_archive_xola(){
 
                                 </span> <!-- end api_availability_xola[$index] -->
                         </div> <!--  end api_products_xola.products -->
+
+                        <!-- group tours -->
+
+                        <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.enable_group_product == true && group_available_seatMore(cptproducts.id, timearrays) > 0" class="cptproducts">
+                            
+                            <div ng-repeat = "group_xola in groupxolaMore track by $index" ng-if="(group_xola.time | asDate) == (timearrays | asDate) && group_xola.cpt_id == cptproducts.id">
+                                
+                                <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
+                                    <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
+                                        <img src="{{cptproducts.image2}}">
+                                        <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
+                                    </div> <!-- end search-tumb-wrap -->
+                                    <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
+                                        <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
+                                        <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{cptproducts.integration_price}}
+                                        </span>
+                                        <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{group_xola.price[0].price[0].price}}
+                                        </span>
+
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seatMore(cptproducts.id, timearrays)<10">Only {{group_available_seatMore(cptproducts.id, timearrays)}} available for this date</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seatMore(cptproducts.id, timearrays)>=10">Still available on this date.</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                            <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
+                                            
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                                <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
+                                                <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
+                                            </span>
+                                            
+
+                                            <div class="search-descript-departure-custom">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
+                                                </span>
+                                            </div>
+                                            <div class="search-descript-button">
+                                                <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}" class="viewtour button-viewtour">View Tour</a>
+                                                <a href="{{cptproducts.custom_button_link}}" class="viewtour button-viewtour button-book">Book now</a>
+                                            </div>
+                                    </div> <!-- end search-descript-wrap -->
+                                </div> <!-- end anrow2 -->
+
+                                <!-- for carrent category -->
+                                <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
+                                    <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
+                                        <img src="{{cptproducts.image2}}">
+                                        <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
+                                    </div> <!-- end search-tumb-wrap -->
+                                    <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
+                                        <h3 ng-bind-html="cptproducts.title | trust" class=""></h3>
+                                        <span  ng-if="cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{cptproducts.integration_price}}
+                                        </span>
+                                        <span  ng-if="!cptproducts.integration_price" class="search-tumb-price">
+                                            $ {{group_xola.price[0].price[0].price}}
+                                        </span>
+                                         
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seatMore(cptproducts.id, timearrays)<10">Only {{group_available_seatMore(cptproducts.id, timearrays)}} available for this date</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && group_available_seatMore(cptproducts.id, timearrays)>=10">Still available on this date.</div>
+                                            <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                            <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
+                                            
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                                <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
+                                                <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
+                                            </span>
+                                            
+
+                                            <div class="search-descript-departure-custom">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
+                                                </span>
+                                            </div>
+                                            <div class="search-descript-button">
+                                                <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}" class="viewtour button-viewtour">View Tour</a>
+                                                <a href="{{cptproducts.custom_button_link}}" class="viewtour button-viewtour button-book">Book now</a>
+                                            </div>
+                                    </div> <!-- end search-descript-wrap -->
+                                </div> <!-- end anrow2 -->
+                            </div>
+                        </div>
+                        <!-- end group tours -->
                     </div> 
                     <!--  end xola  LoadMore -->
 

@@ -24,20 +24,34 @@
 	        	var cpt_product ={};
 	        	cpt_product = response.data;
 	            $scope.cpt_product = response.data;
-	            //$scope.message();
-	            //console.log($scope);
+	            
+	            // only for local
+	            // $scope.message();
+	            // $scope.SetGroupAvailableSeats();
+	            // $scope.messageGroup();
+	            // console.log($scope);
+
 	            return cpt_product;
 	    });
 
 	// load option
 	$scope.integrate = {};
-	$scope.integrate.integrate_rezdy = js_var.integrate_rezdy;
-	$scope.integrate.integrate_xola = js_var.integrate_xola;
+	$scope.integrate.integrate_rezdy = js_var_xola.integrate_rezdy;
+	$scope.integrate.integrate_xola = js_var_xola.integrate_xola;
 
 	// var
 		var data = {};
         var promises = [];
 		var promises_click = [];
+
+	//enable group tour function 
+	//console.log(js_var_xola);
+	var xola_group_tours = js_var_xola.xola_group_tours;
+	if (xola_group_tours) {
+		$scope.xola_group_tours = true;
+	} else {
+		$scope.xola_group_tours = false;
+	}
 
 	// load api key
         //console.log(js_var.apikey);
@@ -51,7 +65,7 @@
 	//https://silent.xola.com/api/experiences/56098357cf8b9cc6348b45f0/availability?_format=json&start=2016-11-26&end=2016-11-26
 	//https://silent.xola.com/api/availability?_format=json&seller=5605b264926705ac758b45c8&start=2016-11-26&end=2016-11-26
 
-		$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+		$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_xola.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -78,6 +92,9 @@
 			            $scope.loading = false;
 			        },2000);
 					$scope.message();
+					$scope.SetGroupAvailableSeats();
+		            $scope.messageGroup();
+		            console.log($scope);
 		        });
 
 		}); //end then
@@ -129,6 +146,110 @@
 			return row_time;
 			//return row_seat;
 		}
+
+		$scope.SetGroupAvailableSeats = function() {
+			var sum = 0;
+			var priceGroup = [];
+			var AllSetGroup = [];
+			angular.forEach($scope.timearray, function(timearrays) {
+				angular.forEach($scope.cpt_product, function(cptproducts, key) {
+					sum = 0;
+					if(cptproducts.enable_group_product == true) {
+						angular.forEach(cptproducts.productcode_group, function(array_xola_ids, key) {
+							// console.log('------');
+							// console.log($filter('asDate')(timearrays));
+							// console.log(array_xola_ids);
+							angular.forEach($scope.api_availability_xola, function(xolaproduct, keyy) {
+								if(array_xola_ids == xolaproduct.productCode ){
+									//console.log(xolaproduct[$filter('asDate')(timearrays)]);
+									var seats_array = xolaproduct[$filter('asDate')(timearrays)];
+									var departure = 0;
+									if(seats_array){
+										//console.log(Object.keys(seats_array)[0]);
+										departure = $scope.parseFloat(Object.keys(seats_array)[0]);
+									}
+									
+									sum += parseInt($scope.get_all_seat(seats_array));
+									if(departure !=0) {
+										priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
+									}
+									// priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
+								}
+								
+							});
+						});
+					AllSetGroup.push({ cpt_id : cptproducts.id, time: $filter('asDate')(timearrays), sumseat: sum, price: priceGroup });
+					}
+				});
+			});
+			$scope.groupxola = AllSetGroup;
+		}
+		$scope.group_available_seat = function(cptproducts_id, timearrays){
+			var available = 0;
+			angular.forEach($scope.groupxola, function(groupxola, key) {
+				if( $filter('asDate')(groupxola.time) == $filter('asDate')(timearrays) && groupxola.cpt_id == cptproducts_id ){
+					available = groupxola.sumseat;
+				}
+
+			});
+			return available;
+		}
+		$scope.SetGroupAvailableSeatsMore = function() {
+			var sum = 0;
+			var priceGroup = [];
+			var AllSetGroup = [];
+			angular.forEach($scope.timearrayLoadmore, function(timearrays) {
+				angular.forEach($scope.cpt_product, function(cptproducts, key) {
+					sum = 0;
+					if(cptproducts.enable_group_product == true) {
+						angular.forEach(cptproducts.productcode_group, function(array_xola_ids, key) {
+							//console.log('more------');
+							//console.log($filter('asDate')(timearrays));
+							//console.log(array_xola_ids);
+							angular.forEach($scope.api_availability_xola_more, function(xolaproduct, keyy) {
+								if(array_xola_ids == xolaproduct.productCode ){
+									//console.log(xolaproduct[$filter('asDate')(timearrays)]);
+									var seats_array = xolaproduct[$filter('asDate')(timearrays)];
+									var departure = 0;
+									if(seats_array){
+										//console.log(Object.keys(seats_array)[0]);
+										departure = $scope.parseFloat(Object.keys(seats_array)[0]);
+									}
+									
+									sum += parseInt($scope.get_all_seat(seats_array));
+									if(departure !=0) {
+										priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
+									}
+									// priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
+								}
+								
+							});
+						});
+					AllSetGroup.push({ cpt_id : cptproducts.id, time: $filter('asDate')(timearrays), sumseat: sum, price: priceGroup });
+					}
+				});
+			});
+			$scope.groupxolaMore = AllSetGroup;
+		}
+		$scope.group_available_seatMore = function(cptproducts_id, timearrays){
+			var available = 0;
+			angular.forEach($scope.groupxolaMore, function(groupxola, key) {
+				if( $filter('asDate')(groupxola.time) == $filter('asDate')(timearrays) && groupxola.cpt_id == cptproducts_id ){
+					available = groupxola.sumseat;
+				}
+
+			});
+			return available;
+		}
+		$scope.get_price = function(code) {
+			var price = [];
+			angular.forEach($scope.api_products_xola.products, function(products, key) {
+				if(products.id == code){
+					price.push({price: products.price, duration: products.duration });
+				}
+			});
+			return price;
+		}
 		$scope.get_all_seat = function(array) {
 			var row_time = [];
 			var row_seat = [];
@@ -141,6 +262,48 @@
 			});
 			return all_seat;
 			//return row_seat;
+		}
+		$scope.messageGroup = function() {
+			var row_seat_group = [];
+			angular.forEach($scope.timearray, function(timearrays, key) {
+				var yes = 0;
+				angular.forEach($scope.cpt_product , function(cptproducts, keyss) {
+					var group_available_seat = $scope.group_available_seat(cptproducts.id, timearrays);
+					//console.log(group_available_seat);
+					if( group_available_seat && group_available_seat>0  && $scope.search_tour_cat == 'all') {
+						yes = 1;
+					} else if( group_available_seat && group_available_seat>0 && $scope.search_tour_cat != 'all' && typeof cptproducts.term !== 'undefined' && cptproducts.term.term_id == $scope.search_tour_cat){
+						yes = 1;
+					} else {
+						yes = 0;
+					}
+					if (yes == 1){
+					 	row_seat_group.push(timearrays);
+					 }
+				});
+			});
+			$scope.timearray_seat_group = row_seat_group;
+		}
+		$scope.messageGroupMore = function() {
+			var row_seat_group = [];
+			angular.forEach($scope.timearrayLoadmore, function(timearrays, key) {
+				var yes = 0;
+				angular.forEach($scope.cpt_product , function(cptproducts, keyss) {
+					var group_available_seat = $scope.group_available_seatMore(cptproducts.id, timearrays);
+					//console.log(group_available_seat);
+					if( group_available_seat && group_available_seat>0  && $scope.search_tour_cat == 'all') {
+						yes = 1;
+					} else if( group_available_seat && group_available_seat>0 && $scope.search_tour_cat != 'all' && typeof cptproducts.term !== 'undefined' && cptproducts.term.term_id == $scope.search_tour_cat){
+						yes = 1;
+					} else {
+						yes = 0;
+					}
+					if (yes == 1){
+					 	row_seat_group.push(timearrays);
+					 }
+				});
+			});
+			$scope.timearray_seat_group_more = row_seat_group;
 		}
 	    $scope.message = function() {
 			var row_seat = [];
@@ -201,7 +364,7 @@
     	var promises_click = [];
 		$scope.loading = true;
 		//$scope.api_availability_xola = null; // clear
-    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_xola.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -229,6 +392,9 @@
 			            $scope.loading = false;
 			        },2000);
 					$scope.message();
+					$scope.SetGroupAvailableSeats();
+		            $scope.messageGroup();
+		            console.log($scope);
 		        });
 
 		}); //end then
@@ -242,7 +408,7 @@
     	var promises_click = [];
 		$scope.loading = true;
 		//$scope.api_availability_xola = null; // clear
-    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_xola.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -270,6 +436,8 @@
 			            $scope.loading = false;
 			        },2000);
 					$scope.messageLoadmore();
+					$scope.SetGroupAvailableSeatsMore();
+					$scope.messageGroupMore();
 		        });
 
 		}); //end then
@@ -284,7 +452,7 @@
 
 		    $scope.loading = true;
 
-			    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+			    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_xola.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -312,6 +480,9 @@
 			            $scope.loading = false;
 			        },2000);
 					$scope.message();
+					$scope.SetGroupAvailableSeats();
+		            $scope.messageGroup();
+		            console.log($scope);					
 
 					var startTime_next = $("#datepicker-from-input").val();
 					startTime_next = moment.utc(startTime_next).add(1, 'days').format('YYYY-MM-DD');
@@ -333,7 +504,7 @@
 
 		    $scope.loading = true;
 
-			    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+			    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_xola.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -361,6 +532,9 @@
 			            $scope.loading = false;
 			        },2000);
 					$scope.message();
+					$scope.SetGroupAvailableSeats();
+		            $scope.messageGroup();
+		            console.log($scope);
 
 					var startTime_prev = $("#datepicker-from-input").val();
 					//console.log('startTime_prev from picker');console.log(startTime_prev);
@@ -618,13 +792,13 @@ wqs_xola.factory('TimeArray', function () {
 
 			// load start time
 			    var startTime = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore[0];
-			    console.log('startTime');console.log(startTime);
+			    //console.log('startTime');console.log(startTime);
 			    //startTime = $filter('date')(new Date(startTime), 'yyyy-MM-dd');
 
 			// load endtime
 			    var length = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore.length;
 				var endTime = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore[length-1];
-				console.log('endTime');console.log(endTime);
+				//console.log('endTime');console.log(endTime);
 			    
 			  //   var endTime_plus1 = new Date(endTime);
 			  //   endTime_plus1.setDate(endTime_plus1.getDate() + 1);
