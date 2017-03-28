@@ -1267,10 +1267,10 @@ acf_add_local_field_group(array (
 							'allow_null' => 0,
 						),
 						array (
-							'key' => 'pc_ha_014_2-12-07',
-							'label' => 'Search by categories',
-							'name' => 'pc_search_featured_tours',
-							'type' => 'true_false',
+							'key' => 'pc2131012133',
+							'label' => 'CTA Button link',
+							'name' => 'pc_cta_button_url',
+							'type' => 'text',
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => array (
@@ -1278,17 +1278,23 @@ acf_add_local_field_group(array (
 									array (
 										'field' => 'pc_ha_014',
 										'operator' => '==',
-										'value' => 'Custom',
-									),
-								),
+										'value' => 'Custom' 
+									)
+								)
 							),
 							'wrapper' => array (
 								'width' => '',
 								'class' => '',
 								'id' => '',
 							),
-							'message' => 'Yes',
-							'default_value' => 0,
+							'default_value' => '',
+							'placeholder' => 'https://example.com',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
 						),
 						array (
 							'key' => 'pc_ha_014_1',
