@@ -7,8 +7,8 @@ if ( get_sub_field( 'fc_style__ov' ) != 'none' ) {
 		$fc_style__fcc_css .= 'background-color: ' . get_sub_field( "fc_style__ov_color" ) . ';';
 	} elseif ( get_sub_field( 'fc_style__ov' ) == 'grad' ) {
 		$fc_style__fcc_css .= 'background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, ' . get_sub_field( "fc_style__ov_color" ) . ' 100%);';
-		$fc_style__fcc_css .= '-webkit-linear-gradient(top,  rgba(30,87,153,0) 0%, ' . get_sub_field( "fc_style__ov_color" ) . ' 100%);';
-		$fc_style__fcc_css .= 'linear-gradient(to bottom,  rgba(30,87,153,0) 0%, ' . get_sub_field( "fc_style__ov_color" ) . ' 100%);';
+		$fc_style__fcc_css .= 'background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%, ' . get_sub_field( "fc_style__ov_color" ) . ' 100%);';
+		$fc_style__fcc_css .= 'background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%, ' . get_sub_field( "fc_style__ov_color" ) . ' 100%);';
 	}
 
 	echo '#pc_wrap .' . $fc_style . ' .fc_style--image:before {' . $fc_style__fcc_css . '}';	
