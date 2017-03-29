@@ -1,7 +1,7 @@
 <?php 
 
 if ( get_sub_field( 'cc_style__test_logo_d' ) ) {
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--logo {box-shadow: 3px 3px 7px -2px rgba(0,0,0,.3);}' : '';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--logo {box-shadow: 3px 3px 7px -2px rgba(0,0,0,.3);}';
 }
 
 /**
