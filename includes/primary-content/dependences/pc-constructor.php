@@ -3032,6 +3032,7 @@ acf_add_local_field_group(array (
 								'none' => 'None',
 								'repeater' => 'Repeater',
 								'image' => 'Image',
+								'line' => 'Line',
 							),
 							'default_value' => array (
 								0 => 'none',
@@ -3043,6 +3044,60 @@ acf_add_local_field_group(array (
 							'placeholder' => '',
 							'disabled' => 0,
 							'readonly' => 0,
+						),
+						array (
+							'key' => 'tour_pc-td--line-color',
+							'label' => 'Top divider color',
+							'name' => 'tour_pc-td--line-color',
+							'type' => 'rgba_color',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_5821df8eabd7d',
+										'operator' => '==',
+										'value' => 'line',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '50',
+								'class' => '',
+								'id' => '',
+							),
+							'rgba' => 'rgba(194, 194, 194, 1)',
+						),
+						array (
+							'key' => 'tour_pc-td--line-thickess',
+							'label' => 'Top divider thickness',
+							'name' => 'tour_pc-td--line-thickness',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_5821df8eabd7d',
+										'operator' => '==',
+										'value' => 'line',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '50',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => 1,
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => 'px',
+							'min' => 1,
+							'max' => 15,
+							'step' => 1,
+							'readonly' => 0,
+							'disabled' => 0,
 						),
 						array (
 							'key' => 'field_5821e00cabd7e',
@@ -3141,6 +3196,7 @@ acf_add_local_field_group(array (
 								'none' => 'None',
 								'repeater' => 'Repeater',
 								'image' => 'Image',
+								'line' => 'Line',
 							),
 							'default_value' => array (
 								0 => 'none',
@@ -3152,6 +3208,60 @@ acf_add_local_field_group(array (
 							'placeholder' => '',
 							'disabled' => 0,
 							'readonly' => 0,
+						),
+						array (
+							'key' => 'tour_pc-bd--line-color',
+							'label' => 'Bottom divider color',
+							'name' => 'tour_pc-bd--line-color',
+							'type' => 'rgba_color',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_5821e14dd0f11',
+										'operator' => '==',
+										'value' => 'line',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '50',
+								'class' => '',
+								'id' => '',
+							),
+							'rgba' => 'rgba(194, 194, 194, 1)',
+						),
+						array (
+							'key' => 'tour_pc-bd--line-thickess',
+							'label' => 'Bottom divider thickness',
+							'name' => 'tour_pc-bd--line-thickness',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_5821e14dd0f11',
+										'operator' => '==',
+										'value' => 'line',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '50',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => 1,
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => 'px',
+							'min' => 1,
+							'max' => 15,
+							'step' => 1,
+							'readonly' => 0,
+							'disabled' => 0,
 						),
 						array (
 							'key' => 'field_5821e1b1d0f13',

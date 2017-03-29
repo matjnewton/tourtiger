@@ -2495,3 +2495,19 @@ div.pc--c__accordion + div.pc--c__accordion {
 		margin-top: 10px;
 	}
 }
+
+.pc_top-divider,
+.pc_bot-divider {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.pc_top-divider {
+	top: 0;
+}
+
+.pc_bot-divider {
+	bottom: 0;
+}

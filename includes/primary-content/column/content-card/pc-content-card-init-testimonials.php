@@ -43,11 +43,11 @@ if ( in_array( 'quotes', get_sub_field( 'cc_style__test_show' ) ) ) {
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider:before {' . $cc_style__ccc_css . ';}';
 	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider:after {' . $cc_style__ccc_css . ';}';
 
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider .slick-dots .slick-active button {' . get_sub_field( 'cc_style__test_quotes_c' ) . ';}';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider .slick-dots .slick-active button {color:' . get_sub_field( 'cc_style__test_quotes_c' ) . ';}';
 } else {
-	$cc_style__ccc_css = 'background-color:#666;';
-	$cc_style__ccc_css .= get_sub_field( 'cc_style__test_quotes_d' ) ? 'text-shadow: 1px 1px 3px rgba(0,0,0,.3), 1px 1px 3px rgba(0,0,0,.3);' : '';
-	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider .slick-dots .slick-active button {' . $cc_style__ccc_css . '}';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider:before {display: none;content:"";}';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider:after {display: none;content:"";}';
+	echo '#pc_wrap .' . $cc_style . ' .pc--c__testimonial--slider .slick-dots .slick-active button {color: #666;}';
 }
 
 

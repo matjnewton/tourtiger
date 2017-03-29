@@ -2028,7 +2028,7 @@ class ContentCard extends StylingCard {
 					),
 				),
 				array (
-					'key' => $this->slug . $i . '_teq_qopdmcvlas1_s1234b',
+					'key' => $this->slug . $i . '_teq12vlas1_s1234b',
 					'label' => 'Quotes Dropshadow',
 					'name' => 'cc_style__test_quotes_d',
 					'type' => 'true_false',
@@ -2039,7 +2039,7 @@ class ContentCard extends StylingCard {
 							array (
 								'field' => $this->slug . $i . '_tech0901234ee',
 								'operator' => '==',
-								'value' => 'qoutes',
+								'value' => 'quotes',
 							)
 						) 
 					),
