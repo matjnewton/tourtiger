@@ -1622,6 +1622,30 @@ class ContentCard extends StylingCard {
 					'toggle' => 1,
 				),
 				array (
+					'key' => $this->slug . $i . '_teq_lo_s1234b',
+					'label' => 'Logo Dropshadow',
+					'name' => 'cc_style__test_logo_d',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_tech0901234ee',
+								'operator' => '==',
+								'value' => 'logo',
+							)
+						) 
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_techtitfff44b',
 					'label' => 'Title font',
 					'name' => 'cc_style__test_title_f',
@@ -1708,6 +1732,30 @@ class ContentCard extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_techtdropshadowcc44b',
+					'label' => 'Title Dropshadow',
+					'name' => 'cc_style__test_title_d',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_tech0901234ee',
+								'operator' => '==',
+								'value' => 'title',
+							)
+						) 
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_techexcfff44b',
 					'label' => 'Excerpt font',
 					'name' => 'cc_style__test_excerpt_f',
@@ -1792,6 +1840,30 @@ class ContentCard extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_teexeklscd3244b',
+					'label' => 'Excerpt Dropshadow',
+					'name' => 'cc_style__test_excerpt_d',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_tech0901234ee',
+								'operator' => '==',
+								'value' => 'excerpt',
+							)
+						) 
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_techlinfff44b',
@@ -1906,6 +1978,30 @@ class ContentCard extends StylingCard {
 					),
 				),
 				array (
+					'key' => $this->slug . $i . '_tel_i_n_kd3244b',
+					'label' => 'Link Dropshadow',
+					'name' => 'cc_style__test_link_d',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_tech0901234ee',
+								'operator' => '==',
+								'value' => 'link',
+							)
+						) 
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => $this->slug . $i . '_techquoccc44b',
 					'label' => 'Quotes Color',
 					'name' => 'cc_style__test_quotes_c',
@@ -1930,6 +2026,30 @@ class ContentCard extends StylingCard {
 					'return_value' => 0,
 					'ext_value' => array (
 					),
+				),
+				array (
+					'key' => $this->slug . $i . '_teq_qopdmcvlas1_s1234b',
+					'label' => 'Quotes Dropshadow',
+					'name' => 'cc_style__test_quotes_d',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_tech0901234ee',
+								'operator' => '==',
+								'value' => 'qoutes',
+							)
+						) 
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
 				),
 				array (
 					'key' => $this->slug . $i . '_5forms192',

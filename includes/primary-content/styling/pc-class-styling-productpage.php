@@ -963,6 +963,7 @@ class ProductPage extends StylingCard {
 
 		if ( have_rows( $style, 'option' ) ) {
 			while ( have_rows( $style, 'option' ) ) {
+				the_row();
 
 				$css .= '<style>';
 
@@ -1216,7 +1217,7 @@ class ProductPage extends StylingCard {
 
 			}
 		} else {
-			$css = '<!-- There are not styles for this style group. -->';
+			$css .= "<!-- There are not styles for this style group. -->";
 		}
 
 		return $css;

@@ -1887,6 +1887,30 @@ class FlexiCard extends StylingCard {
 					'default_value' => 0,
 				),
 				array (
+					'key' => 'fc_' . $i . '_ld_58359123_2313363d',
+					'label' => 'Description Dropshadow',
+					'name' => 'fc_style__co_desc_sh',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_58358b696aa30',
+								'operator' => '==',
+								'value' => 'desc',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
 					'key' => 'fc_' . $i . '_ld_58359406976e4',
 					'label' => 'Price',
 					'name' => '_copy',
@@ -2055,9 +2079,9 @@ class FlexiCard extends StylingCard {
 					'default_value' => 0,
 				),
 				array (
-					'key' => 'fc_' . $i . '_ld_5835994f42427',
+					'key' => 'fc_' . $i . '_ld_5835912_34f42427',
 					'label' => 'Price Dropshadow',
-					'name' => 'fc_style__co_pric_drop',
+					'name' => 'fc_style__co_pric_sh',
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => 0,

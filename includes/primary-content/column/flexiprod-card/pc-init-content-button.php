@@ -36,7 +36,7 @@ if ( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_butt_hover' ) ) {
 }
 
 /* Button dropshadow */
-if ( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_butt_drop' ) ) $fc_style__fcc_css[1] .= 'box-shadow: 2px 2px 6px 0 rgba(0,0,0,.3);';
+if ( get_sub_field( 'fc_style__' . $flexi_attr['prefix'] . '_butt_drop' ) ) $fc_style__fcc_css[1] .= 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);';
 
 /* Set border */
 if ( 
