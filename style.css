@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.1.1928
+Version: 0.1.1929
 Template: genesis
 Template Version: 2.0.23
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -113,4 +113,26 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 
 .product_title_area {
     padding-top: 0;
+}
+
+@media (max-width: 480px) {
+    body.page-template-front-page3 .banner-wrapper.below-header {
+        height: auto!important;
+        max-height: none!important;
+    }
+    
+    body.page-template-front-page3 #startTime.rezdy_date, #endTime.rezdy_date,
+    body.page-template-front-page3 .rezdy_search {
+        width: 100%!important;
+        max-width: 100%!important;
+    }
+
+    body.page-template-front-page3 .banner-wrapper-inner {
+        min-height: 355px!important;
+        background-size: cover!important;
+    }
+
+    body.page-template-front-page3 .home_page_search {
+        margin-top: -75px;
+    }
 }
