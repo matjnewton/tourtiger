@@ -1418,7 +1418,7 @@ class FlexiCard extends StylingCard {
 					'allow_null' => 0,
 					'other_choice' => 0,
 					'save_other_choice' => 0,
-					'default_value' => 'order: 10;margin: auto auto 0;',
+					'default_value' => 'order: 10;',
 					'layout' => 'horizontal',
 				),
 				array (
