@@ -64,4 +64,6 @@ echo $fc_style__fcc_css[0] ? $fc_style__fcc_css[0] : '';
 echo '#pc_wrap .' . $fc_style . '  .fc_style--image_label {' . $fc_style__fcc_css[1] . '}';
 echo '#pc_wrap .' . $fc_style . '  .fc_style--image_label:hover{' . $fc_style__fcc_css_hover . '}';
 
+echo get_sub_field( 'fc_style__la_butt_ver' ) ? '#pc_wrap .' . $fc_style . '  .pc--c__b-wrap-image_label{' . get_sub_field( 'fc_style__la_butt_ver' ) . '}' : '';
+
 ?>

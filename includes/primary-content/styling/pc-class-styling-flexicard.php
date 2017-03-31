@@ -894,6 +894,30 @@ class FlexiCard extends StylingCard {
 					'default_value' => 0,
 				),
 				array (
+					'key' => 'fc_' . $i . '_ld_58356f96e879f',
+					'label' => 'Title Dropshadow',
+					'name' => 'fc_style__imte_drsh',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'title',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow for title',
+					'default_value' => 0,
+				),
+				array (
 					'key' => 'fc_' . $i . '_ld_583571d34dbc6',
 					'label' => 'Description Font',
 					'name' => 'fc_style__imte_font_des',
@@ -1001,6 +1025,30 @@ class FlexiCard extends StylingCard {
 						'id' => '',
 					),
 					'message' => 'Enable underline',
+					'default_value' => 0,
+				),
+				array (
+					'key' => 'fc_' . $i . '_ld_583de79f',
+					'label' => 'Description Dropshadow',
+					'name' => 'fc_style__imte_drop_des',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'desc',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
 					'default_value' => 0,
 				),
 				array (
@@ -1339,6 +1387,38 @@ class FlexiCard extends StylingCard {
 					'other_choice' => 0,
 					'save_other_choice' => 0,
 					'default_value' => 'left',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => 'fc_' . $i . '_la_58359vertical5dfbb',
+					'label' => 'Label vertical position',
+					'name' => 'fc_style__la_butt_ver',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'label',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'order: -1;' => 'Top',
+						'order: 5;margin: auto;' => 'Center',
+						'order: 10;' => 'Bottom',
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'order: 10;margin: auto auto 0;',
 					'layout' => 'horizontal',
 				),
 				array (
