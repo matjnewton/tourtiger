@@ -80,7 +80,8 @@ $section_count = 0;
 
 		                  nextArrow: '<div class="pc__c--arrow-n"><img width="20" src="<?php bloginfo( 'url' ); ?>/wp-content/themes/tourtiger/includes/primary-content/assets/img/slider/arrow-right.png" /></div>',
 
-		                  swipe: false
+		                  swipe: false,
+		                  adaptiveHeight: true
 		                });
 
 		                $('.pc--c__testimonial--slider.js-new-slider').slick({
@@ -95,7 +96,7 @@ $section_count = 0;
 		                });
 
 		                $('.pc--r__scroll.js-new-slider').fadeIn();
-	                }, 100);
+	                }, 200);
 
 	                setTimeout(function(){
 	                  $('.pc--r__scroll, .pc--c__testimonial--slider').removeClass('js-new-slider');
