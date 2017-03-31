@@ -1177,8 +1177,23 @@ div.pc--c__accordion + div.pc--c__accordion {
 }
 
 .pc--c__b-image_text,
-.pc--c__b-image_price,
+.pc--c__b-image_price {
+	z-index: 3;
+	position: relative;
+	margin: 5px auto;
+	width: 100%;
+}
+
+.pc--c__b-wrap-image_label {
+	order: 5;
+	z-index: 3;
+	position: relative;
+	margin: 5px auto;
+	width: 100%;
+}
+
 .pc--c__b-image_label {
+	display: inline-block;
 	z-index: 3;
 	position: relative;
 	margin: 5px auto;

@@ -68,8 +68,10 @@ if ( $tour_flexiprod_image_url ) :
 		<?php endif; ?>
 
 		<?php if ( $label && in_array( 'label', $flexi_attr['image'] ) ) : ?>
-			<div class="pc--c__b-image_label fc_style--image_label">
-				<?php echo $label; ?>
+			<div class="pc--c__b-wrap-image_label">
+				<div class="pc--c__b-image_label fc_style--image_label">
+					<?php echo $label; ?>
+				</div>
 			</div>
 		<?php endif; ?>
 	</<?php echo $image_tag_close; ?>>
