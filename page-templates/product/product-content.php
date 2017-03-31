@@ -35,11 +35,25 @@
 <?php endif; ?>
 
 <!-- include custom style -->
-<?php get_template_part( 'page-templates/product/global-style' ); ?>
+<?php 
 
+if ( get_field( 'is_dzv_prodpage_style' ) ) {
+	echo ProductPage::get_styles( get_field( 'dzv_prodpage_style' ) );
+	?>
+		<script>
+			;(function($){
+				$(function(){
+					$('html').addClass('<?php the_field( 'dzv_prodpage_style' ); ?>');
+				});
+			})(jQuery);
+		</script>
 
+	<?php
+} else {
+ 	get_template_part( 'page-templates/product/global-style' );
+} 
 
-<!-- test -->
+?>
 
 
 

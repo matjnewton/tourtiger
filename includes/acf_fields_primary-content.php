@@ -146,6 +146,75 @@ if(function_exists('acf_add_options_sub_page')) {
 		include( PCA_DIR . '/dependences/pc-hero-area.php' );
 	endif;
 
+	acf_add_local_field_group(array (
+		'key' => 'grloca3bd24st1proddzvone',
+		'title' => 'Product style',
+		'fields' => array(
+			array (
+				'key' => 'is_dzv_prodpage_style',
+				'label' => 'Styles',
+				'name' => 'is_dzv_prodpage_style',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => '',
+				'conditional_logic' => '',
+				'message' => 'Enable',
+				'wrapper' => array (
+					'width' => '40',
+					'class' => '',
+					'id' => '',
+				),
+				'width' => '',
+				'height' => '',
+			),
+			array (
+				'key' => 'dzv_prodpage_style',
+				'label' => 'Product page style',
+				'name' => 'dzv_prodpage_style',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'is_dzv_prodpage_style',
+							'operator' => '==',
+							'value' => 1
+						)
+					)
+				),
+				'wrapper' => array (
+					'width' => '60',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => get_pc_styles_list( 'product_page' ),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'style-one',
+				'layout' => 'horizontal',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'product',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => 1,
+		'description' => '',
+	));
+
 
 }
 
