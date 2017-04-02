@@ -26,10 +26,10 @@
 	            $scope.cpt_product = response.data;
 	            
 	            // only for local
-	            // $scope.message();
-	            // $scope.SetGroupAvailableSeats();
-	            // $scope.messageGroup();
-	            // console.log($scope);
+	            $scope.message();
+	            $scope.SetGroupAvailableSeats();
+	            $scope.messageGroup();
+	            console.log($scope);
 
 	            return cpt_product;
 	    });
@@ -119,8 +119,13 @@
 			return $filter('date')(new Date(diff), 'h', 'UTC');
 		}
 		$scope.duration_to_hours = function(hours ) {
-			var hours = hours/60;
-			return hours;
+			var reshours = hours/60;
+			if ( hours ==1 ) {
+				return '0.1';
+			} else {
+				return reshours;
+			}
+			return hours.toFixed(1);
 		}
 		$scope.get_seatrow = function(array) {
 			var row_time = [];
