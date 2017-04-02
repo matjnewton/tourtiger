@@ -26,10 +26,10 @@
 	            $scope.cpt_product = response.data;
 	            
 	            // only for local
-	            $scope.message();
-	            $scope.SetGroupAvailableSeats();
-	            $scope.messageGroup();
-	            console.log($scope);
+	            // $scope.message();
+	            // $scope.SetGroupAvailableSeats();
+	            // $scope.messageGroup();
+	            // console.log($scope);
 
 	            return cpt_product;
 	    });
