@@ -152,7 +152,7 @@ wp_reset_query();
 
     <?php //get_sidebar('subscribe'); ?>
 
-<? }
+<?php }
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');
 
