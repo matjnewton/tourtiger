@@ -1,7 +1,12 @@
 (function () {
     "use strict";
-    var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter']);
 
+    angular.element('.primary_content_availability_checker').ready(function() {
+	  angular.bootstrap('.primary_content_availability_checker', ['wqs_xola_check']);
+	});
+
+
+    var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter']);
 
 // config
     wqs_xola_check.config(['$httpProvider', function( $httpProvider) {
@@ -40,6 +45,9 @@
 	// check avalable 
 	var wqs_productcode = $('#wqs_productcode').val();
 	$scope.wqs_productcode = wqs_productcode;
+	
+	// multi
+	var scopeid = $scope.$id.toString();
 
 	// load api key
         //console.log(js_var.apikey);
@@ -72,6 +80,12 @@
 		            if (wqs_productcode == products.id) {
 		            	promises.push(promiseObj_xola);
 		            }
+		            // multi check available 
+		            // var scopeid = $scope.$id.toString();
+		            var wqs_our_tours_checker_forgroup_ = $('#wqs_our_tours_checker_forgroup_'+scopeid).val();
+	            	if (wqs_our_tours_checker_forgroup_ == products.id) {
+		            	promises.push(promiseObj_xola);
+		            }
 		            // promises.push(promiseObj_xola);
 		        });
 	          
@@ -86,6 +100,7 @@
 					// init seats available for first time
 					$scope.initAvailable();
 
+					
 					
 		        });//end promises
 
@@ -111,7 +126,12 @@
 		        			});
 		        			//console.log($filter('objLength')(api_availability2));
 		        			var minheight = $filter('objLength')(api_availability2);
-		        			$('.availability_checker_options').css('min-height', 33*minheight);
+		        			if (wqs_productcode == 0) {
+		        				$('.availability_checker_options_'+scopeid).css('min-height', 33*minheight);
+		        			} else {
+		        				$('.availability_checker_options').css('min-height', 33*minheight);
+		        			}
+		        			// $('.availability_checker_options').css('min-height', 33*minheight);
 		        		}
 		        	 });
 		        });//end init
@@ -146,11 +166,23 @@
 	    $scope.changedValueNext = function(item, time){
 	       $scope.loading = true;       
 		   //console.log(item);
-	       var correct = moment.utc(item).add(time, 'days').format('YYYY-MM-DD'); //crosfix
+		   	
+		   	//update for multi
+			if (wqs_productcode == 0) {
+				var multiitem = $('.startTime_check_'+scopeid).val();
+				var correct = moment.utc(multiitem).add(time, 'days').format('YYYY-MM-DD'); //crosfix
+				$('.startTime_check_'+scopeid).data('daterangepicker').setStartDate(correct);
+	       		$('.startTime_check_'+scopeid).data('daterangepicker').setEndDate(correct);
+			} else {
+				var correct = moment.utc(item).add(time, 'days').format('YYYY-MM-DD'); //crosfix
+				$('#startTime_check').data('daterangepicker').setStartDate(correct);
+	       		$('#startTime_check').data('daterangepicker').setEndDate(correct);
+			}
+
+	       //var correct = moment.utc(item).add(time, 'days').format('YYYY-MM-DD'); //crosfix
 	       console.log(correct);
-	       //$('#startTime_check').val(correct);
-	       $('#startTime_check').data('daterangepicker').setStartDate(correct);
-	       $('#startTime_check').data('daterangepicker').setEndDate(correct);
+	       // $('#startTime_check').data('daterangepicker').setStartDate(correct);
+	       // $('#startTime_check').data('daterangepicker').setEndDate(correct);
 		   $scope.timeSelected = correct;
 		   $scope.check_availability_xola();
 			$timeout(function(){
@@ -160,12 +192,24 @@
 		}
 		$scope.changedValuePrev = function(item, time){
 	       $scope.loading = true;       
-		   //console.log(item);
-	       var correct = moment.utc(item).subtract(time, 'days').format('YYYY-MM-DD'); //crosfix
+		    //console.log(item);
+			
+			//update for multi
+			if (wqs_productcode == 0) {
+				var multiitem = $('.startTime_check_'+scopeid).val();
+				var correct = moment.utc(multiitem).subtract(time, 'days').format('YYYY-MM-DD'); //crosfix
+				$('.startTime_check_'+scopeid).data('daterangepicker').setStartDate(correct);
+	       		$('.startTime_check_'+scopeid).data('daterangepicker').setEndDate(correct);
+			} else {
+				var correct = moment.utc(item).subtract(time, 'days').format('YYYY-MM-DD'); //crosfix
+				$('#startTime_check').data('daterangepicker').setStartDate(correct);
+	       		$('#startTime_check').data('daterangepicker').setEndDate(correct);
+			}
+
+	       //var correct = moment.utc(item).subtract(time, 'days').format('YYYY-MM-DD'); //crosfix
 	       console.log(correct);
-	       //$('#startTime_check').val(correct);
-	       $('#startTime_check').data('daterangepicker').setStartDate(correct);
-	       $('#startTime_check').data('daterangepicker').setEndDate(correct);
+	       // $('#startTime_check').data('daterangepicker').setStartDate(correct);
+	       // $('#startTime_check').data('daterangepicker').setEndDate(correct);
 		   $scope.timeSelected = correct;
 		   $scope.check_availability_xola();
 			$timeout(function(){
@@ -240,7 +284,9 @@
 		        return api_products_xola;
 		   	}).then(function(api_products_xola){
 		         angular.forEach(api_products_xola, function(products, key) {
-		            var promiseObj_xola=dataServiceXolaAjax.getData(products.id);
+		         	//update for multi 
+		         	//var promiseObj_xola=dataServiceXolaAjax.getData(products.id);
+		            var promiseObj_xola=dataServiceXolaAjax.getData(products.id,scopeid,wqs_productcode);
 		            promiseObj_xola.then(function(value, products) { 
 
 		            });
@@ -251,7 +297,11 @@
 		            if (wqs_productcode == products.id) {
 		            	promises_click.push(promiseObj_xola);
 		            }
-
+		            // multi check available 
+		            var wqs_our_tours_checker_forgroup_ = $('#wqs_our_tours_checker_forgroup_'+scopeid).val();
+	            	if (wqs_our_tours_checker_forgroup_ == products.id) {
+		            	promises_click.push(promiseObj_xola);
+		            }
 					
 
 		        });
@@ -267,7 +317,7 @@
 
 			        $scope.initAvailable();
 			        // $(".timeSelected option:eq(0)").prop('selected', true);
-					
+					console.log($scope);
 		        });
 
 		}); //end then
@@ -366,12 +416,19 @@
 // Xola dataServiceAjax for click Xola
     wqs_xola_check.factory('dataServiceXolaAjax', function($http, $q, $filter){
         return{
-            getData: function(productCode,startTime,endTime){
+            getData: function(productCode,scopeid,wqs_productcode){
                 var deferred = $q.defer();
         
 
 	        //var datepicker_from = $("#datepicker-from-input").val();
 	        var datepicker_from = $('#startTime_check').val();
+	        
+
+	        //multi 
+	        console.log(scopeid);
+	        var startTime_check_id = $('.startTime_check_'+scopeid).val();
+	        console.log('startTime_check_id');console.log(startTime_check_id);
+
 	        var datepicker_to = $("#datepicker-to-input").val();
 	        var tour_cat_arr = $(".checkbox_term:checked").map(function() {
 	            return $(this).val();         
@@ -385,8 +442,19 @@
 		    	angular.element('[ng-controller=wqs_search_controller]').scope().search_tour_cat = 'all';
 		    }
 
-			    var startTime = datepicker_from;
+			// var startTime = datepicker_from;
+			// var endTime = startTime;
+			
+			//update for multi
+			if (wqs_productcode == 0) {
+				var startTime = startTime_check_id; //multi enable
 				var endTime = startTime;
+			} else {
+				var startTime = datepicker_from;
+				var endTime = startTime;				
+			}
+			console.log('startTime:');console.log(startTime);
+
  				var endTime_plus1 = moment(endTime).add(1, 'days').format('YYYY-MM-DD'); //crossfix
 				var daysOfYear = [];
 				daysOfYear.push( startTime ); //crossfix

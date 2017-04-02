@@ -29,6 +29,7 @@
 			}
 			else if ($integrate_xola_with_this_website) {
 				get_template_part( 'page-templates/product/block-availabilitychecker_xola' );
+				get_template_part( 'page-templates/product/block-availabilitychecker_xola_group' );
 			}
 		?>
     <?php endwhile; ?>

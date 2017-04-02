@@ -9,7 +9,7 @@ function wqs_load_scripts_xola()
     wp_register_script('wqs_functions_xola', WQS_XOLA_URL . '/js/functions.js');
     wp_register_script('wqs_functions_for_search_box_xola', WQS_XOLA_URL . '/js/functions_for_search_box.js');
     wp_register_script('wqs_functions_for_check_available_xola', WQS_XOLA_URL . '/js/functions_for_check_available.js');
-
+ 
     wp_enqueue_script('wqs_functions_xola');
     wp_enqueue_script('wqs_functions_for_search_box_xola');
     wp_enqueue_script('wqs_functions_for_check_available_xola');
@@ -27,8 +27,13 @@ function wqs_load_scripts_xola()
     wp_localize_script( 'wqs_functions_for_check_available_xola', 'js_var', 
         array( 
             'userid_key' => get_field('field_n1993k2903_xola', 'option'),
+            'integrate_rezdy' => get_field('rezdy', 'option'),
+            'integrate_xola' => get_field('integrate_xola_with_this_website', 'option'),
+            'wqs_api_url' => get_home_url( null, 'wp-json/wqs-api/tour_product_api'),
+            'xola_group_tours' => get_field('xola_group_tours', 'option')
              )
     );
+
 }
 
 add_action('wp_enqueue_scripts', 'wqs_load_scripts_xola');

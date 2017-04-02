@@ -77,6 +77,7 @@ function get_cpt_tours_select_checker($field) {
 	$integrate_xola_with_this_website = get_field('integrate_xola_with_this_website', 'option');
 	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
 	$rezdy_group_tours = get_field('rezdy_group_tours', 'option');
+	$xola_group_tours = get_field('xola_group_tours', 'option');
 
 	//xola
 	if( have_rows('matching_products_xola', 'option') && $integrate_xola_with_this_website ): 
@@ -101,7 +102,15 @@ function get_cpt_tours_select_checker($field) {
 	if ($rezdy_group_tours) {
 		$our_tours = array_merge($our_tours,$our_tours_group);
 	}
-
+	//Xola group
+	if( have_rows('matching_products_group_xola', 'option') && $integrate_xola_with_this_website ): 
+		while( have_rows('matching_products_group_xola', 'option') ): the_row(); 
+			$our_tours_group[] = get_sub_field('our_tours_group_xola');
+		endwhile; 
+	endif;
+	if ($xola_group_tours) {
+		//$our_tours = array_merge($our_tours,$our_tours_group);
+	}
 
 	foreach ($our_tours as $res){
 		$post_type = get_post_type( $res );
@@ -110,6 +119,36 @@ function get_cpt_tours_select_checker($field) {
 	 return $field;
 } 
 add_filter('acf/load_field/name=our_tours_checker', 'get_cpt_tours_select_checker');
+
+function get_cpt_tours_select_checker_group($field) {
+	$field['choices'] = array();
+	$our_tours_group = array(); 
+
+	$integrate_xola_with_this_website = get_field('integrate_xola_with_this_website', 'option');
+	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
+	$rezdy_group_tours = get_field('rezdy_group_tours', 'option');
+	$xola_group_tours = get_field('xola_group_tours', 'option');
+
+	if ($integrate_xola_with_this_website && $xola_group_tours) {
+		global $wpdb;
+	    $table = $wpdb->prefix."options";
+	    $query = "SELECT * FROM ".$table." WHERE `option_name` =  'options_check_user_id_xola'";
+	    $results = $wpdb->get_row($query);
+	    $api_key = $results->option_value;
+
+	    $product_url = "https://silent.xola.com/api/experiences?_format=json&seller=".$api_key;
+
+	    $json = file_get_contents($product_url);
+	    $xola = json_decode($json);
+	    foreach($xola->data as $key=>$product){
+	    	$field['choices'][ $product->id ] = $product->name;
+	    }	
+	} else {
+		 $field['choices']['0'] = 'not available';
+	}
+	return $field;
+} 
+add_filter('acf/load_field/name=our_tours_checker_forgroup', 'get_cpt_tours_select_checker_group');
 
 // xola
 function get_cpt_tours_select_xola($field) {

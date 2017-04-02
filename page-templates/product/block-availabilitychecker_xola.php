@@ -4,7 +4,7 @@
 	        $our_tours_checker = get_sub_field('our_tours_checker'); ?>
 	        <?php //var_dump($our_tours_checker); ?>
 
-	        <div class="product_content_wrapper primary_content_availability_checker " ng-app="wqs_xola_check" ng-cloak>
+	        <div id="availability_checker" class="product_content_wrapper primary_content_availability_checker " ng-cloak>
 				<div class="container_availability_checker" ng-controller="wqs_search_controller">	
 					
 					<input type="hidden" id="wqs_api_url" value="<?php echo getWqsApiUrl(); ?>">

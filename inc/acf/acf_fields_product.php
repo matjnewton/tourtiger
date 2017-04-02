@@ -3319,6 +3319,39 @@ acf_add_local_field_group(array (
 					),
 				), // end availability_checker
 
+				// availability_checker for Goup
+				array (
+					'key' => '57fe33ac7b26f_availability_checker_forgroup',
+					'name' => 'primary_content_availability_checker_forgroup',
+					'label' => 'Multiple Availability checker',
+					'display' => 'row',
+					'sub_fields' => array (
+						array(
+		                    "key"=> "field_57eb6b9ad8aaf_availability_checker_forgroup",
+		                    "label"=> "Select Tour",
+		                    "name"=> "our_tours_checker_forgroup",
+		                    "type"=> "select",
+		                    "instructions"=> "available all tours in API",
+		                    "required"=> 0,
+		                    "conditional_logic"=> 0,
+		                    "wrapper"=> array(
+		                        "width"=> "",
+		                        "class"=> "",
+		                        "id"=> "",
+		                    ),
+		                    "choices"=> array(),
+		                    "default_value"=> array(),
+		                    "allow_null"=> 0,
+		                    "multiple"=> 0,
+		                    "ui"=> 0,
+		                    "ajax"=> 0,
+		                    "placeholder"=> "",
+		                    "disabled"=> 0,
+		                    "readonly"=> 0,
+		                ),
+					),
+				), // end availability_checker
+
 				'min' => '',
 				'max' => '',
 			),//end layout
