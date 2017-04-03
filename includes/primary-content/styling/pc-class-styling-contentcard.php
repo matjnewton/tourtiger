@@ -799,8 +799,26 @@ class ContentCard extends StylingCard {
 					'default_value' => 0,
 				),
 				array (
-					'key' => $this->slug . $i . '_5837001a7a445',
+					'key' => $this->slug . $i . '_58370color7a445',
 					'label' => 'Choose link color',
+					'name' => 'cc_style__editor_color-link',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5837001a7a445',
+					'label' => 'Choose link hover color',
 					'name' => 'cc_style__editor_link',
 					'type' => 'rgba_color',
 					'instructions' => '',

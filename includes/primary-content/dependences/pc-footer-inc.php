@@ -95,6 +95,8 @@ $section_count = 0;
 						  autoplaySpeed: 5000,
 		                });
 
+		                $('.pc--r__scroll').slick('setOption', 'height', null, true);
+
 		                $('.pc--r__scroll.js-new-slider').fadeIn();
 	                }, 200);
 
