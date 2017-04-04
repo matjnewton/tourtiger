@@ -25,8 +25,10 @@
 
 	if ( get_sub_field( 'tour_pc-colums--margin' ) == 'none' ) {
 		$tour_column_classes .= ' pc--r__mar-none';
+		$include_margins = false;
 	} elseif ( get_sub_field( 'tour_pc-colums--margin' ) == 'normal' ) {
 		$tour_column_classes .= ' pc--r__mar-normal';
+		$include_margins = true;
 	}
 
 	if ( get_sub_field( 'tour_pc-colums--position' ) == 'top' ) {
