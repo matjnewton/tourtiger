@@ -82,6 +82,10 @@
 
 				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-form.php' );
 
+			} elseif ( get_row_layout() == 'tt_column' ) {
+
+				include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-tripdetail.php' );
+
 			}
 
 		endwhile; 

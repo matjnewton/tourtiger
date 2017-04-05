@@ -1335,6 +1335,28 @@ acf_add_local_field_group(array (
 																	'display' => 'row',
 																	'sub_fields' => array (
 																		array (
+																			'key' => 'tt_details_headline',
+																			'label' => 'Headline',
+																			'name' => 'tt_details_headline',
+																			'type' => 'text',
+																			'instructions' => '',
+																			'required' => 0,
+																			'conditional_logic' => 0,
+																			'wrapper' => array (
+																				'width' => '100',
+																				'class' => '',
+																				'id' => '',
+																			),
+																			'default_value' => '',
+																			'placeholder' => '',
+																			'prepend' => '',
+																			'append' => '',
+																			'formatting' => 'none',
+																			'maxlength' => '',
+																			'readonly' => 0,
+																			'disabled' => 0,
+																		),
+																		array (
 																			'key' => 'tt_details_opt',
 																			'label' => 'Trip Details',
 																			'name' => 'tt_details_opt',
