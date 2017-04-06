@@ -969,7 +969,7 @@ if( $tiles_area ):
                             switch( $tile_row ):
                                 case 'tours':
                                     $pulled_specific = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' .$tile_count. '_pull_specific_from', true );
-                                    
+                                    $button_label = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' .$tile_count. '_button_label', true );
                             if($pulled_specific):
                             $post = $pulled_specific;
                             setup_postdata( $post );
