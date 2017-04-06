@@ -117,7 +117,7 @@
                         <?php
                                                 for( $j = 0; $j < $details_list; $j++ ):
                                                     $label = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_details_list_' . $j . '_label', true ));
-                                                    $text = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_details_list_' . $j . '_text', true ));
+                                                    $text = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_details_list_' . $j . '_text', true ));
                         ?>
                             <li class="row">
                                 <div class="col-xs-3 details-label">
