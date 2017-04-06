@@ -11,8 +11,8 @@ function tourtiger_before_content(){ ?>
     
 <?php }*/
 
-/*remove_action('genesis_loop', 'genesis_do_loop');
-add_action('genesis_loop', 'tourtiger_sub_contents');*/
+remove_action('genesis_loop', 'genesis_do_loop');
+add_action('genesis_loop', 'be_landing_page_content');
 function be_landing_page_content(){ ?>
 
     <?php //get_template_part('includes/front1_sections'); ?>
@@ -20,16 +20,16 @@ function be_landing_page_content(){ ?>
     <?php get_sidebar('subscribe_gpm'); ?>
     
 <?php }
-add_action( 'be_content_area', 'be_landing_page_content' );
+//add_action( 'be_content_area', 'be_landing_page_content' );
 
-//remove_action('genesis_sidebar', 'genesis_do_sidebar');
+remove_action('genesis_sidebar', 'genesis_do_sidebar');
 
 // Remove 'site-inner' from structural wrap
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets', 'footer' ) );
+//add_theme_support( 'genesis-structural-wraps', array( 'header', 'site-inner', 'footer-widgets', 'footer' ) );
 
-//genesis();
+genesis();
 
 // Build the page
-get_header();
+/*get_header();
 do_action( 'be_content_area' );
-get_footer();
+get_footer();*/

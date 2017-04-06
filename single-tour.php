@@ -13,8 +13,8 @@
 
 //* This file handles single entries, but only exists for the sake of child theme forward compatibility.
 
-/*remove_action('genesis_loop', 'genesis_do_loop');
-add_action('genesis_loop', 'tourtiger_sub_contents');*/
+remove_action('genesis_loop', 'genesis_do_loop');
+add_action('genesis_loop', 'be_landing_page_content');
 
 function be_landing_page_content(){ ?>
     
@@ -22,15 +22,15 @@ function be_landing_page_content(){ ?>
     <?php //get_sidebar('subscribe'); ?>
     
 <?php }
-add_action( 'be_content_area', 'be_landing_page_content' );
-//remove_action('genesis_sidebar', 'genesis_do_sidebar');
+//add_action( 'be_content_area', 'be_landing_page_content' );
+remove_action('genesis_sidebar', 'genesis_do_sidebar');
 
 // Remove 'site-inner' from structural wrap
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets', 'footer' ) );
+//add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets', 'footer' ) );
 
-//genesis();
+genesis();
 
 // Build the page
-get_header();
+/*get_header();
 do_action( 'be_content_area' );
-get_footer();
+get_footer();*/
