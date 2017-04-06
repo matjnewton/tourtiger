@@ -57,11 +57,12 @@ function tourtiger_scripts_method() {
 		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
 		wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
 		
-		$integrate_trekksoft = get_field('trekksoft','option');
+		include(locate_template('partials/social_media_gpm.php' ));
+		/*$integrate_trekksoft = get_field('trekksoft','option');
 		$trekksoft_account = get_field('trekksoft_account','option');
 		$integrate_xola = get_field('integrate_xola_with_this_website','option');
 		$integrate_rezdy = get_field('rezdy','option');
-		$integrate_regiondo = get_field('regiondo','option');
+		$integrate_regiondo = get_field('regiondo','option');*/
 		
 		if($integrate_trekksoft && $trekksoft_account):
 		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
@@ -90,7 +91,9 @@ function tourtiger_scripts_method() {
         wp_script_add_data( 'ie8js', 'conditional', 'IE 8' );*/
 		wp_enqueue_script( 'bootstrapjs' );
 		//wp_enqueue_script( 'ie_row_fix' );
-		$integrate_getinsellout = get_field('getinsellout','option');
+		
+		//$integrate_getinsellout = get_field('getinsellout','option');
+		$integrate_getinsellout = get_option( 'options_getinsellout' );
 		if($integrate_getinsellout):
 		wp_enqueue_script('colorbox');
 		wp_enqueue_script('application1');
@@ -323,7 +326,7 @@ function above_header(){
 remove_action('genesis_header', 'genesis_do_header');
 add_action('genesis_header', 'tourtiger_header');
 function tourtiger_header(){
-    	require(CHILD_DIR.'/tourtiger-header.php');
+    	require(CHILD_DIR.'/tourtiger-header_gpm.php');
 }
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -332,7 +335,7 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 remove_action('genesis_footer', 'genesis_do_footer');
 add_action('genesis_footer', 'tourtiger_footer');
 function tourtiger_footer(){
-    require(CHILD_DIR.'/tourtiger-footer.php');
+    require(CHILD_DIR.'/tourtiger-footer_gpm.php');
 }
 
 /*layout settings*/
@@ -409,14 +412,14 @@ function acf_load_third_party_field_choices( $field ) {
     
     
     // get the textarea value from options page without any formatting
-    
-    $integrate_xola = get_field('integrate_xola_with_this_website','option');
+    include(locate_template('includes/integrate_vars_gpm.php' ));
+    /*$integrate_xola = get_field('integrate_xola_with_this_website','option');
     $integrate_peek = get_field('integrate_peek_with_this_website','option');
     $integrate_fareharbor = get_field('fareharbor','option');
     $integrate_getinsellout = get_field('getinsellout','option');
     $integrate_trekksoft = get_field('trekksoft','option');
     $integrate_rezdy = get_field('rezdy','option');
-    $integrate_regiondo = get_field('regiondo','option');
+    $integrate_regiondo = get_field('regiondo','option');*/
     
     if($integrate_xola):
     $choices = get_field('xola_values', 'option', false);
@@ -464,15 +467,15 @@ add_filter('acf/load_field/name=third_party', 'acf_load_third_party_field_choice
 include_once(dirname(__FILE__).'/includes/acf_fields.php');
 
 //include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
-include_once(dirname(__FILE__).'/includes/menus.php');
-include_once(dirname(__FILE__).'/includes/mobile-menus.php');
+include_once(dirname(__FILE__).'/includes/menus_gpm.php');
+include_once(dirname(__FILE__).'/includes/mobile-menus_gpm.php');
 require_once(dirname(__FILE__).'/includes/aq_resizer.php');
 
 function tourtiger_background_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css">' . "\n";
-        require(CHILD_DIR.'/background.php');
+        require(CHILD_DIR.'/background_gpm.php');
         echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n"; }
@@ -1312,8 +1315,8 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-        
-        $integrate_xola = get_field('integrate_xola_with_this_website','option');
+        include(locate_template('includes/integrate_vars_gpm.php' ));
+        /*$integrate_xola = get_field('integrate_xola_with_this_website','option');
         $integrate_peek = get_field('integrate_peek_with_this_website','option');
         $integrate_fareharbor = get_field('fareharbor','option');
         $fareharbor_shortname = get_field('fareharbor_shortname','option');
@@ -1323,7 +1326,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $getinsellout_data_evt = get_field('getinsellout_data_evt','option');
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_rezdy = get_field('rezdy','option');
-        $integrate_regiondo = get_field('regiondo','option');
+        $integrate_regiondo = get_field('regiondo','option');*/
         
         // get thumbnail
         $thumbnail = '';
