@@ -223,7 +223,7 @@ endif;
 <?php
                         for( $tcc = 0; $tcc < $content; $tcc++ ):
                             $subheading = get_post_meta( get_the_ID(), 'multi_column_area_' . $mca_count . '_content_' . $tcc . '_subheading', true );
-                            $textarea = wpautop(get_post_meta( get_the_ID(), 'multi_column_area_' . $mca_count . '_content_' . $tcc . '_textarea', true ));
+                            $textarea = nl2br(get_post_meta( get_the_ID(), 'multi_column_area_' . $mca_count . '_content_' . $tcc . '_textarea', true ));
 ?>
                 <li class="col-sm-4<?php //if($m == 3): echo " col-sm-offset-3 col-md-offset-0"; endif; ?> col-md-4">
                     <?php if($subheading): ?>
@@ -384,7 +384,7 @@ if( $sections ):
         <?php
                     for( $j = 0; $j < $columns_set; $j++ ):
                         $subheading = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_subheading', true ));
-                        $textarea = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_textarea', true ));
+                        $textarea = nl2br( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_textarea', true ));
         ?>
             <li class="col-sm-4 col-md-4">    
                 <?php if($subheading): ?>
@@ -514,7 +514,7 @@ if( $sections ):
                                 $pull = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_pull', true );
                                 $color_style = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_background_color_style', true );
                                 $heading = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_heading', true );
-                                $textarea = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_textarea', true ));
+                                $textarea = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_textarea', true ));
                                 $button_text = esc_html(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_button_text', true ));
                                 $button_link = esc_html(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $bs_count . '_button_link', true ));
                             ?>
@@ -640,7 +640,7 @@ if( $sections ):
                             $third_party = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_third_party', true );
                             $use_as_integration_link = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_use_as_third_party_integration_link', true );
                             $link = esc_html(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_link', true ));
-                            $excerpt = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_excerpt', true ));
+                            $excerpt = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_excerpt', true ));
                             $mobd = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_multi_option_button_dropdown', true );
                                
                             ?>
