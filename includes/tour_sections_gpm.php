@@ -149,7 +149,7 @@
                                                     $img = (int) get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list_' . $k . '_image', true );
                                                     $img_url = wp_get_attachment_url( $img,'full');
                                                     $image = aq_resize( $img_url, 600, 258, true );
-                                                    $paragraph = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list_' . $k . '_paragraph', true ));      
+                                                    $paragraph = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list_' . $k . '_paragraph', true ));      
                         ?>
                             <div class="row">
                                 <div class="col-sm-12 itinerary-inner-offset">
@@ -194,7 +194,7 @@
                                                     $img_url = wp_get_attachment_url( $img,'full');
                                                     $image = aq_resize( $img_url, 715, 303, true );
                                                     $images = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_gallery', true );
-                                                    $paragraph = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_paragraph', true ));
+                                                    $paragraph = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_paragraph', true ));
                                                     $custom_options = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_custom_options', true );  
                         ?>
                         <div class="trip-item">
@@ -279,7 +279,7 @@
                                         <ul class="td-list">
                                         <?php for( $p = 0; $p < $list_item; $p++ ): 
                                                 $icon = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_list_item_' . $p . '_icons', true );
-                                                $description = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_list_item_' . $p . '_description', true ));
+                                                $description = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_list_item_' . $p . '_description', true ));
                                         ?>
                                             <li class="row">
                                                 <div class="col-md-4 col-lg-4">
