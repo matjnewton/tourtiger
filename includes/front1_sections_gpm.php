@@ -265,7 +265,7 @@ if( $headline_content ):
                         for( $hc = 0; $hc < $headline_content; $hc++ ):
                             $headline_align = get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_headline_text_align', true );
                             $headline = get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_headline', true );
-                            $subcontent = wpautop(get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_subcontent', true ));
+                            $subcontent = apply_filters('the_content', get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_subcontent', true ));
                             $embed = get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_embed', true );
                             $view_tours = get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_view_tours_link', true );
                 ?>
@@ -419,7 +419,7 @@ if( $sections ):
                     for( $k = 0; $k < $contents_set; $k++ ):
                         $heading_align = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_contents_set_' . $k . '_heading_text_align', true );
                         $heading = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_contents_set_' . $k . '_heading', true );
-                        $content_editor = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_contents_set_' . $k . '_content_editor', true ));
+                        $content_editor = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_contents_set_' . $k . '_content_editor', true ));
                         $embed = esc_html(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_contents_set_' . $k . '_embed', true ));
                         $view_tours = esc_html(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_contents_set_' . $k . '_view_tours_link', true ));
         ?>
@@ -836,11 +836,11 @@ if( $sections ):
                 <?php
                 case 'content':
                     $heading = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_heading', true );
-                    $content_editor = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_content_editor', true ));
+                    $content_editor = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_content_editor', true ));
                     $embed = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_embed', true );
                     $enable_expandable_content = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_enable_expandable_content', true );
                     $open_label = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_open_label', true );
-                    $expandable_content = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_expandable_content', true ));
+                    $expandable_content = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_expandable_content', true ));
                 ?>
     <div class="container">
         <div class="testimonials c-editor-wrapper">

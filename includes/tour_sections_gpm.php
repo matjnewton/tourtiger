@@ -99,7 +99,7 @@
                         <?php                  
                                         break;
                                         case 'content_editor':
-                                            $content = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_content', true ));
+                                            $content = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_content', true ));
                                             $linked_to_button = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_linked_to_button', true );
                         ?>
                         <div>
@@ -243,7 +243,7 @@
                                     ?>
                                     <?php
                                     $label = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_details_list_' .$mn. '_label', true ));
-                                    $text = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_details_list_' .$mn. '_text', true ));
+                                    $text = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_details_list_' .$mn. '_text', true ));
                                     ?>
                                         <li class="row details-row">
                                             <div class="col-sm-3 details-label">
@@ -409,7 +409,7 @@
                                         break;
                                         case 'subsection':
                                             $subheadline = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_headline', true );
-                                            $subcontent = wpautop(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_content_editor', true ));
+                                            $subcontent = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_content_editor', true ));
                                         ?>
                                         <div class="item">
                                             <?php if($subheadline): ?>
