@@ -1124,6 +1124,7 @@ line-height: 40px;
   font-size: 18px;
   margin-left: -84px;
   margin-top: 10px;
+  font-family: PT Sans Narrow;
 }
 #vinetrekker_piker .calendar-table {
       width: 325px;
@@ -1259,9 +1260,27 @@ line-height: 40px;
     border: solid 1px #979797;
     border-radius: inherit;
     font-weight: 500;
-    width: 255px;
+    /*width: 255px;*/
     font-family: Roboto;
 }
+#num_people {
+    font-size: 20px;
+    height: 60px;
+    border: 2px solid white;
+    color: #797979;
+    background: white;
+    border: solid 1px #979797;
+    border-radius: inherit;
+    font-weight: 500;
+    /*width: 255px;*/
+    font-family: Roboto;
+}
+/*.num_people-wrap {
+  margin-top: -35px;
+}*/
+/*.num_people-label {
+  
+}*/
 #startTime.rezdy_date:focus,
 #endTime.rezdy_date:focus {
     outline: inherit;

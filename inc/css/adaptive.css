@@ -17,6 +17,13 @@
 	}
 }
 @media screen and (max-width: 991px) {
+	/*search-box atlas*/
+/*	.num_people-label {
+		display: none;
+	}
+	.num_people-wrap {
+	  margin-top: 0px;
+	}*/
 /*search template*/
 	#searchfilter .datepicker-instructions {
 		font-size: 20px;
@@ -47,6 +54,10 @@
 	}
 }
 @media screen and (max-width: 767px) {
+	/*serach-box atlas*/
+	.integrate_atlasx_with_this_website {
+		
+	}
 /*search template*/
 	.page-template-rezdy_search .anrow2 div.search-tumb-wrap img {
 		width: 100%;

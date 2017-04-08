@@ -64,6 +64,7 @@ foreach ($dirs as $dir) {
 $integrate_xola = get_field('integrate_xola_with_this_website', 'option');
 $integrate_rezdy = get_field('rezdy', 'option');
 $integrate_api = true;
+$integrate_atlasx = get_field('integrate_atlasx_with_this_website', 'option');
 
 // enable integrate, load cpt, angularjs
 if ($integrate_api) {
@@ -79,4 +80,9 @@ if ($integrate_rezdy) {
 // xola api function + angular
 if ($integrate_xola) {
    require_once CORE_PATH.'/xola_api/init.php';
+}
+
+//atlasx api function 
+if (!$integrate_xola && $integrate_atlasx) {
+   require_once CORE_PATH.'/atlasx_api/init.php';
 }

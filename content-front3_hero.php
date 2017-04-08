@@ -29,7 +29,15 @@ if( have_rows('hero_area') ):
 
     <!-- update dgamoni get search settings -->
     <?php global $search_content; ?>
-    <?php get_template_part( 'page-templates/search/search_box_settings' ); ?>
+    <?php 
+    $integrate_atlasx_with_this_website = get_field('integrate_atlasx_with_this_website', 'option');
+
+    if ($integrate_atlasx_with_this_website) {
+        get_template_part( 'page-templates/search/search_box_settings_atlas' ); 
+    } else {
+        get_template_part( 'page-templates/search/search_box_settings' ); 
+    }
+    ?>
 
      <section class="banner"<?php if($text_align == 'Center'): echo ' style="text-align:center;"'; endif;?>>
         <?php if($transparent_background == true): ?>
