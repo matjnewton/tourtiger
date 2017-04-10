@@ -3,6 +3,7 @@
 <?php 
 	$integrate_xola_with_this_website = get_field('integrate_xola_with_this_website', 'option');
 	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
+	$integrate_atlasx = get_field('integrate_atlasx_with_this_website', 'option');
 ?>
 <!-- primary_content_special_content -->
 <?php if( have_rows('primary_content_options') ): $primary_content_options_count = 0; ?>
@@ -30,6 +31,9 @@
 			else if ($integrate_xola_with_this_website) {
 				get_template_part( 'page-templates/product/block-availabilitychecker_xola' );
 				get_template_part( 'page-templates/product/block-availabilitychecker_xola_group' );
+			} 
+			else if ($integrate_atlasx) {
+				get_template_part( 'page-templates/product/block-availabilitychecker_atlas' );
 			}
 		?>
     <?php endwhile; ?>

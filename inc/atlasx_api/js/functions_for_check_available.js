@@ -20,7 +20,7 @@
 
 
 // controler
-    wqs_xola_check.controller('wqs_search_controller', function ($scope, $http, $q, dataServiceXolaAjax, $timeout, $filter, $window, dataServiceXola) {
+    wqs_xola_check.controller('wqs_search_controller', function ($scope, $http, $q, dataServiceXolaAjax, $timeout, $filter, $window, dataServiceXola, GetUrlParameter, dataServiceAtlas, dataServiceAtlasAjax) {
     	//console.log('load wqs_search_controller');
 	// load cpt product
 	    var wqs_api_url = jQuery('#wqs_api_url').val(); 
@@ -32,15 +32,16 @@
 	            return cpt_product;
 	    });
 
-	// load option
-	$scope.integrate = {};
-	$scope.integrate.integrate_rezdy = js_var.integrate_rezdy;
-	$scope.integrate.integrate_xola = js_var.integrate_xola;
+
 
 	// var
 		var data = {};
         var promises = [];
 		var promises_click = [];
+
+	//numpeople
+		var people = GetUrlParameter.getURL('num_people');
+		$scope.num_people = people;
 
 	// check avalable 
 	var wqs_productcode = $('#wqs_productcode').val();
@@ -61,7 +62,7 @@
 	//https://silent.xola.com/api/experiences/56098357cf8b9cc6348b45f0/availability?_format=json&start=2016-11-26&end=2016-11-26
 	//https://silent.xola.com/api/availability?_format=json&seller=5605b264926705ac758b45c8&start=2016-11-26&end=2016-11-26
 
-		$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+		$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_atlas.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -72,7 +73,7 @@
 		        return api_products_xola;
 		   	}).then(function(api_products_xola){
 		         angular.forEach(api_products_xola, function(products, key) {
-		            var promiseObj_xola=dataServiceXola.getData(products.id);
+		            var promiseObj_xola=dataServiceAtlas.getData(products.id);
 		            promiseObj_xola.then(function(value, products) { 
 
 		            });
@@ -268,12 +269,12 @@
 
     // click availability use factory dataServiceAjax.getData
     $scope.check_availability_xola= function() {
-    	console.log('click xola');
+    	console.log('click atlas');
     	$(".timeSelected option:eq(0)").prop('selected', true);
     	var promises_click = [];
 		$scope.loading = true;
 		//$scope.api_availability_xola = null; // clear
-    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var.userid_key+'')
+    	$http.get('https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences?_format=json&seller='+js_var_atlas.userid_key+'')
 			// load api_products_xola
 		    .then(function(response){
 		        var api_products_xola = {};
@@ -286,7 +287,7 @@
 		         angular.forEach(api_products_xola, function(products, key) {
 		         	//update for multi 
 		         	//var promiseObj_xola=dataServiceXolaAjax.getData(products.id);
-		            var promiseObj_xola=dataServiceXolaAjax.getData(products.id,scopeid,wqs_productcode);
+		            var promiseObj_xola=dataServiceAtlasAjax.getData(products.id);
 		            promiseObj_xola.then(function(value, products) { 
 
 		            });
@@ -340,6 +341,67 @@
 
 /*factory*/
 
+//+GetUrlParameter
+wqs_xola_check.factory('GetUrlParameter', function () {
+	return{
+        getURL: function (sParam) {
+		        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		            sURLVariables = sPageURL.split('&'),
+		            sParameterName,
+		            i;
+
+		        for (i = 0; i < sURLVariables.length; i++) {
+		            sParameterName = sURLVariables[i].split('=');
+
+		            if (sParameterName[0] === sParam) {
+		                return sParameterName[1] === undefined ? true : sParameterName[1];
+		            }
+		        }
+		}
+    }
+});
+
+//dataService starttime and endtime get URLparametr Xola
+    wqs_xola_check.factory('dataServiceAtlas', function($http, $q, $filter, GetUrlParameter){
+        return{
+            getData: function(productCode){
+                var deferred = $q.defer();
+
+			    // startTime
+			    var startTime = GetUrlParameter.getURL('check_date');
+			    
+			    var num_people = GetUrlParameter.getURL('num_people');
+			    
+			    if(!startTime){
+			    	//console.log('startTime undefined');
+			    	startTime = $('#startTime_check').val();
+			    } else {
+			    	//$('#startTime_check').val(startTime);
+			    	$('#startTime_check').data('daterangepicker').setStartDate(startTime);
+			    }
+
+ 				// load timearray
+				var daysOfYear = [];
+				daysOfYear.push( startTime ); //crossfix
+				angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
+
+				// get
+                //$http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences/'+productCode+'/availability?_format=json&start='+startTime+'&end='+startTime+''}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/http://customxolareports.azurewebsites.net/northwood/ziplineavailability/'+productCode+'/'+startTime+'/'+num_people+''}).
+                 success(function(data, status, headers, config) {
+                 	var code = {productCode:productCode}
+                 	data = angular.extend({}, data, code);
+                    deferred.resolve(data);
+                }).
+                error(function(data, status, headers, config) {
+                    deferred.reject(status);
+                });
+
+                return deferred.promise;
+            }
+
+        }
+    });
 //dataService starttime and endtime get URLparametr Xola
     wqs_xola_check.factory('dataServiceXola', function($http, $q, $filter){
         return{
@@ -410,6 +472,48 @@
                 return deferred.promise;
             }
 
+        }
+    });
+
+// Atlas dataServiceAjax for click 
+    wqs_xola_check.factory('dataServiceAtlasAjax', function($http, $q, $filter){
+        return{
+            getData: function(productCode){
+                var deferred = $q.defer();
+        
+
+	        //var datepicker_from = $("#datepicker-from-input").val();
+	        var datepicker_from = $('#startTime_check').val();
+	        var num_people = $('#num_people_val').val();
+	        angular.element('[ng-controller=wqs_search_controller]').scope().num_people = num_people;
+
+			var startTime = datepicker_from;
+			var endTime = startTime;
+			
+			//update for multi
+
+			console.log('startTime:');console.log(startTime);
+
+				var daysOfYear = [];
+				daysOfYear.push( startTime ); //crossfix
+				angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
+
+                //$http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences/'+productCode+'/availability?_format=json&start='+startTime+'&end='+endTime+''}).
+                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/http://customxolareports.azurewebsites.net/northwood/ziplineavailability/'+productCode+'/'+startTime+'/'+num_people+''}).
+                 success(function(data, status, headers, config) {
+                    //deferred.resolve(data.sessions);
+
+                    // xola update
+                    var code = {productCode:productCode}
+                 	data = angular.extend({}, data, code);
+                    deferred.resolve(data);
+                }).
+                error(function(data, status, headers, config) {
+                    deferred.reject(status);
+                });
+
+                return deferred.promise;
+            }
         }
     });
 

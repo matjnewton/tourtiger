@@ -960,6 +960,14 @@ body.custom-background.page-template-rezdy_search {
     -webkit-flex: 10 0 30%; /* Safari 6.1+ */
     -ms-flex: 10 0 30%; /* IE 10 */
 }
+.availability_checker_atlas {
+
+}
+.col-num_people .form-control {
+    width: 63px;
+    font-size: 15px;
+    height: 40px;
+}
 .availability_checker_options_date .cal {
       color: #797979;
     font-size: 18px;

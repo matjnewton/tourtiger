@@ -78,6 +78,14 @@ function get_cpt_tours_select_checker($field) {
 	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
 	$rezdy_group_tours = get_field('rezdy_group_tours', 'option');
 	$xola_group_tours = get_field('xola_group_tours', 'option');
+	$integrate_atlasx = get_field('integrate_atlasx_with_this_website', 'option');
+
+	//atlas
+	if( have_rows('matching_products_xola', 'option') && $integrate_atlasx ): 
+		while( have_rows('matching_products_xola', 'option') ): the_row(); 
+			$our_tours[] = get_sub_field('our_tours_forxola');
+		endwhile; 
+	endif;
 
 	//xola
 	if( have_rows('matching_products_xola', 'option') && $integrate_xola_with_this_website ): 
