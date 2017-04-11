@@ -52,10 +52,12 @@
 										<span class="checkertime" ng-if="parseFloat(time)<=12">AM</span>
 									</span>
 									<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="seats !=0 && seats>=num_people">{{seats}} Available</span>
-									<span class="availability_checker_col checker_avail not customstyle" ng-if="seats ==0 || seats < num_people">
+									<span ng-model="timeSelected" class="availability_checker_col checker_count not_numpeople customstyle" ng-if="seats !=0 && seats<num_people">{{seats}} Available</span>
+									<span class="availability_checker_col checker_avail not customstyle" ng-if="seats ==0">
 										<i class="fa fa-close"></i>
 										<span class="checker_date_label">Not Available</span>
 									</span>
+									<span ng-if="seats !=0 && seats>=num_people" class="availability_checker_col book_atlas customstyle" data-button-id="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{time}}" data-button-numpeople="{{num_people}}">Book Now</span>
 								</li>
 							</span>
 							<!-- end new template checker -->

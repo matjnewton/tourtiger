@@ -1068,7 +1068,15 @@ line-height: 40px;
     /*color: #ca2127;*/
         color: #abc545;
 }
-
+.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count.not_numpeople,
+.site-inner .content .product_content_wrapper span.availability_checker_col.checker_count.not_numpeople,
+.styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count.not_numpeople span,
+.site-inner .content .product_content_wrapper span.availability_checker_col.checker_count.not_numpeople span {
+  color: #f3b04a;
+}
+.book_atlas:hover {
+  cursor: pointer;
+}
 /*
 *
 * main search box style - redesign
