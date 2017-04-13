@@ -3,6 +3,9 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 include_once( get_stylesheet_directory() . '/includes/acf_fields_primary-content.php' );
+
+include_once( get_stylesheet_directory() . '/includes/plugins/additional-fonts-includer/additional-fonts-includer.php' );
+
 // include_once( get_stylesheet_directory() . '/includes/acf/acf_fields_product.php' );
 // include_once( get_stylesheet_directory() . '/includes/functions/product_functions.php' );
 // include_once( get_stylesheet_directory() . '/includes/post_types/cpt_product.php' );

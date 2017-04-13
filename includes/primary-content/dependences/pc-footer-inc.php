@@ -71,7 +71,11 @@ $section_count = 0;
 
 	    var methods = {
 
-	        init: function () {
+	        init: function () {    
+
+		        $(document).bind('gform_confirmation_loaded', function(event, formId){
+		            console.log(formId);
+		        });
 
 	            if ( $('.js-new-slider').length > 0 ) {
 	            	setTimeout(function(){

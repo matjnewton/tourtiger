@@ -412,7 +412,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -465,7 +465,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -518,7 +518,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -571,7 +571,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -623,7 +623,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -675,7 +675,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -727,7 +727,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -779,7 +779,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -832,7 +832,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,
@@ -884,7 +884,7 @@ class ProductPage extends StylingCard {
 					'readonly' => 0,
 					'disabled' => 0,
 					'rows' => '',
-					'font_familys' => self::FONTS,
+					'font_familys' => self::get_available_fonts(),
 					'stylefont' => array (
 						100 => 100,
 						300 => 300,

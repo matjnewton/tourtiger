@@ -228,7 +228,14 @@ function pc_init_font_css( $font = '' ) {
 		$css = array( false, '' );
 
 		if ( $font['font-family'] ) {
-			$css[0] = $font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
+			$is_custom_font = get_aifonts_from_dir( $font['font-family'], true );
+
+			if ( !$is_custom_font ) {
+				$css[0] = $font['font-family'] ? "@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
+			} else {
+				$css[0] = "</style>{$is_custom_font}<style>";
+			}
+
 			$css[1] .= "font-family:'" . $font['font-family'] . "';";
 		}
 
@@ -254,8 +261,16 @@ function pc_init_font_css( $font = '' ) {
  * @return string             return string with styles
  */
 function pc_content_init_form( $font='', $color='', $background='', $border='' ) {
+
 	if ( $font['font-family'] ) {
-		$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+		$is_custom_font = get_aifonts_from_dir( $font['font-family'], true );
+
+		if ( !$is_custom_font ) {
+			$css[0] = "@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+		} else {
+			$css[0] = "</style>{$is_custom_font}<style>";
+		}
+
 	 	$css[1] .= "font-family:'" . $font['font-family'] . "';";
 	}
 
@@ -411,7 +426,7 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 	}
 
 	// Enqueue the scripts and styles
-	gravity_form_enqueue_scripts( $form_id, false );
+	gravity_form_enqueue_scripts( $form_id, true );
 
 	$ajax_url = admin_url( 'admin-ajax.php' );
 
@@ -430,8 +445,8 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 
 function gf_button_get_form(){
 	$form_id = isset( $_GET['form_id'] ) ? absint( $_GET['form_id'] ) : 0;
-	// Render an AJAX-enabled form.
-	// https://www.gravityhelp.com/documentation/article/embedding-a-form/#function-call
+
+	echo '<div id="gform_confirmation_wrapper_' . $form_id . '"><div id="gforms_confirmation_message_' . $form_id . '"></div></div>';
 	gravity_form( $form_id, true, true, false, false, true );
 	die();
 }

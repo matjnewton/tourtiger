@@ -36,7 +36,7 @@ class acf_field_typography extends acf_field {
 
 		// If $YOUR_API_KEY exist;
 		if (defined('YOUR_API_KEY')) {
-			json_update(YOUR_API_KEY);
+			//json_update(YOUR_API_KEY);
 		}
 
 		// Load json file for extra seting
