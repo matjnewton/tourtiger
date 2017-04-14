@@ -1567,17 +1567,3 @@ if ( function_exists( 'add_image_size' ) ) {
 
 /* update dgamoni */
 require_once 'inc/load.php'; 
-
-/**
- * Include google maps api key in end if all scripts in admin panel
- */
-
-add_action( 'shutdown', 'google_maps_api_in_admin_panel', 9999 );
-function google_maps_api_in_admin_panel() {
-	echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=' . get_field('google_maps','apikey') . '"></script>';
-	?>
-		<script type="text/javascript">
-			if( acf ) acf.fields.google_map.url = "https://maps.googleapis.com/maps/api/js?key=<?php the_field('google_maps','apikey'); ?>";
-		</script>
-	<?php
-}
