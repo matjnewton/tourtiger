@@ -1565,5 +1565,18 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'product-slider', 757, 484, false ); 
 }
 
+/**
+ * Include google maps api key in end if all scripts in admin panel
+ */
+
+add_action( 'admin_enqueue_scripts', 'google_maps_api_in_admin_panel', 999 );
+function google_maps_api_in_admin_panel() {
+
+	if ( get_field('google_maps','apikey') ) :
+		wp_register_script( "api-key-maps-admin", "https://maps.googleapis.com/maps/api/js?key=" . get_field('google_maps','apikey'), array(), null, true);
+		wp_enqueue_script("api-key-maps-admin");
+	endif;
+}
+
 /* update dgamoni */
 require_once 'inc/load.php'; 
