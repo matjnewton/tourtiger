@@ -1572,7 +1572,7 @@ require_once 'inc/load.php';
  * Include google maps api key in end if all scripts in admin panel
  */
 
-add_action( 'admin_enqueue_scripts', 'google_maps_api_in_admin_panel', 9999 );
+add_action( 'admin_print_footer_scripts', 'google_maps_api_in_admin_panel', 9999 );
 function google_maps_api_in_admin_panel() {
 
 	if ( get_field('google_maps','apikey') ) :
