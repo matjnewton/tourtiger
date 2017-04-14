@@ -1575,4 +1575,9 @@ require_once 'inc/load.php';
 add_action( 'shutdown', 'google_maps_api_in_admin_panel', 9999 );
 function google_maps_api_in_admin_panel() {
 	echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=' . get_field('google_maps','apikey') . '"></script>';
+	?>
+		<script type="text/javascript">
+			if( acf ) acf.fields.google_map.url = "https://maps.googleapis.com/maps/api/js?key=<?php the_field('google_maps','apikey'); ?>";
+		</script>
+	<?php
 }
