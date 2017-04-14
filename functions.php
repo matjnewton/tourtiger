@@ -1574,9 +1574,5 @@ require_once 'inc/load.php';
 
 add_action( 'admin_print_footer_scripts', 'google_maps_api_in_admin_panel', 9999 );
 function google_maps_api_in_admin_panel() {
-
-	if ( get_field('google_maps','apikey') ) :
-		wp_register_script( "api-key-maps-admin", "https://maps.googleapis.com/maps/api/js?key=" . get_field('google_maps','apikey'), array(), null, true);
-		wp_enqueue_script("api-key-maps-admin");
-	endif;
+	echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=' . get_field('google_maps','apikey') . '"></script>';
 }
