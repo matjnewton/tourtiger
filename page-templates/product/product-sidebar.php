@@ -2,27 +2,6 @@
 
 <?php if(have_rows('sidebar_1')): ?>
 
-	<div class="tour-nav visible-xs">
-		<?php 
-		while ( have_rows('sidebar_1') ): 
-			the_row();
-			if ( get_row_layout() == 'button' ): 
-                $bbt         = get_sub_field('button_text');
-                $cta_onclick = get_sub_field('cta_onclick');
-                $button_type = get_sub_field('button_link_type');
-                $bbl         = get_sub_field('custom_button_link');
-                $third_party = get_sub_field('third_party');
-                $mobd        = get_sub_field('multi_option_button_dropdown');
-
-                if ( $bbt && !$mobd ) :
-                	include( locate_template('buttons/sidebar_btn_product.php' ) ); 
-                elseif ($bbt && $mobd ) : 
-                	include( locate_template('buttons/sidebar_mobd_product.php' ) );
-                endif;
-            endif;
-        endwhile;?>
-	</div>
-
     <div class="hidden-xs">
         <div id="booking_product" class="book-tour-wrapper_product">
 
