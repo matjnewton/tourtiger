@@ -37,7 +37,7 @@ function rezdy_product_contents() {
 
 				        <script>
 				        	!(function($){
-				        		$(function()}{
+				        		$(function(){
 				        			var $element = $('#fixed-on-mobile-productpage');
 				        			var offset   = $element.offset().top;
 
