@@ -302,27 +302,23 @@ $section_count = 0;
 	            /**
 	             * Set min-height equvival width
 	             */
-	            if ( $('.pc--s__img--eqvival').length > 0 ) {
+                $('.pc--s__img--eqvival').each(function(){
+                    var $item = $(this);
 
-	                $('.pc--s__img--eqvival').each(function(){
-                        var $item = $(this);
+                    var match_url = $item.attr('data-expanded');
+                    var img = new Image();
 
-                        var match_url = $item.attr('data-expanded');
-                        var img = new Image();
+                    img.src = match_url;
 
-                        img.src = match_url;
+                    var img_percent = img.height / img.width * 100;
+                    var img_height = screen.width / 100 * img_percent;
 
-                        var img_percent = img.height / img.width * 100;
-                        var img_height = screen.width / 100 * img_percent;
+                    $item.css('background-image', 'url(' + match_url + ')');
 
-                        $item.css('background-image', 'url(' + match_url + ')');
-
-                        $item.animate({
-                          'min-height': img_height, 
-                        }, 500);
-	                });
-
-	            }
+                    $item.animate({
+                      'min-height': img_height, 
+                    }, 500);
+                });
 
 	        }    
 
@@ -335,7 +331,7 @@ $section_count = 0;
 	        } else if ( typeof method === 'object' || ! method ) {
 	          return methods.init.apply( this, arguments );
 	        } else {
-	          $.error( 'Method named ' +  method + ' isn\'t exist ithin jQuery.primaryContent' );
+	          $.error( 'Method named ' +  method + ' isn\'t exist within jQuery.primaryContent' );
 	        } 
 
 	    };
