@@ -111,9 +111,28 @@ function aif_delete_font( $font = '' ) {
 
 
 /**
+ * Delete unnessesary fonts
+ */
+function clear_unnessesarily_fonts_in_json() {
+	$cleanJsonPath  = get_stylesheet_directory() . '/includes/plugins/acf-typography/gf_restore.json';
+	$cleanJsonFile  = file_get_contents( $cleanJsonPath );
+
+	$jsonPath  = get_stylesheet_directory() . '/includes/plugins/acf-typography/gf.json';
+
+	$handle = fopen($jsonPath, 'w');
+
+	fwrite($handle, $cleanJsonFile);
+	fclose($handle);
+
+	return true;
+} 
+
+/**
  * Update GF JSON file
  */
-function update_fonts_in_json( $delete = '' ) {
+function update_fonts_in_json( $font = '' ) {
+	clear_unnessesarily_fonts_in_json();
+
 	$jsonPath  = get_stylesheet_directory() . '/includes/plugins/acf-typography/gf.json';
 	$jsonFile  = file_get_contents( $jsonPath );
 	$jsonArray = json_decode( $jsonFile, true );
@@ -132,7 +151,7 @@ function update_fonts_in_json( $delete = '' ) {
 				$valid = false;
 			endif;	
 
-			if ( $delete != '' && $delete == $ii['family'] ) :
+			if ( $font != '' && $font == $ii['family'] ) :
 				unset($jsonItems[$i]);
 			endif;
 		endfor;
@@ -153,5 +172,6 @@ function update_fonts_in_json( $delete = '' ) {
 
 	return $jsonArray;
 }
+add_action( 'upgrader_process_complete', 'update_fonts_in_json', 10, 2 );
 
 ?>
