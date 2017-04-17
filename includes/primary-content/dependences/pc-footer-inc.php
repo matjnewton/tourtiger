@@ -5,7 +5,6 @@
 
 $total = count( get_field( 'tour_primary-content' ) );
 $number = 1;
-$section_count = 0;
 
 ?>
 
@@ -37,7 +36,7 @@ $section_count = 0;
 	    var pc_more = true;
 	    var pc_field_total = <?php echo $total; ?>;
 
-	    function pc_show_more_js() {
+	    function pc_show_more_js( pc_field_offset ) {
 	      
 	      // make ajax request
 	      $.post(
@@ -338,7 +337,15 @@ $section_count = 0;
 
 	    $(function(){
 
-	      $(document).primaryContent( 'init' );
+	      	$(document).primaryContent( 'init' );
+
+	        $('.go_to').click( function(){ 
+	            var scroll_el = $(this).attr('href');
+	            if ($(scroll_el).length != 0) { 
+	                $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); 
+	            }
+	            return false; 
+	        });
 
 	    });
 
