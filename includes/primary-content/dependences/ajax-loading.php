@@ -15,7 +15,7 @@ function pc_show_more_sections() {
 		return;
 	}
 
-	$show = 0; 
+	$show = 1; 
 	$start = $_POST['offset'];
 	$end = $start + $show;
 	$post_id = $_POST['post_id'];

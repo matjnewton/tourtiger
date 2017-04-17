@@ -22,10 +22,11 @@ if ( have_rows( 'tour_primary-content' ) ) { ?>
 			the_row();
 			
 			$section_count = 0;
+			$number        = 1;
 
 			include( PCA_DIR . '/section/pc-section-parameters.php' );
 
-			if ($section_count == $number) break;
+			if ($section_count == 1) break;
 		endwhile; 
 
 	    ?>

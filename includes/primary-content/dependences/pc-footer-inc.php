@@ -36,7 +36,7 @@ $number = 1;
 	    var pc_more = true;
 	    var pc_field_total = <?php echo $total; ?>;
 
-	    function pc_show_more_js( pc_field_offset ) {
+	    function pc_show_more_js() {
 	      
 	      // make ajax request
 	      $.post(
@@ -51,6 +51,8 @@ $number = 1;
 
 	          pc_field_offset = json['offset'];
 
+	          $(document).primaryContent( 'init' );
+
 	          if (json['more']) {
 	            pc_show_more_js();
 	          }
@@ -58,8 +60,6 @@ $number = 1;
 	          if (json['new_form']) {
 	            // TODO: Add ajax script to get GF
 	          }
-
-	          $(document).primaryContent( 'init' );
 	        },
 	        'json'
 	      );
