@@ -303,16 +303,18 @@ $number = 1;
                     var match_url = $item.attr('data-expanded');
                     var img = new Image();
 
+                    img.onload = function(){
+	                    var img_percent = img.height / img.width * 100;
+	                    var img_height = screen.width / 100 * img_percent;
+
+	                    $item.css('background-image', 'url(' + match_url + ')');
+
+	                    $item.animate({
+	                      'min-height': img_height, 
+	                    }, 100);
+					};
+
                     img.src = match_url;
-
-                    var img_percent = img.height / img.width * 100;
-                    var img_height = screen.width / 100 * img_percent;
-
-                    $item.css('background-image', 'url(' + match_url + ')');
-
-                    $item.animate({
-                      'min-height': img_height, 
-                    }, 10);
                 });
 
 	        }    
