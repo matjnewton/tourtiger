@@ -2,10 +2,10 @@
 
 	$tour_column_classes .= ' pc--r__col-2 pc--r__col-2__ratio-' . get_sub_field( 'tour_pc-colums--ratio' );
 
-	$thumb_width = 1000;
-	$thumb_width_normal = 1000;
-	$thumb_height = 900;
-	$thumb_height_normal = 900;
+	$thumb_width = 800;
+	$thumb_width_normal = 800;
+	$thumb_height = 800;
+	$thumb_height_normal = 800;
 	$thumb_upload = 'pc-medium';
 
 	if ( $tour_column_wrap == 'scroll' ) {

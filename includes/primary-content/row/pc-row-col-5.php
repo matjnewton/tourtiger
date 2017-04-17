@@ -2,11 +2,11 @@
 
 	$tour_column_classes .= ' pc--r__col-5';
 	
-	$thumb_width = 400;
-	$thumb_width_normal = 400;
-	$thumb_height = 400;
-	$thumb_height_normal = 400;
-	$thumb_upload = 'pc-medium';
+	$thumb_width = 350;
+	$thumb_width_normal = 350;
+	$thumb_height = 350;
+	$thumb_height_normal = 350;
+	$thumb_upload = 'pc-small';
 
 	if ( $tour_column_wrap == 'scroll' ) {
 		$scroll_slides = get_sub_field( 'tour_pc-scroll-slides' );

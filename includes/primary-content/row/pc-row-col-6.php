@@ -6,7 +6,7 @@
 	$thumb_width_normal = 230;
 	$thumb_height = 230;
 	$thumb_height_normal = 230;
-	$thumb_upload = 'medium';
+	$thumb_upload = 'pc-small';
 
 	if ( $tour_column_wrap == 'scroll' ) {
 		$scroll_slides = get_sub_field( 'tour_pc-scroll-slides' );
