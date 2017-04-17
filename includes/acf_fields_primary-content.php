@@ -41,18 +41,19 @@ function acf_typography_dir( $dir ) {
 /**
  * Turn On Chaching
  */
-if ( !is_admin() ) {
-	include_once( PCA_DIR . '/pc-cache.php' );
+if ( !is_admin() && 1 === 3 ) {
+	include( PCA_DIR . '/pc-cache.php' );
 }
 
 /**
  * Add custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'pc-large', 1100, 1100, true ); 
-	add_image_size( 'pc-medium', 700, 700, true ); 
-	add_image_size( 'pc-small', 500, 500, true ); 
-	add_image_size( 'pc-fit-iphone', 320, 320, true ); 
+	add_image_size( 'pc-large', 1100, 1100, false ); 
+	add_image_size( 'pc-middle', 900, 900, false ); 
+	add_image_size( 'pc-medium', 700, 700, false ); 
+	add_image_size( 'pc-small', 500, 500, false ); 
+	add_image_size( 'pc-fit-iphone', 320, 320, false ); 
 }
 
 /**
@@ -453,7 +454,7 @@ function primary_area_deregister_unnesesarily_scripts() {
 
 	if ( is_page_template( 'page-templates/test-pc.php' ) ) :
 
-		wp_enqueue_style('pc-constructor', get_stylesheet_directory_uri() . '/includes/primary-content/dependences/pc.css' );
+		wp_enqueue_style('pc-constructor', get_stylesheet_directory_uri() . '/includes/primary-content/dependences/pc.min.css' );
 
 		wp_dequeue_script('bootstrapjs');
 		wp_dequeue_script('colorbox');

@@ -56,10 +56,6 @@ $number = 1;
 	          if (json['more']) {
 	            pc_show_more_js();
 	          }
-
-	          if (json['new_form']) {
-	            // TODO: Add ajax script to get GF
-	          }
 	        },
 	        'json'
 	      );
@@ -316,7 +312,7 @@ $number = 1;
 
                     $item.animate({
                       'min-height': img_height, 
-                    }, 500);
+                    }, 10);
                 });
 
 	        }    
