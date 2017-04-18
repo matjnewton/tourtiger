@@ -456,7 +456,7 @@ function primary_area_deregister_unnesesarily_scripts() {
 
 		wp_enqueue_style('pc-constructor', get_stylesheet_directory_uri() . '/includes/primary-content/dependences/pc.min.css' );
 
-		wp_dequeue_script('bootstrapjs');
+		//wp_dequeue_script('bootstrapjs');
 		wp_dequeue_script('colorbox');
 		wp_dequeue_script('application1');
 		wp_dequeue_script('trekksoft');
