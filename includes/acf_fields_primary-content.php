@@ -473,7 +473,7 @@ function primary_area_deregister_unnesesarily_scripts() {
 		wp_dequeue_script('modernizr');
 		wp_dequeue_script('bootstrap_selectjs');
 		wp_dequeue_script('modernizr');
-		wp_dequeue_script('mainjs');
+		//wp_dequeue_script('mainjs');
 		wp_dequeue_script('jquery-ui');
 		wp_dequeue_script('spectrum_js');
 		wp_dequeue_script('sticky');
@@ -515,7 +515,7 @@ function primary_area_deregister_unnesesarily_scripts() {
 	    wp_enqueue_script( 'jquery' );
 
 
-		wp_dequeue_style('bootstrap_select');
+		// wp_dequeue_style('bootstrap_select');
 		wp_dequeue_style('magnific_popup_css');
 		wp_dequeue_style('product_css');
 		wp_dequeue_style('bxslider_css');
