@@ -6,7 +6,7 @@
 	});
 
 
-    var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter']);
+    var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter','angular-toArrayFilter']);
 
 // config
     wqs_xola_check.config(['$httpProvider', function( $httpProvider) {

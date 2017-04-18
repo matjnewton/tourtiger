@@ -67,9 +67,9 @@ function tourtiger_archive_atlasx() { ?>
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people<10">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>=10">Still available on this date.</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people==1">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>1">Available on this date!</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <span class="search-descript-departure-xola">
@@ -104,9 +104,9 @@ function tourtiger_archive_atlasx() { ?>
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people<10">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>=10">Still available on this date.</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people==1">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>1">Available on this date!</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <span class="search-descript-departure-xola">
@@ -168,9 +168,9 @@ function tourtiger_archive_atlasx() { ?>
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people<10">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>=10">Still available on this date.</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people==1">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>1">Available on this date!</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <span class="search-descript-departure-xola">
@@ -205,9 +205,9 @@ function tourtiger_archive_atlasx() { ?>
                                                     $ {{products.price}}
                                                 </span>
                                                  
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people<10">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>=10">Still available on this date.</div>
-                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people==1">Only {{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people}} available for this date</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Full Availability' && available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).people>1">Available on this date!</div>
+                                                    <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <span class="search-descript-departure-xola">

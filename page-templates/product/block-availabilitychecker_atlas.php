@@ -23,7 +23,7 @@
 	                    </div>
 
 					  	<div id="number_of_people" class="add-on col-num_people">
-					    	<!-- <div class="datepicker-instructions">Number of People</div> -->
+					    	<span class="number_of_people-label">Guests</span>
 					    	<input ng-model="num_people_val_model" ng-init="num_people_val_model =<?php echo $num_people; ?>" type="number" size="1" id="num_people_val" name="num_people" min="1" max="50" value="<?php echo $num_people; ?>" class="datepicker-input form-control"  required placeholder="Number of People" />
 					  	</div>
 
@@ -43,21 +43,22 @@
 	                    	<div id="ajax_preLoading3" class="preLoading3" ng-show="loading"></div>
 
 							<!-- new template checker -->
-							<span class="productss" ng-repeat="(keys, api_availability_new) in api_availability_xola[0] track by $index"  ng-if="(keys != 'productCode') && (keys | asDate) == (timearray[0] | asDate)">
-								<li class="availability_checker_col checker_date customstyle" ng-repeat="(time, seats) in api_availability_new">
-									<span class="availability_checker_col checker_date customstyle">
+							<span class="productss" ng-repeat="(keys, api_availability_new) in api_availability_xola[0]"  ng-if="(keys != 'productCode') && (keys | asDate) == (timearray[0] | asDate)">
+<!-- 								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="(time, seats) in api_availability_new  track by $index | orderBy:time "> -->
+								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="item in api_availability_new | toArray | orderBy : item.$key track by $index">
+									<span class="availability_checker_col availability_checker_col_atlas checker_date customstyle">
 										{{timearray[0] | asDateTitleYears}}
-										<span class="checkertime">{{parseFloat(time)}}</span>
-										<span class="checkertime" ng-if="parseFloat(time)>12">PM</span>
-										<span class="checkertime" ng-if="parseFloat(time)<=12">AM</span>
+										<span class="checkertime">{{parseFloat(item.$key)}}</span>
+										<span class="checkertime" ng-if="parseFloat(item.$key)>12">PM</span>
+										<span class="checkertime" ng-if="parseFloat(item.$key)<=12">AM</span>
 									</span>
-									<span ng-model="timeSelected" class="availability_checker_col checker_count customstyle" ng-if="seats !=0 && seats>=num_people">{{seats}} Available</span>
-									<span ng-model="timeSelected" class="availability_checker_col checker_count not_numpeople customstyle" ng-if="seats !=0 && seats<num_people">{{seats}} Available</span>
-									<span class="availability_checker_col checker_avail not customstyle" ng-if="seats ==0">
+									<span ng-model="timeSelected" class="availability_checker_col availability_checker_col_atlas checker_count customstyle" ng-if="item.$value !=0 && item.$value>=num_people">{{item.$value}} Available</span>
+									<span ng-model="timeSelected" class="availability_checker_col availability_checker_col_atlas checker_count not_numpeople customstyle" ng-if="item.$value !=0 && item.$value<num_people">{{item.$value}} Available</span>
+									<span class="availability_checker_col availability_checker_col_atlas checker_avail not customstyle" ng-if="item.$value ==0">
 										<i class="fa fa-close"></i>
 										<span class="checker_date_label">Not Available</span>
 									</span>
-									<span ng-if="seats !=0 && seats>=num_people" class="availability_checker_col book_atlas customstyle" data-button-id="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{time}}" data-button-numpeople="{{num_people}}">Book Now</span>
+									<span ng-if="item.$value !=0 && item.$value>=num_people" class="availability_checker_col availability_checker_col_atlas book_atlas customstyle" data-button-id="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{item.$key}}" data-button-numpeople="{{num_people}}">Book Now</span>
 								</li>
 							</span>
 							<!-- end new template checker -->
