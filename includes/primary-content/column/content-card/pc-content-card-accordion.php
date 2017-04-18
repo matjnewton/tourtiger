@@ -9,9 +9,18 @@ $accordion_id = $tour_selection_id . '-accordion-' . $accordion_cound;
 	class="<?php echo $tour_content_content_classes; ?>" 
 	style="<?php echo $tour_content_content_styles; ?>"
 >
-	
 	<script>
-		!(function($){
+		(function(factory) {
+		    'use strict';
+		    if (typeof define === 'function' && define.amd) {
+		        define(['jquery'], factory);
+		    } else if (typeof exports !== 'undefined') {
+		        module.exports = factory(require('jquery'));
+		    } else {
+		        factory(jQuery);
+		    }
+
+		}(function($) {
 			$(function(){
 	            $('#<?php echo $accordion_id; ?>').on('click', function(){
 	                $(this).toggleClass('is_active');
@@ -19,7 +28,7 @@ $accordion_id = $tour_selection_id . '-accordion-' . $accordion_cound;
 	                $(this).closest('.pc--r__scroll').slick('setOption', 'height', null, true);
 	            });
 			});
-		})(jQuery);
+		}));
 	</script>
 
 	<button id="<?php echo $accordion_id; ?>" class="pc--c__accordion--label">
