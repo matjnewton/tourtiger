@@ -55,6 +55,8 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 	$uri             = $uploads_dir['baseurl'] . '/aif';
 	$items           = scandir($root);
 
+	$is_google       = is_google_font_exist($font);
+
 	foreach ( $items as $key => $value ) : 
 		if ( substr($value, -3) === 'css' ): 
 			$value = explode('.', $value);
@@ -63,7 +65,9 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 		endif;
 	endforeach;
 
-	if ( $font === '' ) {
+	if ( $is_google ) {
+		return false;
+	} elseif ( $font === '' ) {
 		return $available_fonts;
 	} elseif ( in_array( $font, $available_fonts ) ) {
 		if (!$include) {
@@ -77,6 +81,11 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 } 
 
 
+/**
+ * Check if exist font
+ * @param  string  $font [description]
+ * @return boolean       [description]
+ */
 function is_aifont_exist( $font = '' ) {
 	$uploads_dir = wp_upload_dir(); 
 	$root        = $uploads_dir['basedir'] . '/aif';
@@ -87,6 +96,31 @@ function is_aifont_exist( $font = '' ) {
 	} else {
 		return false;
 	}
+} 
+
+
+/**
+ * Check if exist Google Font font
+ * @param  string  $font [description]
+ * @return boolean       [description]
+ */
+function is_google_font_exist( $font = '' ) {
+	$jsonPath  = get_stylesheet_directory() . '/includes/plugins/acf-typography/gf_restore.json';
+	$jsonFile  = file_get_contents( $jsonPath );
+	$jsonArray = json_decode( $jsonFile, true );
+	$jsonItems = $jsonArray['items'];
+	$jsonCount = count($jsonItems);
+	$valid     = false;
+
+	for ( $i = 0; $i <= $jsonCount; $i++ ) :
+		$ii = $jsonItems[$i];
+
+		if ( $ii['family'] == $font ) :
+			$valid = true;
+		endif;	
+	endfor;
+
+	return $valid;
 } 
 
 
