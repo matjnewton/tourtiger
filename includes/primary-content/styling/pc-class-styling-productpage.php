@@ -1002,6 +1002,58 @@ class ProductPage extends StylingCard {
 					'ext_value' => array (
 					),
 				),
+				array (
+					'key' => $this->slug . $i . '_5helds3223____le_1',
+					'label' => 'Sidebar Headline',
+					'name' => 'sidebar_headline',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'left',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 20,
+					'show_line_height' => 1,
+					'line_height' => 25,
+					'show_letter_spacing' => 0,
+					'letter_spacing' => 0,
+					'show_color_picker' => 1,
+					'text_color' => '#000000',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
 			),
 		);	
 
@@ -1207,6 +1259,33 @@ class ProductPage extends StylingCard {
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= '}';
+
+					$css .= "html.{$style} .sidebar_phone_row .phone_number span{";
+
+						$lh = $font_style_td_content['font_size'];
+						$lh += 4;
+
+						$css .= $font_style_td_content['font-family'] ? "font-family: '{$font_style_td_content['font-family']}', sans-serif;" : '';
+						$css .= "font-size: {$font_style_td_content['font_size']}px;";
+						$css .= "font-weight: {$lh}px;";
+						$css .= "color: {$font_style_td_content['text-color']};";
+
+					$css .= "}";
+
+					$css .= "html.{$style} .sidebar_phone_row .phone_label {";
+
+						$css .= $font_style_td_content['font-family'] ? "font-family: '{$font_style_td_content['font-family']}', sans-serif;" : '';
+						$css .= "font-size: {$font_style_td_content['font_size']}px;";
+						$css .= "font-weight: {$font_style_td_content['font-weight']};";
+						$css .= "color: {$font_style_td_content['text-color']};";
+
+					$css .= "}";
+
+					$css .= "html.{$style} .sidebar_phone_row .phone_number .fa-phone {";
+
+						$css .= "color: {$font_style_td_content['text-color']};";
+
+					$css .= "}";
 				}
 
 				$font_style_exco_title = get_sub_field( 'font-style_exco-title' );
@@ -1226,6 +1305,16 @@ class ProductPage extends StylingCard {
 
 						$css .= "html.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, html.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle::after, html.{$style} .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, html.{$style} .site-inner .content a.primary_content_expandable_content_toggle::after {";
 							$css .= "color: {$font_style_exco_title['text-color']};";
+						$css .= '}';
+						
+						$css .= $font_style_exco_title['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
+						$css .= "html.{$style} .styles .content h{$i}.primary_content_subhead{";
+
+							$css .= $font_style_exco_title['font-family'] ? "font-family: '{$font_style_exco_title['font-family']}', sans-serif;" : '';
+							$css .= "font-size: {$font_style_exco_title['font_size']}px;";
+							$css .= "font-weight: {$font_style_exco_title['font-weight']};";
+							$css .= "color: {$font_style_exco_title['text-color']};";
+
 						$css .= '}';
 					}
 
@@ -1295,6 +1384,50 @@ class ProductPage extends StylingCard {
 						$css .= "background-color:{$book_now_bg_h};";
 					$css .= '}';
 				}
+
+				$sidebar_headline = get_sub_field( 'sidebar_headline' );
+
+				if ( $sidebar_headline ) {
+					$css .= $sidebar_headline['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$sidebar_headline['font-family']}';":'';
+					$css .= "html.{$style} .book-tour-title_product{";
+
+						$css .= $sidebar_headline['font-family'] ? "font-family: '{$sidebar_headline['font-family']}', sans-serif;" : '';
+						$css .= "font-size: {$sidebar_headline['font_size']}px;";
+						$css .= "font-weight: {$sidebar_headline['font-weight']};";
+						$css .= "color: {$sidebar_headline['text-color']};";
+
+					$css .= '}';
+				}
+
+				$siidb_icon_color = get_sub_field( 'content_icon-color' );
+
+				if ( $siidb_icon_color ) {
+					$css .= "html.{$style} .reason_to_book_label .fa-certificate{";
+
+						$css .= "color:{$siidb_icon_color};";
+
+					$css .= '}';
+
+					$css .= "html.{$style} .book-tour-wrapper_product_row {";
+
+						$css .= "border-color: {$siidb_icon_color};";
+
+					$css .= "}";
+
+					$css .= "html.{$style} .sidebar_phone_row .phone_number span {";
+
+						$css .= "color: {$siidb_icon_color};";
+
+					$css .= "}";
+
+					$css .= "html.{$style} .sidebar_phone_row .phone_number .fa-phone {";
+
+						$css .= "color: {$siidb_icon_color};";
+
+					$css .= "}";
+				}
+
+				$css .= '.book-tour-wrapper_product .sidebar_phone_row { margin-top: 25px!important; }';
 
 				$css .= '</style>';
 
