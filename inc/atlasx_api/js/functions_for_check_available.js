@@ -371,6 +371,12 @@ wqs_xola_check.factory('GetUrlParameter', function () {
 			    var startTime = GetUrlParameter.getURL('check_date');
 			    
 			    var num_people = GetUrlParameter.getURL('num_people');
+
+			    if (!num_people) {
+			    	num_people = $('#num_people_val').val();
+			    	angular.element('[ng-controller=wqs_search_controller]').scope().num_people = num_people;
+			    }
+
 			    
 			    if(!startTime){
 			    	//console.log('startTime undefined');

@@ -55,7 +55,8 @@ function tourtiger_archive_atlasx() { ?>
                                         
                                         <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -92,7 +93,8 @@ function tourtiger_archive_atlasx() { ?>
                                         <!-- for carrent category -->
                                         <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat[0]"> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -156,7 +158,8 @@ function tourtiger_archive_atlasx() { ?>
                                         
                                         <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -193,7 +196,8 @@ function tourtiger_archive_atlasx() { ?>
                                         <!-- for carrent category -->
                                         <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat[0]"> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
