@@ -509,10 +509,10 @@ function primary_area_deregister_unnesesarily_scripts() {
 		wp_dequeue_script('wqs_functions_atlas');
 		wp_dequeue_script('wqs_functions_for_check_available_atlas');
 
-		// wp_dequeue_script('jquery');
-		// wp_deregister_script('jquery');
-	 	// wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
-	 	// wp_enqueue_script( 'jquery' );
+		wp_dequeue_script('jquery');
+		wp_deregister_script('jquery');
+	 	wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, false);
+	 	wp_enqueue_script( 'jquery' );
 
 
 		// wp_dequeue_style('bootstrap_select');
