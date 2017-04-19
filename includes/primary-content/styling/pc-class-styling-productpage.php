@@ -967,6 +967,22 @@ class ProductPage extends StylingCard {
 					'endpoint' => 0,
 				),
 				array (
+					'key' => $this->slug . '_prpabordsidebarerttetfe50_' . $i,
+					'label' => 'Enable border in sidebar?',
+					'name' => 'is-sidebar-border',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Yes, include please',
+					'default_value' => 1,
+				),
+				array (
 					'key' => $this->slug . '_dcpabtn50_' . $i,
 					'label' => 'Book now color',
 					'name' => 'bkn_background-color',
@@ -1399,7 +1415,8 @@ class ProductPage extends StylingCard {
 					$css .= '}';
 				}
 
-				$siidb_icon_color = get_sub_field( 'content_icon-color' );
+				$siidb_icon_color  = get_sub_field( 'content_icon-color' );
+				$is_sidebar_border = get_sub_field( 'is-sidebar-border' );
 
 				if ( $siidb_icon_color ) {
 					$css .= "html.{$style} .reason_to_book_label .fa-certificate{";
@@ -1408,11 +1425,19 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 
-					$css .= "html.{$style} .book-tour-wrapper_product_row {";
+					if ( $is_sidebar_border ) :
+						$css .= "html.{$style} .book-tour-wrapper_product_row {";
 
-						$css .= "border-color: {$siidb_icon_color};";
+							$css .= "border-color: {$siidb_icon_color};";
 
-					$css .= "}";
+						$css .= "}";
+					elseif ( ! $is_sidebar_border ) :
+						$css .= "html.{$style} .book-tour-wrapper_product_row {";
+
+							$css .= "border: none;";
+
+						$css .= "}";
+					endif;
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_number span {";
 
