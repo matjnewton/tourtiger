@@ -1174,15 +1174,15 @@ class ProductPage extends StylingCard {
 				$css .= '}';
 
 				$font_style_headline = get_sub_field( 'font-style_headline' );
+				$font = pc_init_font_css($font_style_headline);
+				$css .= $font[0] ? $font[0]:'';
 
 				for ( $i = 1; $i < 7; $i++ ) {
+
 					if ( $font_style_headline ) {
-						$css .= $font_style_headline['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 						$css .= "html.{$style} .styles .content .product_title_area.customstyle h{$i}, html.{$style} .content .product_title_area.customstyle h{$i}{";
 
-							$css .= $font_style_headline['font-family'] ? "font-family: '{$font_style_headline['font-family']}', sans-serif;" :'';
-							$css .= "font-size: {$font_style_headline['font_size']}px;";
-							$css .= "font-weight: {$font_style_headline['font-weight']};";
+							$css .= $font[1] ? $font[1] : '';
 							$css .= "color: {$font_style_headline['text-color']};";
 
 						$css .= '}';
@@ -1190,30 +1190,28 @@ class ProductPage extends StylingCard {
 				}
 
 				$font_style_h_details = get_sub_field( 'font-style_h-details' );
+				$font = pc_init_font_css($font_style_h_details);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_h_details ) {
-					$css .= $font_style_h_details['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span, html.{$style} .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span{";
 
-						$css .= $font_style_h_details['font-family'] ? "font-family: '{$font_style_h_details['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_h_details['font_size']}px;";
-						$css .= "font-weight: {$font_style_h_details['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_h_details['text-color']};";
 
 					$css .= '}';
 				}
 
 				$font_style_h_sub = get_sub_field( 'font-style_h-sub' );
+				$font = pc_init_font_css($font_style_h_sub);
+				$css .= $font[0] ? $font[0]:'';
 
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_h_sub ) {
-						$css .= $font_style_h_sub['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 						$css .= "html.{$style} .styles .content h{$i}.primary_content_subhead.customstyle, html.{$style} .content h{$i}.primary_content_subhead.customstyle{";
 
-							$css .= $font_style_h_sub['font-family'] ? "font-family: '{$font_style_h_sub['font-family']}', sans-serif;" : '';
-							$css .= "font-size: {$font_style_h_sub['font_size']}px;";
-							$css .= "font-weight: {$font_style_h_sub['font-weight']};";
+							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_h_sub['text-color']};";
 
 						$css .= '}';
@@ -1222,77 +1220,66 @@ class ProductPage extends StylingCard {
 				}
 
 				$font_style_special_content = get_sub_field( 'font-style_special-content' );
+				$font = pc_init_font_css($font_style_special_content);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_special_content ) {
-					$css .= $font_style_special_content['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p{";
 
-						$css .= $font_style_special_content['font-family'] ? "font-family: '{$font_style_special_content['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_special_content['font_size']}px;";
-						$css .= "font-weight: {$font_style_special_content['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_special_content['text-color']};";
 
 					$css .= '}';
 				}
 
 				$font_style_hightlights = get_sub_field( 'font-style_hightlights' );
+				$font = pc_init_font_css($font_style_hightlights);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_hightlights ) {
-					$css .= $font_style_hightlights['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span{";
 
-						$css .= $font_style_hightlights['font-family'] ? "font-family: '{$font_style_hightlights['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_hightlights['font_size']}px;";
-						$css .= "font-weight: {$font_style_hightlights['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_hightlights['text-color']};";
 
 					$css .= '}';
 				}
 
 				$font_style_trip_details = get_sub_field( 'font-style_trip-details' );
+				$font = pc_init_font_css($font_style_trip_details);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_trip_details ) {
-					$css .= $font_style_trip_details['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle, html.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle{";
 
-						$css .= $font_style_trip_details['font-family'] ? "font-family: '{$font_style_trip_details['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_trip_details['font_size']}px;";
-						$css .= "font-weight: {$font_style_trip_details['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_trip_details['text-color']};";
 
 					$css .= '}';
 				}
 
 				$font_style_td_content = get_sub_field( 'font-style_td-content' );
+				$font = pc_init_font_css($font_style_td_content);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_td_content ) {
-					$css .= $font_style_td_content['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, html.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, html.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, html.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, html.{$style} .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p, html.{$style} .styles .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p{";
 
-						$css .= $font_style_td_content['font-family'] ? "font-family: '{$font_style_td_content['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_td_content['font_size']}px;";
-						$css .= "font-weight: {$font_style_td_content['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= '}';
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_number span{";
 
-						$lh = $font_style_td_content['font_size'];
-						$lh += 4;
-
-						$css .= $font_style_td_content['font-family'] ? "font-family: '{$font_style_td_content['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_td_content['font_size']}px;";
-						$css .= "font-weight: {$lh}px;";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= "}";
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_label {";
 
-						$css .= $font_style_td_content['font-family'] ? "font-family: '{$font_style_td_content['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_td_content['font_size']}px;";
-						$css .= "font-weight: {$font_style_td_content['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= "}";
@@ -1305,16 +1292,15 @@ class ProductPage extends StylingCard {
 				}
 
 				$font_style_exco_title = get_sub_field( 'font-style_exco-title' );
+				$font = pc_init_font_css($font_style_exco_title);
+				$css .= $font[0] ? $font[0]:'';
 
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_exco_title ) {
-						$css .= $font_style_exco_title['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 						$css .= "html.{$style} .styles .content .primary_content_expandable_content_options_li h{$i}.primary_content_subhead.customstyle, html.{$style} .content .primary_content_expandable_content_options_li h{$i}.primary_content_subhead.customstyle {";
 
-							$css .= $font_style_exco_title['font-family'] ? "font-family: '{$font_style_exco_title['font-family']}', sans-serif;" : '';
-							$css .= "font-size: {$font_style_exco_title['font_size']}px;";
-							$css .= "font-weight: {$font_style_exco_title['font-weight']};";
+							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_exco_title['text-color']};";
 
 						$css .= '}';
@@ -1323,12 +1309,9 @@ class ProductPage extends StylingCard {
 							$css .= "color: {$font_style_exco_title['text-color']};";
 						$css .= '}';
 						
-						$css .= $font_style_exco_title['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 						$css .= "html.{$style} .styles .content h{$i}.primary_content_subhead{";
 
-							$css .= $font_style_exco_title['font-family'] ? "font-family: '{$font_style_exco_title['font-family']}', sans-serif;" : '';
-							$css .= "font-size: {$font_style_exco_title['font_size']}px;";
-							$css .= "font-weight: {$font_style_exco_title['font-weight']};";
+							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_exco_title['text-color']};";
 
 						$css .= '}';
@@ -1337,28 +1320,26 @@ class ProductPage extends StylingCard {
 				}
 
 				$font_style_exco_label = get_sub_field( 'font-style_exco-label' );
+				$font = pc_init_font_css($font_style_exco_label);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_exco_label ) {
-					$css .= $font_style_exco_label['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle, html.{$style} .site-inner .content a.primary_content_expandable_content_toggle.customstyle, html.{$style} .styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span, html.{$style} .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span{";
 
-						$css .= $font_style_exco_label['font-family'] ? "font-family: '{$font_style_exco_label['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_exco_label['font_size']}px;";
-						$css .= "font-weight: {$font_style_exco_label['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_exco_label['text-color']};";
 
 					$css .= '}';
 				}
 
 				$font_style_pa_content = get_sub_field( 'font-style_pa-content' );
+				$font = pc_init_font_css($font_style_exco_label);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_pa_content ) {
-					$css .= $font_style_pa_content['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$font_style_headline['font-family']}';":'';
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper p, html.{$style} .site-inner .content .product_content_wrapper p, html.{$style} .product_content_wrapper ul li{";
 
-						$css .= $font_style_pa_content['font-family'] ? "font-family: '{$font_style_pa_content['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$font_style_pa_content['font_size']}px;";
-						$css .= "font-weight: {$font_style_pa_content['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_pa_content['text-color']};";
 
 					$css .= '}';
@@ -1402,14 +1383,13 @@ class ProductPage extends StylingCard {
 				}
 
 				$sidebar_headline = get_sub_field( 'sidebar_headline' );
+				$font = pc_init_font_css($sidebar_headline);
+				$css .= $font[0] ? $font[0]:'';
 
 				if ( $sidebar_headline ) {
-					$css .= $sidebar_headline['font-family'] ? "@import 'https://fonts.googleapis.com/css?family={$sidebar_headline['font-family']}';":'';
 					$css .= "html.{$style} .book-tour-title_product{";
 
-						$css .= $sidebar_headline['font-family'] ? "font-family: '{$sidebar_headline['font-family']}', sans-serif;" : '';
-						$css .= "font-size: {$sidebar_headline['font_size']}px;";
-						$css .= "font-weight: {$sidebar_headline['font-weight']};";
+						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$sidebar_headline['text-color']};";
 
 					$css .= '}';
