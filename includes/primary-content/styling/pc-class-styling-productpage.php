@@ -1286,6 +1286,8 @@ class ProductPage extends StylingCard {
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_number .fa-phone {";
 
+						$css .= "font-size: {$font_style_td_content['font_size']}px;";
+						$css .= "line-height: {$font_style_td_content['line_height']}px;";
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= "}";

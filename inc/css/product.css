@@ -170,7 +170,7 @@ body.custom-background.single-product {
 .reason_to_book_label {
   font-size: 15px;
   color: #797979;
-  margin-left: 30px;
+  //margin-left: 30px;
   position: relative;
 padding-bottom: 11px;
     line-height: 37px;
@@ -235,6 +235,7 @@ padding-bottom: 11px;
 .book-tour-wrapper_product .sidebar_phone_row.sidebar_phone_label {
   padding-top: 42px;
   padding-bottom: 42px;
+  text-align: center;
 }
 .book-tour-wrapper_product > .sidebar_phone_row ~ .sidebar_phone_row  {
 	margin-top: 10px;
@@ -243,20 +244,23 @@ padding-bottom: 11px;
   font-size: 25px;
   font-weight: 500;
   color: #abc545;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 .sidebar_phone_row .phone_number .fa-phone{
 	font-size: 36px;
     color: #abc545;
     position: absolute;
 }
+.sidebar_phone_row .phone_number .fa-phone:before {
+  vertical-align: middle;
+}
 .phone_number {
-	padding-left: 13px;
+	//padding-left: 13px;
 }
 .sidebar_phone_row .phone_label {
   font-size: 20px;
   color: #797979;
-  padding-left: 13px;
+  //padding-left: 13px;
   padding-bottom: 13px;
 }
 
@@ -920,11 +924,6 @@ body.custom-background.page-template-rezdy_search {
   padding: 15px 0 5px 0;
     text-align: center;
 }
-.availability_checker_check span {
-  text-decoration: underline;
-  padding-right: 5px;
-    padding-left: 5px;
-}
 .availability_checker_check_prev:hover,
 .availability_checker_check_next:hover {
   cursor: pointer;
@@ -972,7 +971,6 @@ body.custom-background.page-template-rezdy_search {
     width: 63px;
     font-size: 15px;
     height: 40px;
-    display: inline-block;
 }
 .availability_checker_options_date .cal {
       color: #797979;
@@ -1018,17 +1016,13 @@ line-height: 40px;
 
 /*end design2*/
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col,
-.site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas {
+.site-inner .content .product_content_wrapper span.availability_checker_col {
     flex: 0 0 30%;
     -webkit-flex: 0 0 30%; /* Safari 6.1+ */
     -ms-flex: 0 0 30%; /* IE 10 */
     text-align: center;
     line-height: 22px;
 }
-.styles .site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas,
-.site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas {
-    text-align: left;
- }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_date,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_date {
     text-align: left;
@@ -1086,11 +1080,6 @@ line-height: 40px;
 }
 .book_atlas:hover {
   cursor: pointer;
-}
-.styles .site-inner .content .product_content_wrapper span.book_atlas,
-.site-inner .content .product_content_wrapper span.book_atlas {
-  text-decoration: underline;
-  font-weight: bold;
 }
 /*
 *
