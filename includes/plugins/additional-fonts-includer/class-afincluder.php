@@ -69,6 +69,7 @@ class AFIncluder {
 		$refresh = 'tools.php?page=' . $this->slug . '&tab=' . $this->slug . '_list&refresh=' . $this->slug . '-true';
 		$is_refresh    = isset( $_GET['refresh'] ) ? $_GET['refresh'] : false;
 		$is_delete     = isset( $_GET['aif-delete'] ) ? $_GET['aif-delete'] : false;
+		$is_delete_all   = isset( $_GET['delete-all'] ) ? $_GET['delete-all'] : false;
 		?>
 
 		<div class="wrap">

@@ -57,6 +57,10 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 
 	$is_google       = is_google_font_exist($font);
 
+	echo '<pre>';
+	print_r($is_google);
+	echo '</pre>';
+
 	foreach ( $items as $key => $value ) : 
 		if ( substr($value, -3) === 'css' ): 
 			$value = explode('.', $value);
@@ -65,9 +69,7 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 		endif;
 	endforeach;
 
-	if ( $is_google ) {
-		return false;
-	} elseif ( $font === '' ) {
+	if ( $font === '' ) {
 		return $available_fonts;
 	} elseif ( in_array( $font, $available_fonts ) ) {
 		if (!$include) {
@@ -75,6 +77,8 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 		} else {
 			return "<link rel='stylesheet' href='{$uri}/{$name}.css' type='text/css'>";
 		}
+	} elseif ( $is_google ) {
+		return false;
 	} else {
 		return false;
 	}
@@ -174,6 +178,10 @@ function update_fonts_in_json( $font = '' ) {
 	$jsonCount = count($jsonItems);
 
 	$existFonts = get_aifonts_from_dir();
+
+	echo '<pre>';
+	print_r($existFonts);
+	echo '</pre>';
 
 	foreach ( $existFonts as $key => $family ) :
 		$valid = true;
