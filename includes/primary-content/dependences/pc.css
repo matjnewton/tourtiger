@@ -464,3 +464,8 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .wysiwyg p + p,.wysiwyg p + ul,.wysiwyg ul + p,.wysiwyg ol + p,.wysiwyg p + ol,.wysiwyg ol + ul,.wysiwyg ul + ol{margin-top:15px}
 .wysiwyg ul > * + *{margin-top:10px}
 .wysiwyg img,.wysiwyg iframe,.wysiwyg video{max-width:100%;height:auto}
+.pc--r__alignment--right{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.pc--r__alignment--center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.pc--r__alignment--left{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
+.pc--r__alignment--space-around{-ms-flex-pack:distribute;justify-content:space-around}
+.pc--r__alignment--space-between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}

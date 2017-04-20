@@ -3130,6 +3130,50 @@ acf_add_local_field_group(array (
 											'readonly' => 0,
 										),
 										array (
+											'key' => 'fi21234dsfasdfddsf12f',
+											'label' => 'Rows alignment',
+											'name' => 'tour_pc-colums--alignment',
+											'type' => 'select',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array (
+												array (
+													array (
+														'field' => 'field_5821e28ff659a',
+														'operator' => '!=',
+														'value' => '1',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '==',
+														'value' => 'wrap'
+													)
+												),
+											),
+											'wrapper' => array (
+												'width' => '50',
+												'class' => '',
+												'id' => '',
+											),
+											'choices' => array (
+												'left' => 'Left',
+												'center' => 'Center',
+												'right' => 'Right',
+												'space-around' => 'Space Around',
+												'space-between' => 'Space Between'
+											),
+											'default_value' => array (
+												0 => 'left',
+											),
+											'allow_null' => 0,
+											'multiple' => 0,
+											'ui' => 0,
+											'ajax' => 0,
+											'placeholder' => '',
+											'disabled' => 0,
+											'readonly' => 0,
+										),
+										array (
 											'key' => 'field_58slides21e77scroll',
 											'label' => 'How many columns to scroll',
 											'name' => 'tour_pc-scroll-slides',
