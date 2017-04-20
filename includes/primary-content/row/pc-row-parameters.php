@@ -5,7 +5,8 @@
 	$tour_row_type = get_sub_field( 'tour_pc-rowtype' ) ;
 	$scroll_data = '';
 				
-	$tour_column_wrap = get_sub_field( 'tour_pc-colums--wrap' );
+	$tour_column_wrap      = get_sub_field( 'tour_pc-colums--wrap' );
+	$tour_column_alignment = get_sub_field( 'tour_pc-colums--alignment' );
 
 	if ( get_sub_field( 'tour_pc-rowtype--bg' ) == 'texture' ) {
 		include( PCA_DIR . '/row/pc-row-bg-texture.php' );
@@ -22,6 +23,9 @@
 	} elseif ( $tour_column_wrap == 'scroll' ) {
 		$tour_column_classes .= ' pc--r__scroll js-new-slider';
 	}
+
+	if ( $tour_column_wrap == 'wrap' ) 
+		$tour_column_classes .= ' pc--r__alignment--' . $tour_column_alignment;
 
 	if ( get_sub_field( 'tour_pc-colums--margin' ) == 'none' ) {
 		$tour_column_classes .= ' pc--r__mar-none';
