@@ -57,10 +57,6 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 
 	$is_google       = is_google_font_exist($font);
 
-	echo '<pre>';
-	print_r($is_google);
-	echo '</pre>';
-
 	foreach ( $items as $key => $value ) : 
 		if ( substr($value, -3) === 'css' ): 
 			$value = explode('.', $value);
@@ -178,10 +174,6 @@ function update_fonts_in_json( $font = '' ) {
 	$jsonCount = count($jsonItems);
 
 	$existFonts = get_aifonts_from_dir();
-
-	echo '<pre>';
-	print_r($existFonts);
-	echo '</pre>';
 
 	foreach ( $existFonts as $key => $family ) :
 		$valid = true;
