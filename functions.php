@@ -72,10 +72,10 @@ function tourtiger_scripts_method() {
 		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
 		endif;
 		
-		//if($integrate_xola):
+		if($integrate_xola):
 		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
 		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), null, false);
-		//endif;
+		endif;
 		
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), null, true);
 
