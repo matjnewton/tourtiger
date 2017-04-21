@@ -461,8 +461,8 @@ function primary_area_deregister_unnesesarily_scripts() {
 		wp_dequeue_script('application1');
 		wp_dequeue_script('trekksoft');
 		wp_dequeue_script('rezdy_modal');
-		wp_dequeue_script('xola_checkout');
-		wp_dequeue_script('xola_crossdomain');
+		//wp_dequeue_script('xola_checkout');
+		//wp_dequeue_script('xola_crossdomain');
 		wp_dequeue_script('regiondo_btn');
 		wp_dequeue_script('respond');
 		wp_dequeue_script('respond_matchmedia');
