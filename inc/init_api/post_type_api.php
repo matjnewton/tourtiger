@@ -57,7 +57,7 @@ function getWqsApi() {
                 $image = aq_resize( $img_url, 346, 240, true );
                 $image2 = aq_resize( $img_url, 305, 205, true );
 
-            $descript = wp_strip_all_tags( get_field('hero_area_0_content_editor', $post->ID ) );
+            $descript_from_hero = wp_strip_all_tags( get_field('hero_area_0_content_editor', $post->ID ) );
 
             $id=get_the_id();
             //$cur_terms = get_the_terms( $id, 'rezdy_cat' );
@@ -79,6 +79,15 @@ function getWqsApi() {
             $integration_flag = get_field('integration_flag', $post->ID);
             $integration_price = get_field('integration_price', $post->ID);
             $integration_availability = get_field('integration_availability', $post->ID);
+            $integration_product_description = get_field('integration_product_description', $post->ID );
+            
+            if ($posttype == 'tour') {
+                $descriptions = $descript_from_hero;
+            } else if ($posttype == 'product') {
+                $descriptions = $integration_product_description;
+            }
+
+            $integration_not_display_details = get_field('integration_not_display_details', $post->ID );
 
             $label = array();
             $text = array();
@@ -91,7 +100,9 @@ function getWqsApi() {
                     $details[$count]['label'] = $label[$count];
                     $details[$count]['text'] = $text[$count];
                     $count++;
-                endwhile; 
+                endwhile;
+            else:
+                $details->length = 0; 
             endif;
 
 
@@ -126,13 +137,14 @@ function getWqsApi() {
             $tempArray['productcode_group'] = $productcode_group;
 
             $tempArray['xola_id'] = $xola_id;
-            $tempArray['descript'] = $descript;
+            $tempArray['descript'] = $descriptions;
 
             $tempArray['integration_flag'] = $integration_flag;
             $tempArray['integration_price'] = $integration_price;
             //$tempArray['label'] = $label;
             //$tempArray['text_detail'] = $text;
             $tempArray['details'] = $details;
+            $tempArray['integration_details'] = $integration_not_display_details;
             $tempArray['integration_availability'] = $integration_availability;
             $tempArray['custom_button_link'] = $custom_button_link;
             $tempArray['post_type'] = get_post_type( $post->ID );
@@ -178,7 +190,7 @@ function wqs_api_get_tour_product() {
                 $image = aq_resize( $img_url, 346, 240, true );
                 $image2 = aq_resize( $img_url, 305, 205, true );
 
-            $descript = wp_strip_all_tags( get_field('hero_area_0_content_editor', $post->ID ) );
+            $descript_from_hero = wp_strip_all_tags( get_field('hero_area_0_content_editor', $post->ID ) );
 
             $id=get_the_id();
             //$cur_terms = get_the_terms( $id, 'rezdy_cat' );
@@ -200,6 +212,15 @@ function wqs_api_get_tour_product() {
             $integration_flag = get_field('integration_flag', $post->ID);
             $integration_price = get_field('integration_price', $post->ID);
             $integration_availability = get_field('integration_availability', $post->ID);
+            $integration_product_description = get_field('integration_product_description', $post->ID );
+            
+            if ($posttype == 'tour') {
+                $descriptions = $descript_from_hero;
+            } else if ($posttype == 'product') {
+                $descriptions = $integration_product_description;
+            }
+
+            $integration_not_display_details = get_field('integration_not_display_details', $post->ID );
 
             $label = array();
             $text = array();
@@ -247,12 +268,13 @@ function wqs_api_get_tour_product() {
             $tempArray['productcode_group'] = $productcode_group;
 
             $tempArray['xola_id'] = $xola_id;
-            $tempArray['descript'] = $descript;
+            $tempArray['descript'] = $descriptions;
 
             $tempArray['integration_flag'] = $integration_flag;
             $tempArray['integration_price'] = $integration_price;
             //$tempArray['label'] = $label;
             //$tempArray['text_detail'] = $text;
+            $tempArray['integration_details'] = $integration_not_display_details;
             $tempArray['details'] = $details;
             $tempArray['integration_availability'] = $integration_availability;
             $tempArray['custom_button_link'] = $custom_button_link;

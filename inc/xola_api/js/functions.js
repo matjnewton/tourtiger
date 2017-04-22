@@ -121,7 +121,7 @@
 		$scope.duration_to_hours = function(hours ) {
 			var reshours = hours/60;
 			if ( hours ==1 ) {
-				return '0.1';
+				return '1';
 			} else {
 				return reshours;
 			}

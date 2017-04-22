@@ -1071,6 +1071,7 @@ line-height: 40px;
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count span {
     /*color: #ca2127;*/
         color: #abc545;
+      text-align: left;
 }
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count.not_numpeople,
 .site-inner .content .product_content_wrapper span.availability_checker_col.checker_count.not_numpeople,

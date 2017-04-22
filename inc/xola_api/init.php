@@ -9,10 +9,12 @@ function wqs_load_scripts_xola()
     wp_register_script('wqs_functions_xola', WQS_XOLA_URL . '/js/functions.js');
     wp_register_script('wqs_functions_for_search_box_xola', WQS_XOLA_URL . '/js/functions_for_search_box.js');
     wp_register_script('wqs_functions_for_check_available_xola', WQS_XOLA_URL . '/js/functions_for_check_available.js');
- 
+    wp_register_script('wqs_functions_underscore-min', WQS_XOLA_URL . '/js/underscore-min.js');
+
     wp_enqueue_script('wqs_functions_xola');
     wp_enqueue_script('wqs_functions_for_search_box_xola');
     wp_enqueue_script('wqs_functions_for_check_available_xola');
+    wp_enqueue_script('wqs_functions_underscore-min');
 
     wp_localize_script( 'wqs_functions_xola', 'js_var_xola', 
         array( 

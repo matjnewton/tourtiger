@@ -83,7 +83,8 @@ function tourtiger_archive_xola(){
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
                                         <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -100,15 +101,14 @@ function tourtiger_archive_xola(){
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 && $index==0 && !cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
                                                         <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
                                                     
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -122,7 +122,8 @@ function tourtiger_archive_xola(){
                                         <!-- for carrent category -->
                                         <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -140,7 +141,7 @@ function tourtiger_archive_xola(){
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <!-- <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span> -->
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 && $index==0 && !cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                          <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
                                                         <!--  <span class="search-descript-departure-label">Seats</span> <span class="search-descript-departure-text">{{api_availability2}}</span> -->
                                                          <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
@@ -148,7 +149,7 @@ function tourtiger_archive_xola(){
                                                     
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -170,7 +171,8 @@ function tourtiger_archive_xola(){
                                 
                                 <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                     <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                        <img src="{{cptproducts.image2}}">
+                                        <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                        <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                         <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                     </div> <!-- end search-tumb-wrap -->
                                     <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -187,14 +189,14 @@ function tourtiger_archive_xola(){
                                             <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                             <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                             
-                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                 <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
                                                 <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
                                             </span>
                                             
 
                                             <div class="search-descript-departure-custom">
-                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                     <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                 </span>
                                             </div>
@@ -208,7 +210,8 @@ function tourtiger_archive_xola(){
                                 <!-- for carrent category -->
                                 <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
                                     <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                        <img src="{{cptproducts.image2}}">
+                                        <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                        <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                         <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                     </div> <!-- end search-tumb-wrap -->
                                     <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -225,14 +228,14 @@ function tourtiger_archive_xola(){
                                             <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                             <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                             
-                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                 <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
                                                 <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
                                             </span>
                                             
 
                                             <div class="search-descript-departure-custom">
-                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                     <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                 </span>
                                             </div>
@@ -263,7 +266,8 @@ function tourtiger_archive_xola(){
                                     <div ng-repeat = "cptproducts in cpt_product track by $index" ng-if="cptproducts.xola_id == products.id && cptproducts.xola_id != null" class="cptproducts">
                                         <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -281,14 +285,14 @@ function tourtiger_archive_xola(){
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                    
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 && $index==0 && !cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                          <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
                                                          <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
                                                     
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -302,7 +306,8 @@ function tourtiger_archive_xola(){
                                         <!-- for carrent category -->
                                         <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
                                             <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                                <img src="{{cptproducts.image2}}">
+                                                <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                                <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                                 <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                             </div> <!-- end search-tumb-wrap -->
                                             <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -320,7 +325,7 @@ function tourtiger_archive_xola(){
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
                                                     <!-- <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span> -->
-                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 &&  api_availability2 !=0 && $index==0 && !cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-xola" ng-repeat="(key, api_availability2) in api_availability track by $index" ng-if="key !=0 && $index==0 && !cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                          <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{parseFloat(key)}}</span>
                                                         <!--  <span class="search-descript-departure-label">Seats</span> <span class="search-descript-departure-text">{{api_availability2}}</span> -->
                                                          <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
@@ -328,7 +333,7 @@ function tourtiger_archive_xola(){
                                                     
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -352,7 +357,8 @@ function tourtiger_archive_xola(){
                                 
                                 <div class="anrow2" ng-if="search_tour_cat == 'all' "> 
                                     <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                        <img src="{{cptproducts.image2}}">
+                                        <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                        <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                         <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                     </div> <!-- end search-tumb-wrap -->
                                     <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -369,14 +375,14 @@ function tourtiger_archive_xola(){
                                             <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                             <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                             
-                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                 <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
                                                 <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
                                             </span>
                                             
 
                                             <div class="search-descript-departure-custom">
-                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                     <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                 </span>
                                             </div>
@@ -390,7 +396,8 @@ function tourtiger_archive_xola(){
                                 <!-- for carrent category -->
                                 <div class="anrow2" ng-if="search_tour_cat != 'all' && cptproducts.term.term_id == search_tour_cat"> 
                                     <div class="col-xs-12 col-sm-6 col-md-4 search-tumb-wrap">
-                                        <img src="{{cptproducts.image2}}">
+                                        <img ng-if="cptproducts.image2" src="{{cptproducts.image2}}">
+                                        <img ng-if="!cptproducts.image2" src="<?php echo  CORE_URL .'/css/images/image_305_205.png';?>">
                                         <span class="most_popular" ng-if="cptproducts.integration_flag.length >0">Most Popular</span>
                                     </div> <!-- end search-tumb-wrap -->
                                     <div class="col-xs-12 col-sm-6 col-md-8 search-descript-wrap">
@@ -407,14 +414,14 @@ function tourtiger_archive_xola(){
                                             <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                             <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                             
-                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0">
+                                            <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                 <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{group_xola.price[0].departure}}</span>
                                                 <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{ duration_to_hours(group_xola.price[0].price[0].duration) }} hours</span>
                                             </span>
                                             
 
                                             <div class="search-descript-departure-custom">
-                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                     <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                 </span>
                                             </div>
