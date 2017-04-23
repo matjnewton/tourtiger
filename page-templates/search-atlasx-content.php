@@ -73,13 +73,13 @@ function tourtiger_archive_atlasx() { ?>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-                                                    <span class="search-descript-departure-xola">
+                                                    <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).time}}</span>
                                                         <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -111,13 +111,13 @@ function tourtiger_archive_atlasx() { ?>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-                                                    <span class="search-descript-departure-xola">
+                                                    <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).time}}</span>
                                                         <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>                                                   
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -176,13 +176,13 @@ function tourtiger_archive_atlasx() { ?>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-                                                    <span class="search-descript-departure-xola">
+                                                    <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).time}}</span>
                                                         <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>
@@ -214,13 +214,13 @@ function tourtiger_archive_atlasx() { ?>
                                                     <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date!</div>
                                                     <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
                                                     
-                                                    <span class="search-descript-departure-xola">
+                                                    <span class="search-descript-departure-xola" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text departure-text-{{$index}}">{{available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).time}}</span>
                                                         <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration_to_hours(products.duration)}} hours</span>
                                                     </span>                                                   
 
                                                     <div class="search-descript-departure-custom">
-                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                        <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                             <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                         </span>
                                                     </div>

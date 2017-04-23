@@ -924,6 +924,11 @@ body.custom-background.page-template-rezdy_search {
   padding: 15px 0 5px 0;
     text-align: center;
 }
+.availability_checker_check span {   
+  text-decoration: underline;   
+  padding-right: 5px;   
+  padding-left: 5px;    
+}
 .availability_checker_check_prev:hover,
 .availability_checker_check_next:hover {
   cursor: pointer;
@@ -971,6 +976,7 @@ body.custom-background.page-template-rezdy_search {
     width: 63px;
     font-size: 15px;
     height: 40px;
+    display: inline-block;
 }
 .availability_checker_options_date .cal {
       color: #797979;
@@ -1015,6 +1021,16 @@ line-height: 40px;
 }
 
 /*end design2*/
+.styles .site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas,    
+.site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas {    
+    text-align: left;   
+ }
+.styles .site-inner .content .product_content_wrapper span.book_atlas,    
+.site-inner .content .product_content_wrapper span.book_atlas {   
+  text-decoration: underline;   
+  font-weight: bold;    
+}
+
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col,
 .site-inner .content .product_content_wrapper span.availability_checker_col {
     flex: 0 0 30%;
@@ -1461,4 +1477,8 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
 }
 .search_noavailable_message {
   padding: 12px;
+}
+.availability_checker_special_message {
+  margin-top: 0;
+  margin-bottom: 5px;
 }

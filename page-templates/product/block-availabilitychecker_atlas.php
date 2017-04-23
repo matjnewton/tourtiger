@@ -1,8 +1,10 @@
 <!-- availability checker layout -->
 
         <?php if( get_row_layout() == 'primary_content_availability_checker'):
-	        $our_tours_checker = get_sub_field('our_tours_checker'); ?>
-	        <?php //var_dump($our_tours_checker); ?>
+	        $our_tours_checker = get_sub_field('our_tours_checker');
+	        $availability_checker_special_message = get_sub_field('availability_checker_special_message');
+	        ?>
+	        <?php //var_dump($availability_checker_special_message); ?>
 			<?php 
 			if (isset($_GET["num_people"])) {
 			   $num_people = $_GET["num_people"];
@@ -36,6 +38,12 @@
 	                    </div>
 	                </div>
 
+	                <!-- special message -->
+	                <?php if($availability_checker_special_message): ?>
+					<p class="availability_checker_special_message">
+						<?php echo $availability_checker_special_message; ?>
+					</p>
+	                <?php endif; ?>
 
 					<!-- seats -->
 	                    <ul class="availability_checker_options">

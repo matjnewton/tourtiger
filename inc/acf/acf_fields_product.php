@@ -3316,6 +3316,28 @@ acf_add_local_field_group(array (
 		                    "disabled"=> 0,
 		                    "readonly"=> 0,
 		                ),
+		                //special message 
+		                array (
+							'key' => 'field_5398639196c4e_availability_checker_special_message',
+							'label' => 'Special Message',
+							'name' => 'availability_checker_special_message',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic'	=> 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'maxlength' => '',
+							'rows' => '',
+							'new_lines' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
 					),
 				), // end availability_checker
 
