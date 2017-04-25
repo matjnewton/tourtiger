@@ -1494,7 +1494,7 @@ add_filter('acf/format_value/type=textarea', 'my_acf_format_value', 10, 3);
 
 /*shortcodes*/
 
-/*function a_func($atts, $content = null) {
+function a_func($atts, $content = null) {
 shortcode_atts(array('href'=>'','text'=>''),$atts);
 return '<a href="'.$atts['href'].'">'.$atts['text'].'</a>';
 }
@@ -1504,7 +1504,7 @@ function b_func($atts, $content = null) {
 shortcode_atts(array('text'=>''),$atts);
 return '<strong>'.$atts['text'].'</strong>';
 }
-add_shortcode('b', 'b_func');*/
+add_shortcode('b', 'b_func');
 
 //Google Maps Shortcode
 function do_googleMaps($atts, $content = null) {
