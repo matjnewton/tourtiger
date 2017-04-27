@@ -3,6 +3,8 @@
         <?php if( get_row_layout() == 'primary_content_availability_checker'):
 	        $our_tours_checker = get_sub_field('our_tours_checker');
 	        $availability_checker_special_message = get_sub_field('availability_checker_special_message');
+	        $check_user_id_xola = get_field('check_user_id_xola', 'options');
+	        //var_dump($check_user_id_xola);
 	        ?>
 	        <?php //var_dump($availability_checker_special_message); ?>
 			<?php 
@@ -12,7 +14,7 @@
 			   $num_people = 1;
 			}?>
 
-	        <div id="availability_checker" class="product_content_wrapper primary_content_availability_checker availability_checker_atlas" ng-cloak>
+	        <div id="availability_checker" class="product_content_wrapper primary_content_availability_checker availability_checker_atlas" ng-app="wqs_xola_check" ng-cloak>
 				<div class="container_availability_checker" ng-controller="wqs_search_controller">	
 					
 					<input type="hidden" id="wqs_api_url" value="<?php echo getWqsApiUrl(); ?>">
@@ -66,10 +68,12 @@
 										<i class="fa fa-close"></i>
 										<span class="checker_date_label">Not Available</span>
 									</span>
-									<span ng-if="item.$value !=0 && item.$value>=num_people" class="availability_checker_col availability_checker_col_atlas book_atlas customstyle" data-button-id="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{item.$key}}" data-button-numpeople="{{num_people}}">Book Now</span>
+									<span ng-click="widgetload($event)" class="xola-checkout availability_checker_col availability_checker_col_atlas book_atlas customstyle" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{wqs_productcode}}" data-button-productcode="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{item.$key}}" data-button-numpeople="{{num_people}}">Book Now</span>
 								</li>
 							</span>
 							<!-- end new template checker -->
+							
+
 	                    </ul>
 	                    	<!-- next prev -->
 						<div class="availability_checker_check">
@@ -77,6 +81,7 @@
 						</div>
 
 				</div>
+
 	        </div>
 
             <script type="text/javascript">
@@ -112,5 +117,7 @@
                 });
             </script>
 
+
 	        <?php 
 	    endif;?> 
+

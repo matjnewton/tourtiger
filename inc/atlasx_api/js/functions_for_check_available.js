@@ -1,9 +1,9 @@
 (function () {
     "use strict";
 
-    angular.element('.primary_content_availability_checker').ready(function() {
-	  angular.bootstrap('.primary_content_availability_checker', ['wqs_xola_check']);
-	});
+ //    angular.element('.primary_content_availability_checker').ready(function() {
+	//   angular.bootstrap('.primary_content_availability_checker', ['wqs_xola_check']);
+	// });
 
 
     var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter','angular-toArrayFilter']);
@@ -140,6 +140,16 @@
 		        //  $(".timeSelected_options").first().attributes('selected').val('selected');
 		        // console.log( $(".timeSelected_options").first().attributes('selected').val('selected') );
 		}
+
+		$scope.widgetload = function (e) {
+		    var data = {
+				  seller: $(e.target).data('seller'),
+				  version: $(e.target).data('version'),
+				  //experience: $(e.target).data('experience')
+				};
+			xola.checkout(data);
+		    //console.log(data);  
+		};
 
 	    $scope.parseFloat = function(value) {
 	        return parseFloat(value/100).toFixed(2);
@@ -638,3 +648,12 @@ wqs_xola_check.factory('GetUrlParameter', function () {
 
 })();
 
+// include xola js widget
+(function() {
+    var co=document.createElement("script");
+    co.type="text/javascript";
+    co.async=true;
+    co.src="https://xola.com/checkout.js";
+    var s=document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(co, s);
+})();

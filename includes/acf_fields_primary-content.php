@@ -480,34 +480,34 @@ function primary_area_deregister_unnesesarily_scripts() {
 		wp_dequeue_script('bxslider');
 		wp_dequeue_script('scrollit');
 
-		wp_dequeue_script('product_scripts');
-		wp_dequeue_script('jquerystickyjs');
-		wp_dequeue_script('bxslider_min_js');
-		wp_dequeue_script('rezdy_scripts');
+		// wp_dequeue_script('product_scripts');//dgamoni
+		// wp_dequeue_script('jquerystickyjs');//dgamoni
+		// wp_dequeue_script('bxslider_min_js');//dgamoni
+		// wp_dequeue_script('rezdy_scripts');//dgamoni
 		
-		wp_dequeue_script('wqs_functions_xola');
-		wp_dequeue_script('wqs_functions_for_search_box_xola');
-		wp_dequeue_script('wqs_functions_for_check_available_xola');
+		//wp_dequeue_script('wqs_functions_xola');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_search_box_xola');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_check_available_xola');//dgamoni
 		
-		wp_dequeue_script('wqs_functions_rezdyapi');
-		wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');
-		wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');
+		// wp_dequeue_script('wqs_functions_rezdyapi');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');//dgamoni
 		
-		wp_dequeue_script('wqs_functions_rezdyapi');
-		wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');
-		wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');
+		// wp_dequeue_script('wqs_functions_rezdyapi');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');//dgamoni
 		
-		wp_dequeue_script('wqs_angular');
-		wp_dequeue_script('wqs_angular_animate');
-		wp_dequeue_script('wqs_angular_filter');
-		wp_dequeue_script('wqs_ng_infinite_scroll');
+		// wp_dequeue_script('wqs_angular');//dgamoni
+		// wp_dequeue_script('wqs_angular_animate');//dgamoni
+		// wp_dequeue_script('wqs_angular_filter');//dgamoni
+		// wp_dequeue_script('wqs_ng_infinite_scroll');//dgamoni
 		
-		wp_dequeue_script('wqs_moment');
-		wp_dequeue_script('wqs_daterangepicker');
-		wp_dequeue_script('wqs_multipledatepicker');
+		// wp_dequeue_script('wqs_moment');//dgamoni
+		// wp_dequeue_script('wqs_daterangepicker');//dgamoni
+		// wp_dequeue_script('wqs_multipledatepicker');//dgamoni
 		
-		wp_dequeue_script('wqs_functions_atlas');
-		wp_dequeue_script('wqs_functions_for_check_available_atlas');
+		// wp_dequeue_script('wqs_functions_atlas');//dgamoni
+		// wp_dequeue_script('wqs_functions_for_check_available_atlas');//dgamoni
 
 		wp_dequeue_script('jquery');
 		wp_deregister_script('jquery');
@@ -517,13 +517,13 @@ function primary_area_deregister_unnesesarily_scripts() {
 
 		// wp_dequeue_style('bootstrap_select');
 		wp_dequeue_style('magnific_popup_css');
-		wp_dequeue_style('product_css');
-		wp_dequeue_style('bxslider_css');
-		wp_dequeue_style('product_css_adaptive');
+		// wp_dequeue_style('product_css');
+		// wp_dequeue_style('bxslider_css');
+		// wp_dequeue_style('product_css_adaptive');
 
-		wp_dequeue_style('wqs_style');
-		wp_dequeue_style('wqs_style_daterangepicker');
-		wp_dequeue_style('wqs_style_multipledatepicker');
+		// wp_dequeue_style('wqs_style');//dgamoni
+		// wp_dequeue_style('wqs_style_daterangepicker');//dgamoni
+		// wp_dequeue_style('wqs_style_multipledatepicker');//dgamoni
 
 	endif;
 

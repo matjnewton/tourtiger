@@ -1299,7 +1299,7 @@ acf_add_local_field_group(array (
 						array (
 							'key' => 'pc_ha_014_1',
 							'label' => 'Search settings',
-							'name' => 'pc_search_settings_type',
+							'name' => 'search_settings_type',
 							'type' => 'radio',
 							'instructions' => '',
 							'required' => 0,
@@ -1330,7 +1330,7 @@ acf_add_local_field_group(array (
 						array (
 							'key' => 'pc_ha_014_2',
 							'label' => 'Search by categories',
-							'name' => 'pc_search_settings_type_category',
+							'name' => 'search_settings_type_category',
 							'type' => 'true_false',
 							'instructions' => '',
 							'required' => 0,
@@ -1351,19 +1351,54 @@ acf_add_local_field_group(array (
 							'message' => 'Yes',
 							'default_value' => 0,
 						),
-						array (
+						// array (
+						// 	'key' => 'pc_ha_014_3',
+						// 	'label' => 'Select categories',
+						// 	'name' => 'pc_search_settings_type_category_select',
+						// 	'type' => 'taxonomy',
+						// 	'instructions' => 'the default is the current category',
+						// 	'required' => 0,
+						// 	'conditional_logic' => array (
+						// 		array (
+						// 			array (
+						// 				'field' => 'pc_ha_014_2',
+						// 				'operator' => '==',
+						// 				'value' => '1',
+						// 			),
+						// 		),
+						// 	),
+						// 	'wrapper' => array (
+						// 		'width' => '',
+						// 		'class' => '',
+						// 		'id' => '',
+						// 	),
+						// 	'taxonomy' => 'tour_cat',
+						// 	'field_type' => 'multi_select',
+						// 	'allow_null' => 1,
+						// 	'add_term' => 1,
+						// 	'save_terms' => 0,
+						// 	'load_terms' => 0,
+						// 	'return_format' => 'object',
+						// 	'multiple' => 0
+						// ),
+												array (
 							'key' => 'pc_ha_014_3',
 							'label' => 'Select categories',
-							'name' => 'pc_search_settings_type_category_select',
-							'type' => 'taxonomy',
-							'instructions' => 'the default is the current category',
+							'name' => 'search_settings_type_category_select',
+							'type' => 'advanced_taxonomy_selector',
+							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => array (
 								array (
 									array (
-										'field' => 'pc_ha_014_2',
+											'field' => 'pc_ha_014_2',
+											'operator' => '==',
+											'value' => '1',
+										),
+									array (
+										'field' => 'pc_ha_014',
 										'operator' => '==',
-										'value' => '1',
+										'value' => 'Search Box',
 									),
 								),
 							),
@@ -1372,14 +1407,108 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'taxonomy' => 'tour_cat',
-							'field_type' => 'multi_select',
+							'data_type' => 'terms',
+							'taxonomies' => array (
+								0 => 'rezdy_cat',
+								1 => 'tour_cat',
+							),
+							'post_type' => array (
+								0 => 'product',
+								1 => 'tour',
+							),
+							//'field_type' => 'multiselect',
+							'field_type' => 'select',
 							'allow_null' => 1,
-							'add_term' => 1,
-							'save_terms' => 0,
-							'load_terms' => 0,
-							'return_format' => 'object',
-							'multiple' => 0
+							'return_value' => 'object',
+						),
+						array (
+							'key' => 'field_552061311b125_settings_type_category_hide_option_pc',
+							'label' => 'Hide categories option in search result page',
+							'name' => 'search_settings_type_category_hide_option',
+							'type' => 'true_false',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+											'field' => 'pc_ha_014_2',
+											'operator' => '==',
+											'value' => '1',
+										),
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'message' => '',
+							'default_value' => 0,
+						),
+						//special message above search results
+						array (
+							'key' => 'field_54e613c087d24_special_message_pc',
+							'label' => 'Special message above search results',
+							'name' => 'search_settings_type_special_message',
+							'type' => 'textarea',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'maxlength' => '',
+							'rows' => '',
+							'new_lines' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
+							'key' => 'field_589c6dc1d2748_datepicker_position_pc',
+							'label' => 'Datepicker position',
+							'name' => 'search_settings_type_datepicker_position',
+							'type' => 'checkbox',
+							'instructions' => 'Default drop down and open right',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'Search Box',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array (
+								'drop-up' => 'drop-up',
+								// 'left' => 'left',
+							),
+							'default_value' => array (
+							),
+							'layout' => 'horizontal',
+							'toggle' => 0,
 						),
 					),
 					'min' => '',

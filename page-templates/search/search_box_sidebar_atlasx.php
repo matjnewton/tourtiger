@@ -41,9 +41,17 @@ if (isset($_GET["search_tour_cat"])) {
    $cat_enable = false;
 }
 
+if (isset($_GET["hide_option"])) {
+  if(($_GET["hide_option"]) == true) {
+    $hide_option = 'style="display:none;"';
+  }
+} else {
+   $hide_option = '';
+}
+
 ?>
 <?php if ($cat_enable) : ?>
-  <div id="filter_tour_cat">
+  <div <?php echo $hide_option; ?> id="filter_tour_cat">
     <div class="datepicker-instructions">Search by categories</div>
       <?php $search_tour_cat_sidebar = $_GET["search_tour_cat"]; ?>
       <?php //checkbox_term('tour_cat', $post->ID, $search_tour_cat_sidebar); ?>
