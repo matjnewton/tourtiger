@@ -68,7 +68,7 @@
 										<i class="fa fa-close"></i>
 										<span class="checker_date_label">Not Available</span>
 									</span>
-									<span ng-click="widgetload($event)" class="xola-checkout availability_checker_col availability_checker_col_atlas book_atlas customstyle" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{wqs_productcode}}" data-button-productcode="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{item.$key}}" data-button-numpeople="{{num_people}}">Book Now</span>
+									<span ng-if="item.$value !=0 && item.$value>=num_people" ng-click="widgetload($event)" class="xola-checkout availability_checker_col availability_checker_col_atlas book_atlas customstyle" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{wqs_productcode}}" data-button-productcode="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{item.$key}}" data-button-numpeople="{{num_people}}">Book Now</span>
 								</li>
 							</span>
 							<!-- end new template checker -->
