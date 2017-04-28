@@ -1,6 +1,11 @@
                             <?php
                                 include(locate_template('includes/integrate_vars.php' ));
                             ?>
+                            <?php 
+                            $check_user_id_xola = get_field('check_user_id_xola', 'options');
+                            $integrate_atlasx_with_this_website = get_field('integrate_atlasx_with_this_website', 'options');
+                            ?>
+
                             <?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
 
                                 <?php if($third_party == "xola-single-item"): ?>
@@ -30,7 +35,8 @@
                                         <!-- <div class="arrow-right"></div> -->
                                     </div>
                                 <?php else: ?>
-                                    <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?> xola-custom _book-btn2 book-btn2-product">
+
+                                    <div id="<?php if($bbl): echo $bbl; endif; ?>" class="<?php if($third_party == "xola-checkout"): ?>xola-checkout <?php elseif($third_party == "xola-gift"): ?>xola-gift <?php endif; ?> xola-custom _book-btn2 book-btn2-product " >
                                         <div class="book-btn2-product-title">
                                             <span><?php echo $bbt; ?></span>
                                             <i class="fa fa-angle-right"></i>
@@ -97,10 +103,18 @@
                                 </div>
 
                             </a>
+                            <?php elseif($integrate_atlasx_with_this_website && ($button_type == 'Use as third party integration Link')): ?>
+                                <div class="book-btn2-product xola-checkout xola-custom _book-btn2" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2">
+                                    <div class="book-btn2-product-title">
+                                        <span><?php echo $bbt; ?></span>
+                                        <i class="fa fa-angle-right"></i>
+                                    </div> 
+                                </div>
                             <?php else: ?>
+
                             <a <?php if($button_type == 'Link to form'): ?>id="scroll_to_form" <?php endif; ?> <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2-product">
 
-                                <div class="book-btn2-product-title">
+                                <div class="book-btn2-product-title" >
                                     <span><?php echo $bbt; ?></span>
                                     <i class="fa fa-angle-right"></i>
                                 </div>

@@ -1,7 +1,10 @@
                         <?php
                             include(locate_template('includes/integrate_vars.php' ));
                         ?>
-
+                        <?php 
+                        $check_user_id_xola = get_field('check_user_id_xola', 'options');
+                        $integrate_atlasx_with_this_website = get_field('integrate_atlasx_with_this_website', 'options');
+                        ?>
                         <div class="book-btn2-product btn-group">
                               <button type="button" class="btn-default dropdown-toggle book-btn2-inner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
                                 <div class="book-btn2-product-title">
@@ -64,7 +67,13 @@
             </script>
                             		<?php elseif($integrate_rezdy && ($button_type == 'Use as third party integration Link')): ?>
                             		    <a class="button-booking rezdy rezdy-modal" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                            		<?php else: ?>
+                                	
+                                    <?php elseif($integrate_atlasx_with_this_website && ($button_type == 'Use as third party integration Link')): ?>
+                                    <div class="button-booking xola-checkout xola-custom " data-seller="<?php echo $check_user_id_xola; ?>" data-version="2">
+                                        <?php echo $button_text; ?></span>
+                                    </div>
+
+                                    <?php else: ?>
                             		    <?php if($button_text): ?>
                                         <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
                             		    <?php endif; ?>
