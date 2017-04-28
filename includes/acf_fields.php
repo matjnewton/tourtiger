@@ -2068,6 +2068,22 @@ tour_finder',
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array (
+			'key' => 'field_59033fc70b4ae',
+			'label' => 'Orioly',
+			'name' => 'orioly',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+		),
 // moved to acf/acf_company_details_tab_style.php
 		// array (
 		// 	'key' => 'field_564757f5e2b00',
