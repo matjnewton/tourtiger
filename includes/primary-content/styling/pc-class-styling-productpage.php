@@ -1162,7 +1162,7 @@ class ProductPage extends StylingCard {
 
 				$content_icon_color = get_sub_field( 'content_icon-color' );
 
-				$css .= "html.{$style} .product_content_wrapper i {";
+				$css .= "html.{$style} .product_content_wrapper .fa-certificate {";
 					$css .= $content_icon_color ? "color:{$content_icon_color};":'';
 				$css .= '}';
 
