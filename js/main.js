@@ -11,7 +11,6 @@
 
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
 			var $unessesarily = $('.banner-wrapper-inner'); 
-			var $productAside = $('.book-tour-wrapper_product');
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			var strangeValue  = $header.height() || 0;
@@ -19,7 +18,6 @@
 
 			$('.site-inner').css( 'margin-top', newMarginTop );
 			$unessesarily.css('margin-top', 0);
-			$productAside.css('top', 0);
 		}
 	});
 })(jQuery);
