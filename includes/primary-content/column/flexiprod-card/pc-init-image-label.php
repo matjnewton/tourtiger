@@ -9,11 +9,6 @@ $fc_style__fcc_css[1] .= get_sub_field( 'fc_style__la_butt_bg' ) ? 'background-c
 $fc_style__fcc_css[1] .= 'transition: ease .3s;';
 $fc_style__fcc_css_hover = 'transition: ease .3s;';
 
-if ( get_sub_field( 'fc_style__la_butt_pos' ) == 'left' ) {
-	$fc_style__fcc_css[1] .= 'margin-left: 0;';
-} elseif ( get_sub_field( 'fc_style__la_butt_pos' ) == 'right' ) {
-	$fc_style__fcc_css[1] .= 'margin-right: 0;';
-}
 
 /* Button style */
 if ( get_sub_field( 'fc_style__la_butt_style' ) == 'square' ) {
@@ -65,5 +60,15 @@ echo '#pc_wrap .' . $fc_style . '  .fc_style--image_label {' . $fc_style__fcc_cs
 echo '#pc_wrap .' . $fc_style . '  .fc_style--image_label:hover{' . $fc_style__fcc_css_hover . '}';
 
 echo get_sub_field( 'fc_style__la_butt_ver' ) ? '#pc_wrap .' . $fc_style . '  .pc--c__b-wrap-image_label{' . get_sub_field( 'fc_style__la_butt_ver' ) . '}' : '';
+
+echo '#pc_wrap .' . $fc_style . '  .pc--c__b-wrap-image_label {';
+	if ( get_sub_field( 'fc_style__la_butt_pos' ) == 'left' ) {
+		echo 'text-align: left;';
+	} elseif ( get_sub_field( 'fc_style__la_butt_pos' ) == 'right' ) {
+		echo 'text-align: right;';
+	} elseif ( get_sub_field( 'fc_style__la_butt_pos' ) == 'center' ) {
+		echo 'text-align: center;';
+	}
+echo '}';
 
 ?>
