@@ -475,3 +475,4 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .pc--r_pos-stretch .pc--c__flexi{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .pc--r_pos-stretch .pc--c__b-first,.pc--r_pos-stretch .pc--c__b-second{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
 .fc_style--first_wrap,.fc_style--second_wrap{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
+.pc__banner-wrapper-inner{position:relative;z-index: 1;max-width: 1440px;margin: 0 auto;background-position: center top;}
