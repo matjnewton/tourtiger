@@ -1203,7 +1203,7 @@ acf_add_local_field_group(array (
 							'max_size' => 0,
 							'mime_types' => ''
 						),
-
+						
 						array (
 							'key' => 'pc_ha_tab_6',
 							'label' => 'Button',

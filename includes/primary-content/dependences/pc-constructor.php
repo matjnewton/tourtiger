@@ -3008,6 +3008,7 @@ acf_add_local_field_group(array (
 											),
 											'choices' => array (
 												'full' => 'Full',
+												'four-five' => '4/5',
 												'three-four' => '3/4',
 												'one-two' => '1/2',
 											),
