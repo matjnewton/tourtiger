@@ -8,9 +8,10 @@
 	$(function() {
 		var $header = $('.site-header');
 		var $sticky = $header.find('.sticky');
+		
 
-		if ( $sticky.length < 0 && $(window).width() >= 768 ) {
-			var headerWrapper = $('.header-bar-wrapper.sticky').height() || 0;
+		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
+			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			var strangeValue  = $header.height() || 0;
 			var newMarginTop  = headerWrapper - secondary - sttangeValue;
