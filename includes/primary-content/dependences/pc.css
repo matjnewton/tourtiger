@@ -472,3 +472,6 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .pc--r__alignment--left{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .pc--r__alignment--space-around{-ms-flex-pack:distribute;justify-content:space-around}
 .pc--r__alignment--space-between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.pc--r_pos-stretch .pc--c__flexi{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.pc--r_pos-stretch .pc--c__b-first,.pc--r_pos-stretch .pc--c__b-second{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
+.fc_style--first_wrap,.fc_style--second_wrap{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
