@@ -1,6 +1,8 @@
 <?php
 
 $fc_style__fcc_butt_font_color = get_sub_field( 'fc_style__la_butt_font-color' );
+$fc_style__fcc_butt_bordr_type = get_sub_field( 'fc_style__la_butt_bord_color-type' ) || false;
+$fc_style__fcc_butt_bordr_colo = get_sub_field( 'fc_style__la_butt_bord_color' );
 
 $fc_style__fcc_css = pc_init_font_css( get_sub_field( 'fc_style__la_butt_font' ) );
 
@@ -44,12 +46,19 @@ if (
 	get_sub_field( 'fc_style__la_butt_bord' ) == 'yes' 
 	|| get_sub_field( 'fc_style__la_butt_bord' ) == 'hover' 
 ) {
+
+	if ( $fc_style__fcc_butt_bordr_type == 'custom' ) :
+		$fc_border__color = $fc_style__fcc_butt_bordr_colo;
+	elseif ( $fc_style__fcc_butt_bordr_type == 'auto' || $fc_style__fcc_butt_bordr_type === false ) :
+		$fc_border__color = $fc_style__fcc_butt_font_color;
+	endif;
+
 	$fc_style__fcc_butt_bord_width = get_sub_field( 'fc_style__la_butt_bord_width' );
-	$fc_style__fcc_css_hover .= 'border:' . $fc_style__fcc_butt_bord_width . 'px solid ' . $fc_style__fcc_butt_font_color . ';';
+	$fc_style__fcc_css_hover .= 'border:' . $fc_style__fcc_butt_bord_width . 'px solid ' . $fc_border__color . ';';
 	$fc_style__fcc_css[1] .= 'box-sizing: border-box;';
 
 	if ( get_sub_field( 'fc_style__la_butt_bord' ) == 'yes' ) {
- 		$fc_style__fcc_css[1] .= 'border:' . $fc_style__fcc_butt_bord_width . 'px solid ' . $fc_style__fcc_butt_font_color . ';';
+ 		$fc_style__fcc_css[1] .= 'border:' . $fc_style__fcc_butt_bord_width . 'px solid ' . $fc_border__color . ';';
 	} elseif ( get_sub_field( 'fc_style__la_butt_bord' ) == 'hover' ) {
 		$fc_style__fcc_css[1] .= 'border:' . $fc_style__fcc_butt_bord_width . 'px solid transparent;';
 	}

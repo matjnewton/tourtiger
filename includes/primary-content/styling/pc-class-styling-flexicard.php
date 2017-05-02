@@ -1571,12 +1571,10 @@ class FlexiCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'label',
 							),
-						),
-						array (
 							array (
 								'field' => 'fc_' . $i . '_la_58359a185dfb9',
-								'operator' => '==',
-								'value' => 'corner',
+								'operator' => '!=',
+								'value' => 'text',
 							),
 						),
 					),
@@ -1611,6 +1609,11 @@ class FlexiCard extends StylingCard {
 								'value' => 'label',
 							),
 							array (
+								'field' => 'fc_' . $i . '_la_58359a185dfb9',
+								'operator' => '!=',
+								'value' => 'text',
+							),
+							array (
 								'field' => 'fc_' . $i . '_la_5835a0f02a144',
 								'operator' => '!=',
 								'value' => 'no',
@@ -1631,6 +1634,88 @@ class FlexiCard extends StylingCard {
 					'step' => '',
 					'readonly' => 0,
 					'disabled' => 0,
+				),
+				array (
+					'key' => 'fc_' . $i . '_la_51152a11_1',
+					'label' => 'Label Border Color Type',
+					'name' => 'fc_style__la_butt_bord_color-type',
+					'type' => 'radio',
+					'instructions' => 'If set "Auto" border color depends of label and background color values.',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'label',
+							),
+							array (
+								'field' => 'fc_' . $i . '_la_58359a185dfb9',
+								'operator' => '!=',
+								'value' => 'text',
+							),
+							array (
+								'field' => 'fc_' . $i . '_la_5835a0f02a144',
+								'operator' => '!=',
+								'value' => 'no',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'auto' => 'Auto',
+						'custom' => 'Custom'
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'no',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => 'fc_' . $i . '_ld_512_1212332',
+					'label' => 'Label Border Color',
+					'name' => 'fc_style__la_butt_bord_color',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'label',
+							),
+							array (
+								'field' => 'fc_' . $i . '_la_58359a185dfb9',
+								'operator' => '!=',
+								'value' => 'text',
+							),
+							array (
+								'field' => 'fc_' . $i . '_la_51152a11_1',
+								'operator' => '==',
+								'value' => 'custom',
+							),
+							array (
+								'field' => 'fc_' . $i . '_la_5835a0f02a144',
+								'operator' => '!=',
+								'value' => 'no',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
 				),
 				array (
 					'key' => 'fc_' . $i . '_ld_58358a9d6aa2e',
