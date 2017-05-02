@@ -13,7 +13,9 @@
 		$scroll_data = 'data-slick=\'{"adaptiveHeight": true, "slidesToShow": 1}\'';
 	}
 
-	if ( get_sub_field( 'tour_pc-colums--width' ) == 'full' ) {
+	$row_width = get_sub_field( 'tour_pc-colums--width' );
+
+	if ( $row_width == 'full' ) {
 		$tour_column_classes .= ' pc--r__col-1_full';
 		$thumb_width = 1500;
 		$thumb_width_normal = 1500;
@@ -21,12 +23,19 @@
 		$thumb_height_normal = 900; 
 		$thumb_upload = 'full';
 	} else {
-		$tour_column_classes .= ' pc--r__col-1_part';
 		$thumb_width = 1100;
 		$thumb_width_normal = 1100;
 		$thumb_height = 700;
 		$thumb_height_normal = 700;
 		$thumb_upload = 'large';
+
+		if ( $row_width == 'four-five' ) : 
+			$tour_column_classes .= ' pc--r__col-1_four-five';
+		elseif ( $row_width == 'three-four' ) : 
+			$tour_column_classes .= ' pc--r__col-1_three-four';
+		elseif ( $row_width == 'one-two' ) : 
+			$tour_column_classes .= ' pc--r__col-1_one-two';
+		endif;
 	} 
 
 ?>
