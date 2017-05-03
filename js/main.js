@@ -8,10 +8,10 @@
 	$(function() {
 		var $header = $('.site-header');
 		var $sticky = $header.find('.sticky');
-		var is_prim = $('body').hasClass('page-template-test-pc');
-		var is_prod = $('body').hasCalss('tour-template-default');
+		var is_home = $('body').hasClass('home');
+		var is_tour = $('body').hasCalss('tour-template-default');
 
-		if ( is_prim && is_prod && $sticky.length === 1 && $(window).width() >= 768 ) {
+		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 			var $unessesarily = $('.banner-wrapper-inner'); 
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
