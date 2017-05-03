@@ -2084,6 +2084,35 @@ tour_finder',
 			'message' => '',
 			'default_value' => 0,
 		),
+		array (
+			'key' => 'field_59099658f7a27',
+			'label' => 'Orioly values',
+			'name' => 'orioly_values',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_59033fc70b4ae',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'orioly',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => 4,
+			'new_lines' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
 // moved to acf/acf_company_details_tab_style.php
 		// array (
 		// 	'key' => 'field_564757f5e2b00',
