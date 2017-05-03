@@ -82,7 +82,14 @@ class AIFontClass {
 	private function write_context() {
 		$handle_fonts = $this->handle_fonts();
 
-		$context = "/* Font Family: {$this->name} */ \r\n";
+		$file_path = explode('.eot', $handle_fonts['eot']['url']);
+		$file_path = $file_path[0];
+		$file_path = preg_split('/http:|https:/', $file_path);
+		$file_path = $file_path[1];
+		$file_path = explode($this->name, $file_path);
+		$file_path = $file_path[0];
+
+		$context = "/* Font Family: {$this->name} ~{$file_path}~ */ \r\n";
 		$context .= "@font-face { \r\n";
 		$context .= "font-family: '{$this->name}'; \r\n";
 		$context .= "font-weight: normal; \r\n";
@@ -93,14 +100,16 @@ class AIFontClass {
 			$url       = $url_split[1];
 
 			if ( $font == 'eot' ) {
-				$context .= "src: url('{$url}'); \r\n";
-				$context .= "src: url('{$url}?#iefix') format('embedded-opentype')";
+				$context   .= "src: url('{$url}'); \r\n";
+				$context   .= "src: url('{$url}?#iefix') format('embedded-opentype')";
+				$file_split = explode($this->name, $url);
+				$file_path  = $file_split[0];
 			} elseif ( $font == 'svg' ) {
-				$context .= ",url('{$url}#{$this->name}') format('{$font}')";
+				$context .= ", \r\nurl('{$url}#{$this->name}') format('{$font}')";
 			} elseif ( $font == 'ttf' ) {
-				$context .= ",url('{$url}') format('truetype')";
+				$context .= ", \r\nurl('{$url}') format('truetype')";
 			} else {
-				$context .= ",url('{$url}') format('{$font}')";
+				$context .= ", \r\nurl('{$url}') format('{$font}')";
 			}
 
 		endforeach;

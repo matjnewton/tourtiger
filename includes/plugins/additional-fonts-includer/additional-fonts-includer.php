@@ -193,6 +193,10 @@ function update_fonts_in_json( $font = '' ) {
 		if ($valid) :
 			$jsonItems[$jsonCount] = array( 'family' => $family );
 			$jsonCount++;
+
+			$is_url = aif_check_source_urls( $family );
+
+			if ( ! $is_url ) aif_update_source_urls( $family );
 		endif;
 	endforeach;
 
@@ -207,5 +211,56 @@ function update_fonts_in_json( $font = '' ) {
 	return $jsonArray;
 }
 add_action( 'upgrader_process_complete', 'update_fonts_in_json', 10, 2 );
+
+
+/**
+ * Update URLs in source files
+ */
+function aif_check_source_urls($name = '') {
+	$string = get_bloginfo( 'url' );
+	$string = preg_split('/http:|https:/', $file_path);
+	$string = $string[1];
+
+	$uploads_dir     = wp_upload_dir(); 
+	$directory       = $uploads_dir['basedir'];
+	$file            = $directory . '/aif/' . $name . '.css';
+
+	$is_url = strpos( file_get_contents( $file ), $string );
+
+	if ( $is_url ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+/**
+ * Update URLs in source files
+ */
+function aif_update_source_urls($name = '') {
+	$uploads_dir = wp_upload_dir(); 
+	$directory   = $uploads_dir['basedir'];
+	$file        = $directory . '/aif/' . $name . '.css';
+	$file_handle = file_get_contents($file);
+
+	$new_path    = get_bloginfo( 'url' );
+	$new_path    = preg_split('/http:|https:/', $new_path);
+	$new_path    = $new_path[1];
+
+	$old_path    = explode('~', $file_handle);
+	$old_path1   = $old_path[1];
+	$old_path2   = explode('/wp-content', $old_path1);
+	$old_path3   = $old_path2[0];
+
+	$file_handle = str_replace($old_path3, $new_path, $file_handle);
+
+	$handle = fopen($file, 'w');
+
+	fwrite($handle, $file_handle);
+	fclose($handle);
+
+	return true;
+}
 
 ?>
