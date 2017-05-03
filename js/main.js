@@ -8,7 +8,7 @@
 	$(function() {
 		var $header = $('.site-header');
 		var $sticky = $header.find('.sticky');
-		var is_home = $('body').hasclass('home');
+		var is_home = $('body').hasClass('home');
 
 		if ( !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 			var $unessesarily = $('.banner-wrapper-inner'); 
