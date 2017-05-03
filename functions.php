@@ -422,6 +422,7 @@ function acf_load_third_party_field_choices( $field ) {
     $integrate_trekksoft = get_field('trekksoft','option');
     $integrate_rezdy = get_field('rezdy','option');
     $integrate_regiondo = get_field('regiondo','option');
+    $integrate_orioly = get_field('orioly','option');
     
     if($integrate_xola):
     $choices = get_field('xola_values', 'option', false);
@@ -437,6 +438,8 @@ function acf_load_third_party_field_choices( $field ) {
     $choices = get_field('rezdy_values', 'option', false);
     elseif($integrate_regiondo):
     $choices = get_field('regiondo_values', 'option', false);
+    elseif($integrate_orioly):
+    $choices = get_field('orioly_values', 'option', false);
     endif;
     // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices);
