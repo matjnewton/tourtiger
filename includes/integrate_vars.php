@@ -11,4 +11,5 @@
     $integrate_rezdy = get_field('rezdy','option');
     $integrate_zaui = get_field('zaui','option');
     $integrate_regiondo = get_field('regiondo','option');
+    $integrate_orioly = get_field('orioly','option');
 ?>

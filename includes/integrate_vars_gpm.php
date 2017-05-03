@@ -11,5 +11,5 @@
     $integrate_rezdy = get_option( 'options_rezdy' );
     $integrate_zaui = get_option( 'options_zaui' );
     $integrate_regiondo = get_option( 'options_regiondo' );
-    
+    $integrate_orioly = get_option( 'options_orioly' );
 ?>
