@@ -71,6 +71,12 @@
                                 <div><?php echo $bbt; ?></div>
                                 <div class="arrow-right"></div>
                             </a>
+                            <?php elseif($integrate_orioly && ($button_type == 'Use as third party integration Link')): ?>
+                            <div class="book-btn2 mh86">
+                                <div class="arrow-left"></div>
+                                    <a class="orioly-booknow" data="<?php if($bbl): echo $bbl; endif; ?>" style="color:#fff !important;"><?php echo $bbt; ?></a>
+                                <div class="arrow-right"></div>
+                            </div>
                             <?php elseif($integrate_regiondo && ($button_type == 'Use as third party integration Link')): ?>
                             <a class="regiondo-button book-btn2" data-url="<?php if($bbl): echo $bbl; endif; ?>">
                                 <div class="arrow-left"></div>
