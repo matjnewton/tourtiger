@@ -62,12 +62,17 @@ function tourtiger_scripts_method() {
 		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
 		wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
 		
+		$integrate_orioly = get_field('orioly','option');
 		$integrate_trekksoft = get_field('trekksoft','option');
 		$trekksoft_account = get_field('trekksoft_account','option');
 		$integrate_xola = get_field('integrate_xola_with_this_website','option');
 		$integrate_rezdy = get_field('rezdy','option');
 		$integrate_regiondo = get_field('regiondo','option');
 		
+		if($integrate_orioly):
+        wp_register_script('orioly', ("https://book-now.orioly.com/scripts/book.js"), array(), null, true);
+        endif;
+        
 		if($integrate_trekksoft && $trekksoft_account):
 		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
 		endif;
@@ -99,6 +104,10 @@ function tourtiger_scripts_method() {
 		if($integrate_getinsellout):
 		wp_enqueue_script('colorbox');
 		wp_enqueue_script('application1');
+		endif;
+		
+		if($integrate_orioly):
+		wp_enqueue_script('orioly');
 		endif;
 		
 		if($integrate_trekksoft && $trekksoft_account):
@@ -184,6 +193,14 @@ function regiondo_script_loader_tag( $tag, $handle ){
     return $tag;    
 }
 add_filter( 'script_loader_tag', 'regiondo_script_loader_tag', 10 ,2 );
+
+function orioly_script_loader_tag( $tag, $handle ){
+    if ( $handle == 'orioly' ) {
+        return str_replace( '<script', '<script async', $tag );
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'orioly_script_loader_tag', 10 ,2 );
 
 //* Enqueue Lato Google font
 /*add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
