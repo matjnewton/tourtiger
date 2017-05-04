@@ -542,4 +542,80 @@ function print_pc_scripts_after_footer() {
 
 }
 
+
+/**
+ * Buttons functions
+ */
+
+/**
+ * Get font corner
+ * 
+ * @param  string $field sub field value
+ * @return string
+ */
+function get_font_corner_style( $field = '' ) {
+	$css = '';
+
+	if ( $field == 'square' ) {
+		$css .= 'padding: 15px 20px; border-radius: 0;';
+	} elseif ( $field == 'round' ) {
+		$css .= 'padding: 15px 20px; border-radius: 50%;';
+	} elseif ( $field == 'corner' ) {
+		$css .= 'padding: 15px 20px; border-radius: 4px;';
+	} else {
+		$css .= 'padding: .7em 1.1em;';
+	}
+
+	return $css;
+}
+
+/**
+ * Get mouseover styles
+ * @param  string $field sub field value
+ * @return array - 0 - defaul; 1 - hover 
+ */
+function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_color = '' ) {
+	$css = false;
+
+	if ( $$field  ) {
+
+		$css = array();
+
+		if ( in_array( 'invert', $field  ) ) {
+			$css[1] .= 'background-color:' . $font_color . ';';
+			$css[1] .= 'color:' . $bg_color . ';';
+		}
+
+		if ( in_array( 'decor', $field  ) ) $css[0] .= 'text-decoration: underline;';
+	} 
+
+	return $css;
+}
+
+
+/**
+ * Get font border styles
+ * @param  string $field sub field value
+ * @return array - 0 - defaul; 1 - hover 
+ */
+function get_font_border_styles( $style = '', $color = '', $width = '' ) {
+
+	$css = false;
+
+	if ( $style == 'yes' || $style == 'hover' ) :
+
+		$css[1] .= 'border:' . $width . 'px solid ' . $color . ';';
+		$css[0] .= 'box-sizing: border-box;';
+
+		if ( $style == 'yes' ) {
+	 		$css[0] .= 'border:' . $width . 'px solid ' . $color . ';';
+		} elseif ( $style == 'hover' ) {
+			$css[0] .= 'border:' . $width . 'px solid transparent;';
+		}
+
+	endif; 
+
+	return $css;
+}
+
 ?>
