@@ -54,6 +54,9 @@
 	}
 }
 @media screen and (max-width: 767px) {
+	.page-template-rezdy_search .anrow2 {
+		height: auto;
+	}
 	/*serach-box atlas*/
 	.integrate_atlasx_with_this_website {
 		

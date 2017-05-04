@@ -58,7 +58,8 @@
 								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="item in api_availability_new | toArray | orderBy : item.$key track by $index">
 									<span class="availability_checker_col availability_checker_col_atlas checker_date customstyle">
 										{{timearray[0] | asDateTitleYears}}
-										<span class="checkertime">{{parseFloat(item.$key)}}</span>
+										<span class="checkertime" ng-if="parseFloat(item.$key)>13">{{parseFloatplus(item.$key)}}</span>
+										<span class="checkertime" ng-if="parseFloat(item.$key)<=13">{{parseFloat(item.$key)}}</span>
 										<span class="checkertime" ng-if="parseFloat(item.$key)>12">PM</span>
 										<span class="checkertime" ng-if="parseFloat(item.$key)<=12">AM</span>
 									</span>

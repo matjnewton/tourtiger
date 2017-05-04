@@ -844,6 +844,9 @@ body.custom-background.page-template-rezdy_search {
 .button-viewtour.button-book {
   background-color: #f5a623;
 }
+.button-viewtour.button-book:hover {
+  cursor: pointer;
+}
 .search-descript-footer-left {
     /*width: 60%;*/
     width: 31%;

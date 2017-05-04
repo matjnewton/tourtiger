@@ -154,6 +154,9 @@
 	    $scope.parseFloat = function(value) {
 	        return parseFloat(value/100).toFixed(2);
 	    }
+	    $scope.parseFloatplus = function(value) {
+	        return parseFloat((value/100)-12).toFixed(2);
+	    }
 	    $scope.getTotal = function(time){
 		    var total = 0;
 		    for(var i = 0; i < $scope.api_availability_xola.length; i++){

@@ -399,6 +399,18 @@
 			$scope.timearrayLoadmore_seat = row_seat_Loadmore;
 		}
 
+		$scope.widgetload = function (e) {
+
+		    var data = {
+				  seller: $(e.target).data('seller'),
+				  version: $(e.target).data('version'),
+				  //experience: $(e.target).data('experience')
+				};
+			xola.checkout(data);
+			
+		    //console.log(data);  
+		};
+
     //+ click availability use factory dataServiceAjax.getData
     $scope.check_availability_xola= function() {
     	console.log('click check_availability_xola ATLAS');
