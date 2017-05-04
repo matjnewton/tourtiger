@@ -66,44 +66,117 @@ $cc_style__ccc_css = pc_content_init_form(
 echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
 echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield_description  {' . $cc_style__ccc_css[1] . '}' : '';
 
+$cc_style_btn = '';
+
+$cc_style_btn .= get_font_corner_style( get_sub_field( 'cc__fo_butts_style' ) );
+
+// TODO: Border
+
+// TODO: Thickness
+
 /**
  * Next Button
  */
 $cc_style__ccc_css = pc_content_init_form( 
 	get_sub_field( 'cc_style__fo_ne_f' ), 
-	'',
-	get_sub_field( 'cc_style__fo_ne_c' ),
 	get_sub_field( 'cc_style__fo_ne_c' )
 );
 
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_ne_bg' ) ? 'background-color:'.get_sub_field( 'cc_style__fo_ne_bg' ).';' : '';
+
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_ne_drop' ) ? 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);' : '';
+
+$cc_style__ccc_css[2] = '';
+
+$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+	get_sub_field( 'cc__fo_butts_hover' ), 
+	get_sub_field( 'cc_style__fo_ne_c' ), 
+	get_sub_field( 'cc_style__fo_ne_bg' ) 
+);
+$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
+$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
+
+$cc_style_btn_border = get_font_border_styles( 
+	get_sub_field( 'cc__fo_butts_border' ), 
+	get_sub_field( 'cc_style__fo_ne_c' ), 
+	get_sub_field( 'cc__fo_butts_border_thickness' ) 
+);
+$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
+$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
+
 echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
 echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gform_next_button {' . $cc_style__ccc_css[1] . '}' : '';
+echo $cc_style__ccc_css[2] ? '#pc_wrap .' . $cc_style . ' .pc--form .gform_next_button:hover{' . $cc_style__ccc_css[2] . '}' : '';
 
 /**
  * Previous Button
  */
 $cc_style__ccc_css = pc_content_init_form( 
 	get_sub_field( 'cc_style__fo_pr_f' ), 
-	'',
-	get_sub_field( 'cc_style__fo_pr_c' ),
 	get_sub_field( 'cc_style__fo_pr_c' )
 );
 
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_pr_bg' ) ? 'background-color:'.get_sub_field( 'cc_style__fo_pr_bg' ).';' : '';
+
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_pr_drop' ) ? 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);' : '';
+
+$cc_style__ccc_css[2] = '';
+
+$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+	get_sub_field( 'cc__fo_butts_hover' ), 
+	get_sub_field( 'cc_style__fo_pr_c' ), 
+	get_sub_field( 'cc_style__fo_pr_bg' )
+);
+
+$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
+$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
+
+$cc_style_btn_border = get_font_border_styles( 
+	get_sub_field( 'cc__fo_butts_border' ), 
+	get_sub_field( 'cc_style__fo_pr_c' ), 
+	get_sub_field( 'cc__fo_butts_border_thickness' ) 
+);
+$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
+$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
+
 echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
 echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gform_previous_button {' . $cc_style__ccc_css[1] . '}' : '';
+echo $cc_style__ccc_css[2] ? '#pc_wrap .' . $cc_style . ' .pc--form .gform_previous_button:hover{' . $cc_style__ccc_css[2] . '}' : '';
 
 /**
  * Submit Button
  */
 $cc_style__ccc_css = pc_content_init_form( 
 	get_sub_field( 'cc_style__fo_su_f' ), 
-	'',
-	get_sub_field( 'cc_style__fo_su_c' ),
 	get_sub_field( 'cc_style__fo_su_c' )
 );
 
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_su_bg' ) ? 'background-color:'.get_sub_field( 'cc_style__fo_su_bg' ).';' : '';
+
+$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_su_drop' ) ? 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);' : '';
+
+$cc_style__ccc_css[2] = '';
+
+$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+	get_sub_field( 'cc__fo_butts_hover' ), 
+	get_sub_field( 'cc_style__fo_su_c' ), 
+	get_sub_field( 'cc_style__fo_su_bg' )
+);
+
+$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
+$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
+
+$cc_style_btn_border = get_font_border_styles( 
+	get_sub_field( 'cc__fo_butts_border' ), 
+	get_sub_field( 'cc_style__fo_su_c' ), 
+	get_sub_field( 'cc__fo_butts_border_thickness' ) 
+);
+$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
+$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
+
 echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
 echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gform_button{' . $cc_style__ccc_css[1] . '}' : '';
+echo $cc_style__ccc_css[2] ? '#pc_wrap .' . $cc_style . ' .pc--form .gform_button:hover{' . $cc_style__ccc_css[2] . '}' : '';
 
 /**
  * Input/Textarea field

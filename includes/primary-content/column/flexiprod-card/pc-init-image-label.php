@@ -13,15 +13,7 @@ $fc_style__fcc_css_hover = 'transition: ease .3s;';
 
 
 /* Button style */
-if ( get_sub_field( 'fc_style__la_butt_style' ) == 'square' ) {
-	$fc_style__fcc_css[1] .= 'padding: 15px 20px;border-radius: 0;';
-} elseif ( get_sub_field( 'fc_style__la_butt_style' ) == 'round' ) {
-	$fc_style__fcc_css[1] .= 'padding: 15px 20px;border-radius: 50%;';
-} elseif ( get_sub_field( 'fc_style__la_butt_style' ) == 'corner' ) {
-	$fc_style__fcc_css[1] .= 'padding: 15px 20px;border-radius: 4px;';
-} else {
-	$fc_style__fcc_css[1] .= 'padding: .7em 1.1em;';
-}
+$fc_style__fcc_css[1] .= get_font_corner_style( get_sub_field( 'fc_style__la_butt_style' ) );
 
 /* Button effect */
 if ( get_sub_field( 'fc_style__la_butt_hover' ) ) {
