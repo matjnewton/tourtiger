@@ -1070,6 +1070,30 @@ class ProductPage extends StylingCard {
 					),
 					'backupfont' => self::BACK_FONTS,
 				),
+				array (
+					'key' => $this->slug . $i . '_1side4t1xt21-si2ze',
+					'label' => 'Phone title font size',
+					'name' => 'sidebar_phone_title_size',
+					'type' => 'number',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'append' => 'px',
+					'min' => '5',
+					'max' => '50'
+				),
+				array (
+					'key' => $this->slug . $i . '_1sinum213bert21-si2ze',
+					'label' => 'Phone number font size',
+					'name' => 'sidebar_phone_number_size',
+					'type' => 'number',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'append' => 'px',
+					'min' => '5',
+					'max' => '50'
+				)
 			),
 		);	
 
@@ -1272,15 +1296,21 @@ class ProductPage extends StylingCard {
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_number span{";
 
+						$font_size = get_sub_field('sidebar_phone_number_size');
+
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_td_content['text-color']};";
+						$css .= $font_size ? "font-size: {$font_size}px" : '';
 
 					$css .= "}";
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_label {";
 
+						$font_size = get_sub_field('sidebar_phone_title_size');
+
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_td_content['text-color']};";
+						$css .= $font_size ? "font-size: {$font_size}px" : '';
 
 					$css .= "}";
 
