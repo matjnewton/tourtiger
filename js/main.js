@@ -9,7 +9,7 @@
 		var $header = $('.site-header');
 		var $sticky = $header.find('.sticky');
 		var is_home = $('body').hasClass('home');
-		var is_tour = $('body').hasCalss('tour-template-default');
+		var is_tour = $('body').hasClass('tour-template-default');
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 			var $unessesarily = $('.banner-wrapper-inner'); 
