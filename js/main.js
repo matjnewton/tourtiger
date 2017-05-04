@@ -15,8 +15,7 @@
 			var $unessesarily = $('.banner-wrapper-inner'); 
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
-			var strangeValue  = $header.height() || 0;
-			var newMarginTop  = headerWrapper - secondary - strangeValue;
+			var newMarginTop  = headerWrapper - secondary;
 
 			$('.site-inner').css( 'margin-top', newMarginTop );
 			$unessesarily.css('margin-top', 0);
