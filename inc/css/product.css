@@ -105,8 +105,15 @@ body.custom-background.single-product {
 	display: none;
 }
 .single-product .site-inner {
-	margin-top: 114px;
+	// margin-top: 114px;
 }
+
+@media (min-width: 768px) {
+  .single-product .site-header .header-bar-wrapper {
+      position: relative;
+  }
+}
+
 /*sidebar*/
 .book-tour-wrapper_product {
   width: 300px;
