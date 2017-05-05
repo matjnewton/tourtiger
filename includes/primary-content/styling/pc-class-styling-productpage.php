@@ -1261,10 +1261,10 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_hightlights || $font ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .primary_content_highlights .highlights_options span, html.{$style} .reason_to_book_label span, html.{$style} .site-inner .content .sidebar_links_options a {";
+					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .primary_content_highlights .highlights_options span, html.{$style} .reason_to_book_label span, html.{$style} .site-inner .content .sidebar_links_options a, html.{$style} .reason_to_book_label span {";
 
 						$css .= $font[1] ? $font[1]:'';
-						$css .= "color: {$font_style_hightlights['text-color']};";
+						$css .= "color: {$font_style_pa_content['text-color']};";
 
 					$css .= '}';
 				}
