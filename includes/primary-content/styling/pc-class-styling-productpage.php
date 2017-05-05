@@ -1294,12 +1294,6 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 
-					$css .= "html.{$style} .primary_content_headline_details_options li i {";
-
-						$css .= "color: {$link_color};";
-
-					$css .= "}";
-
 					$css .= "html.{$style} .sidebar_phone_row .phone_number span{";
 
 						$font_size = get_sub_field('sidebar_phone_number_size');
@@ -1398,6 +1392,12 @@ class ProductPage extends StylingCard {
 						$css .= "color:{$link_hover_color};";
 					$css .= '}';
 				} 
+
+				$css .= "html.{$style} .primary_content_headline_details_options li i {";
+
+					$css .= "color: {$link_color};";
+
+				$css .= "}";
 
 				if ( $link_visited_color ) {
 					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper a:visited, html.{$style} .site-inner .content .product_content_wrapper a:visited{";
