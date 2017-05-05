@@ -25,13 +25,14 @@ function tourtiger_scripts_method() {
         wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
         wp_register_script('jquery-ui',("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
-        wp_register_script( 'jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
+        wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
+        wp_register_script('jquery-ui',("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
 
         wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
         wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),null, 'all');
-        wp_register_style('theme_prdctn', '/wp-content/uploads/wp-sass-cache/theme.css', array(),'all');
+		$uploads_dir = wp_upload_dir(); 
+        wp_register_style('theme_prdctn', $uploads_dir['baseurl'] . '/wp-sass-cache/theme.css', array(),'all');
         wp_register_style('compass', get_stylesheet_directory_uri() .'/css/screen.css', array(),null, 'all');
         wp_register_style('bootstrap_select', get_stylesheet_directory_uri() .'/css/bootstrap-select.css', array(),null, 'all');
         wp_register_style('magnific_popup_css', get_stylesheet_directory_uri() .'/css/magnific-popup.css', array(),null, 'all');
