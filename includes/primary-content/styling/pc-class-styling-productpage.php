@@ -1294,9 +1294,9 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 
-					$css .= "html.{$style} .primary_content_headline_details_options .fa {";
+					$css .= "html.{$style} .primary_content_headline_details_options li i {";
 
-						$css .= "color: {$font_style_td_content['text-color']};";
+						$css .= "color: {$font_style_hightlights['text-color']};";
 
 					$css .= "}";
 
