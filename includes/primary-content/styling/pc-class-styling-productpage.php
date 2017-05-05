@@ -1197,6 +1197,19 @@ class ProductPage extends StylingCard {
 					$css .= "border-top: {$content_hr_color} solid {$content_hr_thickness};";
 				$css .= '}';
 
+				$font_style_pa_content = get_sub_field( 'font-style_pa-content' );
+				$font = pc_init_font_css($font_style_pa_content);
+				$css .= $font[0] ? $font[0]:'';
+
+				if ( $font_style_pa_content ) {
+					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper p, html.{$style} .site-inner .content .product_content_wrapper p, html.{$style} .product_content_wrapper ul li{";
+
+						$css .= $font[1] ? $font[1]:'';
+						$css .= "color: {$font_style_pa_content['text-color']};";
+
+					$css .= '}';
+				}
+
 				$font_style_headline = get_sub_field( 'font-style_headline' );
 				$font = pc_init_font_css($font_style_headline);
 				$css .= $font[0] ? $font[0]:'';
@@ -1364,23 +1377,9 @@ class ProductPage extends StylingCard {
 					$css .= '}';
 				}
 
-				$font_style_pa_content = get_sub_field( 'font-style_pa-content' );
-				$font = pc_init_font_css($font_style_pa_content);
-				$css .= $font[0] ? $font[0]:'';
-
-				if ( $font_style_pa_content ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper p, html.{$style} .site-inner .content .product_content_wrapper p, html.{$style} .product_content_wrapper ul li{";
-
-						$css .= $font[1] ? $font[1]:'';
-						$css .= "color: {$font_style_pa_content['text-color']};";
-
-					$css .= '}';
-				}
-
 				/**
 				 * Link color
 				 */
-
 				$link_color = get_sub_field( 'link_color' );
 				$link_hover_color = get_sub_field( 'link_hover_color' );
 				$link_visited_color = get_sub_field( 'link_visited_color' );
