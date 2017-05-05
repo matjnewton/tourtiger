@@ -647,25 +647,25 @@ class ProductPage extends StylingCard {
 						'class' => '',
 						'id' => '',
 					),
-					'show_font_familys' => 1,
+					'show_font_familys' => 0,
 					'font-family' => '',
-					'show_font_weight' => 1,
+					'show_font_weight' => 0,
 					'font-weight' => 400,
-					'show_backup_font' => 1,
+					'show_backup_font' => 0,
 					'backup-font' => 'Arial, Helvetica, sans-serif',
 					'show_text_align' => 0,
 					'text_align' => 'left',
 					'show_text_direction' => 0,
 					'direction' => 'ltr',
-					'show_font_size' => 1,
+					'show_font_size' => 0,
 					'font_size' => 20,
-					'show_line_height' => 1,
+					'show_line_height' => 0,
 					'line_height' => 25,
 					'show_letter_spacing' => 0,
 					'letter_spacing' => 0,
 					'show_color_picker' => 1,
 					'text_color' => '#000000',
-					'show_font_style' => 1,
+					'show_font_style' => 0,
 					'font_style' => 'normal',
 					'show_preview_text' => 0,
 					'default_value' => '',
@@ -1257,11 +1257,11 @@ class ProductPage extends StylingCard {
 				}
 
 				$font_style_hightlights = get_sub_field( 'font-style_hightlights' );
-				$font = pc_init_font_css($font_style_hightlights);
+				$font = pc_init_font_css($font_style_pa_content);
 				$css .= $font[0] ? $font[0]:'';
 
-				if ( $font_style_hightlights ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span{";
+				if ( $font_style_hightlights || $font ) {
+					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .primary_content_highlights .highlights_options span, html.{$style} .reason_to_book_label span, html.{$style} .site-inner .content .sidebar_links_options a {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_hightlights['text-color']};";
@@ -1293,6 +1293,12 @@ class ProductPage extends StylingCard {
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= '}';
+
+					$css .= "html.{$style} .primary_content_headline_details_options .fa {";
+
+						$css .= "color: {$font_style_td_content['text-color']};";
+
+					$css .= "}";
 
 					$css .= "html.{$style} .sidebar_phone_row .phone_number span{";
 
@@ -1365,7 +1371,7 @@ class ProductPage extends StylingCard {
 				}
 
 				$font_style_pa_content = get_sub_field( 'font-style_pa-content' );
-				$font = pc_init_font_css($font_style_exco_label);
+				$font = pc_init_font_css($font_style_pa_content);
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_pa_content ) {

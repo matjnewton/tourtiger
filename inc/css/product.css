@@ -341,12 +341,12 @@ padding-bottom: 11px;
 .highlights_options li span {
     margin-left: 46px;
     display: inline-block;
-    /*line-height: 16px;*/
+    margin-top: 8px;
 }
 .product_content_wrapper .highlights_options li {
     position: relative;
-    /*padding-bottom: 11px;*/
-    padding-bottom: 3px;
+    padding-bottom: 20px;
+    // padding-bottom: 3px;
     padding-top: 0;
     line-height: 37px;
     display: inline-block;
