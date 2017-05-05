@@ -108,10 +108,8 @@ body.custom-background.single-product {
 	// margin-top: 114px;
 }
 
-@media (min-width: 768px) {
-  .single-product .site-header .header-bar-wrapper {
-      position: relative;
-  }
+.single-product .site-header .header-bar-wrapper {
+    position: relative;
 }
 
 /*sidebar*/
