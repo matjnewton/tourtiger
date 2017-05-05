@@ -1124,7 +1124,7 @@ class ProductPage extends StylingCard {
 				$background_color = get_sub_field( 'background-color' );
 
 				if ( $background_color ) {
-					$css .= "html.{$style} .single-product .site-inner .content {background:{$background_color};}";
+					$css .= "html.{$style} .single-product .site-inner .content, html.{$style} .single-product, .site-container .site-header .header-bar-wrapper {background:{$background_color};}";
 					$css .= "html.{$style} body.custom-background.single-product {background-color:{$background_color};}";
 				}
 
