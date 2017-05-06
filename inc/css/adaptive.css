@@ -54,6 +54,10 @@
 	}
 }
 @media screen and (max-width: 767px) {
+	#vinetrekker_piker.daterangepicker {
+	    margin-left: 22%;
+	    margin-top: -126px;
+	}
 	.page-template-rezdy_search .anrow2 {
 		height: auto;
 	}
@@ -105,6 +109,13 @@
 	}
 } 
 @media screen and (max-width: 500px) {
+	#vinetrekker_piker.daterangepicker {
+	    margin-left: 9%;
+	    margin-top: -126px;
+	}
+	.page-template-rezdy_search #vinetrekker_piker.daterangepicker {
+		margin-left: 9%;
+	}
 	.styles .content .search-descript-wrap h3, .content .search-descript-wrap h3 {
 	    font-size: 20px;
 	    margin-bottom: 4px;
@@ -143,6 +154,13 @@
 	}
 }
 @media screen and (max-width: 400px) {
+	#vinetrekker_piker.daterangepicker {
+	    margin-left: 3%;
+	    margin-top: -126px;
+	}
+	.page-template-rezdy_search #vinetrekker_piker.daterangepicker {
+		margin-left: 3%;
+	}
 	.search-descript-button {
 		width: 96%;
     	left: 8px;
