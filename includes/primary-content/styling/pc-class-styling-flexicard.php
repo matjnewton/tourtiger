@@ -1110,6 +1110,37 @@ class FlexiCard extends StylingCard {
 					'layout' => 'horizontal',
 				),
 				array (
+					'key' => 'fc_' . $i . 'locod_58315d__d847d26',
+					'label' => 'Price Alignment',
+					'name' => 'fc_style__impr_alignment',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'price',
+							)
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'left' => 'Left',
+						'right' => 'Right',
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'left',
+					'layout' => 'horizontal',
+				),
+				array (
 					'key' => 'fc_' . $i . '_ld_5835774c26423',
 					'label' => 'Price Background',
 					'name' => 'fc_style__impr_bg',
