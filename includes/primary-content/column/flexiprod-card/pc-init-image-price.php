@@ -7,7 +7,7 @@
 $fc_style__fcc_css = pc_init_font_css( get_sub_field( 'fc_style__impr_font' ) );
 $fc_style__fcc_css[1] .= get_sub_field( 'fc_style__impr_font-color' ) ? 'color:' . get_sub_field( 'fc_style__impr_font-color' ) . ';' : '';
 
-$fc_style__fcc_css[1] .= 'padding: 5px 14px;';
+$fc_style__fcc_css[1] .= 'padding: 8px 25px;';
 
 $alignment = get_sub_field( 'fc_style__impr_alignment' );
 
