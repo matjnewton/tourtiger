@@ -2261,8 +2261,8 @@ class ContentCard extends StylingCard {
 						array (
 							array (
 								'field' => $this->slug . $i . '_ld_585dfb9',
-								'operator' => '==',
-								'value' => 'corner',
+								'operator' => '!=',
+								'value' => 'text'
 							),
 						),
 					),
@@ -2293,8 +2293,8 @@ class ContentCard extends StylingCard {
 						array (
 							array (
 								'field' => $this->slug . $i . '_ld_585dfb9',
-								'operator' => '==',
-								'value' => 'corner'
+								'operator' => '!=',
+								'value' => 'text'
 							),
 							array (
 								'field' => $this->slug . $i . '_125_8-2_a1dxz44',
