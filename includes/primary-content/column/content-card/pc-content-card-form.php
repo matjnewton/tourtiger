@@ -4,6 +4,9 @@
 	$tour_content_content_classes .= ' ' . get_sub_field( 'tour_pc-coltype--form_ti' );
 	$tour_content_content_classes .= ' ' . get_sub_field( 'tour_pc-coltype--form_le' );
 
+	$titles = get_sub_field( 'tour_pc-coltype--form_ti' ) != 'pc--form__head-hide';
+	$titles = (string)$title;
+
 	$form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 ?>
 
@@ -13,11 +16,11 @@
 
 	if ( defined('PCA_AJAX_LOADING_CONTENT') ) {
 
-		echo do_shortcode( '[gravityform action="ajax" id="' . $form_id . '" title="true" description="true"]' );
+		echo do_shortcode( '[gravityform action="ajax" id="' . $form_id . '" title="<?=$titles;?>" description="<?=$titles;?>"]' );
 
 	} else {
 
-		echo do_shortcode( '[gravityform id="' . $form_id . '" title="true" description="true"]' );
+		echo do_shortcode( '[gravityform id="' . $form_id . '" title="<?=$titles;?>" description="<?=$titles;?>"]' );
 
 	}
 

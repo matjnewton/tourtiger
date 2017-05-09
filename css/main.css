@@ -5,6 +5,7 @@
 
 html body.page-template-test-pc .site-header .header-bar-wrapper {
 	position: absolute;
+	width: 100%;
 }
 
 @media (max-width: 768px) {
