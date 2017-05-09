@@ -49,7 +49,8 @@ function tourtiger_scripts_method() {
 		wp_register_script('magnific_popup', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
 		wp_register_script('flexslider_js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), null, true);
 		
-		
+		wp_register_script('slick-slider', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), null, true);
+
 		wp_register_script('match_height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), null, true);
 		wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array('jquery'), null, false);
 		wp_register_script('browser_selector', get_stylesheet_directory_uri() . '/js/css_browser_selector.js', array('jquery'), null, false);
@@ -161,6 +162,7 @@ function tourtiger_scripts_method() {
 		wp_enqueue_script('bootstrap_selectjs');
 		//wp_enqueue_script( 'customjs' );
 		//wp_enqueue_script( 'custom_two' );
+		wp_enqueue_script('slick-slider');
 		wp_enqueue_script( 'mainjs' );
 
 		wp_enqueue_script( 'api-key-maps' );

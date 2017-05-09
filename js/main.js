@@ -20,5 +20,25 @@
 			$('.site-inner').css( 'margin-top', newMarginTop );
 			$unessesarily.css('margin-top', 0);
 		}
+
+		$('.js-navigated-gallery__front').slick({
+		  infinite: false,
+		  arrows: true,
+		  dots: false,
+		  adaptiveHeight: true,
+		  speed: 1000,
+		  prevArrow: '<button type="button" class="slick-arrow slick-prev"><i class="fa fa-angle-left"></i></button>',
+		  nextArrow: '<button type="button" class="slick-arrow slick-next"><i class="fa fa-angle-right"></i></button>'
+		});
+
+		$('.js-navigated-gallery__navigation').slick({
+		  infinite: false,
+		  arrows: false,
+		  dots: false,
+		  speed: 1000,
+		  slidesToShow: 5,
+		  variableWidth: true,
+  		  focusOnSelect: true
+		});
 	});
 })(jQuery);
