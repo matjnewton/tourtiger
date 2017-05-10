@@ -262,7 +262,7 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 #pc_wrap .button_type_center{margin-right:auto;margin-left:auto}
 #pc_wrap .button_type_full{margin-right:auto;margin-left:auto;width:100%}
 .fc_style--image{position:relative;text-decoration:none}
-@media (max-width: 578px) {#pc_wrap .fc_style--image_text .padding-top-mob { padding-top: 100px; }}
+@media (max-width: 578px) {#pc_wrap .fc_style--image_text.padding-top-mob { padding-top: 100px!important; }}
 #pc_wrap .fc_style--image_title + .fc_style--image_desc{margin-top:4px}
 .fc_style--first_wrap,.fc_style--second_wrap{padding:20px}
 .fc_style--first .first_title + *,.fc_style--second .second_title + *{margin-top:15px}
