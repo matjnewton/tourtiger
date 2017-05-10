@@ -38,6 +38,12 @@
 		 	$tour_content_content_classes = 'pc--c__col';
 		 	$tour_content_content_styles = ''; 
 
+		 	$margin_top    = get_sub_field('tour_pc-coltype--margin_top');
+		 	$margin_botton = get_sub_field('tour_pc-coltype--margin_bottom');
+
+		 	$tour_content_content_styles .= $margin_top && $margin_top != 0 ? "margin-top: {$margin_top}px;" : '';
+		 	$tour_content_content_styles .= $margin_botton && $margin_botton != 0 ? "margin-bottom: {$margin_bottom}px;" : '';
+
 		 	if ( get_row_layout() == 'tour_pc-coltype--headline' ) { 
 
 		 		include( get_stylesheet_directory() . '/includes/primary-content/column/content-card/pc-content-card-headline.php' );
