@@ -41,14 +41,18 @@ if ( $tour_flexiprod_image_url ) :
 
 		<?php pc_image( $tour_flexiprod_image_url, $thumb_width, $thumb_height, false, array( 'class' => 'pc--c__b-image_thumb' ) ); ?>
 
+		<?php $padding_top = ''; if ( $price && in_array( 'price', $flexi_attr['image'] ) ) : $padding_top = 'padding-top-mob'; ?>
+			<div class="pc--c__b-image_price fc_style--image_price"><?php echo $price; ?></div>
+		<?php endif; ?>
+
 		<?php if ( 
 			( 
 				in_array( 'title', $flexi_attr['image'] ) 
 				|| in_array( 'desc', $flexi_attr['image'] ) 
 			) 
-			&& ( $title || $desc ) ) :  ?>
+			&& ( $title || $desc ) ) : ?>
 
-			<div class="fc_style--image_text">
+			<div class="fc_style--image_text <?=$padding_top;?>">
 				<?php if ( $title && in_array( 'title', $flexi_attr['image'] ) ) : ?>
 					<div class="pc--c__b-image_title fc_style--image_title">
 						<?php echo $title; ?>	
@@ -61,10 +65,6 @@ if ( $tour_flexiprod_image_url ) :
 					</div>
 				<?php endif; ?>
 			</div>
-		<?php endif; ?>
-
-		<?php if ( $price && in_array( 'price', $flexi_attr['image'] ) ) : ?>
-			<div class="pc--c__b-image_price fc_style--image_price"><?php echo $price; ?></div>
 		<?php endif; ?>
 
 		<?php if ( $label && in_array( 'label', $flexi_attr['image'] ) ) : ?>
