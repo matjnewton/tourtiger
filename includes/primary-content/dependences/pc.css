@@ -498,4 +498,4 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .fc_style--first_wrap,.fc_style--second_wrap{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
 .pc__banner-wrapper-inner{position:relative;z-index: 1;max-width: 1440px;margin: 0 auto;background-position: center top;}
 .book-tour-wrapper_product{top: 0;}
-#pc_wrap div.pc--c__headline > * { font-size: 30px!important; line-height: 1.5!important; }
+@media (max-width: 578px) { #pc_wrap div.pc--c__headline > * { font-size: 30px!important; line-height: 1.5!important; } }
