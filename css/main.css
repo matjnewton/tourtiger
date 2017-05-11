@@ -82,3 +82,8 @@ html body.page-template-test-pc .site-header .header-bar-wrapper {
 .js-navigated-gallery__front .fa-angle-right {
 	right: 10px;
 }
+
+.book-tour-wrapper_product_row > .peek-book-button-flat {
+	width: 100%;
+	padding: 0;
+}
