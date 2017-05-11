@@ -1,10 +1,16 @@
 jQuery(document).ready(function($){
 
-	$("#booking_product").sticky({
-		topSpacing:130,
-		bottomSpacing:251,
-		getWidthFrom:'.book-tour-wrapper_product'
-	});
+	var $booking_sidebar = $("#booking_product");
+
+	if ( $booking_sidebar.length > 0 ) {
+		$(window).scroll(function(){
+			$booking_sidebar.sticky({
+				topSpacing:130,
+				bottomSpacing:251,
+				getWidthFrom:'.book-tour-wrapper_product'
+			});
+		});
+	}
 
 	$('.book-tour-title_product').hide();
 	$('#booking_product').on('sticky-start', function() { 
