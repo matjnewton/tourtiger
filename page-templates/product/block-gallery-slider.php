@@ -16,10 +16,10 @@ if( get_row_layout() == 'primary_content_maingallery_area'):
 					$gallery_id = generateRandomString(5);
 					?>
 
-					<div class="js-navigated-gallery js-navigated-gallery_<?=$gallery_id;?>">
+					<div class="js-navigated-gallery">
 						<ul 
-							class="js-navigated-gallery__front"
-							data-slick='{"asNavFor": ".js-navigated-gallery_<?=$gallery_id;?> .js-navigated-gallery__navigation"}'>
+							class="js-navigated-gallery__front js-front-<?=$gallery_id;?>"
+							data-slick='{"asNavFor": ".js-nav-<?=$gallery_id;?>"}'>
 
 							<?php foreach ($slides_images as $key => $slides_image) { ?>
 								<li>
@@ -29,8 +29,8 @@ if( get_row_layout() == 'primary_content_maingallery_area'):
 						</ul>
 
 						<ul 
-							class="js-navigated-gallery__navigation"
-							data-slick='{"asNavFor": ".js-navigated-gallery_<?=$gallery_id;?> .js-navigated-gallery__front"}'>
+							class="js-navigated-gallery__navigation js-nav-<?=$gallery_id;?>"
+							data-slick='{"asNavFor": ".js-front-<?=$gallery_id;?>"}'>
 
 							<?php foreach ($slides_images as $key => $slides_image) { ?>
 								<li>
