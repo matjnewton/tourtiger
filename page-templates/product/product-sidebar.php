@@ -82,14 +82,16 @@
 
 									<li class="sidebar_links_options_list">
 										<div class="sidebar_links_options_wrap">
-											<?php if($link_label ): 
-												if ($link_icon) {
-													echo '<i class="fa '.$link_icon.'"></i>';
-												} ?>
-												<a href="<?php echo $link_url; ?>">
-													<?php echo $link_label; ?></span>
-												</a>
-											<?php endif; ?>
+											<a href="<?php echo $link_url; ?>" style="margin-left: 0px;">
+												<?php if($link_label ): 
+													if ($link_icon) {
+														echo '<i class="fa '.$link_icon.'"></i>';
+													} ?>
+													<span style="margin-left: 46px;">
+														<?php echo $link_label; ?></span>
+													</span>
+												<?php endif; ?>
+											</a>
 										</div>
 									</li>
 
