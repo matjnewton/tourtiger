@@ -13,6 +13,8 @@ if( have_rows('pc_hero_area') ):
         $full_video_poster = get_sub_field( 'pc_video_poster' );
         $poster_url = wp_get_attachment_url( $full_video_poster, 'full' );
 
+        $button_type = get_sub_field( 'pc_button_link_type' );
+
         $hero_width_box = get_sub_field( 'pc_hero_area_banner-width' ); 
         $hero_height = get_sub_field( 'pc_hero_area_size' );
         $hero_align_h = get_sub_field( 'pc_hero_area_align' );
@@ -40,7 +42,9 @@ if( have_rows('pc_hero_area') ):
 
         include_once ( PCA_DIR . '/head/pc-banner-assets.php' );
 
-        include ( PCA_DIR . '/head/pc-banner.php' );
+        echo "<div class='{$ha_style}'>";
+            include ( PCA_DIR . '/head/pc-banner.php' );
+        echo "</div>";
 
     endwhile;
 endif; ?>

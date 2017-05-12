@@ -1,4 +1,4 @@
-<div id="pc_hero-area" class="pc__banner-wrapper-inner <?php echo $ha_style . ' banner-width__' . $hero_width_box; ?>" align="<?php echo $hero_align_t; ?>">
+<div id="pc_hero-area" class="pc__banner-wrapper-inner <?php echo 'banner-width__' . $hero_width_box; ?>" align="<?php echo $hero_align_t; ?>">
 
     <?php
     $hero_headline_dropshadow = get_field('hero_headline_dropshadow', 'option');
@@ -8,7 +8,6 @@
     $headline = get_sub_field( 'pc_headline' );
     $content_editor = get_sub_field( 'pc_content_editor' );
     $cta_button_text = get_sub_field( 'pc_cta_button_text' );
-    $button_type = get_sub_field( 'pc_button_link_type' );
 
     $book_tours = get_sub_field( 'pc_book_tours_link' );
     $cta_button_radius = get_sub_field( 'pc_cta_button_radius' );
