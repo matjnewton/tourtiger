@@ -2234,6 +2234,24 @@ class HeroArea extends StylingCard {
 					'ext_value' => array (
 					),
 				),
+				array (
+					'key' => $this->slug . $i . '_58icobg_c1514a',
+					'label' => 'Section background',
+					'name' => 'ha_style__section-color',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
 			),
 		);	
 

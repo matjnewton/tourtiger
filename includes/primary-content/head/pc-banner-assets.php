@@ -225,6 +225,10 @@ if ( have_rows( $ha_style, 'option' ) ) :
 
                 echo '.home_page_search.integrate_atlasx{ padding: 30px 0; }';
 
+                $ha_bg = get_sub_field( 'ha_style__section-color' );
+
+                if ( $ha_bg ) echo ".{$ha_style} .home_page_search.integrate_atlasx { background-color: {$ha_bg}; }";
+
             endif;
 
         endwhile;
