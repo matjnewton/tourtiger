@@ -166,8 +166,6 @@ if ( have_rows( $ha_style, 'option' ) ) :
                 /* Button BG */
                 if ( get_sub_field( 'ha_style__sabt_bg' ) ) {
                     $ha_style__ccc_css[1] .= 'background-color:' . get_sub_field( 'ha_style__sabt_bg' ) . ';';
-                } else {
-                    $ha_style__ccc_css[1] .= 'background-color:transparent;';
                 }
 
                 $ha_style__ccc_css[1] .= 'transition: ease .3s;';
