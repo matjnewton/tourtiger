@@ -150,7 +150,7 @@ if ( have_rows( $ha_style, 'option' ) ) :
                 $ha_style__ccc_css = pc_init_font_css( get_sub_field( 'ha_style__sabt_label_font' ) );
                 $ha_style__ccc_css[1] .= $ha_style__button_font_color ? 'color:' . $ha_style__button_font_color . ';' : '';
 
-                echo $ha_style__button_font_color ? '.' . $ha_style . ' .home_page_search .add-on i { transition: ease .3s; color:'.$ha_style__button_font_color.';}' : '';
+                echo $ha_style__button_font_color ? '.' . $ha_style . ' .home_page_search .add-on i { pointer-events: none; transition: ease .3s; color:'.$ha_style__button_font_color.';}' : '';
 
                 /* Set Button styles */
                 if ( get_sub_field( 'ha_style__sabt_style' ) == 'text' ) {
@@ -190,7 +190,7 @@ if ( have_rows( $ha_style, 'option' ) ) :
                     if ( $ha_style__button_hover_object_color ) {
                         $ha_style__ccc_css_hover .= 'background-color:' . $ha_style__button_font_color .';';
                         $ha_style__ccc_css_hover .= 'color:' . get_sub_field( 'ha_style__sabt_bg' ) .';';
-                        echo $ha_style__button_font_color ? '.' . $ha_style . ' .home_page_search .add-on .rezdy_search:hover + i, .' . $ha_style . ' .home_page_search .add-on .rezdy_search:active + i { transition: ease .3s; color:'.get_sub_field( 'ha_style__sabt_bg' ).';}' : '';
+                        echo  '.' . $ha_style . ' .home_page_search .add-on .rezdy_search:hover + i, .' . $ha_style . ' .home_page_search .add-on .rezdy_search:active + i { transition: ease .3s; color:'.get_sub_field( 'ha_style__sabt_bg' ).';}';
                     } 
 
                     if ( $ha_style__button_hover_object_text ) {
@@ -207,7 +207,7 @@ if ( have_rows( $ha_style, 'option' ) ) :
 
                     if ( get_sub_field( 'ha_style__sabt_bor' ) == 'yes' ) {
                         $ha_style__button_bor = $ha_style__button_bor_width . 'px solid ' . $ha_style__button_font_color;
-                        $ha_style__ccc_css[1] .= 'border:' . $ha_style__button_bor_width . 'px solid ' . get_sub_field( 'ha_style__sabt_bg' ) . ';';
+                        $ha_style__ccc_css[1] .= 'border:' . $ha_style__button_bor_width . 'px solid ' . $ha_style__button_font_color . ';';
                     } elseif ( get_sub_field( 'ha_style__sabt_bor' ) == 'hover' ) {
                         $ha_style__ccc_css[1] .= 'border:' . $ha_style__button_bor_width . 'px solid transparent;';
                     }
@@ -220,8 +220,8 @@ if ( have_rows( $ha_style, 'option' ) ) :
 
                 echo $ha_style__ccc_css[0] ? $ha_style__ccc_css[0] : '';
                 echo $ha_style__ccc_css[1] ? '.' . $ha_style . ' .home_page_search .rezdy_search {' . $ha_style__ccc_css[1] . '}' : '';
-                echo $ha_style__ccc_css_hover ? '.' . $ha_style . ' .home_page_search .rezdy_search:hover {' . $ha_style__ccc_css_hover . '}' : '';
-                echo $ha_style__ccc_css_hover ? '.' . $ha_style . ' .home_page_search .rezdy_search:active {' . $ha_style__ccc_css_hover . '}' : '';
+                echo '.' . $ha_style . ' .home_page_search .rezdy_search:hover {' . $ha_style__ccc_css_hover . '}';
+                echo '.' . $ha_style . ' .home_page_search .rezdy_search:active {' . $ha_style__ccc_css_hover . '}';
 
                 echo '.home_page_search.integrate_atlasx{ padding: 30px 0; }';
 
