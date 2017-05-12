@@ -120,12 +120,12 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
-                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
                                                              <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure-custom">
-                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0  && cptproducts.integration_details !=1">
                                                                 <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                             </span>
                                                         </div>
@@ -160,12 +160,12 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
-                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
                                                              <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure-custom">
-                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                                 <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                             </span>
                                                         </div>
@@ -210,12 +210,12 @@ function tourtiger_archive(){
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                 <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
 
-                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                      <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{groups.product.startTimeLocal  | asTime }}</span>
                                                      <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(groups.product.startTimeLocal,groups.product.endTimeLocal)}} hours</span>
                                                 </div>
                                                 <div class="search-descript-departure-custom">
-                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                     </span>
                                                 </div>
@@ -250,12 +250,12 @@ function tourtiger_archive(){
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                 <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
 
-                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                      <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{groups.product.startTimeLocal  | asTime }}</span>
                                                      <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(groups.product.startTimeLocal,groups.product.endTimeLocal)}} hours</span>
                                                 </div>
                                                 <div class="search-descript-departure-custom">
-                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                     </span>
                                                 </div>
@@ -310,12 +310,12 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
-                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
                                                              <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure-custom">
-                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                                 <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                             </span>
                                                         </div>
@@ -350,12 +350,12 @@ function tourtiger_archive(){
                                                         <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                         <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
    
-                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                        <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                              <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{productss.startTimeLocal  | asTime }}</span>
                                                              <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(productss.startTimeLocal,productss.endTimeLocal)}} hours</span>
                                                         </div>
                                                         <div class="search-descript-departure">
-                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                            <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                                 <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                             </span>
                                                         </div>
@@ -399,12 +399,12 @@ function tourtiger_archive(){
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                 <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
 
-                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                      <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{groups.product.startTimeLocal  | asTime }}</span>
                                                      <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(groups.product.startTimeLocal,groups.product.endTimeLocal)}} hours</span>
                                                 </div>
                                                 <div class="search-descript-departure-custom">
-                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                     </span>
                                                 </div>
@@ -439,12 +439,12 @@ function tourtiger_archive(){
                                                 <div class="search-descript-available" ng-if="cptproducts.integration_availability =='Show Available'">Available on this date</div>
                                                 <div class="search-descript-descript" ng-bind-html="cptproducts.descript | trust"></div>
 
-                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0">
+                                                <div class="search-descript-departure" ng-if="!cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                      <span class="search-descript-departure-label">Departure</span>  <span class="search-descript-departure-text">{{groups.product.startTimeLocal  | asTime }}</span>
                                                      <span class="search-descript-departure-label">Duration</span> <span class="search-descript-departure-text">{{duration(groups.product.startTimeLocal,groups.product.endTimeLocal)}} hours</span>
                                                 </div>
                                                 <div class="search-descript-departure-custom">
-                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0">
+                                                    <span class="search-descript-departure-custom-element" ng-repeat="details in cptproducts.details track by $index" ng-if="cptproducts.details.length >0 && cptproducts.integration_details !=1">
                                                         <span class="search-descript-departure-label">{{details.label }}</span> <span class="search-descript-departure-text">{{details.text}}</span>
                                                     </span>
                                                 </div>
