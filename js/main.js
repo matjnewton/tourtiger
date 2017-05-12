@@ -6,16 +6,21 @@
 
 !(function ($) {
 	$(function() {
-		var $header = $('.site-header');
-		var $sticky = $header.find('.sticky');
-		var is_home = $('body').hasClass('home');
-		var is_tour = $('body').hasClass('tour-template-default');
+		var $header   = $('.site-header');
+		var $sticky   = $header.find('.sticky');
+		var is_home   = $('body').hasClass('home');
+		var is_tour   = $('body').hasClass('tour-template-default');
+		var is_logged = $('body').hasClass('logged-in');
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 			var $unessesarily = $('.banner-wrapper-inner'); 
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			var newMarginTop  = headerWrapper - secondary;
+
+			if ( !is_logged ) {
+				newMarginTop += 32;
+			}
 
 			$('.site-inner').css( 'margin-top', newMarginTop );
 			$unessesarily.css('margin-top', 0);
