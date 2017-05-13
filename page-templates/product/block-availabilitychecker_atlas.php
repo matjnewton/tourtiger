@@ -58,16 +58,17 @@
 								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="item in api_availability_new | toArray | orderBy : item.$key track by $index">
 									<span class="availability_checker_col availability_checker_col_atlas checker_date customstyle">
 										{{timearray[0] | asDateTitleYears}}
-										<span class="checkertime" ng-if="parseFloat(item.$key)>13">{{parseFloatplus(item.$key)}}</span>
-										<span class="checkertime" ng-if="parseFloat(item.$key)<=13">{{parseFloat(item.$key)}}</span>
+										<span class="checkertime" ng-if="parseFloat(item.$key)>=13">{{parseFloatplus(item.$key)}}</span>
+										<span class="checkertime" ng-if="parseFloat(item.$key)<13">{{parseFloat(item.$key)}}</span>
 										<span class="checkertime" ng-if="parseFloat(item.$key)>12">PM</span>
 										<span class="checkertime" ng-if="parseFloat(item.$key)<=12">AM</span>
 									</span>
 									<span ng-model="timeSelected" class="availability_checker_col availability_checker_col_atlas checker_count customstyle" ng-if="item.$value !=0 && item.$value>=num_people">{{item.$value}} Available</span>
 									<span ng-model="timeSelected" class="availability_checker_col availability_checker_col_atlas checker_count not_numpeople customstyle" ng-if="item.$value !=0 && item.$value<num_people">{{item.$value}} Available</span>
+									<span ng-model="timeSelected" class="availability_checker_col availability_checker_col_atlas checker_count not customstyle" ng-if="item.$value ==0">{{item.$value}} Available</span>
 									<span class="availability_checker_col availability_checker_col_atlas checker_avail not customstyle" ng-if="item.$value ==0">
-										<i class="fa fa-close"></i>
-										<span class="checker_date_label">Not Available</span>
+										<!-- <i class="fa fa-close"></i> -->
+										<span class="checker_date_label">SOLD OUT</span>
 									</span>
 									<span ng-if="item.$value !=0 && item.$value>=num_people" ng-click="widgetload($event)" class="xola-checkout availability_checker_col availability_checker_col_atlas book_atlas customstyle" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{wqs_productcode}}" data-button-productcode="{{wqs_productcode}}" data-button-date="{{timearray[0]}}" data-button-time="{{item.$key}}" data-button-numpeople="{{num_people}}">Book Now</span>
 								</li>
