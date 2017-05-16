@@ -123,7 +123,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         }
         
         // add custom data attributes for peek
-        if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
+        /*if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
             $gid = preg_replace('#^https?://#', '', $t_gid);
             $attributes .= ' href="http://www.peek.com/purchase/activity/widget/'.$gid.'"';
@@ -131,7 +131,7 @@ class split_nav_walker extends Walker_Nav_Menu {
             $attributes .= ' data-purchase-type="activity"';
             $attributes .= ' data-button-text="'.$item->title.'"';
             $attributes .= ' data-activity-gid="'.$gid.'"';
-        }
+        }*/
         
         if ( $integrate_zaui == true && $depth == 0 && ($classes[0] == 'zaui-book-btn')) {
             $attributes .= ' onclick="return Zaui.open(event)"';
@@ -140,7 +140,30 @@ class split_nav_walker extends Walker_Nav_Menu {
         
         
         
-        if ( $integrate_xola == true && $depth == 0 && ($classes[0] == 'xola-book-btn')) {
+        if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
+            $t_gid = $atts['href'];
+            $gid = preg_replace('#^https?://#', '', $t_gid);
+            if($classes[1] == 'gift'):
+            $h_attribute = ' href="http://www.peek.com/purchase/gift_card/'.$gid.'"';
+            $attributes .= ' class="peek-book-button-flat"';
+            $attributes .= ' data-purchase-type="gift-card"';
+            $attributes .= ' data-button-text="'.$item->title.'"';
+            $attributes .= ' data-partner-gid="'.$gid.'"';
+            else:
+            $h_attribute = ' href="https://www.peek.com/s/'.$gid.'"';
+            $attributes .= ' class="peek-book-button-flat"';
+            $attributes .= ' data-purchase-type="activity"';
+            $attributes .= ' data-button-text="'.$item->title.'"';
+            $attributes .= ' data-activity-gid="'.$gid.'"';
+            endif;
+            
+            $item_output = $args->before;
+                $item_output .= '<a'. $h_attribute .''.$attributes.'>';
+                $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+                $item_output .= '</a>';
+                $item_output .= $args->after;
+        }
+        elseif ( $integrate_xola == true && $depth == 0 && ($classes[0] == 'xola-book-btn')) {
             $t_xid = $atts['href'];
             $xid = preg_replace('#^https?://#', '', $t_xid);
             if($classes[1] == 'checkout' || $classes[1] == 'checkout-all' || $classes[1] == 'timeline'):
