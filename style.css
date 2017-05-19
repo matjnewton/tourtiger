@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.1.2076
+Version: 0.1.2077
 Template: genesis
 Template Version: 2.0.25
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -158,3 +158,83 @@ body.single-product #fixed-on-mobile-productpage.fixed > * {
 body.single-product .site-inner {
     margin-top: 0;
 }
+
+html body.page-template-test-pc .site-header .header-bar-wrapper {
+    position: absolute;
+    width: 100%;
+ }
+ 
+ @media (max-width: 768px) {
+    #pc_hero-area #slider .slides > li  {
+        padding-top: 80px;
+    }
+ }
+ 
+.slick-slider{position:relative;display:block;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}.slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0}.slick-list:focus{outline:none}.slick-list.dragging{cursor:pointer;cursor:hand}.slick-slider .slick-track,.slick-slider .slick-list{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.slick-track{position:relative;top:0;left:0;display:block}.slick-track:before,.slick-track:after{display:table;content:''}.slick-track:after{clear:both}.slick-loading .slick-track{visibility:hidden}.slick-slide{display:none;float:left;height:100%;min-height:1px}[dir='rtl'] .slick-slide{float:right}.slick-slide img{display:block}.slick-slide.slick-loading img{display:none}.slick-slide.dragging img{pointer-events:none}.slick-initialized .slick-slide{display:block}.slick-loading .slick-slide{visibility:hidden}.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}.slick-arrow.slick-hidden{display:none}
+
+.js-navigated-gallery__front img {
+  max-width: 100%;
+  height: auto;
+}
+
+.js-navigated-gallery__navigation img {
+    height: 70px;
+    width: auto;
+}
+
+.js-navigated-gallery__navigation li {
+    cursor: pointer;
+    transition: ease .3s;
+}
+
+.js-navigated-gallery__navigation li:hover {
+    opacity: .8;    
+    transition: ease .3s;
+}
+
+.js-navigated-gallery__front .slick-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    outline: 0;
+    z-index: 9999;
+    height: 80px;
+    width: 40px;
+    background: white;
+    border: none;
+    transition: ease .5s;
+}
+
+.js-navigated-gallery__front .slick-disabled {
+    opacity: 0;
+    pointer-events: none;
+    transition: ease .5s;
+}
+
+.js-navigated-gallery__front .slick-prev {
+    left: 0;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.js-navigated-gallery__front .slick-next {
+    right: 0;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+}
+
+.js-navigated-gallery__front i {
+    color: black;
+    line-height: 80px;
+    position: absolute;
+    font-size: 28px;
+    top: 0;
+}
+
+.js-navigated-gallery__front .fa-angle-left {
+    left: 10px;
+}
+
+.js-navigated-gallery__front .fa-angle-right {
+    right: 10px;
+} 
