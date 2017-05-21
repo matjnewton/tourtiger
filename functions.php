@@ -1625,3 +1625,23 @@ if ( function_exists( 'add_image_size' ) ) {
 
 /* update dgamoni */
 include_once 'inc/load.php';
+
+if ( class_exists( 'WooCommerce' ) ):
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'tourtiger_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'tourtiger_theme_wrapper_end', 10);
+
+function tourtiger_theme_wrapper_start() {
+  echo '<section class="tour-page-content"><div class="container"><div class="row"><div class="col-sm-12">';
+}
+
+function tourtiger_theme_wrapper_end() {
+  echo '</div></div></div></section>';
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+endif;
