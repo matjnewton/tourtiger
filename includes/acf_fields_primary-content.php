@@ -454,7 +454,7 @@ function primary_area_deregister_unnesesarily_scripts() {
 
 	if ( is_page_template( 'page-templates/test-pc.php' ) ) :
 
-		wp_enqueue_style('pc-constructor', get_stylesheet_directory_uri() . '/includes/primary-content/dependences/pc.min.css' );
+		wp_enqueue_style('pc-constructor', get_stylesheet_directory_uri() . '/includes/primary-content/dependences/pc.min.css', null, 3 );
 
 		//wp_dequeue_script('bootstrapjs');
 		wp_dequeue_script('colorbox');
@@ -630,5 +630,80 @@ function generateRandomString($length = 10) {
     }
     return $randomString;
 }
+
+
+/**
+ * Sends email notifications
+ * @return null 
+ */
+function pc_gform_notification() {
+
+
+	/**
+	 * Common data variables
+	 */
+	$common_data = $_POST['commonData'];
+
+
+	/**
+	 * Confirmation data
+	 */
+	$confirmation_data = $_POST['confirmationData'];
+	$homeUrl           = explode('://', $confirmation_data['homeUrl'])[1];
+
+	/**
+	 * User data variables
+	 */
+	$user_data      = $_POST['userData'];
+	$user_data_html = '';
+
+
+	/**
+	 * Generate user's data HTML
+	 */
+	foreach ( $user_data as $user ) :
+
+		/**
+		 * So check if user's value is array 
+		 * it means this field is multiple 
+		 * select hence we should run value 
+		 * through foreach to get each value
+		 */
+		if ( ! is_array( $user['value'] ) ) :
+			$value = $user['value'];
+		else :
+			$value = '<ul>';
+			foreach ( $user['value'] as $option ) :
+				$value .= '<li>' . $option . '</li>';
+			endforeach;
+			$value .= '</ul>';
+		endif;
+
+		$user_data_html .= '<tr>';
+		$user_data_html .= '<td>' . $user['label'] . ': </td>';
+		$user_data_html .= '<td>' . $value . '</td>';
+		$user_data_html .= '</tr>';
+	endforeach;
+
+    $to      = $common_data['notifyTo']; 
+    $subject = 'New notification from ' . get_bloginfo( 'name' ); 
+    $message = '
+            <html>
+                <head>
+                    <title>' . $subject . '</title>
+                </head>
+                <body>
+                	<h4>Data which user filed</h4>
+                    <table>' . $user_data_html . '</table>            
+                </body>
+            </html>';
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+    $headers .= "From: " . get_bloginfo( 'name' ) . " <noreply@" . $homeUrl . "> \r\n"; 
+    wp_mail($to, $subject, $message, $headers); 
+    wp_die();
+
+}
+add_action( 'wp_ajax_pc_gform_notification', 'pc_gform_notification' );
+add_action( 'wp_ajax_nopriv_pc_gform_notification', 'pc_gform_notification' ); 
 
 ?>

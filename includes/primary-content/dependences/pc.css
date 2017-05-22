@@ -499,3 +499,39 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .pc__banner-wrapper-inner{position:relative;z-index: 1;max-width: 1440px;margin: 0 auto;background-position: center top;}
 .book-tour-wrapper_product{top: 0;}
 @media (max-width: 578px) { #pc_wrap div.pc--c__headline > * { font-size: 30px!important; line-height: 1.5!important; } #pc_hero-area .hero-area_title-1 {font-size: 30!important; line-height: 1.5!important; } #pc_hero-area .hero-area_title-2 {font-size: 27!important; line-height: 1.4!important; } #pc_hero-area .hero-area_title-3 {font-size: 24!important; line-height: 1.3!important; } }
+.gchoice_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+#pc_wrap .pc--form .gchoice_item input[type="checkbox"],
+#pc_wrap .pc--form .gchoice_item input[type="radio"] {
+	width: auto!important;
+	margin: 0;
+}
+
+.gchoice_item_more {
+    margin-top: 5px;
+}
+
+#pc_wrap .pc--form .gchoice_item_more .gfield_more {
+	opacity: .7;
+	pointer-events: none;
+}
+
+#pc_wrap .pc--form .gchoice_item_more input:checked + .gfield_more {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#pc_wrap .pc--form .gchoice_item .gfield_more,
+#pc_wrap .pc--form .gchoice_item .gfield_more:focus,
+#pc_wrap .pc--form .gchoice_item .gfield_more:active {
+	width: calc(100% - 21px)!important;
+	padding: 5px 9px;
+	margin-left: auto;
+}

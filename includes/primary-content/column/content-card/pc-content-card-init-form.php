@@ -192,7 +192,7 @@ echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .dropdown-me
 
 $cc_style__ccc_css[1] .= 'border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
 
-echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_select, #pc_wrap .' . $cc_style . ' .pc--form .gfield input, #pc_wrap .' . $cc_style . ' .pc--form .gfield dropdown-toggle, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:focus {' . $cc_style__ccc_css[1] . '};' : '';
+echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_select, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_multiselect, #pc_wrap .' . $cc_style . ' .pc--form .gfield input, #pc_wrap .' . $cc_style . ' .pc--form .gfield dropdown-toggle, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:focus {' . $cc_style__ccc_css[1] . '};' : '';
 
 /**
  * Input placeholder
