@@ -42,9 +42,8 @@ if( have_rows('pc_hero_area') ):
 
         include_once ( PCA_DIR . '/head/pc-banner-assets.php' );
 
-        echo "<div class='{$ha_style}'>";
-            include ( PCA_DIR . '/head/pc-banner.php' );
-        echo "</div>";
+        include_once ( PCA_DIR . '/head/pc-banner.php' );
+
 
     endwhile;
 endif; ?>
