@@ -206,7 +206,7 @@
 										$attr .= 'type="' . $field['type'] . '" ';
 										$attr .= $field['inputMask'] ? 'data-field-mask="' . $field['inputMaskValue'] . '" disabled ' : '';
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
-										$attr .= 'data-field-input "';
+										$attr .= 'data-field-input ';
 
 										echo "<input " . $attr . " />";
 										break;
