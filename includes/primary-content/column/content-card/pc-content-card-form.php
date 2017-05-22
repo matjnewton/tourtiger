@@ -10,7 +10,7 @@
 	$form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 ?>
 
-<div id="pca_form_id-<?php echo $form_id; ?>" class="<?php echo $tour_content_content_classes; ?>" style="color:#000;">
+<div id="pca_form_id-<?php echo $form_id; ?>" class="<?php echo $tour_content_content_classes; ?>">
 
 		<?php
 		/**
@@ -21,6 +21,11 @@
 		?>
 
 		<form id="gform_<?=$form_id;?>">
+			<div class="gform_heading">
+				<?php if ( $form['title'] ) : ?><div class="gform_title"><?php echo $form['title']; ?></div><?php endif; ?>
+				<?php if ( $form['description'] ) : ?><div class="gform_description"><?php echo $form['description']; ?></div><?php endif; ?>
+			</div>
+
 			<div class="gform_body">
 				<ul 
 					id="gform_fields_<?=$form_id;?>" 
@@ -278,7 +283,7 @@
 		/**
 		 * Just for testing
 		 */
-		// echo '<pre>';
+		// echo '<pre style="color:#000;">';
 		// 	var_dump($form);
 		// echo '</pre>';
 
