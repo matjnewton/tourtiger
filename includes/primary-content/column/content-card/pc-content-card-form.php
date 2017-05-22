@@ -10,7 +10,7 @@
 	$form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 ?>
 
-<div id="pca_form_id-<?php echo $form_id; ?>" class="<?php echo $tour_content_content_classes; ?>">
+<div id="pca_form_id-<?php echo $form_id; ?>" class="<?php echo $tour_content_content_classes; ?>"  style="color:#000;">
 
 		<?php
 		/**
@@ -283,7 +283,7 @@
 		/**
 		 * Just for testing
 		 */
-		// echo '<pre style="color:#000;">';
+		// echo '<pre>';
 		// 	var_dump($form);
 		// echo '</pre>';
 
