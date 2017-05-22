@@ -11,8 +11,9 @@ if ( have_rows( $ha_style, 'option' ) ) :
 
             /**
              * Title styles
-            */
-
+             *
+             * $ii - this is 1, 2, 3 variables
+             */
             for ( $ii = 1; $ii < 4; $ii++ ) {
 
                 if ( $title[$ii] ) {
@@ -25,6 +26,29 @@ if ( have_rows( $ha_style, 'option' ) ) :
 
                     echo $css[0];
                     echo '.' . $ha_style . ' #pc_hero-area ' . $tag[$ii] . '.hero-area_title-' . $ii . ' {' . $css[1] . '}';
+
+                    /**
+                     * Media queries
+                     */
+                    $css       = '';
+                    if ( have_rows( $ii . '-' . $tag[$ii] . '_media' ) ) {
+                        while ( have_rows( $ii . '-' . $tag[$ii] . '_media' ) ) {
+                            the_row();
+
+                            $typography = get_sub_field( 'typography' );
+                            $css       .= $typography['font_size'] ? 'font-size:' . $typography['font_size'] . 'px;' : '';
+                            $css       .= $typography['line_height'] ? 'font-height:' . $typography['line_height'] . 'px;' : '';
+                            $css       .= get_sub_field( 'margin-top' ) ? 'margin-top:' . get_sub_field( 'margin-top' ) . 'px;' : '';
+                            $css       .= get_sub_field( 'margin-bottom' ) ? 'margin-bottom:' . get_sub_field( 'margin-bottom' ) . 'px;' : '';
+
+                            
+                            echo '@media (max-width: ' . get_sub_field( 'device' ) . ') {';
+
+                                echo '.' . $ha_style . ' #pc_hero-area ' . $tag[$ii] . '.hero-area_title-' . $ii . ' {' . $css . '}';
+
+                            echo '}'; 
+                        }
+                    }
                 }
 
             }
