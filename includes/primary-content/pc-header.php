@@ -42,7 +42,7 @@ if( have_rows('pc_hero_area') ):
 
         include_once ( PCA_DIR . '/head/pc-banner-assets.php' );
 
-        include_once ( PCA_DIR . '/head/pc-banner.php' );
+        include ( PCA_DIR . '/head/pc-banner.php' );
 
 
     endwhile;
