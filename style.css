@@ -172,7 +172,8 @@ html body.page-template-test-pc .site-header .header-bar-wrapper {
 
 @media (min-width: 768px) {
     body.page-template-testimonials .site-header .header-bar-wrapper,
-    body.post-type-archive-product .site-header .header-bar-wrapper {
+    body.post-type-archive-product .site-header .header-bar-wrapper,
+    body.page-template-rezdy_search .site-header .header-bar-wrapper {
         position: relative;
     }
 }
