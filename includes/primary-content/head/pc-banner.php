@@ -1,4 +1,4 @@
-<div class='{$ha_style}'>
+<div class='<?=$ha_style;?>'>
     <div id="pc_hero-area" class="pc__banner-wrapper-inner <?php echo 'banner-width__' . $hero_width_box; ?>" align="<?php echo $hero_align_t; ?>">
 
     <?php
