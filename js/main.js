@@ -28,8 +28,12 @@
 			$unessesarily.css('margin-top', 0);
 		}
 
-		if ( is_product || is_search ) {
+		if ( is_product ) {
 			$('.header-bar').css('background-color', $('.single-product .site-inner .content').css('background-color') );
+		}
+
+		if ( is_search ) {
+			$('.header-bar').css('background-color', $('.page-template-rezdy_search .site-inner .content').css('background-color') );
 		}
 
 		$('.js-navigated-gallery__front').slick({
