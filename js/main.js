@@ -11,7 +11,7 @@
 		var is_home    = $('body').hasClass('home');
 		var is_tour    = $('body').hasClass('tour-template-default');
 		var is_logged  = $('body').hasClass('logged-in');
-		var is_product = $('body').hasCalss('single-product');
+		var is_product = $('body').hasClass('single-product');
 		var is_search  = $('body').hasClass('page-template-rezdy_search');
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
