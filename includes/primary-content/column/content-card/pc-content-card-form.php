@@ -248,7 +248,6 @@
 				<?php
 				foreach ( $form["notifications"] as $notification ) :
 					?>
-					<input type="hidden" name="gform_notify_is_active" value="<?=$notification["isActive"];?>">
 					<input type="hidden" name="gform_notify_name" value="<?=$notification["name"];?>">
 					<input type="hidden" name="gform_notify_event" value="<?=$notification["event"];?>">
 					<input type="hidden" name="gform_notify_to" value="<?php echo $notification["to"] == '{admin_email}' ? get_bloginfo('admin_email') : $notification["to"];?>">

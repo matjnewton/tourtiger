@@ -582,29 +582,27 @@ $number = 1;
 	        		/**
 	        		 * Send email notification
 	        		 */
-	        		if (commonData.isNotify == 1) {
-			           $.ajax({ 
-			                method: 'POST', 
-			                url: localize_var.ajaxurl, 
-			                data: data,  
-			                beforeSend: function() { 
-			                    $form.find('button').attr('disabled', 'disabled');
-			                },
-			                complete: function(responce) {
-			                    $form.find('button').prop('disabled', false); 
-			                    $form.find('.gform_body').find('input, textarea').val('');
-			                    
-			                    if (confirmationData.type == 'message') {
-			                    	$form.html('<div class="gform_confirmation">' + confirmationData.message + '</div>').text();
-		                			$('.pc--r__scroll').slick('setOption', 'height', null, true);
-			                    } else if (confirmationData.type == 'page') {
-			                    	document.location.href = confirmationData.homeUrl + '?p=' + confirmationData.pageId;
-			                    } else if (confirmationData.type == 'redirect') {
-			                    	document.location.href = confirmationData.url;
-			                    }
-			                }                          
-			            }); 
-			        }
+		           $.ajax({ 
+		                method: 'POST', 
+		                url: localize_var.ajaxurl, 
+		                data: data,  
+		                beforeSend: function() { 
+		                    $form.find('button').attr('disabled', 'disabled');
+		                },
+		                complete: function(responce) {
+		                    $form.find('button').prop('disabled', false); 
+		                    $form.find('.gform_body').find('input, textarea').val('');
+		                    
+		                    if (confirmationData.type == 'message') {
+		                    	$form.html('<div class="gform_confirmation">' + confirmationData.message + '</div>').text();
+	                			$('.pc--r__scroll').slick('setOption', 'height', null, true);
+		                    } else if (confirmationData.type == 'page') {
+		                    	document.location.href = confirmationData.homeUrl + '?p=' + confirmationData.pageId;
+		                    } else if (confirmationData.type == 'redirect') {
+		                    	document.location.href = confirmationData.url;
+		                    }
+		                }                          
+		            }); 
 
 	        		/**
 	        		 * Prevent page refreshing 
