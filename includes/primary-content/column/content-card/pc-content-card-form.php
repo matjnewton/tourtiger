@@ -283,9 +283,11 @@
 		/**
 		 * Just for testing
 		 */
-		// echo '<pre>';
-		// 	var_dump($form);
-		// echo '</pre>';
+		if ( current_user_can('create_users') ) :
+			echo '<pre>';
+			var_dump($form);
+			echo '</pre>';
+		endif;
 
 	// 	if ( defined('PCA_AJAX_LOADING_CONTENT') ) :
 
