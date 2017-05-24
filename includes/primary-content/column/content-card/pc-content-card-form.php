@@ -251,7 +251,7 @@
 					<input type="hidden" name="gform_notify_is_active" value="<?=$notification["isActive"];?>">
 					<input type="hidden" name="gform_notify_name" value="<?=$notification["name"];?>">
 					<input type="hidden" name="gform_notify_event" value="<?=$notification["event"];?>">
-					<input type="hidden" name="gform_notify_to" value="<?=$notification["to"];?>">
+					<input type="hidden" name="gform_notify_to" value="<?php echo $notification["to"] == '{admin_email}' ? get_bloginfo('admin_email') : $notification["to"];?>">
 					<input type="hidden" name="gform_notify_to_type" value="<?=$notification["toType"];?>">
 					<input type="hidden" name="gform_notify_subject" value="<?=$notification["subject"];?>">
 					<input type="hidden" name="gform_notify_from" value="<?=$notification["from"];?>">
@@ -283,11 +283,11 @@
 		/**
 		 * Just for testing
 		 */
-		if ( current_user_can('create_users') ) :
-			echo '<pre>';
-			var_dump($form);
-			echo '</pre>';
-		endif;
+		// if ( current_user_can('create_users') ) :
+		// 	echo '<pre>';
+		// 	var_dump($form);
+		// 	echo '</pre>';
+		// endif;
 
 	// 	if ( defined('PCA_AJAX_LOADING_CONTENT') ) :
 

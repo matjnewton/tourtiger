@@ -371,12 +371,6 @@ $number = 1;
 	        	$('.pc--form form').submit(function(e){
 
 	        		/**
-	        		 * Prevent page refreshing 
-	        		 * and setting name=value 's into URL
-	        		 */
-	    			e.preventDefault();
-
-	        		/**
 	        		 * DOM Objects
 	        		 */
 	        		var $form         = $(this);
@@ -611,6 +605,12 @@ $number = 1;
 			                }                          
 			            }); 
 			        }
+
+	        		/**
+	        		 * Prevent page refreshing 
+	        		 * and setting name=value 's into URL
+	        		 */
+	    			e.preventDefault();
 
 	        		return false;
 	        	});
