@@ -20,7 +20,7 @@
 		$form['counter'] = 1;
 		?>
 
-		<form id="gform_<?=$form_id;?>">
+		<form method="post" id="gform_<?=$form_id;?>">
 			<div class="gform_heading">
 				<?php if ( $form['title'] ) : ?><div class="gform_title"><?php echo $form['title']; ?></div><?php endif; ?>
 				<?php if ( $form['description'] ) : ?><div class="gform_description"><?php echo $form['description']; ?></div><?php endif; ?>
@@ -92,6 +92,15 @@
 										endforeach;
 
 										echo "</select>";
+										break;
+
+
+									/**
+									 * Google reCaptcha
+									 */
+									case 'gf_no_captcha_recaptcha':
+										$recaptcha = insert_recaptcha_html();
+										echo $recaptcha;
 										break;
 
 

@@ -97,7 +97,28 @@ if(function_exists('acf_add_options_sub_page')) {
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array (
-					'width' => '',
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'readonly' => 0,
+				'disabled' => 0,
+			),
+			array (
+				'key' => 'field_58bd243c84682',
+				'label' => 'reCaptcha/noCaptcha',
+				'name' => 're_captcha',
+				'type' => 'text',
+				'instructions' => 'get_field(\'re_captcha\',\'apikey\');',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '50',
 					'class' => '',
 					'id' => '',
 				),
@@ -509,12 +530,6 @@ function primary_area_deregister_unnesesarily_scripts() {
 		// wp_dequeue_script('wqs_functions_atlas');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_atlas');//dgamoni
 
-		wp_dequeue_script('jquery');
-		wp_deregister_script('jquery');
-	 	wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, false);
-	 	wp_enqueue_script( 'jquery' );
-
-
 		// wp_dequeue_style('bootstrap_select');
 		wp_dequeue_style('magnific_popup_css');
 		// wp_dequeue_style('product_css');
@@ -705,5 +720,21 @@ function pc_gform_notification() {
 }
 add_action( 'wp_ajax_pc_gform_notification', 'pc_gform_notification' );
 add_action( 'wp_ajax_nopriv_pc_gform_notification', 'pc_gform_notification' ); 
+
+
+/**
+ * Insert reCaptch html
+ *
+ * 1. Generate HTML if key is exist
+ * 2. Enqueue recaptcha script
+ * 
+ * @return string
+ */
+function insert_recaptcha_html() {
+
+	$html = get_field('re_captcha', 'apikey') ? '<div class="g-recaptcha" data-sitekey="'.get_field('re_captcha', 'apikey').'"></div>' : '';
+
+	return $html;
+}
 
 ?>

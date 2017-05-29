@@ -330,9 +330,12 @@ $number = 1;
 	    	 */
 	    	onFinish: function () {
 
+
 	    		/**
-	    		 * Turn off fields protect
+	    		 * Load reCaptch lib
 	    		 */
+ 				$.getScript("//www.google.com/recaptcha/api.js");
+
 
 	        	/**
 	        	 * Add mask to fields
@@ -378,6 +381,7 @@ $number = 1;
 	        		var $userFields   = $form.find('[data-field-input], textarea, select');
 	        		var $choiceGroups = $form.find('.gchoices_list'); 
 	        		var $commonFields = $form.find('.gform_footer').find('input, textarea, select');
+	        		var $reCaptcha    = $form.find('.g-recaptcha');
 
 
 	        		/**
@@ -426,38 +430,40 @@ $number = 1;
 	        		/**
 	        		 * Loop user fields
 	        		 */
-	        		$userFields.map(function(){
-	        			var $item    = $(this);
-	        			var name     = $item.attr('name');
-	        			var value    = $item.val();
-	        			var label    = $item.attr('data-field-label');
-	        			var required = $item.attr('data-field-required');
-	        			var mask     = $item.attr('data-field-mask');
+	        		if ($userFields.length > 0) {
+		        		$userFields.map(function(){
+		        			var $item    = $(this);
+		        			var name     = $item.attr('name');
+		        			var value    = $item.val();
+		        			var label    = $item.attr('data-field-label');
+		        			var required = $item.attr('data-field-required');
+		        			var mask     = $item.attr('data-field-mask');
 
-	        			/**
-	        			 * Add data to userData object
-	        			 */
-	        			userData.push({
-	        				name: name,
-	        				value: value,
-	        				label: label
-	        			});
+		        			/**
+		        			 * Add data to userData object
+		        			 */
+		        			userData.push({
+		        				name: name,
+		        				value: value,
+		        				label: label
+		        			});
 
-	        			/**
-	        			 * Check required fields
-	        			 */
-	        			if (required == 1 && value.length == 0) {
-	        				$item.css('color', '#f44336').after('<div style="color:#f44336">This field is required.</div>');
-	        				valid = false;
-	        			} else if (required == 1 && value.length > 0) {
-	        				$item.attr('style', '').parent().find('div').detach();
-	        			}
+		        			/**
+		        			 * Check required fields
+		        			 */
+		        			if (required == 1 && value.length == 0) {
+		        				$item.css('color', '#f44336').after('<div style="color:#f44336">This field is required.</div>');
+		        				valid = false;
+		        			} else if (required == 1 && value.length > 0) {
+		        				$item.attr('style', '').parent().find('div').detach();
+		        			}
 
-	        			/**
-	        			 * Update row height
-	        			 */
-	        			$('.pc--r__scroll').slick('setOption', 'height', null, true);
-	        		});
+		        			/**
+		        			 * Update row height
+		        			 */
+		        			$('.pc--r__scroll').slick('setOption', 'height', null, true);
+		        		});
+		        	}
 
 
 	        		/**
@@ -550,10 +556,28 @@ $number = 1;
 		        	}
 
 
+		        	/**
+		        	 * Check reCaptcha is it's exist
+		        	 */
+		        	if ($reCaptcha.length > 0) {
+			            var captcha = grecaptcha.getResponse();
+
+				        if(!captcha.length){
+				            valid = false;
+				        } 
+		        	}
+
+
 	        		/**
 	        		 * Stop script if one of fields is false
 	        		 */
 	        		if (!valid) {
+
+		        		/**
+		        		 * Prevent page refreshing 
+		        		 * and setting name=value 's into URL
+		        		 */
+	    				e.preventDefault();
 	        			return false;
 	        		}
 
@@ -609,7 +633,6 @@ $number = 1;
 	        		 * and setting name=value 's into URL
 	        		 */
 	    			e.preventDefault();
-
 	        		return false;
 	        	});
 	        	
