@@ -382,6 +382,8 @@ $number = 1;
 	        		var $choiceGroups = $form.find('.gchoices_list'); 
 	        		var $commonFields = $form.find('.gform_footer').find('input, textarea, select');
 	        		var $reCaptcha    = $form.find('.g-recaptcha');
+	        		var $notifyGroups = $form.find('.gform_notify_group');
+	        		var $userMail     = $form.find('[data-user-email]');
 
 
 	        		/**
@@ -395,16 +397,28 @@ $number = 1;
 	        		/**
 	        		 * Common data
 	        		 */
-	        		var commonData = {
-		        		isNotify:       $form.find('input[name="gform_notify_is_active"]').val(),
-		        		adminName:      $form.find('input[name="gform_notify_name"]').val(),
-		        		notifyEvent:    $form.find('input[name="gform_notify_event"]').val(),
-		        		notifyTo:       $form.find('input[name="gform_notify_to"]').val(),
-		        		notifyToType:   $form.find('input[name="gform_notify_to_type"]').val(),
-		        		notifySubject:  $form.find('input[name="gform_notify_subject"]').val(),
-		        		notifyFrom:     $form.find('input[name="gform_notify_from"]').val(),
-		        		notifyFromName: $form.find('input[name="gform_notify_from_name"]').val()
-	        		};
+	        		var commonData = {};
+
+	        		var notifyId = 0; 
+	        		$notifyGroups.map(function(){
+	        			if ($form.find('input[name="gform_notify_to_'+notifyId+'"]').val() === 'user_email') {
+	        				var mail = $userMail.val();
+	        				$form.find('input[name="gform_notify_to_'+notifyId+'"]').val(mail);
+	        			}
+
+	        			commonData[notifyId] = {
+			        		adminName: $form.find('input[name="gform_notify_name_'+notifyId+'"]').val(),
+			        		event:     $form.find('input[name="gform_notify_event_'+notifyId+'"]').val(),
+			        		to:        $form.find('input[name="gform_notify_to_'+notifyId+'"]').val(),
+			        		toType:    $form.find('input[name="gform_notify_to_type_'+notifyId+'"]').val(),
+			        		subject:   $form.find('input[name="gform_notify_subject_'+notifyId+'"]').val(),
+			        		from:      $form.find('input[name="gform_notify_from_'+notifyId+'"]').val(),
+			        		fromName:  $form.find('input[name="gform_notify_from_name_'+notifyId+'"]').val(),
+			        		message:   $form.find('input[name="gform_notify_message_'+notifyId+'"]').val()
+		        		}; 
+
+	        			notifyId++;
+	        		});
 
 
 	        		/**
@@ -569,20 +583,6 @@ $number = 1;
 
 
 	        		/**
-	        		 * Stop script if one of fields is false
-	        		 */
-	        		if (!valid) {
-
-		        		/**
-		        		 * Prevent page refreshing 
-		        		 * and setting name=value 's into URL
-		        		 */
-	    				e.preventDefault();
-	        			return false;
-	        		}
-
-
-	        		/**
 	        		 * Write user's data into object 
 	        		 * which will be sent by notification
 	        		 */
@@ -601,6 +601,26 @@ $number = 1;
 	        		 * which will be used for confirmation
 	        		 */
 	        		data.confirmationData = confirmationData;
+
+
+	        		/**
+	        		 * Collect object
+	        		 */
+    				console.log(data);
+
+
+	        		/**
+	        		 * Stop script if one of fields is false
+	        		 */
+	        		if (!valid) {
+
+		        		/**
+		        		 * Prevent page refreshing 
+		        		 * and setting name=value 's into URL
+		        		 */
+	    				e.preventDefault();
+	        			return false;
+	        		}
 
 
 	        		/**

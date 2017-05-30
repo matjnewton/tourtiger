@@ -700,21 +700,37 @@ function pc_gform_notification() {
 		$user_data_html .= '</tr>';
 	endforeach;
 
-    $to      = $common_data['notifyTo']; 
-    $subject = 'New notification from ' . get_bloginfo( 'name' ); 
-    $message = '
-            <html>
-                <head>
-                    <title>' . $subject . '</title>
-                </head>
-                <body>
-                	<h4>Data which user filed</h4>
-                    <table>' . $user_data_html . '</table>            
-                </body>
-            </html>';
-    $headers  = "Content-type: text/html; charset=utf-8 \r\n";
-    $headers .= "From: " . get_bloginfo( 'name' ) . " <noreply@" . $homeUrl . "> \r\n"; 
-    wp_mail($to, $subject, $message, $headers); 
+
+	/**
+	 * generate body message and send notifications
+	 * @var nothing
+	 */
+	foreach ( $common_data as $id => $value ) :
+		$send_body = '';
+
+		if ( $value['message'] == '{all_fields}' ) :
+			$send_body = '
+            	<h4>Data which user filed</h4>
+                <table>' . $user_data_html . '</table> 
+	        ';
+	    elseif ( $value['message'] != '{all_fields}' ) :
+	    	$send_body = $value['message'];
+		endif;
+
+	    $to      = $value['to']; 
+	    $subject = $value['subject']; 
+	    $message = '
+	            <html>
+	                <head>
+	                    <title>' . $subject . '</title>
+	                </head>
+	                <body>' . $send_body . '</body>
+	            </html>';
+	    $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+	    $headers .= "From: " . $value['fromName'] > " " . $value['from'] . "> \r\n"; 
+	    wp_mail($to, $subject, $message, $headers); 
+	endforeach;
+
     wp_die();
 
 }

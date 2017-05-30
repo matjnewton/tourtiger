@@ -217,6 +217,8 @@
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
 										$attr .= 'data-field-input ';
 
+										if ( $field['cssClass'] == 'user_email' ) $attr .= 'data-user-email="1"';
+
 										echo "<input " . $attr . " />";
 										break;
 								endswitch;
@@ -255,16 +257,29 @@
 
 				<!-- Notifivations -->
 				<?php
+				$notify_id = 0;
 				foreach ( $form["notifications"] as $notification ) :
+
+					if ( $notification["to"] == '{admin_email}' ) :
+						$notification["to"] = get_bloginfo('admin_email');
+					elseif ( $notification["to"] == '{user_email}' ) :
+						$notification["to"] = 'user_email';
+					endif;
 					?>
-					<input type="hidden" name="gform_notify_name" value="<?=$notification["name"];?>">
-					<input type="hidden" name="gform_notify_event" value="<?=$notification["event"];?>">
-					<input type="hidden" name="gform_notify_to" value="<?php echo $notification["to"] == '{admin_email}' ? get_bloginfo('admin_email') : $notification["to"];?>">
-					<input type="hidden" name="gform_notify_to_type" value="<?=$notification["toType"];?>">
-					<input type="hidden" name="gform_notify_subject" value="<?=$notification["subject"];?>">
-					<input type="hidden" name="gform_notify_from" value="<?=$notification["from"];?>">
-					<input type="hidden" name="gform_notify_from_name" value="<?=$notification["fromName"];?>">
+
+					<div class="gform_notify_group">
+						<input type="hidden" name="gform_notify_name_<?=$notify_id;?>" value="<?=$notification["name"];?>">
+						<input type="hidden" name="gform_notify_event_<?=$notify_id;?>" value="<?=$notification["event"];?>">
+						<input type="hidden" name="gform_notify_to_<?=$notify_id;?>" value="<?php echo $notification["to"]; ?>">
+						<input type="hidden" name="gform_notify_to_type_<?=$notify_id;?>" value="<?=$notification["toType"];?>">
+						<input type="hidden" name="gform_notify_subject_<?=$notify_id;?>" value="<?=$notification["subject"];?>">
+						<input type="hidden" name="gform_notify_from_<?=$notify_id;?>" value="<?php echo $notification["from"] == '{admin_email}' ? get_bloginfo('admin_email') : $notification["from"];?>">
+						<input type="hidden" name="gform_notify_from_name_<?=$notify_id;?>" value="<?=$notification["fromName"];?>">
+						<input type="hidden" name="gform_notify_message_<?=$notify_id;?>" value="<?=$notification["message"];?>">
+					</div>
+
 					<?php
+					$notify_id++;
 				endforeach;
 				?>
 
@@ -291,11 +306,11 @@
 		/**
 		 * Just for testing
 		 */
-		 if ( current_user_can('create_users') ) :
-		 	echo '<pre>';
-		 	print_r($form);
-		 	echo '</pre>';
-		 endif;
+		 // if ( current_user_can('create_users') ) :
+		 // 	echo '<pre>';
+		 // 	print_r($form);
+		 // 	echo '</pre>';
+		 // endif;
 
 	// 	if ( defined('PCA_AJAX_LOADING_CONTENT') ) :
 
