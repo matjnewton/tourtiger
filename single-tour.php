@@ -18,7 +18,7 @@ add_action('genesis_loop', 'be_landing_page_content');
 
 function be_landing_page_content(){ ?>
     
-    <?php get_template_part('includes/tour_sections'); ?>
+    <?php get_template_part('includes/tour_sections_gpm'); ?>
     <?php //get_sidebar('subscribe'); ?>
     
 <?php }
