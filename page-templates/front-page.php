@@ -16,8 +16,8 @@ add_action('genesis_loop', 'be_landing_page_content');
 function be_landing_page_content(){ ?>
 
     <?php //get_template_part('includes/front1_sections'); ?>
-    <?php get_template_part('includes/front1_sections_gpm'); ?>
-    <?php get_sidebar('subscribe_gpm'); ?>
+    <?php get_template_part('includes/front1_sections'); ?>
+    <?php get_sidebar('subscribe'); ?>
     
 <?php }
 //add_action( 'be_content_area', 'be_landing_page_content' );

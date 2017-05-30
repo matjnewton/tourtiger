@@ -351,7 +351,7 @@ function above_header(){
 remove_action('genesis_header', 'genesis_do_header');
 add_action('genesis_header', 'tourtiger_header');
 function tourtiger_header(){
-    	require(CHILD_DIR.'/tourtiger-header_gpm.php');
+    	require(CHILD_DIR.'/tourtiger-header.php');
 }
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -360,7 +360,7 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 remove_action('genesis_footer', 'genesis_do_footer');
 add_action('genesis_footer', 'tourtiger_footer');
 function tourtiger_footer(){
-    require(CHILD_DIR.'/tourtiger-footer_gpm.php');
+    require(CHILD_DIR.'/tourtiger-footer.php');
 }
 
 /*layout settings*/
@@ -495,15 +495,15 @@ add_filter('acf/load_field/name=third_party', 'acf_load_third_party_field_choice
 include_once(dirname(__FILE__).'/includes/acf_fields.php');
 
 //include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
-include_once(dirname(__FILE__).'/includes/menus_gpm.php');
-include_once(dirname(__FILE__).'/includes/mobile-menus_gpm.php');
+include_once(dirname(__FILE__).'/includes/menus.php');
+include_once(dirname(__FILE__).'/includes/mobile-menus.php');
 require_once(dirname(__FILE__).'/includes/aq_resizer.php');
 
 function tourtiger_background_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css">' . "\n";
-        require(CHILD_DIR.'/background_gpm.php');
+        require(CHILD_DIR.'/background.php');
         echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n"; }
