@@ -70,6 +70,7 @@ function tourtiger_scripts_method() {
 		$integrate_xola = get_field('integrate_xola_with_this_website','option');
 		$integrate_rezdy = get_field('rezdy','option');
 		$integrate_regiondo = get_field('regiondo','option');
+		$integrate_zozi = get_field('zozi','option');
 		
 		if($integrate_orioly):
         wp_register_script('orioly', ("https://book-now.orioly.com/scripts/book.js"), array(), null, true);
@@ -94,6 +95,11 @@ function tourtiger_scripts_method() {
 		
 		if($integrate_regiondo):
 		wp_register_script('regiondo_btn', ("https://cdn.regiondo.net/js/integration/regiondo-button.js"), array(), null, true);
+		endif;
+		
+		if($integrate_zozi):
+		wp_register_script('zozi_btn', ("https://a.zozi.com/assets/widgets/bookit.js"), array(), null, true);
+		wp_register_script('zozi_lightbox_btn_launcher', ("https://a.zozi.com/assets/widgets/lightbox-button-launcher.js"), array(), null, true);
 		endif;
 		
 		wp_enqueue_script( 'jquery' );
@@ -127,6 +133,11 @@ function tourtiger_scripts_method() {
 		
 		if($integrate_regiondo):
 		wp_enqueue_script('regiondo_btn');
+		endif;
+		
+		if($integrate_zozi):
+		wp_enqueue_script('zozi_btn');
+		wp_enqueue_script('zozi_lightbox_btn_launcher');
 		endif;
 		
 		wp_enqueue_style('bootstrap');
@@ -446,6 +457,7 @@ function acf_load_third_party_field_choices( $field ) {
     $integrate_rezdy = get_field('rezdy','option');
     $integrate_regiondo = get_field('regiondo','option');
     $integrate_orioly = get_field('orioly','option');
+    $integrate_zozi = get_field('zozi','option');
     
     if($integrate_xola):
     $choices = get_field('xola_values', 'option', false);
@@ -463,6 +475,8 @@ function acf_load_third_party_field_choices( $field ) {
     $choices = get_field('regiondo_values', 'option', false);
     elseif($integrate_orioly):
     $choices = get_field('orioly_values', 'option', false);
+    elseif($integrate_zozi):
+    $choices = get_field('zozi_values', 'option', false);
     endif;
     // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices);
