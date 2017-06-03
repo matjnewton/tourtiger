@@ -6,6 +6,10 @@
 
 !(function ($) {
 	$(function() {
+
+		/**
+		 * Variables used generally for conditionals
+		 */
 		var $header    = $('.site-header');
 		var $sticky    = $header.find('.sticky');
 		var is_home    = $('body').hasClass('home');
@@ -13,6 +17,7 @@
 		var is_logged  = $('body').hasClass('logged-in');
 		var is_product = $('body').hasClass('single-product');
 		var is_search  = $('body').hasClass('page-template-rezdy_search');
+		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 			var $unessesarily = $('.banner-wrapper-inner'); 
@@ -24,8 +29,10 @@
 				newMarginTop += 32;
 			}
 
-			$('.site-inner').css( 'margin-top', newMarginTop );
-			$unessesarily.css('margin-top', 0);
+			if ( !is_banner ) {
+				$('.site-inner').css( 'margin-top', newMarginTop );
+				$unessesarily.css('margin-top', 0);
+			}
 		}
 
 		if ( is_product ) {
