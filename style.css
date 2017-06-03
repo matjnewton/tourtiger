@@ -90,11 +90,6 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
         font-size: 14px!important;
         line-height: 20px!important;
     }
-
-
-    .single-post .site-header .header-bar-wrapper {
-        position: static;
-    }
 }
 
 @media (max-width: 568px) {
@@ -180,6 +175,11 @@ html body.page-template-test-pc .site-header .header-bar-wrapper {
     body.post-type-archive-product .site-header .header-bar-wrapper,
     body.page-template-rezdy_search .site-header .header-bar-wrapper {
         position: relative;
+    }
+
+
+    .single-post .site-header .header-bar-wrapper {
+        position: static;
     }
 }
  
