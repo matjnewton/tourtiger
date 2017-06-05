@@ -256,10 +256,10 @@ return '<section class="secondary-nav-wrapper"><div class="hidden-xs container">
  
 }
 
-// add_action( 'wp_footer', 'mycustom_post_info', 9 );
-//     function mycustom_post_info(){
-//         echo get_num_queries(); ?> queries in <?php timer_stop(1); ?>seconds<?php
-//     }
+add_action( 'wp_footer', 'mycustom_post_info', 9 );
+function mycustom_post_info(){
+    
+}
 
 /*add_theme_support( 'custom-header', array(
 	'default-text-color'     => 'ffffff',
