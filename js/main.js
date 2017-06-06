@@ -35,8 +35,26 @@
 			}
 		}
 
+
 		if ( is_product ) {
 			$('.header-bar').css('background-color', $('.single-product .site-inner .content').css('background-color') );
+
+			if ( $('body').width() < 768 ) {
+
+				$('#fixed-on-mobile-productpage').wrap('<div id="js-mob-wrap-buttons"></div>');
+
+				$('.js-show-certificate-mob').appendTo( $('#js-mob-wrap-buttons') );
+				$('.js-show-certificate-mob').css({
+					    'display': 'block',
+					    'margin-bottom': '16px'
+				});
+				$('.js-show-certificate-mob a').addClass('book-btn2-product-title').css({
+					'margin-left': '0px',
+				    'display': 'block',
+				    'color': '#fff'
+				});
+				$('.js-show-certificate-mob span').css({'margin-left': '0'});
+			}
 		}
 
 		if ( is_search ) {

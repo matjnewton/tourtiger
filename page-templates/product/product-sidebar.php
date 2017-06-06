@@ -77,11 +77,13 @@
 									$link_label = get_sub_field('link_label');	
 									$link_icon = get_sub_field('link_icon');
 									$link_url = get_sub_field('link_url');
+
+									$mobile_class = $link_icon == 'fa-gift' ? 'js-show-certificate-mob' : '';
 									//var_dump($reason_icon);
 									 ?>
 
 									<li class="sidebar_links_options_list">
-										<div class="sidebar_links_options_wrap">
+										<div class="sidebar_links_options_wrap <?=$mobile_class;?>">
 											<a href="<?php echo $link_url; ?>" style="margin-left: 0px;">
 												<?php if($link_label ): 
 													if ($link_icon) {
