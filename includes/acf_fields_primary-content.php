@@ -257,6 +257,7 @@ function pc_init_font_css( $font = '' ) {
 		$css[1] .= $font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
 		$css[1] .= $font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
 		$css[1] .= $font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
+		$css[1] .= $font['letter_spacing'] ? "letter-spacing:" .$font['letter_spacing'] . "px;" : '';
 
 		return $css;
 
@@ -292,6 +293,7 @@ function pc_content_init_form( $font='', $color='', $background='', $border='' )
 	$css[1] .= $font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
 	$css[1] .= $font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
 	$css[1] .= $font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
+	$css[1] .= $font['letter_spacing'] ? "letter-spacing:" . $font['letter_spacing'] . "px;" : '';
 
 	$css[1] .= $color ? 'color:' . $color . ';' : '';
 	$css[1] .= $background ? 'background-color:' . $background . ';' : '';
