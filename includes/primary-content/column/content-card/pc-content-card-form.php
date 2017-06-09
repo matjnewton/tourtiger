@@ -56,8 +56,8 @@
 								 * Set field attributes
 								 */
 								$attr  = '';
-								$attr .= 'name="input_' . $form['counter'] . '" ';
-								$attr .= 'id="input_' . $form_id . '_' . $form['counter'] . '" ';
+								$attr .= 'name="input_' . $field['id'] . '" ';
+								$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
 								$attr .= 'class="' . $field['type'] . ' gfield_' . $field['type'] . '" ';
 								$attr .= 'placeholder="' . $field['placeholder'] . '" ';
 								$attr .= 'data-field-label="' . $field['label'] . '" ';
@@ -138,6 +138,7 @@
 										 */
 										for ( $choice_id = 0; $choice_id < $choices_count; $choice_id++ ) :
 											$choice = $field['choices'][$choice_id];
+											$attrName = $field['type'] == 'radio' ? 'input_' . $field['id'] : 'input_' . $field['id'] . '_' . ($choice_id + 1);
 
 											/**
 											 * li attributes
@@ -150,7 +151,7 @@
 											 */
 											$attr  = '';
 											$attr .= 'type="' . $field['type'] . '" ';
-											$attr .= 'name="input_' . $form['counter'] . '" ';
+											$attr .= 'name="' . $attrName . '" ';
 											$attr .= 'id="gchoice_' . $form_id . '_' . $form['counter'] . '_' . $choice_id . '" ';
 											$attr .= 'class="' . $field['type'] . ' gfield_choice gfield_' . $field['type'] . '" ';
 											$attr .= 'data-field-label="' . $field['label'] . '" ';
@@ -184,7 +185,7 @@
 											 */
 											$attr  = '';
 											$attr .= 'type="' . $field['type'] . '" ';
-											$attr .= 'name="input_' . $form['counter'] . '" ';
+											$attr .= 'name="' . $attrName . '" ';
 											$attr .= 'id="gchoice_' . $form_id . '_' . $form['counter'] . '_' . $choice_id . '" ';
 											$attr .= 'class="' . $field['type'] . ' gfield_choice gfield_' . $field['type'] . '" ';
 											$attr .= $choice['isSelected'] ? 'checked ' : '';
@@ -312,15 +313,15 @@
 		 // 	echo '</pre>';
 		 // endif;
 
-	// 	if ( defined('PCA_AJAX_LOADING_CONTENT') ) :
+		// if ( defined('PCA_AJAX_LOADING_CONTENT') ) :
 
-	// 		echo do_shortcode( '[gravityform action="ajax" id="' . $form_id . '" title="'.$titles.'" description="'.$titles.'"]' );
+		// 	echo do_shortcode( '[gravityform action="ajax" id="' . $form_id . '" title="'.$titles.'" description="'.$titles.'"]' );
 
-	// 	elseif ( ! defined('PCA_AJAX_LOADING_CONTENT') ) :
+		// elseif ( ! defined('PCA_AJAX_LOADING_CONTENT') ) :
 
-	// 		echo do_shortcode( '[gravityform id="' . $form_id . '" title="'.$titles.'" description="'.$titles.'"]' );
+		// 	echo do_shortcode( '[gravityform id="' . $form_id . '" title="'.$titles.'" description="'.$titles.'"]' );
 
-	// 	endif;
+		// endif;
 
 		?>
 

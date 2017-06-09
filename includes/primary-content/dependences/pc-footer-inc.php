@@ -10,6 +10,39 @@ $number = 1;
 
 <script type="text/javascript">
 
+
+	/**
+	 * Manual Gravity Forms submitting. 
+	 * Used in manual scripts
+	 * 
+	 * @param  {string} url         This URL should be generated
+	 * @param  {object} values_json Inputs' values
+	 * @param  {jQuery} $form       Current Form DOM object
+	 * @return {null}              
+	 */
+	function submit_gf_through_pc(url, values_json, $form) { 
+		$.post(url, values_json, function(data){
+		    console.log(data);
+
+		    /**
+		     * Redirect
+		     */
+		    if (typeof data === 'string') {
+		    	document.location.href = data.split('rel="canonical" href="')[1].split('" />')[0];
+		    }
+
+		    /**
+		     * Show confirmation message if it's exist
+		     */
+		    if (data.response) {
+		    	$form.hide();
+		    	$form.parent().append(data.response.confirmation_message);
+		    }
+		});
+
+		return null;
+	}
+
 	function aload(t){"use strict";var e="data-aload";return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t}
 
 	window.onload = function () {
@@ -374,6 +407,12 @@ $number = 1;
 	        	$('.pc--form form').submit(function(e){
 
 	        		/**
+	        		 * Prevent page refreshing 
+	        		 * and setting name=value 's into URL
+	        		 */
+	    			e.preventDefault();
+
+	        		/**
 	        		 * DOM Objects
 	        		 */
 	        		var $form         = $(this);
@@ -390,8 +429,10 @@ $number = 1;
 	        		 * Data variable is used 
 	        		 * for AJAX requests in Wordpress
 	        		 */
-	        		var data  = { action: 'pc_gform_notification' };
-	        		var valid = true;
+	        		var data        = { action: 'pc_gform_notification' };
+	        		var valid       = true;
+	        		var values      = {};
+	        		var inputValues = {};
 
 
 	        		/**
@@ -461,6 +502,8 @@ $number = 1;
 		        				value: value,
 		        				label: label
 		        			});
+
+		        			inputValues[name] = value;
 
 		        			/**
 		        			 * Check required fields
@@ -534,38 +577,20 @@ $number = 1;
 		        			/**
 		        			 * Get variables
 		        			 */
-		        			var name  = $checked.attr('name');
 			        		var label = $checked.attr('data-field-label');
 
 		        			if (typeof $checked !== 'object') {
-			        			var value = $checked.val();
+			            		inputValues[$checked.attr('name')] = $checked.val();
 			        		} else {
-	        					var value   = [];
 		        				var arrSize = $checked.length;
 
 		        				/**
 		        				 * Get variables of each DOM item
 		        				 */
 		        				for (var c = 0; c < arrSize; c++) {
-				        			value[c] = $checked.eq(c).val();
+    			            		inputValues[$checked.eq(c).attr('name')] = $checked.eq(c).val();
 				        		}
 			        		}
-
-
-		        			/**
-		        			 * Add data to global data object
-		        			 */
-		        			userData.push({
-		        				name:  name,
-		        				value: value,
-		        				label: label
-		        			});
-
-
-		        			/**
-		        			 * Powerful debag!
-		        			 */
-		        			console.log($checked);
 		        		});
 		        	}
 
@@ -604,6 +629,15 @@ $number = 1;
 
 
 	        		/**
+	        		 * Input values for submitting
+	        		 */
+	        		values.input_values = inputValues;
+	        		var values_json = JSON.stringify(values);
+	        		data.values = values;
+
+
+
+	        		/**
 	        		 * Collect object
 	        		 */
     				console.log(data);
@@ -622,37 +656,29 @@ $number = 1;
 	        			return false;
 	        		}
 
+					var CalculateSig = function CalculateSig(stringToSign, privateKey){
+					    //calculate the signature needed for authentication
+					    var hash = CryptoJS.HmacSHA1(stringToSign, privateKey);
+					    var base64 = hash.toString(CryptoJS.enc.Base64);
+					    return encodeURIComponent(base64);
+					}
 
-	        		/**
-	        		 * Send email notification
-	        		 */
-		           $.ajax({ 
-		                method: 'POST', 
-		                url: localize_var.ajaxurl, 
-		                data: data,  
-		                beforeSend: function() { 
-		                    $form.find('button').attr('disabled', 'disabled');
-		                },
-		                complete: function(responce) {
-		                    $form.find('button').prop('disabled', false); 
-		                    $form.find('.gform_body').find('input, textarea').val('');
-		                    
-		                    if (confirmationData.type == 'message') {
-		                    	$form.html('<div class="gform_confirmation">' + confirmationData.message + '</div>').text();
-	                			$('.pc--r__scroll').slick('setOption', 'height', null, true);
-		                    } else if (confirmationData.type == 'page') {
-		                    	document.location.href = confirmationData.homeUrl + '?p=' + confirmationData.pageId;
-		                    } else if (confirmationData.type == 'redirect') {
-		                    	document.location.href = confirmationData.url;
-		                    }
-		                }                          
-		            }); 
+					//set variables
+					var d = new Date;
+					var expiration = 3600; // 1 hour,
+					var unixtime = parseInt(d.getTime() / 1000);
+					var future_unixtime = unixtime + expiration;
+					var publicKey = "a63dc53c07";
+					var privateKey = "4932125fb3f2149";
+					var method = "POST";
+					var route = "forms/12/submissions";
 
-	        		/**
-	        		 * Prevent page refreshing 
-	        		 * and setting name=value 's into URL
-	        		 */
-	    			e.preventDefault();
+					var stringToSign = publicKey + ":" + method + ":" + route + ":" + future_unixtime;
+					var sig = CalculateSig(stringToSign, privateKey);
+					var url = 'http://borasite2.lightningbasehosted.com/gravityformsapi/' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
+
+					submit_gf_through_pc(url, values_json, $form);
+
 	        		return false;
 	        	});
 	        	
