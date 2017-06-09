@@ -433,6 +433,7 @@ $number = 1;
 	        		var valid       = true;
 	        		var values      = {};
 	        		var inputValues = {};
+	        		var formId      = $form.attr('id').split('_')[1];
 
 
 	        		/**
@@ -671,11 +672,11 @@ $number = 1;
 					var publicKey = "a63dc53c07";
 					var privateKey = "4932125fb3f2149";
 					var method = "POST";
-					var route = "forms/12/submissions";
+					var route = "/gravityformsapi/forms/"+formId+"/submissions";
 
 					var stringToSign = publicKey + ":" + method + ":" + route + ":" + future_unixtime;
 					var sig = CalculateSig(stringToSign, privateKey);
-					var url = 'http://borasite2.lightningbasehosted.com/gravityformsapi/' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
+					var url = '<?php echo get_bloginfo('url'); ?>' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
 
 					submit_gf_through_pc(url, values_json, $form);
 
