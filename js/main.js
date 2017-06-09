@@ -33,6 +33,8 @@
 				$('.site-inner').css( 'margin-top', newMarginTop );
 				$unessesarily.css('margin-top', 0);
 			}
+		} else {
+			$('.banner-wrapper-inner').css('margin-top', 0);
 		}
 
 
