@@ -39,7 +39,19 @@
 
 
 		if ( is_product ) {
-			$('.header-bar').css('background-color', $('.single-product .site-inner .content').css('background-color') );
+			$('.custom-header').css('padding', 0);
+
+			var backgroundColor = $('.single-product .site-inner .content').css('background-color');
+
+			$('.header-bar').css('background-color', backgroundColor );
+
+			$(window).on('scroll', function(){
+				if ( $(this).scrollTop() > 0 ) {
+					$('.header-bar').css('background-color', '#fff' );
+				} else {
+					$('.header-bar').css('background-color', backgroundColor );
+				}
+			});
 
 			if ( $('body').width() < 768 ) {
 
