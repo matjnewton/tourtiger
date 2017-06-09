@@ -664,21 +664,34 @@ $number = 1;
 					    return encodeURIComponent(base64);
 					}
 
-					//set variables
-					var d = new Date;
-					var expiration = 3600; // 1 hour,
-					var unixtime = parseInt(d.getTime() / 1000);
-					var future_unixtime = unixtime + expiration;
-					var publicKey = "a63dc53c07";
-					var privateKey = "4932125fb3f2149";
-					var method = "POST";
-					var route = "/gravityformsapi/forms/"+formId+"/submissions";
+					<?php 
+					/**
+					 * Check API Keys
+					 */
+					if ( current_user_can('edit_posts') && ( !get_field('gf_public_key','apikey') || !get_field('gf_private_key','apikey') ) ) :
+						?>
 
-					var stringToSign = publicKey + ":" + method + ":" + route + ":" + future_unixtime;
-					var sig = CalculateSig(stringToSign, privateKey);
-					var url = '<?php echo get_bloginfo('url'); ?>' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
+				    	$form.hide();
+				    	$form.parent().append('<h3 style="color: red;">Public or private key isn\'t exist. Add them <a href="<?php echo get_bloginfo('url'); ?>/wp-admin/admin.php?page=acf-options-api-keys" target="_blank">here</a> and try again</h3>');
+				    	return false;
+						<?php
+					endif; 
+					?>
+						//set variables
+						var d = new Date;
+						var expiration = 3600; // 1 hour,
+						var unixtime = parseInt(d.getTime() / 1000);
+						var future_unixtime = unixtime + expiration;
+						var publicKey = "<?php echo get_field('gf_public_key','apikey'); ?>";
+						var privateKey = "<?php echo get_field('gf_private_key','apikey'); ?>";
+						var method = "POST";
+						var route = "/gravityformsapi/forms/"+formId+"/submissions";
 
-					submit_gf_through_pc(url, values_json, $form);
+						var stringToSign = publicKey + ":" + method + ":" + route + ":" + future_unixtime;
+						var sig = CalculateSig(stringToSign, privateKey);
+						var url = '<?php echo get_bloginfo('url'); ?>' + route + '?api_key=' + publicKey + '&signature=' + sig + '&expires=' + future_unixtime;
+
+						submit_gf_through_pc(url, values_json, $form);
 
 	        		return false;
 	        	});
