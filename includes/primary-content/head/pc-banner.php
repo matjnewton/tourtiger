@@ -55,9 +55,9 @@
         </section>
     </div> 
 
-<!-- include search box -->
-<?php if ( $button_type == 'Search Box' ) :
-    get_template_part( '/page-templates/search/search_box_settings_atlas_pc' );
-endif; ?>  
+
+
+
+
 
 </div>
