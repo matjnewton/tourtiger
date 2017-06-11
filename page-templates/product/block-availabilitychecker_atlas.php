@@ -55,7 +55,7 @@
 							<!-- new template checker -->
 							<span class="productss" ng-repeat="(keys, api_availability_new) in api_availability_xola[0]"  ng-if="(keys != 'productCode') && (keys | asDate) == (timearray[0] | asDate)">
 <!-- 								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="(time, seats) in api_availability_new  track by $index | orderBy:time "> -->
-								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="item in api_availability_new | toArray | orderBy : item.$key track by $index">
+								<li class="availability_checker_col availability_checker_col_atlas checker_date customstyle" ng-repeat="item in api_availability2 | orderBy : item.$key track by $index">
 									<span class="availability_checker_col availability_checker_col_atlas checker_date customstyle">
 										{{timearray[0] | asDateTitleYears}}
 										<span class="checkertime" ng-if="parseFloat(item.$key)>=13">{{parseFloatplus(item.$key)}}</span>

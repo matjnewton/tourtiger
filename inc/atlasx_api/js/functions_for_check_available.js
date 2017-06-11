@@ -6,7 +6,7 @@
 	// });
 
 
-    var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter','angular-toArrayFilter']);
+    var wqs_xola_check = angular.module("wqs_xola_check", ['ngAnimate','angular.filter','angular-toArrayFilter','angular-toArrayFilter_']);
 
 // config
     wqs_xola_check.config(['$httpProvider', function( $httpProvider) {
@@ -117,6 +117,7 @@
 		        		//console.log(key);
 		        		if(key != 'productCode') {
 		        			var index = 0;
+		        			$scope.api_availability2 = $filter('toArray_')(api_availability2);
 		        			angular.forEach(api_availability2, function(seats, key) {
 		        				if(index == 0){
 		        					$scope.timeSelected = seats;
