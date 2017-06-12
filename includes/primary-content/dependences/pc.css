@@ -28,7 +28,7 @@
 .pc-hero-content > * + *{margin-top:30px}
 .pc-hero-content > *{width:100%}
 .banner-width__full{max-width:100%!important}
-.banner-width__wrap{width:1440px;margin:0 auto;}
+.banner-width__wrap{max-width:100%;width:1440px;margin:0 auto;}
 .pc-hero-content__short{min-height:250px}
 .pc-hero-content__medium{min-height:450px}
 .pc-hero-content__tall{min-height:650px}
