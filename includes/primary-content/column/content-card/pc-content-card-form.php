@@ -302,27 +302,4 @@
 			</div>
 		</form>	
 
-		<?php
-
-		/**
-		 * Just for testing
-		 */
-		 // if ( current_user_can('create_users') ) :
-		 // 	echo '<pre>';
-		 // 	print_r($form);
-		 // 	echo '</pre>';
-		 // endif;
-
-		// if ( defined('PCA_AJAX_LOADING_CONTENT') ) :
-
-		// 	echo do_shortcode( '[gravityform action="ajax" id="' . $form_id . '" title="'.$titles.'" description="'.$titles.'"]' );
-
-		// elseif ( ! defined('PCA_AJAX_LOADING_CONTENT') ) :
-
-		// 	echo do_shortcode( '[gravityform id="' . $form_id . '" title="'.$titles.'" description="'.$titles.'"]' );
-
-		// endif;
-
-		?>
-
 </div>

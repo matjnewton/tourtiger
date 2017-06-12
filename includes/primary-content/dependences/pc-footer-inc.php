@@ -437,53 +437,6 @@ $number = 1;
 
 
 	        		/**
-	        		 * Common data
-	        		 */
-	        		var commonData = {};
-
-	        		var notifyId = 0; 
-	        		$notifyGroups.map(function(){
-	        			if ($form.find('input[name="gform_notify_to_'+notifyId+'"]').val() === 'user_email') {
-	        				var mail = $userMail.val();
-	        				$form.find('input[name="gform_notify_to_'+notifyId+'"]').val(mail);
-	        			}
-
-	        			commonData[notifyId] = {
-			        		adminName: $form.find('input[name="gform_notify_name_'+notifyId+'"]').val(),
-			        		event:     $form.find('input[name="gform_notify_event_'+notifyId+'"]').val(),
-			        		to:        $form.find('input[name="gform_notify_to_'+notifyId+'"]').val(),
-			        		toType:    $form.find('input[name="gform_notify_to_type_'+notifyId+'"]').val(),
-			        		subject:   $form.find('input[name="gform_notify_subject_'+notifyId+'"]').val(),
-			        		from:      $form.find('input[name="gform_notify_from_'+notifyId+'"]').val(),
-			        		fromName:  $form.find('input[name="gform_notify_from_name_'+notifyId+'"]').val(),
-			        		message:   $form.find('input[name="gform_notify_message_'+notifyId+'"]').val()
-		        		}; 
-
-	        			notifyId++;
-	        		});
-
-
-	        		/**
-	        		 * Confirmation data
-	        		 */
-	        		var confirmationData = {
-		        		name:      $form.find('input[name="gform_conf_name"]').val(),
-		        		isDefault: $form.find('input[name="gform_conf_is_default"]').val(),
-		        		type:      $form.find('input[name="gform_conf_type"]').val(),
-		        		message:   $form.find('input[name="gform_conf_message"]').val(),
-		        		url:       $form.find('input[name="gform_conf_url"]').val(),
-		        		pageId:    $form.find('input[name="gform_conf_page_id"]').val(),
-		        		homeUrl:   $form.find('input[name="gform_conf_home_url"]').val()
-	        		};
-
-
-	        		/**
-	        		 * Collect user's data
-	        		 */
-	        		var userData = [];
-
-
-	        		/**
 	        		 * Loop user fields
 	        		 */
 	        		if ($userFields.length > 0) {
@@ -494,15 +447,6 @@ $number = 1;
 		        			var label    = $item.attr('data-field-label');
 		        			var required = $item.attr('data-field-required');
 		        			var mask     = $item.attr('data-field-mask');
-
-		        			/**
-		        			 * Add data to userData object
-		        			 */
-		        			userData.push({
-		        				name: name,
-		        				value: value,
-		        				label: label
-		        			});
 
 		        			inputValues[name] = value;
 
@@ -605,43 +549,14 @@ $number = 1;
 				        if(!captcha.length){
 				            valid = false;
 				        } 
-		        	}
-
-
-	        		/**
-	        		 * Write user's data into object 
-	        		 * which will be sent by notification
-	        		 */
-	        		data.userData = userData;
-
-
-	        		/**
-	        		 * Write common data into object 
-	        		 * which will be used for notification
-	        		 */
-	        		data.commonData = commonData;
-
-
-	        		/**
-	        		 * Write common data into object 
-	        		 * which will be used for confirmation
-	        		 */
-	        		data.confirmationData = confirmationData;
-
+				    }
 
 	        		/**
 	        		 * Input values for submitting
 	        		 */
 	        		values.input_values = inputValues;
-	        		var values_json = JSON.stringify(values);
-	        		data.values = values;
-
-
-
-	        		/**
-	        		 * Collect object
-	        		 */
-    				console.log(data);
+	        		var values_json     = JSON.stringify(values);
+	        		data.values         = values;
 
 
 	        		/**
