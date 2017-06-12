@@ -40,15 +40,30 @@ if( have_rows('pc_hero_area') ): $hero_counts = 0; //fix bug Hero loaded twice
             $hero_height_n = 650;
         }
 
+        /**
+         * Load CSS styles
+         */
         include_once ( PCA_DIR . '/head/pc-banner-assets.php' );
 
+        /**
+         * Load banner
+         */
         include ( PCA_DIR . '/head/pc-banner.php' );
 
-        //include search 
+        /**
+         * Load Searchbox
+         */
         if ( $button_type == 'Search Box' && $hero_counts == 1) :
             get_template_part( '/page-templates/search/search_box_settings_atlas_pc' );
         endif;
-        $hero_counts++; //fix bug Hero loaded twice
 
+        /**
+         * Load mobile under-hero area
+         */
+        if ( get_sub_field( 'pc_ha_action_button_url' ) && wp_is_mobile() ) :
+            include ( PCA_DIR . '/head/pc-under-hero.php' );
+        endif;
+
+        $hero_counts++; //fix bug Hero loaded twice
     endwhile;
 endif; ?>

@@ -129,6 +129,8 @@ if ( have_rows( $ha_style, 'option' ) ) :
             echo $ha_style__ccc_css[0] ? $ha_style__ccc_css[0] : '';
             echo $ha_style__ccc_css[1] ? '.' . $ha_style . ' #pc_hero-area .pc_hero-area__action-btn {' . $ha_style__ccc_css[1] . '}' : '';
             echo $ha_style__ccc_css_hover ? '.' . $ha_style . ' #pc_hero-area .pc_hero-area__action-btn:hover {' . $ha_style__ccc_css_hover . '}' : '';
+            echo $ha_style__ccc_css[1] ? '.' . $ha_style . ' + .heroarea-under__wrap .heroarea-under__button {' . $ha_style__ccc_css[1] . '}' : '';
+            echo $ha_style__ccc_css_hover ? '.' . $ha_style . ' + .heroarea-under__wrap .heroarea-under__button:hover {' . $ha_style__ccc_css_hover . '}' : '';
 
             if ( $button_type == 'Search Box' ) :
 

@@ -535,3 +535,19 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 	padding: 5px 9px;
 	margin-left: auto;
 }
+
+.heroarea-under__wrap {
+	padding: 20px;
+	background-color: #eee;
+}
+
+.heroarea-under__button {
+	display: inline-block;
+	padding: 9px 17px;
+	text-decoration: none;
+	font-size: 18px;
+	background-color: #f44336;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}

@@ -1351,37 +1351,7 @@ acf_add_local_field_group(array (
 							'message' => 'Yes',
 							'default_value' => 0,
 						),
-						// array (
-						// 	'key' => 'pc_ha_014_3',
-						// 	'label' => 'Select categories',
-						// 	'name' => 'pc_search_settings_type_category_select',
-						// 	'type' => 'taxonomy',
-						// 	'instructions' => 'the default is the current category',
-						// 	'required' => 0,
-						// 	'conditional_logic' => array (
-						// 		array (
-						// 			array (
-						// 				'field' => 'pc_ha_014_2',
-						// 				'operator' => '==',
-						// 				'value' => '1',
-						// 			),
-						// 		),
-						// 	),
-						// 	'wrapper' => array (
-						// 		'width' => '',
-						// 		'class' => '',
-						// 		'id' => '',
-						// 	),
-						// 	'taxonomy' => 'tour_cat',
-						// 	'field_type' => 'multi_select',
-						// 	'allow_null' => 1,
-						// 	'add_term' => 1,
-						// 	'save_terms' => 0,
-						// 	'load_terms' => 0,
-						// 	'return_format' => 'object',
-						// 	'multiple' => 0
-						// ),
-												array (
+						array (
 							'key' => 'pc_ha_014_3',
 							'label' => 'Select categories',
 							'name' => 'search_settings_type_category_select',
@@ -1450,7 +1420,6 @@ acf_add_local_field_group(array (
 							'message' => '',
 							'default_value' => 0,
 						),
-						//special message above search results
 						array (
 							'key' => 'field_54e613c087d24_special_message_pc',
 							'label' => 'Special message above search results',
@@ -1509,6 +1478,75 @@ acf_add_local_field_group(array (
 							),
 							'layout' => 'horizontal',
 							'toggle' => 0,
+						),
+						
+						array (
+							'key' => 'pc_ha_tab_7',
+							'label' => 'Mobile devices',
+							'name' => 'pc_ha_tab_7',
+							'type' => 'tab',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'placement' => 'top',
+							'endpoint' => 0,
+						),
+						array (
+							'key' => 'pc_ha_015-a',
+							'label' => 'Action button',
+							'name' => 'pc_ha_action_button',
+							'type' => 'true_false',
+							'required' => 0,
+							'wrapper' => array (
+								'width' => '30',
+							),
+							'message' => 'Show button underneath Hero Area',
+							'default_value' => 0,
+						),
+						array (
+							'key' => 'pc_ha_015-b',
+							'label' => 'Label',
+							'name' => 'pc_ha_action_button_label',
+							'type' => 'text',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_015-a',
+										'operator' => '==',
+										'value' => 1,
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '35',
+							),
+							'placeholder' => 'Book now',
+						),
+						array (
+							'key' => 'pc_ha_015-c',
+							'label' => 'Destination',
+							'name' => 'pc_ha_action_button_url',
+							'type' => 'text',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_015-a',
+										'operator' => '==',
+										'value' => 1,
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '35',
+							),
+							'placeholder' => 'https://example.com',
 						),
 					),
 					'min' => '',
