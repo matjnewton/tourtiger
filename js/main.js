@@ -45,7 +45,7 @@
 		// and when someone scales a browser's window
 		$(window).resize(fix_header_paddings);
 
-		if ( is_product ) {
+		if ( $('body').hasClass('single-product') ) {
 			$('.custom-header').css('padding', 0);
 
 			var backgroundColor = $('.single-product .site-inner .content').css('background-color');
@@ -78,7 +78,7 @@
 			}
 		}
 
-		if ( is_search ) {
+		if ( $('body').hasClass('page-template-rezdy_search') ) {
 			$('.header-bar').css('background-color', $('.page-template-rezdy_search .site-inner .content').css('background-color') );
 		}
 
