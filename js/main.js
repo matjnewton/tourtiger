@@ -83,7 +83,7 @@
 		}
 
 		$('.js-navigated-gallery__front').slick({
-		  infinite: false,
+		  infinite: true,
 		  arrows: true,
 		  dots: false,
 		  adaptiveHeight: true,
@@ -93,7 +93,7 @@
 		});
 
 		$('.js-navigated-gallery__navigation').slick({
-		  infinite: false,
+		  infinite: true,
 		  arrows: false,
 		  dots: false,
 		  speed: 1000,
