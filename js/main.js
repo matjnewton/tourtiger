@@ -5,11 +5,11 @@
  */
 
 !(function ($) {
-	$(function() {
 
-		/**
-		 * Variables used generally for conditionals
-		 */
+	/**
+	 * Fix header paddings
+	 */
+	var fix_header_paddings = function fix_header_paddings() {
 		var $header    = $('.site-header');
 		var $sticky    = $header.find('.sticky');
 		var is_home    = $('body').hasClass('home');
@@ -36,7 +36,14 @@
 		} else {
 			$('.banner-wrapper-inner').css('margin-top', 0);
 		}
+	}
 
+	$(function() {
+
+		fix_header_paddings();
+
+		// and when someone scales a browser's window
+		$(window).resize(fix_header_paddings);
 
 		if ( is_product ) {
 			$('.custom-header').css('padding', 0);
