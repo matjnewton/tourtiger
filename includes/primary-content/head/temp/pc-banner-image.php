@@ -5,7 +5,7 @@
 
             <?php
                 $image = get_sub_field( 'pc_hero_image' );
-                $simage = aq_resize( $image['url'], 1440, $hero_height_n, true ); ?>
+                $simage = aq_resize( $image['url'], 1920, $hero_height_n, true ); ?>
 
                 <li style="
                     background-image: url(<?php echo $simage; ?>); 

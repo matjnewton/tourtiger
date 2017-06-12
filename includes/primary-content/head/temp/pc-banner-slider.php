@@ -7,7 +7,7 @@
 
                 <?php 
                 foreach( $images as $slider_image ):
-                    $simage = aq_resize( $slider_image['url'], 1440, $hero_height_n, true ); ?>
+                    $simage = aq_resize( $slider_image['url'], 1920, $hero_height_n, true ); ?>
 
                     <li style="
                         background-image: url(<?php echo $simage; ?>); 

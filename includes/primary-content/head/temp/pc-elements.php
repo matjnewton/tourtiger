@@ -1,4 +1,4 @@
-
+<div class="banner-width__wrap">
     <div class="
         pc-hero-content 
         pc-hero-content__<?php echo $hero_height; ?>
@@ -27,4 +27,5 @@
         <?php if ( $cta_button_text ) include( PCA_DIR . '/head/temp/pc-elements-button.php' ); ?>
     </div>
 
-<?php include( PCA_DIR . '/head/temp/pc-banner-addons.php' ); ?>
+    <?php include( PCA_DIR . '/head/temp/pc-banner-addons.php' ); ?>
+</div>
