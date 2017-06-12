@@ -47,7 +47,7 @@
 #pc_ha_gradient{width:100%;height:5vh;position:absolute;bottom:-5vh;left:0}
 #pc_ha_repeater{position:absolute;bottom:0;left:0;width:100%;height:20px;-webkit-transform:translateY(50%);transform:translateY(50%);z-index:3}
 #pc_ha_image{-webkit-transform:translate(-50%,50%);transform:translate(-50%,50%);position:absolute;bottom:0;left:50%;z-index:6;width:100%}
-#pc_ha_image img {max-width:100%}
+#pc_ha_image img {width:100%}
 #pc_ha_overlay_color,#pc_ha_overlay_texture{z-index:2;position:absolute;top:0;left:0;width:100%;height:100%}
 #pc_ha_overlay_texture{opacity:.5}
 .pc--s{box-sizing:border-box;width:100%;background-size:cover;position:relative;font-family:'Roboto',Arial,sans-serif;overflow-x:hidden;-webkit-transition:.3s;transition:.3s}
