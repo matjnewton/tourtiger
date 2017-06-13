@@ -407,7 +407,7 @@ function transform_name( $name = '', $type = '' ) {
  * @param  boolean $circle 
  * @return null         
  */
-function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false ) {
+function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false, $blank=false ) {
 
 	if ( $circle !== false ) {
 		if ( $width > $height ) { 
@@ -419,7 +419,10 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 		echo '<div class="pc_circle-image--wrapper js-new-circle">';
 	}
 
-	echo $link ? "<a href='{$link}'>":'';
+	$link_attrs  = "href='{$link}'";
+	$link_attrs .= $blank ? " target='_blank'" : '';
+
+	echo $link ? "<a {$link_attrs}>":'';
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
 	echo $link ? '</a>':'';
 

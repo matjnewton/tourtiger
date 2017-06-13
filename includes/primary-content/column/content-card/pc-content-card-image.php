@@ -26,7 +26,7 @@ if ( $tour_image ) :
 			align="center">
 				<?php
 
-				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, $tour_image_attr, $circle ); 
+				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, $tour_image_attr, $circle, true ); 
 
 				?>
 		</div>
