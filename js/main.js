@@ -42,14 +42,27 @@
 
 		fix_header_paddings();
 
+
 		// and when someone scales a browser's window
 		$(window).resize(fix_header_paddings);
 
+
+		/**
+		 * Functions just for Single Product page
+		 */
 		if ( $('body').hasClass('single-product') ) {
+
+
+			/**
+			 * Remove unnesesarily paddings
+			 */
 			$('.custom-header').css('padding', 0);
 
-			var backgroundColor = $('.single-product .site-inner .content').css('background-color');
 
+			/**
+			 * Sign header background color same as site content
+			 */
+			var backgroundColor = $('.single-product .site-inner .content').css('background-color');
 			$('.header-bar').css('background-color', backgroundColor );
 
 			$(window).on('scroll', function(){
@@ -60,8 +73,30 @@
 				}
 			});
 
+
+			/**
+			 * Functions for Single Product page 
+			 * and devices which has width below 1140px
+			 */
+			if ( $('body').width() < 1140 ) {
+
+				/**
+				 * Fix sidebar displaying
+				 */
+				$('.book-tour-wrapper_product').width( $('.col-sm-4').width() );
+
+			}
+
+			/**
+			 * Functions for Single Product page 
+			 * and devices which has width below 768px
+			 */
 			if ( $('body').width() < 768 ) {
 
+
+				/**
+				 * Male certificate underneath header
+				 */
 				$('#fixed-on-mobile-productpage').wrap('<div id="js-mob-wrap-buttons"></div>');
 
 				$('.js-show-certificate-mob').appendTo( $('#js-mob-wrap-buttons') );
@@ -75,6 +110,7 @@
 				    'color': '#fff'
 				});
 				$('.js-show-certificate-mob span').css({'margin-left': '0'});
+
 			}
 		}
 
