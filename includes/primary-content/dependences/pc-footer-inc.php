@@ -296,7 +296,7 @@ $number = 1;
 		                var $form = $( '.pc--form' );
 		                var $horizontal = $( '.pc--form__horizontal' );
 
-		                $horizontal.find('.textarea').closest('.gfield').animate({'min-width' : '100%'}, 500);
+		                $horizontal.find('.textarea').closest('.gfield').animate({'width' : '100%'}, 500);
 		                $horizontal.find('.gfield_checkbox, .gfield_radio').closest('.gfield').animate({'flex-grow' : '0'}, 500);
 
 		                $form.find('.ginput_container_time').closest('.clear-multi').addClass('clear-multi_tel');
