@@ -95,6 +95,11 @@
 					fixProductSidebarOnPad();
 				});
 
+				// While window resizing
+				$(window).resize(function () {
+					fixProductSidebarOnPad();
+				});
+
 			}
 
 			/**
