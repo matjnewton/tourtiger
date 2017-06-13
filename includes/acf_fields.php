@@ -1275,7 +1275,7 @@ acf_add_local_field_group(array (
 				),
 			),
 			'wrapper' => array (
-				'width' => '',
+				'width' => '80',
 				'class' => '',
 				'id' => '',
 			),
@@ -1286,6 +1286,30 @@ acf_add_local_field_group(array (
 			'maxlength' => '',
 			'readonly' => 0,
 			'disabled' => 0,
+		),
+		array (
+			'key' => 'field_56c34eaf8675c6',
+			'label' => 'Motto on mobile devices',
+			'name' => 'motto_mobile',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_56c4eaf8675c6',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '20',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Show',
+			'default_value' => 0,
 		),
 		array (
 			'key' => 'field_537dde495c366',
