@@ -83,7 +83,17 @@
 				/**
 				 * Fix sidebar displaying
 				 */
-				$('.book-tour-wrapper_product').width( $('.col-sm-4').width() );
+				var fixProductSidebarOnPad = function () {
+					$('.book-tour-wrapper_product').width( $('.col-sm-4').width() );
+				};
+
+				// After init
+				fixProductSidebarOnPad();
+
+				// After scroll
+				$(window).on('scroll', function () {
+					fixProductSidebarOnPad();
+				});
 
 			}
 
