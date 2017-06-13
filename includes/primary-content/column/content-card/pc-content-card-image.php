@@ -1,4 +1,6 @@
-<?php $tour_image = get_sub_field( 'tour_pc-coltype--image_add' );
+<?php 
+$tour_image   = get_sub_field( 'tour_pc-coltype--image_add' );
+$target_blank = get_sub_field( 'tour_pc-coltype--image_target' );
 
 if ( $tour_image ) :
 
@@ -26,7 +28,7 @@ if ( $tour_image ) :
 			align="center">
 				<?php
 
-				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, $tour_image_attr, $circle, true ); 
+				pc_image( $tour_image, $thumb_width, $thumb_height, $tour_image_url, $tour_image_attr, $circle, $target_blank ) ); 
 
 				?>
 		</div>
