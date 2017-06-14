@@ -43,6 +43,55 @@
 		fix_header_paddings();
 
 
+		/**
+		 * Open iframe popup
+		 */
+		$('[data-iframe-popup]').on('click', function (e) {
+			e.preventDefault();
+
+			var $button   = $(this);
+			var reference = $button.attr('data-iframe-popup');
+			
+			$('body').append('<a href="javascript:" class="iframe-popup__close"></a>');
+			$('.iframe-popup__close').css({
+				'position': 'fixed',
+				'top': '0',
+				'left': '0',
+				'width': '100%',
+				'height': '100%',
+				'z-index': '19998',
+				'background-color': 'rgba(0,0,0,.8)'
+			});
+
+			$('body').append('<iframe src="'+reference+'" id="iframe-popup" class="iframe-popup"></iframe>');
+			$('.iframe-popup').css({
+				'position': 'fixed',
+				'top': '50%',
+				'left': '50%',
+				'width': '90%',
+				'max-width': '1000px',
+				'height': '90%',
+				'z-index': '19999',
+				'-webkit-transform': 'translate(-50%, -50%)',
+				'transform': 'translate(-50%, -50%)',
+				'background-color': '#fff'
+			});
+
+
+			/**
+			 * Remove iframe and anchor
+			 */
+			$('.iframe-popup__close').on('click', function () {
+				$('.iframe-popup__close').detach();
+				$('.iframe-popup').detach();
+
+				return false;
+			});
+
+			return false;
+		});
+
+
 		// and when someone scales a browser's window
 		$(window).resize(fix_header_paddings);
 
