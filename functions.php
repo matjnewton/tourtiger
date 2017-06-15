@@ -1662,3 +1662,12 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 endif;
+
+add_filter('body_class','add_motto_class_mobile');
+function add_motto_class_mobile( $classes ) {
+	
+	if( get_field( 'motto_mobile', 'options' ) )
+		$classes[] = 'show-motto-mobile';
+
+	return $classes;
+}
