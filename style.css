@@ -306,6 +306,6 @@ html body .sidebar_links_options_wrap a {
 
 @media (max-width: 1199px) {
     .styles .main-nav-wrapper .genesis-nav-menu a {
-        font-size: 12px;
+        font-size: 12px!important;
     }
 }
