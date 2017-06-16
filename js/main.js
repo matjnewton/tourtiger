@@ -75,7 +75,8 @@
 				'z-index': '19999',
 				'-webkit-transform': 'translate(-50%, -50%)',
 				'transform': 'translate(-50%, -50%)',
-				'background-color': '#fff'
+				'background-color': '#fff',
+				'overflow-x': 'auto'
 			});
 
 
