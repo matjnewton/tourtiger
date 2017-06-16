@@ -66,15 +66,12 @@
 			$('body').append('<iframe src="'+reference+'" id="iframe-popup" class="iframe-popup"></iframe>');
 			$('.iframe-popup').css({
 				'position': 'fixed',
-				'top': '50%',
-				'left': '50%',
+				'top': '10%',
+				'left': '5%',
 				'width': '90%',
-				'max-width': '1000px',
 				'height': '80%',
 				'max-height': '80%',
 				'z-index': '19999',
-				'-webkit-transform': 'translate(-50%, -50%)',
-				'transform': 'translate(-50%, -50%)',
 				'background-color': '#fff',
 				'overflow-x': 'auto'
 			});
