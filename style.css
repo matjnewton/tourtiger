@@ -296,3 +296,11 @@ html body .sidebar_links_options_wrap a {
     text-shadow: rgba(0,0,0,.77) 3px 3px 12px!important;
     font-weight: 600!important;
 }
+
+@media (max-width: 400px) {
+    .iframe-popup {
+        top: 5%;
+        transform: scale(.85);
+        -webkit-transform: scale(.85);
+    }
+}
