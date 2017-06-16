@@ -124,7 +124,7 @@
 .pc--r__col-6 .pc--c__content{padding:7px 12px}
 @media (max-width: 1150px) {
 .pc--r__col-1 .pc--c__content,.pc--r__col-2 .pc--c__content,.pc--r__col-3 .pc--c__content{padding:15px 20px}
-.pc--r__wrap.pc--r__col-4 .pc--c{width:33.3333%}
+.pc--r__wrap.pc--r__col-4 .pc--c{width:25%}
 .pc--r__wrap.pc--r__col-4.pc--r__mar-normal .pc--c{width:calc(33.3333% - 20px)}
 .pc--r__wrap.pc--r__col-5 .pc--c{width:25%}
 .pc--r__wrap.pc--r__col-5.pc--r__mar-normal .pc--c{width:calc(25% - 20px)}
