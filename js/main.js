@@ -43,49 +43,64 @@
 		fix_header_paddings();
 
 
-		/**
-		 * Open iframe popup
-		 */
 		$('[data-iframe-popup]').on('click', function (e) {
 			e.preventDefault();
 
 			var $button   = $(this);
 			var reference = $button.attr('data-iframe-popup');
 			
-			$('body').append('<a href="javascript:" class="iframe-popup__close"></a>');
-			$('.iframe-popup__close').css({
-				'position': 'fixed',
-				'top': '0',
-				'left': '0',
-				'width': '100%',
-				'height': '100%',
-				'z-index': '19998',
-				'background-color': 'rgba(0,0,0,.8)'
-			});
+			if ( $(window).width() > 768 ) {
+				$('body').append('<a href="javascript:" class="iframe-popup__close" style="opacity:0;pointer-events:none;"></a>');
+				$('body').append('<iframe src="'+reference+'" id="iframe-popup" style="opacity:0;pointer-events:none;" class="iframe-popup"></iframe>');
 
-			$('body').append('<iframe src="'+reference+'" id="iframe-popup" class="iframe-popup"></iframe>');
-			$('.iframe-popup').css({
-				'position': 'fixed',
-				'top': '10%',
-				'left': '5%',
-				'width': '90%',
-				'height': '80%',
-				'max-height': '80%',
-				'z-index': '19999',
-				'background-color': '#fff',
-				'overflow-x': 'auto'
-			});
+				$('#iframe-popup').load(function(){
+					$('body').css({
+						'overflow': 'hidden'
+					});
 
+					$('.iframe-popup__close').css({
+						'position': 'fixed',
+						'top': '0',
+						'left': '0',
+						'width': '100%',
+						'height': '100%',
+						'z-index': '19999998',
+						'background-color': 'rgba(0,0,0,.8)',
+						'opacity': 1,
+						'pointer-events': 'all'
+					});
 
-			/**
-			 * Remove iframe and anchor
-			 */
-			$('.iframe-popup__close').on('click', function () {
-				$('.iframe-popup__close').detach();
-				$('.iframe-popup').detach();
+					$('#iframe-popup').css({
+						'position': 'fixed',
+						'left': '5vw',
+						'width': '90vw',
+						'top': '5vh',
+						'height': '80vh',
+						'max-height': '80vh',
+						'z-index': '19999999',
+						'background-color': '#fff',
+						'overflow-x': 'auto',
+						'opacity': 1,
+						'pointer-events': 'all'
+					});
 
-				return false;
-			});
+					/**
+					 * Remove iframe and anchor
+					 */
+					$('.iframe-popup__close').on('click', function () {
+						$('.iframe-popup__close').detach();
+						$('.iframe-popup').detach();
+						$('body').css({
+							'overflow': 'auto'
+						});
+
+						return false;
+					});
+				});
+
+			} else {
+				document.location.href = reference;
+			}
 
 			return false;
 		});
