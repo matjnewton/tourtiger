@@ -5251,27 +5251,6 @@ acf_add_local_field_group(array (
 			),
 		),
 // ends sidebar area
-	
-
-
-	//Featured Tours
-		array (
-			'key' => 'field_57f57c76e0f49',
-			'label' => 'Featured Tours',
-			'name' => '',
-			'type' => 'tab',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'placement' => 'top',
-			'endpoint' => 0,
-		),
-	// end Featured Tours
 
 	//integrations tab
 		array (
