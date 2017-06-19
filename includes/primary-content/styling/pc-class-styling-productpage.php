@@ -895,6 +895,113 @@ class ProductPage extends StylingCard {
 					),
 					'backupfont' => self::BACK_FONTS,
 				),
+
+				array (
+					'key' => $this->slug . $i . '_fea6toursd--font',
+					'label' => 'Featured products title',
+					'name' => 'font-style_featprod',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 1,
+					'text_align' => 'left',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 20,
+					'show_line_height' => 1,
+					'line_height' => 25,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 1,
+					'text_color' => '#000000',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+
+				array (
+					'key' => $this->slug . $i . '_fea6toursd--link',
+					'label' => 'Featured products link',
+					'name' => 'font-style_featprod--link',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 1,
+					'text_align' => 'inherit',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 22,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+
 				array (
 					'key' => $this->slug . $i . '_58l1n2c4l5r',
 					'label' => 'Link Color',
@@ -1379,6 +1486,46 @@ class ProductPage extends StylingCard {
 				}
 
 				/**
+				 * Featured Products 
+				 */
+				$font_style_fepr_title = get_sub_field( 'font-style_featprod' );
+				$font = pc_init_font_css( $font_style_fepr_title );
+				$css .= $font[0] ? $font[0]:'';
+
+				if ( $font_style_fepr_title ) {
+					
+					$css .= "html.{$style} .pc_featured-products__body .pc_featured-products__title {";
+
+						$css .= $font[1] ? $font[1]:'';
+						$css .= "color: {$font_style_fepr_title['text-color']};";
+
+					$css .= '}';
+
+					// Common for text section css 
+					$css .= "html.{$style} .pc_featured-products__body {";
+
+						$css .= "text-align: {$font_style_fepr_title['text_align']};";
+
+					$css .= '}';
+				}
+
+				/**
+				 * Featured Products Link styles
+				 */
+				$font_style_fepr_link = get_sub_field( 'font-style_featprod--link' );
+				$font = pc_init_font_css( $font_style_fepr_link );
+				$css .= $font[0] ? $font[0]:'';
+
+				if ( $font_style_fepr_link ) {
+					
+					$css .= "html.{$style} .pc_featured-products__body-link {";
+
+						$css .= $font[1] ? $font[1]:'';
+
+					$css .= '}';
+				}
+
+				/**
 				 * Link color
 				 */
 				$link_color = get_sub_field( 'link_color' );
@@ -1396,6 +1543,12 @@ class ProductPage extends StylingCard {
 				$css .= "html.{$style} .primary_content_headline_details_options li i {";
 
 					$css .= "color: {$link_color};";
+
+				$css .= "}";
+
+				$css .= "html.{$style} .pc_featured-products-carousel li.slick-active {";
+
+					$css .= "background-color: {$link_color};";
 
 				$css .= "}";
 
