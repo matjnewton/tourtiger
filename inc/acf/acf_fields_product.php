@@ -3374,6 +3374,38 @@ acf_add_local_field_group(array (
 					),
 				), // end availability_checker
 
+				array (
+					'key' => '57fe3b26f_f_products',
+					'name' => 'primary_content_f_products',
+					'label' => 'Featured Products',
+					'display' => 'row',
+					'sub_fields' => array (
+						array (
+							'key' => 'f_5615huib8c7_ppo',
+							'label' => 'Featured Products',
+							'name' => 'featured_products',
+							'type' => 'post_object',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array (
+								0 => 'product',
+							),
+							'taxonomy' => array (
+							),
+							'allow_null' => 0,
+							'multiple' => 1,
+							'return_format' => 'object',
+							'ui' => 1,
+						),
+					),
+				),
+
 				'min' => '',
 				'max' => '',
 			),//end layout
