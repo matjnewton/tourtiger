@@ -23,6 +23,7 @@
 		<?php get_template_part( 'page-templates/product/block-alert' ); ?>
 		<?php get_template_part( 'page-templates/product/block-subheadline' ); ?>
 		<?php get_template_part( 'page-templates/product/block-horizontalline' ); ?>
+		<?php get_template_part( 'page-templates/product/block-featured-products' ); ?>
 		<?php //get_template_part( 'page-templates/product/block-availabilitychecker' ); ?>
 		<?php 
 			if ($integrate_rezdy_with_this_website) {
