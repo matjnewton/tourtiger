@@ -242,7 +242,7 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .pc--c__gallery-7 img{width:calc(14.27% - 10px);margin:5px}
 .pc--c__gallery-8 img{width:calc(12.5% - 10px);margin:5px}
 .pc--c__b-image{position:relative;width:100%;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:distribute;justify-content:space-around;padding:20px}
-.pc--c__b-image_thumb{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:1;-o-object-fit:cover;object-fit:cover;max-width:100%;max-height:100%}
+.pc--c__b-image_thumb{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:1;-o-object-fit:cover;object-fit:cover;min-width:100%;min-height:100%}
 .pc--c__b-image:before{z-index:2}
 .pc--c__b-image_text,.pc--c__b-image_price{z-index:3;position:relative;margin:5px auto;display: inline-block;}
 .pc--c__b-wrap-image_label{order:5;z-index:3;position:relative;margin:5px auto;width:100%}
@@ -551,4 +551,12 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 	color: #fff;
 	width: 100%;
 	text-align: center;
+}
+
+.pc--c__accordion--status {
+	margin-left: 10px;
+}
+
+.pc--c__accordion--status__text {
+	white-space: nowrap;
 }

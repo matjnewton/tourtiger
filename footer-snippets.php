@@ -1,4 +1,4 @@
-<?php if ( ! is_page_template( 'page-templates/test-pc.php' ) ) : ?>  
+<?php //if ( ! is_page_template( 'page-templates/test-pc.php' ) ) : ?>  
     <?php if(have_rows('footer_snippets', 'option')): ?>
                             
     <?php while(have_rows('footer_snippets', 'option')): the_row(); ?>
@@ -72,19 +72,19 @@
                             
         <?php endwhile; ?>
     <?php endif; ?>
+<?php //endif; ?>
 
-    <?php if(have_rows('page_specific_footer_snippets', 'option')): ?>
-    <?php while(have_rows('page_specific_footer_snippets', 'option')): the_row(); ?>
-    <?php 
-        $page_id = get_sub_field('page');
-        $snippet = get_sub_field('snippet'); 
-    ?>
-    <?php
-        $queried_object = get_queried_object();
-       if ($snippet && ($queried_object->ID == $page_id)):
-            echo $snippet;
-       endif;    
-    ?>
-    <?php endwhile; ?>
-    <?php endif; ?>
+<?php if(have_rows('page_specific_footer_snippets', 'option')): ?>
+<?php while(have_rows('page_specific_footer_snippets', 'option')): the_row(); ?>
+<?php 
+    $page_id = get_sub_field('page');
+    $snippet = get_sub_field('snippet'); 
+?>
+<?php
+    $queried_object = get_queried_object();
+   if ($snippet && ($queried_object->ID == $page_id)):
+        echo $snippet;
+   endif;    
+?>
+<?php endwhile; ?>
 <?php endif; ?>

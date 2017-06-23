@@ -1449,9 +1449,9 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
     width: 100%;
     border: none;
 }
-.single-product .gfield_label {
-  display: none;
-}
+// .single-product .gfield_label {
+//   display: none;
+// }
 .primary_content_testimonials .bx-wrapper {
   margin: 0 auto 25px;
 }

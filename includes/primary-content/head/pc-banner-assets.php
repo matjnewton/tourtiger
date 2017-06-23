@@ -36,8 +36,8 @@ if ( have_rows( $ha_style, 'option' ) ) :
                             the_row();
 
                             $typography = get_sub_field( 'typography' );
-                            $css       .= $typography['font_size'] ? 'font-size:' . $typography['font_size'] . 'px;' : '';
-                            $css       .= $typography['line_height'] ? 'font-height:' . $typography['line_height'] . 'px;' : '';
+                            $css       .= $typography['font_size'] ? 'font-size:' . $typography['font_size'] . 'px!important;' : '';
+                            $css       .= $typography['line_height'] ? 'line-height:' . $typography['line_height'] . 'px!important;' : '';
                             $css       .= get_sub_field( 'margin-top' ) ? 'margin-top:' . get_sub_field( 'margin-top' ) . 'px;' : '';
                             $css       .= get_sub_field( 'margin-bottom' ) ? 'margin-bottom:' . get_sub_field( 'margin-bottom' ) . 'px;' : '';
 
