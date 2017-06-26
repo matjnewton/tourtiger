@@ -12,7 +12,8 @@
                         	<ul class="dropdown-menu">
                         	<?php for( $sxs = 0; $sxs < $button_sub_options; $sxs++ ): 
                         		$button_text = get_post_meta( get_the_ID(), 'sidebar_1_' . $count . '_button_sub_options_' . $sxs . '_button_text', true );
-                        		$link = get_post_meta( get_the_ID(), 'sidebar_1_' . $count . '_button_sub_options_' . $sxs . '_link', true );
+                                $link = get_post_meta( get_the_ID(), 'sidebar_1_' . $count . '_button_sub_options_' . $sxs . '_link', true );
+                                $onclick = get_post_meta( get_the_ID(), 'sidebar_1_' . $count . '_button_sub_options_' . $sxs . '_onclick', true );
                         		?>
                         		<li>
                         		<?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
@@ -68,7 +69,7 @@
                         		    </a>
                         		<?php else: ?>
                         		    <?php if($button_text): ?>
-                                    <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
+                                    <a onclick="<?=$onclick;?>" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
                         		    <?php endif; ?>
                                 <?php endif; ?>
                                 </li>
