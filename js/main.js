@@ -38,10 +38,7 @@
 		}
 	}
 
-	$(function() {
-
-		fix_header_paddings();
-
+	function refresToSeachIframeBtn() {
 
 		$('[data-iframe-popup]').on('click', function (e) {
 			e.preventDefault();
@@ -105,6 +102,20 @@
 			return false;
 		});
 
+	}
+
+	var $iframeBtn = $('.header-bar').find('.open-iframe').find('a');
+	var iframeUrl  = $iframeBtn.attr('href');
+
+	$iframeBtn.attr('href', 'javascript:').attr('data-iframe-popup', iframeUrl);
+	refresToSeachIframeBtn();
+	
+
+	$(function() {
+
+		fix_header_paddings();
+
+		refresToSeachIframeBtn();
 
 		// and when someone scales a browser's window
 		$(window).resize(fix_header_paddings);
@@ -234,5 +245,6 @@
 		  variableWidth: true,
   		  focusOnSelect: true
 		});
+
 	});
 })(jQuery);
