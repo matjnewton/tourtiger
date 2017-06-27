@@ -33,3 +33,9 @@ function wqs_load_scripts_atlas()
 
 add_action('wp_enqueue_scripts', 'wqs_load_scripts_atlas');
 
+add_action( 'wp_footer', 'add_booking_iframe', 33 );
+function add_booking_iframe(){
+    echo '<div id="booknowmodal" style="display:none;position:fixed;left:0;right:0;top:0;bottom:0;z-index: 9999;">
+            <iframe id="booknowframe"  frameborder="0" scrolling="yes" style="height:100%; width:100%; border:0;"></iframe>
+          </div>';
+}

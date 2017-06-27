@@ -88,7 +88,7 @@ function tourtiger_archive_atlasx() { ?>
                                                     </div>
                                                     <div class="search-descript-button">
                                                         <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}&num_people={{num_people}}" class="viewtour button-viewtour">View Tour</a>
-                                                        <span ng-click="widgetload($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}">Book now</span>
+                                                        <span ng-click="widgetload_($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}" data-term="{{cptproducts.term.name}}">Book now</span>
                                                     </div>
                                             </div> <!-- end search-descript-wrap -->
                                         </div> <!-- end anrow2 -->
@@ -126,7 +126,7 @@ function tourtiger_archive_atlasx() { ?>
                                                     </div>
                                                     <div class="search-descript-button">
                                                         <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}&num_people={{num_people}}" class="viewtour button-viewtour">View Tour</a>
-                                                        <span ng-click="widgetload($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}">Book now</span>
+                                                        <span ng-click="widgetload_($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}" data-term="{{cptproducts.term.name}}">Book now</span>
                                                     </div>
                                             </div> <!-- end search-descript-wrap -->
                                         </div> <!-- end anrow2 -->
@@ -191,7 +191,7 @@ function tourtiger_archive_atlasx() { ?>
                                                     </div>
                                                     <div class="search-descript-button">
                                                         <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}&num_people={{num_people}}" class="viewtour button-viewtour">View Tour</a>
-                                                        <span ng-click="widgetload($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}">Book now</span>
+                                                        <span ng-click="widgetload_($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}" data-term="{{cptproducts.term.name}}">Book now</span>
                                                     </div>
                                             </div> <!-- end search-descript-wrap -->
                                         </div> <!-- end anrow2 -->
@@ -229,7 +229,7 @@ function tourtiger_archive_atlasx() { ?>
                                                     </div>
                                                     <div class="search-descript-button">
                                                         <a href="{{cptproducts.link}}?check_date={{timearrays | asDate}}&num_people={{num_people}}" class="viewtour button-viewtour">View Tour</a>
-                                                        <span ng-click="widgetload($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}">Book now</span>
+                                                        <span ng-click="widgetload_($event)" class="xola-checkout viewtour button-viewtour button-book" data-seller="<?php echo $check_user_id_xola; ?>" data-version="2" data-experience="{{cptproducts.xola_id}}" data-term="{{cptproducts.term.name}}">Book now</span>
                                                     </div>
                                             </div> <!-- end search-descript-wrap -->
                                         </div> <!-- end anrow2 -->
@@ -267,5 +267,6 @@ jQuery(document).ready(function($){
 
 }) //end document.ready 
 </script>
+
 
 
