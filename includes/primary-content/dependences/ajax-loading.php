@@ -42,7 +42,8 @@ function pc_show_more_sections() {
 
 			include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-parameters.php' );
 
-			if ( $count++ == $end )
+			$count++;
+			if ( $count == $end )
 				break; 
 		endwhile;
 	endif;
