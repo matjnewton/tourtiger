@@ -104,7 +104,8 @@ $number = 1;
 	    	/**
 	    	 * Run each time when loads a new row
 	    	 */
-	        init: function () {    
+	        init: function () {  		
+
 
 		        $(document).bind('gform_confirmation_loaded', function(event, formId){
 		            console.log(formId);
@@ -609,7 +610,124 @@ $number = 1;
 						submit_gf_through_pc(url, values_json, $form);
 
 	        		return false;
-	        	});
+	        	});	
+
+
+				/**
+				 * Click event of show more button.
+				 * Load rows via AJAX.
+				 * 
+				 * @return false
+				 */
+	        	$('.pc-section--btn-more').on('click', '.js-more', function() {
+
+					var $self    = $(this);
+					var $moreBtn = $('.js-more');
+					var $lessBtn = $('.js-less');
+					var $root    = $self.closest('.pc-section--btn-more');
+					var $section = $self.closest('.pc--s');
+					
+					/* Get actuall section data */
+					var loadOffset  = $self.attr('data-load-offset');
+					var totalRows   = $self.attr('data-total-rows');
+					var initRows    = $self.attr('data-load-init');
+					var lackRows    = totalRows - initRows;
+		    		var is_more_btn = true;
+		    		var section_id  = $section.attr('id').split('pc--s_id-')[1];
+					var $rows       = $self.closest('.pc--s').find('.pc--r');
+					var original    = $moreBtn.attr('data-original');
+
+
+					/**
+					 * If there are any hadn't been loaded rows,
+					 * Load them through AJAX 
+					 */
+		    		if (lackRows > 0 ) {
+			    		$.post(global_vars.ajaxurl, {
+			    				'action':     'show_more_rows',
+			    				'post_id':    global_vars.postid,
+			    				'offset':     loadOffset,
+			    				'total_rows': totalRows,
+			    				'init_rows':  initRows,
+			    				'lack_rows':  lackRows,
+			    				'nonce':      global_vars.nonce,
+			    				'section_id': section_id
+			    			},
+			    			function (json) {
+			    				$root.before(json['content']);
+			    				$self.attr('data-load-init', json['rows']);
+			    				console.log(json['message']);
+
+			    				if (!json['more']) {
+			    					$moreBtn.hide();
+			    					$lessBtn.show();
+			    				}
+
+			    				$(document).primaryContent( 'init' );
+			    			},
+			        		'json'
+			    		);
+
+
+			    	/**
+			    	 * Else if all rows were loaded, 
+			    	 * just show them
+			    	 */
+			    	} else {
+						var counter = 1;
+
+						if (loadOffset === 'all') {
+							loadOffset = 999;
+						}
+
+						$rows.each(function(index){
+							var $that      = $(this); 
+							var is_hidden  = $that.css('display') == 'none';
+							var isnt_first = (index >= original);
+							var is_more    = (loadOffset >= counter);
+
+							if (is_hidden && isnt_first && is_more) {
+								$that.show();
+								is_hidden = false;
+								counter++;
+
+								if ((index+1) == totalRows && !is_hidden) {
+			    					$moreBtn.hide();
+			    					$lessBtn.show();
+								}
+							} 
+						});
+			    	}
+
+			    	return;
+				});
+
+
+				/**
+				 * Click event of show more button.
+				 * Load rows via AJAX.
+				 * 
+				 * @return false
+				 */
+	        	$('.pc-section--btn-more').on('click', '.js-less', function() {
+					var $self     = $(this);
+					var $moreBtn  = $('.js-more');
+					var $lessBtn  = $('.js-less');
+					var $root     = $self.closest('.pc-section--btn-more');
+					var $rows     = $self.closest('.pc--s').find('.pc--r');
+					var original  = $moreBtn.attr('data-original');
+
+					$rows.each(function(index){
+						if (index >= original) {
+							$(this).hide();
+						}
+					});
+
+					$moreBtn.show();
+					$lessBtn.hide();
+
+					return;
+				});
 	        	
 	    	} 
 

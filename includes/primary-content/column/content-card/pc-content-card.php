@@ -27,7 +27,9 @@
 
 		if ( !in_array( $cc_style, $cc_styles_arr ) ) {
 			$cc_styles_arr[] = $cc_style;
-			get_pc_content_card_style( $cc_style );
+			
+			if ( !defined('PCA_AJAX_LOADING_ROW') )
+				get_pc_content_card_style( $cc_style );
 		}
 
 		if ( $border['is'] != 'pc--c__border-none' && $border['is'] != false ) {

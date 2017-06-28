@@ -20,6 +20,15 @@ $tour_section_styles = '';
 $tour_section_attr = '';
 $tour_selection_id = 'pc--s_id-' . $count;
 
+$is_more      = get_sub_field('is-load-more');
+$more_label   = get_sub_field('load-more-more-label') ? get_sub_field('load-more-more-label') : 'Show more';
+$less_label   = get_sub_field('load-more-less-label') ? get_sub_field('load-more-less-label') : 'Show less';
+$initial_rows = get_sub_field('load-more-show');
+$load_offset  = get_sub_field('load-more-offset');
+$load_style   = get_sub_field('load-more-style');
+$load_more_id = "{$tour_selection_id}__btn-more";
+$rows_count   = count( get_sub_field( 'tour_pc-rows' ) );
+
 $paddings_css = null;
 
 if ( $tour_section_bg == 'image' ) {
@@ -70,9 +79,24 @@ if ( get_sub_field( 'tour_pc-bd--select' ) != 'none' ) {
 		include( PCA_DIR . '/section/pc-section-insert-embed.php' );
 	}
 
-	if ( have_rows( 'tour_pc-rows' ) ) { 
-		include( PCA_DIR . '/row/pc-row-loop.php' );
-	}
+	if ( have_rows( 'tour_pc-rows' ) ) : 
+		$self_row_id = 0;
+
+		while ( have_rows( 'tour_pc-rows' ) ) :
+			the_row();
+
+			$self_row_id++;
+ 
+			if ( $is_more && $self_row_id > $initial_rows ) 
+				break;
+
+			include( PCA_DIR . '/row/pc-row-loop.php' );
+
+		endwhile;
+	endif;
+
+	if ( $is_more ) 
+		include( PCA_DIR . '/section/pc-section-btn-more.php' );
 
 	$section_count++; 
 

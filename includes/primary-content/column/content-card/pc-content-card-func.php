@@ -32,7 +32,7 @@ function get_pc_content_card_style( $cc_style ) {
 
 				include ( PCA_DIR . '/column/content-card/pc-content-card-init-form.php' );
 
-				include ( PCA_DIR . '/column/content-card/pc-content-card-init-tripdetail.php' );
+				include ( PCA_DIR . '/column/content-card/pc-content-card-init-more.php' );
 
 				echo '</style>';
 			} 

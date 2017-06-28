@@ -71,7 +71,6 @@ acf_add_local_field_group(array (
 							'layout' => 'horizontal',
 							'toggle' => 1,
 						),
-
 						array (
 							'key' => 'field_5821e254f6599',
 							'label' => 'Rows of content',
@@ -4717,6 +4716,153 @@ acf_add_local_field_group(array (
 							'max_height' => '',
 							'max_size' => '',
 							'mime_types' => '',
+						),
+						array (
+							'key' => 'f1e1d15821tab5d0f10',
+							'label' => 'Load more',
+							'name' => '',
+							'type' => 'tab',
+							'instructions' => '',
+							'required' => '',
+							'placement' => 'top',
+							'endpoint' => 0,
+						),
+						array (
+							'key' => 'sect-_-5loadM08214632',
+							'label' => 'Show load more button',
+							'name' => 'is-load-more',
+							'type' => 'true_false',
+							'instructions' => '',
+							'required' => '',
+							'conditional_logic' => '',
+							'message' => 'Yes, activate that option',
+							'wrapper' => array (
+								'width' => '20',
+							),
+						),
+						array (
+							'key' => 'sect-_-stoadM08214632',
+							'label' => 'Style',
+							'name' => 'load-more-style',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => 0,
+							'wrapper' => array (
+								'width' => '10',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => get_pc_styles_list( 'content_card' ),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'save_other_choice' => 0,
+							'default_value' => 'style-one',
+							'layout' => 'horizontal',
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'sect-_-5loadM08214632',
+										'operator' => '==',
+										'value' => '1',
+									),
+								),
+							),
+						),
+						array (
+							'key' => 'lomod8labed-_-f9',
+							'label' => 'Show more label',
+							'name' => 'load-more-more-label',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'sect-_-5loadM08214632',
+										'operator' => '==',
+										'value' => '1',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '20',
+							),
+							'placeholder' => 'Show more',
+						),
+						array (
+							'key' => 'lomod8labed-_-f10',
+							'label' => 'Show less label',
+							'name' => 'load-more-less-label',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'sect-_-5loadM08214632',
+										'operator' => '==',
+										'value' => '1',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '20',
+							),
+							'placeholder' => 'Show less',
+						),
+						array (
+							'key' => 'l0m0d9labed-_-f11',
+							'label' => 'How much at first',
+							'name' => 'load-more-show',
+							'type' => 'number',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'sect-_-5loadM08214632',
+										'operator' => '==',
+										'value' => '1',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '15'
+							),
+							'default_value' => 1,
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => 'row(s)',
+							'min' => 0,
+							'max' => '',
+							'step' => 1,
+						),
+						array (
+							'key' => '10M1Dniabed-_-f12',
+							'label' => 'Load offset',
+							'name' => 'load-more-offset',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'sect-_-5loadM08214632',
+										'operator' => '==',
+										'value' => '1',
+									),
+								),
+							),
+							'wrapper' => array (
+								'width' => '15',
+							),
+							'choices' => array(
+								'all' => 'All',
+								'1'   => 'One by one'
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'save_other_choice' => 0,
+							'default_value' => 'all',
 						),
 					),
 					'min' => '',

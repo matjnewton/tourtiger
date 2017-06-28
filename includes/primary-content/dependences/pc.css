@@ -560,3 +560,15 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .pc--c__accordion--status__text {
 	white-space: nowrap;
 }
+
+.pc-section--btn-more {
+	margin-top: 20px;
+}
+
+.pc-section--btn-more__box {
+	text-align: center;
+}
+
+.pc-section--btn-more__button {
+	display: inline-block;
+}

@@ -176,6 +176,12 @@ function tourtiger_scripts_method() {
 		wp_enqueue_script('slick-slider');
 		wp_enqueue_script( 'mainjs' );
 
+		wp_localize_script( 'mainjs', 'global_vars', array( 
+			'postid'  => get_the_ID(),
+			'nonce'   => wp_create_nonce( 'nonce' ),
+			'ajaxurl' => admin_url( 'admin-ajax.php' )
+		) );
+
 		wp_enqueue_script( 'api-key-maps' );
 		
 		}

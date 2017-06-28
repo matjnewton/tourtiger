@@ -53,10 +53,7 @@ if( have_rows('pc_hero_area') ): $hero_counts = 0; //fix bug Hero loaded twice
         /**
          * Load Searchbox
          */
-        $servername = $_SERVER['SERVER_NAME'];
-        if ( $button_type == 'Search Box' && $hero_counts == 1 && $servername =='northwoodszipline.com') :
-            get_template_part( '/page-templates/search/search_box_settings_atlas_pc' );
-        elseif ( $button_type == 'Search Box'&& $servername !='northwoodszipline.com'):
+        if ( $button_type == 'Search Box' && $hero_counts == 1) :
             get_template_part( '/page-templates/search/search_box_settings_atlas_pc' );
         endif;
 
