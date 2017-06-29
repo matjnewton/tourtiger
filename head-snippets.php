@@ -1,4 +1,4 @@
-<?php if ( ! is_page_template( 'page-templates/test-pc.php' ) ) : ?>  
+<?php //if ( ! is_page_template( 'page-templates/test-pc.php' ) ) : ?>  
 	<script>
 	    <?php $fb_id = get_field('fb_id','option'); ?>
 	   //var fbID = "824505867653741";
@@ -16,4 +16,4 @@
 	<?php endwhile; ?> 
 	                        
 	<?php endif; ?>
-<?php endif; ?>
+<?php //endif; ?>
