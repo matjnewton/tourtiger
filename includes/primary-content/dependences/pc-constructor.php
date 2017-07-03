@@ -2737,7 +2737,7 @@ acf_add_local_field_group(array (
 																			'required' => '',
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => '',
+																				'width' => '50',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -2756,12 +2756,12 @@ acf_add_local_field_group(array (
 																			'key' => 'field_582313e85806e',
 																			'label' => 'Image Height',
 																			'name' => 'tour_pc-flexi--image-height',
-																			'type' => 'radio',
+																			'type' => 'select',
 																			'instructions' => '',
 																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
-																				'width' => '',
+																				'width' => '25',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -2774,8 +2774,7 @@ acf_add_local_field_group(array (
 																			'allow_null' => 0,
 																			'other_choice' => 0,
 																			'save_other_choice' => 0,
-																			'default_value' => 'pc--c__b-image--normal',
-																			'layout' => 'horizontal',
+																			'default_value' => 'pc--c__b-image--normal'
 																		),
 																		array (
 																			'key' => 'field_582315d858076',
@@ -2786,7 +2785,7 @@ acf_add_local_field_group(array (
 																			'required' => 0,
 																			'conditional_logic' => 0,
 																			'wrapper' => array (
-																				'width' => '',
+																				'width' => '25',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -2803,8 +2802,8 @@ acf_add_local_field_group(array (
 																			'ui' => 0,
 																			'ajax' => 0,
 																			'placeholder' => '',
-																			'disabled' => 0,
-																			'readonly' => 0,
+																			'disabled' => 1,
+																			'readonly' => 1,
 																		),
 																		array (
 																			'key' => 'field_582314d358071',
@@ -2892,6 +2891,61 @@ acf_add_local_field_group(array (
 																			'readonly' => 0,
 																			'disabled' => 0,
 																		),
+																		array (
+																			'key' => 'r8p51_1mt-nA10cArd',
+																			'name' => 'hover-content',
+																			'label' => 'Hover content',
+																			'type' => 'repeater',
+																			'min' => 0,
+																			'max' => 1,
+																			'layout' => 'block',
+																			'button_label' => 'Add hover content',
+																			'sub_fields' => array (
+																				array (
+																					'key' => 'titl_1mt-nA10cArd',
+																					'label' => 'Title',
+																					'name' => 'title',
+																					'type' => 'text',
+																					'required' => 0,
+																					'conditional_logic' => 0,
+																					'wrapper' => array (
+																						'width' => '20',
+																					),
+																				),
+																				array (
+																					'key' => 'desc_1mt-nA10cArd',
+																					'label' => 'Description',
+																					'name' => 'description',
+																					'type' => 'textarea',
+																					'required' => 0,
+																					'wrapper' => array (
+																						'width' => 40,
+																					),
+																					'rows' => 3,
+																				),
+																				array (
+																					'key' => 'pr1e_1mt-nA10cArd',
+																					'label' => 'Price',
+																					'name' => 'price',
+																					'type' => 'text',
+																					'required' => 0,
+																					'conditional_logic' => 0,
+																					'wrapper' => array (
+																						'width' => '20'
+																					),
+																				),
+																				array (
+																					'key' => 'label_1mt-nA10cArd',
+																					'label' => 'Label',
+																					'name' => 'label',
+																					'type' => 'text',
+																					'required' => 0,
+																					'wrapper' => array (
+																						'width' => '20',
+																					),
+																				),
+																			),
+																		)
 																	),
 																	'min' => '',
 																	'max' => 1,

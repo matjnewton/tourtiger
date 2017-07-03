@@ -12,6 +12,7 @@ $flexi_attr = array();
 
 $flexi_attr = array(
 	'image'  => get_sub_field( 'fc_style__imdis' ),
+	'hover'  => get_sub_field( 'fc_style__imdish' ),
 	'co'     => get_sub_field( 'fc_style__co' ),
 	'ct'     => get_sub_field( 'fc_style__ct' ),
 	'co_btn' => get_sub_field( 'fc_style__co_butt_pos' ),
@@ -60,4 +61,8 @@ if ( get_sub_field( 'fc_style__pa' ) == 'hover' ) {
 echo $fc_style__fcc_css ? '#pc_wrap .' . $fc_style . ' {' . $fc_style__fcc_css . '}' : '';
 echo $fc_style__fcc_css_hover ? '#pc_wrap .' . $fc_style . ':hover {' . $fc_style__fcc_css_hover . '}' : '';
 
-?>
+/* Set background of hovered card */
+$bg = get_sub_field( 'background_color' ) ? get_sub_field( 'background_color' ) : '#eee';
+echo "/* "; print_r( get_sub_field( 'background_color' ) ); echo " */";
+echo '#pc_wrap .' . $fc_style . ' .pc--c__flexicard--hover{background-color:' . $bg . ';}';
+

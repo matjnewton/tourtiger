@@ -20,6 +20,7 @@ while ( have_rows( $fc_style, 'option' ) ) : the_row();
 	 */
 	$flexi_attr = array(
 		'image'  => get_sub_field( 'fc_style__imdis' ),
+		'hover'  => get_sub_field( 'fc_style__imdish' ),
 		'co'     => get_sub_field( 'fc_style__co' ),
 		'ct'     => get_sub_field( 'fc_style__ct' ),
 		'co_btn' => get_sub_field( 'fc_style__co_butt_pos' ),

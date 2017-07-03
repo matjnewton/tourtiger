@@ -572,3 +572,33 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 .pc-section--btn-more__button {
 	display: inline-block;
 }
+
+.pc--c__flexicard--hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+    padding: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background-color: #9e9e9e;
+    opacity: 0;
+    pointer-events: none;
+    transition: ease .35s;
+}
+
+.pc--c__b-image:hover .pc--c__flexicard--hover {
+	opacity: 1;
+	pointer-events: auto;
+	transition: ease .35s;
+}
