@@ -21,6 +21,7 @@
                             		$button_text = get_sub_field('button_text');
                                     $link = get_sub_field('link');
                                     $smobd_counter++;
+                                    $dz_iframe = $button_type == 'iframe-popup' ? 'data-iframe-popup="'.$link.'"' : '';
                             		?>
                             		<li>
                             		<?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
@@ -75,7 +76,7 @@
 
                                     <?php else: ?>
                             		    <?php if($button_text): ?>
-                                        <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
+                                        <a <?=$dz_iframe;?> href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
                             		    <?php endif; ?>
                                     <?php endif; ?>
                                     </li>
