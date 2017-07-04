@@ -575,10 +575,10 @@ div.pc--c__accordion + div.pc--c__accordion{margin-top:10px}
 
 .pc--c__flexicard--hover {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	top: -2px;
+	left: -2px;
+    width: calc( 100% + 4px );
+    height: calc( 100% + 4px );
 	z-index: 50;
     padding: 20px;
     overflow: hidden;
