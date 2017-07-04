@@ -2703,22 +2703,22 @@ class FlexiCard extends StylingCard {
 					'conditional_logic' => array (
 						array (
 							array (
-								'field' => 'fc_' . $i . '_ld_583568a136cc95',
+								'field' => 'fc_' . $i . '_ld_583568a136cc95h',
 								'operator' => '==',
 								'value' => 'label',
 							),
 							array (
-								'field' => 'fc_' . $i . '_la_58359a185dfb95',
+								'field' => 'fc_' . $i . '_la_58359a185dfb95h',
 								'operator' => '!=',
 								'value' => 'text',
 							),
 							array (
-								'field' => 'fc_' . $i . '_la_51152a11_15',
+								'field' => 'fc_' . $i . '_la_51152a11_15h',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 							array (
-								'field' => 'fc_' . $i . '_la_5835a0f02a1445',
+								'field' => 'fc_' . $i . '_la_5835a0f02a1445h',
 								'operator' => '!=',
 								'value' => 'no',
 							),
