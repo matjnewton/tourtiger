@@ -77,7 +77,7 @@ if ( get_row_layout() == 'tour_pc-flexi' ) {
 	
 		<?php if ( have_rows( $tour_flexi_content . '--content' ) ) :
 		
-			if ( !in_array( $fc_style, $fc_styles_arr ) ) {
+			if ( !in_array( $fc_style, $fc_styles_arr ) && !defined('PCA_AJAX_LOADING_ROW') ) {
 				$fc_styles_arr[] = $fc_style;
 				get_pc_flexiprod_card_style( $fc_style );
 			}
