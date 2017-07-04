@@ -2573,7 +2573,7 @@ class FlexiCard extends StylingCard {
 				),
 				array (
 					'key' => 'fc_' . $i . '_la_5835a0612a142h',
-					'label' => 'Label Dropshadow',
+					'label' => 'Label Dropshadowh',
 					'name' => 'fc_style__la_butt_drop',
 					'type' => 'true_false',
 					'instructions' => '',
@@ -2593,7 +2593,7 @@ class FlexiCard extends StylingCard {
 				array (
 					'key' => 'fc_' . $i . '_la_5835a0f02a144h',
 					'label' => 'Label Border',
-					'name' => 'fc_style__la_butt_bord',
+					'name' => 'fc_style__la_butt_bordh',
 					'type' => 'radio',
 					'required' => 0,
 					'conditional_logic' => array (
