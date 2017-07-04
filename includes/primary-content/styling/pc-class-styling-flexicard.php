@@ -2713,7 +2713,7 @@ class FlexiCard extends StylingCard {
 								'value' => 'text',
 							),
 							array (
-								'field' => 'fc_' . $i . '_la_51152a11_15h',
+								'field' => 'fc_' . $i . '_la_51152a11_1h',
 								'operator' => '==',
 								'value' => 'custom',
 							),
