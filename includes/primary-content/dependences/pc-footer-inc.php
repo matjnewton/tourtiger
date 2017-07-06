@@ -372,15 +372,29 @@ $number = 1;
 
 
 	        	/**
-	        	 * Add mask to fields
+	        	 * Handle fields
 	        	 */
 	        	var $formField = $('.pc--form').find('input, textarea, select, button');
 	        	$formField.map(function(){
-	        		var $field  = $(this);
-	        		var maskReg = $field.attr('data-field-mask');
-	        		
+	        		var $field   = $(this);
+	        		var maskReg  = $field.attr('data-field-mask');
+	        		var isSelect = $field.hasClass('gfield_select');
+
 	        		if (maskReg) {
 						$field.mask(maskReg);
+	        		}
+
+	        		if (isSelect) {
+	        			var selectBackground = $field.css('background-color');
+
+	        			$field		
+	        				.selectpicker({
+							  size: 8
+							})
+							.closest('.bootstrap-select')
+							.removeClass('gfield_select')
+							.find('.dropdown-toggle')
+							.css('background-color', selectBackground);
 	        		}
 
 					$field.removeAttr('disabled');

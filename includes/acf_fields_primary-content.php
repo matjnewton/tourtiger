@@ -523,8 +523,10 @@ function primary_area_deregister_unnesesarily_scripts() {
 	if ( is_page_template( 'page-templates/test-pc.php' ) ) :
 
 		wp_enqueue_style('pc-constructor', get_stylesheet_directory_uri() . '/includes/primary-content/dependences/pc.min.css', null, 3 );
+		wp_enqueue_style('pc-bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css' );
 		wp_enqueue_script('hmac-sha1-js', 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha1.js', false, null, true );
 		wp_enqueue_script('enc-base64-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js', false, null, true );
+		wp_enqueue_script('pc-bootstrap-select', '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js', false, null, true );
 
 		//wp_dequeue_script('bootstrapjs');
 		wp_dequeue_script('colorbox');

@@ -62,7 +62,6 @@
 								$attr .= 'placeholder="' . $field['placeholder'] . '" ';
 								$attr .= 'data-field-label="' . $field['label'] . '" ';
 								$attr .= 'data-field-required="' . $field['isRequired'] . '" ';
-								$attr .= 'disabled ';
 
 								/**
 								 * Echo field template
@@ -73,6 +72,7 @@
 									 * Textarea field
 									 */
 									case 'textarea':
+										$attr .= 'disabled ';
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
 										echo "<textarea " . $attr . ">" . $field['defaltValue'] . "</textarea>";
 										break;
@@ -109,6 +109,7 @@
 									 */
 									case 'radio':
 									case 'checkbox':
+										$attr .= 'disabled ';
 										/**
 										 * Check extra options
 										 */
@@ -212,6 +213,7 @@
 									 * Text, number, email, url
 									 */
 									default:
+										$attr .= 'disabled ';
 										$attr .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
 										$attr .= 'type="' . $field['type'] . '" ';
 										$attr .= $field['inputMask'] ? 'data-field-mask="' . $field['inputMaskValue'] . '" disabled ' : '';
