@@ -72,7 +72,7 @@ if ( get_sub_field( 'cc_style__button_bor' ) != 'no' ) {
 
 	if ( get_sub_field( 'cc_style__button_bor' ) == 'yes' ) {
 		$cc_style__button_bor = $cc_style__button_bor_width . 'px solid ' . $cc_style__button_font_color;
-		$cc_style__ccc_css[1] .= 'border:' . $cc_style__button_bor_width . 'px solid ' . get_sub_field( 'cc_style__button_bg' ) . ';';
+		$cc_style__ccc_css[1] .= 'border:' . $cc_style__button_bor . ';';
 	} elseif ( get_sub_field( 'cc_style__button_bor' ) == 'hover' ) {
 		$cc_style__ccc_css[1] .= 'border:' . $cc_style__button_bor_width . 'px solid transparent;';
 	}
