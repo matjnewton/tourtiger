@@ -190,9 +190,9 @@ $cc_style__ccc_css = pc_content_init_form(
 echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
 echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .dropdown-menu > li > a, #pc_wrap .' . $cc_style . ' .bootstrap-select.btn-group .btn .filter-option {' . $cc_style__ccc_css[1] . '} ' : '';
 
-$cc_style__ccc_css[1] .= 'border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
+$cc_style__ccc_css[1] .= 'border-style: solid;border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
 
-echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_select, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_multiselect, #pc_wrap .' . $cc_style . ' .pc--form .gfield input, #pc_wrap .' . $cc_style . ' .pc--form .gfield dropdown-toggle, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:focus {' . $cc_style__ccc_css[1] . '};' : '';
+echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_select, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_multiselect, #pc_wrap .' . $cc_style . ' .pc--form input, #pc_wrap .' . $cc_style . ' .pc--form .gfield dropdown-toggle, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:focus {' . $cc_style__ccc_css[1] . '};' : '';
 
 /**
  * Input placeholder

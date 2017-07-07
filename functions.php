@@ -7,6 +7,8 @@ include_once( get_stylesheet_directory() . '/includes/acf_fields_primary-content
 
 include_once( get_stylesheet_directory() . '/includes/plugins/additional-fonts-includer/additional-fonts-includer.php' );
 
+include_once( get_stylesheet_directory() . '/includes/hawaiifun-api.php' );
+
 
 // include_once( get_stylesheet_directory() . '/includes/acf/acf_fields_product.php' );
 // include_once( get_stylesheet_directory() . '/includes/functions/product_functions.php' );
