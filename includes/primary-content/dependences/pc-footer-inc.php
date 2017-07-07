@@ -645,8 +645,8 @@ $number = 1;
 	        	$('.pc-section--btn-more').on('click', '.js-more', function() {
 
 					var $self    = $(this);
-					var $moreBtn = $('.js-more');
-					var $lessBtn = $('.js-less');
+					var $moreBtn = $self.parent().find('.js-more');
+					var $lessBtn = $self.parent().find('.js-less');
 					var $root    = $self.closest('.pc-section--btn-more');
 					var $section = $self.closest('.pc--s');
 					
@@ -734,8 +734,8 @@ $number = 1;
 				 */
 	        	$('.pc-section--btn-more').on('click', '.js-less', function() {
 					var $self     = $(this);
-					var $moreBtn  = $('.js-more');
-					var $lessBtn  = $('.js-less');
+					var $moreBtn  = $self.parent().find('.js-more');
+					var $lessBtn  = $self.parent().find('.js-less');
 					var $root     = $self.closest('.pc-section--btn-more');
 					var $rows     = $self.closest('.pc--s').find('.pc--r');
 					var original  = $moreBtn.attr('data-original');
