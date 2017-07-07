@@ -67,11 +67,18 @@ if ( $cc_style__button_hover_object ) {
 if ( get_sub_field( 'cc_style__button_bor' ) != 'no' ) {
 	$cc_style__button_bor_width = get_sub_field( 'cc_style__button_bor_width' );
 
-	$cc_style__ccc_css_hover .= $cc_style__button_bor_width . 'px solid ' . $cc_style__button_font_color . ';';
+	if ( get_sub_field( 'border_color_type' ) == 'auto' ) {
+		$border_color = $cc_style__button_font_color; 
+	} else {
+		$border_color_field = get_sub_field( 'border-color' );
+		$border_color 	    =  $border_color_field ? $border_color_field : $cc_style__button_font_color; 
+	}
+
+	$cc_style__ccc_css_hover .= $cc_style__button_bor_width . 'px solid ' . $border_color . ';';
 	$cc_style__ccc_css[1] .= 'padding: .4em .7em;';
 
 	if ( get_sub_field( 'cc_style__button_bor' ) == 'yes' ) {
-		$cc_style__button_bor = $cc_style__button_bor_width . 'px solid ' . $cc_style__button_font_color;
+		$cc_style__button_bor = $cc_style__button_bor_width . 'px solid ' . $border_color;
 		$cc_style__ccc_css[1] .= 'border:' . $cc_style__button_bor . ';';
 	} elseif ( get_sub_field( 'cc_style__button_bor' ) == 'hover' ) {
 		$cc_style__ccc_css[1] .= 'border:' . $cc_style__button_bor_width . 'px solid transparent;';

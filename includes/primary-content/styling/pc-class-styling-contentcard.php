@@ -960,6 +960,57 @@ class ContentCard extends StylingCard {
 					'disabled' => 0,
 				),
 				array (
+					'key' => $this->slug . $i . '_04C01o1r',
+					'label' => 'Border Color Type',
+					'name' => 'border_color_type',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_583702277a44a',
+								'operator' => '==',
+								'value' => 'yes',
+							),
+						),
+						array (
+							array (
+								'field' => $this->slug . $i . '_583702277a44a',
+								'operator' => '==',
+								'value' => 'hover',
+							),
+						),
+					),
+					'choices' => array (
+						'auto' => 'Auto',
+						'custom' => 'Custom',
+					),
+					'default_value' => 'auto',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => $this->slug . $i . '_c1lorbot01',
+					'label' => 'Border color',
+					'name' => 'border_color',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_04C01o1r',
+								'operator' => '==',
+								'value' => 'custom',
+							),
+						),
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
 					'key' => $this->slug . $i . '_583702cd7a44d',
 					'label' => 'Button Background',
 					'name' => 'cc_style__button_bg',
