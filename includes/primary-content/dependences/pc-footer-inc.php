@@ -107,6 +107,15 @@ $number = 1;
 	        init: function () {  		
 
 
+
+
+                $(".pc--date").daterangepicker({
+                        locale: {
+                          format: "YYYY-MM-DD"
+                        },
+                        singleDatePicker: true,
+                });
+
 		        $(document).bind('gform_confirmation_loaded', function(event, formId){
 		            console.log(formId);
 		        });

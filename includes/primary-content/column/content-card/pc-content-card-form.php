@@ -55,10 +55,10 @@
 								/**
 								 * Set field attributes
 								 */
+								$class = $field['type'] . ' gfield_' . $field['type'];
 								$attr  = '';
 								$attr .= 'name="input_' . $field['id'] . '" ';
 								$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
-								$attr .= 'class="' . $field['type'] . ' gfield_' . $field['type'] . '" ';
 								$attr .= 'placeholder="' . $field['placeholder'] . '" ';
 								$attr .= 'data-field-label="' . $field['label'] . '" ';
 								$attr .= 'data-field-required="' . $field['isRequired'] . '" ';
@@ -74,6 +74,7 @@
 									case 'textarea':
 										$attr .= 'disabled ';
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
+										$attr .= 'class="' . $class . '" ';
 										echo "<textarea " . $attr . ">" . $field['defaltValue'] . "</textarea>";
 										break;
 
@@ -84,6 +85,7 @@
 									case 'select':
 									case 'multiselect':
 										$attr .= $field['type'] == 'multiselect' ? 'multiple' : '';
+										$attr .= 'class="' . $class . '" ';
 										echo "<select " . $attr . ">"; 
 
 										foreach ( $field['choices'] as $option ) :
@@ -110,6 +112,7 @@
 									case 'radio':
 									case 'checkbox':
 										$attr .= 'disabled ';
+										$attr .= 'class="' . $class . '" ';
 										/**
 										 * Check extra options
 										 */
@@ -210,9 +213,30 @@
 
 
 									/**
+									 * Date
+									 */
+									case 'date':
+									    $class .= ' pc--date';
+										$attr  .= 'disabled ';
+										$attr  .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
+										$attr  .= 'type="text" ';
+										$attr  .= $field['inputMask'] ? 'data-field-mask="' . $field['inputMaskValue'] . '" disabled ' : '';
+										$attr  .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
+										$attr  .= 'data-field-input ';
+										$attr  .= 'class="' . $class . '" ';
+										$attr  .= 'style="height:54px;" ';
+
+										echo "<input " . $attr . " /><style>#vinetrekker_piker.daterangepicker{margin-left:0!important;
+										}</style>";
+
+										break;
+
+
+									/**
 									 * Text, number, email, url
 									 */
 									default:
+										$attr  .= 'class="' . $class . '" ';
 										$attr .= 'disabled ';
 										$attr .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
 										$attr .= 'type="' . $field['type'] . '" ';
