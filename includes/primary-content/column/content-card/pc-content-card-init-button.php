@@ -70,7 +70,7 @@ if ( get_sub_field( 'cc_style__button_bor' ) != 'no' ) {
 	if ( get_sub_field( 'border_color_type' ) == 'auto' ) {
 		$border_color = $cc_style__button_font_color; 
 	} else {
-		$border_color_field = get_sub_field( 'border-color' );
+		$border_color_field = get_sub_field( 'border_color' );
 		$border_color 	    =  $border_color_field ? $border_color_field : $cc_style__button_font_color; 
 	}
 
