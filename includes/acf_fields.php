@@ -4248,6 +4248,50 @@ acf_add_local_field_group(array (
 	'title' => 'Testimonial',
 	'fields' => array (
 		array (
+			'key' => 'field_insert512e40ee19c',
+			'label' => 'Use styles?',
+			'name' => 'is-style',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '15',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Yes',
+			'default_value' => 0,
+		),
+		array (
+			'key' => 'testimonial-style',
+			'label' => 'Testimonial Style',
+			'name' => 'testimonial-style',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_insert512e40ee19c',
+						'operator' => '==',
+						'value' => 1
+					)
+				)
+			),
+			'wrapper' => array (
+				'width' => '85',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => get_pc_styles_list( 'testimonial' ),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'testimonial-style-none',
+			'layout' => 'horizontal',
+		),
+		array (
 			'key' => 'field_537dcb4e60f0a',
 			'label' => 'Photo',
 			'name' => 'photo',

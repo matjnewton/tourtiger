@@ -16,8 +16,12 @@
                 <div class="col-sm-12">
                     <div class="testimonial">
                         <div class="testimonial-content">
-                            <strong><?php the_field('testimonial_quote'); ?></strong>
-                            <p><?php the_field('full_testimonial'); ?></p>
+                            <strong class="dz-testimonial__quote"><?php the_field('testimonial_quote'); ?></strong>
+
+                            <?php if (get_field('full_testimonial')): ?>
+                                <p class="dz-testimonial__full"><?php the_field('full_testimonial'); ?></p>
+                            <?php endif; ?>
+
                             <div class="t-author">
                                 <?php 
                                 $img_url = wp_get_attachment_url( get_field('photo'),'full');
@@ -30,15 +34,35 @@
                                 <?php endif; ?>
                                 <div class="rate-about">
                                     
-                                    <span>
+                                    <span class="dz-testimonial__author">
                                     <?php the_title(); ?>
                                     </span>
                                     
                                 </div>
                             </div>
+                    
+                            <!-- include custom style -->
+                            <?php 
+
+                            if ( get_field( 'is-style' ) ) {
+                                echo Testimonial::get_styles( get_field( 'testimonial-style' ) );
+                                ?>
+                                    <script>
+                                        ;(function($){
+                                            $(function(){
+                                                $('html').addClass('<?php the_field( 'testimonial-style' ); ?>');
+                                            });
+                                        })(jQuery);
+                                    </script>
+
+                                <?php
+                            }
+                            ?>
                         </div>
                         <div class="t-author">
                             <div class="triangle"></div>
                         </div>
                     </div>
                 </div>
+
+
