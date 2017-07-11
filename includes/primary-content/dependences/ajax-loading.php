@@ -24,8 +24,9 @@ function pc_show_more_sections() {
 	ob_start();
 
 	if ( have_rows( 'tour_primary-content', $post_id ) ) :
-		$total = count( get_field( 'tour_primary-content', $post_id ) );
-		$count = 0;
+		$total         = count( get_field( 'tour_primary-content', $post_id ) );
+		$count         = 0;
+		$section_count = 0;
 
 		include( get_stylesheet_directory() . '/includes/primary-content/dependences/pc-dependences.php' );
 
@@ -37,12 +38,14 @@ function pc_show_more_sections() {
 
 			if ( $count < $start ) {
 				$count++;
+				$section_count++;
 				continue;
 			}
 
 			include( get_stylesheet_directory() . '/includes/primary-content/section/pc-section-parameters.php' );
 
 			$count++;
+			$section_count++;
 			if ( $count == $end )
 				break; 
 		endwhile;
