@@ -7,7 +7,7 @@
 function pc_show_more_sections() {
 	
 	if ( !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'pc_field_nonce' ) ) {
-		echo json_encode( array( 'content' => '<!-- server error -->', 'more' => true, 'offset' => 1 ) );
+		echo json_encode( array( 'content' => '<!-- server error -->', 'more' => true, 'offset' => 1, 'debug' => 'ajax-error' ) );
 		exit;
 	}
 	// make sure we have the other values
@@ -53,7 +53,7 @@ function pc_show_more_sections() {
 	$more = false;
 	if ($total > $count) $more = true;
 
-	echo json_encode( array( 'content' => $content, 'more' => $more, 'offset' => $end, 'new_form' => $ajax_form_id ) );
+	echo json_encode( array( 'content' => $content, 'more' => $more, 'offset' => $end, 'debug' => 'success' ) );
 	exit;
 } 
 add_action('wp_ajax_pc_show_more_sections', 'pc_show_more_sections');

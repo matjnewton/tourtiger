@@ -15,10 +15,10 @@ if ( count( $paddings ) > 0 ) {
 }
 
 $tour_section_bg = get_sub_field( 'tour_pc-bg__select' );
-$tour_section_classes = 'pc--s pc--s_id-' . $count . $paddings_css;
+$tour_section_classes = 'pc--s pc--s_id-' . $section_count . $paddings_css;
 $tour_section_styles = '';
 $tour_section_attr = '';
-$tour_selection_id = 'pc--s_id-' . $count;
+$tour_selection_id = 'pc--s_id-' . $section_count;
 
 $is_more      = get_sub_field('is-load-more');
 $more_label   = get_sub_field('load-more-more-label') ? get_sub_field('load-more-more-label') : 'Show more';

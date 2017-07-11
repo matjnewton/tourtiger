@@ -80,17 +80,23 @@ $number = 1;
 	          'nonce': pc_field_nonce
 	        },
 	        function (json) {
-	          $('#pc_wrap').append(json['content']);
 
-	          pc_field_offset = json['offset'];
-
-	          $(document).primaryContent( 'init' );
-
-	          if (json['more']) {
-	            pc_show_more_js();
-	          } else {
-	          	$(document).primaryContent( 'onFinish' );
-	          }
+	        	if (json['content'] === 'ajax-error') {
+	        		document.location.href = '<?php echo get_permalink($post->ID); ?>?ajaxload=false';
+	        	} else {
+	        		$('#pc_wrap').append(json['content']);
+	        	}
+				
+				
+				pc_field_offset = json['offset'];
+				
+				$(document).primaryContent( 'init' );
+				
+				if (json['more']) {
+					pc_show_more_js();
+				} else {
+					$(document).primaryContent( 'onFinish' );
+				}
 	        },
 	        'json'
 	      );
