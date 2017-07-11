@@ -3552,6 +3552,57 @@ class ContentCard extends StylingCard {
 					'disabled' => 0,
 				),
 				array (
+					'key' => $this->slug . $i . '_04Cbtnmore1r',
+					'label' => 'Border Color Type',
+					'name' => 'more-border_color_type',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_58370morea44a-m',
+								'operator' => '==',
+								'value' => 'yes',
+							),
+						),
+						array (
+							array (
+								'field' => $this->slug . $i . '_58370morea44a-m',
+								'operator' => '==',
+								'value' => 'hover',
+							),
+						),
+					),
+					'choices' => array (
+						'auto' => 'Auto',
+						'custom' => 'Custom',
+					),
+					'default_value' => 'auto',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => $this->slug . $i . '_cmorebtnbot01',
+					'label' => 'Border color',
+					'name' => 'more-border_color',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_04Cbtnmore1r',
+								'operator' => '==',
+								'value' => 'custom',
+							),
+						),
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
 					'key' => $this->slug . $i . '_583702cd7a44d-m',
 					'label' => 'Button Background',
 					'name' => 'cc_style__more_button_bg',
