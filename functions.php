@@ -181,7 +181,8 @@ function tourtiger_scripts_method() {
 		wp_localize_script( 'mainjs', 'global_vars', array( 
 			'postid'  => get_the_ID(),
 			'nonce'   => wp_create_nonce( 'nonce' ),
-			'ajaxurl' => admin_url( 'admin-ajax.php' )
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'hawaiifun' => get_field('is-hawaiifun', 'option')
 		) );
 
 		wp_enqueue_script( 'api-key-maps' );
