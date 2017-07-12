@@ -38,12 +38,15 @@ if ( $tour_flexi_content == 'tour_pc-flexi' ) {
 	if ( in_array( 'button', $flexi_attr[$prefix] ) && $label ) :
 
 		if ( $flexi_attr['button'] != 'right-d' ) : ?>
+			<?php if ( $flexi_attr['button'] == 'center' ) echo '<center>'; ?>
 
 			<a 
 				href="<?= $tour_flexiprod_tag_url; ?>" 
 				class="fc_style--<?= $flexi_attr['name']; ?>_button <?= $flexi_attr['name']; ?>_button button_type_inline-block button_type_<?= $flexi_attr['button']; ?>">
 					<?php echo $label; ?>
 			</a>
+
+			<?php if ( $flexi_attr['button'] == 'center' ) echo '</center>'; ?>
 
 		<?php elseif ( $flexi_attr['button'] == 'right-d' && $detail ) : ?>
 
