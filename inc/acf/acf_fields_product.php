@@ -4466,6 +4466,63 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
+				array (
+					'key' => 'ha_ta_si_tripadvisor',
+					'name' => 'trip_advisor',
+					'label' => 'Trip Advisor',
+					'display' => 'block',
+					'sub_fields' => array (
+						array (
+							'key' => 'hasita_01',
+							'label' => 'HTML Code',
+							'name' => 'html',
+							'type' => 'textarea',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'placeholder' => '<div><p>Hey, mate! This is just example how html code looks like.</p></div>',
+						),
+						array (
+							'key' => 'hasita_02',
+							'label' => 'JavaScript sources',
+							'name' => 'javascript',
+							'type' => 'textarea',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '<script src="https://example.com/main.js"></script>',
+							'maxlength' => '',
+							'rows' => '3',
+							'new_lines' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
+							'key' => 'hasita_03',
+							'label' => 'View',
+							'name' => 'view',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'choices' => array (
+								'card' => 'Card style',
+								'none' => 'Without styles',
+							),
+							'default_value' => array (
+								0 => 'card',
+							),
+						),
+					),
+					'min' => '',
+					'max' => '1',
+				),
 				//links row
 
 				array (

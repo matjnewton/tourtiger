@@ -180,6 +180,18 @@ if ( have_rows( 'sidebar_1' ) ) :
                     $content = get_sub_field('content'); 
                 	echo $content ? '<div class="widget-item">' . $content . '</div>' : ''; 
 
+                elseif ( get_row_layout() == 'trip_advisor' ) :
+                	
+                	if ( get_sub_field( 'view' ) == 'card' ) 
+                		$view = 'class="book-tour-wrapper_product_row" style="margin-top:10px;padding:17px 15px;"';
+                	?>
+					
+					<center id="trip_advisor_in_sidebar" <?=$view;?>>
+						<?php echo get_sub_field( 'html' ); ?>
+						<?php echo get_sub_field( 'javascript' ); ?>
+					</center>
+
+					<?php
                 endif; 
            	endwhile; 
            	?>
