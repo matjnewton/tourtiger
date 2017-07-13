@@ -10,11 +10,14 @@ jQuery(document).ready(function($){
 
 	if ( $booking_sidebar.length > 0 ) {
 		$(window).scroll(function(){
-			$booking_sidebar.sticky({
-				topSpacing:130,
-				bottomSpacing:251,
-				getWidthFrom:'.book-tour-wrapper_product'
-			});
+			var sidebar_height = $booking_sidebar.height() + 130; 
+			if ( sidebar_height < $(window).height() ) {
+				$booking_sidebar.sticky({
+					topSpacing:130,
+					bottomSpacing:251,
+					getWidthFrom:'.book-tour-wrapper_product'
+				});
+			}
 		});
 	}
 
