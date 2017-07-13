@@ -454,3 +454,12 @@ html body .sidebar_links_options_wrap a {
     opacity: 1;
     pointer-events: all;
 }
+
+.header-bar-wrapper.no-sticky {
+    position: relative!important;
+}
+
+.header-bar-wrapper.no-sticky .container > .row {
+    display: flex!important;
+    align-items: center!important;
+}

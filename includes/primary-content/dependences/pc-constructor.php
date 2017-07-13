@@ -5,6 +5,16 @@ acf_add_local_field_group(array (
 	'title' => 'Primary content area',
 	'fields' => array (
 		array (
+			'key' => 'field_58249214ie691',
+			'label' => 'Header',
+			'name' => 'relative-header',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => '',
+			'conditional_logic' => '',
+			'message' => 'Fix header on top of page',
+		),
+		array (
 			'key' => 'field_5821d29cf2cca',
 			'label' => 'Primary Content',
 			'name' => 'tour_primary-content',
