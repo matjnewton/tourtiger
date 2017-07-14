@@ -114,10 +114,7 @@ $number = 1;
 	    	/**
 	    	 * Run each time when loads a new row
 	    	 */
-	        init: function () {  		
-
-
-
+	        init: function () {  	
 
                 $(".pc--date").daterangepicker({
                         locale: {
@@ -779,6 +776,10 @@ $number = 1;
 	    };
 
 	    $(function(){
+
+        	<?php if ( get_field('relative-header', 'option') ) : ?>
+        		$('.header-bar-wrapper').addClass('no-sticky');
+        	<?php endif; ?>
 
 	      	$(document).primaryContent( 'init' );
 
