@@ -81,7 +81,7 @@ $number = 1;
 	        },
 	        function (json) {
 
-	        	if (json['debug'] === 'ajax-error') {
+	        	if (json['content'] === 'ajax-error') {
 	        		document.location.href = '<?php echo get_permalink($post->ID); ?>?ajaxload=false';
 	        	} else {
 	        		$('#pc_wrap').append(json['content']);
@@ -103,18 +103,17 @@ $number = 1;
 
 	    }
 
-	    <?php if (!$ajaxload) : ?>
-
 	    $(window).load(pc_show_more_js());
-
-	    <?php endif; ?>
 
 	    var methods = {
 
 	    	/**
 	    	 * Run each time when loads a new row
 	    	 */
-	        init: function () {  	
+	        init: function () {  		
+
+
+
 
                 $(".pc--date").daterangepicker({
                         locale: {
@@ -280,6 +279,22 @@ $number = 1;
 
 
 	                item.animate( {'min-height': blog_thumb_h}, 50 );
+
+	                var $image = item.find('img'); 
+
+	                if ( $image.width() > item.width() && $image.height() > item.height() ) {
+	                	if ( $image.width() > $image.height() ) {
+	                		$image.css({
+	                			'width': 'auto',
+	                			'height': item.height()
+	                		});
+	                	} else {
+	                		$image.css({
+	                			'height': 'auto',
+	                			'width': item.width()
+	                		});
+	                	}
+	                }
 	              });
 
 	            }
@@ -776,21 +791,6 @@ $number = 1;
 	    };
 
 	    $(function(){
-        	<?php
-        	if ( get_field('relative-header') ) : 
-        	?>
-
-    		$('.header-bar-wrapper').addClass('no-sticky');
-
-    		<?php 
-    		if ( get_field('header-color') ) : 
-    		?>
-
-    		$('.site-header, .secondary-menu-wrapper').css('background-color', '<?php the_field('header-color') ?>' );
-
-    		<?php 
-    		endif;
-    		endif; ?>
 
 	      	$(document).primaryContent( 'init' );
 
