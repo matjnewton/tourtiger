@@ -1,7 +1,8 @@
 <?php 
+$rand = generateRandomString(5);
 $tour_content_content_classes .= ' pc--c__accordion'; 
 $accordion_cound = $accordion_cound === null ? 0 : $accordion_cound + 1;
-$accordion_id = $tour_selection_id . '-accordion-' . $accordion_cound;
+$accordion_id = $selection_id . '-accordion-' . $rand;
 ?>
 
 
@@ -22,10 +23,12 @@ $accordion_id = $tour_selection_id . '-accordion-' . $accordion_cound;
 
 		}(function($) {
 			$(function(){
-	            $('#<?php echo $accordion_id; ?>').on('click', function(){
+	            $('#<?php echo $accordion_id; ?>').click(function(e){
+	            	e.preventDefault();
 	                $(this).toggleClass('is_active');
 	                $(this).closest('.slick-slide').height("auto");
 	                $(this).closest('.pc--r__scroll').slick('setOption', 'height', null, true);
+	                return false;
 	            });
 			});
 		}));
@@ -33,16 +36,22 @@ $accordion_id = $tour_selection_id . '-accordion-' . $accordion_cound;
 
 	<button id="<?php echo $accordion_id; ?>" class="pc--c__accordion--label">
 		<span class="pc--c__accordion--label_question"><?php echo get_sub_field( 'tour_pc-coltype--accordion_label' ); ?></span>
-		<span class="pc--c__accordion--status pc--c__accordion--status_opened">
-			<span class="pc--c__accordion--status__text">
-				<?php echo get_sub_field( 'tour_pc-coltype--accordion_open' ); ?>
+
+		<?php if ( get_sub_field( 'tour_pc-coltype--accordion_open' ) ) :  ?>
+			<span class="pc--c__accordion--status pc--c__accordion--status_opened">
+				<span class="pc--c__accordion--status__text">
+					<?php echo get_sub_field( 'tour_pc-coltype--accordion_open' ); ?>
+				</span>
 			</span>
-		</span>
-		<span class="pc--c__accordion--status pc--c__accordion--status_closed">
-			<span class="pc--c__accordion--status__text">
-				<?php echo get_sub_field( 'tour_pc-coltype--accordion_close' ); ?>
+		<?php endif; ?>
+
+		<?php if ( get_sub_field( 'tour_pc-coltype--accordion_close' ) ) :  ?>
+			<span class="pc--c__accordion--status pc--c__accordion--status_closed">
+				<span class="pc--c__accordion--status__text">
+					<?php echo get_sub_field( 'tour_pc-coltype--accordion_close' ); ?>
+				</span>
 			</span>
-		</span>
+		<?php endif; ?>
 	</button>
 
 	<div class="pc--c__accordion--paragraf">
