@@ -9,6 +9,7 @@
     $headline = get_sub_field( 'pc_headline' );
     $content_editor = get_sub_field( 'pc_content_editor' );
     $cta_button_text = get_sub_field( 'pc_cta_button_text' );
+    $poster_url = get_sub_field( 'pc_video_poster' );
 
     $book_tours = get_sub_field( 'pc_book_tours_link' );
     $cta_button_radius = get_sub_field( 'pc_cta_button_radius' );

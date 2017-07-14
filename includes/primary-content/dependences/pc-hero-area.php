@@ -679,7 +679,7 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'return_format' => 'id',
+							'return_format' => 'url',
 							'preview_size' => 'full',
 							'library' => 'uploadedTo',
 							'min_width' => '',
