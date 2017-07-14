@@ -776,8 +776,7 @@ $number = 1;
 	    };
 
 	    $(function(){
-
-        	<?php if ( get_field('relative-header', 'option') ) : ?>
+        	<?php if ( get_field('relative-header') ) : ?>
         		$('.header-bar-wrapper').addClass('no-sticky');
         	<?php endif; ?>
 
