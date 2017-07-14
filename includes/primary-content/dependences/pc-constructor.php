@@ -13,6 +13,34 @@ acf_add_local_field_group(array (
 			'required' => '',
 			'conditional_logic' => '',
 			'message' => 'Fix header on top of page',
+			'wrapper' => array (
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+		),
+		array (
+			'key' => 'field_12345214ie691',
+			'label' => 'Header color',
+			'name' => 'header-color',
+			'type' => 'rgba_color',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_58249214ie691',
+						'operator' => '==',
+						'value' => 1,
+					),
+				),
+			),
+			'wrapper' => array (
+				'width' => '75',
+				'class' => '',
+				'id' => '',
+			),
+			'rgba' => '',
 		),
 		array (
 			'key' => 'field_5821d29cf2cca',
