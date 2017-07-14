@@ -7,107 +7,212 @@
  * Shortcode [hawaiifun]
  * @return string
  */
+
 function hawaiifunapi_form(){
 	$html = "
-		<form id=\"hawaiifun\" class=\"pc--form hawaiifun--popup\">
-			<p><label for=\"guests_a4043_t1594\"><span style=\"margin-bottom:7px;display:inline-block;\">Choose Date</span><br /><input id=\"date_a4043\" onclick=\"calendar(4043, 'date_a4043', false);\" readOnly size=\"15\" /></label></p>
-			<p><label for=\"guests_a4043_t1594\"><span style=\"margin-bottom:7px;display:inline-block;\">Shared Basket (non private)</span><br /><input type='text' id='guests_a4043_t1594' value='0' size='2' /></label></p>
-			<p><label style=\"width:auto!important;\" for=\"cancellationpolicy_a4043\"><input type=\"checkbox\" id=\"cancellationpolicy_a4043\" /><span style=\"margin-left: 5px;\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.<span></label></p>
-			<p><input style=\"width:auto!important;\" class=\"gform_button\" type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(document.getElementById('cancellationpolicy_a4043'))) return false; reservation2('4043', 4043, document.getElementById('date_a4043').value, '', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0); addGuests(1594, document.getElementById('guests_a4043_t1594').value); setUpgradesFixed(); setAccommodationFixed(); setpaylater(true);  availability_popup(); return false;\" /></p>
+		<form id=\"hawaiifun\" class=\"GroupsForm_40e9607c pc--form hawaiifun--popup\">
+			<p><select class=\"groupSelect\" onchange=\"activitySwitch_applyGroup(groups_40e9607c_contextData)\">
+			      <option value=\"a4043\">Del Mar Coastal Champagne Evening Adventure</option>
+			      <option value=\"a5233\">Del Mar Coastal Champagne Evening Adventure</option>
+			      <option value=\"a6863\">Solvang-Santa Barbara Wine Country Morning Adventure</option>
+			      <option value=\"a7635\">Solvang-Santa Barbara Wine Country Flight and Wine Tasting Tour</option>
+			      <option value=\"a5424\">18HG (14) Del Mar Coastal Champagne Evening Adventure</option>
+			      <option value=\"a4044\">Temecula Champagne Sunrise Adventure</option>
+			      <option value=\"a5234\">Temecula Champagne Sunrise Adventure</option>
+			      <option value=\"a4045\">Gift Flight Ticket</option>
+			    </select></p>
+			<p><span style=\"margin-right:10px;\">Activity Date</span><input id=\"input_groups_40e9607c_date\" onclick=\"showAvailabilityCalendar2(activitySwitch_getActivityId(groups_40e9607c_contextData), 'input_groups_40e9607c_date', { local: false, webBooking: true });\" readonly=\"readonly\" size=\"15\" /></p>
+
+		  <p>
+		    <span class=\"guestTypeContainer gt1594\" style=\"display: none;\"><span style=\"margin-right:10px;\">Shared Basket (non private)</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
+		        <option value=\"0\">0</option>
+		        <option value=\"1\">1</option>
+		        <option value=\"2\">2</option>
+		        <option value=\"3\">3</option>
+		        <option value=\"4\">4</option>
+		        <option value=\"5\">5</option>
+		        <option value=\"6\">6</option>
+		        <option value=\"7\">7</option>
+		        <option value=\"8\">8</option>
+		        <option value=\"9\">9</option>
+		        <option value=\"10\">10</option></select></span>
+		  </p>
+		  <p>
+		    <span class=\"guestTypeContainer gt1595\" style=\"display: none;\">
+		    	<span style=\"margin-right:10px;\">Private Basket 2-5 Passengers</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
+		        <option value=\"0\">0</option>
+		        <option value=\"1\">1</option>
+		        <option value=\"2\">2</option>
+		        <option value=\"3\">3</option>
+		        <option value=\"4\">4</option>
+		        <option value=\"5\">5</option>
+		        <option value=\"6\">6</option>
+		        <option value=\"7\">7</option>
+		        <option value=\"8\">8</option>
+		        <option value=\"9\">9</option>
+		        <option value=\"10\">10</option>
+		      </select>
+		    </span>
+		  </p>
+		  <p>
+		    <span class=\"guestTypeContainer gt1651\" style=\"display: none;\"><span style=\"margin-right:10px;\">Private Basket 6-8 Passengers</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
+		        <option value=\"0\">0</option>
+		        <option value=\"1\">1</option>
+		        <option value=\"2\">2</option>
+		        <option value=\"3\">3</option>
+		        <option value=\"4\">4</option>
+		        <option value=\"5\">5</option>
+		        <option value=\"6\">6</option>
+		        <option value=\"7\">7</option>
+		        <option value=\"8\">8</option>
+		        <option value=\"9\">9</option>
+		        <option value=\"10\">10</option>
+		      </select></span>
+		  </p>
+		  <p><span class=\"guestTypeContainer gt1597\" style=\"display: none;\"><span style=\"margin-right:10px;\">Private Basket 9-11 Passengers</span>
+		      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" />
+		      <select class=\"guestCountSelect\" style=\"display: none;\">
+		        <option value=\"0\">0</option>
+		        <option value=\"1\">1</option>
+		        <option value=\"2\">2</option>
+		        <option value=\"3\">3</option>
+		        <option value=\"4\">4</option>
+		        <option value=\"5\">5</option>
+		        <option value=\"6\">6</option>
+		        <option value=\"7\">7</option>
+		        <option value=\"8\">8</option>
+		        <option value=\"9\">9</option>
+		        <option value=\"10\">10</option></select></span>
+		  </p>
+		  <p>
+		    <span class=\"guestTypeContainer gt1941\" style=\"display: none;\">
+		        <span style=\"margin-right:10px;\">Private Basket 12-14 Passengers</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
+		        <option value=\"0\">0</option>
+		        <option value=\"1\">1</option>
+		        <option value=\"2\">2</option>
+		        <option value=\"3\">3</option>
+		        <option value=\"4\">4</option>
+		        <option value=\"5\">5</option>
+		        <option value=\"6\">6</option>
+		        <option value=\"7\">7</option>
+		        <option value=\"8\">8</option>
+		        <option value=\"9\">9</option>
+		        <option value=\"10\">10</option></select></span>
+		  </p>
+		  <p>
+		    <span class=\"guestTypeContainer gt2701\" style=\"display: none;\"><span style=\"margin-right:10px;\">SB Flight and Wine Tasting (non-private)</span>
+		      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
+		        <option value=\"0\">0</option>
+		        <option value=\"1\">1</option>
+		        <option value=\"2\">2</option>
+		        <option value=\"3\">3</option>
+		        <option value=\"4\">4</option>
+		        <option value=\"5\">5</option>
+		        <option value=\"6\">6</option>
+		        <option value=\"7\">7</option>
+		        <option value=\"8\">8</option>
+		        <option value=\"9\">9</option>
+		        <option value=\"10\">10</option></select></span>
+		</p>
+		<p>
+		  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
+		  <input style=\"display: inline-block;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
+		</p>
+		<p>
+		  <input type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
+		</p>
 		</form>
 	";
 
 	echo $html;
 }
 
-/**
- * Include hawaiifaun scripts
- */
 function include_hawaiifun_scripts() {
-	// Calendar JS
+
 	wp_deregister_script( 'hawaiifun-calendarjs' );
 	wp_enqueue_script( 'hawaiifun-calendarjs', '//www.hawaiifun.org/reservation/common/calendar_js.jsp?jsversion=20170214', array(), null, true );
 
-	// External functions
 	wp_deregister_script( 'hawaiifun-functions' );
 	wp_enqueue_script( 'hawaiifun-functions', '//www.hawaiifun.org/reservation/external/functions.js?jsversion=20170214', array(), null, true );
 
-	// Activityswitch functions
 	wp_deregister_script( 'hawaiifun-activityswitch' );
 	wp_enqueue_script( 'hawaiifun-activityswitch', '//www.hawaiifun.org/reservation/external/activityswitch-1.js?jsversion=20170214', array(), null, true );
 
-	// Inline javascript functions
 	$data = '
-		var groups_18b9075c_contextData = {
-			groupSelectSelector: \'.GroupsForm_18b9075c .groupSelect\',
-			allActivitySelectContainersSelector: \'.GroupsForm_18b9075c .activitySelectContainer\',
-			activitySelectSubselector: \'.activitySelect\',
-			allGuestTypeContainersSelector: \'.GroupsForm_18b9075c .guestTypeContainer\',
-			guestCountTextInputSubselector: \'.guestCountTextInput\',
-			guestCountSelectSubselector: \'.guestCountSelect\',
-			guestCountLimitForSelectThreshold: 10,
-			singleSeatContainersSelector: \'.GroupsForm_18b9075c .singleSeatContainer\',
-			singleSeatGuestTypeSelectSubselector: \'.guestTypeSelect\',
-			guestTypeInfos: {
-				\'1594\': { containerSelector: \'.GroupsForm_18b9075c .guestTypeContainer.gt1594\' },
-				\'1595\': { containerSelector: \'.GroupsForm_18b9075c .guestTypeContainer.gt1595\' },
-				\'1651\': { containerSelector: \'.GroupsForm_18b9075c .guestTypeContainer.gt1651\' },
-				\'1597\': { containerSelector: \'.GroupsForm_18b9075c .guestTypeContainer.gt1597\' },
-				\'1941\': { containerSelector: \'.GroupsForm_18b9075c .guestTypeContainer.gt1941\' },
-				\'2701\': { containerSelector: \'.GroupsForm_18b9075c .guestTypeContainer.gt2701\' },
+		var groups_40e9607c_contextData = {
+	      groupSelectSelector: \'.GroupsForm_40e9607c .groupSelect\',
+	      allActivitySelectContainersSelector: \'.GroupsForm_40e9607c .activitySelectContainer\',
+	      activitySelectSubselector: \'.activitySelect\',
+	      allGuestTypeContainersSelector: \'.GroupsForm_40e9607c .guestTypeContainer\',
+	      guestCountTextInputSubselector: \'.guestCountTextInput\',
+	      guestCountSelectSubselector: \'.guestCountSelect\',
+	      guestCountLimitForSelectThreshold: 10,
+	      singleSeatContainersSelector: \'.GroupsForm_40e9607c .singleSeatContainer\',
+	      singleSeatGuestTypeSelectSubselector: \'.guestTypeSelect\',
+	      guestTypeInfos: {
+	        \'1594\': { containerSelector: \'.GroupsForm_40e9607c .guestTypeContainer.gt1594\' },
+	        \'1595\': { containerSelector: \'.GroupsForm_40e9607c .guestTypeContainer.gt1595\' },
+	        \'1651\': { containerSelector: \'.GroupsForm_40e9607c .guestTypeContainer.gt1651\' },
+	        \'1597\': { containerSelector: \'.GroupsForm_40e9607c .guestTypeContainer.gt1597\' },
+	        \'1941\': { containerSelector: \'.GroupsForm_40e9607c .guestTypeContainer.gt1941\' },
+	        \'2701\': { containerSelector: \'.GroupsForm_40e9607c .guestTypeContainer.gt2701\' },
 
-				\'null\': null
-			},
-			groupInfos: {
-				\'null\': null
-			},
-			activityInfos: {
-				\'4043\': {
-					guestCountLimit: 25,
-					guestTypeIds: [ 1594 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a4043\'
-				},
-				\'5233\': {
-					guestCountLimit: 25,
-					guestTypeIds: [ 1594, 1597, 1941 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a5233\'
-				},
-				\'6863\': {
-					guestCountLimit: 8,
-					guestTypeIds: [ 1594, 2701 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a6863\'
-				},
-				\'7635\': {
-					guestCountLimit: 10,
-					guestTypeIds: [ 1595, 1651, 2701 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a7635\'
-				},
-				\'5424\': {
-					guestCountLimit: 25,
-					guestTypeIds: [ 1594, 1595, 1651, 1597, 1941 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a5424\'
-				},
-				\'4044\': {
-					guestCountLimit: 14,
-					guestTypeIds: [ 1594 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a4044\'
-				},
-				\'5234\': {
-					guestCountLimit: 14,
-					guestTypeIds: [ 1594 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a5234\'
-				},
-				\'4045\': {
-					guestCountLimit: 20,
-					guestTypeIds: [ 1594, 1595 ],
-					singleSeatContainerSelector: \'.GroupsForm_18b9075c .singleSeatContainer.a4045\'
-				},
-				\'null\': null
-			}
-		};
-    ';
+	        \'null\': null
+	      },
+	      groupInfos: {
+
+	        \'null\': null
+	      },
+	      activityInfos: {
+	        \'4043\': {
+	          guestCountLimit: 25,
+	          guestTypeIds: [ 1594 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a4043\'
+	        },
+	        \'5233\': {
+	          guestCountLimit: 25,
+	          guestTypeIds: [ 1594, 1597, 1941 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a5233\'
+	        },
+	        \'6863\': {
+	          guestCountLimit: 8,
+	          guestTypeIds: [ 1594, 2701 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a6863\'
+	        },
+	        \'7635\': {
+	          guestCountLimit: 10,
+	          guestTypeIds: [ 1595, 1651, 2701 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a7635\'
+	        },
+	        \'5424\': {
+	          guestCountLimit: 25,
+	          guestTypeIds: [ 1594, 1595, 1651, 1597, 1941 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a5424\'
+	        },
+	        \'4044\': {
+	          guestCountLimit: 14,
+	          guestTypeIds: [ 1594 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a4044\'
+	        },
+	        \'5234\': {
+	          guestCountLimit: 14,
+	          guestTypeIds: [ 1594 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a5234\'
+	        },
+	        \'4045\': {
+	          guestCountLimit: 20,
+	          guestTypeIds: [ 1594, 1595 ],
+	          singleSeatContainerSelector: \'.GroupsForm_40e9607c .singleSeatContainer.a4045\'
+	        },
+
+	        \'null\': null
+	      }
+	    };	
+	';
+
 	wp_add_inline_script( 'hawaiifun-activityswitch', $data );
 }
+
 
 if ( get_field( 'is-hawaiifun', 'option' ) ) :
 	add_action( 'wp_enqueue_scripts', 'include_hawaiifun_scripts', 50 );
