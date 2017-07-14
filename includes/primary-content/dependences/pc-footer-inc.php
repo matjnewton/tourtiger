@@ -81,7 +81,7 @@ $number = 1;
 	        },
 	        function (json) {
 
-	        	if (json['content'] === 'ajax-error') {
+	        	if (json['debug'] === 'ajax-error') {
 	        		document.location.href = '<?php echo get_permalink($post->ID); ?>?ajaxload=false';
 	        	} else {
 	        		$('#pc_wrap').append(json['content']);
@@ -103,7 +103,11 @@ $number = 1;
 
 	    }
 
+	    <?php if (!$ajaxload) : ?>
+
 	    $(window).load(pc_show_more_js());
+
+	    <?php endif; ?>
 
 	    var methods = {
 

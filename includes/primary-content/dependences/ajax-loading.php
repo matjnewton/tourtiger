@@ -6,10 +6,10 @@
  */
 function pc_show_more_sections() {
 	
-	if ( !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'pc_field_nonce' ) ) {
-		echo json_encode( array( 'content' => '<!-- server error -->', 'more' => true, 'offset' => 1, 'debug' => 'ajax-error' ) );
-		exit;
-	}
+	// if ( !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'pc_field_nonce' ) ) {
+	// 	echo json_encode( array( 'content' => '<!-- server error -->', 'more' => true, 'offset' => 1, 'debug' => 'ajax-error' ) );
+	// 	exit;
+	// }
 	// make sure we have the other values
 	if (!isset($_POST['post_id']) || !isset($_POST['offset'])) {
 		return;
