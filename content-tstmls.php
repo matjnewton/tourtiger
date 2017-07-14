@@ -1,8 +1,10 @@
                 
                     <div class="testimonial">
                         <div class="testimonial-content">
-                            <strong><?php the_field('testimonial_quote'); ?></strong>
-                            <p><?php the_field('full_testimonial'); ?></p>
+                            <strong class="dz-testimonial__quote"><?php the_field('testimonial_quote'); ?></strong>
+                            <div class="dz-testimonial__full">
+                                <?php the_field('full_testimonial'); ?>
+                            </div>
                             <div class="t-author">
                                 <?php 
                                 $img_url = wp_get_attachment_url( get_field('photo'),'full');
@@ -15,7 +17,7 @@
                                 <?php endif; ?>
                                 <div class="rate-about">
                                     
-                                    <span>
+                                    <span class="dz-testimonial__author">
                                     <?php the_title(); ?>
                                     </span>
                                     <?php $testimonial_text = get_field('testimonial_link_anchor_text'); ?>

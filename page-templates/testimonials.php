@@ -8,7 +8,23 @@
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_archive');
 function tourtiger_archive(){ ?>
-<?php $site_layout = genesis_site_layout(); ?>
+<?php $site_layout = genesis_site_layout(); 
+
+if ( get_field( 'is_dzv_teti_style' ) ) {
+    echo Testimonial::get_styles( get_field( 'dzv_teti_style' ) );
+    ?>
+        <script>
+            ;(function($){
+                $(function(){
+                    $('html').addClass('<?php the_field( 'dzv_teti_style' ); ?>');
+                });
+            })(jQuery);
+        </script>
+
+    <?php
+}
+
+?>
 <section class="tour-page-content">
         <div class="container">
             <div class="row">
