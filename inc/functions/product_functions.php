@@ -3,19 +3,30 @@
 // include script and css for product cpt
 add_action( 'wp_enqueue_scripts', 'product_scripts_method' ); 
 function product_scripts_method() {
-	wp_localize_script( 'product_scripts', 'localize_var', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
-	wp_register_style('product_css', CORE_URL .'/css/product.css', array(),null, 'all');
-	wp_enqueue_style('product_css');
-	wp_register_script('jquerystickyjs', CORE_URL . '/js/jquery.sticky.js', array('jquery'), '', true);
-	wp_enqueue_script( 'jquerystickyjs' );
-	wp_register_script('bxslider_min_js', CORE_URL . '/js/jquery.bxslider.min.js', array('jquery'), '', true);
-	wp_enqueue_script( 'bxslider_min_js' );
-    wp_register_script( 'product_scripts', CORE_URL . '/js/product_scripts.js', array('jquery', 'bxslider_min_js'), '', true );
-    wp_enqueue_script( 'product_scripts');
-	wp_register_style('bxslider_css', CORE_URL .'/css/jquery.bxslider.css', array(),'', 'all');
-	wp_enqueue_style('bxslider_css');
-    wp_register_style('product_css_adaptive', CORE_URL .'/css/adaptive.css', array(),null, 'all');
-    wp_enqueue_style('product_css_adaptive');
+
+    $template = array('page-templates/rezdy_search.php');
+
+    if(  is_front_page() || is_page_template( $template ) || is_singular('product')) :
+        wp_register_style('product_css', CORE_URL .'/css/product.css', array(),null, 'all');
+        wp_enqueue_style('product_css');
+    endif;
+    if( is_page_template( $template ) || is_singular('product')) :
+
+    	wp_localize_script( 'product_scripts', 'localize_var', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+    	// wp_register_style('product_css', CORE_URL .'/css/product.css', array(),null, 'all');
+    	// wp_enqueue_style('product_css');
+    	wp_register_script('jquerystickyjs', CORE_URL . '/js/jquery.sticky.js', array('jquery'), '', true);
+    	wp_enqueue_script( 'jquerystickyjs' );
+    	wp_register_script('bxslider_min_js', CORE_URL . '/js/jquery.bxslider.min.js', array('jquery'), '', true);
+    	wp_enqueue_script( 'bxslider_min_js' );
+        wp_register_script( 'product_scripts', CORE_URL . '/js/product_scripts.js', array('jquery', 'bxslider_min_js'), '', true );
+        wp_enqueue_script( 'product_scripts');
+    	wp_register_style('bxslider_css', CORE_URL .'/css/jquery.bxslider.css', array(),'', 'all');
+    	wp_enqueue_style('bxslider_css');
+        wp_register_style('product_css_adaptive', CORE_URL .'/css/adaptive.css', array(),null, 'all');
+        wp_enqueue_style('product_css_adaptive');
+
+    endif;
 } 
 
 function custom_admin_theme_style() {
