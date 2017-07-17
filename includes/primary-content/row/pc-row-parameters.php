@@ -4,6 +4,18 @@
 
 	$tour_row_type = get_sub_field( 'tour_pc-rowtype' ) ;
 	$scroll_data = '';
+
+	$row_width = get_sub_field( 'tour_pc-colums--width' );
+
+	if ( $row_width == 'four-five' ) : 
+		$tour_column_classes .= ' pc--r__four-five';
+	elseif ( $row_width == 'three-four' ) : 
+		$tour_column_classes .= ' pc--r__three-four';
+	elseif ( $row_width == 'one-two' ) : 
+		$tour_column_classes .= ' pc--r__one-two';
+	elseif ( $row_width == 'full' ) :
+		$tour_column_classes .= ' pc--r__full';
+	endif;
 				
 	$tour_column_wrap      = get_sub_field( 'tour_pc-colums--wrap' );
 	$tour_column_alignment = get_sub_field( 'tour_pc-colums--alignment' );
