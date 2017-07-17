@@ -2,7 +2,6 @@
 
 	$location = get_sub_field( 'tour_pc-coltype--map_map' );
 	$tour_content_content_classes .= ' pc--c__map acf-map js-new-map';
-
 	if ( $location ) { ?>
 
 		<div 

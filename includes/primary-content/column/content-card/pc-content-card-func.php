@@ -6,7 +6,7 @@
  * @return array with counter
  */
 function get_pc_content_card_style( $cc_style ) {
-
+	
 		if ( have_rows( $cc_style, 'option' ) ) {
 
 			while ( have_rows( $cc_style, 'option' ) ) { 

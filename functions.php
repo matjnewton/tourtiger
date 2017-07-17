@@ -22,7 +22,7 @@ define( 'CHILD_THEME_VERSION', '2.0.2' );
 
 add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 999 );
 function tourtiger_scripts_method() {
-        if(!is_admin()) {
+    if(!is_admin()) {
         wp_deregister_script( 'jquery' );
         wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
@@ -64,7 +64,8 @@ function tourtiger_scripts_method() {
 		wp_register_script('custom_two', get_stylesheet_directory_uri() . '/js/custom2.js', array('jquery'), null, true);
 		wp_register_script('colorbox', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/jquery.colorbox-min.js"), array('jquery'), null, true);
 		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
-		wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
+		//wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
+		wp_register_script('rezdy_modal', get_stylesheet_directory_uri() . '/incinit_api/js/rezdy.min.js', array('jquery'), null, true);
 		
 		$integrate_orioly = get_field('orioly','option');
 		$integrate_trekksoft = get_field('trekksoft','option');
@@ -178,12 +179,18 @@ function tourtiger_scripts_method() {
 			'postid'  => get_the_ID(),
 			'nonce'   => wp_create_nonce( 'nonce' ),
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			'hawaiifun' => get_field('is-hawaiifun', 'option')
+			'hawaiifun' => get_field('is-hawaiifun', 'option'),
+			'permalink' => get_permalink(get_the_ID()),
+			'themeurl' => get_stylesheet_directory_uri(),
+			'googlemaps' => get_field('google_maps','apikey'),
+			'gf_public' => get_field('gf_public_key','apikey'),
+			'gf_private' => get_field('gf_private_key','apikey'),
+			'siteurl' => get_bloginfo('url'),
+			'is_admin' => current_user_can('edit_posts')
 		) );
-
-		wp_enqueue_script( 'api-key-maps' );
 		
-		}
+		wp_enqueue_script( 'api-key-maps' );
+	}
 }
 
 function bgmpShortcodeCalled()
