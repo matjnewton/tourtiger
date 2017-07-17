@@ -259,6 +259,23 @@ window.onload = function () {
 
 
                 item.animate( {'min-height': blog_thumb_h}, 50 );
+
+
+
+                var $image = item.find('img'); 
+                if ( $image.width() > item.width() && $image.height() > item.height() ) {
+                  if ( $image.width() > $image.height() ) {
+                    $image.css({
+                      'width': 'auto',
+                      'height': item.height()
+                    });
+                  } else {
+                    $image.css({
+                      'height': 'auto',
+                      'width': item.width()
+                    });
+                  }
+                }
               });
 
             }
