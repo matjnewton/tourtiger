@@ -12,6 +12,7 @@ function hawaiifunapi_form(){
 	$html = "
 		<form id=\"hawaiifun\" class=\"GroupsForm_40e9607c pc--form hawaiifun--popup\">
 			<p><select class=\"groupSelect\" onchange=\"activitySwitch_applyGroup(groups_40e9607c_contextData)\">
+			      <option value=\"false\">-- Select Adventure --</option>
 			      <option value=\"a4043\">Del Mar Coastal Champagne Evening Adventure</option>
 			      <option value=\"a5233\">Del Mar Coastal Champagne Evening Adventure</option>
 			      <option value=\"a6863\">Solvang-Santa Barbara Wine Country Morning Adventure</option>
