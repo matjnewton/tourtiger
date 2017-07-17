@@ -110,12 +110,18 @@ if ( have_rows( $ha_style, 'option' ) ) :
             if ( get_sub_field( 'ha_style__button_bor' ) != 'no' ) {
                 $ha_style__button_bor_width = get_sub_field( 'ha_style__button_bor_width' );
 
-                $ha_style__ccc_css_hover .= $ha_style__button_bor_width . 'px solid ' . $ha_style__button_font_color . ';';
+                if ( get_sub_field( 'border_color_type' ) == 'custom' ) {
+                    $color = get_sub_field('border_color');
+                } else {
+                    $color = $ha_style__button_font_color;
+                }
+
+                $ha_style__ccc_css_hover .= $ha_style__button_bor_width . 'px solid ' . $color . ';';
                 $ha_style__ccc_css[1] .= 'padding: .4em .7em;';
 
                 if ( get_sub_field( 'ha_style__button_bor' ) == 'yes' ) {
-                    $ha_style__button_bor = $ha_style__button_bor_width . 'px solid ' . $ha_style__button_font_color;
-                    $ha_style__ccc_css[1] .= 'border:' . $ha_style__button_bor_width . 'px solid ' . get_sub_field( 'ha_style__button_bg' ) . ';';
+                    $ha_style__button_bor = $ha_style__button_bor_width . 'px solid ' . $color;
+                    $ha_style__ccc_css[1] .= 'border:' . $ha_style__button_bor . ';';
                 } elseif ( get_sub_field( 'ha_style__button_bor' ) == 'hover' ) {
                     $ha_style__ccc_css[1] .= 'border:' . $ha_style__button_bor_width . 'px solid transparent;';
                 }
