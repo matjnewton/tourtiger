@@ -24,12 +24,12 @@ add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 999 );
 function tourtiger_scripts_method() {
         if(!is_admin()) {
         wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
+        wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
-        wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"), false, null, true);
+        wp_register_script('jquery-ui',("https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"), false, null, true);
+        wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"), false, null, true);
+        wp_register_script('jquery-ui',("https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"), false, null, true);
 
         wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
         wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),null, 'all');
