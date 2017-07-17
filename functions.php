@@ -154,11 +154,7 @@ function tourtiger_scripts_method() {
 		wp_enqueue_style('theme_prdctn');
 		endif;
 		wp_enqueue_script( 'respond' );
-		
-		wp_register_style('ie_8', get_stylesheet_directory_uri() .'/css/ie8.css', array(),null, 'all');
-		wp_enqueue_style( 'ie_8' );
-        wp_style_add_data( 'ie_8', 'conditional', 'IE 8' );
-        
+		     
 		wp_enqueue_script( 'respond_matchmedia' );
 		wp_enqueue_script( 'raty' );
 		wp_enqueue_script( 'scrollit' );
