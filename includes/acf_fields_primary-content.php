@@ -271,6 +271,75 @@ if(function_exists('acf_add_options_sub_page')) {
 	));
 
 
+	acf_add_local_field_group(array (
+		'key' => 'Grloca3bd24st1proddzvone',
+		'title' => 'Testimonial style',
+		'fields' => array(
+			array (
+				'key' => 'is_dzv_teti_style',
+				'label' => 'Styles',
+				'name' => 'is_dzv_teti_style',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => '',
+				'conditional_logic' => '',
+				'message' => 'Enable',
+				'wrapper' => array (
+					'width' => '40',
+					'class' => '',
+					'id' => '',
+				),
+				'width' => '',
+				'height' => '',
+			),
+			array (
+				'key' => 'dzv_teti_style',
+				'label' => 'Product page style',
+				'name' => 'dzv_teti_style',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'is_dzv_teti_style',
+							'operator' => '==',
+							'value' => 1
+						)
+					)
+				),
+				'wrapper' => array (
+					'width' => '60',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => get_pc_styles_list( 'testimonial' ),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'style-one',
+				'layout' => 'horizontal',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'page-templates/testimonials.php',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => 1,
+		'description' => '',
+	));
+
 }
 
 /**
