@@ -5,6 +5,7 @@
 	$tour_button_supone = get_sub_field( 'tour_pc-coltype--button_sup-one' );
 	$tour_button_suptwo = get_sub_field( 'tour_pc-coltype--button_sup-two' );
 	$tour_content_content_classes .= ' pc--c__button ' . get_sub_field( 'tour_pc-coltype--button_align' );
+	$attribute = get_sub_field('button_target') ? 'target="_blank"' : '';
 	?>
 
 	<div 
@@ -16,6 +17,6 @@
 			<?php if ( $tour_button_suptwo ) echo '<p class="pc--c__button-suptwo">' . $tour_button_suptwo . '</p>'; ?>
 		</div>
 
-		<a class="pc--c__button-link" href="<?php echo $tour_button_action; ?>"><?php echo $tour_button_label; ?></a>
+		<a class="pc--c__button-link" <?=$attribute;?> href="<?php echo $tour_button_action; ?>"><?php echo $tour_button_label; ?></a>
 
 	</div>

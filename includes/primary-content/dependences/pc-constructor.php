@@ -655,7 +655,7 @@ acf_add_local_field_group(array (
 																			'required' => '',
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => '40',
+																				'width' => '30',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -676,7 +676,7 @@ acf_add_local_field_group(array (
 																			'required' => '',
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => '40',
+																				'width' => '30',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -687,6 +687,23 @@ acf_add_local_field_group(array (
 																			'maxlength' => '',
 																			'readonly' => 0,
 																			'disabled' => 0,
+																		),
+																		array (
+																			'key' => 'fieldnew82492141e632',
+																			'label' => 'New window',
+																			'name' => 'button_target',
+																			'type' => 'true_false',
+																			'instructions' => '',
+																			'required' => '',
+																			'conditional_logic' => '',
+																			'message' => 'Yes, open there',
+																			'wrapper' => array (
+																				'width' => '20',
+																				'class' => '',
+																				'id' => '',
+																			),
+																			'width' => '',
+																			'height' => '',
 																		),
 																		array (
 																			'key' => 'field_58248f351e62a',
