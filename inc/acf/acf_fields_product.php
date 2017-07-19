@@ -3414,6 +3414,269 @@ acf_add_local_field_group(array (
 	//end primary content
 
 
+		array(
+			'key' => 'sava_A1982bc694Cd45',
+			'label' => 'Sidebar',
+			'name' => 'sdb',
+			'type' => 'tab',
+			'placement' => 'top',
+		),
+		array (
+			'key' => 'sava_A1982bc694CE45',
+			'label' => 'Sidebar blocks',
+			'name' => 'sidebar_blocks',
+			'type' => 'repeater',
+			'required' => 0,
+			'layout' => 'block',
+			'button_label' => 'Add box',
+			'sub_fields' => array (
+
+				array(
+					'key' => 'sava_A2982bc694Cd45',
+					'label' => 'Content',
+					'name' => 'content',
+					'type' => 'flexible_content',
+					'required' => 0,
+					'button_label' => 'Add one more',
+					'layouts' => array (
+						array (
+							'key' => 'sava_A2982bc694Cd90',
+							'name' => 'content',
+							'label' => 'Content',
+							'display' => 'block',
+							'sub_fields' => array (
+								array (
+									'key' => 'sava_A2982bc694Cd91',
+									'label' => 'Content',
+									'name' => 'content',
+									'type' => 'wysiwyg',
+									'required' => 0,
+								),
+							),
+						),
+						array (
+							'key' => 'sava_A2982bc694Cd46',
+							'name' => 'button',
+							'label' => 'Button',
+							'display' => 'block',
+							'sub_fields' => array (
+								array (
+									'key' => 'sava_A2982bc694Cd49',
+									'label' => 'Dropdown',
+									'name' => 'is_dropdown',
+									'type' => 'true_false',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array (
+										'width' => '15',
+									),
+									'message' => 'Yes',
+									'default_value' => 0,
+								),
+								array (
+									'key' => 'sava_A2982bc694Cd47',
+									'label' => 'Label',
+									'name' => 'label',
+									'type' => 'text',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array (
+										'width' => '15',
+									),
+									'placeholder' => 'Book now'
+								),
+								array (
+									'key' => 'sava_A2982bc694Cd48',
+									'label' => 'Action type',
+									'name' => 'type',
+									'type' => 'select',
+									'required' => 0,
+									'wrapper' => array (
+										'width' => '35',
+									),
+									'choices' => array (
+										'link' => 'Link to another page',
+										'iframe-popup' => 'iFrame popup',
+										'form-link' => 'Link to form',
+										'integration' => 'Third party integration',
+									),
+									'default_value' => 'link',
+									'conditional_logic' => array(
+										array(
+											array(
+												'field' => 'sava_A2982bc694Cd49',
+												'operator' => '!=',
+												'value' => 1
+											)
+										)
+									),
+								),
+								array (
+									'key' => 'sava_A2982bc694Cd50',
+									'label' => 'Action',
+									'name' => 'action',
+									'type' => 'text',
+									'required' => 0,
+									'conditional_logic' => array(
+										array(
+											array(
+												'field' => 'sava_A2982bc694Cd49',
+												'operator' => '!=',
+												'value' => 1
+											)
+										)
+									),
+									'wrapper' => array (
+										'width' => '35',
+									)
+								),
+								array (
+									'key' => 'sava_A2982bc694Cd51',
+									'label' => 'Dropdown Options',
+									'name' => 'dropdown',
+									'type' => 'repeater',
+									'required' => 0,
+									'conditional_logic' => array (
+										array (
+											array (
+												'field' => 'sava_A2982bc694Cd49',
+												'operator' => '==',
+												'value' => 1,
+											),
+										),
+									),
+									'wrapper' => array (
+										'width' => '70',
+									),
+									'layout' => 'block',
+									'button_label' => 'Add Sub Option',
+									'sub_fields' => array (
+										array (
+											'key' => 'sava_A2982bc694Cd54',
+											'label' => 'Label',
+											'name' => 'label',
+											'type' => 'text',
+											'required' => 0,
+											'conditional_logic' => 0,
+											'wrapper' => array (
+												'width' => '33',
+											),
+											'placeholder' => 'Option name'
+										),
+										array (
+											'key' => 'sava_A2982bc694Cd55',
+											'label' => 'Action type',
+											'name' => 'type',
+											'type' => 'select',
+											'required' => 0,
+											'wrapper' => array (
+												'width' => '33',
+											),
+											'choices' => array (
+												'link' => 'Link to another page',
+												'iframe-popup' => 'iFrame popup',
+												'form-link' => 'Link to form',
+												'integration' => 'Third party integration',
+											),
+											'default_value' => 'link',
+										),
+										array (
+											'key' => 'sava_A2982bc694Cd56',
+											'label' => 'Action',
+											'name' => 'action',
+											'type' => 'text',
+											'required' => 0,
+											'wrapper' => array (
+												'width' => '33',
+											)
+										),
+									),
+									'min' => 1
+								)
+							)
+						),
+
+						array (
+							'key' => 'sava_A2982bc694Cd60',
+							'name' => 'icon-label',
+							'label' => 'Icon label',
+							'display' => 'block',
+							'sub_fields' => array (
+								array(
+									'key'   => 'sava_A2982bc694Cd61',
+									'name'  => 'icon-type',
+									'label' => 'Icon type',
+									'type'  => 'select',
+									'required' => 0,
+									'choices' => array(
+										'checklist' => 'Checklist icon',
+										'custom'    => 'Custom'
+									),
+									'default_value' => 'checklist',
+									'wrapper' => array (
+										'width' => 30
+									)
+								),
+								array (
+									'key' => 'sava_A2982bc694Cd63',
+									'label' => 'Icon',
+									'name' => 'icon',
+									'type' => 'font-awesome',
+									'required' => 0,
+									'wrapper' => array (
+										'width' => '70',
+									),
+									'save_format' => 'class',
+									'conditional_logic' => array(
+										array(
+											array(
+												'field' => 'sava_A2982bc694Cd61',
+												'operator' => '==',
+												'value' => 'custom'
+											)
+										)
+									)
+								),
+								array (
+									'key' => 'sava_A2982bc694Cd62',
+									'label' => 'Textarea',
+									'name' => 'textarea',
+									'type' => 'text',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array (
+										'width' => '100',
+									)
+								),
+							)
+						),
+
+						array (
+							'key' => 'sava_A2982bc694Cd70',
+							'label' => 'HR Line',
+							'name' => 'line',
+							'display' => 'block',
+							'sub_fields' => array (
+								array(
+									'key'   => 'sava_A2982bc694Cd71',
+									'name'  => 'width',
+									'label' => 'Width',
+									'type'  => 'select',
+									'required' => 0,
+									'choices' => array(
+										'auto' => 'Auto',
+										'full' => '100% of the box'
+									),
+									'default_value' => 'auto',
+								),
+							)
+						)
+					)
+				),
+
+			),
+		),
+
    // sidebar tab
 		array (
 			'key' => 'field_57f57c54e0f47',
