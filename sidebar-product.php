@@ -33,7 +33,7 @@ if ( have_rows( 'sidebar_blocks' ) ) :
 					 */
 					while ( have_rows( 'content' ) ) :
 						the_row();
-						$layout = get_row_layput();
+						$layout = get_row_layout();
 						?>
 
 						<div class="product-sidebar--block__item">

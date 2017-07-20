@@ -4,4 +4,7 @@
  */
 
 $d             = array();
-$d['line']     = get_sub_field( 'line' );
+$d['width']    = get_sub_field( 'width' );
+?>
+
+<hr class="product-sidebar--line width_<?=$d['width'];?>">

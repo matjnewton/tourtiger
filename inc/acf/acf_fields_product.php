@@ -3618,13 +3618,35 @@ acf_add_local_field_group(array (
 									)
 								),
 								array (
+									'key' => 'sava_A2981bc664cd61',
+									'label' => 'Icon size',
+									'name' => 'size',
+									'type' => 'number',
+									'required' => 0,
+									'conditional_logic' => array(
+										array(
+											array(
+												'field' => 'sava_A2982bc694Cd61',
+												'operator' => '==',
+												'value' => 'custom'
+											)
+										)
+									),
+									'wrapper' => array (
+										'width' => '20',
+									),
+									'placeholder' => 'inhreit',
+									'append' => 'px',
+									'step' => 1,
+								),
+								array (
 									'key' => 'sava_A2982bc694Cd63',
 									'label' => 'Icon',
 									'name' => 'icon',
 									'type' => 'font-awesome',
 									'required' => 0,
 									'wrapper' => array (
-										'width' => '70',
+										'width' => '50',
 									),
 									'save_format' => 'class',
 									'conditional_logic' => array(
