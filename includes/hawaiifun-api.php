@@ -124,9 +124,9 @@ function hawaiifunapi_form(){
 				        <option value=\"9\">9</option>
 				        <option value=\"10\">10</option></select></span>
 				</p>
-				<p>
+				<p style=\"display: none;\">
 				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
-				  <input style=\"display: inline-block;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
+				  <input checked style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
 				</p>
 				<p>
 				  <input type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
@@ -236,9 +236,9 @@ function hawaiifunapi_form(){
 				        <option value=\"9\">9</option>
 				        <option value=\"10\">10</option></select></span>
 				</p>
-				<p>
+				<p style=\"display: none;\">
 				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
-				  <input style=\"display: inline-block;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
+				  <input checked style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
 				</p>
 				<p>
 				  <input type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
@@ -347,9 +347,9 @@ function hawaiifunapi_form(){
 				        <option value=\"9\">9</option>
 				        <option value=\"10\">10</option></select></span>
 				</p>
-				<p>
+				<p style=\"display: none;\">
 				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
-				  <input style=\"display: inline-block;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
+				  <input checked style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
 				</p>
 				<p>
 				  <input type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
@@ -458,9 +458,9 @@ function hawaiifunapi_form(){
 				        <option value=\"9\">9</option>
 				        <option value=\"10\">10</option></select></span>
 				</p>
-				<p>
+				<p style=\"display: none;\">
 				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
-				  <input style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\" checked/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
+				  <input checked style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
 				</p>
 				<p>
 				  <input type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
@@ -577,9 +577,9 @@ function hawaiifunapi_form(){
 				        <option value=\"9\">9</option>
 				        <option value=\"10\">10</option></select></span>
 				</p>
-				<p>
+				<p style=\"display: none;\">
 				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
-				  <input style=\"display: inline-block;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
+				  <input checked style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
 				</p>
 				<p>
 				  <input type=\"button\" value=\"Check availability\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
