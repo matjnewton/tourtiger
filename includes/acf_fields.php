@@ -1524,7 +1524,18 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		// end update
+		
+		array (
+			'key'   => 'dzeld_5tes06131125',
+			'label' => 'Individual testimonial as a separate page',
+			'name'  => 'is_single_testimonial',
+			'type'  => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'message' => 'Yes, just do it',
+			'default_value' => 0,
+		),
+
 
 		array (
 			'key' => 'field_564757d7e2aff',
