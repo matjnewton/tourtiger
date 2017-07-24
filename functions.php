@@ -1693,3 +1693,23 @@ function add_noindex_metatag(){
 	endif;
 }
 add_action('wp_head', 'add_noindex_metatag');
+
+
+function set_productpage_stylesclass($classes) {
+	global $post;
+
+	if ( is_singular( 'product' ) && get_field( 'is_dzv_prodpage_style' ) ) : 
+		$classes[] = get_field( 'dzv_prodpage_style' );
+	endif;
+
+	return $classes;
+}
+add_filter('body_class', 'set_productpage_stylesclass');
+
+
+
+
+
+
+
+

@@ -7,6 +7,18 @@
 ?>
 <!-- primary_content_special_content -->
 <?php if( have_rows('primary_content_options') ): $primary_content_options_count = 0; ?>
+
+	<!-- include custom style -->
+	<?php 
+
+	if ( get_field( 'is_dzv_prodpage_style' ) ) {
+		echo ProductPage::get_styles( get_field( 'dzv_prodpage_style' ) );
+	} else {
+	 	get_template_part( 'page-templates/product/global-style' );
+	} 
+
+	?>
+	
 	<?php while ( have_rows('primary_content_options') ) : the_row(); $primary_content_options_count++; ?>
 		<?php get_template_part( 'page-templates/product/block-headline' ); ?>
 		<?php get_template_part( 'page-templates/product/block-headlinedetails' ); ?>
@@ -39,27 +51,6 @@
 		?>
     <?php endwhile; ?>
 <?php endif; ?>
-
-<!-- include custom style -->
-<?php 
-
-if ( get_field( 'is_dzv_prodpage_style' ) ) {
-	echo ProductPage::get_styles( get_field( 'dzv_prodpage_style' ) );
-	?>
-		<script>
-			;(function($){
-				$(function(){
-					$('html').addClass('<?php the_field( 'dzv_prodpage_style' ); ?>');
-				});
-			})(jQuery);
-		</script>
-
-	<?php
-} else {
- 	get_template_part( 'page-templates/product/global-style' );
-} 
-
-?>
 
 
 
