@@ -1684,16 +1684,12 @@ function add_motto_class_mobile( $classes ) {
 	return $classes;
 }
 
-$single_testimonial = get_field( 'is_single_testimonial', 'option' );
-
 function add_noindex_metatag(){
 	global $post;
+	$single_testimonial = get_field( 'is_single_testimonial', 'option' );
 
-	if ( is_singular( 'testimonial' ) ) :
+	if ( is_singular( 'testimonial' ) && !$single_testimonial ) :
 		echo '<meta name="robots" content="noindex">';
-
-	return null;
+	endif;
 }
-
-if (!$single_testimonial) 
-	add_action('wp_head', 'add_noindex_metatag');
+add_action('wp_head', 'add_noindex_metatag');
