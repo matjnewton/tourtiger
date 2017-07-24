@@ -1231,15 +1231,15 @@ class ProductPage extends StylingCard {
 				$background_color = get_sub_field( 'background-color' );
 
 				if ( $background_color ) {
-					$css .= "html.{$style} .single-product .site-inner .content, html.{$style} .single-product, .site-container .site-header .header-bar-wrapper {background:{$background_color}!important;}";
-					$css .= "html.{$style} body.custom-background.single-product {background-color:{$background_color}!important;}";
+					$css .= "body.{$style} .single-product .site-inner .content, body.{$style} .single-product, .site-container .site-header .header-bar-wrapper {background:{$background_color}!important;}";
+					$css .= "body.{$style} body.custom-background.single-product {background-color:{$background_color}!important;}";
 				}
 
 				$background_texture = get_sub_field( 'background-texture' );
 				$background_repeat = get_sub_field( 'background-repeat' ) ? 'repeat' : 'no-repeat';
 
 				if ( $background_texture ) {
-					$css .= "html.{$style} .single-product .site-inner .content {";
+					$css .= "body.{$style} .single-product .site-inner .content {";
 						$css .= "background-image: url({$background_texture['url']});";
 						$css .= "background-repeat: {$background_repeat};";
 					$css .= '}';
@@ -1249,7 +1249,7 @@ class ProductPage extends StylingCard {
 				 * Content
 				 */
 
-				$css .= "html.{$style} .product_content_wrapper{";
+				$css .= "body.{$style} .product_content_wrapper{";
 
 					$content_bg_color = get_sub_field( 'content_bg-color' );
 
@@ -1283,24 +1283,24 @@ class ProductPage extends StylingCard {
 
 				$css .= '}';
 
-				$css .= "html.{$style} .product_content_wrapper.product_content_wrapper_first,html.{$style} .product_content_wrapper.product_content_wrapper_header {";
+				$css .= "body.{$style} .product_content_wrapper.product_content_wrapper_first,body.{$style} .product_content_wrapper.product_content_wrapper_header {";
 					$css .= $content_bo ? "border-top: {$content_bo_thikness}xp solid {$content_bo_color};":'';
 				$css .= '}';
 
-				$css .= "html.{$style} .product_content_wrapper.product_content_wrapper_end,html.{$style} .product_content_wrapper.product_content_wrapper_footer {";
+				$css .= "body.{$style} .product_content_wrapper.product_content_wrapper_end,body.{$style} .product_content_wrapper.product_content_wrapper_footer {";
 					$css .= $content_bo ? "border-bottom: {$content_bo_thikness}px solid {$content_bo_color};" : '';
 				$css .= '}';
 
 				$content_icon_color = get_sub_field( 'content_icon-color' );
 
-				$css .= "html.{$style} .product_content_wrapper .fa-certificate {";
+				$css .= "body.{$style} .product_content_wrapper .fa-certificate {";
 					$css .= $content_icon_color ? "color:{$content_icon_color};":'';
 				$css .= '}';
 
 				$content_hr_color = get_sub_field( 'content_hr-color' ) || 1;
 				$content_hr_thickness = get_sub_field( 'content_hr-thickness' ) || '#abc545';
 
-				$css .= "html.{$style} .primary_content_content_card_hr_line,html.{$style} .product_content_wrapper hr{";
+				$css .= "body.{$style} .primary_content_content_card_hr_line,body.{$style} .product_content_wrapper hr{";
 					$css .= "border-top: {$content_hr_color} solid {$content_hr_thickness};";
 				$css .= '}';
 
@@ -1309,7 +1309,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_pa_content ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper p, html.{$style} .site-inner .content .product_content_wrapper p, html.{$style} .product_content_wrapper ul li{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper p, body.{$style} .site-inner .content .product_content_wrapper p, body.{$style} .product_content_wrapper ul li{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_pa_content['text-color']};";
@@ -1324,7 +1324,7 @@ class ProductPage extends StylingCard {
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_headline ) {
-						$css .= "html.{$style} .styles .content .product_title_area.customstyle h{$i}, html.{$style} .content .product_title_area.customstyle h{$i}{";
+						$css .= "body.{$style} .styles .content .product_title_area.customstyle h{$i}, body.{$style} .content .product_title_area.customstyle h{$i}{";
 
 							$css .= $font[1] ? $font[1] : '';
 							$css .= "color: {$font_style_headline['text-color']};";
@@ -1338,7 +1338,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_h_details ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span, html.{$style} .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span, body.{$style} .site-inner .content .product_content_wrapper ul.primary_content_headline_details_options.customstyle span{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_h_details['text-color']};";
@@ -1353,7 +1353,7 @@ class ProductPage extends StylingCard {
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_h_sub ) {
-						$css .= "html.{$style} .styles .content h{$i}.primary_content_subhead.customstyle, html.{$style} .content h{$i}.primary_content_subhead.customstyle{";
+						$css .= "body.{$style} .styles .content h{$i}.primary_content_subhead.customstyle, body.{$style} .content h{$i}.primary_content_subhead.customstyle{";
 
 							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_h_sub['text-color']};";
@@ -1368,7 +1368,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_special_content ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p, body.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle p{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_special_content['text-color']};";
@@ -1382,7 +1382,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_hightlights || $font ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, html.{$style} body.single.single-product .site-container .site-inner .primary_content_highlights .highlights_options span, html.{$style} .reason_to_book_label span, html.{$style} .site-inner .content .sidebar_links_options a, html.{$style} .reason_to_book_label span {";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, body.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, body.{$style} body.single.single-product .site-container .site-inner .primary_content_highlights .highlights_options span, body.{$style} .reason_to_book_label span, body.{$style} .site-inner .content .sidebar_links_options a, body.{$style} .reason_to_book_label span {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_pa_content['text-color']};";
@@ -1395,7 +1395,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_trip_details ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle, html.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle, body.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_label.customstyle{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_trip_details['text-color']};";
@@ -1408,14 +1408,14 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_td_content ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, html.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, html.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, html.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, html.{$style} .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p, html.{$style} .styles .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, body.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle, body.{$style} .styles .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, body.{$style} .site-inner .content .product_content_wrapper span.primary_trip_details_detail.customstyle p, body.{$style} .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p, body.{$style} .styles .site-inner .content .product_content_wrapper .primary_trip_details_detail_collapse_full_width p{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_td_content['text-color']};";
 
 					$css .= '}';
 
-					$css .= "html.{$style} .sidebar_phone_row .phone_number span{";
+					$css .= "body.{$style} .sidebar_phone_row .phone_number span{";
 
 						$font_size = get_sub_field('sidebar_phone_number_size');
 
@@ -1425,7 +1425,7 @@ class ProductPage extends StylingCard {
 
 					$css .= "}";
 
-					$css .= "html.{$style} .sidebar_phone_row .phone_label {";
+					$css .= "body.{$style} .sidebar_phone_row .phone_label {";
 
 						$font_size = get_sub_field('sidebar_phone_title_size');
 
@@ -1435,7 +1435,7 @@ class ProductPage extends StylingCard {
 
 					$css .= "}";
 
-					$css .= "html.{$style} .sidebar_phone_row .phone_number .fa-phone {";
+					$css .= "body.{$style} .sidebar_phone_row .phone_number .fa-phone {";
 
 						$css .= "font-size: {$font_style_td_content['font_size']}px;";
 						$css .= "line-height: {$font_style_td_content['line_height']}px;";
@@ -1451,18 +1451,18 @@ class ProductPage extends StylingCard {
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_exco_title ) {
-						$css .= "html.{$style} .styles .content .primary_content_expandable_content_options_li h{$i}.primary_content_subhead.customstyle, html.{$style} .content .primary_content_expandable_content_options_li h{$i}.primary_content_subhead.customstyle {";
+						$css .= "body.{$style} .styles .content .primary_content_expandable_content_options_li h{$i}.primary_content_subhead.customstyle, body.{$style} .content .primary_content_expandable_content_options_li h{$i}.primary_content_subhead.customstyle {";
 
 							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_exco_title['text-color']};";
 
 						$css .= '}';
 
-						$css .= "html.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, html.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle::after, html.{$style} .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, html.{$style} .site-inner .content a.primary_content_expandable_content_toggle::after {";
+						$css .= "body.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, body.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle::after, body.{$style} .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, body.{$style} .site-inner .content a.primary_content_expandable_content_toggle::after {";
 							$css .= "color: {$font_style_exco_title['text-color']};";
 						$css .= '}';
 						
-						$css .= "html.{$style} .styles .content h{$i}.primary_content_subhead{";
+						$css .= "body.{$style} .styles .content h{$i}.primary_content_subhead{";
 
 							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_exco_title['text-color']};";
@@ -1477,7 +1477,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_exco_label ) {
-					$css .= "html.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle, html.{$style} .site-inner .content a.primary_content_expandable_content_toggle.customstyle, html.{$style} .styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span, html.{$style} .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span{";
+					$css .= "body.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle, body.{$style} .site-inner .content a.primary_content_expandable_content_toggle.customstyle, body.{$style} .styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span, body.{$style} .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_exco_label['text-color']};";
@@ -1494,7 +1494,7 @@ class ProductPage extends StylingCard {
 
 				if ( $font_style_fepr_title ) {
 					
-					$css .= "html.{$style} .pc_featured-products__body .pc_featured-products__title {";
+					$css .= "body.{$style} .pc_featured-products__body .pc_featured-products__title {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_fepr_title['text-color']};";
@@ -1502,7 +1502,7 @@ class ProductPage extends StylingCard {
 					$css .= '}';
 
 					// Common for text section css 
-					$css .= "html.{$style} .pc_featured-products__body {";
+					$css .= "body.{$style} .pc_featured-products__body {";
 
 						$css .= "text-align: {$font_style_fepr_title['text_align']};";
 
@@ -1518,7 +1518,7 @@ class ProductPage extends StylingCard {
 
 				if ( $font_style_fepr_link ) {
 					
-					$css .= "html.{$style} .pc_featured-products__body-link {";
+					$css .= "body.{$style} .pc_featured-products__body-link {";
 
 						$css .= $font[1] ? $font[1]:'';
 
@@ -1532,28 +1532,28 @@ class ProductPage extends StylingCard {
 				$link_hover_color = get_sub_field( 'link_hover_color' );
 				$link_visited_color = get_sub_field( 'link_visited_color' );
 
-				$css .= $link_color ? "html.{$style} .styles .site-inner .content .product_content_wrapper a,html.{$style} .site-inner .content .product_content_wrapper a {color: {$link_color};}" : '';
+				$css .= $link_color ? "body.{$style} .styles .site-inner .content .product_content_wrapper a,body.{$style} .site-inner .content .product_content_wrapper a {color: {$link_color};}" : '';
 
 				if ( $link_hover_color ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper a:hover, html.{$style} .styles .site-inner .content .product_content_wrapper a:focus, html.{$style} .styles .site-inner .content .product_content_wrapper a:active, html.{$style} .site-inner .content .product_content_wrapper a:hover, html.{$style} .site-inner .content .product_content_wrapper a:focus, html.{$style} .site-inner .content .product_content_wrapper a:active{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper a:hover, body.{$style} .styles .site-inner .content .product_content_wrapper a:focus, body.{$style} .styles .site-inner .content .product_content_wrapper a:active, body.{$style} .site-inner .content .product_content_wrapper a:hover, body.{$style} .site-inner .content .product_content_wrapper a:focus, body.{$style} .site-inner .content .product_content_wrapper a:active{";
 						$css .= "color:{$link_hover_color};";
 					$css .= '}';
 				} 
 
-				$css .= "html.{$style} .primary_content_headline_details_options li i {";
+				$css .= "body.{$style} .primary_content_headline_details_options li i {";
 
 					$css .= "color: {$link_color};";
 
 				$css .= "}";
 
-				$css .= "html.{$style} .pc_featured-products-carousel li.slick-active {";
+				$css .= "body.{$style} .pc_featured-products-carousel li.slick-active {";
 
 					$css .= "background-color: {$link_color};";
 
 				$css .= "}";
 
 				if ( $link_visited_color ) {
-					$css .= "html.{$style} .styles .site-inner .content .product_content_wrapper a:visited, html.{$style} .site-inner .content .product_content_wrapper a:visited{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper a:visited, body.{$style} .site-inner .content .product_content_wrapper a:visited{";
 						$css .= "color:{$link_visited_color};";
 					$css .= '}';
 				} 
@@ -1562,13 +1562,13 @@ class ProductPage extends StylingCard {
 				$book_now_bg_h = get_sub_field( 'bkn_background-color_h' );
 
 				if ( $book_now_bg ) {
-					$css .= "html.{$style} .book-btn2-product-title{";
+					$css .= "body.{$style} .book-btn2-product-title{";
 						$css .= "background-color:{$book_now_bg};";
 					$css .= '}';
 				}
 
 				if ( $book_now_bg_h ) {
-					$css .= "html.{$style} .book-btn2-product-title:hover{";
+					$css .= "body.{$style} .book-btn2-product-title:hover{";
 						$css .= "background-color:{$book_now_bg_h};";
 					$css .= '}';
 				}
@@ -1578,7 +1578,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $sidebar_headline ) {
-					$css .= "html.{$style} .book-tour-title_product{";
+					$css .= "body.{$style} .book-tour-title_product{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$sidebar_headline['text-color']};";
@@ -1590,33 +1590,33 @@ class ProductPage extends StylingCard {
 				$is_sidebar_border = get_sub_field( 'is-sidebar-border' );
 
 				if ( $siidb_icon_color ) {
-					$css .= "html.{$style} .reason_to_book_label .fa-certificate{";
+					$css .= "body.{$style} .reason_to_book_label .fa-certificate{";
 
 						$css .= "color:{$siidb_icon_color};";
 
 					$css .= '}';
 
 					if ( $is_sidebar_border ) :
-						$css .= "html.{$style} .book-tour-wrapper_product_row {";
+						$css .= "body.{$style} .book-tour-wrapper_product_row {";
 
 							$css .= "border-color: {$siidb_icon_color};";
 
 						$css .= "}";
 					elseif ( ! $is_sidebar_border ) :
-						$css .= "html.{$style} .book-tour-wrapper_product_row {";
+						$css .= "body.{$style} .book-tour-wrapper_product_row {";
 
 							$css .= "border: none;";
 
 						$css .= "}";
 					endif;
 
-					$css .= "html.{$style} .sidebar_phone_row .phone_number span {";
+					$css .= "body.{$style} .sidebar_phone_row .phone_number span {";
 
 						$css .= "color: {$siidb_icon_color};";
 
 					$css .= "}";
 
-					$css .= "html.{$style} .sidebar_phone_row .phone_number .fa-phone {";
+					$css .= "body.{$style} .sidebar_phone_row .phone_number .fa-phone {";
 
 						$css .= "color: {$siidb_icon_color};";
 
