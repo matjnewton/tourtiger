@@ -61,24 +61,24 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 									}).animate({
 										'top': (globalHeight / 2) - (height / 2),
 										'left': (globalWidth / 2) - (width / 2),
-									}, 500, function(){
-										$image.hide();
+									}, 300, function(){
+										$image.fadeOut(500);
 
 										$carousel
 										.css({
 											'display': 'flex',
+										})
+										.animate({
 											'opacity': '1'
-										})
+										}, 300)
 										.find('.slider-pro__slider')
-										.css({
-											'height': height
-										})
 										.slick({
 											prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
 											nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
 											adaptiveHeight: true,
 											lazyLoad: 'progressive',
-										});
+										})
+										.slick('setOption', 'height', null, true);
 									});
 								});
 
@@ -101,7 +101,7 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 									.animate({
 										'top': coverTop,
 										'left': coverLeft,
-									}, 500, function(){
+									}, 300, function(){
 										$image.css({
 											'position': 'static',
 										});
@@ -110,9 +110,9 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 
 									$carousel
 									.hide()
-									.css({
+									.animate({
 										'opacity': '0'
-									})
+									}, 300)
 									.find('.slider-pro__slider')
 									.slick('unslick');
 								});

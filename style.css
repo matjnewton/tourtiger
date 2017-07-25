@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.1.2215
+Version: 0.1.2216
 Template: genesis
 Template Version: 2.0.25
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -241,7 +241,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	left: 0;
 	bottom: 0;
 	padding: 15px 30px;
-	background-color: rgba(0,0,0,.20);
+	background-color: rgba(0,0,0,.6);
 	text-align: center;
 }
 .slider-pro--panel__btn {
@@ -261,7 +261,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-color: rgba(0,0,0,.2);
+	background-color: rgba(0,0,0,.7);
 	z-index: 999999;	
 	align-items: center;
 	opacity: 0;
@@ -279,8 +279,8 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	height: 100%;
 	border: none;
 	width: 10vw;
-	background-color: rgba(0,0,0,.3);
-	opacity: .3;
+	background: rgba(0,0,0,.5) center center no-repeat;
+	opacity: .2;
 	transition: ease .3s;
 }
 .slider-pro__arrow:hover {
@@ -290,10 +290,13 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 
 .slider-pro__prev {
 	left: 0;
+	background-image: url(includes/primary-content/assets/img/slider/arrow-left.png);
+	
 }
 
 .slider-pro__next {
 	right: 0;
+	background-image: url(includes/primary-content/assets/img/slider/arrow-right.png);
 }
 
 .slider-pro__close-link {
