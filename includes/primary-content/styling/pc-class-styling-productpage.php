@@ -1231,7 +1231,7 @@ class ProductPage extends StylingCard {
 				$background_color = get_sub_field( 'background-color' );
 
 				if ( $background_color ) {
-					$css .= "body.{$style} .single-product .site-inner .content, body.{$style} .single-product, .site-container .site-header .header-bar-wrapper {background:{$background_color}!important;}";
+					$css .= "body.{$style}.single-product .site-inner .content, body.{$style}.single-product, .site-container .site-header .header-bar-wrapper {background:{$background_color}!important;}";
 					$css .= "body.{$style} body.custom-background.single-product {background-color:{$background_color}!important;}";
 				}
 
@@ -1239,7 +1239,7 @@ class ProductPage extends StylingCard {
 				$background_repeat = get_sub_field( 'background-repeat' ) ? 'repeat' : 'no-repeat';
 
 				if ( $background_texture ) {
-					$css .= "body.{$style} .single-product .site-inner .content {";
+					$css .= "body.{$style}.single-product .site-inner .content {";
 						$css .= "background-image: url({$background_texture['url']});";
 						$css .= "background-repeat: {$background_repeat};";
 					$css .= '}';
@@ -1382,7 +1382,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_hightlights || $font ) {
-					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, body.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, body.{$style} body.single.single-product .site-container .site-inner .primary_content_highlights .highlights_options span, body.{$style} .reason_to_book_label span, body.{$style} .site-inner .content .sidebar_links_options a, body.{$style} .reason_to_book_label span {";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, body.{$style} .site-inner .content .product_content_wrapper.primary_content_special_content.customstyle span, body.{$style}.single-product .site-container .site-inner .primary_content_highlights .highlights_options span, body.{$style} .reason_to_book_label span, body.{$style} .site-inner .content .sidebar_links_options a, body.{$style} .reason_to_book_label span {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_pa_content['text-color']};";

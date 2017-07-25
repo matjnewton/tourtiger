@@ -30,21 +30,91 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 					<script>
 						!(function($){
 							$(function(){
-								$('.slider-pro--panel__btn').on('click', function(){
-									var $self     = $(this);
-									var $slider   = $self.closest('.slider-pro');
-									var $carousel = $slider.find('.slider-pro__carousel');
 
-									$carousel.css({
+								/**
+								 * Init slick carousel
+								 */
+								$('.slider-pro--panel__btn').on('click', function(){
+									var $self         = $(this);
+									var $wrapper      = $self.closest('.slider-pro');
+									var $image        = $wrapper.find('.slider-pro--preview__image');
+									var width         = $image.width();
+									var height        = $image.height();
+									var $carousel     = $wrapper.find('.slider-pro__carousel');
+									var $cover        = $wrapper.find('.slider-pro__cover');
+									var $panel        = $wrapper.find('.slider-pro--panel');
+
+									var globalWidth   = $(window).width();
+									var globalHeight  = $(window).height();
+
+									$cover.width(width).height(height);
+									$panel.hide();
+
+									var coverTop  = $cover.offset().top - $(window).scrollTop();
+									var coverLeft = $cover.offset().left;
+
+									$image.css({
 										'position': 'fixed',
-										'top': '50%',
-										'left': '0',
-										'width': '100%',
-										'height': '500px',
-										'background-color': 'yellow',
-										'z-index': '999999',
-										'transform': 'translateY(-50%)'
-									}).fadeIn(1000);
+										'z-index': '9999',
+										'top': coverTop,
+										'left': coverLeft,
+									}).animate({
+										'top': (globalHeight / 2) - (height / 2),
+										'left': (globalWidth / 2) - (width / 2),
+									}, 500, function(){
+										$image.hide();
+
+										$carousel
+										.css({
+											'display': 'flex',
+											'opacity': '1'
+										})
+										.find('.slider-pro__slider')
+										.css({
+											'height': height
+										})
+										.slick({
+											prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
+											nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
+											adaptiveHeight: true,
+											lazyLoad: 'progressive',
+										});
+									});
+								});
+
+								/**
+								 * Close carousel
+								 */
+								$('.slider-pro__close-link').on('click', function(){
+									var $self         = $(this);
+									var $wrapper      = $self.closest('.slider-pro');
+									var $image        = $wrapper.find('.slider-pro--preview__image');
+									var $carousel     = $wrapper.find('.slider-pro__carousel');
+									var $cover        = $wrapper.find('.slider-pro__cover');
+									var $panel        = $wrapper.find('.slider-pro--panel');
+
+									var coverTop  = $cover.offset().top - $(window).scrollTop();
+									var coverLeft = $cover.offset().left;
+
+									$image
+									.show()
+									.animate({
+										'top': coverTop,
+										'left': coverLeft,
+									}, 500, function(){
+										$image.css({
+											'position': 'static',
+										});
+										$panel.show();
+									});
+
+									$carousel
+									.hide()
+									.css({
+										'opacity': '0'
+									})
+									.find('.slider-pro__slider')
+									.slick('unslick');
 								});
 							});
 						})(jQuery);
@@ -53,13 +123,25 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 					<div class="slider-pro">
 						<div class="slider-pro__cover">
 							<div class="slider-pro--preview">
-								<img src="http://placehold.it/757x484" alt="" class="slider-pro--preview__image">
+								<div class="slider-pro--preview__image">
+									<img src="<?=$slides_images[0]['url'];?>" alt="">
+								</div>
 							</div>
 							<div class="slider-pro--panel">
 								<a href="javascript:" class="slider-pro--panel__btn"><?=$label;?></a>
 							</div>
 						</div>
-						<div class="slider-pro__carousel"></div>
+						<div class="slider-pro__carousel" style="display:none;">
+							<a href="javascript:" class="slider-pro__close-link"></a>
+							<div class="slider-pro__slider">
+								<?php 
+								foreach ( $slides_images as $key => $slides_image ) :
+									$image = "<img data-lazy='{$slides_image['url']}' alt='' />";
+									echo "<div><div class='slider-pro__item'>{$image}</div></div>";
+								endforeach; 
+								?>
+							</div>
+						</div>
 					</div>
 
 					<?php
@@ -80,6 +162,8 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 							endforeach; 
 							?>
 						</ul>
+
+
 
 						<ul 
 							class="js-navigated-gallery__navigation js-nav-<?=$gallery_id;?>"
