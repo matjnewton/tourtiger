@@ -253,7 +253,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 100%;
-	height: 100%;
+	height: auto;
 }
 .slider-pro__carousel {
 	position: fixed;
@@ -280,6 +280,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	border: none;
 	width: 10vw;
 	background: rgba(0,0,0,.5) center center no-repeat;
+	background-size: 20%;
 	opacity: .2;
 	transition: ease .3s;
 }
@@ -317,6 +318,21 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	left: 50%;
 	width: 100%;
 	border-top: 3px solid #fff;
+}
+
+@media (max-width: 768px) {
+    .slider-pro__close-link:before,
+    .slider-pro__close-link:after {
+        display: none;
+    }  
+
+    .slider-pro__close-link {
+        top: 0;
+        right: auto;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .slider-pro__close-link:before {
