@@ -36,7 +36,7 @@ function tourtiger_archive() {
                  * Put class accordin to chosen layout
                  */
                 if ( 'content-sidebar' == $site_layout ) : 
-                    $div_class = 'col-sm-8'; 
+                    $div_class = 'col-sm-12 col-md-10 col-lg-8'; 
                 elseif ( 'full-width-content' == $site_layout ) :
                     $div_class = 'col-sm-12';
                 endif;
