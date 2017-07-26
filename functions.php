@@ -1695,16 +1695,24 @@ function add_noindex_metatag(){
 add_action('wp_head', 'add_noindex_metatag');
 
 
-function set_productpage_stylesclass($classes) {
+function set_styling_class($classes) {
 	global $post;
 
 	if ( is_singular( 'product' ) && get_field( 'is_dzv_prodpage_style' ) ) : 
 		$classes[] = get_field( 'dzv_prodpage_style' );
 	endif;
+	
+	if ( is_singular( 'testimonial' ) && get_field('is-style') ) : 
+	    $classes[] = get_field( 'testimonial-style' );
+	endif;
+	
+	if ( is_page_template( 'page-templates/testimonials.php' ) && get_field('is_dzv_teti_style') ) : 
+	    $classes[] = get_field( 'dzv_teti_style' );
+	endif;
 
 	return $classes;
 }
-add_filter('body_class', 'set_productpage_stylesclass');
+add_filter('body_class', 'set_styling_class');
 
 
 

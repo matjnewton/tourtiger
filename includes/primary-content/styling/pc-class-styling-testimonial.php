@@ -257,7 +257,7 @@ class Testimonial extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font ) {
-					$css .= "html.{$style} .dz-testimonial__quote {";
+					$css .= "body.{$style} .dz-testimonial__quote {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= get_sub_field( 'quote_color' ) ? 'color:' . get_sub_field( 'quote_color' ) . ';':'';
@@ -269,7 +269,7 @@ class Testimonial extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font ) {
-					$css .= "html.{$style} .dz-testimonial__excerpt {";
+					$css .= "body.{$style} .dz-testimonial__excerpt {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= get_sub_field( 'excerpt_color' ) ? 'color:' . get_sub_field( 'excerpt_color' ) . ';':'';
@@ -281,7 +281,7 @@ class Testimonial extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font ) {
-					$css .= "html.{$style} body .site-inner .content .dz-testimonial__full > *, html.{$style} body .site-inner .content .dz-testimonial__full > p, html.{$style} body .site-inner .content .dz-testimonial__full {";
+					$css .= "body.{$style} body .site-inner .content .dz-testimonial__full > *, body.{$style} body .site-inner .content .dz-testimonial__full > p, body.{$style} body .site-inner .content .dz-testimonial__full {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= get_sub_field( 'full_color' ) ? 'color:' . get_sub_field( 'full_color' ) . '!important;':'';
@@ -293,7 +293,7 @@ class Testimonial extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font ) {
-					$css .= "html.{$style} .dz-testimonial__author, html.{$style} .site-inner .archive-pagination li.active a {";
+					$css .= "body.{$style} .dz-testimonial__author, body.{$style} .site-inner .archive-pagination li.active a {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= get_sub_field( 'author_color' ) ? 'color:' . get_sub_field( 'author_color' ) . ';':'';

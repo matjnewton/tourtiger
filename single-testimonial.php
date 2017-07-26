@@ -28,16 +28,6 @@ function tourtiger_sub_contents(){ ?>
                      */
                     if ( get_field( 'is-style' ) ) :
                         echo Testimonial::get_styles( get_field( 'testimonial-style' ) );
-                        ?>
-                            <script>
-                                ;(function($){
-                                    $(function(){
-                                        $('html').addClass('<?php the_field( 'testimonial-style' ); ?>');
-                                    });
-                                })(jQuery);
-                            </script>
-                
-                        <?php
                     endif;
                     ?>
 

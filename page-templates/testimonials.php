@@ -15,16 +15,6 @@ function tourtiger_archive() {
      */
     if ( get_field( 'is_dzv_teti_style' ) ) :
         echo Testimonial::get_styles( get_field( 'dzv_teti_style' ) );
-        ?>
-            <script>
-                ;(function($){
-                    $(function(){
-                        $('html').addClass('<?php the_field( 'dzv_teti_style' ); ?>');
-                    });
-                })(jQuery);
-            </script>
-
-        <?php
     endif;
     ?>
 
