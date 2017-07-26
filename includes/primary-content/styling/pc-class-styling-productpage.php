@@ -1270,7 +1270,7 @@ class ProductPage extends StylingCard {
 
 				if ( $background_texture ) {
 					$css .= "body.{$style}.single-product .site-inner .content {";
-						$css .= "background-image: url({$background_texture['url']});";
+						$css .= "background-image: url({$background_texture['url']})!important;";
 						$css .= "background-repeat: {$background_repeat};";
 					$css .= '}';
 				}
@@ -1383,7 +1383,7 @@ class ProductPage extends StylingCard {
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_h_sub ) {
-						$css .= "body.{$style} .styles .content h{$i}.primary_content_subhead.customstyle, body.{$style} .content h{$i}.primary_content_subhead.customstyle{";
+						$css .= "body.{$style} .styles .content h{$i}.primary_content_subhead, body.{$style} .content h{$i}.primary_content_subhead{";
 
 							$css .= $font[1] ? $font[1]:'';
 							$css .= "color: {$font_style_h_sub['text-color']};";
