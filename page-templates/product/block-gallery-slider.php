@@ -35,6 +35,8 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 								 * Init slick carousel
 								 */
 								$('.slider-pro--panel__btn').on('click', function(){
+								    
+								    // Set DOM elements to the variables
 									var $self         = $(this);
 									var $wrapper      = $self.closest('.slider-pro');
 									var $image        = $wrapper.find('.slider-pro--preview__image');
@@ -44,12 +46,21 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 									var $cover        = $wrapper.find('.slider-pro__cover');
 									var $panel        = $wrapper.find('.slider-pro--panel');
 
+                                    // Core values
 									var globalWidth   = $(window).width();
 									var globalHeight  = $(window).height();
 
-									$cover.width(width).height(height);
+                                    // Set width and height values to cover area and image
+									$cover
+									.width(width)
+									.height(height)
+									.find('img')
+									.width(width)
+									.height(height);
+									
 									$panel.hide();
 
+                                    // Get cover coordinates relative to the window
 									var coverTop  = $cover.offset().top - $(window).scrollTop();
 									var coverLeft = $cover.offset().left;
 
