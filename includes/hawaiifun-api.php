@@ -362,111 +362,71 @@ function hawaiifunapi_form(){
 		case 8077:
 			$html = "
 				<form id=\"hawaiifun\" class=\"GroupsForm_40e9607c pc--form hawaiifun--popup\">
-					<p><select class=\"groupSelect\" onchange=\"activitySwitch_applyGroup(groups_40e9607c_contextData)\">
-					      <option value=\"a4045\">Gift Flight Ticket</option>
-					    </select></p>
-					<p><span style=\"margin-right:10px;\">Activity Date</span><input id=\"input_groups_40e9607c_date\" onclick=\"showAvailabilityCalendar2(activitySwitch_getActivityId(groups_40e9607c_contextData), 'input_groups_40e9607c_date', { local: false, webBooking: true });\" readonly=\"readonly\" size=\"15\" /></p>
-
-
-				  <p>
-				    <span class=\"guestTypeContainer gt1594\"><span style=\"margin-right:10px;\">Shared Basket (non private)</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" /><select class=\"guestCountSelect\" style=\"display: none;\">
-				        <option value=\"0\">0</option>
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-				        <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				        <option value=\"9\">9</option>
-				        <option value=\"10\">10</option></select></span>
-				  </p>
-				  <p>
-				    <span class=\"guestTypeContainer gt1595\">
-				    	<span style=\"margin-right:10px;\">Private Basket 2-5 Passengers</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" /><select class=\"guestCountSelect\" style=\"display: none;\">
-				        <option value=\"0\">0</option>
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-				        <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				        <option value=\"9\">9</option>
-				        <option value=\"10\">10</option>
-				      </select>
-				    </span>
-				  </p>
-				  <p>
-				    <span class=\"guestTypeContainer gt1651\" style=\"display: none;\"><span style=\"margin-right:10px;\">Private Basket 6-8 Passengers</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
-				        <option value=\"0\">0</option>
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-				        <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				        <option value=\"9\">9</option>
-				        <option value=\"10\">10</option>
-				      </select></span>
-				  </p>
-				  <p><span class=\"guestTypeContainer gt1597\" style=\"display: none;\"><span style=\"margin-right:10px;\">Private Basket 9-11 Passengers</span>
-				      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" />
-				      <select class=\"guestCountSelect\" style=\"display: none;\">
-				        <option value=\"0\">0</option>
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-				        <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				        <option value=\"9\">9</option>
-				        <option value=\"10\">10</option></select></span>
-				  </p>
-				  <p>
-				    <span class=\"guestTypeContainer gt1941\" style=\"display: none;\">
-				        <span style=\"margin-right:10px;\">Private Basket 12-14 Passengers</span><input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
-				        <option value=\"0\">0</option>
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-				        <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				        <option value=\"9\">9</option>
-				        <option value=\"10\">10</option></select></span>
-				  </p>
-				  <p>
-				    <span class=\"guestTypeContainer gt2701\" style=\"display: none;\"><span style=\"margin-right:10px;\">SB Flight and Wine Tasting (non-private)</span>
-				      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" /><select class=\"guestCountSelect\" style=\"display: none;\">
-				        <option value=\"0\">0</option>
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-				        <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				        <option value=\"9\">9</option>
-				        <option value=\"10\">10</option></select></span>
-				</p>
-				<p style=\"display: none;\">
-				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_40e9607c_contextData);</script>
-				  <input checked style=\"display: none;margin-right:10px;\" type=\"checkbox\" id=\"chk_groups_40e9607c_cancellationPolicy\"/><label style=\"display:inline;\" for=\"chk_groups_40e9607c_cancellationPolicy\">Our cancellation policy is 48 hours prior to the flight date for a non private basket and 7 days prior for all private flights and group bookings. This includes flight with wine tasting tour.</label>
-				</p>
-				<p>
-				  <input type=\"button\" value=\"BUY NOW\" onclick=\"if (!checkcancellation(jQuery('#chk_groups_40e9607c_cancellationPolicy').get(0))) return false;  var selectedActivityId = activitySwitch_getActivityId(groups_40e9607c_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_40e9607c_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_40e9607c_contextData)) return false;      availability_popup(); return false;\" />
-				</p>
-				</form>
+                    <p>
+                        Shared Basket (non private)
+                        <select id='guests_a4045_t1594'>
+                          <option value='0'>0</option>
+                          <option value='1'>1</option>
+                          <option value='2'>2</option>
+                          <option value='3'>3</option>
+                          <option value='4'>4</option>
+                          <option value='5'>5</option>
+                          <option value='6'>6</option>
+                          <option value='7'>7</option>
+                          <option value='8'>8</option>
+                          <option value='9'>9</option>
+                          <option value='10'>10</option>
+                          <option value='11'>11</option>
+                          <option value='12'>12</option>
+                          <option value='13'>13</option>
+                          <option value='14'>14</option>
+                          <option value='15'>15</option>
+                          <option value='16'>16</option>
+                          <option value='17'>17</option>
+                          <option value='18'>18</option>
+                          <option value='19'>19</option>
+                          <option value='20'>20</option>
+                        </select>
+                    </p>
+                    <p>
+                        Private Basket 2-5 Passengers
+                        <select id='guests_a4045_t1595'>
+                          <option value='0'>0</option>
+                          <option value='1'>1</option>
+                          <option value='2'>2</option>
+                          <option value='3'>3</option>
+                          <option value='4'>4</option>
+                          <option value='5'>5</option>
+                          <option value='6'>6</option>
+                          <option value='7'>7</option>
+                          <option value='8'>8</option>
+                          <option value='9'>9</option>
+                          <option value='10'>10</option>
+                          <option value='11'>11</option>
+                          <option value='12'>12</option>
+                          <option value='13'>13</option>
+                          <option value='14'>14</option>
+                          <option value='15'>15</option>
+                          <option value='16'>16</option>
+                          <option value='17'>17</option>
+                          <option value='18'>18</option>
+                          <option value='19'>19</option>
+                          <option value='20'>20</option>
+                        </select>
+                    </p>
+                    <h5>Upgrades:</h5>
+                    <p>
+                        Add Complimentary Anniversary Banner
+                        <input type=\"text\" id=\"upgrades_a4045_u1902\" value=\"0\" size=\"2\" />
+                    </p>
+                    <p>
+                        Add Complimentary Happy Birthday Banner
+                        <input type=\"text\" id=\"upgrades_a4045_u1901\" value=\"0\" size=\"2\" />
+                    </p>
+                    <p>
+                        <input type=\"button\" value=\"Purchase\" onclick=\"reservation2('4045', 4045, undefined, '', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0); setGiftCertificate(); addGuests(1594, document.getElementById('guests_a4045_t1594').value); addGuests(1595, document.getElementById('guests_a4045_t1595').value); addUpgrades(1902, document.getElementById('upgrades_a4045_u1902').value); addUpgrades(1901, document.getElementById('upgrades_a4045_u1901').value); setUpgradesFixed(); setAccommodationFixed();  availability_popup(); return false;\" />
+                    </p>
+                </form>
 			";
 			break;
 
