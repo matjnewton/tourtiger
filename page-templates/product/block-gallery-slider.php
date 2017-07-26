@@ -34,7 +34,7 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 								/**
 								 * Init slick carousel
 								 */
-								$('.slider-pro--panel__btn').on('click', function(){
+								$('.slider-pro--preview').on('click', function(){
 								    
 								    // Set DOM elements to the variables
 									var $self         = $(this);
@@ -133,13 +133,13 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 
 					<div class="slider-pro">
 						<div class="slider-pro__cover">
-							<div class="slider-pro--preview">
+							<a href="javascript:" class="slider-pro--preview">
 								<div class="slider-pro--preview__image">
 									<img src="<?=$slides_images[0]['url'];?>" alt="">
 								</div>
-							</div>
+							</a>
 							<div class="slider-pro--panel">
-								<a href="javascript:" class="slider-pro--panel__btn"><?=$label;?></a>
+								<span class="slider-pro--panel__btn"><?=$label;?></span>
 							</div>
 						</div>
 						<div class="slider-pro__carousel" style="display:none;">
