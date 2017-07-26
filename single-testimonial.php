@@ -15,15 +15,33 @@
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_sub_contents');
 function tourtiger_sub_contents(){ ?>
-<?php $site_layout = genesis_site_layout(); ?> 
+<?php $site_layout = genesis_site_layout();
+
+    /**
+     * Include additional styles
+     */
+    if ( get_field( 'is_dzv_teti_style' ) ) :
+        echo Testimonial::get_styles( get_field( 'dzv_teti_style' ) );
+        ?>
+            <script>
+                ;(function($){
+                    $(function(){
+                        $('html').addClass('<?php the_field( 'dzv_teti_style' ); ?>');
+                    });
+                })(jQuery);
+            </script>
+
+        <?php
+    endif;
+    ?> 
         
-<section class="tour-page-content">
+<section class="tour-page-content testimonials">
         <div class="container">
             <div class="row">
-                <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?> blog-left-col">
+                <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-12 col-md-offset-2 col-md-8<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?> blog-left-col">
                     <?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php get_template_part( 'content', 'testimonial' ); ?>
+                    <?php get_template_part( 'content', 'tstmls' ); ?>
                             
                     <?php endwhile; // end of the loop. ?>
                 </div>
