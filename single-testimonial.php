@@ -26,7 +26,7 @@ function tourtiger_sub_contents(){ ?>
                     /**
                      * Include additional styles
                      */
-                    if ( get_field( 'is-style'' ) ) :
+                    if ( get_field( 'is-style' ) ) :
                         echo Testimonial::get_styles( get_field( 'testimonial-style' ) );
                         ?>
                             <script>
