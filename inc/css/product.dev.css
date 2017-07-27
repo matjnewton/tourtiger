@@ -1164,6 +1164,7 @@ line-height: 40px;
     right: 20px;
     color: #f3b04a;
     font-size: 18px;
+    pointer-events: none;
 }
 /*.datepicker,
 .table-condensed {
