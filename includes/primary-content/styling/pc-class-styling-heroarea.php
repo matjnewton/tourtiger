@@ -46,6 +46,13 @@ class HeroArea extends StylingCard {
 					'placement' => 'left',
 					'endpoint' => 0,
 				),
+				array (
+					'key' => $this->slug . $i . '_ihightlight01',
+					'label' => 'Hightlight color',
+					'name' => 'hightlight_1',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
 
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8bfi-h1',
@@ -1396,6 +1403,13 @@ class HeroArea extends StylingCard {
 					'placement' => 'left',
 					'endpoint' => 0,
 				),
+				array (
+					'key' => $this->slug . $i . '_ihightlight02',
+					'label' => 'Hightlight color',
+					'name' => 'hightlight_2',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
 
 				array (
 					'key' => $this->slug . $i . '_5836cbfcf8bse-h1',
@@ -2745,6 +2759,13 @@ class HeroArea extends StylingCard {
 					),
 					'placement' => 'left',
 					'endpoint' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_ihightlight03',
+					'label' => 'Hightlight color',
+					'name' => 'hightlight_3',
+					'type' => 'rgba_color',
+					'required' => 0,
 				),
 
 				array (
