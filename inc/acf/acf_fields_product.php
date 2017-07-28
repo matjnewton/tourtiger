@@ -1632,21 +1632,6 @@ acf_add_local_field_group(array (
 										'width' => '80',
 									),
 								),
-
-								array (
-									'key' => 'field_53a3772d7f080_maingallery_slides_test',
-									'label' => 'New design',
-									'name' => 'new_design',
-									'type' => 'true_false',
-									'instructions' => '',
-									'required' => 0,
-									'conditional_logic' => 0,
-									'wrapper' => array (
-										'width' => '20',
-									),
-									'message' => 'Enable',
-									'default_value' => 0,
-								),
 							),//end subfield maingallery
 						), 
 					),
