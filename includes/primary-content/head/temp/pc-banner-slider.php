@@ -2,7 +2,7 @@
     <?php 
     $images = get_sub_field('pc_hero_slides');    
     if( $images ) : ?>
-        <div id="slider" class="flexslider">
+        <div id="slider">
             <ul class="slides">
 
                 <?php 
