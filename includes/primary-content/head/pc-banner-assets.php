@@ -19,21 +19,16 @@ if ( have_rows( $ha_style, 'option' ) ) :
                 if ( $title[$ii] ) {
                     $color = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_color' );
                     $shadow = get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] . '_shadow' );
+                    $hightlight = get_sub_field( 'hightlight_' . $ii );
                     $tag_full = '.' . $ha_style . ' #pc_hero-area .hero-area_title-' . $ii;
 
                     $css = pc_init_font_css( get_sub_field( 'ha_style__headline-' . $ii . '-' . $tag[$ii] ) );
                     $css[1] .= $color ? 'color:' . $color . ';' : '';
                     $css[1] .= $shadow ? 'text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);' : '';
+                    $css[1] .= $hightlight ? 'background:' . $hightlight . ';display: inline-block;width: auto;padding: 3px;line-height: 1;' : '';
 
                     echo $css[0];
                     echo $tag_full . '{' . $css[1] . '}';
-
-                    // Hightlight
-                    $hightlight = get_sub_field( 'hightlight_' . $ii );
-                    if ( $hightlight ) :
-                        echo $tag_full . '::-moz-selection{ background:' . $hightlight . ';}';
-                        echo $tag_full . '::selection{ background:' . $hightlight . ';}';
-                    endif;
 
                     /**
                      * Media queries
