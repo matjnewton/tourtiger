@@ -6,7 +6,7 @@
 /**
  * Check whether there are any blocks
  */
-if ( have_rows( 'sidebar_blocks' ) ) :
+if ( have_rows( 'widgets' ) ) :
 	?>
 
 	<div class="product-sidebar">
@@ -15,45 +15,32 @@ if ( have_rows( 'sidebar_blocks' ) ) :
 		/**
 		 * Loop blocks
 		 */
-		while ( have_rows( 'sidebar_blocks' ) ) :
+		while ( have_rows( 'widgets' ) ) :
 			the_row();
+			$layout = get_row_layout();
 
-			/**
-			 * Check whether current sidear block 
-			 * has any content fields
-			 */
-			if ( have_rows( 'content' ) ) :
-				?>
-		
-				<div class="product-sidebar--block">
-					
-					<?php
-					/**
-					 * Loop block's components
-					 */
-					while ( have_rows( 'content' ) ) :
-						the_row();
-						$layout = get_row_layout();
-						?>
+			if ( $layout == 'widget' ) :
 
-						<div class="product-sidebar--block__item">
+				include get_stylesheet_directory() . '/partials/component-widget.php';
 
-							<?php
-							/**
-							 * Get component
-							 */
-							get_template_part( 'partials/sidebar', $layout );
-							?>
+			elseif ( $layout == 'sidebar-widget-template' ) :
 
-						</div>
+				$object = get_sub_field( 'sidebar-widget-id' );
+				if ( $object ) : 
+					// override $post
+					$post = $object;
+					setup_postdata( $post );
 
-						<?php
-					endwhile;
-					?>
+					if ( have_rows( 'components', $post->ID ) ) :
+						while ( have_rows( 'components', $post->ID ) ) :
+							the_row();
 
-				</div>
+							include get_stylesheet_directory() . '/partials/component-widget.php';
+						endwhile;
+					endif;
 
-				<?php
+					wp_reset_postdata();
+				endif;
 			endif;
 		endwhile;
 		?>

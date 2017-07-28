@@ -1,6 +1,679 @@
 <?php 
 // acf field for product
 
+
+
+
+/**
+ * Generates headline local fields array
+ */
+function get_headline_local_field( $id = '1234QWERasdf' ) {
+	return array (
+		array (
+			'key' => $id . '_T121zN1cd48f3',
+			'label' => 'Content',
+			'name' => 'tab_content',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+		array (
+			'key' => $id . '_N121zN1cd48f3',
+			'label' => 'Text',
+			'name' => 'text',
+			'type' => 'text',
+			'required' => 0,
+			'wrapper' => array (
+				'width' => '75',
+			),
+		),
+		array (
+			'key' => $id . '_N121zN1cd48f1',
+			'label' => 'Tag',
+			'name' => 'tag',
+			'type' => 'select',
+			'required' => 0,
+			'wrapper' => array (
+				'width' => '25'
+			),
+			'choices' => array (
+				'p'  => 'Paragraf',
+				'h1' => 'H1',
+				'h2' => 'H2',
+				'h3' => 'H3',
+				'h4' => 'H4',
+				'h5' => 'H5',
+				'h6' => 'H6',
+			),
+			'allow_null' => 0,
+		),
+		array (
+			'key' => $id . '_T221zN1cd48f3',
+			'label' => 'Settings',
+			'name' => 'tab_settings',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+		array (
+			'key' => $id . '_T2MtzN1cd48f3',
+			'label' => 'Margin top',
+			'name' => 'margin_top',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100'
+		),
+		array (
+			'key' => $id . '_T2MbzN1cd48f3',
+			'label' => 'Margin bottom',
+			'name' => 'margin_bottom',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100'
+		),
+		array (
+			'key' => $id . '_N121zN1cd48f4',
+			'label' => 'Alignment',
+			'name' => 'align',
+			'type' => 'select',
+			'required' => 0,
+			'wrapper' => array (
+				'width' => '25'
+			),
+			'choices' => array (
+				'auto'  => 'Auto',
+				'left' => 'Left',
+				'center' => 'Center',
+				'right' => 'Right',
+			),
+			'allow_null' => 0,
+		),
+	);
+}
+
+/**
+ * Generates editor local fields array
+ */
+function get_editor_local_field( $id = '1234QWERasdf' ) {
+	return array (
+		array (
+			'key' => $id . '_T121zN1cd48f4',
+			'label' => 'Content',
+			'name' => 'tab_content',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+		array (
+			'key' => $id . '_N121z7Ocd48f1',
+			'label' => 'Content editor',
+			'name' => 'editor',
+			'type' => 'wysiwyg',
+			'required' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+		),
+		array (
+			'key' => $id . '_T421zN1cd48f3',
+			'label' => 'Settings',
+			'name' => 'tab_settings',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+		array (
+			'key' => $id . '_T4MtzN1cd48f3',
+			'label' => 'Margin top',
+			'name' => 'margin_top',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100'
+		),
+		array (
+			'key' => $id . '_T4MbzN1cd48f3',
+			'label' => 'Margin bottom',
+			'name' => 'margin_bottom',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100'
+		),
+	);
+}
+
+/**
+ * Generates trip details local fields array
+ */
+function get_icons_list_local_field( $id = '1234QWERasdf' ) {
+	return array (
+		array (
+			'key' => $id . '_T9X5HrLiip2h67',
+			'label' => 'Content',
+			'name' => 'tab_content',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+
+		array (
+			'key' => $id . '_TRX5HrLiip2h67',
+			'label' => 'Icons list',
+			'name' => 'icons-list',
+			'type' => 'repeater',
+			'required' => 0,
+			'layout' => 'block',
+			'sub_fields' => array (
+				array(
+					'key'   => $id . '_A2982bc694Cd61',
+					'name'  => 'icon-type',
+					'label' => 'Icon type',
+					'type'  => 'select',
+					'required' => 0,
+					'choices' => array(
+						'checklist' => 'Checklist icon',
+						'custom'    => 'Custom'
+					),
+					'default_value' => 'checklist',
+					'wrapper' => array (
+						'width' => 30
+					)
+				),
+				array (
+					'key' => $id . '_A2981bc664cd61',
+					'label' => 'Icon size',
+					'name' => 'size',
+					'type' => 'number',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => $id . '_A2982bc694Cd61',
+								'operator' => '==',
+								'value' => 'custom'
+							)
+						)
+					),
+					'wrapper' => array (
+						'width' => '20',
+					),
+					'placeholder' => 'inhreit',
+					'append' => 'px',
+					'step' => 1,
+				),
+				array (
+					'key' => $id . '_A2912Cc694Cd49',
+					'label' => 'Use size to text',
+					'name' => 'font_size',
+					'type' => 'true_false',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+					),
+					'message' => 'Yes, use as well',
+					'default_value' => 0,
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd63',
+					'label' => 'Icon',
+					'name' => 'icon',
+					'type' => 'font-awesome',
+					'required' => 0,
+					'wrapper' => array (
+						'width' => '30',
+					),
+					'save_format' => 'class',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => $id . '_A2982bc694Cd61',
+								'operator' => '==',
+								'value' => 'custom'
+							)
+						)
+					)
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd62',
+					'label' => 'Textarea',
+					'name' => 'textarea',
+					'type' => 'text',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '100',
+					)
+				),
+				array(
+					'key'   => $id . '_A2913bc694Cd94',
+					'name'  => 'type',
+					'label' => 'Type',
+					'type'  => 'select',
+					'required' => 0,
+					'choices' => array(
+						'text' => 'Just text',
+						'link' => 'Link',
+						'link-blank' => 'Link in new window',
+						'link-popup' => 'Link in popup',
+					),
+					'default_value' => 'text',
+					'wrapper' => array (
+						'width' => 50
+					)
+				),
+				array(
+					'key'   => $id . '_A291t4c694Cd94',
+					'name'  => 'target',
+					'label' => 'Target',
+					'type'  => 'text',
+					'required' => 0,
+					'wrapper' => array (
+						'width' => 50
+					),
+					'placeholder' => 'https://example.com',
+					'conditional_logic' => array(
+						array (
+							array(
+								'field' => $id . '_A2913bc694Cd94',
+								'operator' => '!=',
+								'value' => 'text'
+							)
+						)
+					)
+				),
+			) 
+		),
+ 
+
+		array (
+			'key' => $id . '_T9H5zULiip28f3',
+			'label' => 'Settings',
+			'name' => 'tab_settings',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+		array (
+			'key' => $id . '_T9HLiiU2ch48f3',
+			'label' => 'Margin top',
+			'name' => 'margin_top',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100'
+		),
+		array (
+			'key' => $id . '_TrLiip21cdh7f3',
+			'label' => 'Margin bottom',
+			'name' => 'margin_bottom',
+			'type' => 'number',
+			'required' => '',
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100',
+			'wrapper' => array (
+				'width' => '25',
+			),
+		),
+		array(
+			'key'   => $id . '_A298lbc694Cd94',
+			'name'  => 'layout',
+			'label' => 'Layout',
+			'type'  => 'select',
+			'required' => 0,
+			'choices' => array(
+				'cols-3' => 'Three columns',
+				'cols-2' => 'Two columns',
+				'cols-1' => 'Single columns'
+			),
+			'default_value' => 'cols-3',
+			'wrapper' => array (
+				'width' => 25
+			),
+		),
+		array(
+			'key'   => $id . '_A298lbc144CО94',
+			'name'  => 'align',
+			'label' => 'Align',
+			'type'  => 'select',
+			'required' => 0,
+			'choices' => array(
+				'left' => 'Left',
+				'center' => 'Center',
+				'right' => 'Right'
+			),
+			'default_value' => 'left',
+			'wrapper' => array (
+				'width' => 25
+			),
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => $id . '_A298lbc694Cd94',
+						'operator' => '==',
+						'value' => 'cols-1'
+					)
+				)
+			)
+		),
+	);
+}
+
+/**
+ * Generates hr local fields array
+ */
+function get_hr_local_field( $id = '1234QWERasdf' ) {
+	return array (
+		array (
+			'key' => $id . '_T9X5zN1cd48f1',
+			'label' => 'Settings',
+			'name' => 'tab_settings',
+			'type' => 'tab',
+			'required' => 0,
+			'placement' => 'top'
+		),
+		array (
+			'key' => $id . '_T9X1zN6cd48f2',
+			'label' => 'Margin top',
+			'name' => 'margin_top',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100'
+		),
+		array (
+			'key' => $id . '_T9X1zN1cd47f4',
+			'label' => 'Margin bottom',
+			'name' => 'margin_bottom',
+			'type' => 'number',
+			'required' => '',
+			'wrapper' => array (
+				'width' => '25',
+			),
+			'placeholder' => '0',
+			'append' => 'px',
+			'min' => '0',
+			'max' => '100',
+			'wrapper' => array (
+				'width' => '25',
+			),
+		),
+		array (
+			'key' => $id . '_AImGW71cd48fw',
+			'label' => 'Width',
+			'name' => 'width',
+			'type' => 'select',
+			'required' => 0,
+			'choices' => array (
+				'auto' => 'Auto',
+				'half' => '50% of container',
+				'full' => 'Full'
+			),
+			'default_value' => 'auto',
+			'wrapper' => array (
+				'width' => '25',
+			),
+		),
+	);
+}
+
+/**
+ * Sidebar widget
+ */
+function get_sidebar_widget_local_field( $id = '1234QWERasdf' ) {
+	return array(
+		array (
+			'key' => $id . '_A2187bc694Cd90',
+			'name' => 'content',
+			'label' => 'Content',
+			'display' => 'block',
+			'sub_fields' => get_editor_local_field( $id ),
+		),
+
+		array (
+			'key' => $id . '_A2982bc694Cd46',
+			'name' => 'button',
+			'label' => 'Button',
+			'display' => 'block',
+			'sub_fields' => array (
+				array (
+					'key' => $id . '_T9X2zN1cd46s3',
+					'label' => 'Content',
+					'name' => 'tab_content',
+					'type' => 'tab',
+					'required' => 0,
+					'placement' => 'top'
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd49',
+					'label' => 'Dropdown',
+					'name' => 'is_dropdown',
+					'type' => 'true_false',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '15',
+					),
+					'message' => 'Yes',
+					'default_value' => 0,
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd47',
+					'label' => 'Label',
+					'name' => 'label',
+					'type' => 'text',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '15',
+					),
+					'placeholder' => 'Book now'
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd48',
+					'label' => 'Action type',
+					'name' => 'type',
+					'type' => 'select',
+					'required' => 0,
+					'wrapper' => array (
+						'width' => '35',
+					),
+					'choices' => array (
+						'link' => 'Link to another page',
+						'iframe-popup' => 'iFrame popup',
+						'form-link' => 'Link to form',
+						'integration' => 'Third party integration',
+					),
+					'default_value' => 'link',
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => $id . '_A2982bc694Cd49',
+								'operator' => '!=',
+								'value' => 1
+							)
+						)
+					),
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd50',
+					'label' => 'Action',
+					'name' => 'action',
+					'type' => 'text',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => $id . '_A2982bc694Cd49',
+								'operator' => '!=',
+								'value' => 1
+							)
+						)
+					),
+					'wrapper' => array (
+						'width' => '35',
+					)
+				),
+				array (
+					'key' => $id . '_A2982bc694Cd51',
+					'label' => 'Dropdown Options',
+					'name' => 'dropdown',
+					'type' => 'repeater',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $id . '_A2982bc694Cd49',
+								'operator' => '==',
+								'value' => 1,
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '70',
+					),
+					'layout' => 'block',
+					'button_label' => 'Add Sub Option',
+					'sub_fields' => array (
+						array (
+							'key' => $id . '_A2982bc694Cd54',
+							'label' => 'Label',
+							'name' => 'label',
+							'type' => 'text',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'placeholder' => 'Option name'
+						),
+						array (
+							'key' => $id . '_A2982bc694Cd55',
+							'label' => 'Action type',
+							'name' => 'type',
+							'type' => 'select',
+							'required' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'choices' => array (
+								'link' => 'Link to another page',
+								'iframe-popup' => 'iFrame popup',
+								'form-link' => 'Link to form',
+								'integration' => 'Third party integration',
+							),
+							'default_value' => 'link',
+						),
+						array (
+							'key' => $id . '_A2982bc694Cd56',
+							'label' => 'Action',
+							'name' => 'action',
+							'type' => 'text',
+							'required' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							)
+						),
+					),
+					'min' => 1
+				),
+
+				array (
+					'key' => $id . '_T9XszN1cd46z3',
+					'label' => 'Settings',
+					'name' => 'tab_settings',
+					'type' => 'tab',
+					'required' => 0,
+					'placement' => 'top'
+				),
+				array (
+					'key' => $id . '_T9X2zN6cd46Y3',
+					'label' => 'Margin top',
+					'name' => 'margin_top',
+					'type' => 'number',
+					'required' => '',
+					'wrapper' => array (
+						'width' => '25',
+					),
+					'placeholder' => '0',
+					'append' => 'px',
+					'min' => '0',
+					'max' => '100'
+				),
+				array (
+					'key' => $id . '_T9X2zN1cd46Y3',
+					'label' => 'Margin bottom',
+					'name' => 'margin_bottom',
+					'type' => 'number',
+					'required' => '',
+					'wrapper' => array (
+						'width' => '25',
+					),
+					'placeholder' => '0',
+					'append' => 'px',
+					'min' => '0',
+					'max' => '100',
+					'wrapper' => array (
+						'width' => '25',
+					),
+				),
+			)
+		),
+
+		array (
+			'key' => $id . '_A2982bc694Cd60',
+			'name' => 'icon-label',
+			'label' => 'Icon label',
+			'display' => 'block',
+			'sub_fields' => get_icons_list_local_field( $id )
+		),
+
+		array (
+			'key' => 'sava_A2982bc694Cd70',
+			'label' => 'HR Line',
+			'name' => 'line',
+			'display' => 'block',
+			'sub_fields' => get_hr_local_field( $id )
+		)
+	);
+}
+
+
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -8,7 +681,7 @@ acf_add_local_field_group(array (
 	'title' => 'Product page settings',
 	'fields' => array (
 
-   //hero tab
+   			//hero tab
 		array (
 			'key' => 'field_57f57c3ee0f46',
 			'label' => 'Hero Area',
@@ -3438,292 +4111,6 @@ acf_add_local_field_group(array (
 
 	//end primary content
 
-
-		array(
-			'key' => 'sava_A1982bc694Cd45',
-			'label' => 'Sidebar',
-			'name' => 'sdb',
-			'type' => 'tab',
-			'placement' => 'top',
-		),
-		array (
-			'key' => 'sava_A1982bc694CE45',
-			'label' => 'Sidebar blocks',
-			'name' => 'sidebar_blocks',
-			'type' => 'repeater',
-			'required' => 0,
-			'layout' => 'block',
-			'button_label' => 'Add box',
-			'sub_fields' => array (
-
-				array(
-					'key' => 'sava_A2982bc694Cd45',
-					'label' => 'Content',
-					'name' => 'content',
-					'type' => 'flexible_content',
-					'required' => 0,
-					'button_label' => 'Add one more',
-					'layouts' => array (
-						array (
-							'key' => 'sava_A2982bc694Cd90',
-							'name' => 'content',
-							'label' => 'Content',
-							'display' => 'block',
-							'sub_fields' => array (
-								array (
-									'key' => 'sava_A2982bc694Cd91',
-									'label' => 'Content',
-									'name' => 'content',
-									'type' => 'wysiwyg',
-									'required' => 0,
-								),
-							),
-						),
-						array (
-							'key' => 'sava_A2982bc694Cd46',
-							'name' => 'button',
-							'label' => 'Button',
-							'display' => 'block',
-							'sub_fields' => array (
-								array (
-									'key' => 'sava_A2982bc694Cd49',
-									'label' => 'Dropdown',
-									'name' => 'is_dropdown',
-									'type' => 'true_false',
-									'required' => 0,
-									'conditional_logic' => 0,
-									'wrapper' => array (
-										'width' => '15',
-									),
-									'message' => 'Yes',
-									'default_value' => 0,
-								),
-								array (
-									'key' => 'sava_A2982bc694Cd47',
-									'label' => 'Label',
-									'name' => 'label',
-									'type' => 'text',
-									'required' => 0,
-									'conditional_logic' => 0,
-									'wrapper' => array (
-										'width' => '15',
-									),
-									'placeholder' => 'Book now'
-								),
-								array (
-									'key' => 'sava_A2982bc694Cd48',
-									'label' => 'Action type',
-									'name' => 'type',
-									'type' => 'select',
-									'required' => 0,
-									'wrapper' => array (
-										'width' => '35',
-									),
-									'choices' => array (
-										'link' => 'Link to another page',
-										'iframe-popup' => 'iFrame popup',
-										'form-link' => 'Link to form',
-										'integration' => 'Third party integration',
-									),
-									'default_value' => 'link',
-									'conditional_logic' => array(
-										array(
-											array(
-												'field' => 'sava_A2982bc694Cd49',
-												'operator' => '!=',
-												'value' => 1
-											)
-										)
-									),
-								),
-								array (
-									'key' => 'sava_A2982bc694Cd50',
-									'label' => 'Action',
-									'name' => 'action',
-									'type' => 'text',
-									'required' => 0,
-									'conditional_logic' => array(
-										array(
-											array(
-												'field' => 'sava_A2982bc694Cd49',
-												'operator' => '!=',
-												'value' => 1
-											)
-										)
-									),
-									'wrapper' => array (
-										'width' => '35',
-									)
-								),
-								array (
-									'key' => 'sava_A2982bc694Cd51',
-									'label' => 'Dropdown Options',
-									'name' => 'dropdown',
-									'type' => 'repeater',
-									'required' => 0,
-									'conditional_logic' => array (
-										array (
-											array (
-												'field' => 'sava_A2982bc694Cd49',
-												'operator' => '==',
-												'value' => 1,
-											),
-										),
-									),
-									'wrapper' => array (
-										'width' => '70',
-									),
-									'layout' => 'block',
-									'button_label' => 'Add Sub Option',
-									'sub_fields' => array (
-										array (
-											'key' => 'sava_A2982bc694Cd54',
-											'label' => 'Label',
-											'name' => 'label',
-											'type' => 'text',
-											'required' => 0,
-											'conditional_logic' => 0,
-											'wrapper' => array (
-												'width' => '33',
-											),
-											'placeholder' => 'Option name'
-										),
-										array (
-											'key' => 'sava_A2982bc694Cd55',
-											'label' => 'Action type',
-											'name' => 'type',
-											'type' => 'select',
-											'required' => 0,
-											'wrapper' => array (
-												'width' => '33',
-											),
-											'choices' => array (
-												'link' => 'Link to another page',
-												'iframe-popup' => 'iFrame popup',
-												'form-link' => 'Link to form',
-												'integration' => 'Third party integration',
-											),
-											'default_value' => 'link',
-										),
-										array (
-											'key' => 'sava_A2982bc694Cd56',
-											'label' => 'Action',
-											'name' => 'action',
-											'type' => 'text',
-											'required' => 0,
-											'wrapper' => array (
-												'width' => '33',
-											)
-										),
-									),
-									'min' => 1
-								)
-							)
-						),
-
-						array (
-							'key' => 'sava_A2982bc694Cd60',
-							'name' => 'icon-label',
-							'label' => 'Icon label',
-							'display' => 'block',
-							'sub_fields' => array (
-								array(
-									'key'   => 'sava_A2982bc694Cd61',
-									'name'  => 'icon-type',
-									'label' => 'Icon type',
-									'type'  => 'select',
-									'required' => 0,
-									'choices' => array(
-										'checklist' => 'Checklist icon',
-										'custom'    => 'Custom'
-									),
-									'default_value' => 'checklist',
-									'wrapper' => array (
-										'width' => 30
-									)
-								),
-								array (
-									'key' => 'sava_A2981bc664cd61',
-									'label' => 'Icon size',
-									'name' => 'size',
-									'type' => 'number',
-									'required' => 0,
-									'conditional_logic' => array(
-										array(
-											array(
-												'field' => 'sava_A2982bc694Cd61',
-												'operator' => '==',
-												'value' => 'custom'
-											)
-										)
-									),
-									'wrapper' => array (
-										'width' => '20',
-									),
-									'placeholder' => 'inhreit',
-									'append' => 'px',
-									'step' => 1,
-								),
-								array (
-									'key' => 'sava_A2982bc694Cd63',
-									'label' => 'Icon',
-									'name' => 'icon',
-									'type' => 'font-awesome',
-									'required' => 0,
-									'wrapper' => array (
-										'width' => '50',
-									),
-									'save_format' => 'class',
-									'conditional_logic' => array(
-										array(
-											array(
-												'field' => 'sava_A2982bc694Cd61',
-												'operator' => '==',
-												'value' => 'custom'
-											)
-										)
-									)
-								),
-								array (
-									'key' => 'sava_A2982bc694Cd62',
-									'label' => 'Textarea',
-									'name' => 'textarea',
-									'type' => 'text',
-									'required' => 0,
-									'conditional_logic' => 0,
-									'wrapper' => array (
-										'width' => '100',
-									)
-								),
-							)
-						),
-
-						array (
-							'key' => 'sava_A2982bc694Cd70',
-							'label' => 'HR Line',
-							'name' => 'line',
-							'display' => 'block',
-							'sub_fields' => array (
-								array(
-									'key'   => 'sava_A2982bc694Cd71',
-									'name'  => 'width',
-									'label' => 'Width',
-									'type'  => 'select',
-									'required' => 0,
-									'choices' => array(
-										'auto' => 'Auto',
-										'full' => '100% of the box'
-									),
-									'default_value' => 'auto',
-								),
-							)
-						)
-					)
-				),
-
-			),
-		),
-
    // sidebar tab
 		array (
 			'key' => 'field_57f57c54e0f47',
@@ -6000,6 +6387,119 @@ acf_add_local_field_group(array (
 ));
 
 
+/**
+ * Sidebar
+ */
+acf_add_local_field_group(array (
+	'key' => 'sd-br_5829d7835eb2b',
+	'title' => 'Sidebar',
+	'fields' => array (
+		array (
+			'key' => 'sd-br_5821d29cf2cca',
+			'label' => 'Widgets',
+			'name' => 'widgets',
+			'type' => 'flexible_content',
+			'required' => 0,
+			'button_label' => 'Add widget',
+			'layouts' => array (
+				array (
+					'key' => 'sd-br_5821d2b10e742',
+					'name' => 'widget',
+					'label' => 'Widget',
+					'display' => 'block',
+					'sub_fields' => array (
+						array (
+							'key' => 'sd-br_5821d29cf2Sca',
+							'label' => 'Components',
+							'name' => 'components',
+							'type' => 'flexible_content',
+							'required' => 0,
+							'button_label' => 'Add component',
+							'layouts' => get_sidebar_widget_local_field( 'sd-br' )
+						)
+					)
+				),
+				array (
+					'key' => 'sd-br_49650003e333f',
+					'name' => 'sidebar-widget-template',
+					'label' => 'Template',
+					'display' => 'block',
+					'sub_fields' => array(
+						array (
+							'key' => 'sd-br_48650003e333f',
+							'label' => 'Choose widget template',
+							'name' => 'sidebar-widget-id',
+							'type' => 'post_object',
+							'instructions' => '',
+							'required' => 0,
+							'post_type' => array (
+								'template'
+							),
+							'allow_null' => 0,
+							'multiple' => 0,
+							'return_format' => 'object',
+							'ui' => 1,
+						),
+					)
+				)
+			)
+		)
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'product',
+			),
+		),
+	),
+	'menu_order' => 2,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'active' => 1,
+));
+
+
+acf_add_local_field_group(array (
+	'key' => 'si-wi_596506937549f',
+	'title' => 'Sidebar Widget template',
+	'fields' => array (
+		array (
+			'key' => 'si-wi_5821d29cf2cca',
+			'label' => 'Widget',
+			'name' => 'sidebar-widget-template',
+			'type' => 'flexible_content',
+			'required' => 0,
+			'button_label' => 'Add component',
+			'layouts' => get_sidebar_widget_local_field( 'sd-wi' )
+		)
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'template',
+			),
+			array (
+				'param' => 'post_taxonomy',
+				'operator' => '==',
+				'value' => 'template-type:sidebar-widget',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
 
 
 endif; 

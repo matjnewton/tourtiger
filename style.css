@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.1.2227
+Version: 0.1.2229
 Template: genesis
 Template Version: 2.0.25
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -37,6 +37,12 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 .product-sidebar .product-sidebar--block .width_full {
 	margin-left: -25px;
 	margin-right: -25px;
+}
+
+.product-sidebar .product-sidebar--block .width_half {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 
 .product-sidebar--block__item .wysiwyg h1 {
@@ -118,6 +124,15 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
     background-color: #97af3c;	
 }
 
+.product-sidebar--list__wrap.align_center .product-sidebar--list {
+	grid-template-columns: auto auto;
+	justify-content: center;
+}
+
+.product-sidebar--list__wrap.align_center .product-sidebar--list > * + * {
+	margin-left: 10px;
+}
+
 .product-sidebar--list {
 	display: grid;
 	align-items: center;
@@ -155,40 +170,44 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 }
 
 /* WYSIWYG */
-.wysiwyg > h1 + *,
-.wysiwyg > h2 + *,
-.wysiwyg > h3 + *,
-.wysiwyg > h4 + *,
-.wysiwyg > h5 + *,
-.wysiwyg > h6 + * {
-  margin-top: 2rem;
+.product-sidebar .wysiwyg > p {
+	margin: 0;
 }
-.wysiwyg > * + h1,
-.wysiwyg > * + h2,
-.wysiwyg > * + h3,
-.wysiwyg > * + h4,
-.wysiwyg > * + h5,
-.wysiwyg > * + h6,
-.wysiwyg > * + hr,
-.wysiwyg > hr + * {
-  margin-top: 3rem;
+
+.product-sidebar .wysiwyg > h1 + *,
+.product-sidebar .wysiwyg > h2 + *,
+.product-sidebar .wysiwyg > h3 + *,
+.product-sidebar .wysiwyg > h4 + *,
+.product-sidebar .wysiwyg > h5 + *,
+.product-sidebar .wysiwyg > h6 + * {
+  margin-top: .5rem;
 }
-.wysiwyg > * + div,
-.wysiwyg > div + *,
-.wysiwyg > div + div {
-  margin-top: 2rem;
-}
-.wysiwyg > p + p,
-.wysiwyg > p + ul,
-.wysiwyg > ul + p,
-.wysiwyg > ol + p,
-.wysiwyg > p + ol,
-.wysiwyg > ol + ul,
-.wysiwyg > ul + ol {
-  margin-top: 1.5rem;
-}
-.wysiwyg > ul > * + * {
+.product-sidebar .wysiwyg > * + h1,
+.product-sidebar .wysiwyg > * + h2,
+.product-sidebar .wysiwyg > * + h3,
+.product-sidebar .wysiwyg > * + h4,
+.product-sidebar .wysiwyg > * + h5,
+.product-sidebar .wysiwyg > * + h6,
+.product-sidebar .wysiwyg > * + hr,
+.product-sidebar .wysiwyg > hr + * {
   margin-top: 1rem;
+}
+.product-sidebar .wysiwyg > * + div,
+.product-sidebar .wysiwyg > div + *,
+.product-sidebar .wysiwyg > div + div {
+  margin-top: 1rem;
+}
+.product-sidebar .wysiwyg > p + p,
+.product-sidebar .wysiwyg > p + ul,
+.product-sidebar .wysiwyg > ul + p,
+.product-sidebar .wysiwyg > ol + p,
+.product-sidebar .wysiwyg > p + ol,
+.product-sidebar .wysiwyg > ol + ul,
+.product-sidebar .wysiwyg > ul + ol {
+  margin-top: .5rem;
+}
+.product-sidebar .wysiwyg > ul > * + * {
+  margin-top: .5rem;
 }
 
 .archive-pagination ul {
@@ -343,8 +362,6 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 .slider-pro__close-link:after {
 	transform: translate(-50%, -50%) rotate(45deg);
 }
-
-
 
 .tour-page-content.testimonials{
 	padding-top: 80px;
