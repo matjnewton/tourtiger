@@ -7,14 +7,15 @@
 
                 <?php 
                 foreach( $images as $slider_image ):
-                    $simage = aq_resize( $slider_image['url'], 1920, $hero_height_n, true ); ?>
+                    $simage = aq_resize( $slider_image['url'], 1920, $hero_height_n, true );?>
 
                     <li style="
                         background-image: url(<?php echo $simage; ?>); 
                         background-repeat: no-repeat; 
                         background-size: cover; 
                         background-position: center center; 
-                        width: 100%; ">                      
+                        width: 100%;
+                        height: <?=$hero_height_n;?>px; ">                      
 
                         <?php include ( get_stylesheet_directory() . '/includes/primary-content/head/temp/pc-elements.php' ); ?>
 
