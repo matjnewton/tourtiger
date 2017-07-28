@@ -132,7 +132,7 @@ window.onload = function () {
                       autoplaySpeed: 5000,
                     });
 
-                    $('#slides.slider').slick({
+                    $('#slider.slides').slick({
                       swipe: false,
                       arrows: false,
                       adaptiveHeight: true,
