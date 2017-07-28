@@ -22,7 +22,8 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 			 */
 			if ( $slides_images ) :
 				$gallery_id = generateRandomString(5);
-				$new_design = $row['new_design']; 
+				//$new_design = $row['new_design']; 
+				$new_design = true;
 
 				if ( $new_design ) : 
 					?>
