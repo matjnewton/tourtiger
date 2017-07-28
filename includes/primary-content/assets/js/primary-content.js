@@ -132,6 +132,16 @@ window.onload = function () {
                       autoplaySpeed: 5000,
                     });
 
+                    $('#slides').slick({
+                      swipe: false,
+                      arrows: false,
+                      adaptiveHeight: true,
+                      fade: true,
+                      slidesToScroll: 1,
+                      autoplay: true,
+                      autoplaySpeed: 5000,
+                    });
+
                     $('.pc--r__scroll').slick('setOption', 'height', null, true);
 
                     $('.pc--r__scroll.js-new-slider').fadeIn();
