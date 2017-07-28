@@ -1189,23 +1189,6 @@ class ProductPage extends StylingCard {
 					'show_font_style' => 1,
 					'font_style' => 'normal',
 					'show_preview_text' => 0,
-					'default_value' => '',
-					'new_lines' => '',
-					'maxlength' => '',
-					'placeholder' => '',
-					'readonly' => 0,
-					'disabled' => 0,
-					'rows' => '',
-					'font_familys' => self::get_available_fonts(),
-					'stylefont' => array (
-						100 => 100,
-						300 => 300,
-						400 => 400,
-						600 => 600,
-						700 => 700,
-						800 => 800,
-					),
-					'backupfont' => self::BACK_FONTS,
 				),
 				array (
 					'key' => $this->slug . $i . '_1side4t1xt21-si2ze',
@@ -1230,7 +1213,124 @@ class ProductPage extends StylingCard {
 					'append' => 'px',
 					'min' => '5',
 					'max' => '50'
-				)
+				),
+
+				array (
+					'key' => $this->slug . $i . '_sb1roge52',
+					'label' => 'New Sidebar',
+					'name' => 'tab-sdb',
+					'type' => 'tab',
+					'required' => '',
+					'placement' => 'left',
+					'endpoint' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb2roge43',
+					'label' => 'Button color',
+					'name' => 'button-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb3roge34',
+					'label' => 'Button hover color',
+					'name' => 'button-color-hover',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_s2broge80',
+					'label' => 'Button radius',
+					'name' => 'button-radius',
+					'type' => 'text',
+					'required' => 0,
+					'placeholder' => '15px or 10%'
+				),
+				array (
+					'key' => $this->slug . $i . '_sb7roge98',
+					'label' => 'Button font',
+					'name' => 'button-font',
+					'type' => 'typography',
+					'required' => 0,
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'left',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 20,
+					'show_line_height' => 1,
+					'line_height' => 25,
+					'show_letter_spacing' => 0,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#ffffff',
+					'show_font_style' => 0,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb4roge25',
+					'label' => 'Titles color',
+					'name' => 'titles-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb6roge07',
+					'label' => 'Titles font',
+					'name' => 'titles-font',
+					'type' => 'typography',
+					'required' => 0,
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'left',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 0,
+					'font_size' => 20,
+					'show_line_height' => 0,
+					'line_height' => 25,
+					'show_letter_spacing' => 0,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#000000',
+					'show_font_style' => 0,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb5roge16',
+					'label' => 'Content color',
+					'name' => 'content-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb4roline25',
+					'label' => 'Line color',
+					'name' => 'line-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_sb5roge97',
+					'label' => 'Add border to widgets',
+					'name' => 'is-widget-border',
+					'type' => 'true_false',
+					'required' => 0,
+					'message' => 'Sure',
+				),
 			),
 		);	
 
@@ -1693,6 +1793,74 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 				}
+
+				/**
+				 * New sidebar
+				 */
+				
+				// Button
+				$button_color       = get_sub_field('button-color');
+				$button_color_hover = get_sub_field('button-color-hover');
+				$button_radius      = get_sub_field('button-radius');
+
+				$font = pc_init_font_css( get_sub_field( 'button-font' ) );
+				$css .= $font[0] ? $font[0]:'';
+
+				$css .= "body.{$style} .product-sidebar--button {";
+
+					$css .= $font[1] ? $font[1] : '';
+					$css .= $button_color ? "background-color:{$button_color}!important;" : '';
+					$css .= $button_radius ? "border-radius:{$button_radius};" : '';
+
+				$css .= '}';
+
+				if ( $button_color_hover ) :
+					$css .= "body.{$style} .product-sidebar--button:hover {";
+
+						$css .= "background-color:{$button_color_hover}!important;";
+
+					$css .= '}';
+
+					$css .= "body.{$style} .product-sidebar .wysiwyg a:hover,body.{$style} .product-sidebar a.product-sidebar--list:hover {";
+
+						$css .= $button_color_hover ? "color:{$button_color_hover}!important;" : '';
+
+					$css .= '}';
+				endif; 
+				
+				// Title
+				$titles_color = get_sub_field('titles-color');
+
+				$font = pc_init_font_css( get_sub_field( 'titles-font' ) );
+				$css .= $font[0] ? $font[0]:'';
+
+				$css .= "body.{$style} .product-sidebar .wysiwyg h1,body.{$style} .product-sidebar .wysiwyg h2,body.{$style} .product-sidebar .wysiwyg h3,body.{$style} .product-sidebar .wysiwyg h4,body.{$style} .product-sidebar .wysiwyg h5,body.{$style} .product-sidebar .wysiwyg h6 {";
+
+					$css .= $font[1] ? $font[1] : '';
+					$css .= $titles_color ? "color:{$titles_color};" : '';
+
+				$css .= '}';
+				
+				// content
+				$content_color = get_sub_field('content-color');
+
+				$css .= "body.{$style} .product-sidebar .wysiwyg p,body.{$style} .product-sidebar .wysiwyg li,body.{$style} .product-sidebar .wysiwyg a,body.{$style} .product-sidebar .wysiwyg span,body.{$style} .product-sidebar .product-sidebar--list {";
+
+					$css .= $content_color ? "color:{$content_color};" : '';
+
+				$css .= '}';
+
+				if ( get_sub_field( 'is-widget-border' ) ) :
+					$css .= "body.{$style} .product-sidebar--block {";
+						$css .= "border: 1px solid {$button_color};";
+					$css .= '}';
+				endif;
+
+				// HR line
+				$color = get_sub_field( 'line-color' ) ? get_sub_field( 'line-color' ) : $button_color;
+				$css .= "body.{$style} .product-sidebar--line {";
+					$css .= "border-color: {$color};";
+				$css .= '}';
 
 				$css .= '</style>';
 

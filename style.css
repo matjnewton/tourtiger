@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.1.2238
+Version: 0.1.2239
 Template: genesis
 Template Version: 2.0.25
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -23,7 +23,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 .product-sidebar--block {
     background: #fff;
     padding: 20px 25px;
-    border-radius: 5px;	
+    border-radius: 15px;	
 }
 
 .product-sidebar--block > * + * {
@@ -136,7 +136,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 .product-sidebar--list {
 	display: grid;
 	align-items: center;
-	grid-template-columns: 65px calc(100% - 65px);
+	grid-template-columns: 35px calc(100% - 35px);
 }
 
 .product-sidebar--list__icon {

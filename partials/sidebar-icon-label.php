@@ -42,7 +42,7 @@ if ( have_rows( 'icons-list' ) ) :
 		if ( $d['icon-type'] == 'checklist' ) :
 			$d['icon'] = $d['default'];
 		elseif ( $d['icon-type'] == 'custom' ) :
-			$d['icon'] = $d['icon'] ? "<i class='fa {$d['icon']}' {$d['size']}></i>" : $d['default'];
+			$d['icon'] = $d['icon'] ? "<i class='fa {$d['icon']} product-sidebar--list__custom-icon' {$d['size']}></i>" : $d['default'];
 		endif;
 		?>
 

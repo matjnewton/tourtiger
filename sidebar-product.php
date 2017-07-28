@@ -15,8 +15,9 @@ if ( have_rows( 'widgets' ) ) :
 		/**
 		 * Loop blocks
 		 */
+
 		while ( have_rows( 'widgets' ) ) :
-			the_row();
+			$the_row = the_row();
 			$layout = get_row_layout();
 
 			if ( $layout == 'widget' ) :
@@ -31,13 +32,7 @@ if ( have_rows( 'widgets' ) ) :
 					$post = $object;
 					setup_postdata( $post );
 
-					if ( have_rows( 'components', $post->ID ) ) :
-						while ( have_rows( 'components', $post->ID ) ) :
-							the_row();
-
-							include get_stylesheet_directory() . '/partials/component-widget.php';
-						endwhile;
-					endif;
+						include get_stylesheet_directory() . '/partials/component-widget.php';
 
 					wp_reset_postdata();
 				endif;

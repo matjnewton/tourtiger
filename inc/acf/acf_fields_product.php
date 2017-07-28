@@ -66,8 +66,8 @@ function get_headline_local_field( $id = '1234QWERasdf' ) {
 			),
 			'placeholder' => '0',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100'
+			'min' => '',
+			'max' => ''
 		),
 		array (
 			'key' => $id . '_T2MbzN1cd48f3',
@@ -80,8 +80,6 @@ function get_headline_local_field( $id = '1234QWERasdf' ) {
 			),
 			'placeholder' => '0',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100'
 		),
 		array (
 			'key' => $id . '_N121zN1cd48f4',
@@ -144,8 +142,8 @@ function get_editor_local_field( $id = '1234QWERasdf' ) {
 			),
 			'placeholder' => '0',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100'
+			'min' => '',
+			'max' => ''
 		),
 		array (
 			'key' => $id . '_T4MbzN1cd48f3',
@@ -158,8 +156,6 @@ function get_editor_local_field( $id = '1234QWERasdf' ) {
 			),
 			'placeholder' => '0',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100'
 		),
 	);
 }
@@ -327,8 +323,8 @@ function get_icons_list_local_field( $id = '1234QWERasdf' ) {
 			),
 			'placeholder' => '0',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100'
+			'min' => '',
+			'max' => ''
 		),
 		array (
 			'key' => $id . '_TrLiip21cdh7f3',
@@ -412,8 +408,8 @@ function get_hr_local_field( $id = '1234QWERasdf' ) {
 			),
 			'placeholder' => '0',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100'
+			'min' => '',
+			'max' => ''
 		),
 		array (
 			'key' => $id . '_T9X1zN1cd47f4',
@@ -424,10 +420,8 @@ function get_hr_local_field( $id = '1234QWERasdf' ) {
 			'wrapper' => array (
 				'width' => '25',
 			),
-			'placeholder' => '0',
+			'placeholder' => '20',
 			'append' => 'px',
-			'min' => '0',
-			'max' => '100',
 			'wrapper' => array (
 				'width' => '25',
 			),
@@ -668,7 +662,24 @@ function get_sidebar_widget_local_field( $id = '1234QWERasdf' ) {
 			'name' => 'line',
 			'display' => 'block',
 			'sub_fields' => get_hr_local_field( $id )
-		)
+		),
+
+		array (
+			'key' => $id . '_A2187bc1sniode',
+			'name' => 'textarea',
+			'label' => 'Textarea',
+			'display' => 'block',
+			'sub_fields' =>  array(
+				array (
+					'key' => $id . '_a227bc1iode',
+					'label' => 'Textarea',
+					'name' => 'textarea',
+					'type' => 'textarea',
+					'required' => 0,
+					'formatting' => 'none',
+				),
+			),
+		),
 	);
 }
 
@@ -6455,7 +6466,7 @@ acf_add_local_field_group(array (
 		array (
 			'key' => 'si-wi_5821d29cf2cca',
 			'label' => 'Widget',
-			'name' => 'sidebar-widget-template',
+			'name' => 'components',
 			'type' => 'flexible_content',
 			'required' => 0,
 			'button_label' => 'Add component',
