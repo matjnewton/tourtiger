@@ -38,7 +38,7 @@
 					foreach ( $form["fields"] as $field ) :
 						?>
 
-						<li id="field_<?=$form_id;?>_<?=$form['counter'];?>" data-conditional-id="<?=$field['id']?>" class="gfield">
+						<li id="field_<?=$form_id;?>_<?=$form['counter'];?>" data-id="<?=$field['id']?>" class="gfield">
 
 							<label class="gfield_label" for="field_<?=$form_id;?>_<?=$form['counter'];?>"><?=$field['label'];?></label>
 							

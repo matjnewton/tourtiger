@@ -90,6 +90,51 @@ window.onload = function () {
 
     }
 
+    /**
+     * Run conditional logic statement 
+     * for primary area gravity forms
+     *
+     * @todo: allow multiply conditionals
+     */
+    $.fn.conditionalizeForm = function() {
+      var $form          = $(this);
+      var $conditionaled = $form.find('[data-conditional-type]');
+
+      $conditionaled.each(function () {
+        var $field       = $(this);
+        var type         = $field.attr('data-conditional-type');
+        var fieldId      = $field.closest('[data-id]').attr('data-id');
+        var $fieldWrap   = $form.find('[data-id="' + fieldId + '"]');
+        var id           = $field.attr('data-conditional-id');
+        var operator     = $field.attr('data-conditional-operator');
+        var value        = $field.attr('data-conditional-value');
+        var $related     = $form.find('[data-id="' + id + '"]');
+        var relatedValue = $related.find('input, textarea, select').val();
+
+        switch (operator) {
+          case 'is':
+            operator = true;
+            break;
+          default:
+            operator = true;
+            break;
+        }
+
+        var conditional = (relatedValue == value) === operator;
+
+        if (conditional) {
+          $fieldWrap.show();
+        } else {
+          $fieldWrap.hide();
+          $field.val('');
+        }
+      });
+
+      if ($conditionaled.length > 0 && $form.closest('.pc--r').hasClass('.pc--r__scroll')) {
+        $form.closest('.pc--r__scroll').slick('setOption', 'height', null, true); 
+      }
+    }; 
+
     $(window).load(pc_show_more_js());
 
     var methods = {
@@ -98,6 +143,8 @@ window.onload = function () {
          * Run each time when loads a new row
          */
         init: function () {     
+
+            $('.pc--c').find('form').conditionalizeForm();
 
             $(".pc--date").daterangepicker({
                     locale: {
@@ -394,6 +441,9 @@ window.onload = function () {
               $.getScript("//www.google.com/recaptcha/api.js");
             }
 
+            $('.pc--c').on('change', 'input, select, textarea', function(){
+              $(this).closest('form').conditionalizeForm();
+            });
 
             /**
              * Handle fields
