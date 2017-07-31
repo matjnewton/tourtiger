@@ -38,20 +38,13 @@
 					foreach ( $form["fields"] as $field ) :
 						?>
 
-						<li id="field_<?=$form_id;?>_<?=$form['counter'];?>" class="gfield">
+						<li id="field_<?=$form_id;?>_<?=$form['counter'];?>" data-conditional-id="<?=$field['id']?>" class="gfield">
 
 							<label class="gfield_label" for="field_<?=$form_id;?>_<?=$form['counter'];?>"><?=$field['label'];?></label>
 							
 							<div class="ginput_container ginput_container_<?=$field['type'];?>">
 
 								<?php
-								/**
-								 * TODO: 
-								 * V. Multiselect 
-								 * 2. Radiobox
-								 * 3. Checkbox
-								 */
-								
 								/**
 								 * Set field attributes
 								 */
@@ -62,6 +55,24 @@
 								$attr .= 'placeholder="' . $field['placeholder'] . '" ';
 								$attr .= 'data-field-label="' . $field['label'] . '" ';
 								$attr .= 'data-field-required="' . $field['isRequired'] . '" ';
+
+								/**
+								 * Conditional logic
+								 */
+								$attr_conditional = '';
+								if ( $field['conditionalLogic'] ) :
+									$conditional = $field['conditionalLogic'];
+
+									// Set type to know who to handle this field
+									$attr_conditional .= 'data-conditional-type="' . $conditional['actionType'] . '" ';
+
+									// Loop rules
+									foreach ( $conditional['rules'] as $rule ) :
+										$attr_conditional .= 'data-conditional-id="' . $rule['fieldId'] . '" ';
+										$attr_conditional .= 'data-conditional-operator="' . $rule['operator'] . '" ';
+										$attr_conditional .= 'data-conditional-value="' . $rule['value'] . '" ';
+									endforeach;
+								endif;
 
 								/**
 								 * Echo field template
@@ -75,6 +86,7 @@
 										$attr .= 'disabled ';
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
 										$attr .= 'class="' . $class . '" ';
+										$attr .= $attr_conditional;
 										echo "<textarea " . $attr . ">" . $field['defaltValue'] . "</textarea>";
 										break;
 
@@ -86,6 +98,7 @@
 									case 'multiselect':
 										$attr .= $field['type'] == 'multiselect' ? 'multiple' : '';
 										$attr .= 'class="' . $class . '" ';
+										$attr .= $attr_conditional;
 										echo "<select " . $attr . ">"; 
 
 										foreach ( $field['choices'] as $option ) :
@@ -151,7 +164,7 @@
 											$li_attr .= 'class="gchoice_item gchoice_' . $form_id . '_' . $form['counter'] . '_' . $choice_id . '" ';
 
 											/**
-											 * Rewrite atributes completely
+											 * Rewrite attributes completely
 											 */
 											$attr  = '';
 											$attr .= 'type="' . $field['type'] . '" ';
@@ -161,6 +174,7 @@
 											$attr .= 'data-field-label="' . $field['label'] . '" ';
 											$attr .= $choice['isSelected'] ? 'checked ' : '';
 											$attr .= 'value="' . $choice['value'] . '" ';
+											$attr .= $attr_conditional;
 
 											/**
 											 * label attributes
@@ -194,6 +208,7 @@
 											$attr .= 'class="' . $field['type'] . ' gfield_choice gfield_' . $field['type'] . '" ';
 											$attr .= $choice['isSelected'] ? 'checked ' : '';
 											$attr .= 'data-form-more="1" ';
+											$attr .= $attr_conditional;
 
 											/**
 											 * Text input attrs
@@ -225,6 +240,7 @@
 										$attr  .= 'data-field-input ';
 										$attr  .= 'class="' . $class . '" ';
 										$attr  .= 'style="height:54px;" ';
+										$attr .= $attr_conditional;
 
 										echo "<input " . $attr . " /><style>#vinetrekker_piker.daterangepicker{margin-left:0!important;
 										}</style>";
@@ -245,6 +261,7 @@
 										$attr .= 'data-field-input ';
 
 										if ( $field['cssClass'] == 'user_email' ) $attr .= 'data-user-email="1"';
+										$attr .= $attr_conditional;
 
 										echo "<input " . $attr . " />";
 										break;
