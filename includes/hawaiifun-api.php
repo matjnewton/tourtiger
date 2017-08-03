@@ -228,7 +228,8 @@ function hawaiifunapi_form(){
 
 				  <p>
 				    <input type=\"button\" onclick=\"booknow(group1);\" value=\"Book Now\">
-				  </p>
+				  	<a class=\"close-popup\" href=\"javascript:\">Close</a>
+					  </p>
   			</div>
 			";
 			break;
@@ -415,6 +416,7 @@ function hawaiifunapi_form(){
 
 					  <p>
 					    <input type=\"button\" onclick=\"booknow(group1);\" value=\"Book Now\">
+					  <a class=\"close-popup\" href=\"javascript:\">Close</a>
 					  </p>
 
 				</div>
@@ -621,7 +623,8 @@ function hawaiifunapi_form(){
 
 				    <p>
 				      <input type=\"button\" onclick=\"booknow(group1);\" value=\"Book Now\">
-				    </p>
+				    	<a class=\"close-popup\" href=\"javascript:\">Close</a>
+					  </p>
 				</div>
 			";
 			break;
@@ -693,7 +696,8 @@ function hawaiifunapi_form(){
                     </p>
                     <p>
                         <input type=\"button\" value=\"Purchase\" onclick=\"reservation2('4045', 4045, undefined, '', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0); setGiftCertificate(); addGuests(1594, document.getElementById('guests_a4045_t1594').value); addGuests(1595, document.getElementById('guests_a4045_t1595').value); addUpgrades(1902, document.getElementById('upgrades_a4045_u1902').value); addUpgrades(1901, document.getElementById('upgrades_a4045_u1901').value); setUpgradesFixed(); setAccommodationFixed();  availability_popup(); return false;\" />
-                    </p>
+                    	<a class=\"close-popup\" href=\"javascript:\">Close</a>
+					  </p>
                 </form>
 			";
 			break;
@@ -799,6 +803,7 @@ function hawaiifunapi_form(){
 
 					  <p>
 					    <input type=\"button\" value=\"Book Now\" onclick=\"var selectedActivityId = activitySwitch_getActivityId(groups_9ad2b236_contextData); reservation('465', selectedActivityId, jQuery('#input_groups_9ad2b236_date').val(), '', 0.0);   if (!activitySwitch_addGuests(groups_9ad2b236_contextData)) return false; setAccommodationFixed(); setgoogleanalytics('UA-17383286-1');  availability_popup(); return false;\" />
+					  	<a class=\"close-popup\" href=\"javascript:\">Close</a>
 					  </p>
 				</form>
 			";
