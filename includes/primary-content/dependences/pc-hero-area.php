@@ -1257,6 +1257,7 @@ acf_add_local_field_group(array (
 							),
 							'choices' => array (
 								'Custom' => 'Custom',
+								'iframe-popup' => 'iFrame Popup',
 								'Video' => 'Video',
 								'Search Box' => 'Search Box',
 							),
@@ -1279,6 +1280,13 @@ acf_add_local_field_group(array (
 										'field' => 'pc_ha_014',
 										'operator' => '==',
 										'value' => 'Custom' 
+									)
+								),
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'iframe-popup' 
 									)
 								)
 							),
