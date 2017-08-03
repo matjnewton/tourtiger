@@ -75,7 +75,7 @@
 				/**
 				 * Remove iframe and anchor
 				 */
-				$('.iframe-popup__close').on('click', function () {
+				$('.iframe-popup__close, .close-popup').on('click', function () {
 					$('.iframe-popup__close').detach();
 					$('#hawaiifun').removeClass('is-active');
 					$('body').css({
@@ -128,7 +128,7 @@
 						/**
 						 * Remove iframe and anchor
 						 */
-						$('.iframe-popup__close').on('click', function () {
+						$('.iframe-popup__close, .close-popup').on('click', function () {
 							$('.iframe-popup__close').detach();
 							$('.iframe-popup').detach();
 							$('body').css({
@@ -294,3 +294,153 @@
 
 	});
 })(jQuery);
+
+/**
+ * Gallery slider component
+ */
+!(function($){
+	$(function(){
+
+		/**
+		 * Init slick carousel
+		 */
+		$('.slider-pro--preview').on('click', function(){
+			$(this).tourismTiger('initGallery');
+		});
+
+		/**
+		 * Close carousel
+		 */
+		$('.slider-pro__close-link').on('click', function(){
+			$(this).tourismTiger('destroyGallery');
+		});
+	});
+})(jQuery);
+
+(function(factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (typeof exports !== 'undefined') {
+        module.exports = factory(require('jquery'));
+    } else {
+        factory(jQuery);
+    }
+
+}(function($) {
+
+	var methods = {
+
+		initGallery: function(){
+		    
+		    // Set DOM elements to the variables
+			var $self         = $(this);
+			var $wrapper      = $self.closest('.slider-pro');
+			var $image        = $wrapper.find('.slider-pro--preview__image');
+			var width         = $image.width();
+			var height        = $image.height();
+			var $carousel     = $wrapper.find('.slider-pro__carousel');
+			var $cover        = $wrapper.find('.slider-pro__cover');
+			var $panel        = $wrapper.find('.slider-pro--panel');
+
+            // Core values
+			var globalWidth   = $(window).width();
+			var globalHeight  = $(window).height();
+
+            // Set width and height values to cover area and image
+			$cover
+			.width(width)
+			.height(height)
+			.find('img')
+			.width(width)
+			.height(height);
+			
+			$panel.hide();
+
+            // Get cover coordinates relative to the window
+			var coverTop  = $cover.offset().top - $(window).scrollTop();
+			var coverLeft = $cover.offset().left;
+
+			$image.css({
+				'position': 'fixed',
+				'z-index': '9999',
+				'top': coverTop,
+				'left': coverLeft,
+			}).animate({
+				'top': (globalHeight / 2) - (height / 2),
+				'left': (globalWidth / 2) - (width / 2),
+			}, 300, function(){
+				$image.fadeOut(500);
+
+				$carousel
+				.css({
+					'display': 'flex',
+				})
+				.animate({
+					'opacity': '1'
+				}, 300)
+				.find('.slider-pro__slider')
+				.slick({
+					prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
+					nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
+					adaptiveHeight: true,
+					lazyLoad: 'progressive',
+				})
+				.slick('setOption', 'height', null, true);
+			});
+		},
+
+		destroyGallery: function(){
+			var $self         = $(this);
+			var $wrapper      = $self.closest('.slider-pro');
+			var $image        = $wrapper.find('.slider-pro--preview__image');
+			var $carousel     = $wrapper.find('.slider-pro__carousel');
+			var $cover        = $wrapper.find('.slider-pro__cover');
+			var $panel        = $wrapper.find('.slider-pro--panel');
+
+			var coverTop  = $cover.offset().top - $(window).scrollTop();
+			var coverLeft = $cover.offset().left;
+
+			$image
+			.show()
+			.animate({
+				'top': coverTop,
+				'left': coverLeft,
+			}, 300, function(){
+				$image.css({
+					'position': 'static',
+				});
+				$panel.show();
+			});
+
+			$carousel
+			.hide()
+			.animate({
+				'opacity': '0'
+			}, 300)
+			.find('.slider-pro__slider')
+			.slick('unslick');
+		}
+	};
+
+	/** 
+	 * Include javascript files
+	 * which requery DOM reload
+	 */
+	$.fn.tourismTiger = function( method ) {
+
+	    if ( methods[method] ) {
+	      return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+	    } else if ( typeof method === 'object' || ! method ) {
+	      return methods.init.apply( this, arguments );
+	    } else {
+	      $.error( 'Method named ' +  method + ' isn\'t exist within jQuery.tourismTiger' );
+	    } 
+
+	};
+
+	$(function(){
+		$(window).controller('tourismTiger');
+	});
+
+}));

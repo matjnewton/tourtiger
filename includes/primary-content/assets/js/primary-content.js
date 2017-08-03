@@ -157,6 +157,20 @@ window.onload = function () {
                 console.log(formId);
             });
 
+            /**
+             * Init slick carousel
+             */
+            $('.slider-pro--preview').on('click', function(){
+              $(this).tourismTiger('initGallery');
+            });
+
+            /**
+             * Close carousel
+             */
+            $('.slider-pro__close-link').on('click', function(){
+              $(this).tourismTiger('destroyGallery');
+            });
+
             if ( $('.js-new-slider').length > 0 ) {
                 setTimeout(function(){
                     $('.pc--r__scroll.js-new-slider').slick({
