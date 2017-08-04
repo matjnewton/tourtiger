@@ -406,12 +406,10 @@
 			.animate({
 				'top': coverTop,
 				'left': coverLeft,
-			}, 300, function(){
-				$image.css({
-					'position': 'static',
-				});
-				$panel.show();
-			});
+				'position': 'static',
+			}, 300);
+
+			$panel.fadeIn(300);
 
 			$carousel
 			.hide()
@@ -443,16 +441,18 @@
         /**
          * Init slick carousel
          */
-        $('.slider-pro--preview').on('click', function(){
+        $('.slider-pro--preview').not('[data-inited]').on('click', function(){
           $(this).tourismTiger('initGallery');
         });
 
         /**
          * Close carousel
          */
-        $('.slider-pro__close-link').on('click', function(){
+        $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
           $(this).tourismTiger('destroyGallery');
         });
+
+        $('.slider-pro--preview, .slider-pro__close-link').attr('data-inited', 1);
 	});
 
 }));
