@@ -402,12 +402,12 @@
 			var coverLeft = $cover.offset().left;
 
 			$image
-			.show()
-			.animate({
+			.css({
 				'top': coverTop,
 				'left': coverLeft,
 				'position': 'static',
-			}, 300);
+			})
+			.show();
 
 			$panel.fadeIn(300);
 
