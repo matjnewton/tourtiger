@@ -129,10 +129,6 @@ window.onload = function () {
           $field.val('');
         }
       });
-
-      if ($conditionaled.length > 0 && $form.closest('.pc--r').hasClass('pc--r__scroll')) {
-        $form.closest('.pc--r__scroll').slick('setOption', 'height', null, true); 
-      }
     }; 
 
     $(window).load(pc_show_more_js());
