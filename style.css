@@ -433,3 +433,8 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 div.banner-wrapper {
 	position: static;
 }
+
+.pc--r__col-2__ratio-left .pc--c__b-image,
+.pc--r__col-2__ratio-right .pc--c__b-image {
+	height: 100%;
+}
