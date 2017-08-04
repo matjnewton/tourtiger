@@ -157,19 +157,22 @@ window.onload = function () {
                 console.log(formId);
             });
 
+
             /**
              * Init slick carousel
              */
-            $('.slider-pro--preview').on('click', function(){
+            $('.slider-pro--preview').not('[data-inited]').on('click', function(){
               $(this).tourismTiger('initGallery');
             });
 
             /**
              * Close carousel
              */
-            $('.slider-pro__close-link').on('click', function(){
+            $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
               $(this).tourismTiger('destroyGallery');
             });
+
+            $('.slider-pro--preview, .slider-pro__close-link').attr('data-inited', 1);
 
             if ( $('.js-new-slider').length > 0 ) {
                 setTimeout(function(){
