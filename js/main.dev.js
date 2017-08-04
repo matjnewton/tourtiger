@@ -369,25 +369,25 @@
 			}).animate({
 				'top': (globalHeight / 2) - (height / 2),
 				'left': (globalWidth / 2) - (width / 2),
-			}, 300, function(){
-				$image.fadeOut(500);
+			}, 300);
 
-				$carousel
-				.css({
-					'display': 'flex',
-				})
-				.animate({
-					'opacity': '1'
-				}, 300)
-				.find('.slider-pro__slider')
-				.slick({
-					prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
-					nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
-					adaptiveHeight: true,
-					lazyLoad: 'progressive',
-				})
-				.slick('setOption', 'height', null, true);
-			});
+			$image.fadeOut(500);
+
+			$carousel
+			.css({
+				'display': 'flex',
+			})
+			.animate({
+				'opacity': '1'
+			}, 300)
+			.find('.slider-pro__slider')
+			.slick({
+				prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
+				nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
+				adaptiveHeight: true,
+				lazyLoad: 'progressive',
+			})
+			.slick('setOption', 'height', null, true);
 		},
 
 		destroyGallery: function(){
@@ -438,19 +438,23 @@
 	};
 
 	$(function(){
-        /**
-         * Init slick carousel
-         */
-        $('.slider-pro--preview').not('[data-inited]').on('click', function(){
-          $(this).tourismTiger('initGallery');
-        });
+        if ( $('.slider-pro--preview').not('[data-inited]') ) {
+	        /**
+	         * Init slick carousel
+	         */
+	        $('.slider-pro--preview').not('[data-inited]').on('click', function(){
+	          $(this).tourismTiger('initGallery');
+	        });
+	    }
 
-        /**
-         * Close carousel
-         */
-        $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
-          $(this).tourismTiger('destroyGallery');
-        });
+        if ( $('.slider-pro__close-link').not('[data-inited]') ) {
+	        /**
+	         * Close carousel
+	         */
+	        $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
+	          $(this).tourismTiger('destroyGallery');
+	        });
+		}	
 
         $('.slider-pro--preview, .slider-pro__close-link').attr('data-inited', 1);
 	});
