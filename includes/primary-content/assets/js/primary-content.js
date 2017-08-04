@@ -130,7 +130,7 @@ window.onload = function () {
         }
       });
 
-      if ($conditionaled.length > 0 && $form.closest('.pc--r').hasClass('.pc--r__scroll')) {
+      if ($conditionaled.length > 0 && $form.closest('.pc--r').hasClass('pc--r__scroll')) {
         $form.closest('.pc--r__scroll').slick('setOption', 'height', null, true); 
       }
     }; 
@@ -144,14 +144,20 @@ window.onload = function () {
          */
         init: function () {     
 
-            $('.pc--c').find('form').conditionalizeForm();
+            if ( $('.pc--c').find('form').not('[data-inited]') ) {
+              $('.pc--c').find('form').conditionalizeForm();
+              $('.pc--c').find('form').attr('data-inited', 1);
+            }
 
-            $(".pc--date").daterangepicker({
-                    locale: {
-                      format: "YYYY-MM-DD"
-                    },
-                    singleDatePicker: true,
-            });
+            if ( $(".pc--date").not('[data-inited]') ) {
+              $(".pc--date").daterangepicker({
+                      locale: {
+                        format: "YYYY-MM-DD"
+                      },
+                      singleDatePicker: true,
+              });
+              $(".pc--date").attr('data-inited', 1);
+            }
 
             $(document).bind('gform_confirmation_loaded', function(event, formId){
                 console.log(formId);
