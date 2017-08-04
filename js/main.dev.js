@@ -440,7 +440,19 @@
 	};
 
 	$(function(){
-		$(window).controller('tourismTiger');
+        /**
+         * Init slick carousel
+         */
+        $('.slider-pro--preview').on('click', function(){
+          $(this).tourismTiger('initGallery');
+        });
+
+        /**
+         * Close carousel
+         */
+        $('.slider-pro__close-link').on('click', function(){
+          $(this).tourismTiger('destroyGallery');
+        });
 	});
 
 }));
