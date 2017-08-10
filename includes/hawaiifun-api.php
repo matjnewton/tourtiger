@@ -3,19 +3,6 @@
  * Hawaiifun api
  */
 
-/**
- * Shortcode [hawaiifun]
- *
- * -------------------------------------------------
- * Прошу прощения за говнокод ниже, 
- * эту апи кроме как топором, не прикрутить. 
- * -------------------------------------------------
- * I appologize for the damn-code below,
- * there ain't any ways to integrate hawaiifun API
- * -------------------------------------------------
- * 
- * @return string
- */
 
 function hawaiifunapi_form(){
 	global $post;
@@ -830,11 +817,14 @@ function include_hawaiifun_scripts() {
 	wp_deregister_script( 'hawaiifun-activityswitch' );
 	wp_enqueue_script( 'hawaiifun-activityswitch', '//www.hawaiifun.org/reservation/external/activityswitch-1.js?jsversion=20170214', array(), null, true );
 
+    // below write common scripts
+    //$data = '<script></script>';
+    
 	//wp_add_inline_script( 'hawaiifun-activityswitch', $data );
 }
 
-
+// if hawaiifun api activated, all functions above are working
 if ( get_field( 'is-hawaiifun', 'option' ) ) :
-	add_action( 'wp_enqueue_scripts', 'include_hawaiifun_scripts', 50 );
-	add_action('wp_footer', 'hawaiifunapi_form');
+	add_action( 'wp_enqueue_scripts', 'include_hawaiifun_scripts', 50 ); // includes scripts
+	add_action('wp_footer', 'hawaiifunapi_form');                        // print the html code to popup wrapper
 endif;
