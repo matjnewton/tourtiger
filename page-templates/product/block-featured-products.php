@@ -3,7 +3,7 @@
  * Product primary area component: Featured Products
  */
 
-if ( get_row_layout() == 'primary_content_f_products' && current_user_can( 'edit_posts' ) ) :
+if ( get_row_layout() == 'primary_content_f_products' ) :
 
     global $primary_content_options_count;
 	$post_objects = get_sub_field('featured_products');
@@ -27,18 +27,21 @@ if ( get_row_layout() == 'primary_content_f_products' && current_user_can( 'edit
 					    $thumb_id = get_post_thumbnail_id( $post_object->ID );
 					    $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true);
 					    $this_thumb = $thumb_url[0];
+					    $show = true;
 					} else { 
-						$this_thumb = '//placehold.it/250x250';
+						$show = false;
 					}
 
 					?>
 
 					<div class="pc_featured-products">
-						<div class="pc_featured-products__thumb">
-							<a href="<?php the_permalink( $post_object->ID ); ?>" class="pc_featured-products__thumb-link">
-								<img src="<?=$this_thumb;?>" alt="<?php echo get_the_title( $post_object->ID ); ?>" class="pc_featured-products__img" />
-							</a>
-						</div>
+						<?php if ( $show ) : ?>
+							<div class="pc_featured-products__thumb">
+								<a href="<?php the_permalink( $post_object->ID ); ?>" class="pc_featured-products__thumb-link">
+									<img src="<?=$this_thumb;?>" alt="<?php echo get_the_title( $post_object->ID ); ?>" class="pc_featured-products__img" />
+								</a>
+							</div>
+						<?php endif; ?>
 
 						<div class="pc_featured-products__body">
 							<h6><?php echo get_the_title( $post_object->ID ); ?></h4>
