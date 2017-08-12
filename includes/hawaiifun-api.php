@@ -417,204 +417,207 @@ function hawaiifunapi_form(){
 		case 7970:
 			$html = "
 				<div id=\"hawaiifun\" class=\"pc--form hawaiifun--popup\">
-				  <script type=\"text/javascript\">
-					    // Activity group settings
-					    var group1 = {
-					      supplierid: 465,
-					      activityids: [ 6863],
-					      guesttypeids: [ 1594 ],
-					      activityprices: {
-					        6863: { 1594: 155.00},
-					        
-					      },
-					      activitydescriptions: {
-					        6863: 'Save by Booking online'
-					      },
-					      datecontrolid: 'date_g1',
-					      pricecontrolid: 'price_g1',
-					      guesttypecontrolids: {
-					        1594: 'guests_g1_t1594'
-					      },
-					      cancellationpolicycontrolid: 'cancellationpolicy',
-						  activityid: null
-					    };
+					<script type=\"text/javascript\">
+					// Activity group settings
+					var group1 = {
+					  supplierid: 465,
+					  activityids: [ 4044],
+					  guesttypeids: [ 1594 ],
+					  activityprices: {
+					    4044: { 1594: 155.00},
+					    
+					  },
+					  activitydescriptions: {
+					    4044: 'Save by Booking online'
+					  },
+					  datecontrolid: 'date_g1',
+					  pricecontrolid: 'price_g1',
+					  guesttypecontrolids: {
+					    1594: 'guests_g1_t1594'
+					  },
+					  cancellationpolicycontrolid: 'cancellationpolicy',
+					  activityid: null
+					};
 
-					    function showCalendar(group) {
-					      var minavailability = { guests: {} };
-					      var failure = false;
-					      $.each(group.guesttypeids, function(key, value) {
-					        if (failure) return;
-					        var guesttypeid = value;
-					        var guestscount = getGuestsCount(group, guesttypeid, true);
-					        if (guestscount == null) {
-					          failure = true;
-					        } else {
-					          minavailability.guests[guesttypeid] = guestscount;
-					        }
-					      });
-					      if (!failure) {
-					        // Show calendar (only if all guest type counts are correct)
-					        calendar(group.activityids, group.datecontrolid, false, minavailability);
-					      }
+					function showCalendar(group) {
+					  var minavailability = { guests: {} };
+					  var failure = false;
+					  $.each(group.guesttypeids, function(key, value) {
+					    if (failure) return;
+					    var guesttypeid = value;
+					    var guestscount = getGuestsCount(group, guesttypeid, true);
+					    if (guestscount == null) {
+					      failure = true;
+					    } else {
+					      minavailability.guests[guesttypeid] = guestscount;
 					    }
-						
-					    function formatMoney(n) {
-					      var c = 2, d = \".\", t = \",\", s = n < 0 ? \"-\" : \"\", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + \"\", j = (j = i.length) > 3 ? j % 3 : 0;
-					      return s + (j ? i.substr(0, j) + t : \"\") + i.substr(j).replace(/(\d{3})(?=\d)/g, \"$1\" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : \"\");
-					    }
-						
-					    function showPriceAndAvailability(group) {
-					      var activityid = getSelectedActivityId(group, false);
-					      var activitydate = getActivityDate(group, false);
-					      var minavailability = { guests: {} };
-					      var failure = false;
-					      $.each(group.guesttypeids, function(key, value) {
-					        if (failure) return;
-					        var guesttypeid = value;
-					        var guestscount = getGuestsCount(group, guesttypeid, false);
-					        if (guestscount == null) {
-					          failure = true;
-					        } else {
-					          minavailability.guests[guesttypeid] = guestscount;
-					        }
-					      });
+					  });
+					  if (!failure) {
+					    // Show calendar (only if all guest type counts are correct)
+					    calendar(group.activityids, group.datecontrolid, false, minavailability);
+					  }
+					}
 
-					      if (activitydate != null && !failure) {
-					        checkAvailability(function(data) {
-							  group.activityid = null;
-					          $.each(group.activityids, function(key, value) {
-					            // Enable or disable activities based on availability (only if activity date is selected and all guest types are correct)
-					            var activityid = value;
-								if (data[activityid]) {
-								  group.activityid = activityid;
-								}
-					          });
-							  if (group.activityid == null) {
-							    $('#availability').html('Not enough availability');
-							    $('#' + group.pricecontrolid).html('');
-							  } else {
-							    $('#availability').html(group.activitydescriptions[group.activityid] + ' - Seats Available');
-					            var price = 0.0;
-							    $.each(group.guesttypeids, function(key, value) {
-							      var guesttypeid = value;
-							      var guestscount = getGuestsCount(group, guesttypeid, false);
-							      var guesttypeprice = group.activityprices[group.activityid][guesttypeid];
-							      price += guestscount * guesttypeprice;
-								});
-							    $('#' + group.pricecontrolid).html('$' + formatMoney(price));
-							  }
-					        }, group.activityids, activitydate, minavailability);
-					      }
-					    }
+					function formatMoney(n) {
+					  var c = 2, d = \".\", t = \",\", s = n < 0 ? \"-\" : \"\", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + \"\", j = (j = i.length) > 3 ? j % 3 : 0;
+					  return s + (j ? i.substr(0, j) + t : \"\") + i.substr(j).replace(/(\d{3})(?=\d)/g, \"$1\" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : \"\");
+					}
 
-					    function getSelectedActivityId(group, showWarningIfNoActivitySelected) {
-					      var activityid = group.activityid;
-					      if (activityid == null && showWarningIfNoActivitySelected) {
-					        alert('Please select Flight');
-					      }
-					      return activityid;
+					function showPriceAndAvailability(group) {
+					  var activityid = getSelectedActivityId(group, false);
+					  var activitydate = getActivityDate(group, false);
+					  var minavailability = { guests: {} };
+					  var failure = false;
+					  $.each(group.guesttypeids, function(key, value) {
+					    if (failure) return;
+					    var guesttypeid = value;
+					    var guestscount = getGuestsCount(group, guesttypeid, false);
+					    if (guestscount == null) {
+					      failure = true;
+					    } else {
+					      minavailability.guests[guesttypeid] = guestscount;
 					    }
-						
-					    function getGuestsCount(group, guestTypeId, showWarningIfWrongFormat) {
-					      var guestscountstr = $('#' + group.guesttypecontrolids[guestTypeId]).val();
-					      if (guestscountstr == '') return 0;
-					      if (!/^\d+$/.test(guestscountstr)) {
-					        if (showWarningIfWrongFormat) {
-					          alert('Please enter number of Passenger(s)');
-					        }
-					        return null;
-					      }
-					      return parseInt(guestscountstr);
-					    }
+					  });
 
-					    function getActivityDate(group, showWarningIfWrongFormat) {
-					      var activitydatestr = $('#' + group.datecontrolid).val();
-					      if (!/^\d\d?\/\d\d?\/\d\d\d\d$/.test(activitydatestr)) {
-					        if (showWarningIfWrongFormat) {
-					          alert('Please select Date for Flight');
-					        }
-					        return null;
-					      }
-					      return activitydatestr;
-					    }
-
-					    function selectActivity(group, selectedcheckbox) {
-					      if (!selectedcheckbox.checked) return;
+					  if (activitydate != null && !failure) {
+					    checkAvailability(function(data) {
+						  group.activityid = null;
 					      $.each(group.activityids, function(key, value) {
-					        if (selectedcheckbox.id == group.activitycheckboxcontrolids[value]) return;
-					        $('#' + group.activitycheckboxcontrolids[value]).attr('checked', false);
+					        // Enable or disable activities based on availability (only if activity date is selected and all guest types are correct)
+					        var activityid = value;
+							if (data[activityid]) {
+							  group.activityid = activityid;
+							}
 					      });
+						  if (group.activityid == null) {
+						    $('#availability').html('Not enough availability');
+						    $('#' + group.pricecontrolid).html('');
+						  } else {
+						    $('#availability').html(group.activitydescriptions[group.activityid] + ' - Seats Available');
+					        var price = 0.0;
+						    $.each(group.guesttypeids, function(key, value) {
+						      var guesttypeid = value;
+						      var guestscount = getGuestsCount(group, guesttypeid, false);
+						      var guesttypeprice = group.activityprices[group.activityid][guesttypeid];
+						      price += guestscount * guesttypeprice;
+							});
+						    $('#' + group.pricecontrolid).html('$' + formatMoney(price));
+						  }
+					    }, group.activityids, activitydate, minavailability);
+					  }
+					}
+
+					function getSelectedActivityId(group, showWarningIfNoActivitySelected) {
+					  var activityid = group.activityid;
+					  if (activityid == null && showWarningIfNoActivitySelected) {
+					    alert('Please select Flight');
+					  }
+					  return activityid;
+					}
+
+					function getGuestsCount(group, guestTypeId, showWarningIfWrongFormat) {
+					  var guestscountstr = $('#' + group.guesttypecontrolids[guestTypeId]).val();
+					  if (guestscountstr == '') return 0;
+					  if (!/^\d+$/.test(guestscountstr)) {
+					    if (showWarningIfWrongFormat) {
+					      alert('Please enter number of Passenger(s)');
 					    }
+					    return null;
+					  }
+					  return parseInt(guestscountstr);
+					}
 
-					    function booknow(group) {
-					     
-					      var activityid = getSelectedActivityId(group, true);
-					      if (activityid == null) return false;
-
-					      var activitydate = getActivityDate(group, true);
-					      if (activitydate == null) return false;
-
-					      reservation(group.supplierid, activityid, activitydate, '', 0.0);
-					      $.each(group.guesttypeids, function(key, value) {
-					        var guesttypeid = value;
-					        var guestscount = $('#' + group.guesttypecontrolids[guesttypeid]).val();
-					        addGuests(guesttypeid, guestscount);
-					      }); setAccommodationFixed();
-					      setgoogleanalytics('UA-17383286-1');
-					      availability_popup();
-					      return true;
+					function getActivityDate(group, showWarningIfWrongFormat) {
+					  var activitydatestr = $('#' + group.datecontrolid).val();
+					  if (!/^\d\d?\/\d\d?\/\d\d\d\d$/.test(activitydatestr)) {
+					    if (showWarningIfWrongFormat) {
+					      alert('Please select Date for Flight');
 					    }
-				  </script>
-				  <p>
-				    <span>Passenger(s)</span>
-				      <select id=\"guests_g1_t1594\" onchange=\"showPriceAndAvailability(group1);\">
-				        <option value=\"1\">1</option>
-				        <option value=\"2\">2</option>
-					    <option value=\"3\">3</option>
-				        <option value=\"4\">4</option>
-				        <option value=\"5\">5</option>
-				        <option value=\"6\">6</option>
-				        <option value=\"7\">7</option>
-				        <option value=\"8\">8</option>
-				      	<option value=\"9\">9</option>
-				      	<option value=\"10\">10</option>
-				      	<option value=\"11\">11</option>
-				      	<option value=\"12\">12</option>
-				      	<option value=\"13\">13</option>
-				      	<option value=\"14\">14</option>
-				      	<option value=\"15\">15</option>
-				      	<option value=\"16\">16</option>
-				      	<option value=\"17\">17</option>
-				      	<option value=\"18\">18</option>
-				      	<option value=\"19\">19</option>
-				      	<option value=\"20\">20</option>
-				      	<option value=\"21\">21</option>
-				      	<option value=\"22\">22</option>
-				      	<option value=\"23\">23</option>
-				      	<option value=\"24\">24</option>
-				      	<option value=\"25\">25</option>	
-				      </select>
-				    </p>
+					    return null;
+					  }
+					  return activitydatestr;
+					}
 
-				    <p>Online special price $155 (Regular rate $215pp)</p>
+					function selectActivity(group, selectedcheckbox) {
+					  if (!selectedcheckbox.checked) return;
+					  $.each(group.activityids, function(key, value) {
+					    if (selectedcheckbox.id == group.activitycheckboxcontrolids[value]) return;
+					    $('#' + group.activitycheckboxcontrolids[value]).attr('checked', false);
+					  });
+					}
 
-				    <p>
-				      <span class=\"header\">Choose Date</span>
-				      <input id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
-				    </p>
+					function booknow(group) {
+					 
+					  var activityid = getSelectedActivityId(group, true);
+					  if (activityid == null) return false;
 
-				    <hr />
+					  var activitydate = getActivityDate(group, true);
+					  if (activitydate == null) return false;
 
-				    <p>Total Price: <span id=\"price_g1\"></span></p>
+					  reservation(group.supplierid, activityid, activitydate, '', 0.0);
+					  $.each(group.guesttypeids, function(key, value) {
+					    var guesttypeid = value;
+					    var guestscount = $('#' + group.guesttypecontrolids[guesttypeid]).val();
+					    addGuests(guesttypeid, guestscount);
+					  }); setAccommodationFixed();
+					  setgoogleanalytics('UA-17383286-1');
+					  availability_popup();
+					  return true;
+					}
+					</script>
+					<style>
+					 .ui-widget { font-size: 0.75em; }
+					 .ui-datepicker td.un { color:red;text-decoration:line-through; }
+					 div.ex1 {
+					    width:500px;
+					    margin: auto;
+					    
+					 }
 
-				    <hr />
-
-				    <script type=\"text/javascript\">showPriceAndAvailability(group1);</script>
-
-				    <p>
-				      <input type=\"button\" onclick=\"booknow(group1);\" value=\"Book Now\">
-				    	<a class=\"close-popup\" href=\"javascript:\">Close</a>
-					  </p>
+					</style>
+					<p>
+					  <span>Passenger(s)</span>
+					  <select id=\"guests_g1_t1594\" onchange=\"showPriceAndAvailability(group1);\">
+					    <option value=\"1\">1</option>
+					    <option value=\"2\">2</option>
+					      <option value=\"3\">3</option>
+					    <option value=\"4\">4</option>
+					    <option value=\"5\">5</option>
+					    <option value=\"6\">6</option>
+					    <option value=\"7\">7</option>
+					    <option value=\"8\">8</option>
+					      <option value=\"9\">9</option>
+					      <option value=\"10\">10</option>
+					      <option value=\"11\">11</option>
+					      <option value=\"12\">12</option>
+					      <option value=\"13\">13</option>
+					      <option value=\"14\">14</option>
+					      <option value=\"15\">15</option>
+					      <option value=\"16\">16</option>
+					      <option value=\"17\">17</option>
+					      <option value=\"18\">18</option>
+					      <option value=\"19\">19</option>
+					      <option value=\"20\">20</option>
+					      <option value=\"21\">21</option>
+					      <option value=\"22\">22</option>
+					      <option value=\"23\">23</option>
+					      <option value=\"24\">24</option>
+					      <option value=\"25\">25</option>	
+					  </select>
+					</p>
+					<p>Online special price $155 (Regular rate $215pp)</p>
+					<p>
+					<span class=\"header\">Choose Date</span>
+					<input id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
+					</p> 
+					<hr />
+					<p><span>Total Price:</span> <span id=\"price_g1\"></span></p>
+					<hr />
+					<script type=\"text/javascript\">showPriceAndAvailability(group1);</script>
+					<p>
+					<input type=\"button\" onclick=\"booknow(group1);\" value=\"Book Now\">
+					<a href=\"javascript:\" class=\"close-popup\"></a>
+					</p>
 				</div>
 			";
 			break;
