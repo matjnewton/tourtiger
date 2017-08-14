@@ -679,7 +679,7 @@ function hawaiifunapi_form(){
 				  <p>
 
 				    <span class=\"guestTypeContainer gt1594\">
-				      Shared Basket (non private)
+				      # of Passengers:
 				      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" />
 				      <select class=\"guestCountSelect\">
 				        <option value=\"0\">0</option>
