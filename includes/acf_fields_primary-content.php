@@ -664,11 +664,11 @@ function primary_area_deregister_unnesesarily_scripts() {
 		// wp_dequeue_style('wqs_style_daterangepicker');//dgamoni
 		// wp_dequeue_style('wqs_style_multipledatepicker');//dgamoni
 
-        wp_register_script('wqs_daterangepicker', get_stylesheet_directory_uri() . '/inc/init_api/js/daterangepicker.js');
-        wp_enqueue_script('wqs_daterangepicker');
-
         wp_register_script('wqs_moment', get_stylesheet_directory_uri() . '/inc/init_api/js/moment.min.js');
         wp_enqueue_script('wqs_moment');
+
+        wp_register_script('wqs_daterangepicker', get_stylesheet_directory_uri() . '/inc/init_api/js/daterangepicker.js');
+        wp_enqueue_script('wqs_daterangepicker');
 
         wp_register_style('wqs_style', get_stylesheet_directory_uri() . '/inc/init_api/css/style.css');
         wp_register_style('wqs_style_daterangepicker', get_stylesheet_directory_uri() . '/inc/init_api/css/daterangepicker.css');
