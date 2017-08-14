@@ -649,8 +649,8 @@ function primary_area_deregister_unnesesarily_scripts() {
 		
 		wp_dequeue_script('wqs_moment');//dgamoni
 		wp_dequeue_script('wqs_daterangepicker');//dgamoni
-		wp_equeue_script('wqs_moment');//dgamoni
-		wp_equeue_script('wqs_daterangepicker');//dgamoni
+		wp_enqueue_script('wqs_moment');//dgamoni
+		wp_enqueue_script('wqs_daterangepicker');//dgamoni
 		// wp_dequeue_script('wqs_multipledatepicker');//dgamoni
 		
 		// wp_dequeue_script('wqs_functions_atlas');//dgamoni
@@ -663,9 +663,9 @@ function primary_area_deregister_unnesesarily_scripts() {
 		// wp_dequeue_style('product_css_adaptive');
 
 		wp_dequeue_style('wqs_style');//dgamoni
-		wp_equeue_style('wqs_style');//dgamoni
+		wp_enqueue_script('wqs_style');//dgamoni
 		wp_dequeue_style('wqs_style_daterangepicker');//dgamoni
-		wp_equeue_style('wqs_style_daterangepicker');//dgamoni
+		wp_enqueue_script('wqs_style_daterangepicker');//dgamoni
 		// wp_dequeue_style('wqs_style_multipledatepicker');//dgamoni
 
 	endif;
