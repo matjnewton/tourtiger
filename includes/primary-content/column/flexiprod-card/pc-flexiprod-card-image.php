@@ -63,7 +63,7 @@ echo $open;
 	/**
 	 * Print hover content
 	 */
-	if ( have_rows( 'hover-content' ) ) :
+	if ( have_rows( 'hover-content' ) && ! wp_is_mobile() ) :
 		while ( have_rows( 'hover-content' ) ) :
 			the_row();
 
