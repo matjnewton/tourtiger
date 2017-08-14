@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.1.2282
+Version: 0.1.2283
 Template: genesis
 Template Version: 2.0.25
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -467,13 +467,11 @@ div.banner-wrapper {
 
 @media (max-width: 568px) {
 	.style2 .primary_content_content_card_editor {
-	    padding: 20px 0px;
+	    padding: 20px 0px!important;
 	}
 	.product_content_wrapper ul li.primary_content_expandable_content_options_li {
-	    border-bottom: 1px solid #ebe7e5;
-	    padding: 27px 0px 27px 0px;
-	    list-style: none;
-	    margin: 0;
+	    padding: 27px 0px 27px 0px!important;
+	    margin: 0!important;
 	}
 }
 
@@ -490,5 +488,15 @@ div.banner-wrapper {
 }
 .pc--r__mar-normal.pc--r__wrap.pc--r__col-1 .pc--c {
 	margin: 0!important;
+}
+.styles .content .style2 h1.primary_content_content_card_headline, .styles .content .style2 h2.primary_content_content_card_headline, .styles .content .style2 h3.primary_content_content_card_headline, .styles .content .style2 h4.primary_content_content_card_headline, .styles .content .style2 h5.primary_content_content_card_headline, .styles .content .style2 h6.primary_content_content_card_headline, .content .style2 h1.primary_content_content_card_headline, .content .style2 h2.primary_content_content_card_headline, .content .style2 h3.primary_content_content_card_headline, .content .style2 h4.primary_content_content_card_headline, .content .style2 h5.primary_content_content_card_headline, .content .style2 h6.primary_content_content_card_headline {
+    padding: 10px!important;
+    margin: 0;
+}
+.style2 .primary_content_content_card_headline_wrap {
+	padding-top: 170px!important;
+    background-repeat: no-repeat!important;
+    height: auto!important;
+    min-height: 162px!important;
 }
 }
