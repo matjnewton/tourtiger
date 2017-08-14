@@ -499,4 +499,7 @@ div.banner-wrapper {
     height: auto!important;
     min-height: 162px!important;
 }
+.checkbox label, .radio label {
+	padding-left: 30px!important;
+}
 }
