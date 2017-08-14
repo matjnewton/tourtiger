@@ -45,19 +45,6 @@ function wqs_load_scripts_init()
         wp_enqueue_script('wqs_multipledatepicker');
     endif;
 
-    if ( is_page_template( 'page-templates/test-pc.php' ) ) :
-        wp_register_script('wqs_daterangepicker', WQS_INITAPI_URL . '/js/daterangepicker.js');
-        wp_enqueue_script('wqs_daterangepicker');
-
-        wp_register_script('wqs_moment', WQS_INITAPI_URL . '/js/moment.min.js');
-        wp_enqueue_script('wqs_moment');
-
-        wp_register_style('wqs_style', WQS_INITAPI_URL . '/css/style.css');
-        wp_register_style('wqs_style_daterangepicker', WQS_INITAPI_URL . '/css/daterangepicker.css');
-        wp_enqueue_style('wqs_style');
-        wp_enqueue_style('wqs_style_daterangepicker');
-    endif;
-
 
 }
 
