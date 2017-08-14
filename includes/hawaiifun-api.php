@@ -625,73 +625,100 @@ function hawaiifunapi_form(){
 		// giftflight
 		case 8077:
 			$html = "
-				<form id=\"hawaiifun\" class=\"GroupsForm_40e9607c pc--form hawaiifun--popup\">
-                    <p>
-                        Shared Basket (non private)
-                        <select id='guests_a4045_t1594'>
-                          <option value='0'>0</option>
-                          <option value='1'>1</option>
-                          <option value='2'>2</option>
-                          <option value='3'>3</option>
-                          <option value='4'>4</option>
-                          <option value='5'>5</option>
-                          <option value='6'>6</option>
-                          <option value='7'>7</option>
-                          <option value='8'>8</option>
-                          <option value='9'>9</option>
-                          <option value='10'>10</option>
-                          <option value='11'>11</option>
-                          <option value='12'>12</option>
-                          <option value='13'>13</option>
-                          <option value='14'>14</option>
-                          <option value='15'>15</option>
-                          <option value='16'>16</option>
-                          <option value='17'>17</option>
-                          <option value='18'>18</option>
-                          <option value='19'>19</option>
-                          <option value='20'>20</option>
-                        </select>
-                    </p>
-                    <p>
-                        Private Basket 2-5 Passengers
-                        <select id='guests_a4045_t1595'>
-                          <option value='0'>0</option>
-                          <option value='1'>1</option>
-                          <option value='2'>2</option>
-                          <option value='3'>3</option>
-                          <option value='4'>4</option>
-                          <option value='5'>5</option>
-                          <option value='6'>6</option>
-                          <option value='7'>7</option>
-                          <option value='8'>8</option>
-                          <option value='9'>9</option>
-                          <option value='10'>10</option>
-                          <option value='11'>11</option>
-                          <option value='12'>12</option>
-                          <option value='13'>13</option>
-                          <option value='14'>14</option>
-                          <option value='15'>15</option>
-                          <option value='16'>16</option>
-                          <option value='17'>17</option>
-                          <option value='18'>18</option>
-                          <option value='19'>19</option>
-                          <option value='20'>20</option>
-                        </select>
-                    </p>
-                    <h5>Upgrades:</h5>
-                    <p>
-                        Add Complimentary Anniversary Banner
-                        <input type=\"text\" id=\"upgrades_a4045_u1902\" value=\"0\" size=\"2\" />
-                    </p>
-                    <p>
-                        Add Complimentary Happy Birthday Banner
-                        <input type=\"text\" id=\"upgrades_a4045_u1901\" value=\"0\" size=\"2\" />
-                    </p>
-                    <p>
-                        <input type=\"button\" value=\"Purchase\" onclick=\"reservation2('4045', 4045, undefined, '', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0); setGiftCertificate(); addGuests(1594, document.getElementById('guests_a4045_t1594').value); addGuests(1595, document.getElementById('guests_a4045_t1595').value); addUpgrades(1902, document.getElementById('upgrades_a4045_u1902').value); addUpgrades(1901, document.getElementById('upgrades_a4045_u1901').value); setUpgradesFixed(); setAccommodationFixed();  availability_popup(); return false;\" />
-                    	<a class=\"close-popup\" href=\"javascript:\">Close</a>
-					  </p>
-                </form>
+				<form id=\"hawaiifun\" class=\"GroupsForm_861fe1c0 pc--form hawaiifun--popup\">
+				  <script type=\"text/javascript\">
+				    var groups_861fe1c0_contextData = {
+				      groupSelectSelector: '.GroupsForm_861fe1c0 .groupSelect',
+				      allActivitySelectContainersSelector: '.GroupsForm_861fe1c0 .activitySelectContainer',
+				      activitySelectSubselector: '.activitySelect',
+				      allGuestTypeContainersSelector: '.GroupsForm_861fe1c0 .guestTypeContainer',
+				      guestCountTextInputSubselector: '.guestCountTextInput',
+				      guestCountSelectSubselector: '.guestCountSelect',
+				      guestCountLimitForSelectThreshold: 10,
+				      singleSeatContainersSelector: '.GroupsForm_861fe1c0 .singleSeatContainer',
+				      singleSeatGuestTypeSelectSubselector: '.guestTypeSelect',
+				      guestTypeInfos: {
+				        '1594': { containerSelector: '.GroupsForm_861fe1c0 .guestTypeContainer.gt1594' },
+				        '2701': { containerSelector: '.GroupsForm_861fe1c0 .guestTypeContainer.gt2701' },
+
+				        'null': null
+				      },
+				      groupInfos: {
+
+				        'null': null
+				      },
+				      activityInfos: {
+				        '6863': {
+				          guestCountLimit: 8,
+				          guestTypeIds: [ 1594, 2701 ],
+				          singleSeatContainerSelector: '.GroupsForm_861fe1c0 .singleSeatContainer.a6863'
+				        },
+				        '4044': {
+				          guestCountLimit: 14,
+				          guestTypeIds: [ 1594 ],
+				          singleSeatContainerSelector: '.GroupsForm_861fe1c0 .singleSeatContainer.a4044'
+				        },
+				        '4043': {
+				          guestCountLimit: 25,
+				          guestTypeIds: [ 1594 ],
+				          singleSeatContainerSelector: '.GroupsForm_861fe1c0 .singleSeatContainer.a4043'
+				        },
+
+				        'null': null
+				      }
+				    };
+				  </script>
+				  <p>
+				    <select class=\"groupSelect\" onchange=\"activitySwitch_applyGroup(groups_861fe1c0_contextData)\">
+				      <option value=\"a6863\">Solvang-Santa Barbara Wine Country Morning Adventure</option>
+				      <option value=\"a4044\">Temecula Champagne Sunrise Adventure</option>
+				      <option value=\"a4043\">Del Mar Coastal Champagne Evening Adventure</option>
+				    </select>
+				  </p>
+
+				  <p>
+
+				    <span class=\"guestTypeContainer gt1594\">
+				      Shared Basket (non private)
+				      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" />
+				      <select class=\"guestCountSelect\">
+				        <option value=\"0\">0</option>
+				        <option value=\"1\">1</option>
+				        <option value=\"2\">2</option>
+				        <option value=\"3\">3</option>
+				        <option value=\"4\">4</option>
+				        <option value=\"5\">5</option>
+				        <option value=\"6\">6</option>
+				        <option value=\"7\">7</option>
+				        <option value=\"8\">8</option>
+				      </select>
+				    </span>
+				  </p>
+				  <p>
+				    <span class=\"guestTypeContainer gt2701\">
+				      Flight PLUS Wine Tasting (non-private)
+				      <input type=\"text\" class=\"guestCountTextInput\" value=\"0\" size=\"2\" style=\"display: none;\" />
+				      <select class=\"guestCountSelect\">
+				        <option value=\"0\">0</option>
+				        <option value=\"1\">1</option>
+				        <option value=\"2\">2</option>
+				        <option value=\"3\">3</option>
+				        <option value=\"4\">4</option>
+				        <option value=\"5\">5</option>
+				        <option value=\"6\">6</option>
+				        <option value=\"7\">7</option>
+				        <option value=\"8\">8</option>
+				      </select>
+				    </span>
+				  </p>
+				  <script type=\"text/javascript\">activitySwitch_applyGroup(groups_861fe1c0_contextData);</script>
+				  
+				  <p>
+				  <input type=\"button\" value=\"Purchase\" onclick=\"var selectedActivityId = activitySwitch_getActivityId(groups_861fe1c0_contextData); reservation('465', selectedActivityId, undefined, '', 0.0);  setGiftCertificate(); if (!activitySwitch_addGuests(groups_861fe1c0_contextData)) return false;      availability_popup(); return false;\" />
+				  <a href=\"javascript:\" class=\"close-popup\"></a>
+				  </p>
+
+				</form>
 			";
 			break;
 
