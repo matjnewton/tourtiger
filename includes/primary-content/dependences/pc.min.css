@@ -44,24 +44,10 @@
 	z-index: 999;
 }
 
-.video-popup--frame .embed-container { 
+.video-popup--frame iframe {
 	position: absolute;
-	padding-bottom: 56.25%;
-	height: 0;
-	overflow: hidden;
-	max-width: 100%;
-	height: auto;
-	left: 50%;
 	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-} 
-
-.video-popup--frame .embed-container iframe,
-.video-popup--frame .embed-container object,
-.video-popup--frame .embed-container embed { 
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 }

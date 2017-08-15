@@ -52,7 +52,7 @@
 				</a>
 
 				<div class="video-popup--frame">
-					<div class="embed-container"><?=$iframe;?></div>
+					<?=$iframe;?>
 				</div>
 			</div>
 
