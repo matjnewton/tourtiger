@@ -7,7 +7,7 @@
 	// get iframe HTML
 	$iframe = get_sub_field( 'tour_pc-coltype--video_add' );
 	$type   = get_sub_field( 'video_type' );
-	$cover  = gat_sub_field( 'video_cover' );
+	$cover  = get_sub_field( 'video_cover' );
 
 	// use preg_match to find iframe src
 	preg_match('/src="(.+?)"/', $iframe, $matches);
