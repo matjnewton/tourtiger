@@ -1076,12 +1076,27 @@ acf_add_local_field_group(array (
 																			'required' => '',
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => '33',
+																				'width' => '100',
 																				'class' => '',
 																				'id' => '',
 																			),
 																			'width' => '',
 																			'height' => '',
+																		),
+																		array (
+																			'key' => 'field_582492891E725',
+																			'label' => 'Video type',
+																			'name' => 'video_type',
+																			'type' => 'select',
+																			'required' => '',
+																			'wrapper' => array (
+																				'width' => '80',
+																			),
+																			'choices' => array (
+																				0 => 'Auto',
+																				'popup' => 'Cover and Popup'
+																			),
+																			'default_values' => array ( 0 )
 																		),
 																		array (
 																			'key' => 'field_5824928sivide',
@@ -1093,12 +1108,29 @@ acf_add_local_field_group(array (
 																			'conditional_logic' => '',
 																			'message' => 'Full width',
 																			'wrapper' => array (
-																				'width' => '33',
+																				'width' => '20',
 																				'class' => '',
 																				'id' => '',
 																			),
 																			'width' => '',
 																			'height' => '',
+																		),
+																		array (
+																			'key' => 'field_5824919SIvIdE',
+																			'label' => 'Cover image',
+																			'name' => 'video_cover',
+																			'type' => 'image',
+																			'required' => '',
+																			'conditional_logic' => array (
+																				array (
+																					array (
+																						'field' => 'field_582492891E725',
+																						'operator' => '!=',
+																						'value' => 0
+																					)
+																				)
+																			),
+																			'return_format' => 'object',
 																		),
 																		array (
 																			'key' => 'number_5odsith-326',
