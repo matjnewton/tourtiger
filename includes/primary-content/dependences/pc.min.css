@@ -33,6 +33,15 @@
 	}	
 }
 
+.video-popup--cover {
+	display: inline-block;
+}
+
+.video-popup--cover img {
+	max-width: 100%;
+	height: auto;
+}
+
 .video-popup--frame {
 	display: none;
 	position: fixed;
