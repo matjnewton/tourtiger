@@ -24,7 +24,7 @@
             }
         ?>
 
-        <?php if ( $cta_button_text ) include( PCA_DIR . '/head/temp/pc-elements-button.php' ); ?>
+        <?php if ( $cta_button_text || $cta_button_text_addt ) include( PCA_DIR . '/head/temp/pc-elements-button.php' ); ?>
     </div>
 
     <?php include( PCA_DIR . '/head/temp/pc-banner-addons.php' ); ?>

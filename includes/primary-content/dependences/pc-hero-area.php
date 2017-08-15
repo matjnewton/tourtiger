@@ -1229,7 +1229,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -1246,12 +1246,12 @@ acf_add_local_field_group(array (
 							'key' => 'pc_ha_014',
 							'label' => 'Button link type',
 							'name' => 'pc_button_link_type',
-							'type' => 'radio',
+							'type' => 'select',
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -1261,11 +1261,6 @@ acf_add_local_field_group(array (
 								'Video' => 'Video',
 								'Search Box' => 'Search Box',
 							),
-							'other_choice' => 0,
-							'save_other_choice' => 0,
-							'default_value' => '',
-							'layout' => 'horizontal',
-							'allow_null' => 0,
 						),
 						array (
 							'key' => 'pc2131012133',
@@ -1291,7 +1286,7 @@ acf_add_local_field_group(array (
 								)
 							),
 							'wrapper' => array (
-								'width' => '',
+								'width' => '33',
 								'class' => '',
 								'id' => '',
 							),
@@ -1486,6 +1481,87 @@ acf_add_local_field_group(array (
 							),
 							'layout' => 'horizontal',
 							'toggle' => 0,
+						),
+
+						
+						array (
+							'key' => 'pc_ha_tab_6_addt',
+							'label' => 'Button 2',
+							'name' => 'pc_ha_tab_6_addt',
+							'type' => 'tab',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'placement' => 'top',
+							'endpoint' => 0,
+						),
+						array (
+							'key' => 'pc_ha_013_addt',
+							'label' => 'CTA Button text',
+							'name' => 'pc_cta_button_text_addt',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
+							'key' => 'pc_ha_014_addt',
+							'label' => 'Button link type',
+							'name' => 'pc_button_link_type_addt',
+							'type' => 'select',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'choices' => array (
+								'Custom' => 'Custom',
+								'iframe-popup' => 'iFrame Popup',
+							),
+						),
+						array (
+							'key' => 'pc2131012133_addt',
+							'label' => 'CTA Button link',
+							'name' => 'pc_cta_button_url_addt',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014_addt',
+										'operator' => '==',
+										'value' => 'Custom' 
+									)
+								),
+								array (
+									array (
+										'field' => 'pc_ha_014_addt',
+										'operator' => '==',
+										'value' => 'iframe-popup' 
+									)
+								)
+							),
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'default_value' => '',
+							'placeholder' => 'https://example.com',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
 						),
 						
 						array (
