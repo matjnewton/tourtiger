@@ -48,7 +48,7 @@
 
 			<div class="video-popup">
 				<a href="javascript:" class="video-popup--cover">
-					<img src="<?=$cover['sizes']['large'];?>" alt="" />
+					<img src="<?=$cover['url'];?>" alt="" />
 				</a>
 
 				<div class="video-popup--frame">
