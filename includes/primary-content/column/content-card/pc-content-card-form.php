@@ -50,8 +50,6 @@
 								 */
 								$class = $field['type'] . ' gfield_' . $field['type'];
 								$attr  = '';
-								$attr .= 'name="input_' . $field['id'] . '" ';
-								$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
 								$attr .= 'placeholder="' . $field['placeholder'] . '" ';
 								$attr .= 'data-field-label="' . $field['label'] . '" ';
 								$attr .= 'data-field-required="' . $field['isRequired'] . '" ';
@@ -79,10 +77,51 @@
 								 */
 								switch ( $field['type'] ) :
 
+
+									case 'name':
+									case 'address':
+
+										$attr       .= 'class="' . $class . '" ';
+										$attr       .= 'disabled ';
+										$attr       .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
+										$attr       .= 'type="text" ';
+										$attr       .= $field['inputMask'] ? 'data-field-mask="' . $field['inputMaskValue'] . '" disabled ' : '';
+										$attr       .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
+										$attr       .= 'data-field-input ';
+										$attr       .= $attr_conditional;
+
+										echo '<div class="ginput_container--common">';
+
+										foreach ( $field['inputs'] as $input ) : 
+
+										if ( $input['isHidden'] != '1' ) : 
+											$input_attr  = $attr;
+											$id          = explode('.', $input['id'])[1];
+											$input_attr .= 'name="input_' . $field['id'] . '_' . $id . '" ';
+											$input_attr .= 'id="input_' . $form_id . '_' . $field['id'] . '_' . $id . '" ';
+											?>
+
+											<div class="ginput_name--wrap">
+												<input <?=$input_attr;?> />
+												<label class="ginput_common--label"><?=$input['label'];?></label>
+											</div>
+
+											<?php
+
+										endif;
+
+										endforeach;
+
+										echo '</div>';
+										
+										break;
+
 									/**
 									 * Textarea field
 									 */
 									case 'textarea':
+										$attr .= 'name="input_' . $field['id'] . '" ';
+										$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
 										$attr .= 'disabled ';
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
 										$attr .= 'class="' . $class . '" ';
@@ -96,6 +135,8 @@
 									 */
 									case 'select':
 									case 'multiselect':
+										$attr .= 'name="input_' . $field['id'] . '" ';
+										$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
 										$attr .= $field['type'] == 'multiselect' ? 'multiple' : '';
 										$attr .= 'class="' . $class . '" ';
 										$attr .= $attr_conditional;
@@ -124,6 +165,8 @@
 									 */
 									case 'radio':
 									case 'checkbox':
+										$attr .= 'name="input_' . $field['id'] . '" ';
+										$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
 										$attr .= 'disabled ';
 										$attr .= 'class="' . $class . '" ';
 										/**
@@ -231,6 +274,8 @@
 									 * Date
 									 */
 									case 'date':
+										$attr .= 'name="input_' . $field['id'] . '" ';
+										$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
 									    $class .= ' pc--date';
 										$attr  .= 'disabled ';
 										$attr  .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
@@ -252,9 +297,17 @@
 									 * Text, number, email, url
 									 */
 									default:
-										$attr  .= 'class="' . $class . '" ';
+										$attr .= 'name="input_' . $field['id'] . '" ';
+										$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
+										$attr .= 'class="' . $class . '" ';
 										$attr .= 'disabled ';
 										$attr .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
+
+										if ( $field['type'] == 'phone' ) :
+											$field['type'] = 'text'; 
+											$attr         .= 'data-field-mask="(000) 000-0000" disabled ';
+										endif;
+
 										$attr .= 'type="' . $field['type'] . '" ';
 										$attr .= $field['inputMask'] ? 'data-field-mask="' . $field['inputMaskValue'] . '" disabled ' : '';
 										$attr .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';

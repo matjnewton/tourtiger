@@ -105,5 +105,21 @@
 	transform: translate(-50%, -50%) rotate(45deg);
 }
 
+.ginput_container--common {
+	display: flex;
+}
+
+.ginput_container--common > * + * {
+	margin-left: 10px;
+}
+
+.ginput_name--wrap {
+    flex-grow: 1;
+}
+
+.ginput_common--label {
+	background-color: transparent!important;
+	border: none!important;
+}
 
 
