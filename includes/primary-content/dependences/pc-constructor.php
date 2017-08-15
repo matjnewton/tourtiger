@@ -1090,7 +1090,7 @@ acf_add_local_field_group(array (
 																			'type' => 'select',
 																			'required' => '',
 																			'wrapper' => array (
-																				'width' => '80',
+																				'width' => '33',
 																			),
 																			'choices' => array (
 																				0 => 'Auto',
@@ -1100,7 +1100,7 @@ acf_add_local_field_group(array (
 																		),
 																		array (
 																			'key' => 'field_5824928sivide',
-																			'label' => 'Video size',
+																			'label' => 'Layout size',
 																			'name' => 'tour_pc-coltype--video_size',
 																			'type' => 'true_false',
 																			'instructions' => '',
@@ -1108,7 +1108,7 @@ acf_add_local_field_group(array (
 																			'conditional_logic' => '',
 																			'message' => 'Full width',
 																			'wrapper' => array (
-																				'width' => '20',
+																				'width' => '33',
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -1125,12 +1125,13 @@ acf_add_local_field_group(array (
 																				array (
 																					array (
 																						'field' => 'field_582492891E725',
-																						'operator' => '!=',
-																						'value' => 0
+																						'operator' => '==',
+																						'value' => 'popup'
 																					)
 																				)
 																			),
 																			'return_format' => 'object',
+																			'preview_size' => 'full'
 																		),
 																		array (
 																			'key' => 'number_5odsith-326',

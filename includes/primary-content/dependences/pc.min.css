@@ -32,3 +32,7 @@
 		width: 100%;
 	}	
 }
+
+.video-popup--frame {
+	display: none;
+}
