@@ -774,9 +774,9 @@ function hawaiifunapi_form(){
 					  <p>
 					    <span>Select a Flight:</span>
 					    <select class=\"groupSelect\" onchange=\"activitySwitch_applyGroup(groups_9ad2b236_contextData)\">
+					      <option value=\"a4043\">Del Mar Coastal Champagne Evening</option>
 					      <option value=\"a6863\">Santa Barbara Morning</option>
 					      <option value=\"a4044\">Temecula Champagne Sunrise</option>
-					      <option value=\"a4043\">Del Mar Coastal Champagne Evening</option>
 					    </select>
 					  </p>
 
