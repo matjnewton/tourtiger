@@ -752,7 +752,7 @@ function get_font_border_styles( $style = '', $color = '', $width = '' ) {
 
 	$css = false;
 
-	if ( $style == 'yes' || $style == 'hover' ) :
+	if ( $style == 'yes' || $style == 'hover' ) {
 
 		$css[1] .= 'border:' . $width . 'px solid ' . $color . ';';
 		$css[0] .= 'box-sizing: border-box;';
@@ -763,7 +763,10 @@ function get_font_border_styles( $style = '', $color = '', $width = '' ) {
 			$css[0] .= 'border:' . $width . 'px solid transparent;';
 		}
 
-	endif; 
+	} else {
+		$css[1] .= 'border-color: transparent;';
+		$css[0] .= 'border-color: transparent;';
+	}
 
 	return $css;
 }

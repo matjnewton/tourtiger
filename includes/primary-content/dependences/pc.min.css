@@ -130,4 +130,6 @@
     margin: 3px 0;
 }
 
-
+.bootstrap-select.btn-group .btn .filter-option {
+	background-color: transparent!important;
+}
