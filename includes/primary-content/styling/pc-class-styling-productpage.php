@@ -1683,8 +1683,8 @@ class ProductPage extends StylingCard {
 				$css .= "}";
 
 				if ( $link_visited_color ) {
-					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper a:visited, body.{$style} .site-inner .content .product_content_wrapper a:visited{";
-						$css .= "color:{$link_visited_color};";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper a.active, body.{$style} .site-inner .content .product_content_wrapper a.active{";
+						$css .= "background-color:{$link_visited_color};";
 					$css .= '}';
 				} 
 
