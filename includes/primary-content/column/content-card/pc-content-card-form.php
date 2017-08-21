@@ -296,6 +296,21 @@
 
 
 									/**
+									 * File
+									 */
+									case 'fileupload':
+										$attr .= 'name="input_' . $field['id'] . '" ';
+										$attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
+										$attr .= 'class="' . $class . '" ';
+										$attr .= 'data-field-input ';
+
+										echo "<input type='hidden' name='MAX_FILE_SIZE' value='262144000'>";
+										echo "<input {$attr} type='file'>";
+
+										break;
+
+
+									/**
 									 * Text, number, email, url
 									 */
 									default:
