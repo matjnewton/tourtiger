@@ -40,7 +40,9 @@
 
 						<li id="field_<?=$form_id;?>_<?=$form['counter'];?>" data-id="<?=$field['id']?>" class="gfield">
 
-							<label class="gfield_label" for="field_<?=$form_id;?>_<?=$form['counter'];?>"><?=$field['label'];?></label>
+							<?php $label_class = $field['isRequired'] ? 'is-required' : ''; ?>
+
+							<label class="gfield_label <?=$label_class;?>" for="field_<?=$form_id;?>_<?=$form['counter'];?>"><?=$field['label'];?></label>
 							
 							<div class="ginput_container ginput_container_<?=$field['type'];?>">
 

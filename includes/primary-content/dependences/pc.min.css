@@ -133,3 +133,8 @@
 .bootstrap-select.btn-group .btn .filter-option {
 	background-color: transparent!important;
 }
+
+label.is-required:after {
+	content: '*';
+	color: red;
+}
