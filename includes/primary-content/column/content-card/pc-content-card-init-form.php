@@ -192,7 +192,7 @@ echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .dropdown-me
 
 $cc_style__ccc_css[1] .= 'border-style: solid;border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
 
-echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_select, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_multiselect, #pc_wrap .' . $cc_style . ' .pc--form input, #pc_wrap .' . $cc_style . ' .pc--form .gfield dropdown-toggle, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:focus, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_radio label, #pc_wrap .' . $cc_style . ' .ginput_common--label {' . $cc_style__ccc_css[1] . '};' : '';
+echo $cc_style__ccc_css[1] ? '#pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_select, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_multiselect, #pc_wrap .' . $cc_style . ' .pc--form input, #pc_wrap .' . $cc_style . ' .pc--form .gfield dropdown-toggle, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:focus, #pc_wrap .' . $cc_style . ' .pc--form .gfield .gfield_radio label, #pc_wrap .' . $cc_style . ' .ginput_common--label {' . $cc_style__ccc_css[1] . '}' : '';
 
 echo get_sub_field( 'cc_style__fo_bg_c' ) ? '#pc_wrap .' . $cc_style . ' .pc--form input:-webkit-autofill, #pc_wrap .' . $cc_style . ' .pc--form .gfield textarea:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px ' . get_sub_field( 'cc_style__fo_bg_c' ) . ' inset;}' : '';
 
