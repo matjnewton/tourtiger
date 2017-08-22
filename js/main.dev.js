@@ -337,6 +337,7 @@
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
 			var $image        = $wrapper.find('.slider-pro--preview__image');
+			var $row          = $self.closes('.pc--r');
 			var width         = $image.width();
 			var height        = $image.height();
 			var $carousel     = $wrapper.find('.slider-pro__carousel');
@@ -373,6 +374,9 @@
 
 			$image.fadeOut(500);
 
+			if ($row.length > 0)
+				$row.css('z-index', 6);
+
 			$carousel
 			.css({
 				'display': 'flex',
@@ -397,6 +401,7 @@
 			var $carousel     = $wrapper.find('.slider-pro__carousel');
 			var $cover        = $wrapper.find('.slider-pro__cover');
 			var $panel        = $wrapper.find('.slider-pro--panel');
+			var $row          = $self.closes('.pc--r');
 
 			var coverTop  = $cover.offset().top - $(window).scrollTop();
 			var coverLeft = $cover.offset().left;
@@ -410,6 +415,9 @@
 			.show();
 
 			$panel.fadeIn(300);
+
+			if ($row.length > 0)
+				$row.css('z-index', 5);
 
 			$carousel
 			.hide()
