@@ -337,7 +337,7 @@
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
 			var $image        = $wrapper.find('.slider-pro--preview__image');
-			var $row          = $self.closes('.pc--r');
+			var $row          = $self.closest('.pc--r');
 			var width         = $image.width();
 			var height        = $image.height();
 			var $carousel     = $wrapper.find('.slider-pro__carousel');
@@ -401,7 +401,7 @@
 			var $carousel     = $wrapper.find('.slider-pro__carousel');
 			var $cover        = $wrapper.find('.slider-pro__cover');
 			var $panel        = $wrapper.find('.slider-pro--panel');
-			var $row          = $self.closes('.pc--r');
+			var $row          = $self.closest('.pc--r');
 
 			var coverTop  = $cover.offset().top - $(window).scrollTop();
 			var coverLeft = $cover.offset().left;
