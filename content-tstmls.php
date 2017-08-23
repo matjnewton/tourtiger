@@ -17,9 +17,9 @@
                                 <?php endif; ?>
                                 <div class="rate-about">
                                     
-                                    <span class="dz-testimonial__author">
+                                    <a href="<?php echo get_permalink(); ?>"  class="dz-testimonial__author" style="text-decoration: none;">
                                     <?php the_title(); ?>
-                                    </span>
+                                    </a>
                                     <?php $testimonial_text = get_field('testimonial_link_anchor_text'); ?>
                                     <?php if($testimonial_text): ?>
                                     <a href="<?php the_field('testimonial_link'); ?>"><?php echo $testimonial_text; ?></a>
