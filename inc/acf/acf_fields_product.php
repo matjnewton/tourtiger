@@ -5921,7 +5921,7 @@ acf_add_local_field_group(array (
 										'key' => 'field_5398636a96c4c_link_url_pr',
 										'label' => 'Link url',
 										'name' => 'link_url',
-										'type' => 'url',
+										'type' => 'text',
 										'instructions' => '',
 										'required' => 0,
 										'conditional_logic' => 0,
