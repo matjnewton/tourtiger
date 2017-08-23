@@ -1524,6 +1524,30 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+
+		// update dgamoni add product_rewrite
+		array (
+			'key' => 'field_538caa676f58c_general_testimonial_rewrite',
+			'label' => 'New slug for testimonial (default: ../testimonial/..)',
+			'name' => 'general_testimonial_rewrite',
+			'type' => 'text',
+			'instructions' => 'After adding a new slug, go to <a href="/wp-admin/options-permalink.php ">Settings->permalinks</a> and update settings permalinks',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'formatting' => 'none',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
 		
 		array (
 			'key'   => 'dzeld_5tes06131125',

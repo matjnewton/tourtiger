@@ -84,3 +84,36 @@ function product_rewrite($post_type, $args) {
         add_permastruct( $post_type, "{$args->rewrite['slug']}/%$post_type%", $permastruct_args );
     }
 }
+
+
+
+add_action('registered_post_type', 'testimonial_rewrite', 10, 2);
+function testimonial_rewrite($post_type, $args) {
+    global $wp_rewrite;
+    $general_testimonial_rewrite = get_field('general_testimonial_rewrite', 'option');
+    if (($post_type == 'testimonial') && ($general_testimonial_rewrite != '')) {
+
+        $args->rewrite['slug'] = $general_testimonial_rewrite; //write your new slug here
+
+        if ( $args->has_archive ) {
+                $archive_slug = $args->has_archive === true ? $args->rewrite['slug'] : $args->has_archive;
+                if ( $args->rewrite['with_front'] )
+                        $archive_slug = substr( $wp_rewrite->front, 1 ) . $archive_slug;
+                else
+                        $archive_slug = $wp_rewrite->root . $archive_slug;
+
+                add_rewrite_rule( "{$archive_slug}/?$", "index.php?post_type=$post_type", 'top' );
+                if ( $args->rewrite['feeds'] && $wp_rewrite->feeds ) {
+                        $feeds = '(' . trim( implode( '|', $wp_rewrite->feeds ) ) . ')';
+                        add_rewrite_rule( "{$archive_slug}/feed/$feeds/?$", "index.php?post_type=$post_type" . '&feed=$matches[1]', 'top' );
+                        add_rewrite_rule( "{$archive_slug}/$feeds/?$", "index.php?post_type=$post_type" . '&feed=$matches[1]', 'top' );
+                }
+                if ( $args->rewrite['pages'] )
+                        add_rewrite_rule( "{$archive_slug}/{$wp_rewrite->pagination_base}/([0-9]{1,})/?$", "index.php?post_type=$post_type" . '&paged=$matches[1]', 'top' );
+        }
+
+        $permastruct_args = $args->rewrite;
+        $permastruct_args['feed'] = $permastruct_args['feeds'];
+        add_permastruct( $post_type, "{$args->rewrite['slug']}/%$post_type%", $permastruct_args );
+    }
+}
