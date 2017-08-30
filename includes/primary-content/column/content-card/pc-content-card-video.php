@@ -51,6 +51,27 @@
 					<img src="<?=$cover['url'];?>" alt="" />
 				</a>
 
+				<?php 
+				/**
+				 * Implement new feature
+				 * Developers scope
+				 */
+				if ( current_user_can( 'edit_posts' ) ) :
+					?>
+
+					<div class="video-popup__play-btn">
+						<div class="play-btn">
+							<div class="play-btn__image"></div>
+							<div class="play-btn--border">
+								<div class="play-btn--border__mask"></div>
+							</div>
+						</div>
+					</div>
+
+					<?php	
+				endif;
+				?>
+
 				<div class="video-popup--frame">
 					<?=$iframe;?>
 				</div>
