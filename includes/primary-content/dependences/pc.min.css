@@ -153,15 +153,27 @@ label.is-required:after {
 	height: 80px;
 }
 
+.play-btn--image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-left: 20px solid white;
+    -webkit-transform: translate(-25%, -50%);
+    transform: translate(-25%, -50%);
+}
+
 .play-btn--border {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 80px;
 	height: 80px;
-	border: 4px solid green;
+	border: 4px solid #cddc39;
 	border-radius: 50%;
-	overflow: hidden;
+	color: #4CAF50;
 }
 
 .play-btn--border__mask {
@@ -171,7 +183,8 @@ label.is-required:after {
 	width: 0;
 	height: 88px;
 	overflow: hidden;
-	transalte: .5s;
+	transition: ease .35s;
+	color: inherit;
 }
 
 .video-popup--cover:hover .play-btn--border__mask {
@@ -186,6 +199,7 @@ label.is-required:after {
 	width: 0;
 	width: 80px;
 	height: 80px;
-	border: 4px solid blue;
+	border: 4px solid;
+	border-radius: 50%;
 }
 .
