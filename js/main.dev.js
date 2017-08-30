@@ -175,7 +175,7 @@
 			var is_moto = $moto.length > 0;
 			var bgColor = $('.secondary-menu-wrapper').css('background-color');
 
-			if ( bgColor == 'rgba(0,0,0,0)' ) {
+			if ( bgColor == 'rgba(0, 0, 0, 0)' ) {
 				bgColor = $('.header-bar').css('background-color');
 			}
 
