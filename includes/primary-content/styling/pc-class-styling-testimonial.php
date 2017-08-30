@@ -293,7 +293,7 @@ class Testimonial extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font ) {
-					$css .= "body.{$style} .dz-testimonial__author, body.{$style} .site-inner .archive-pagination li.active a {";
+					$css .= "body.{$style} .t-author .rate-about a.dz-testimonial__author, body.{$style} .site-inner .archive-pagination li.active a {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= get_sub_field( 'author_color' ) ? 'color:' . get_sub_field( 'author_color' ) . ';':'';
