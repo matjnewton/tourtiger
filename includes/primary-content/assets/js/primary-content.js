@@ -123,9 +123,9 @@ window.onload = function () {
         var conditional = (relatedValue == value) === operator;
 
         if (conditional) {
-          $fieldWrap.show();
+          $fieldWrap.show().removeClass('js-hidden');
         } else {
-          $fieldWrap.hide();
+          $fieldWrap.hide().addClass('js-hidden');
           $field.val('');
         }
       });
@@ -138,7 +138,39 @@ window.onload = function () {
         /**
          * Run each time when loads a new row
          */
-        init: function () {     
+        init: function () {   
+
+            /**
+             * Activate cover-video-popup in content cards
+             */  
+            var $videoPopup = $('.video-popup').not('[data-handled="1"]');
+            if ( $videoPopup.length > 0 ) {
+              $('.video-popup').on('click', '.video-popup--cover', function(){
+                var $cover = $(this);
+                var $block = $cover.closest('.video-popup');
+                var $popup = $block.find('.video-popup--frame');
+
+                /**
+                 * Popup script chain
+                 */
+                 $popup
+                 .prepend('<a href="javascript:" class="close-popup"></a>')
+                 .fadeIn()
+                 .on(
+                    'click', 
+                    '.close-popup', 
+                    function () {
+                      var $close = $(this);
+                      $popup.fadeOut(300, function () {
+                        $close.detach();
+                      });
+                    }
+                  )
+                 .closest('.pc--r').css('z-index', 50);
+              });
+
+              $videoPopup.attr('data-handled', 1);
+            }
 
             if ( $('.pc--c').find('form').not('[data-inited]') ) {
               $('.pc--c').find('form').conditionalizeForm();
@@ -333,10 +365,7 @@ window.onload = function () {
                   }
                 }
 
-
                 item.animate( {'min-height': blog_thumb_h}, 50 );
-
-
 
                 var $image = item.find('img'); 
                 if ( $image.width() > item.width() && $image.height() > item.height() ) {
@@ -353,6 +382,8 @@ window.onload = function () {
                   }
                 }
               });
+
+
 
             }
 
@@ -449,16 +480,61 @@ window.onload = function () {
              * Make images same height
              */
             if ($(window).width() > 768) {
-                var $ratioRows = $('.pc--r__col-2__ratio-right, .pc--r__col-2__ratio-left').filter('.pc--r_pos-stretch').not('[data-ratio="1"]');
+                var $ratioRows = $('.pc--r__col-2__ratio-right, .pc--r__col-2__ratio-left').filter('.pc--r_pos-stretch');
 
                 $ratioRows.each(function(){
                   var $row   = $(this);
                   var height = $row.height();
 
                   $row.find('.pc--c__b-image').css('height', height).end().find('.pc--c__b-image img').css('height', height);
-                  $row.attr('data-ratio', 1);
                 });
             }
+
+            /**
+             * Handle fields
+             */
+            var $formField = $('.pc--form').find('input, textarea, select, button').not('[data-handled]');
+
+            if ($formField.length > 0) {
+              $formField.each(function(){
+                  var $field   = $(this);
+                  var maskReg  = $field.attr('data-field-mask');
+                  var isSelect = $field.hasClass('gfield_select');
+
+                  if (maskReg) {
+                      $field.mask(maskReg);
+                  }
+
+                  if (isSelect) {
+                      var selectBackground = $field.css('background-color');
+
+                      $field      
+                          .selectpicker()
+                          .closest('.bootstrap-select')
+                          .removeClass('gfield_select')
+                          .find('.dropdown-toggle')
+                          .css('background-color', selectBackground);
+                  }
+
+                  /**
+                   * Handle input typing
+                   */
+                  $field.on('keydown', function(e){
+                      var $field    = $(this);
+                      var maxLength = $field.attr('data-field-length');
+
+                      if (maxLength) {
+                          if ($field.val().length >= maxLength) {
+                              e.preventDefault();
+                              e.stopPropagation();
+                          }
+                      }
+                  });
+
+                  $field.removeAttr('disabled').attr('data-handled', 1);
+              });
+            }
+
         },
 
 
@@ -477,51 +553,6 @@ window.onload = function () {
 
             $('.pc--c').on('change', 'input, select, textarea', function(){
               $(this).closest('form').conditionalizeForm();
-            });
-
-            /**
-             * Handle fields
-             */
-            var $formField = $('.pc--form').find('input, textarea, select, button');
-            $formField.map(function(){
-                var $field   = $(this);
-                var maskReg  = $field.attr('data-field-mask');
-                var isSelect = $field.hasClass('gfield_select');
-
-                if (maskReg) {
-                    $field.mask(maskReg);
-                }
-
-                if (isSelect) {
-                    var selectBackground = $field.css('background-color');
-
-                    $field      
-                        .selectpicker({
-                          size: 8
-                        })
-                        .closest('.bootstrap-select')
-                        .removeClass('gfield_select')
-                        .find('.dropdown-toggle')
-                        .css('background-color', selectBackground);
-                }
-
-                $field.removeAttr('disabled');
-            });
-
-
-            /**
-             * Handle input typing
-             */
-            $formField.on('keydown', function(e){
-                var $field    = $(this);
-                var maxLength = $field.attr('data-field-length');
-
-                if (maxLength) {
-                    if ($field.val().length >= maxLength) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                }
             });
 
             /**
@@ -563,25 +594,29 @@ window.onload = function () {
                  * Loop user fields
                  */
                 if ($userFields.length > 0) {
-                    $userFields.map(function(){
+                    $userFields.each(function(){
                         var $item    = $(this);
                         var name     = $item.attr('name');
                         var value    = $item.val();
                         var label    = $item.attr('data-field-label');
                         var required = $item.attr('data-field-required');
                         var mask     = $item.attr('data-field-mask');
-
-                        inputValues[name] = value;
+                        var $gfield  = $item.closest('.gfield');
 
                         /**
                          * Check required fields
                          */
-                        if (required == 1 && value.length == 0) {
-                            $item.css('color', '#f44336').after('<div style="color:#f44336">This field is required.</div>');
-                            valid = false;
-                        } else if (required == 1 && value.length > 0) {
-                            $item.attr('style', '').parent().find('div').detach();
+                        if ( value != null && required == '1' ) {
+                          if (value.length == 0 && !$gfield.hasClass('js-hidden')) {
+                              $item.css('color', '#f44336').after('<div style="color:#f44336">This field is required.</div>');
+                              valid = false;
+                              console.warn('False field: ' + name);
+                          } else {
+                              $item.attr('style', '').parent().find('div').detach();
+                          }
                         }
+
+                        inputValues[name] = value;
 
                         /**
                          * Update row height
@@ -589,7 +624,6 @@ window.onload = function () {
                         $('.pc--r__scroll').slick('setOption', 'height', null, true);
                     });
                 }
-
 
                 /**
                  * Loop fields which have choices
@@ -624,6 +658,11 @@ window.onload = function () {
                                 $('.pc--r__scroll').slick('setOption', 'height', null, true);
                             }
                         } 
+                        
+                        /**
+                         * Get variables
+                         */
+                        var label = $checked.attr('data-field-label');
 
                         /**
                          * Validation
@@ -632,6 +671,7 @@ window.onload = function () {
                             if (!is_checked) {
                                 $list.append('<div style="color:#f44336">This field is required.</div>'); 
                                 valid = false;
+                                console.warn('False checkbox: ' + label);
                             } else {
                                 $list.children('div').detach(); 
                             }
@@ -641,11 +681,6 @@ window.onload = function () {
                              */
                             $('.pc--r__scroll').slick('setOption', 'height', null, true);
                         }
-                        
-                        /**
-                         * Get variables
-                         */
-                        var label = $checked.attr('data-field-label');
 
                         if (typeof $checked !== 'object') {
                             inputValues[$checked.attr('name')] = $checked.val();
@@ -662,6 +697,8 @@ window.onload = function () {
                     });
                 }
 
+                console.log(inputValues);
+
 
                 /**
                  * Check reCaptcha is it's exist
@@ -671,6 +708,7 @@ window.onload = function () {
 
                     if(!captcha.length){
                         valid = false;
+                        console.warn('False captcha');
                     } 
                 }
 
@@ -692,6 +730,7 @@ window.onload = function () {
                      * and setting name=value 's into URL
                      */
                     e.preventDefault();
+                    console.warn('Form ain\'t valid');
                     return false;
                 }
 
