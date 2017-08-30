@@ -157,35 +157,35 @@ label.is-required:after {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 4px solid #fff;
+	width: 80px;
+	height: 80px;
+	border: 4px solid green;
 	border-radius: 50%;
 	overflow: hidden;
 }
 
 .play-btn--border__mask {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: -4px;
+	left: -4px;
 	width: 0;
-	height: 100%;
+	height: 88px;
 	overflow: hidden;
 	transalte: .5s;
 }
 
 .video-popup--cover:hover .play-btn--border__mask {
-	width: 100%;
+	width: 88px;
 }
 
 .play-btn--border__mask:after {
 	content: '';
 	position: absolute;
 	top: 0;
-	left: -4px;
+	left: 0;
 	width: 0;
-	height: 100%;
-	width: calc(100% + 8px);
+	width: 80px;
+	height: 80px;
 	border: 4px solid blue;
 }
 .
