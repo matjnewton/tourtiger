@@ -52,7 +52,7 @@
 
 					<div class="video-popup__play-btn">
 						<div class="play-btn">
-							<div class="play-btn__image"></div>
+							<div class="play-btn--image"></div>
 							<div class="play-btn--border">
 								<div class="play-btn--border__mask"></div>
 							</div>

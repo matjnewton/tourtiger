@@ -3679,6 +3679,35 @@ class ContentCard extends StylingCard {
 					'message' => 'Enable Dropshadow',
 					'default_value' => 0,
 				),
+				array (
+					'key' => $this->slug . $i . '_93-0413a400',
+					'label' => 'Video',
+					'name' => 'video-tab',
+					'type' => 'tab',
+					'placement' => 'left',
+					'endpoint' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_93-0413419',
+					'label' => 'Border color',
+					'name'  => 'border-color',
+					'type'  => 'rgba_color',
+					'required' => '',
+				),
+				array (
+					'key' => $this->slug . $i . '_93-0413428',
+					'label' => 'Hover border color',
+					'name'  => 'hover-border-color',
+					'type'  => 'rgba_color',
+					'required' => '',
+				),
+				array (
+					'key' => $this->slug . $i . '_93-0413437',
+					'label' => 'Arrow color',
+					'name'  => 'arrow-color',
+					'type'  => 'rgba_color',
+					'required' => '',
+				)
 			),
 		);	
 
