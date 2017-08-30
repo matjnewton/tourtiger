@@ -173,11 +173,12 @@
 		if ( $('body').hasClass('show-motto-mobile') && $(window).width() < 768 ) {
 			var $moto   = $('.motto');
 			var is_moto = $moto.length > 0;
+			var bgColor = $('.secondary-menu-wrapper').css('background-color');
 
 			if (is_moto) {
 				$moto.prependTo( $('.site-header') ).css({
 					'color': '#fff',
-					'background-color': '#333',
+					'background-color': bgColor,
 					'display': 'block',
 					'padding': '3px',
 					'font-size': '13px'
