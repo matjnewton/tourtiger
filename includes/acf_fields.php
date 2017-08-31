@@ -1376,6 +1376,17 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 		array (
+			'key' => 'field_537dde7d5b458',
+			'label' => 'Custom phone HTML',
+			'name' => 'custom_phone_html',
+			'type' => 'textarea',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'default_value' => '',
+			'placeholder' => 'Leave empty to use phone number',
+			'new_lines' => '',
+		),
+		array (
 			'key' => 'field_571b51f415fc4',
 			'label' => 'Enable Click to Call on Mobile',
 			'name' => 'click_to_call',

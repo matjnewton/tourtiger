@@ -15,13 +15,28 @@
                         </ul>
                         </div>
                         <?php endif; ?>
-                        <?php if($phone_number): ?>
-        <?php $phone = preg_replace('/\D+/', '', $phone_number); ?>
-                            <div class="phone hidden-xs">
-                                <i class="fa fa-phone"></i>
-                                <a href="tel:<?php echo $phone; ?>">
-                                
-                                <?php echo $phone_number; ?>
-                                </a>
-                            </div>
-        <?php endif; ?>
+<?php
+$custom_phone_html = get_field( 'custom_phone_html', 'option' );
+
+if ( $phone_number && ! $custom_phone_html ) :
+  $phone = preg_replace('/\D+/', '', $phone_number); 
+  ?>
+
+  <div class="phone hidden-xs">
+    <i class="fa fa-phone"></i>
+    <a href="tel:<?php echo $phone; ?>">             
+      <?php echo $phone_number; ?>
+    </a>
+  </div>
+
+  <?php 
+elseif ( $custom_phone_html ) :
+  ?>
+
+  <div class="phone hidden-xs" style="color:white;">
+    <?=$custom_phone_html;?>
+  </div>
+
+  <?php
+endif; 
+?>
