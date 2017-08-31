@@ -202,7 +202,7 @@ function hawaiifunapi_form(){
 
 				  <p class=\"header\">
 				    <span>Choose Date</span>
-				    <input id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
+				    <input placeholder=\" Select Date\" id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
 				  </p>
 				    
 				  <hr />
@@ -398,7 +398,7 @@ function hawaiifunapi_form(){
 				    <span class=\"header\">
 				      Choose Date
 				    </span>
-				    <input id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
+				    <input placeholder=\" Select Date\" id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
 				  </p>
 				  <hr />
 				  <p><span>Total Price:</span> <span id=\"price_g1\"></span></p>
@@ -608,7 +608,7 @@ function hawaiifunapi_form(){
 					<p>Online special price $155 (Regular rate $215pp)</p>
 					<p>
 					<span class=\"header\">Choose Date</span>
-					<input id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
+					<input placeholder=\" Select Date\" id=\"date_g1\" onclick=\"showCalendar(group1);\" onchange=\"showPriceAndAvailability(group1);\" readOnly size=\"15\">
 					</p> 
 					<hr />
 					<p><span>Total Price:</span> <span id=\"price_g1\"></span></p>
@@ -782,7 +782,7 @@ function hawaiifunapi_form(){
 
 					  <p>
 					    <span>Date</span>
-					    <input id=\"input_groups_9ad2b236_date\" onclick=\"showAvailabilityCalendar2(activitySwitch_getActivityId(groups_9ad2b236_contextData), 'input_groups_9ad2b236_date', { local: false, webBooking: true });\" readonly=\"readonly\" size=\"15\" />
+					    <input placeholder=\" Select Date\" id=\"input_groups_9ad2b236_date\" onclick=\"showAvailabilityCalendar2(activitySwitch_getActivityId(groups_9ad2b236_contextData), 'input_groups_9ad2b236_date', { local: false, webBooking: true });\" readonly=\"readonly\" size=\"15\" />
 					  </p>
 
 					  <p>
