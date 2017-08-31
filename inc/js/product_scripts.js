@@ -7,8 +7,9 @@ jQuery(document).ready(function($){
 	// });
 
 	var $booking_sidebar = $("#booking_product");
+	var $tripAdvisor     = $('#trip_advisor_in_sidebar');
 
-	if ( $booking_sidebar.length > 0 ) {
+	if ( $booking_sidebar.length > 0 && $tripAdvisor.length == 0 ) {
 		$(window).scroll(function(){
 			var sidebar_height = $booking_sidebar.height() + 130; 
 			if ( sidebar_height < $(window).height() ) {
