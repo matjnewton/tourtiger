@@ -1348,11 +1348,14 @@ class ProductPage extends StylingCard {
 	public static function get_styles( $style = '' ) {
 		$css = '';
 
+		if ( $style === '' )
+			$style = 'product_page_style-one';
+
 		if ( have_rows( $style, 'option' ) ) {
 			while ( have_rows( $style, 'option' ) ) {
 				the_row();
 
-				$css .= '<style>';
+				$css .= "<style>";
 
 				/**
 				 * Background
@@ -1439,7 +1442,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_pa_content ) {
-					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper p, body.{$style} .site-inner .content .product_content_wrapper p, body.{$style} .product_content_wrapper ul li{";
+					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper p, body.{$style} .site-inner .content .product_content_wrapper p, body.{$style} .product_content_wrapper ul li, .404-content p{";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= "color: {$font_style_pa_content['text-color']};";
@@ -1454,7 +1457,7 @@ class ProductPage extends StylingCard {
 				for ( $i = 1; $i < 7; $i++ ) {
 
 					if ( $font_style_headline ) {
-						$css .= "body.{$style} .styles .content .product_title_area.customstyle h{$i}, body.{$style} .content .product_title_area.customstyle h{$i}{";
+						$css .= "body.{$style} .styles .content .product_title_area.customstyle h{$i}, body.{$style} .content .product_title_area.customstyle h{$i}, .404-content h1{";
 
 							$css .= $font[1] ? $font[1] : '';
 							$css .= "color: {$font_style_headline['text-color']};";
@@ -1648,7 +1651,7 @@ class ProductPage extends StylingCard {
 
 				if ( $font_style_fepr_link ) {
 					
-					$css .= "body.{$style} .pc_featured-products__body-link {";
+					$css .= "body.{$style} .pc_featured-products__body-link, .404-content a {";
 
 						$css .= $font[1] ? $font[1]:'';
 
