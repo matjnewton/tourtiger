@@ -12,7 +12,7 @@ echo ProductPage::get_styles();
 
 ?>
 
-<div class="404-content" align="center">
+<div class="content-404" align="center">
     <h1>Hey! We’re <?php echo get_bloginfo('name'); ?></h1>
 
     <p><strong>Sorry to inform you, but the page you’re looking for no longer exists.</strong></p>
