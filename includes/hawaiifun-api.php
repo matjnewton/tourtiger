@@ -839,10 +839,10 @@ function include_hawaiifun_scripts() {
 	wp_enqueue_style('jquery-ui', '//www.ponorez.com/Calendar/REDMOND/jquery-ui.css');
 
 	wp_deregister_script( 'hawaiifun-calendarjs' );
-	wp_enqueue_script( 'hawaiifun-calendarjs', '//www.hawaiifun.org/reservation/common/calendar_js.jsp?jsversion=20170214', array(), null, true );
+	wp_enqueue_script( 'hawaiifun-calendarjs', '//www.hawaiifun.org/reservation/common/calendar_js.jsp?jsversion=20121209', array(), null, true );
 
 	wp_deregister_script( 'hawaiifun-functions' );
-	wp_enqueue_script( 'hawaiifun-functions', '//www.hawaiifun.org/reservation/external/functions.js?jsversion=20170214', array(), null, true );
+	wp_enqueue_script( 'hawaiifun-functions', '//www.hawaiifun.org/reservation/external/functions.js?jsversion=20121209', array(), null, true );
 
 	wp_deregister_script( 'hawaiifun-functions2' );
 	wp_enqueue_script( 'hawaiifun-functions2', '//www.hawaiifun.org/reservation/external/functions2.js?jsversion=20121209', array(), null, true );
