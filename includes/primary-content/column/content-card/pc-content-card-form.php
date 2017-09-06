@@ -142,7 +142,7 @@
 										$attr .= $field['type'] == 'multiselect' ? 'multiple' : '';
 										$attr .= 'class="' . $class . '" ';
 										$attr .= $attr_conditional;
-										echo "<select " . $attr . ">"; 
+										echo "<select " . $attr . " data-size='8'>"; 
 
 										foreach ( $field['choices'] as $option ) :
 											$is_selected = $option['isSelected'] ? 'selected' : '';
