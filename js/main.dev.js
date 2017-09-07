@@ -16,6 +16,7 @@
 		var is_tour    = $('body').hasClass('tour-template-default');
 		var is_logged  = $('body').hasClass('logged-in');
 		var is_product = $('body').hasClass('single-product');
+		var is_404     = $('body').hasClass('error404');
 		var is_search  = $('body').hasClass('page-template-rezdy_search');
 		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
 
@@ -25,14 +26,18 @@
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			var newMarginTop  = headerWrapper - secondary;
 
-			if ( !is_logged ) {
+			if ( !is_logged ) 
 				newMarginTop += 32;
-			}
 
 			if ( !is_banner ) {
 				$('.site-inner').css( 'margin-top', newMarginTop );
 				$unessesarily.css('margin-top', 0);
 			}
+
+		} else if ( is_404 ) {
+			var newMarginTop = $('.header-bar-wrapper').height();
+			$('.site-inner').css( 'margin-top', newMarginTop );
+
 		} else {
 			$('.banner-wrapper-inner').css('margin-top', 0);
 		}
