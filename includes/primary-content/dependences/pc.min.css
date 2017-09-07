@@ -183,16 +183,16 @@
     margin: 0 auto
 }
 
+.pc-hero-content {
+    min-height: 650px
+}
+
 .pc-hero-content__short {
     min-height: 250px
 }
 
 .pc-hero-content__medium {
     min-height: 450px
-}
-
-.pc-hero-content {
-    min-height: 650px
 }
 
 .pc-hero-content__full {
@@ -2346,25 +2346,25 @@ div.pc--c__accordion + div.pc--c__accordion {
     width: 15px
 }
 
-.pc-medium-arrow .pc__c--arrow-p:before {
+.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-p:before {
     transform: translate(-50%, -50%) rotate(50deg);
     top: calc(50% + 8px);
     width: 22px
 }
 
-.pc-medium-arrow .pc__c--arrow-p:after {
+.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-p:after {
     transform: translate(-50%, -50%) rotate(-50deg);
     top: calc(50% - 8px);
     width: 22px
 }
 
-.pc-medium-arrow .pc__c--arrow-n:before {
+.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-n:before {
     transform: translate(-50%, -50%) rotate(-50deg);
     top: calc(50% + 8px);
     width: 22px
 }
 
-.pc-medium-arrow .pc__c--arrow-n:after {
+.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-n:after {
     transform: translate(-50%, -50%) rotate(50deg);
     top: calc(50% - 8px);
     width: 22px
