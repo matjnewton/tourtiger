@@ -31,8 +31,8 @@
 	 */
 	$arrow_type     = get_sub_field( 'tour_pc-arrow-type' );
 	$arrow_settings = '';
-	$arrow_prev     = '<div class="pc__c--arrow-p"><img width="20" src="'.get_stylesheet_directory_uri().'/includes/primary-content/assets/img/slider/arrow-left.png" /></div>';
-	$arrow_next     = '<div class="pc__c--arrow-n"><img width="20" src="'.get_stylesheet_directory_uri().'/includes/primary-content/assets/img/slider/arrow-right.png" /></div>';
+	$arrow_prev     = '\'<div class="pc__c--arrow-p"><img width="20" src="'.get_stylesheet_directory_uri().'/includes/primary-content/assets/img/slider/arrow-left.png" /></div>\'';
+	$arrow_next     = '\'<div class="pc__c--arrow-n"><img width="20" src="'.get_stylesheet_directory_uri().'/includes/primary-content/assets/img/slider/arrow-right.png" /></div>\'';
 
 	if ( $arrow_type == 'pc-custom-arrow' ) :
 		$tour_column_classes  = $arrow_type;
