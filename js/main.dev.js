@@ -164,6 +164,11 @@
 
 	$(function() {
 
+		$('.pc_featured-products-carousel').slick({
+			arrows: false,
+			adaptiveHeight: true
+		});
+
 		fix_header_paddings();
 
 		refresToSeachIframeBtn();
