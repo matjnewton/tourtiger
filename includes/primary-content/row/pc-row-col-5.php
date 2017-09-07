@@ -15,6 +15,8 @@
 		$scroll_data = "data-slick='{
 			\"adaptiveHeight\": true, 
 			\"slidesToShow\": 5, 
+			\"prevArrow\": {$arrow_prev}, 
+			\"nextArrow\": {$arrow_next},
 			\"slidesToScroll\": {$scroll_slides_str},
 			\"responsive\" : [{
 				\"breakpoint\": 1150,
