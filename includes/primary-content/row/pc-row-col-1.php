@@ -10,7 +10,7 @@
 	$tour_column_classes .= ' pc--r__col-1 pc--r__col-1_' . get_sub_field( 'tour_pc-colums--align' ) . ' pc--r__col-1_element-' . get_sub_field( 'tour_pc-colums--align-element' );
 
 	if ( $tour_column_wrap == 'scroll' ) {
-		$scroll_data = 'data-slick=\'{"adaptiveHeight": true, "slidesToShow": 1, "prevArrow":{$arrow_prev}, "nextArrow":{$arrow_next} }\'';
+		$scroll_data = 'data-slick=\'{"adaptiveHeight": true, "slidesToShow": 1}\'';
 	}
 
 	if ( $row_width == 'full' ) {

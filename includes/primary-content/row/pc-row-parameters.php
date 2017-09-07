@@ -26,16 +26,17 @@
 		include( PCA_DIR . '/row/pc-row-bg-color.php' );
 	}
 
+
+	include( PCA_DIR . '/row/pc-row-col-' . get_sub_field( 'tour_pc-colums--count' ) . '.php' );
+
 	/**
 	 * Arrow settings
 	 */
 	$arrow_type     = get_sub_field( 'tour_pc-arrow-type' );
 	$arrow_settings = '';
-	$arrow_prev     = '\'<div class="pc__c--arrow-p"><img width="20" src="'.get_stylesheet_directory_uri().'/includes/primary-content/assets/img/slider/arrow-left.png" /></div>\'';
-	$arrow_next     = '\'<div class="pc__c--arrow-n"><img width="20" src="'.get_stylesheet_directory_uri().'/includes/primary-content/assets/img/slider/arrow-right.png" /></div>\'';
-
+	
 	if ( $arrow_type == 'pc-custom-arrow' ) :
-		$tour_column_classes  = $arrow_type;
+		$tour_column_classes  .= ' ' . $arrow_type;
 
 		$d                    = array();
 		$d['arrows_size']     = get_sub_field( 'tour_pc-arrows-size' ); 
@@ -43,18 +44,11 @@
 		$d['arrows_position'] = get_sub_field( 'tour_pc-arrows-position' ); 
 		$d['arrows_color']    = get_sub_field( 'tour_pc-arrows-color' ); 
 
-		$arrow_classes        = '';
-		$arrow_classes       .= 'arrows_size_' . $d['arrows_size'];
-		$arrow_classes       .= 'arrows_weight_' . $d['arrows_weight'];
-		$arrow_classes       .= 'arrows_position_' . $d['arrows_position'];
-		$arrow_settings       = "style='color:{$d['arrows_color']};'";
-
-		$arrow_prev           = "<div class='pc__c--arrow-p'><a href='javascript:' {$arrow_settings} class='{$arrow_classes}'></a></div>";      
-		$arrow_next           = "<div class='pc__c--arrow-n'><a href='javascript:' {$arrow_settings} class='{$arrow_classes}'></a></div>";
+		$tour_column_classes .= ' arrows_size_' . $d['arrows_size'];
+		$tour_column_classes .= ' arrows_weight_' . $d['arrows_weight'];
+		$tour_column_classes .= ' arrows_position_' . $d['arrows_position'];
+		$scroll_data         .= ' data-color="'.$d['arrows_color'].'" ';
 	endif;
-
-
-	include( PCA_DIR . '/row/pc-row-col-' . get_sub_field( 'tour_pc-colums--count' ) . '.php' );
 
 	if ( $tour_column_wrap == 'wrap' ) {
 		$tour_column_classes .= ' pc--r__wrap';
