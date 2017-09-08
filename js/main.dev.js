@@ -409,7 +409,7 @@
 			.slick('setOption', 'height', null, true);
 
 			// hide anoying button which usualy used to hover the X - button 
-			$('#fixed-on-mobile-productpage').fadeOut();
+			$('#js-mob-wrap-buttons').fadeOut();
 		},
 
 		destroyGallery: function(){
@@ -446,7 +446,7 @@
 			.slick('unslick');
 
 			// return the anoying button
-			$('#fixed-on-mobile-productpage').fadeIn();
+			$('#js-mob-wrap-buttons').fadeIn();
 		}
 	};
 
