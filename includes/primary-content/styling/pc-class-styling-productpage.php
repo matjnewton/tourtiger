@@ -1723,11 +1723,11 @@ class ProductPage extends StylingCard {
 					$css .= '}';
 
 					// Common for text section css 
-					$css .= "body.{$style} .pc_featured-products__body {";
+					// $css .= "body.{$style} .pc_featured-products__body {";
 
-						$css .= "text-align: {$font_style_fepr_title['text_align']};";
+					// 	$css .= "text-align: {$font_style_fepr_title['text_align']};";
 
-					$css .= '}';
+					// $css .= '}';
 				}
 
 				/**
@@ -1980,6 +1980,7 @@ class ProductPage extends StylingCard {
 
 				$css .= "body.{$style} .site-inner .content .pc_featured-products .pc_featured-products__body-link:hover {";
 					$css .= $btn_hover ? "background-color: {$btn_hover};" : '';
+					$css .= $btn_color ? "color: {$btn_color};" : '';
 				$css .= '}';
 
 				$css .= '</style>';
