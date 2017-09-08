@@ -407,6 +407,9 @@
 				lazyLoad: 'progressive',
 			})
 			.slick('setOption', 'height', null, true);
+
+			// hide anoying button which usualy used to hover the X - button 
+			$('#fixed-on-mobile-productpage').slideUp();
 		},
 
 		destroyGallery: function(){
@@ -441,6 +444,9 @@
 			}, 300)
 			.find('.slider-pro__slider')
 			.slick('unslick');
+
+			// return the anoying button
+			$('#fixed-on-mobile-productpage').slideDown();
 		}
 	};
 
