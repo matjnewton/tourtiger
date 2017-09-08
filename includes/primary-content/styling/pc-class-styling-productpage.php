@@ -1331,6 +1331,92 @@ class ProductPage extends StylingCard {
 					'required' => 0,
 					'message' => 'Sure',
 				),
+
+				array (
+					'key' => $this->slug . $i . '_sb1rogex2',
+					'label' => 'Featured products',
+					'name' => 'tab-fp',
+					'type' => 'tab',
+					'required' => '',
+					'placement' => 'left',
+					'endpoint' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_z836cbfcf8sfi-23',
+					'label' => 'Title',
+					'name' => 'featured-products_title',
+					'type' => 'typography',
+					'required' => 0,
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'left',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 20,
+					'show_line_height' => 1,
+					'line_height' => 25,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_zs4roline21',
+					'label' => 'Title color',
+					'name' => 'featured-products_title-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_z836ccf8bfi-h9',
+					'label' => 'Button',
+					'name' => 'featured-products_button',
+					'type' => 'typography',
+					'required' => 0,
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'left',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 20,
+					'show_line_height' => 1,
+					'line_height' => 25,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_xb4sline23',
+					'label' => 'Button color',
+					'name' => 'featured-products_button-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_xb4roline22',
+					'label' => 'Button background color',
+					'name' => 'featured-products_button-bg-color',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_xb4ro1ane21',
+					'label' => 'Button background hover color',
+					'name' => 'featured-products_button-bg-hover',
+					'type' => 'rgba_color',
+					'required' => 0,
+				),
 			),
 		);	
 
@@ -1863,6 +1949,35 @@ class ProductPage extends StylingCard {
 				$color = get_sub_field( 'line-color' ) ? get_sub_field( 'line-color' ) : $button_color;
 				$css .= "body.{$style} .product-sidebar--line {";
 					$css .= "border-color: {$color};";
+				$css .= '}';
+
+				// featured products
+				$title_font  = get_sub_field('featured-products_title');
+				$title_color = get_sub_field('featured-products_title-color');
+				$btn_font    = get_sub_field('featured-products_button');
+				$btn_color   = get_sub_field('featured-products_button-color');
+				$btn_bg      = get_sub_field('featured-products_button-bg-color');
+				$btn_hover   = get_sub_field('featured-products_button-bg-hover');
+
+				$font = pc_init_font_css( $title_font );
+				$css .= $font[0] ? $font[0]:'';
+ 
+				$css .= "body.{$style} .site-inner .content .pc_featured-products .pc_featured-products__body h6 {";
+					$css .= $font[1] ? $font[1] : '';
+					$css .= $title_color ? "color: {$title_color};" : '';
+				$css .= '}';
+
+				$font = pc_init_font_css( $btn_font );
+				$css .= $font[0] ? $font[0]:'';
+
+				$css .= "body.{$style} .site-inner .content .pc_featured-products .pc_featured-products__body-link {";
+					$css .= $font[1] ? $font[1] : '';
+					$css .= $btn_color ? "color: {$btn_color};" : '';
+					$css .= $btn_bg ? "background-color: {$btn_bg};" : '';
+				$css .= '}';
+
+				$css .= "body.{$style} .site-inner .content .pc_featured-products .pc_featured-products__body-link:hover {";
+					$css .= $btn_hover ? "background-color: {$btn_hover};" : '';
 				$css .= '}';
 
 				$css .= '</style>';
