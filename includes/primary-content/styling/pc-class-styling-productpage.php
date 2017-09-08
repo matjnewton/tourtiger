@@ -1363,6 +1363,7 @@ class ProductPage extends StylingCard {
 					'letter_spacing' => 0,
 					'show_font_style' => 1,
 					'font_style' => 'normal',
+					'show_color_picker' => 0,
 					'show_preview_text' => 0,
 				),
 				array (
@@ -1385,6 +1386,7 @@ class ProductPage extends StylingCard {
 					'show_text_align' => 0,
 					'text_align' => 'left',
 					'show_text_direction' => 0,
+					'show_color_picker' => 0,
 					'direction' => 'ltr',
 					'show_font_size' => 1,
 					'font_size' => 20,
