@@ -2280,36 +2280,6 @@ div.pc--c__accordion + div.pc--c__accordion {
     height: 38px
 }
 
-.pc-custom-arrow .pc__c--arrow-p:before,
-.pc-custom-arrow .pc__c--arrow-p:after,
-.pc-custom-arrow .pc__c--arrow-n:before,
-.pc-custom-arrow .pc__c--arrow-n:after {
-    content: '';
-    position: absolute;
-    left: 50%
-}
-
-.pc-thin-arrow .pc__c--arrow-p:before,
-.pc-thin-arrow .pc__c--arrow-p:after,
-.pc-thin-arrow .pc__c--arrow-n:before,
-.pc-thin-arrow .pc__c--arrow-n:after {
-    border-top: 1px solid
-}
-
-.pc-normal-arrow .pc__c--arrow-p:before,
-.pc-normal-arrow .pc__c--arrow-p:after,
-.pc-normal-arrow .pc__c--arrow-n:before,
-.pc-normal-arrow .pc__c--arrow-n:after {
-    border-top: 2px solid
-}
-
-.pc-bold-arrow .pc__c--arrow-p:before,
-.pc-bold-arrow .pc__c--arrow-p:after,
-.pc-bold-arrow .pc__c--arrow-n:before,
-.pc-bold-arrow .pc__c--arrow-n:after {
-    border-top: 3px solid
-}
-
 .pc-out-arrow .pc__c--arrow-p {
     left: 0;
     -webkit-transform: translate(-100%, -50%);
@@ -2320,54 +2290,6 @@ div.pc--c__accordion + div.pc--c__accordion {
     right: 0;
     -webkit-transform: translate(100%, -50%);
     transform: translate(100%, -50%)
-}
-
-.pc-small-arrow .pc__c--arrow-p:before {
-    transform: translate(-50%, -50%) rotate(50deg);
-    top: calc(50% + 5px);
-    width: 15px
-}
-
-.pc-small-arrow .pc__c--arrow-p:after {
-    transform: translate(-50%, -50%) rotate(-50deg);
-    top: calc(50% - 5px);
-    width: 15px
-}
-
-.pc-small-arrow .pc__c--arrow-n:before {
-    transform: translate(-50%, -50%) rotate(-50deg);
-    top: calc(50% + 5px);
-    width: 15px
-}
-
-.pc-small-arrow .pc__c--arrow-n:after {
-    transform: translate(-50%, -50%) rotate(50deg);
-    top: calc(50% - 5px);
-    width: 15px
-}
-
-.pc-large-arrow .pc__c--arrow-p:before {
-    transform: translate(-50%, -50%) rotate(50deg);
-    top: calc(50% + 10px);
-    width: 27px
-}
-
-.pc-large-arrow .pc__c--arrow-p:after {
-    transform: translate(-50%, -50%) rotate(-50deg);
-    top: calc(50% - 10px);
-    width: 27px
-}
-
-.pc-large-arrow .pc__c--arrow-n:before {
-    transform: translate(-50%, -50%) rotate(-50deg);
-    top: calc(50% + 10px);
-    width: 27px
-}
-
-.pc-large-arrow .pc__c--arrow-n:after {
-    transform: translate(-50%, -50%) rotate(50deg);
-    top: calc(50% - 10px);
-    width: 27px
 }
 
 .pc-custom-arrow .pc__c--arrow-p,
