@@ -281,7 +281,7 @@ class Testimonial extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font ) {
-					$css .= "body.{$style} body .site-inner .content .dz-testimonial__full > *, body.{$style} body .site-inner .content .dz-testimonial__full > p, body.{$style} body .site-inner .content .dz-testimonial__full {";
+					$css .= "body.{$style} .site-inner .content .dz-testimonial__full > *, body.{$style} .site-inner .content .dz-testimonial__full > p, body.{$style} .site-inner .content .dz-testimonial__full {";
 
 						$css .= $font[1] ? $font[1]:'';
 						$css .= get_sub_field( 'full_color' ) ? 'color:' . get_sub_field( 'full_color' ) . '!important;':'';
