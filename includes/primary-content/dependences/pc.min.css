@@ -2292,7 +2292,7 @@ div.pc--c__accordion + div.pc--c__accordion {
     transform: translate(100%, -50%)
 }
 
-.pc-custom-arrow .pc__c--arrow-p,
+.pc-custom-arrow .pc__c--arrow-p img,
 .pc-custom-arrow .pc__c--arrow-n img {
     display: none
 }
@@ -3143,13 +3143,13 @@ label.is-required:after {
 }
 
 .arrows_size_pc-large-arrow .pc__c--arrow-p {
-    -webkit-transform: translate(100%, -50%) scale(1.5);
-    transform: translate(100%, -50%) scale(1.5);
+    -webkit-transform: translate(250%, -50%) scale(1.5);
+    transform: translate(250%, -50%) scale(1.5);
 }
 
 .arrows_size_pc-large-arrow .pc__c--arrow-n {
-    -webkit-transform: translate(-100%, -50%) scale(1.5);
-    transform: translate(-100%, -50%) scale(1.5);
+    -webkit-transform: translate(-250%, -50%) scale(1.5);
+    transform: translate(-250%, -50%) scale(1.5);
 }
 
 .pc-custom-arrow .pc__c--arrow-p:before {
