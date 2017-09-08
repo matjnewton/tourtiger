@@ -326,7 +326,7 @@
 		/**
 		 * Close carousel
 		 */
-		$('.slider-pro__close-link').on('click', function(){
+		$('.slider-pro__close-link, .slider-pro__close-bg').on('click', function(){
 			$(this).tourismTiger('destroyGallery');
 		});
 	});

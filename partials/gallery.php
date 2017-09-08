@@ -27,6 +27,7 @@ if ( $gallery ) :
 			</div>
 		</div>
 		<div class="slider-pro__carousel" style="display:none;">
+			<a href="javascript:" class="slider-pro__close-bg"></a>
 			<a href="javascript:" class="slider-pro__close-link"></a>
 			<div class="slider-pro__slider">
 				<?php 
