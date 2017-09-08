@@ -2346,30 +2346,6 @@ div.pc--c__accordion + div.pc--c__accordion {
     width: 15px
 }
 
-.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-p:before {
-    transform: translate(-50%, -50%) rotate(50deg);
-    top: calc(50% + 8px);
-    width: 22px
-}
-
-.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-p:after {
-    transform: translate(-50%, -50%) rotate(-50deg);
-    top: calc(50% - 8px);
-    width: 22px
-}
-
-.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-n:before {
-    transform: translate(-50%, -50%) rotate(-50deg);
-    top: calc(50% + 8px);
-    width: 22px
-}
-
-.pc-custom-arrow.pc-medium-arrow .pc__c--arrow-n:after {
-    transform: translate(-50%, -50%) rotate(50deg);
-    top: calc(50% - 8px);
-    width: 22px
-}
-
 .pc-large-arrow .pc__c--arrow-p:before {
     transform: translate(-50%, -50%) rotate(50deg);
     top: calc(50% + 10px);
