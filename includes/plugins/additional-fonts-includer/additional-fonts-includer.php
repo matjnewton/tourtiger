@@ -90,7 +90,7 @@ function is_font_loaded( $font = '' ) {
 		return false;
 
 	$uploads_dir = wp_upload_dir(); 
-	$storage     = $uploads_dir['basedir'] . '/aif/temp.json';
+	$storage     = ADI_PATH . '/temp.json';
 	$jsonArray   = array();
 	
 	if ( file_exists($storage) ) :
@@ -113,7 +113,7 @@ function is_font_loaded( $font = '' ) {
 
 function delete_font_temp_file() {
 	$uploads_dir = wp_upload_dir(); 
-	$storage     = $uploads_dir['basedir'] . '/aif/temp.json';
+	$storage     = ADI_PATH . '/temp.json';
 
 	if ( file_exists($storage) )
 		unlink($storage);
