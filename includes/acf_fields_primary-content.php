@@ -393,11 +393,13 @@ function pc_content_init_form( $font='', $color='', $background='', $border='' )
 	if ( $font['font-family'] ) {
 		$is_custom_font = get_aifonts_from_dir( $font['font-family'], true );
 
-		if ( !$is_custom_font ) {
-			$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
-		} else {
-			$css[0] = "</style>{$is_custom_font}<style>";
-		}
+		if ( ! is_font_loaded( $font['font-family'] ) ) :
+			if ( !$is_custom_font ) {
+				$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+			} else {
+				$css[0] = "</style>{$is_custom_font}<style>";
+			}
+		endif;
 
 	 	$css[1] .= "font-family:'" . $font['font-family'] . "';";
 	}

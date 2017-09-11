@@ -89,21 +89,20 @@ function is_font_loaded( $font = '' ) {
 	if ( !$font )
 		return false;
 
-	$uploads_dir = wp_upload_dir(); 
 	$storage     = ADI_PATH . '/temp.json';
 	$jsonArray   = array();
+	$jsonFile    = file_get_contents( $storage );
 	
-	if ( file_exists($storage) ) :
-		$jsonFile  = file_get_contents( $jsonPath );
+	if ( $jsonFile ) :
 		$jsonArray = json_decode( $jsonFile, true );	
 
 		if ( array_key_exists( $font, $jsonArray) )
 			return true;
 	endif;
 
-	$jsonArray[] = $font;
+	$jsonArray[$font] = $font;
 	$jsonArray = json_encode($jsonArray);
-	$handle    = fopen($storage, 'w');
+	$handle    = fopen($storage, 'w+');
 
 	fwrite($handle, $jsonArray);
 	fclose($handle);
@@ -112,13 +111,12 @@ function is_font_loaded( $font = '' ) {
 }
 
 function delete_font_temp_file() {
-	$uploads_dir = wp_upload_dir(); 
 	$storage     = ADI_PATH . '/temp.json';
 
 	if ( file_exists($storage) )
 		unlink($storage);
 }
-add_action( 'init', 'delete_font_temp_file' );
+add_action( 'setup_theme', 'delete_font_temp_file' );
 
 
 /**
