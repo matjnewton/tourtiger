@@ -82,6 +82,46 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 
 
 /**
+ * Check whether the font 
+ * has been loaded on the page
+ */
+function is_font_loaded( $font = '' ) {
+	if ( !$font )
+		return false;
+
+	$uploads_dir = wp_upload_dir(); 
+	$storage     = $uploads_dir['basedir'] . '/aif/temp.json';
+	$jsonArray   = array();
+	
+	if ( file_exists($storage) ) :
+		$jsonFile  = file_get_contents( $jsonPath );
+		$jsonArray = json_decode( $jsonFile, true );	
+
+		if ( array_key_exists( $font, $jsonArray) )
+			return true;
+	endif;
+
+	$jsonArray[] = $font;
+	$jsonArray = json_encode($jsonArray);
+	$handle    = fopen($storage, 'w');
+
+	fwrite($handle, $jsonArray);
+	fclose($handle);
+
+	return false;
+}
+
+function delete_font_temp_file() {
+	$uploads_dir = wp_upload_dir(); 
+	$storage     = $uploads_dir['basedir'] . '/aif/temp.json';
+
+	if ( file_exists($storage) )
+		unlink($storage);
+}
+add_action( 'init', 'delete_font_temp_file' );
+
+
+/**
  * Check if exist font
  * @param  string  $font [description]
  * @return boolean       [description]

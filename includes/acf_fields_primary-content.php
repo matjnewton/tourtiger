@@ -342,6 +342,7 @@ if(function_exists('acf_add_options_sub_page')) {
 
 }
 
+
 /**
  * Get css via ACF Font
  * @param  string $font - ACF Field
@@ -354,11 +355,13 @@ function pc_init_font_css( $font = '' ) {
 		if ( $font['font-family'] ) {
 			$is_custom_font = get_aifonts_from_dir( $font['font-family'], true );
 
-			if ( !$is_custom_font ) {
-				$css[0] = $font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
-			} else {
-				$css[0] = "</style>{$is_custom_font}<style>";
-			}
+			if ( ! is_font_loaded( $font['font-family'] ) ) :
+				if ( !$is_custom_font ) {
+					$css[0] = $font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
+				} else {
+					$css[0] = "</style>{$is_custom_font}<style>";
+				}
+			endif;
 
 			$css[1] .= "font-family:'" . $font['font-family'] . "';";
 		}
