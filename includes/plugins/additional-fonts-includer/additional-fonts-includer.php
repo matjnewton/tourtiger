@@ -89,34 +89,34 @@ function is_font_loaded( $font = '' ) {
 	if ( !$font )
 		return false;
 
-	$storage     = ADI_PATH . '/temp.json';
-	$jsonArray   = array();
-	$jsonFile    = file_get_contents( $storage );
+	// $storage     = ADI_PATH . '/temp-' . $_COOKIE['unic-user'] . '.json';
+	// $jsonArray   = array();
+	// $jsonFile    = file_get_contents( $storage );
 	
-	if ( $jsonFile ) :
-		$jsonArray = json_decode( $jsonFile, true );	
+	// if ( $jsonFile ) :
+	// 	$jsonArray = json_decode( $jsonFile, true );	
 
-		if ( array_key_exists( $font, $jsonArray) )
-			return true;
-	endif;
+	// 	if ( array_key_exists( $font, $jsonArray) )
+	// 		return true;
+	// endif;
 
-	$jsonArray[$font] = $font;
-	$jsonArray = json_encode($jsonArray);
-	$handle    = fopen($storage, 'w+');
+	// $jsonArray[$font] = $font;
+	// $jsonArray = json_encode($jsonArray);
+	// $handle    = fopen($storage, 'w+');
 
-	fwrite($handle, $jsonArray);
-	fclose($handle);
+	// fwrite($handle, $jsonArray);
+	// fclose($handle);
 
-	return false;
+	// return false;
 }
 
-function delete_font_temp_file() {
-	$storage     = ADI_PATH . '/temp.json';
+// function delete_font_temp_file() {
+// 	$storage     = ADI_PATH . '/temp-' . $_COOKIE['unic-user'] . '.json';
 
-	if ( file_exists($storage) )
-		unlink($storage);
-}
-add_action( 'setup_theme', 'delete_font_temp_file' );
+// 	if ( file_exists($storage) )
+// 		unlink($storage);
+// }
+// add_action( 'setup_theme', 'delete_font_temp_file' );
 
 
 /**
