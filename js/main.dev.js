@@ -18,7 +18,7 @@
 		var is_product = $('body').hasClass('single-product');
 		var is_404     = $('body').hasClass('error404');
 		var is_search  = $('body').hasClass('page-template-rezdy_search');
-		var is_blog    = $('body').hasClass('blog');
+		var is_blog    = $('body').not('.page-template-front-page3').hasClass('blog');
 		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
