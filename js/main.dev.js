@@ -337,6 +337,42 @@
 	});
 })(jQuery);
 
+
+
+// fly book now button
+var FbBookNowButton = function (config) {
+    var generateGuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
+    function getCookie(name, accountId) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length === 2)
+            return parts.pop().split(";").shift();
+        if (window.localStorage)
+            return window.localStorage["flybook-front-end-session" + accountId];
+    };
+    function setCookie(cname, cvalue, exdays, accountId) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        var cookieName = cname + "=" + cvalue + "; " + expires;
+        document.cookie = cookieName;
+        if (window.localStorage)
+            window.localStorage["flybook-front-end-session" + accountId] = cvalue;
+    };
+    var sessionId = getCookie("flybook-front-end-session" + config.accountId, config.accountId);
+    if (!sessionId) {
+        sessionId = generateGuid();
+        setCookie("flybook-front-end-session" + config.accountId, sessionId, 5, config.accountId);
+    }
+    var id = "BOOKNOWBUTTON-" + config.entityId + "-" + config.entityType;
+    document.getElementById(config.targetId).innerHTML = '<a class="flybook-book-now-button" id="' + id + '" href="' + config.protocol + '://' + config.domain + '/Scheduler/' + config.entityId + '/' + config.entityType + '/' + sessionId + '/' + config.accountId + '/' + window.flybookAgentId + window.location.search + '" target="_blank"><img src="' + config.protocol + '://' + config.domain + '/content/images/buy_now_button.png"/></a>';
+};
+
 (function(factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
