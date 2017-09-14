@@ -1798,5 +1798,5 @@ function shortcode_flybook_embeddable_button( $attrs ) {
       'target' => ''
     ), $attrs );
 
-    return "<div id='FlybookButton{$attrs['account']}-{$attrs['target']}-tickets' data-flybook-embeddable-button='{$attrs['target']}' data-flybook-account='{$attrs['account']}'>";
+    return "<div id='FlybookButton{$attrs['target']}-{$attrs['account']}-tickets' data-flybook-embeddable-button='{$attrs['target']}' data-flybook-account='{$attrs['account']}'>";
 }
