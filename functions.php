@@ -1792,11 +1792,11 @@ function init_template_post_type(){
  * Hours table shortcode
  */
 add_shortcode( 'flybook-embeddable-button', 'shortcode_flybook_embeddable_button' );
-function shortcode_flybook_embeddable_button( $atts ) {
-    $atts = shortcode_atts( array(
+function shortcode_flybook_embeddable_button( $attrs ) {
+    $attrs = shortcode_atts( array(
       'account' => '',
       'target' => ''
-    ), $atts );
+    ), $attrs );
 
     return "<div id='FlybookButton{$attrs['account']}-{$attrs['target']}-tickets' data-flybook-embeddable-button='{$attrs['target']}' data-flybook-account='{$attrs['account']}'>";
 }
