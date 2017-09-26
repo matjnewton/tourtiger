@@ -35,7 +35,7 @@ if (
 		 */
 		if ( $title && in_array( 'title', $flexi_attr[$key] ) ) : 
 			?>
-			<div class="pc--c__b-image_title fc_style--image_title"><?=$title;?></div>
+			<div class="pc--c__b-image_title fc_style--image_title <?=$class_highlights;?>"><?=$title;?></div>
 			<?php
 		endif; 
 
@@ -44,7 +44,7 @@ if (
 		 */
 		if ( $desc && in_array( 'desc', $flexi_attr[$key] )  ) : 
 			?>
-			<div class="pc--c__b-image_description fc_style--image_desc"><?=$desc;?></div>
+			<div class="pc--c__b-image_description fc_style--image_desc <?=$class_highlights;?>"><?=$desc;?></div>
 			<?php 
 		endif; 
 		?>

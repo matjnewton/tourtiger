@@ -29,6 +29,8 @@ while ( have_rows( $fc_style, 'option' ) ) : the_row();
 		'name' => ''
 	); 
 
+	$class_highlights = get_sub_field( 'is-highlights' ) ? 'styling_highlighted' : '';
+
 endwhile;
 
 /**
