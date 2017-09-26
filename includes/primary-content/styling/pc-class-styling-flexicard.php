@@ -734,7 +734,7 @@ class FlexiCard extends StylingCard {
 				array (
 					'key' => 'fc_' . $i . '_ld_5835he20os1v3',
 					'label' => 'Use Highlights',
-					'name' => 'is-highlihts',
+					'name' => 'is-highlights',
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => 0,
@@ -758,7 +758,7 @@ class FlexiCard extends StylingCard {
 				array (
 					'key' => 'fc_' . $i . '_ld_5835he11os2v2',
 					'label' => 'Highlights',
-					'name' => 'highlihts',
+					'name' => 'highlights',
 					'type' => 'rgba_color',
 					'instructions' => '',
 					'required' => 0,
