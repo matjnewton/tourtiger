@@ -24,7 +24,7 @@ echo '#pc_wrap .' . $fc_style . ' .fc_style--image_text {' . $fc_style__fcc_css 
 
 if ( get_sub_field( 'is-highlights' ) ) :
 	$fc_style__fcc_css = 'background-color:' . get_sub_field( 'highlights' ) . ';padding: 0 5px;display:inline;';
-	echo '#pc_wrap .' . $fc_style . ' .fc_style--image_text.styling_highlighted {' . $fc_style__fcc_css . '}';
+	echo '#pc_wrap .' . $fc_style . ' .fc_style--image_text .styling_highlighted {' . $fc_style__fcc_css . '}';
 endif;
 
 ?>
