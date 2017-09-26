@@ -3606,6 +3606,18 @@ acf_add_local_field_group(array (
 														'value' => 'wrap'
 													)
 												),
+												array (
+													array (
+														'field' => 'field_5821e28ff659a',
+														'operator' => '==',
+														'value' => '3',
+													),
+													array (
+														'field' => 'field_5821e6f3d49fc',
+														'operator' => '==',
+														'value' => 'wrap'
+													)
+												),
 											),
 											'wrapper' => array (
 												'width' => '',
@@ -3613,9 +3625,10 @@ acf_add_local_field_group(array (
 												'id' => '',
 											),
 											'choices' => array (
-												'equal' => 'Equal width',
-												'left' => 'Two thirds left',
-												'right' => 'Two thirds right',
+												'equal'  => 'Equal width',
+												'left'   => 'Two thirds left',
+												'right'  => 'Two thirds right',
+												'center' => 'Centered is the biggest',
 											),
 											'allow_null' => 0,
 											'other_choice' => 0,

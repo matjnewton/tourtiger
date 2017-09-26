@@ -1,6 +1,7 @@
 <?php
 
 	$tour_column_classes .= ' pc--r__col-3';
+	$tour_column_classes .= get_sub_field( 'tour_pc-colums--ratio' ) ? ' pc--r__col-3__ratio-' . get_sub_field( 'tour_pc-colums--ratio' ) : '';
 	
 	$thumb_width = 700;
 	$thumb_height = 700;
