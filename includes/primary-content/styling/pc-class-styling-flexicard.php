@@ -625,6 +625,8 @@ class FlexiCard extends StylingCard {
 					'layout' => 'horizontal',
 					'toggle' => 1,
 				),
+
+				// text
 				array (
 					'key' => 'fc_' . $i . '_ld_58357283aebcf',
 					'label' => 'Text styling',
@@ -729,6 +731,70 @@ class FlexiCard extends StylingCard {
 					'ext_value' => array (
 					),
 				),
+				array (
+					'key' => 'fc_' . $i . '_ld_5835he20os1v3',
+					'label' => 'Use Highlights',
+					'name' => 'is-highlihts',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'title',
+							),
+						),
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'desc',
+							),
+						),
+					)
+				),
+				array (
+					'key' => 'fc_' . $i . '_ld_5835he11os2v2',
+					'label' => 'Highlights',
+					'name' => 'highlihts',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'title',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_5835he20os1v3',
+								'operator' => '==',
+								'value' => 1,
+							),
+						),
+						array (
+							array (
+								'field' => 'fc_' . $i . '_ld_583568a136cc9',
+								'operator' => '==',
+								'value' => 'desc',
+							),
+							array (
+								'field' => 'fc_' . $i . '_ld_5835he20os1v3',
+								'operator' => '==',
+								'value' => 1,
+							),
+						),
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+
+				// title
 				array (
 					'key' => 'fc_' . $i . '_ld_583569df36ccd',
 					'label' => 'Title Decoration',
@@ -1751,6 +1817,7 @@ class FlexiCard extends StylingCard {
 					),
 				),
 
+				// hover of image
 				array (
 					'key' => 'fc_' . $i . '_ld_583567583ac0bh',
 					'label' => 'Hover side of image',
