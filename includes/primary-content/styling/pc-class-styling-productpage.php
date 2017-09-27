@@ -1419,6 +1419,993 @@ class ProductPage extends StylingCard {
 					'type' => 'rgba_color',
 					'required' => 0,
 				),
+				array (
+					'key' => $this->slug . $i . '_5forms192',
+					'label' => 'Form',
+					'name' => 'forms',
+					'type' => 'tab',
+					'instructions' => '',
+					'required' => '',
+					'conditional_logic' => '',
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'placement' => 'left',
+					'endpoint' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_tit12for43ont098',
+					'label' => 'Title font',
+					'name' => 'cc_style__fo_tit_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_titlefor98792',
+					'label' => 'Title color',
+					'name' => 'cc_style__fo_tit_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(0,0,0,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '123t4for43ont',
+					'label' => 'Description font',
+					'name' => 'cc_style__fo_titd_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_titl1234m92',
+					'label' => 'Description color',
+					'name' => 'cc_style__fo_titd_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(0,0,0,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_ld_585dfb9',
+					'label' => 'Buttons style',
+					'name' => 'cc__fo_butts_style',
+					'type' => 'radio',
+					'instructions' => 'Square means non-rounded edges. Round means fully round edges. Rounded corner just means slightly rounded edges.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'text' => 'Text',
+						'square' => 'Square',
+						'round' => 'Round',
+						'corner' => 'Rounded Corner',
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'square',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => $this->slug . $i . '_125_8-2_a1dxz44',
+					'label' => 'Buttons Border',
+					'name' => 'cc__fo_butts_border',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_ld_585dfb9',
+								'operator' => '!=',
+								'value' => 'text'
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'no' => 'No',
+						'yes' => 'Yes',
+						'hover' => 'On Mouseover',
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'no',
+					'layout' => 'horizontal',
+				),
+				array (
+					'key' => $this->slug . $i . '_rd_5121533145',
+					'label' => 'Buttons Border Thickness',
+					'name' => 'cc__fo_butts_border_thickness',
+					'type' => 'number',
+					'instructions' => 'The border color will be the same as the button font color.',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => $this->slug . $i . '_ld_585dfb9',
+								'operator' => '!=',
+								'value' => 'text'
+							),
+							array (
+								'field' => $this->slug . $i . '_125_8-2_a1dxz44',
+								'operator' => '!=',
+								'value' => 'no',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => 1,
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => 'px',
+					'min' => 1,
+					'max' => 5,
+					'step' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_ld_dfba',
+					'label' => 'Buttons Mouseover effect',
+					'name' => 'cc__fo_butts_hover',
+					'type' => 'checkbox',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'invert' => 'Color Invert',
+						'decor' => 'Text Decoration',
+					),
+					'default_value' => array (
+					),
+					'layout' => 'horizontal',
+					'toggle' => 1,
+				),
+				array (
+					'key' => $this->slug . $i . '_fformstyler123432font',
+					'label' => 'Submit font',
+					'name' => 'cc_style__fo_su_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5foco2bcfjzf292',
+					'label' => 'Submit Button color',
+					'name' => 'cc_style__fo_su_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(255,183,51,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_ds233sub2s143',
+					'label' => 'Submit Button Background',
+					'name' => 'cc_style__fo_su_bg',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_shnsubmsh1sh42',
+					'label' => 'Submit Button Dropshadow',
+					'name' => 'cc_style__fo_su_drop',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_fnefont123ont',
+					'label' => 'Next button font',
+					'name' => 'cc_style__fo_ne_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5fone123c92',
+					'label' => 'Next Button color',
+					'name' => 'cc_style__fo_ne_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(255,183,51,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_ldsds35ds43',
+					'label' => 'Next Button Background',
+					'name' => 'cc_style__fo_ne_bg',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_shnextsh26ds1sh42',
+					'label' => 'Next Button Dropshadow',
+					'name' => 'cc_style__fo_ne_drop',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_fop1234lalant',
+					'label' => 'Previous button font',
+					'name' => 'cc_style__fo_pr_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5foppreverp292',
+					'label' => 'Previous Button color',
+					'name' => 'cc_style__fo_pr_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(175,175,175,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_ldsds23432s143',
+					'label' => 'Previous Button Background',
+					'name' => 'cc_style__fo_pr_bg',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => '',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_sh58pre3126ds1sh42',
+					'label' => 'Prevous Button Dropshadow',
+					'name' => 'cc_style__fo_pr_drop',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'Enable Dropshadow',
+					'default_value' => 0,
+				),
+				array (
+					'key' => $this->slug . $i . '_fofifont',
+					'label' => 'Field font',
+					'name' => 'cc_style__fo_fi_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5fobor292',
+					'label' => 'Field border color',
+					'name' => 'cc_style__fo_bo_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(228,228,228,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5ffiebg122',
+					'label' => 'Field background color',
+					'name' => 'cc_style__fo_bg_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(225,225,225,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5fotexwfcxzt292',
+					'label' => 'Field text color',
+					'name' => 'cc_style__fo_te_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(0,0,0,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_5psholder292',
+					'label' => 'Field placeholder color',
+					'name' => 'cc_style__fo_pc_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(0,0,0,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_fofd123fwqontt',
+					'label' => 'Field label font',
+					'name' => 'cc_style__fo_lab_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5f1234sew92',
+					'label' => 'Field label color',
+					'name' => 'cc_style__fo_lab_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(0,0,0,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_fofieldlabeldes',
+					'label' => 'Field label font',
+					'name' => 'cc_style__fo_des_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5decolor92',
+					'label' => 'Field label color',
+					'name' => 'cc_style__fo_des_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(55,55,55,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_fos12232tle',
+					'label' => 'Steps title font',
+					'name' => 'cc_style__fo_stt_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '123_stecolor2ps92',
+					'label' => 'Steps title color',
+					'name' => 'cc_style__fo_stt_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(55,55,55,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
+				array (
+					'key' => $this->slug . $i . '_fosfont_sa5tle',
+					'label' => 'Steps progress font',
+					'name' => 'cc_style__fo_stp_f',
+					'type' => 'typography',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'show_font_familys' => 1,
+					'font-family' => '',
+					'show_font_weight' => 1,
+					'font-weight' => 400,
+					'show_backup_font' => 1,
+					'backup-font' => 'Arial, Helvetica, sans-serif',
+					'show_text_align' => 0,
+					'text_align' => 'center',
+					'show_text_direction' => 0,
+					'direction' => 'ltr',
+					'show_font_size' => 1,
+					'font_size' => 16,
+					'show_line_height' => 1,
+					'line_height' => 24,
+					'show_letter_spacing' => 1,
+					'letter_spacing' => 0,
+					'show_color_picker' => 0,
+					'text_color' => '#fff',
+					'show_font_style' => 1,
+					'font_style' => 'normal',
+					'show_preview_text' => 0,
+					'default_value' => '',
+					'new_lines' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+					'rows' => '',
+					'font_familys' => self::get_available_fonts(),
+					'stylefont' => array (
+						100 => 100,
+						300 => 300,
+						400 => 400,
+						600 => 600,
+						700 => 700,
+						800 => 800,
+					),
+					'backupfont' => self::BACK_FONTS,
+				),
+				array (
+					'key' => $this->slug . $i . '_5p2343alofonts92',
+					'label' => 'Steps progress color',
+					'name' => 'cc_style__fo_stp_c',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'rgba' => 'rgba(55,55,55,1)',
+					'return_value' => 0,
+					'ext_value' => array (
+					),
+				),
 			),
 		);	
 
@@ -1982,6 +2969,214 @@ class ProductPage extends StylingCard {
 					$css .= $btn_hover ? "background-color: {$btn_hover};" : '';
 					$css .= $btn_color ? "color: {$btn_color};" : '';
 				$css .= '}';
+
+
+				/**
+				 * Title
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_tit_f' ), 
+					get_sub_field( 'cc_style__fo_tit_c' ) 
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_title {" . $cc_style__ccc_css[1] . '}' : '';
+
+				/**
+				 * Description
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_titd_f' ), 
+					get_sub_field( 'cc_style__fo_titd_c' ) 
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_description {" . $cc_style__ccc_css[1] . '}' : '';
+
+				/**
+				 * Field Label
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_lab_f' ), 
+					get_sub_field( 'cc_style__fo_lab_c' ) 
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_body .gfield_label {" . $cc_style__ccc_css[1] . '}' : '';
+
+				/**
+				 * Steps title
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_stt_f' ), 
+					get_sub_field( 'cc_style__fo_stt_c' ) 
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_body .gf_progressbar_title {" . $cc_style__ccc_css[1] . '}' : '';
+
+				/**
+				 * Steps progress
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_stp_f' ), 
+					get_sub_field( 'cc_style__fo_stp_c' ) 
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gf_progressbar span {" . $cc_style__ccc_css[1] . '}' : '';
+
+				/**
+				 * Field description
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_des_f' ), 
+					get_sub_field( 'cc_style__fo_des_c' ) 
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield_description  {" . $cc_style__ccc_css[1] . '}' : '';
+
+				$cc_style_btn = '';
+
+				$cc_style_btn .= get_font_corner_style( get_sub_field( 'cc__fo_butts_style' ) );
+
+				// TODO: Border
+
+				// TODO: Thickness
+
+				/**
+				 * Next Button
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_ne_f' ), 
+					get_sub_field( 'cc_style__fo_ne_c' )
+				);
+
+				$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_ne_bg' ) ? 'background-color:'.get_sub_field( 'cc_style__fo_ne_bg' ).';' : '';
+
+				$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_ne_drop' ) ? 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);' : '';
+
+				$cc_style__ccc_css[2] = '';
+
+				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+					get_sub_field( 'cc__fo_butts_hover' ), 
+					get_sub_field( 'cc_style__fo_ne_c' ), 
+					get_sub_field( 'cc_style__fo_ne_bg' ) 
+				);
+				$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
+				$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
+
+				$cc_style_btn_border = get_font_border_styles( 
+					get_sub_field( 'cc__fo_butts_border' ), 
+					get_sub_field( 'cc_style__fo_ne_c' ), 
+					get_sub_field( 'cc__fo_butts_border_thickness' ) 
+				);
+				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
+				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_next_button {" . $cc_style__ccc_css[1] . '}' : '';
+				echo $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_next_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+
+				/**
+				 * Previous Button
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_pr_f' ), 
+					get_sub_field( 'cc_style__fo_pr_c' )
+				);
+
+				$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_pr_bg' ) ? 'background-color:'.get_sub_field( 'cc_style__fo_pr_bg' ).';' : '';
+
+				$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_pr_drop' ) ? 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);' : '';
+
+				$cc_style__ccc_css[2] = '';
+
+				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+					get_sub_field( 'cc__fo_butts_hover' ), 
+					get_sub_field( 'cc_style__fo_pr_c' ), 
+					get_sub_field( 'cc_style__fo_pr_bg' )
+				);
+
+				$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
+				$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
+
+				$cc_style_btn_border = get_font_border_styles( 
+					get_sub_field( 'cc__fo_butts_border' ), 
+					get_sub_field( 'cc_style__fo_pr_c' ), 
+					get_sub_field( 'cc__fo_butts_border_thickness' ) 
+				);
+				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
+				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button {" . $cc_style__ccc_css[1] . '}' : '';
+				echo $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+
+				/**
+				 * Submit Button
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_su_f' ), 
+					get_sub_field( 'cc_style__fo_su_c' )
+				);
+
+				$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_su_bg' ) ? 'background-color:'.get_sub_field( 'cc_style__fo_su_bg' ).';' : '';
+
+				$cc_style__ccc_css[1] .= get_sub_field( 'cc_style__fo_su_drop' ) ? 'text-shadow:1px 1px 2px rgba(0,0,0,.3),1px 1px 2px rgba(0,0,0,.3);' : '';
+
+				$cc_style__ccc_css[2] = '';
+
+				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+					get_sub_field( 'cc__fo_butts_hover' ), 
+					get_sub_field( 'cc_style__fo_su_c' ), 
+					get_sub_field( 'cc_style__fo_su_bg' )
+				);
+
+				$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
+				$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
+
+				$cc_style_btn_border = get_font_border_styles( 
+					get_sub_field( 'cc__fo_butts_border' ), 
+					get_sub_field( 'cc_style__fo_su_c' ), 
+					get_sub_field( 'cc__fo_butts_border_thickness' ) 
+				);
+				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
+				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_button{" . $cc_style__ccc_css[1] . '}' : '';
+				echo $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+
+				/**
+				 * Input/Textarea field
+				 */
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_fi_f' ), 
+					get_sub_field( 'cc_style__fo_te_c' ),
+					get_sub_field( 'cc_style__fo_bg_c' )
+				);
+
+				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .dropdown-menu > li > a, body.{$style} .product_content_wrapper .bootstrap-select.btn-group .btn .filter-option {" . $cc_style__ccc_css[1] . '} ' : '';
+
+				$cc_style__ccc_css[1] .= 'border-style: solid;border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
+
+				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield .gfield_select, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_multiselect, body.{$style} .product_content_wrapper .pc--form input, body.{$style} .product_content_wrapper .pc--form .gfield dropdown-toggle, body.{$style} .product_content_wrapper .pc--form .gfield textarea, body.{$style} .product_content_wrapper .pc--form .gfield textarea:focus, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_radio label, body.{$style} .product_content_wrapper .ginput_common--label {" . $cc_style__ccc_css[1] . '}' : '';
+
+				echo get_sub_field( 'cc_style__fo_bg_c' ) ? "body.{$style} .product_content_wrapper .pc--form input:-webkit-autofill, body.{$style} .product_content_wrapper .pc--form .gfield textarea:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px " . get_sub_field( 'cc_style__fo_bg_c' ) . ' inset;}' : '';
+
+				/**
+				 * Input placeholder
+				 */
+				$cc_style__ccc_css = get_sub_field( 'cc_style__fo_pc_c' ) ? 'color:' . get_sub_field( 'cc_style__fo_pc_c' ) . ';' : '';
+
+				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . '::-webkit-input-placeholder {' . $cc_style__ccc_css . '}' : '';
+				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . '::-moz-placeholder {' . $cc_style__ccc_css . '}' : '';
+				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . ':-moz-placeholder {' . $cc_style__ccc_css . '}' : '';
+				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . ':-ms-input-placeholder {' . $cc_style__ccc_css . '}' : '';
+
 
 				$css .= '</style>';
 
