@@ -2979,8 +2979,8 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_tit_c' ) 
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_title {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_title {" . $cc_style__ccc_css[1] . '}' : '';
 
 				/**
 				 * Description
@@ -2990,8 +2990,8 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_titd_c' ) 
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_description {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_description {" . $cc_style__ccc_css[1] . '}' : '';
 
 				/**
 				 * Field Label
@@ -3001,8 +3001,8 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_lab_c' ) 
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_body .gfield_label {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_body .gfield_label {" . $cc_style__ccc_css[1] . '}' : '';
 
 				/**
 				 * Steps title
@@ -3012,8 +3012,8 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_stt_c' ) 
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_body .gf_progressbar_title {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_body .gf_progressbar_title {" . $cc_style__ccc_css[1] . '}' : '';
 
 				/**
 				 * Steps progress
@@ -3023,8 +3023,8 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_stp_c' ) 
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gf_progressbar span {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gf_progressbar span {" . $cc_style__ccc_css[1] . '}' : '';
 
 				/**
 				 * Field description
@@ -3034,8 +3034,8 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_des_c' ) 
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield_description  {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield_description  {" . $cc_style__ccc_css[1] . '}' : '';
 
 				$cc_style_btn = '';
 
@@ -3075,9 +3075,9 @@ class ProductPage extends StylingCard {
 				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_next_button {" . $cc_style__ccc_css[1] . '}' : '';
-				echo $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_next_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_next_button {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_next_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
 
 				/**
 				 * Previous Button
@@ -3110,9 +3110,9 @@ class ProductPage extends StylingCard {
 				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button {" . $cc_style__ccc_css[1] . '}' : '';
-				echo $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
 
 				/**
 				 * Submit Button
@@ -3145,9 +3145,9 @@ class ProductPage extends StylingCard {
 				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_button{" . $cc_style__ccc_css[1] . '}' : '';
-				echo $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_button{" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
 
 				/**
 				 * Input/Textarea field
@@ -3158,24 +3158,24 @@ class ProductPage extends StylingCard {
 					get_sub_field( 'cc_style__fo_bg_c' )
 				);
 
-				echo $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .dropdown-menu > li > a, body.{$style} .product_content_wrapper .bootstrap-select.btn-group .btn .filter-option {" . $cc_style__ccc_css[1] . '} ' : '';
+				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .dropdown-menu > li > a, body.{$style} .product_content_wrapper .bootstrap-select.btn-group .btn .filter-option {" . $cc_style__ccc_css[1] . '} ' : '';
 
 				$cc_style__ccc_css[1] .= 'border-style: solid;border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
 
-				echo $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield .gfield_select, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_multiselect, body.{$style} .product_content_wrapper .pc--form input, body.{$style} .product_content_wrapper .pc--form .gfield dropdown-toggle, body.{$style} .product_content_wrapper .pc--form .gfield textarea, body.{$style} .product_content_wrapper .pc--form .gfield textarea:focus, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_radio label, body.{$style} .product_content_wrapper .ginput_common--label {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield .gfield_select, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_multiselect, body.{$style} .product_content_wrapper .pc--form input, body.{$style} .product_content_wrapper .pc--form .gfield dropdown-toggle, body.{$style} .product_content_wrapper .pc--form .gfield textarea, body.{$style} .product_content_wrapper .pc--form .gfield textarea:focus, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_radio label, body.{$style} .product_content_wrapper .ginput_common--label {" . $cc_style__ccc_css[1] . '}' : '';
 
-				echo get_sub_field( 'cc_style__fo_bg_c' ) ? "body.{$style} .product_content_wrapper .pc--form input:-webkit-autofill, body.{$style} .product_content_wrapper .pc--form .gfield textarea:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px " . get_sub_field( 'cc_style__fo_bg_c' ) . ' inset;}' : '';
+				$css .= get_sub_field( 'cc_style__fo_bg_c' ) ? "body.{$style} .product_content_wrapper .pc--form input:-webkit-autofill, body.{$style} .product_content_wrapper .pc--form .gfield textarea:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px " . get_sub_field( 'cc_style__fo_bg_c' ) . ' inset;}' : '';
 
 				/**
 				 * Input placeholder
 				 */
 				$cc_style__ccc_css = get_sub_field( 'cc_style__fo_pc_c' ) ? 'color:' . get_sub_field( 'cc_style__fo_pc_c' ) . ';' : '';
 
-				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . '::-webkit-input-placeholder {' . $cc_style__ccc_css . '}' : '';
-				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . '::-moz-placeholder {' . $cc_style__ccc_css . '}' : '';
-				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . ':-moz-placeholder {' . $cc_style__ccc_css . '}' : '';
-				echo $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . ':-ms-input-placeholder {' . $cc_style__ccc_css . '}' : '';
+				$css .= $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . '::-webkit-input-placeholder {' . $cc_style__ccc_css . '}' : '';
+				$css .= $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . '::-moz-placeholder {' . $cc_style__ccc_css . '}' : '';
+				$css .= $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . ':-moz-placeholder {' . $cc_style__ccc_css . '}' : '';
+				$css .= $cc_style__ccc_css ? "body.{$style} .product_content_wrapper " . ':-ms-input-placeholder {' . $cc_style__ccc_css . '}' : '';
 
 
 				$css .= '</style>';
