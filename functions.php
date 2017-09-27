@@ -65,7 +65,7 @@ function tourtiger_scripts_method() {
 		wp_register_script('colorbox', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/jquery.colorbox-min.js"), array('jquery'), null, true);
 		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
 		//wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
-		wp_register_script('rezdy_modal', get_stylesheet_directory_uri() . '/incinit_api/js/rezdy.min.js', array('jquery'), null, true);
+		wp_register_script('rezdy_modal', get_stylesheet_directory_uri() . '/inc/init_api/js/rezdy.min.js', array('jquery'), null, true);
 		
 		$integrate_orioly = get_field('orioly','option');
 		$integrate_trekksoft = get_field('trekksoft','option');
