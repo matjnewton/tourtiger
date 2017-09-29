@@ -4083,7 +4083,7 @@ acf_add_local_field_group(array (
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '',
+								'width' => '75',
 								'class' => '',
 								'id' => '',
 							),
@@ -4096,6 +4096,13 @@ acf_add_local_field_group(array (
 							'multiple' => 1,
 							'return_format' => 'object',
 							'ui' => 1,
+						),
+						array (
+							'key' => 'f_5615huib8c7_ppo_label',
+							'label' => 'Label',
+							'name' => 'featured_products--label',
+							'type' => 'text',
+							'required' => 0,
 						),
 					),
 				),

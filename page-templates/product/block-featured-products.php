@@ -7,6 +7,7 @@ if ( get_row_layout() == 'primary_content_f_products' ) :
 
     global $primary_content_options_count;
 	$post_objects = get_sub_field('featured_products');
+	$tour_label   = get_sub_field('featured_products--label') ? get_sub_field('featured_products--label') : 'View Tour Now';
 
 	if ( $post_objects ) : 
 		?>
