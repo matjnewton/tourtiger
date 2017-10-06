@@ -17,9 +17,16 @@
                                 <?php endif; ?>
                                 <div class="rate-about">
                                     
-                                    <a href="<?php echo get_permalink(); ?>"  class="dz-testimonial__author" style="text-decoration: none;">
-                                    <?php the_title(); ?>
-                                    </a>
+                                    <?php if ( get_field( 'is_single_testimonial', 'option' ) ) : ?>
+                                        <a href="<?php echo get_permalink(); ?>"  class="dz-testimonial__author" style="text-decoration: none;">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    <?php else: ?>
+                                        <span  class="dz-testimonial__author">
+                                            <?php the_title(); ?>
+                                        </span>
+                                    <?php endif; ?>
+
                                     <?php $testimonial_text = get_field('testimonial_link_anchor_text'); ?>
                                     <?php if($testimonial_text): ?>
                                     <a href="<?php the_field('testimonial_link'); ?>"><?php echo $testimonial_text; ?></a>
