@@ -74,7 +74,7 @@
 	        tngbhScriptTag.parentNode.appendChild(tngBhStyle);
 	    }
 
-	    tngbhScriptTag.parentNode.prependChild(tngbhBtn);
+	    tngbhScriptTag.parentNode.insertBefore(tngbhBtn, parent.firstChild);
 	}
 
 }));
