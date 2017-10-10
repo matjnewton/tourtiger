@@ -1813,12 +1813,13 @@ function booking_hound_button( $attrs ) {
       'label'     => 'BOOK NOW',
       'api-hash'  => '', // e.g. 90520c81-fb74-4cba-9abd-475413eff10a
       'item-code' => '', // tngbh-script-1710134223
-      'id'        => 1   // 1
+      'id'        => 1,  // 1
+      'class'     => ''  // 'class1 class2 class3'
     ), $attrs );
 
     if ( $attrs['api-hash'] && $attrs['item-code'] && $attrs['id'] ) :
     	wp_enqueue_script('booking_hound_api');
-    	return "<div bt='{$attrs['label']}' og='{$attrs['api-hash']}' fs='https://booking.bookinghound.com/rezfe/' id='{$attrs['item-code']}' uniqueId='{$attrs['id']}' mode='ap'></div>";
+    	return "<div bt='{$attrs['label']}' class='{$attrs['class']}' og='{$attrs['api-hash']}' fs='https://booking.bookinghound.com/rezfe/' id='{$attrs['item-code']}' uniqueId='{$attrs['id']}' mode='ap'></div>";
     else :
     	return "<!-- Booking hound API code ain't work. API Hash: {$attrs['api-hash']}; Item code: {$attrs['item-code']}; Id: {$attrs['id']}. -->";
     endif;
