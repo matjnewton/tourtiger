@@ -89,7 +89,7 @@ function Tngbh_GetScriptTag() {
         tngbhScriptTag = divs[divs.length - 2];
 
         if (!IsTngScript(tngbhScriptTag)) {
-            tngbhScriptTag = document.getElementById("tngbh-script");
+            tngbhScriptTag = document.querySelector('[id^="tngbh-script"]').id;
         }
     }
     
