@@ -1819,7 +1819,7 @@ function booking_hound_button( $attrs ) {
 
     if ( $attrs['api-hash'] && $attrs['item-code'] ) :
     	wp_enqueue_script('booking_hound_api');
-    	return "<div bt='{$attrs['label']}' class='{$attrs['class']}' og='{$attrs['api-hash']}' fs='https://booking.bookinghound.com/rezfe/' id='{$attrs['item-code']}' uniqueId='{$attrs['id']}' mode='ap'></div>";
+    	return "<div bt='{$attrs['label']}' data-classes='{$attrs['class']}' og='{$attrs['api-hash']}' fs='https://booking.bookinghound.com/rezfe/' id='{$attrs['item-code']}' uniqueId='{$attrs['id']}' mode='ap'></div>";
     else :
     	return "<!-- Booking hound API code ain't work. API Hash: {$attrs['api-hash']}; Item code: {$attrs['item-code']}; Id: {$attrs['id']}. -->";
     endif;

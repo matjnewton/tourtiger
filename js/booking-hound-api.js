@@ -27,6 +27,7 @@
 	    const bh_fcg = tngbhScriptTag.getAttribute('fcg');
 	    const bh_fca = tngbhScriptTag.getAttribute('fca');
 	    const bh_fcs = tngbhScriptTag.getAttribute('fcs');
+	    const bh_cls = tngbhScriptTag.getAttribute('data-classes');
 
 	    let bh_src = bh_frameSrc + "book.aspx?og=" + bh_opguid + "&fcs=" + bh_fcs + "&fca=" + bh_fca + "&fcg=" + bh_fcg + "&af=" + bh_afId + "&uniqueId=" + bh_uniqueId + "&mode=" + bh_mode + "&phref=" + window.location;
 
@@ -39,7 +40,7 @@
 	        else
 	            tngbhBtn.innerHTML = bh_btnTxt;
 
-	        tngbhBtn.setAttribute('class', 'tngbh-btn');
+	        tngbhBtn.setAttribute('class', 'tngbh-btn ' + bh_cls);
 	    }
 	    else {
 	        tngbhBtn.innerHTML = "<img src='" + bh_btnImg + "'></img>";
@@ -73,7 +74,7 @@
 	        tngbhScriptTag.parentNode.appendChild(tngBhStyle);
 	    }
 
-	    tngbhScriptTag.parentNode.appendChild(tngbhBtn);
+	    tngbhScriptTag.parentNode.prependChild(tngbhBtn);
 	}
 
 }));

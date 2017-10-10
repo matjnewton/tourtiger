@@ -84,8 +84,30 @@
                                 <div><?php echo $bbt; ?></div>
                                 <div class="arrow-right"></div>
                             </a>
-                            <?php else: ?>
-                            <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2">
-                                <?php echo $bbt; ?>
-                            </a>
+                            <?php else:
+
+                                $booking_hound = false;
+
+                                if ( have_rows( 'sidebar_1' ) ) :
+                                    while ( have_rows( 'sidebar_1' ) ) :
+                                        the_row();
+
+                                        if ( get_sub_field( 'button_link_type' ) === 'booking-hound' ) :
+                                            $api_hash      = get_sub_field( 'api-hash' );
+                                            $item_code     = get_sub_field( 'item-code' );
+                                            $unique_id     = get_sub_field( 'id' );
+                                            $class         = get_sub_field( 'class' );
+                                            $booking_hound = true;
+
+                                            echo do_shortcode( "[booking-hound-button api-hash='{$api_hash}' item-code='{$item_code}' id='{$unique_id}' class='{$class}']" );
+                                        endif;
+                                    endwhile;
+                                endif; 
+
+                                if (!$booking_hound) :
+                                    ?>
+                                    <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2">
+                                        <?php echo $bbt; ?>
+                                    </a>
+                                <?php endif; ?>
                             <?php endif; ?>

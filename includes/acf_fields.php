@@ -8420,6 +8420,28 @@ acf_add_local_field_group(array (
 							'allow_null' => 0,
 						),
 						array (
+							'key' => 'boho_539862fa95c55',
+							'label' => 'API Hash',
+							'name' => 'api-hash',
+							'type' => 'text',
+							'required' => 0,
+							'placeholder' => '90520c81-fb74-4cba-9abd-475413eff10a',
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_55c88bbf2b1f0',
+										'operator' => '!=',
+										'value' => '1',
+									),
+									array (
+										'field' => 'field_539f6a270a9f6',
+										'operator' => '==',
+										'value' => 'booking-hound',
+									),
+								),
+							),
+						),
+						array (
 							'key' => 'boho_539862fa96c47',
 							'label' => 'Item code',
 							'name' => 'item-code',
