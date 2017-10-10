@@ -74,6 +74,11 @@
 	    }
 
 	    tngbhScriptTag.parentNode.appendChild(tngbhBtn);
+
+	    $(function(){
+	    	if ( $('.header-bar-wrapper').hasClass('sticky') )
+		    	$('.book-embed-wrap').css( 'margin-top', +$('.header-bar-wrapper') + 10 + 'px' );
+	    });  
 	}
 
 }));
