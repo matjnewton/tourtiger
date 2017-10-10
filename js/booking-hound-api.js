@@ -10,7 +10,7 @@
 
 }(function($) {
 
-	const bhScript = Tngbh_GetScriptTag();
+	window.bhScript = Tngbh_GetScriptTag();
 
 	if (bhScript != null) {
 
@@ -81,7 +81,7 @@
 function Tngbh_GetScriptTag() {
     // get currently executing script
     const divs = document.getElementsByTagName('div');
-    let tngbhScriptTag = divs[divs.length - 1];
+    var tngbhScriptTag = divs[divs.length - 1];
 
     // this may not work if host page has dynamically inserted script tags
     // check we have the right one
@@ -98,7 +98,7 @@ function Tngbh_GetScriptTag() {
 
 function IsTngScript(tngbhScriptTag) {
 
-    const res = tngbhScriptTag.getAttribute("ID").substring(0, 12);
+    const res = tngbhScriptTag.getAttribute("ID") !== null && tngbhScriptTag.getAttribute("ID").substring(0, 12) || tngbhScriptTag.getAttribute("id").substring(0, 12);
 
     if (res == "tngbh-script") {
         return true;
