@@ -14,7 +14,7 @@
 
 	if (bhScript != null) {
 
-	    window.tngbhScriptTag = document.getElementById(bhScript.getAttribute("id"));
+	    window.tngbhScriptTag = document.getElementById(bhScript);
 
 	    const bh_uniqueId = tngbhScriptTag.getAttribute('uniqueId');
 	    const bh_mode = tngbhScriptTag.getAttribute('mode');
@@ -70,10 +70,10 @@
 	        tngBhStyle.setAttribute('rel', 'stylesheet');
 	        tngBhStyle.setAttribute('href', bh_css + "?" + bh_dateStr);
 
-	        bhScript.parentNode.appendChild(tngBhStyle);
+	        tngbhScriptTag.parentNode.appendChild(tngBhStyle);
 	    }
 
-	    bhScript.parentNode.appendChild(tngbhBtn);
+	    tngbhScriptTag.parentNode.appendChild(tngbhBtn);
 	}
 
 }));
