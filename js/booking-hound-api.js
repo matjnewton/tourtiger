@@ -128,7 +128,10 @@ function Tngbh_OverlayBookingFlow(bh_scoped_src) {
     myframe.setAttribute('src', bh_scoped_src);
     myframe.setAttribute('iframestyle', "overlay");
 
-    myframe.addEventListener("load", () => tngbhBtn.setAttribute('style', 'display:block;'));
+    myframe.addEventListener("load", () => {
+    	tngbhBtn.setAttribute('style', 'display:block;');
+    	$('.header-bar-wrapper').hasClass('sticky') && $('.tngbh-iframe').css( 'margin-top', +$('.header-bar-wrapper').height() + 'px' );
+    });
 
     let myframeWrapper = document.createElement('div');
     myframeWrapper.setAttribute('style', 'overflow:auto;-webkit-overflow-scrolling:touch;');
@@ -140,9 +143,7 @@ function Tngbh_OverlayBookingFlow(bh_scoped_src) {
     myframeWrapper.appendChild(myframe);
 
     const myFrame = document.getElementById("tngbh-iframe");
-    myframe.setAttribute('style', '-webkit-overflow-scrolling: touch;display:block;border: 0;opacity: 1;background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0; border: 0 none transparent;height: 100%;left: 0;margin: 0;opacity: 80; overflow-y: auto;padding: 0;position: fixed;top: 0;transition: opacity 0.28s ease 0s;visibility: visible; width: 100%; z-index: 2147483647;');
-
-    $('.header-bar-wrapper').hasClass('sticky') && $('.tngbh-iframe').css( 'margin-top', +$('.header-bar-wrapper') + 10 + 'px' );
+    myframe.setAttribute('style', '-webkit-overflow-scrolling: touch;display:block;border: 0;opacity: 1;background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0; border: 0 none transparent;height: 100%;left: 0;margin:0;opacity: 80; overflow-y: auto;padding: 0;padding-top:10px;position: fixed;top: 0;transition: opacity 0.28s ease 0s;visibility: visible; width: 100%; z-index: 2147483647;');
 
     return false;
 }
