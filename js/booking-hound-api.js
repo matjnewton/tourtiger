@@ -86,7 +86,7 @@ function Tngbh_GetScriptTag() {
     // this may not work if host page has dynamically inserted script tags
     // check we have the right one
     if (!IsTngScript(tngbhScriptTag)) {
-        tngbhScriptTag = scripts[scripts.length - 2];
+        tngbhScriptTag = divs[divs.length - 2];
 
         if (!IsTngScript(tngbhScriptTag)) {
             tngbhScriptTag = document.getElementById("tngbh-script");
