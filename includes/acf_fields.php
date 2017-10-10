@@ -8407,9 +8407,10 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'choices' => array (
-								'Custom' => 'Custom',
-								'iframe-popup' => 'Popup iFrame',
-								'Link to form' => 'Link to form',
+								'Custom'        => 'Custom',
+								'iframe-popup'  => 'Popup iFrame',
+								'booking-hound' => 'Booking Hound API',
+								'Link to form'  => 'Link to form',
 								'Use as third party integration Link' => 'Use as third party integration Link',
 							),
 							'other_choice' => 0,
@@ -8417,6 +8418,81 @@ acf_add_local_field_group(array (
 							'default_value' => '',
 							'layout' => 'vertical',
 							'allow_null' => 0,
+						),
+						array (
+							'key' => 'boho_539862fa96c47',
+							'label' => 'Item code',
+							'name' => 'item-code',
+							'type' => 'text',
+							'required' => 0,
+							'placeholder' => 'tngbh-script-1710134223',
+							'wrapper' => array(
+								'width' => 34
+							),
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_55c88bbf2b1f0',
+										'operator' => '!=',
+										'value' => '1',
+									),
+									array (
+										'field' => 'field_539f6a270a9f6',
+										'operator' => '==',
+										'value' => 'booking-hound',
+									),
+								),
+							),
+						),
+						array (
+							'key' => 'boho_539862fa96c38',
+							'label' => 'Unique ID',
+							'name' => 'id',
+							'type' => 'text',
+							'required' => 0,
+							'placeholder' => '1',
+							'wrapper' => array(
+								'width' => 32
+							),
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_55c88bbf2b1f0',
+										'operator' => '!=',
+										'value' => '1',
+									),
+									array (
+										'field' => 'field_539f6a270a9f6',
+										'operator' => '==',
+										'value' => 'booking-hound',
+									),
+								),
+							),
+						),
+						array (
+							'key' => 'boho_539862fa96c29',
+							'label' => 'Class',
+							'name' => 'class',
+							'type' => 'text',
+							'required' => 0,
+							'placeholder' => 'class1 class2 class3 etc',
+							'wrapper' => array(
+								'width' => 34
+							),
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_55c88bbf2b1f0',
+										'operator' => '!=',
+										'value' => '1',
+									),
+									array (
+										'field' => 'field_539f6a270a9f6',
+										'operator' => '==',
+										'value' => 'booking-hound',
+									),
+								),
+							),
 						),
 						array (
 							'key' => 'field_5614fbf3fe02e',

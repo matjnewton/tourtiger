@@ -172,6 +172,27 @@ if(function_exists('acf_add_options_sub_page')) {
 				'readonly' => 0,
 				'disabled' => 0,
 			),
+			array (
+				'key' => 'field_58bd243a93776',
+				'label' => 'Booking Hound API Hash',
+				'name' => 'booking_hound_hash',
+				'type' => 'text',
+				'instructions' => 'get_field(\'booking_hound_hash\',\'apikey\');',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => 'e.g. 90520c81-fb74-4cba-9abd-475413eff10a',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'readonly' => 0,
+				'disabled' => 0,
+			),
 		),
 		'location' => array (
 			array (
