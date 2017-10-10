@@ -59,6 +59,20 @@
                             <a class="regiondo-button book-btn" data-url="<?php if($bbl): echo $bbl; endif; ?>">
                                 <?php echo $bbt; ?>
                             </a>
-                            <?php else: ?>
+                            <?php elseif ( get_sub_field( 'button_link_type' ) === 'booking-hound' ):
+
+                            while ( have_rows( 'sidebar_1' ) ) :
+                                the_row();
+
+                                if ( get_row_layout() == 'button' ) :
+                                    $item_code = get_sub_field( 'item-code' );
+                                    $unique_id = get_sub_field( 'id' );
+                                    $class     = get_sub_field( 'class' );
+
+                                    do_shortcode( "[booking-hound-button item-code='{$item_code}' id='{$unique_id}' class='{$class}']" );
+                                endif;
+                            endwhile;
+
+                            else: ?>
                             <a href="<?php echo $bbl; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn"<?php if($bb_radius): echo ' style="border-radius:'.$bb_radius.'px"'; endif;?>><?php echo $bbt; ?></a>
                             <?php endif; ?>
