@@ -98,7 +98,7 @@ function Tngbh_GetScriptTag() {
 
 function IsTngScript(tngbhScriptTag) {
 
-    const res = tngbhScriptTag.getAttribute("ID") !== null && tngbhScriptTag.getAttribute("ID").substring(0, 12) || tngbhScriptTag.getAttribute("id").substring(0, 12);
+    const res = tngbhScriptTag.getAttribute("ID") !== null && tngbhScriptTag.getAttribute("ID").substring(0, 12) || false;
 
     if (res == "tngbh-script") {
         return true;
