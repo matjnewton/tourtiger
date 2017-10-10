@@ -101,6 +101,10 @@
 			} else {
 			
 				if ( $(window).width() > 768 ) {
+					// Load backgound layout
+					if ( $('.iframe-popup__close').length == 0 ) {
+						$('body').append('<a href="javascript:" class="iframe-popup__close" style="opacity:0;pointer-events:none;"></a>');
+					}
 
 					$('body').append('<iframe src="'+reference+'" id="iframe-popup" style="opacity:0;pointer-events:none;" class="iframe-popup"></iframe>');
 
