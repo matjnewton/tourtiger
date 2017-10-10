@@ -74,11 +74,6 @@
 	    }
 
 	    tngbhScriptTag.parentNode.appendChild(tngbhBtn);
-
-	    $(function(){
-	    	if ( $('.header-bar-wrapper').hasClass('sticky') )
-		    	$('.book-embed-wrap').css( 'margin-top', +$('.header-bar-wrapper') + 10 + 'px' );
-	    });  
 	}
 
 }));
@@ -145,6 +140,8 @@ function Tngbh_OverlayBookingFlow(bh_scoped_src) {
 
     const myFrame = document.getElementById("tngbh-iframe");
     myframe.setAttribute('style', '-webkit-overflow-scrolling: touch;display:block;border: 0;opacity: 1;background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0; border: 0 none transparent;height: 100%;left: 0;margin: 0;opacity: 80; overflow-y: auto;padding: 0;position: fixed;top: 0;transition: opacity 0.28s ease 0s;visibility: visible; width: 100%; z-index: 2147483647;');
+
+    $('.header-bar-wrapper').hasClass('sticky') && $('.tngbh-iframe').css( 'margin-top', +$('.header-bar-wrapper') + 10 + 'px' );
 
     return false;
 }
