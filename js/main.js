@@ -55,7 +55,7 @@
 
 			var $button   = $(this);
 			var reference = $button.attr('data-iframe-popup');
-
+			var isResize  = $button.attr('data-iframe-popup-resize');
 
 			// Load hawaiifun api
 			if (reference == 'hawaiifun' && global_vars.hawaiifun == 1) {
@@ -109,6 +109,13 @@
 					$('body').append('<iframe src="'+reference+'" id="iframe-popup" style="opacity:0;pointer-events:none;" class="iframe-popup"></iframe>');
 
 					$('#iframe-popup').load(function(){
+						if (isResize){
+							var iframeContent = document.getElementById('iframe-popup').contentWindow.document;
+							if (iframeContent) {
+								iframeContent.querySelector('container').setAttribute("style", "width:100%;margin:0;");
+							} 
+						}
+
 						$('body').css({
 							'overflow': 'hidden'
 						});
@@ -144,7 +151,7 @@
 						 */
 						$('.iframe-popup__close, .close-popup').on('click', function () {
 							$('.iframe-popup__close').detach();
-							$('.iframe-popup').detach();
+							$('#iframe-popup').detach();
 							$('body').css({
 								'overflow': 'auto'
 							});
@@ -165,9 +172,15 @@
 	}
 
 	var $iframeBtn = $('.header-bar').find('.open-iframe').find('a');
-	var iframeUrl  = $iframeBtn.attr('href');
 
-	$iframeBtn.attr('href', 'javascript:').attr('data-iframe-popup', iframeUrl);
+	if ($iframeBtn.length > 0) {
+		$iframeBtn.each(function(){
+			var $self =  $(this);
+			var iframeUrl  = $self.attr('href');
+			$self.attr('href', 'javascript:').attr('data-iframe-popup', iframeUrl);
+		});
+	}
+
 	refresToSeachIframeBtn();
 	
 
