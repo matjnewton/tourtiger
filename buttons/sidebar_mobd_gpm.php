@@ -73,11 +73,7 @@
                         		    </a>
                         		<?php else: ?>
                         		    <?php if($button_text): ?>
-                                        <?php if ( get_sub_field( 'is_iframe_popup' ) ) : ?>
-                                            <a data-iframe-popup="<?php echo $link; ?>" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                                        <?php else: ?>
-                                            <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                                        <?php endif; ?>
+                                        <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
                         		    <?php endif; ?>
                                 <?php endif; ?>
                                 </li>
