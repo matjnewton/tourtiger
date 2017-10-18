@@ -9,7 +9,7 @@
                             <div class="arrow-right"></div>
                         <?php $button_sub_options = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_sub_options', true ); ?>
                         <?php if( $button_sub_options ): ?>
-                        	<ul class="dropdown-menu">
+                        	<ul class="dropdown-menu" data-checker="sidebar_mobd_gpm">
                         	<?php 
                             	for( $sbd = 0; $sbd < $button_sub_options; $sbd++ ):
                                     $button_text = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_sub_options_' . $sbd . '_button_text', true );

@@ -16,7 +16,7 @@
                             <?php if( have_rows('button_sub_options') ): ?>
                             <?php $smobd_counter = 0; ?>
 
-                            	<ul class="dropdown-menu">
+                            	<ul class="dropdown-menu" data-checker="sidebar_mobd_product">
                             	<?php while( have_rows('button_sub_options') ): the_row(); 
                             		$button_text = get_sub_field('button_text');
                                     $link = get_sub_field('link');
