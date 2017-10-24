@@ -862,6 +862,34 @@ acf_add_local_field_group(array (
 							'mime_types' => ''
 						),
 						array (
+							'key' => 'pc_matop_013-1-1',
+							'label' => 'Margin top',
+							'name' => 'pc_ha_1-tit-mt',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'append' => 'px',
+							'formatting' => 'none',
+						),
+						array (
+							'key' => 'pc_mabot_013-1-1',
+							'label' => 'Margin bottom',
+							'name' => 'pc_ha_1-tit-mb',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'append' => 'px',
+							'formatting' => 'none',
+						),
+						array (
 							'key' => 'pc_ha_tab_4',
 							'label' => 'Second title',
 							'name' => 'pc_ha_tab_4',
@@ -1033,6 +1061,34 @@ acf_add_local_field_group(array (
 							'mime_types' => ''
 						),
 						array (
+							'key' => 'pc_matop_013-2-1',
+							'label' => 'Margin top',
+							'name' => 'pc_ha_2-tit-mt',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'append' => 'px',
+							'formatting' => 'none',
+						),
+						array (
+							'key' => 'pc_mabot_013-2-1',
+							'label' => 'Margin bottom',
+							'name' => 'pc_ha_2-tit-mb',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'append' => 'px',
+							'formatting' => 'none',
+						),
+						array (
 							'key' => 'pc_ha_tab_5',
 							'label' => 'Third title',
 							'name' => 'pc_ha_tab_5',
@@ -1202,6 +1258,34 @@ acf_add_local_field_group(array (
 							'max_height' => 0,
 							'max_size' => 0,
 							'mime_types' => ''
+						),
+						array (
+							'key' => 'pc_matop_013-3-1',
+							'label' => 'Margin top',
+							'name' => 'pc_ha_3-tit-mt',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'append' => 'px',
+							'formatting' => 'none',
+						),
+						array (
+							'key' => 'pc_mabot_013-3-1',
+							'label' => 'Margin bottom',
+							'name' => 'pc_ha_3-tit-mb',
+							'type' => 'number',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '33',
+							),
+							'append' => 'px',
+							'formatting' => 'none',
 						),
 						
 						array (
