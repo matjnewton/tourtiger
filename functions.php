@@ -199,7 +199,8 @@ function bgmpShortcodeCalled()
     global $post;
     
     $shortcodePageSlugs = array(
-        'contact-us'
+        'contact-us',
+        'about-us'
     );
     
     $queried_post_type = get_query_var('post_type');
