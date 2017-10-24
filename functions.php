@@ -191,7 +191,7 @@ function tourtiger_scripts_method() {
 			'is_admin' => current_user_can('edit_posts')
 		) );
 		
-		if ( is_template_page( 'page-templates/test-pc.php' ) ) 
+		if ( is_page_template( 'page-templates/test-pc.php' ) ) 
 			wp_enqueue_script( 'api-key-maps' );
 	}
 }
