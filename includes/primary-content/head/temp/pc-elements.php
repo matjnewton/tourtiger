@@ -10,7 +10,7 @@
         <?php 
             for ( $i = 1; $i < 4; $i++ ) {
                 $title    = get_sub_field( 'pc_ha_' . $i . '-tit' );
-                $title_mt = get_sub_field( 'pc_ha_' . $i . '-tit-mt' ) ? get_sub_field( 'pc_ha_' . $i . '-tit-mb' ) . 'px' : '';
+                $title_mt = get_sub_field( 'pc_ha_' . $i . '-tit-mt' ) ? get_sub_field( 'pc_ha_' . $i . '-tit-mt' ) . 'px' : '';
                 $title_mb = get_sub_field( 'pc_ha_' . $i . '-tit-mb' ) ? get_sub_field( 'pc_ha_' . $i . '-tit-mb' ) . 'px' : '';
                 $tag      = get_sub_field( 'pc_ha_' . $i . '-tit_seo' );
                 $hr       = get_sub_field( 'pc_ha_' . $i . '-tit_hr' );
