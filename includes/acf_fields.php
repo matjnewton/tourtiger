@@ -1436,13 +1436,14 @@ acf_add_local_field_group(array (
 						'id' => '',
 					),
 					'choices' => array (
-						'facebook' => 'facebook',
-						'pinterest' => 'pinterest',
-						'twitter' => 'twitter',
-						'youtube' => 'youtube',
-						'instagram' => 'instagram',
-						'linkedin' => 'linkedin',
+						'facebook'    => 'facebook',
+						'pinterest'   => 'pinterest',
+						'twitter'     => 'twitter',
+						'youtube'     => 'youtube',
+						'instagram'   => 'instagram',
+						'linkedin'    => 'linkedin',
 						'google-plus' => 'google-plus',
+						'wechat'      => 'wechat'
 					),
 					'default_value' => array (
 					),

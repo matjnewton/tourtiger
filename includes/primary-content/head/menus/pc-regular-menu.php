@@ -40,11 +40,13 @@
                                 <?php while ( has_sub_field( 'social_media', 'option' ) ) : ?>
                                     <li>
                                         <a href="<?php the_sub_field('link'); ?>" target="_blank">
-                                            <?php if ( get_sub_field('social_icon') == 'instagram' ) {
+                                            <?php if ( get_sub_field('social_icon') == 'instagram' ) :
                                                 echo '<i class="fa fa-instagram fa-lg"></i>';
-                                            } else {
+                                            elseif ($icon == 'wechat') :
+                                                echo '<i class="fa fa-weixin fa-lg"></i>';
+                                            else :
                                                 echo '<i class="fa fa-' . get_sub_field('social_icon') . '-square fa-lg"></i>';
-                                            } ?>
+                                            endif; ?>
                                         </a>
                                     </li>
                                 <?php endwhile; ?> 

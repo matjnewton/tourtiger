@@ -54,6 +54,9 @@
                                    <?php if($icon == 'google-plus'): ?>
                                    <i class="fa fa-google-plus-square fa-lg"></i>
                                    <?php endif; ?>
+                                   <?php if($icon == 'wechat'): ?>
+                                   <i class="fa fa-weixin fa-lg"></i>
+                                   <?php endif; ?>
                                </a>
                            </li>
                            <?php endwhile; ?> 
