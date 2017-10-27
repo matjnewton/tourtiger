@@ -3035,7 +3035,7 @@ class ProductPage extends StylingCard {
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield_description  {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_wrapper .gfield_description  {" . $cc_style__ccc_css[1] . '}' : '';
 
 				$cc_style_btn = '';
 
@@ -3077,7 +3077,7 @@ class ProductPage extends StylingCard {
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
 				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_next_button {" . $cc_style__ccc_css[1] . '}' : '';
-				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_next_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .gform_wrapper .gform_next_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
 
 				/**
 				 * Previous Button
@@ -3111,8 +3111,8 @@ class ProductPage extends StylingCard {
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button {" . $cc_style__ccc_css[1] . '}' : '';
-				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_previous_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_wrapper .gform_previous_button {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .gform_wrapper .gform_previous_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
 
 				/**
 				 * Submit Button
@@ -3146,8 +3146,8 @@ class ProductPage extends StylingCard {
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gform_button{" . $cc_style__ccc_css[1] . '}' : '';
-				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .pc--form .gform_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_wrapper .gform_button{" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[2] ? "body.{$style} .product_content_wrapper .gform_wrapper .gform_button:hover{" . $cc_style__ccc_css[2] . '}' : '';
 
 				/**
 				 * Input/Textarea field
@@ -3159,13 +3159,13 @@ class ProductPage extends StylingCard {
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
-				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .dropdown-menu > li > a, body.{$style} .product_content_wrapper .bootstrap-select.btn-group .btn .filter-option {" . $cc_style__ccc_css[1] . '} ' : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_wrapper .dropdown-menu > li > a, body.{$style} .product_content_wrapper .bootstrap-select.btn-group .btn .filter-option {" . $cc_style__ccc_css[1] . '} ' : '';
 
 				$cc_style__ccc_css[1] .= 'border-style: solid;border-color:' . get_sub_field( 'cc_style__fo_bo_c' ) . ';';
 
-				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .pc--form .gfield .gfield_select, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_multiselect, body.{$style} .product_content_wrapper .pc--form input, body.{$style} .product_content_wrapper .pc--form .gfield dropdown-toggle, body.{$style} .product_content_wrapper .pc--form .gfield textarea, body.{$style} .product_content_wrapper .pc--form .gfield textarea:focus, body.{$style} .product_content_wrapper .pc--form .gfield .gfield_radio label, body.{$style} .product_content_wrapper .ginput_common--label {" . $cc_style__ccc_css[1] . '}' : '';
+				$css .= $cc_style__ccc_css[1] ? "body.{$style} .product_content_wrapper .gform_wrapper .gfield .gfield_select, body.{$style} .product_content_wrapper .gform_wrapper .gfield .gfield_multiselect, body.{$style} .product_content_wrapper .gform_wrapper input, body.{$style} .product_content_wrapper .gform_wrapper .gfield dropdown-toggle, body.{$style} .product_content_wrapper .gform_wrapper .gfield textarea, body.{$style} .product_content_wrapper .gform_wrapper .gfield textarea:focus, body.{$style} .product_content_wrapper .gform_wrapper .gfield .gfield_radio label, body.{$style} .product_content_wrapper .ginput_common--label {" . $cc_style__ccc_css[1] . '}' : '';
 
-				$css .= get_sub_field( 'cc_style__fo_bg_c' ) ? "body.{$style} .product_content_wrapper .pc--form input:-webkit-autofill, body.{$style} .product_content_wrapper .pc--form .gfield textarea:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px " . get_sub_field( 'cc_style__fo_bg_c' ) . ' inset;}' : '';
+				$css .= get_sub_field( 'cc_style__fo_bg_c' ) ? "body.{$style} .product_content_wrapper .gform_wrapper input:-webkit-autofill, body.{$style} .product_content_wrapper .gform_wrapper .gfield textarea:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px " . get_sub_field( 'cc_style__fo_bg_c' ) . ' inset;}' : '';
 
 				/**
 				 * Input placeholder
