@@ -20,11 +20,8 @@ if ( $gallery_style ) {
 $gallery_style = get_sub_field('gallery-panel-font');
 if ( $gallery_style ) { 
 	$css = '#pc_wrap .' . $cc_style . ' .slider-pro--panel__btn {';
-
 		$css .= "color: $gallery_style!important;";
-
 	$css .= '}';    
-
 	echo $css;
 }
         
@@ -33,12 +30,10 @@ if ( $gallery_style ) {
 */
 $gallery_style = get_sub_field('gallery-panel-border');
 if ( $gallery_style ) {   
-	$css = '#pc_wrap .' . $cc_style . ' .product-sidebar--button {';
-
+	$css = '#pc_wrap .' . $cc_style . ' .slider-pro--panel__btn {';
 		$css .= "border: 1px solid $gallery_style;";
 		$css .= "padding: 9px 18px;";
 		$css .= "display:inline-block;";
-
 	$css .= '}';
 
 	echo $css;
