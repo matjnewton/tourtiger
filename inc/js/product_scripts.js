@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
 			if ( sidebar_height < $(window).height() ) {
 				$booking_sidebar.sticky({
 					topSpacing:130,
-					bottomSpacing:251,
+					bottomSpacing: $('.site-footer').height() + 100,
 					getWidthFrom:'.book-tour-wrapper_product'
 				});
 			}
