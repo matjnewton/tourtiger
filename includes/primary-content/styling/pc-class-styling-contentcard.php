@@ -3679,6 +3679,7 @@ class ContentCard extends StylingCard {
 					'message' => 'Enable Dropshadow',
 					'default_value' => 0,
 				),
+
 				array (
 					'key' => $this->slug . $i . '_93-0413a400',
 					'label' => 'Video',
@@ -3707,7 +3708,46 @@ class ContentCard extends StylingCard {
 					'name'  => 'arrow-color',
 					'type'  => 'rgba_color',
 					'required' => '',
-				)
+				),
+				
+				array (
+					'key' => $this->slug . $i . '_ga0413a400',
+					'label' => 'Gallery',
+					'name' => 'gallery-tab',
+					'type' => 'tab',
+					'placement' => 'left',
+					'endpoint' => 0,
+				),
+				array (
+					'key' => $this->slug . '_i12hgallerylo32r96_' . $i,
+					'label' => 'Galleries panel background',
+					'name' => 'gallery-panel-bg',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'default_value' => 'rgba(0,0,0,.4)',
+				),
+				array (
+					'key' => $this->slug . '_i12hgallbtnylo32r96_' . $i,
+					'label' => 'Galleries panel font color',
+					'name' => 'gallery-panel-font',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'default_value' => 'rgba(255,255,255,1)',
+				),
+				array (
+					'key' => $this->slug . '_i12hgaborbtnylo32r96_' . $i,
+					'label' => 'Galleries panel font border',
+					'name' => 'gallery-panel-border',
+					'type' => 'rgba_color',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'default_value' => 'rgba(255,255,255,1)',
+				),
 			),
 		);	
 
