@@ -541,9 +541,18 @@ var FbBookNowButton = function (config) {
 	        $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
 	          $(this).tourismTiger('destroyGallery');
 	        });
-		}	
+		    }	
 
-        $('.slider-pro--preview, .slider-pro__close-link').attr('data-inited', 1);
+        if ( $('.slider-pro__close-bg').not('[data-inited]') ) {
+	        /**
+	         * Close carousel
+	         */
+	        $('.slider-pro__close-bg').not('[data-inited]').on('click', function(){
+	          $(this).tourismTiger('destroyGallery');
+	        });
+		    }	
+
+        $('.slider-pro--preview, .slider-pro__close-link, .slider-pro__close-bg').attr('data-inited', 1);
 	});
 
 }));
