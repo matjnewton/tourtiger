@@ -108,11 +108,19 @@
 	"buffers":
 	[
 		{
-			"file": "style.css",
+			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 24774,
+				"buffer_size": 75064,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "menus/logo_gpm.php",
+			"settings":
+			{
+				"buffer_size": 1011,
 				"line_ending": "Unix"
 			}
 		}
@@ -124,7 +132,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 337.0,
 		"last_filter": "insta",
 		"selected_items":
 		[
@@ -181,7 +189,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 444.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -202,16 +210,21 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/apple/Work/tourtiger-theme-v1",
-		"/Users/apple/Work/tourtiger-theme-v1/includes",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/dependences",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head/temp",
-		"/Users/apple/Work/tourtiger-theme-v1/page-templates"
+		"/Users/apple/Work/tourtiger-theme-v1"
 	],
 	"file_history":
 	[
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js",
+		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
+		"/Users/apple/Work/tourtiger-theme-v1/inc/js/product_scripts.js",
+		"/Users/apple/Work/tourtiger-theme-v1/inc/css/product.css",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-heroarea.php",
+		"/Users/apple/Work/tourtiger-theme-v1/style.css",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/column/content-card/pc-content-card-init-gallery.php",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-productpage.php",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-contentcard.php",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/column/content-card/pc-content-card-func.php",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-flexicard.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head/temp/pc-elements.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/dependences/pc-hero-area.php",
 		"/Users/apple/Work/tourtiger-theme-v1/functions.php",
@@ -222,7 +235,6 @@
 		"/Users/apple/Work/tourtiger-theme-v1/menus/right_secondary.php",
 		"/Users/apple/Work/tourtiger-theme-v1/menus/regular_menu_gpm.php",
 		"/Users/apple/Work/tourtiger-theme-v1/menus/above_menu_gpm.php",
-		"/Users/apple/Work/tourtiger-theme-v1/style.css",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head/menus/pc-secondary-menu.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head/menus/pc-regular-menu.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head/menus/pc-above-menu.php",
@@ -230,7 +242,6 @@
 		"/Users/apple/Work/tourtiger-theme-v1/tt1.sublime-project",
 		"/Users/apple/Work/tourtiger-theme-v1/menus/secondary_menu.php",
 		"/Users/apple/Work/tourtiger-theme-v1/menus/secondary_menu_gpm.php",
-		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
 		"/Users/apple/Work/tourtiger-theme-v1/buttons/sidebar_btn.php",
 		"/Users/apple/Work/tourtiger-theme-v1/buttons/sidebar_mobd.php",
 		"/Users/apple/Work/tourtiger-theme-v1/buttons/sidebar_mobd_gpm.php",
@@ -330,20 +341,11 @@
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/node_modules/barba.js/dist/barba.js",
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/footer.php",
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/views/common/spiner.php",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/src/js/common/primary-content.js",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/src/js/common/acf-api.js",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/src/less/main.less",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/bower.json",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/package.json",
-		"/Users/apple/Work/tourtiger-theme-v1/buttons/sidebar_btn_gpm.php",
-		"/Users/apple/Work/tourtiger-theme-v1/js/main.dev.js",
-		"/Users/apple/Work/tourtiger-theme-v1/js/booking-hound-api.js",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/tour_sections_gpm.php",
-		"/Users/apple/Work/tourtiger-theme-v1/buttons/leftcol_btn_gpm.php"
+		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/src/js/common/primary-content.js"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -358,6 +360,18 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"search-wrapper",
+			".single-product .gform_footer input[type='submit']",
+			".pc--form",
+			"cc_style__fo_su_f",
+			"button",
+			"destroyGallery",
+			"tourismTiger",
+			"$this->slug . '_i12hgallbtnylo32r96_' . $i",
+			"_ga0413a400",
+			"$this->slug . '_i12hgaborbtnylo32r96_' . $i",
+			"gallery-panel-border",
+			"tab",
 			"api-key-maps",
 			"google",
 			"use_social_media_in_main_nav",
@@ -377,6 +391,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			".gform_wrapper"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -387,34 +402,62 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "style.css",
+					"file": "functions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 24774,
+						"buffer_size": 75064,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								24731,
-								24731
+								65961,
+								65961
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 28690.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "menus/logo_gpm.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								608,
+								608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 24243.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -508,7 +551,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -516,7 +559,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 247.0,
+	"side_bar_width": 192.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
