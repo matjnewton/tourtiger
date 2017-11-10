@@ -1,7 +1,5 @@
 <!-- trip_details layout -->
         <?php
-        	$random_key = generateRandomString(5);
-
          if( get_row_layout() == 'primary_content_trip_details'):
 	        $primary_content_columns = get_sub_field('primary_content_columns');
 	        $primary_content_trip_details_title = get_sub_field('primary_content_trip_details_title'); ?>
@@ -15,7 +13,8 @@
 	        	<?php $trip_details_options = get_sub_field('trip_details_options');
 					if($trip_details_options) : ?>
 						<ul class="trip_details_options">
-							<?php foreach($trip_details_options as $key=>$row) { ?>
+							<?php foreach($trip_details_options as $key=>$row) { 
+								$random_key = generateRandomString(5); ?>
 								<li>
 
 									<?php if ($row['primary_content_include_icon']) : ?>
