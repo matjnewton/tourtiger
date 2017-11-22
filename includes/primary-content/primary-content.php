@@ -11,7 +11,7 @@ include( PCA_DIR . '/pc-header.php' );
 
 if ( have_rows( 'tour_primary-content' ) ) { ?>
 
-	<div id="pc_wrap" class="pc_wrap" data-total="<?php echo count( get_field( 'tour_primary-content' ) ); ?>">
+	<div id="pc_wrap" class="pc_wrap">
 	
 		<?php 
 		/**
@@ -43,7 +43,7 @@ if ( have_rows( 'tour_primary-content' ) ) { ?>
 
 			include( PCA_DIR . '/section/pc-section-parameters.php' );
 
-			if ($section_count == 1 && !$ajaxload) break;
+			//if ($section_count == 1 && !$ajaxload) break;
 		endwhile; 
 
 	    ?>

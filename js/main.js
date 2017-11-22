@@ -171,11 +171,11 @@
 
 	}
 
-	var $iframeBtn = $('.header-bar').find('.open-iframe').find('a');
+	var $iframeBtn = $('.header-bar').find('.open-iframe');
 
 	if ($iframeBtn.length > 0) {
 		$iframeBtn.each(function(){
-			var $self =  $(this);
+			var $self =  $(this).find('a');
 			var iframeUrl  = $self.attr('href');
 			$self.attr('href', 'javascript:').attr('data-iframe-popup', iframeUrl);
 		});

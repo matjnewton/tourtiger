@@ -108,62 +108,10 @@
 	"buffers":
 	[
 		{
-			"file": "page-templates/product/block-tripdetails.php",
+			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 3346,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "includes/primary-content/styling/pc-class-styling-productpage.php",
-			"settings":
-			{
-				"buffer_size": 93438,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "includes/primary-content/styling/pc-class-styling-flexicard.php",
-			"settings":
-			{
-				"buffer_size": 124254,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "includes/primary-content/assets/js/primary-content.min.js",
-			"settings":
-			{
-				"buffer_size": 37622,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "style.css",
-			"settings":
-			{
-				"buffer_size": 25052,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 75064,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/js/product_scripts.js",
-			"settings":
-			{
-				"buffer_size": 3991,
+				"buffer_size": 22302,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -254,22 +202,25 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/apple/Work/tourtiger-theme-v1",
+		"/Users/apple/Work/tourtiger-theme-v1/js"
 	],
 	"file_history":
 	[
+		"/Users/apple/Work/tourtiger-theme-v1/page-templates/product/block-tripdetails.php",
+		"/Users/apple/Work/tourtiger-theme-v1/style.css",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-productpage.php",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-flexicard.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js",
-		"/Users/apple/Work/tourtiger-theme-v1/js/plugins.js",
 		"/Users/apple/Work/tourtiger-theme-v1/functions.php",
-		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
 		"/Users/apple/Work/tourtiger-theme-v1/inc/js/product_scripts.js",
+		"/Users/apple/Work/tourtiger-theme-v1/js/plugins.js",
+		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
 		"/Users/apple/Work/tourtiger-theme-v1/inc/css/product.css",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-heroarea.php",
-		"/Users/apple/Work/tourtiger-theme-v1/style.css",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/column/content-card/pc-content-card-init-gallery.php",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-productpage.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-contentcard.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/column/content-card/pc-content-card-func.php",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-flexicard.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/head/temp/pc-elements.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/dependences/pc-hero-area.php",
 		"/Users/apple/Work/tourtiger-theme-v1/menus/regular_menu.php",
@@ -383,8 +334,7 @@
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/functions.php",
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/src/js/common/barba.js",
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/node_modules/barba.js/dist/barba.js",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/footer.php",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/views/common/spiner.php"
+		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/footer.php"
 	],
 	"find":
 	{
@@ -403,6 +353,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"data-iframe-popup",
 			"search-wrapper",
 			"fc_style__la_butt_bord_color-type",
 			"_la_51152a11_1",
@@ -456,211 +407,36 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "page-templates/product/block-tripdetails.php",
+					"file": "js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3346,
+						"buffer_size": 22302,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2999,
-								2999
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 235.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "includes/primary-content/styling/pc-class-styling-productpage.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 93438,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								66548,
-								66441
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 52410.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "includes/primary-content/styling/pc-class-styling-flexicard.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 124254,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11275,
-								11292
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 9033.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "includes/primary-content/assets/js/primary-content.min.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37622,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								11928,
+								11928
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25052,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								138,
-								144
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 75064,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "inc/js/product_scripts.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3991,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								35,
-								35
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -759,7 +535,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 153.0,
+	"side_bar_width": 228.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
