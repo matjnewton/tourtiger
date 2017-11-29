@@ -46,7 +46,7 @@ if ( get_row_layout() == 'primary_content_f_products' ) :
 
 						<div class="pc_featured-products__body">
 							<h6><?php echo get_the_title( $post_object->ID ); ?></h4>
-							<a href="<?php the_permalink( $post_object->ID ); ?>" class="pc_featured-products__body-link">View Tour Now</a>
+							<a href="<?php the_permalink( $post_object->ID ); ?>" class="pc_featured-products__body-link"><?=$tour_label;?></a>
 						</div>
 					</div>
 

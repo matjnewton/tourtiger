@@ -107,15 +107,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "js/main.js",
-			"settings":
-			{
-				"buffer_size": 22302,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -202,20 +193,20 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/apple/Work/tourtiger-theme-v1",
-		"/Users/apple/Work/tourtiger-theme-v1/js"
+		"/Users/apple/Work/tourtiger-theme-v1"
 	],
 	"file_history":
 	[
-		"/Users/apple/Work/tourtiger-theme-v1/page-templates/product/block-tripdetails.php",
 		"/Users/apple/Work/tourtiger-theme-v1/style.css",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/primary-content.php",
+		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
+		"/Users/apple/Work/tourtiger-theme-v1/page-templates/product/block-tripdetails.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-productpage.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-flexicard.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js",
 		"/Users/apple/Work/tourtiger-theme-v1/functions.php",
 		"/Users/apple/Work/tourtiger-theme-v1/inc/js/product_scripts.js",
 		"/Users/apple/Work/tourtiger-theme-v1/js/plugins.js",
-		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
 		"/Users/apple/Work/tourtiger-theme-v1/inc/css/product.css",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-heroarea.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/column/content-card/pc-content-card-init-gallery.php",
@@ -333,12 +324,11 @@
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/inc/option-pages/settings.php",
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/functions.php",
 		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/src/js/common/barba.js",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/node_modules/barba.js/dist/barba.js",
-		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/footer.php"
+		"/Users/apple/Work/tourtiger-theme-v2/wp-content/themes/tourismtiger-theme/node_modules/barba.js/dist/barba.js"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -407,38 +397,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22302,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11928,
-								11928
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		},
 		{
