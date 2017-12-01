@@ -131,7 +131,7 @@ window.onload = function () {
       });
     }; 
 
-    $(window).load(pc_show_more_js());
+    //$(window).load(pc_show_more_js());
 
     var methods = {
 
