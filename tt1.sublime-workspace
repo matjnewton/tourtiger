@@ -107,6 +107,70 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "page-templates/product/block-featured-products.php",
+			"settings":
+			{
+				"buffer_size": 1714,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 25052,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/primary-content/assets/js/primary-content.min.js",
+			"settings":
+			{
+				"buffer_size": 37624,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/primary-content/assets/js/primary-content.js",
+			"settings":
+			{
+				"buffer_size": 36167,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 1117 files for \"<!-- Custom CSS Styles -->\" (case sensitive)\n\n/Users/apple/Work/tourtiger-theme-v1/functions.php:\n  532  function tourtiger_background_inline_css() {\n  533  \n  534: \t\techo '<!-- Custom CSS Styles -->' . \"\\n\";\n  535          echo '<style type=\"text/css\">' . \"\\n\";\n  536          require(CHILD_DIR.'/background_gpm.php');\n  ...\n  544  function tourtiger_inline_css() {\n  545  \n  546: \t\techo '<!-- Custom CSS Styles -->' . \"\\n\";\n  547          echo '<style type=\"text/css\">' . \"\\n\";\n  548          \n\n2 matches in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 543,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 75064,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "background_gpm.php",
+			"settings":
+			{
+				"buffer_size": 8893,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -193,7 +257,13 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/apple/Work/tourtiger-theme-v1"
+		"/Users/apple/Work/tourtiger-theme-v1",
+		"/Users/apple/Work/tourtiger-theme-v1/includes",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets",
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js",
+		"/Users/apple/Work/tourtiger-theme-v1/page-templates",
+		"/Users/apple/Work/tourtiger-theme-v1/page-templates/product"
 	],
 	"file_history":
 	[
@@ -328,7 +398,7 @@
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
@@ -343,6 +413,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"pc_show_more_js",
+			".banner-wrapper-inner",
+			"<!-- Custom CSS Styles -->",
 			"data-iframe-popup",
 			"search-wrapper",
 			"fc_style__la_butt_bord_color-type",
@@ -397,8 +470,237 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "page-templates/product/block-featured-products.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1714,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1598,
+								1598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25052,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								144,
+								144
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "includes/primary-content/assets/js/primary-content.min.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3914,
+								3914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1949.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "includes/primary-content/assets/js/primary-content.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 36167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3907,
+								3907
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1075.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 543,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										199,
+										225
+									],
+									[
+										416,
+										442
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								116,
+								116
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/Users/apple/Work/tourtiger-theme-v1",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 75064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21213,
+								21227
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 11044.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "background_gpm.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1487,
+								1487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 729.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		},
 		{
