@@ -1259,7 +1259,7 @@ acf_add_local_field_group(array (
 																			'required' => '',
 																			'conditional_logic' => '',
 																			'wrapper' => array (
-																				'width' => 20,
+																				'width' => 33,
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -1290,7 +1290,7 @@ acf_add_local_field_group(array (
 																				),
 																			),
 																			'wrapper' => array (
-																				'width' => 5,
+																				'width' => 33,
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -1304,6 +1304,28 @@ acf_add_local_field_group(array (
 																			'readonly' => 0,
 																			'disabled' => 0,
 																		),
+                                    array (
+                                      'key' => 'field_5824968Cf20c2',
+                                      'label' => 'Label',
+                                      'name' => 'tour_pc-coltype--gallery_label',
+                                      'type' => 'text',
+                                      'instructions' => '',
+                                      'required' => '',
+                                      'conditional_logic' => array (
+                                        array (
+                                          array (
+                                            'field' => 'field_58249738f11c0',
+                                            'operator' => '==',
+                                            'value' => 'gallery',
+                                          ),
+                                        ),
+                                      ),
+                                      'wrapper' => array (
+                                        'width' => 33,
+                                        'class' => '',
+                                        'id' => '',
+                                      ),
+                                    ),
 																		array (
 																			'key' => 'field_582497d3f11c2',
 																			'label' => 'Add images',
@@ -1321,7 +1343,7 @@ acf_add_local_field_group(array (
 																				),
 																			),
 																			'wrapper' => array (
-																				'width' => 75,
+																				'width' => 100,
 																				'class' => '',
 																				'id' => '',
 																			),
@@ -1355,7 +1377,7 @@ acf_add_local_field_group(array (
 																				),
 																			),
 																			'wrapper' => array (
-																				'width' => 5,
+																				'width' => 20,
 																				'class' => '',
 																				'id' => '',
 																			),
