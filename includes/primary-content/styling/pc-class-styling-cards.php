@@ -12,12 +12,13 @@ abstract class StylingCard {
 	public $version = 1.0;
 
 
-	function __construct( $name, $version ){
+	function __construct( $name, $version, $multiply = false ){
 
 		$this->name = $name;
 		$this->slug = transform_name( $this->name, '_' );
 		$this->url = transform_name( $this->name, '-' );
-		$this->version = $version;
+    $this->version  = $version;
+    $this->multiply = $multiply;
 
 		/* Create database */
 		add_action( 'init', array( $this, 'create_db' ) );
@@ -193,7 +194,8 @@ abstract class StylingCard {
 
 		));
 
-		acf_add_local_field_group(array (
+		if (!$this->multiply)
+		  acf_add_local_field_group(array (
 			'key' => 'group_' . $this->slug . '355b9b1',
 			'title' => $this->name . ' styles manager',
 			'fields' => array (
