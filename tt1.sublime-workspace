@@ -126,15 +126,6 @@
 			}
 		},
 		{
-			"file": "includes/primary-content/assets/js/primary-content.min.js",
-			"settings":
-			{
-				"buffer_size": 37624,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "includes/primary-content/assets/js/primary-content.js",
 			"settings":
 			{
@@ -144,13 +135,22 @@
 			}
 		},
 		{
-			"contents": "Searching 1117 files for \"<!-- Custom CSS Styles -->\" (case sensitive)\n\n/Users/apple/Work/tourtiger-theme-v1/functions.php:\n  532  function tourtiger_background_inline_css() {\n  533  \n  534: \t\techo '<!-- Custom CSS Styles -->' . \"\\n\";\n  535          echo '<style type=\"text/css\">' . \"\\n\";\n  536          require(CHILD_DIR.'/background_gpm.php');\n  ...\n  544  function tourtiger_inline_css() {\n  545  \n  546: \t\techo '<!-- Custom CSS Styles -->' . \"\\n\";\n  547          echo '<style type=\"text/css\">' . \"\\n\";\n  548          \n\n2 matches in 1 file\n",
+			"contents": "Searching 1117 files for \"<!-- Custom CSS Styles -->\" (case sensitive)\n\n/Users/apple/Work/tourtiger-theme-v1/functions.php:\n  532  function tourtiger_background_inline_css() {\n  533  \n  534: \t\techo '<!-- Custom CSS Styles -->' . \"\\n\";\n  535          echo '<style type=\"text/css\">' . \"\\n\";\n  536          require(CHILD_DIR.'/background_gpm.php');\n  ...\n  544  function tourtiger_inline_css() {\n  545  \n  546: \t\techo '<!-- Custom CSS Styles -->' . \"\\n\";\n  547          echo '<style type=\"text/css\">' . \"\\n\";\n  548          \n\n2 matches in 1 file\n\n\nSearching 1117 files for \"video-popup--frame\" (case sensitive)\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.js:\n  149                  var $cover = $(this);\n  150                  var $block = $cover.closest('.video-popup');\n  151:                 var $popup = $block.find('.video-popup--frame');\n  152  \n  153                  /**\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js:\n  163                  var $cover = $(this);\n  164                  var $block = $cover.closest('.video-popup');\n  165:                 var $popup = $block.find('.video-popup--frame');\n  166  \n  167                  /**\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/column/content-card/pc-content-card-video.php:\n   61  \t\t\t\t</a>\n   62  \n   63: \t\t\t\t<div class=\"video-popup--frame\">\n   64  \t\t\t\t\t<?=$iframe;?>\n   65  \t\t\t\t</div>\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/dependences/pc.min.css:\n 2981  }\n 2982  \n 2983: .video-popup--frame {\n 2984      display: none;\n 2985      position: fixed;\n ....\n 2992  }\n 2993  \n 2994: .video-popup--frame iframe {\n 2995      position: absolute;\n 2996      top: 50%;\n\n5 matches across 4 files\n\n\nSearching 1117 files for \".video-popup--frame\" (case sensitive)\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.js:\n  149                  var $cover = $(this);\n  150                  var $block = $cover.closest('.video-popup');\n  151:                 var $popup = $block.find('.video-popup--frame');\n  152  \n  153                  /**\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js:\n  163                  var $cover = $(this);\n  164                  var $block = $cover.closest('.video-popup');\n  165:                 var $popup = $block.find('.video-popup--frame');\n  166  \n  167                  /**\n  ...\n  178                      function () {\n  179                        var $close = $(this);\n  180:                       $('body').find('.video-popup--frame').fadeOut(300, function () {\n  181                          $(this).detach();\n  182                        });\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/dependences/pc.min.css:\n 2981  }\n 2982  \n 2983: .video-popup--frame {\n 2984      display: none;\n 2985      position: fixed;\n ....\n 2992  }\n 2993  \n 2994: .video-popup--frame iframe {\n 2995      position: absolute;\n 2996      top: 50%;\n\n5 matches across 3 files\n\n\nSearching 1117 files for \".video-popup--frame\" (case sensitive)\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.js:\n  149                  var $cover = $(this);\n  150                  var $block = $cover.closest('.video-popup');\n  151:                 var $popup = $block.find('.video-popup--frame');\n  152  \n  153                  /**\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js:\n  163                  var $cover = $(this);\n  164                  var $block = $cover.closest('.video-popup');\n  165:                 var $popup = $block.find('.video-popup--frame');\n  166  \n  167                  /**\n  ...\n  178                      function () {\n  179                        var $close = $(this);\n  180:                       $('body').find('.video-popup--frame').fadeOut(300, function () {\n  181                          $(this).detach();\n  182                        });\n\n/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/dependences/pc.min.css:\n 2981  }\n 2982  \n 2983: .video-popup--frame {\n 2984      display: none;\n 2985      position: fixed;\n ....\n 2992  }\n 2993  \n 2994: .video-popup--frame iframe {\n 2995      position: absolute;\n 2996      top: 50%;\n ....\n 3001  }\n 3002  \n 3003: .video-popup--frame .close-popup {\n 3004      position: absolute;\n 3005      top: 10px;\n\n6 matches across 3 files\n",
 			"settings":
 			{
-				"buffer_size": 543,
+				"buffer_size": 4490,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
+			}
+		},
+		{
+			"file": "includes/primary-content/dependences/pc.min.css",
+			"settings":
+			{
+				"buffer_size": 66769,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -267,13 +267,13 @@
 	],
 	"file_history":
 	[
+		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js",
 		"/Users/apple/Work/tourtiger-theme-v1/style.css",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/primary-content.php",
 		"/Users/apple/Work/tourtiger-theme-v1/js/main.js",
 		"/Users/apple/Work/tourtiger-theme-v1/page-templates/product/block-tripdetails.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-productpage.php",
 		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/styling/pc-class-styling-flexicard.php",
-		"/Users/apple/Work/tourtiger-theme-v1/includes/primary-content/assets/js/primary-content.min.js",
 		"/Users/apple/Work/tourtiger-theme-v1/functions.php",
 		"/Users/apple/Work/tourtiger-theme-v1/inc/js/product_scripts.js",
 		"/Users/apple/Work/tourtiger-theme-v1/js/plugins.js",
@@ -413,6 +413,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			".video-popup--frame",
+			"video-popup--frame",
 			"pc_show_more_js",
 			".banner-wrapper-inner",
 			"<!-- Custom CSS Styles -->",
@@ -470,7 +472,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -496,10 +498,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 512.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -529,41 +531,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "includes/primary-content/assets/js/primary-content.min.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37624,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3914,
-								3914
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1949.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "includes/primary-content/assets/js/primary-content.js",
 					"semi_transient": false,
 					"settings":
@@ -589,15 +561,15 @@
 						"translation.y": 1075.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 543,
+						"buffer_size": 4490,
 						"regions":
 						{
 							"match":
@@ -612,6 +584,70 @@
 									[
 										416,
 										442
+									],
+									[
+										864,
+										882
+									],
+									[
+										1181,
+										1199
+									],
+									[
+										1395,
+										1413
+									],
+									[
+										1572,
+										1590
+									],
+									[
+										1678,
+										1696
+									],
+									[
+										2105,
+										2124
+									],
+									[
+										2422,
+										2441
+									],
+									[
+										2623,
+										2642
+									],
+									[
+										2865,
+										2884
+									],
+									[
+										2971,
+										2990
+									],
+									[
+										3399,
+										3418
+									],
+									[
+										3716,
+										3735
+									],
+									[
+										3917,
+										3936
+									],
+									[
+										4159,
+										4178
+									],
+									[
+										4265,
+										4284
+									],
+									[
+										4376,
+										4395
 									]
 								],
 								"scope": ""
@@ -620,8 +656,8 @@
 						"selection":
 						[
 							[
-								116,
-								116
+								4124,
+								4124
 							]
 						],
 						"settings":
@@ -629,7 +665,7 @@
 							"default_dir": "/Users/apple/Work/tourtiger-theme-v1",
 							"detect_indentation": false,
 							"line_numbers": false,
-							"output_tag": 1,
+							"output_tag": 4,
 							"result_base_dir": "",
 							"result_file_regex": "^([^ \t].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -637,10 +673,68 @@
 							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2164.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "includes/primary-content/dependences/pc.min.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								62348,
+								62348
+							],
+							[
+								62539,
+								62539
+							],
+							[
+								62580,
+								62580
+							],
+							[
+								62775,
+								62775
+							],
+							[
+								62820,
+								62820
+							],
+							[
+								62894,
+								62894
+							],
+							[
+								63035,
+								63035
+							],
+							[
+								63133,
+								63133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 63428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -668,7 +762,7 @@
 						"translation.y": 11044.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -695,7 +789,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 729.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
