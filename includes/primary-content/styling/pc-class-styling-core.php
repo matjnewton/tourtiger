@@ -66,5 +66,3 @@ class Core extends StylingCard {
 }
 
 new Core( 'Core', 1, true );
-
-?>
