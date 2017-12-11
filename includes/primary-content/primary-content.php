@@ -35,10 +35,10 @@ if ( have_rows( 'tour_primary-content' ) ) { ?>
 			get_pc_flexiprod_card_style( $fc_style );
 		endforeach;
 
+    $section_count = 0;
+
 		while ( have_rows( 'tour_primary-content' ) ) :
 			the_row();
-			
-			$section_count = 0;
 			$number        = 1;
 
 			include( PCA_DIR . '/section/pc-section-parameters.php' );
