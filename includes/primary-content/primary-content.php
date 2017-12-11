@@ -43,6 +43,8 @@ if ( have_rows( 'tour_primary-content' ) ) { ?>
 
 			include( PCA_DIR . '/section/pc-section-parameters.php' );
 
+      $section_count++;
+
 			//if ($section_count == 1 && !$ajaxload) break;
 		endwhile; 
 
