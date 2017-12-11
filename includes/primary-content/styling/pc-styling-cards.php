@@ -190,8 +190,8 @@ function render_manage_option_page( $field = array() ) {
 <?php 
 }
 
+include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-core.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-cards.php' );
-include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-core.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-blogcard.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-flexicard.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-contentcard.php' );
