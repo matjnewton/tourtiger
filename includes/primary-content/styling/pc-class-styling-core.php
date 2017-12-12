@@ -385,6 +385,44 @@ class Core extends StylingCard {
             'width' => 100,
           )
         ),
+
+        array(
+          'key'   => 'fc_' . $i . '_fI_7w579',
+          'label' => 'Default text',
+          'name'  => 'default-text',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_field' => array(
+
+            array (
+              'key'      => 'fc_' . $i . '_fI_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+
+            array (
+              'key'   => 'fc_' . $i . '_fI_7w501',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+
+          )
+        ),
       ),
 		);	
 
