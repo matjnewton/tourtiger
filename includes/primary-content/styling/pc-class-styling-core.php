@@ -27,25 +27,25 @@ class Core extends StylingCard {
 			'collapsed' => '',
 			'min' => 1,
 			'max' => 1,
-			'layout' => 'block',
+			'layout' => 'row',
 			'button_label' => 'Add Row',
 			'sub_fields' => array(
 
         array (
-          'key' => 'fc_' . $i . '_iI_58312',
-          'label' => 'Base Wrapper',
-          'name' => 'base-wrapper-bg',
-          'type' => 'rgba_color',
+          'key' => 'fc_' . $i . '_iI_67403',
+          'label' => 'Base Wrapper Box-shadow',
+          'name' => 'base-wrapper-bs',
+          'type' => 'true_false',
           'required' => 0,
           'wrapper' => array(
             'width' => 50,
           )
         ),
         array (
-          'key' => 'fc_' . $i . '_iI_67403',
-          'label' => 'Base Wrapper Box-shadow',
-          'name' => 'base-wrapper-bs',
-          'type' => 'true_false',
+          'key' => 'fc_' . $i . '_iI_58312',
+          'label' => 'Base Wrapper',
+          'name' => 'base-wrapper-bg',
+          'type' => 'rgba_color',
           'required' => 0,
           'wrapper' => array(
             'width' => 50,
