@@ -29,7 +29,26 @@ class Core extends StylingCard {
 			'max' => 1,
 			'layout' => 'row',
 			'button_label' => 'Add Row',
-			'sub_fields' => array(),
+			'sub_fields' => array(
+        array (
+          'key' => 'fc_' . $i . '_iI_58311',
+          'label' => 'Base',
+          'name' => 'base-msg',
+          'type' => 'message',
+          'required' => 0,
+          'message' => 'Base styles'
+        ),
+        array (
+          'key' => 'fc_' . $i . '_iI_58312',
+          'label' => 'Label Font Color',
+          'name' => 'fc_style__la_butt_font-color',
+          'type' => 'rgba_color',
+          'required' => 0,
+          'return_value' => 0,
+          'ext_value' => array (
+          ),
+        ),
+      ),
 		);	
 
 		return $fc_options_array;

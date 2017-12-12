@@ -325,7 +325,7 @@
     background-size: cover;
     position: relative;
     font-family: 'Roboto', Arial, sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
     -webkit-transition: .3s;
     transition: .3s
 }
