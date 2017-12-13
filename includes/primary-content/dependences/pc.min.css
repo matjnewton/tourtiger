@@ -404,6 +404,10 @@
     border: none
 }
 
+.pc--s iframe.pc--s__bg-embed.onclick {
+    pointer-events: all;
+}
+
 .pc--s div.acf-bg {
     position: absolute;
     top: 50%;

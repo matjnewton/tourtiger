@@ -4557,6 +4557,27 @@ acf_add_local_field_group(array (
 							'width' => '',
 							'height' => '',
 						),
+            array (
+              'key' => 'video_5821d9b6caeea',
+              'label' => 'Type',
+              'name' => 'videoembed-type',
+              'type' => 'select',
+              'instructions' => '',
+              'required' => 0,
+              'conditional_logic' => array (
+                array (
+                  array (
+                    'field' => 'field_5821d316e18e2',
+                    'operator' => '==',
+                    'value' => 'video-embed',
+                  ),
+                ),
+              ),
+              'choices' => array(
+                'auto'    => 'Autoplay',
+                'onclick' => 'Play on clicking'
+              )
+            ),
 						array (
 							'key' => 'field_5821da4aabd7c',
 							'label' => 'Top Divider Options',
