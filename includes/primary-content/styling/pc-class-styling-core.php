@@ -37,9 +37,6 @@ class Core extends StylingCard {
           'name' => 'base-wrapper-bs',
           'type' => 'true_false',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_58312',
@@ -47,9 +44,6 @@ class Core extends StylingCard {
           'name' => 'base-wrapper-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -58,9 +52,6 @@ class Core extends StylingCard {
           'name' => 'above-header-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_48305',
@@ -68,9 +59,6 @@ class Core extends StylingCard {
           'name' => 'header-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_3z396',
@@ -78,9 +66,6 @@ class Core extends StylingCard {
           'name' => 'secondary-menu-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
 
         array (
@@ -89,9 +74,6 @@ class Core extends StylingCard {
           'name' => 'sub-menu-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_2x487',
@@ -99,9 +81,6 @@ class Core extends StylingCard {
           'name' => 'cta-button-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -110,9 +89,6 @@ class Core extends StylingCard {
           'name' => 'se-bar-wrapper-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_5v669',
@@ -120,9 +96,6 @@ class Core extends StylingCard {
           'name' => 'se-sub-menu-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -131,9 +104,6 @@ class Core extends StylingCard {
           'name' => 'mob-tog-btn-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_6b750',
@@ -141,9 +111,6 @@ class Core extends StylingCard {
           'name' => 'mob-tog-btn-bg-h',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -152,9 +119,6 @@ class Core extends StylingCard {
           'name' => 'hero-cta-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_8m942',
@@ -162,9 +126,6 @@ class Core extends StylingCard {
           'name' => 'hero-cta-fill',
           'type' => 'true_false',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_7n851',
@@ -172,9 +133,6 @@ class Core extends StylingCard {
           'name' => 'hero-cta-content-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
 
         array (
@@ -183,9 +141,6 @@ class Core extends StylingCard {
           'name' => 'hero-image-tint',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key' => 'fc_' . $i . '_iI_9s124',
@@ -193,9 +148,6 @@ class Core extends StylingCard {
           'name' => 'hero-title-bg',
           'type' => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_0d215',
@@ -203,9 +155,6 @@ class Core extends StylingCard {
           'name'  => 'hero-content-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
 
         array (
@@ -214,9 +163,6 @@ class Core extends StylingCard {
           'name'  => 'point-of-diff-bg-fe',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_1f306',
@@ -224,9 +170,6 @@ class Core extends StylingCard {
           'name'  => 'se-menu-bg-tp',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -235,9 +178,6 @@ class Core extends StylingCard {
           'name'  => 'btn-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_3h588',
@@ -245,9 +185,6 @@ class Core extends StylingCard {
           'name'  => 'btn-fill',
           'type'  => 'true_false',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -256,9 +193,6 @@ class Core extends StylingCard {
           'name'  => 'el-accent-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 100,
-          )
         ),
 
         array (
@@ -267,9 +201,6 @@ class Core extends StylingCard {
           'name'  => 'content-area-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_4j241',
@@ -277,9 +208,6 @@ class Core extends StylingCard {
           'name'  => 'content-containers-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_5k132',
@@ -287,9 +215,6 @@ class Core extends StylingCard {
           'name'  => 'featured-area-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
 
         array (
@@ -298,9 +223,6 @@ class Core extends StylingCard {
           'name'  => 'featured-area-bs',
           'type'  => 'true_false',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_6l214',
@@ -308,9 +230,6 @@ class Core extends StylingCard {
           'name'  => 'tile-image-tint',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_6l215',
@@ -318,9 +237,6 @@ class Core extends StylingCard {
           'name'  => 'cta-container-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
 
         array (
@@ -329,9 +245,6 @@ class Core extends StylingCard {
           'name'  => 'subscribe-container-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_6q397',
@@ -339,9 +252,6 @@ class Core extends StylingCard {
           'name'  => 'trip-list-item-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 50,
-          )
         ),
 
         array (
@@ -350,9 +260,6 @@ class Core extends StylingCard {
           'name'  => 'fl-box-bg-1',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_7w579',
@@ -360,9 +267,6 @@ class Core extends StylingCard {
           'name'  => 'fl-box-bg-2',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
         array (
           'key'   => 'fc_' . $i . '_iI_7w560',
@@ -370,9 +274,6 @@ class Core extends StylingCard {
           'name'  => 'trip-link-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 33,
-          )
         ),
 
         array (
@@ -381,11 +282,11 @@ class Core extends StylingCard {
           'name'  => 'footer-bg',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper' => array(
-            'width' => 100,
-          )
         ),
 
+        /**
+         * @todo: check that group and proceed typography implementation
+         */
         array(
           'key'   => 'fc_' . $i . '_fI_7w579',
           'label' => 'Default text',
@@ -393,8 +294,7 @@ class Core extends StylingCard {
           'type'  => 'group',
           'required'  => 0,
           'layout'    => 'block',
-          'sub_field' => array(
-
+          'sub_fields' => array(
             array (
               'key'      => 'fc_' . $i . '_fI_7w510',
               'label'    => 'Font',
@@ -412,7 +312,6 @@ class Core extends StylingCard {
               'show_font_style'     => 0,
               'show_preview_text'   => 0,
             ),
-
             array (
               'key'   => 'fc_' . $i . '_fI_7w501',
               'label' => 'Color',
@@ -420,7 +319,423 @@ class Core extends StylingCard {
               'type'  => 'rgba_color',
               'required' => 0,
             ),
+          )
+        ),
 
+        array(
+          'key'   => 'fc_' . $i . '_fI_7w660',
+          'label' => 'Default link text',
+          'name'  => 'default-link-text',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_11_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f1_7w501',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f4_7w661',
+          'label' => 'Hero area title',
+          'name'  => 'ha-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_14_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f4_7w501',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f5_7w661',
+          'label' => 'Hero area content',
+          'name'  => 'ha-content',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_15_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f5_7w501',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f5_7w660',
+          'label' => 'Hero area CTA button',
+          'name'  => 'ha-cta',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_15_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f5_7w501',
+              'label' => 'Color hover',
+              'name'  => 'color-hover',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f5_7w502',
+              'label' => 'Color hover',
+              'name'  => 'color-border',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f6_7w660',
+          'label' => 'Featured title',
+          'name'  => 'featured-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_16_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f6_7w502',
+              'label' => 'Color bg',
+              'name'  => 'color-bg',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f6_7w503',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f7_7w660',
+          'label' => 'Featured tile title',
+          'name'  => 'featured-tile-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_17_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f7_7w502',
+              'label' => 'Color active',
+              'name'  => 'color-active',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f7_7w503',
+              'label' => 'Color hover',
+              'name'  => 'color-hover',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f8_7w660',
+          'label' => 'Featured front-3 title',
+          'name'  => 'featured-front-3-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_18_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_f8_7w502',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_f9_7w660',
+          'label' => 'Featured content',
+          'name'  => 'featured-front-3-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'   => 'fc_' . $i . '_f9_7w502',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_z0_7w660',
+          'label' => 'Featured button',
+          'name'  => 'featured-button',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_z0_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_z0_7w502',
+              'label' => 'Color hover',
+              'name'  => 'color-hover',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_z1_7w660',
+          'label' => 'Featured Front-3 button',
+          'name'  => 'featured-front-3-button',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_z1_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_z2_7w660',
+          'label' => 'Featured tour links heading',
+          'name'  => 'featured-tour-links-heading',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_z2_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_z2_7w502',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_z3_7w660',
+          'label' => 'Featured tour link title',
+          'name'  => 'featured-tour-link-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_z3_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_z3_7w502',
+              'label' => 'Color',
+              'name'  => 'color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
           )
         ),
       ),
