@@ -738,6 +738,111 @@ class Core extends StylingCard {
             ),
           )
         ),
+
+        array(
+          'key'   => 'fc_' . $i . '_t1_7w660',
+          'label' => 'Testimonials title',
+          'name'  => 'test-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_t1_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_t1_7w502',
+              'label' => 'Line Color',
+              'name'  => 'line-color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_t2_7w660',
+          'label' => 'Testimonials tile title',
+          'name'  => 'test-tile-title',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_t2_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_t2_7w502',
+              'label' => 'Line Color',
+              'name'  => 'line-color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
+
+        array(
+          'key'   => 'fc_' . $i . '_t3_7w660',
+          'label' => 'Testimonials content',
+          'name'  => 'test-content',
+          'type'  => 'group',
+          'required'  => 0,
+          'layout'    => 'block',
+          'sub_fields' => array(
+            array (
+              'key'      => 'fc_' . $i . '_t3_7w510',
+              'label'    => 'Font',
+              'name'     => 'font',
+              'type'     => 'typography',
+              'required' => 0,
+              'font_size'           => 16,
+              'show_font_weight'    => 0,
+              'show_backup_font'    => 0,
+              'show_text_align'     => 0,
+              'show_text_direction' => 0,
+              'show_line_height'    => 0,
+              'show_letter_spacing' => 0,
+              'show_color_picker'   => 0,
+              'show_font_style'     => 0,
+              'show_preview_text'   => 0,
+            ),
+            array (
+              'key'   => 'fc_' . $i . '_t3_7w502',
+              'label' => 'Line Color',
+              'name'  => 'line-color',
+              'type'  => 'rgba_color',
+              'required' => 0,
+            ),
+          )
+        ),
       ),
 		);	
 
