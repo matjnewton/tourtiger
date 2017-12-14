@@ -902,7 +902,7 @@ class Typography extends StylingCard {
       array (
         'key'   => $this->slug . '2o2z2q1',
         'label' => 'Menu - Primary',
-        'name'  => 'message-20',
+        'name'  => 'message-21',
         'type'  => 'message',
         'required' => 0,
         'message'  => 'CTA Button'
@@ -913,6 +913,687 @@ class Typography extends StylingCard {
         'name'  => 'prm-cta-col',
         'type'  => 'rgba_color',
         'required' => 0,
+      ),
+
+      /**
+       * Secondary menu top item text
+       */
+      array (
+        'key'   => $this->slug . '1y2z2q1',
+        'label' => 'Menu - Secondary',
+        'name'  => 'message-22',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Top item'
+      ),
+      array (
+        'key'   => $this->slug . '1y4z0q2',
+        'label' => 'Font',
+        'name'  => 'sem-toi-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '1y4z0q3',
+        'label' => 'Color',
+        'name'  => 'sem-toi-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '1y4z0q4',
+        'label' => 'Hover color',
+        'name'  => 'sem-toi-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Secondary menu sub menu item text
+       */
+      array (
+        'key'   => $this->slug . '0g2z2q1',
+        'label' => 'Menu - Secondary',
+        'name'  => 'message-23',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Sub menu item'
+      ),
+      array (
+        'key'   => $this->slug . '0g4z0q2',
+        'label' => 'Font',
+        'name'  => 'sem-sei-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0g4z0q3',
+        'label' => 'Color',
+        'name'  => 'sem-sei-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0g4z0q4',
+        'label' => 'Border color',
+        'name'  => 'sem-sei-cob',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0g4z0q5',
+        'label' => 'Hover color',
+        'name'  => 'sem-sei-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Mobile menu top item text
+       */
+      array (
+        'key'   => $this->slug . '1M2z2q1',
+        'label' => 'Menu - Mobile',
+        'name'  => 'message-24',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Top item'
+      ),
+      array (
+        'key'   => $this->slug . '1M4z0q2',
+        'label' => 'Font',
+        'name'  => 'mom-toi-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '1M4z0q3',
+        'label' => 'Color',
+        'name'  => 'mom-toi-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '1M4z0q4',
+        'label' => 'Hover color',
+        'name'  => 'mom-toi-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Mobile menu sub menu item text
+       */
+      array (
+        'key'   => $this->slug . '0m2z2q1',
+        'label' => 'Menu - Mobile',
+        'name'  => 'message-25',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Sub menu item'
+      ),
+      array (
+        'key'   => $this->slug . '0m4z0q2',
+        'label' => 'Font',
+        'name'  => 'mom-sei-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0m4z0q3',
+        'label' => 'Color',
+        'name'  => 'mom-sei-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0m4z0q5',
+        'label' => 'Hover color',
+        'name'  => 'mom-sei-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Search form Above header text
+       */
+      array (
+        'key'   => $this->slug . '0qWz2q1',
+        'label' => 'Search form',
+        'name'  => 'message-26',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Above header text'
+      ),
+      array (
+        'key'   => $this->slug . '0qWz0q2',
+        'label' => 'Font',
+        'name'  => 'sef-aht-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0mWz0q3',
+        'label' => 'Color',
+        'name'  => 'sef-aht-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Search form input field
+       */
+      array (
+        'key'   => $this->slug . '1wWz2q1',
+        'label' => 'Search form',
+        'name'  => 'message-27',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Input field'
+      ),
+      array (
+        'key'   => $this->slug . '1wWz0q2',
+        'label' => 'Font',
+        'name'  => 'sef-inf-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '3eWz0q3',
+        'label' => 'Color',
+        'name'  => 'sef-inf-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Search form footer area
+       */
+      array (
+        'key'   => $this->slug . '2eWz2q1',
+        'label' => 'Search form',
+        'name'  => 'message-27',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Footer area form'
+      ),
+      array (
+        'key'   => $this->slug . '2eWz0q2',
+        'label' => 'Font',
+        'name'  => 'sef-faf-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '2eWz0q3',
+        'label' => 'Color',
+        'name'  => 'sef-faf-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Search form input text
+       */
+      array (
+        'key'   => $this->slug . '3rWz2q1',
+        'label' => 'Search form',
+        'name'  => 'message-28',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Input text'
+      ),
+      array (
+        'key'   => $this->slug . '3rWz0q2',
+        'label' => 'Font',
+        'name'  => 'sef-int-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '3rWz0q3',
+        'label' => 'Color',
+        'name'  => 'sef-int-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '3rWz0q3',
+        'label' => 'Footer search input color border',
+        'name'  => 'sef-fsi-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Gravity form title
+       */
+      array (
+        'key'   => $this->slug . '4tWz2q1',
+        'label' => 'Gravity form',
+        'name'  => 'message-29',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Title styles'
+      ),
+      array (
+        'key'   => $this->slug . '4tWz0q2',
+        'label' => 'Font',
+        'name'  => 'gra-tit-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '4twz0q3',
+        'label' => 'Color',
+        'name'  => 'gra-tit-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Gravity form description
+       */
+      array (
+        'key'   => $this->slug . '5yWz2q1',
+        'label' => 'Gravity form',
+        'name'  => 'message-30',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Description text styles'
+      ),
+      array (
+        'key'   => $this->slug . '5yWz0q2',
+        'label' => 'Font',
+        'name'  => 'gra-des-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '5yWz0q3',
+        'label' => 'Color',
+        'name'  => 'gra-des-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Gravity form label
+       */
+      array (
+        'key'   => $this->slug . '6uWz2q1',
+        'label' => 'Gravity form',
+        'name'  => 'message-31',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Label text styles'
+      ),
+      array (
+        'key'   => $this->slug . '6uWz0q2',
+        'label' => 'Font',
+        'name'  => 'gra-lab-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '6uWz0q3',
+        'label' => 'Color',
+        'name'  => 'gra-lab-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Gravity form text
+       */
+      array (
+        'key'   => $this->slug . '7iWz2q1',
+        'label' => 'Gravity form',
+        'name'  => 'message-32',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Text'
+      ),
+      array (
+        'key'   => $this->slug . '7iWz0q2',
+        'label' => 'Font',
+        'name'  => 'gra-tex-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '7iWz0q3',
+        'label' => 'Color',
+        'name'  => 'gra-tex-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '7iWz0q4',
+        'label' => 'Background color',
+        'name'  => 'gra-tex-cob',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '7iWz0q5',
+        'label' => 'Focused background color',
+        'name'  => 'gra-tex-fbc',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Gravity form submit
+       */
+      array (
+        'key'   => $this->slug . '8oWz2q1',
+        'label' => 'Gravity form',
+        'name'  => 'message-33',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Submit'
+      ),
+      array (
+        'key'   => $this->slug . '8oWz0q2',
+        'label' => 'Font',
+        'name'  => 'gra-sub-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+
+      /**
+       * Subscribe gravity form title
+       */
+      array (
+        'key'   => $this->slug . '9zWz2q1',
+        'label' => 'Subscribe gForm',
+        'name'  => 'message-34',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Title'
+      ),
+      array (
+        'key'   => $this->slug . '9zWz0q2',
+        'label' => 'Font',
+        'name'  => 'sgr-tit-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '9zWz0q3',
+        'label' => 'Color',
+        'name'  => 'sgr-tit-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Subscribe gravity form description
+       */
+      array (
+        'key'   => $this->slug . '0xWz2q1',
+        'label' => 'Subscribe gForm',
+        'name'  => 'message-35',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Description'
+      ),
+      array (
+        'key'   => $this->slug . '0xWz0q2',
+        'label' => 'Font',
+        'name'  => 'sgr-des-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0xWz0q3',
+        'label' => 'Color',
+        'name'  => 'sgr-des-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Subscribe gravity form text
+       */
+      array (
+        'key'   => $this->slug . '1cWz2q1',
+        'label' => 'Subscribe gForm',
+        'name'  => 'message-36',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Text styles'
+      ),
+      array (
+        'key'   => $this->slug . '1cWz0q2',
+        'label' => 'Font',
+        'name'  => 'sgr-tex-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+
+      /**
+       * Subscribe gravity form text
+       */
+      array (
+        'key'   => $this->slug . '2vWz2q1',
+        'label' => 'Subscribe gForm',
+        'name'  => 'message-37',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Submit styles'
+      ),
+      array (
+        'key'   => $this->slug . '2vWz0q2',
+        'label' => 'Font',
+        'name'  => 'sgr-sub-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
       ),
 		);	
 
