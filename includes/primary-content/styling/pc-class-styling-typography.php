@@ -549,6 +549,371 @@ class Typography extends StylingCard {
         'type'  => 'rgba_color',
         'required' => 0,
       ),
+
+      /**
+       * Testimonials title
+       */
+      array (
+        'key'   => $this->slug . '0q2z2q7',
+        'label' => 'Testimonials',
+        'name'  => 'message-13',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Title text'
+      ),
+      array (
+        'key'   => $this->slug . '0q4z0q8',
+        'label' => 'Font',
+        'name'  => 'tes-tit-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '0q4z0q9',
+        'label' => 'Line color',
+        'name'  => 'tes-tit-lbc',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Testimonials tile title
+       */
+      array (
+        'key'   => $this->slug . '9w2z2q1',
+        'label' => 'Testimonials',
+        'name'  => 'message-14',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Tile title text'
+      ),
+      array (
+        'key'   => $this->slug . '9w4z0q2',
+        'label' => 'Font',
+        'name'  => 'tes-tlt-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '9w4z0q3',
+        'label' => 'Color',
+        'name'  => 'tes-tlt-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Testimonials content
+       */
+      array (
+        'key'   => $this->slug . '9w2z2q1',
+        'label' => 'Testimonials',
+        'name'  => 'message-15',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Content text styles'
+      ),
+      array (
+        'key'   => $this->slug . '9w4z0q2',
+        'label' => 'Font',
+        'name'  => 'tes-con-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '9w4z0q3',
+        'label' => 'Color',
+        'name'  => 'tes-con-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Multi-column area Heading
+       */
+      array (
+        'key'   => $this->slug . '8e2z2q1',
+        'label' => 'Multi-column area',
+        'name'  => 'message-16',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Heading'
+      ),
+      array (
+        'key'   => $this->slug . '8e4z0q2',
+        'label' => 'Font',
+        'name'  => 'mca-hea-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '8e4z0q3',
+        'label' => 'Color',
+        'name'  => 'mca-hea-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Multi-column area Sub-heading
+       */
+      array (
+        'key'   => $this->slug . '7r2z2q1',
+        'label' => 'Multi-column area',
+        'name'  => 'message-17',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Subheading'
+      ),
+      array (
+        'key'   => $this->slug . '7r4z0q2',
+        'label' => 'Font',
+        'name'  => 'mca-suh-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '7r4z0q3',
+        'label' => 'Color',
+        'name'  => 'mca-suh-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Fluid boxes
+       */
+      array (
+        'key'   => $this->slug . '6t2z2q1',
+        'label' => 'Fluid boxes',
+        'name'  => 'message-18',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Fluid boxes'
+      ),
+      array (
+        'key'   => $this->slug . '6t4z0q3',
+        'label' => 'Heading color',
+        'name'  => 'flb-hea-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '6t4z0q4',
+        'label' => 'Paragraph',
+        'name'  => 'flb-par-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '6t4z0q5',
+        'label' => 'Button active',
+        'name'  => 'flb-but-coa',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '6t4z0q6',
+        'label' => 'Button hover',
+        'name'  => 'flb-par-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Primary menu Secondary menu
+       */
+      array (
+        'key'   => $this->slug . '5y2z2q1',
+        'label' => 'Menu - Primary',
+        'name'  => 'message-19',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Secondary menu item'
+      ),
+      array (
+        'key'   => $this->slug . '5y4z0q3',
+        'label' => 'Color',
+        'name'  => 'prm-smi-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '5y4z0q4',
+        'label' => 'Hover color',
+        'name'  => 'prm-smi-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Primary menu top item
+       */
+      array (
+        'key'   => $this->slug . '4u2z2q1',
+        'label' => 'Menu - Primary',
+        'name'  => 'message-20',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Top item'
+      ),
+      array (
+        'key'   => $this->slug . '4u4z0q2',
+        'label' => 'Font',
+        'name'  => 'mca-toi-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '4u4z0q3',
+        'label' => 'Color',
+        'name'  => 'prm-toi-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '4u4z0q4',
+        'label' => 'Hover color',
+        'name'  => 'prm-toi-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Primary menu submenu
+       */
+      array (
+        'key'   => $this->slug . '3i2z2q1',
+        'label' => 'Menu - Primary',
+        'name'  => 'message-20',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'Sub menu'
+      ),
+      array (
+        'key'   => $this->slug . '3i4z0q2',
+        'label' => 'Font',
+        'name'  => 'mca-sum-fon',
+        'type'     => 'typography',
+        'required' => 0,
+        'show_font_familys'   => 1,
+        'show_font_size'      => 1,
+        'font_size'           => 16,
+        'show_line_height'    => 0,
+        'show_font_weight'    => 0,
+        'show_backup_font'    => 0,
+        'show_text_align'     => 0,
+        'show_text_direction' => 0,
+        'show_letter_spacing' => 0,
+        'show_color_picker'   => 0,
+        'show_font_style'     => 0,
+        'show_preview_text'   => 0,
+      ),
+      array (
+        'key'   => $this->slug . '3i4z0q3',
+        'label' => 'Color',
+        'name'  => 'prm-sum-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+      array (
+        'key'   => $this->slug . '3i4z0q4',
+        'label' => 'Hover color',
+        'name'  => 'prm-sum-coh',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
+
+      /**
+       * Primary menu CTA button
+       */
+      array (
+        'key'   => $this->slug . '2o2z2q1',
+        'label' => 'Menu - Primary',
+        'name'  => 'message-20',
+        'type'  => 'message',
+        'required' => 0,
+        'message'  => 'CTA Button'
+      ),
+      array (
+        'key'   => $this->slug . '2o4z0q4',
+        'label' => 'Border color',
+        'name'  => 'prm-cta-col',
+        'type'  => 'rgba_color',
+        'required' => 0,
+      ),
 		);	
 
 		return $fc_options_array;
