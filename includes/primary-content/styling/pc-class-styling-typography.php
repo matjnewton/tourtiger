@@ -115,9 +115,6 @@ class Typography extends StylingCard {
           'name'  => 'def-lix-cho',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
 
         /**
@@ -175,9 +172,6 @@ class Typography extends StylingCard {
           'name'  => 'hea-tit-col',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
 
         /**
@@ -254,9 +248,6 @@ class Typography extends StylingCard {
           'name'  => 'hea-ctb-col',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
         array (
           'key'   => $this->slug . '4h4z9q0',
@@ -264,9 +255,6 @@ class Typography extends StylingCard {
           'name'  => 'hea-ctb-cho',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
 
         /**
@@ -305,9 +293,6 @@ class Typography extends StylingCard {
           'name'  => 'fea-tit-lib',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
         array (
           'key'   => $this->slug . '5g4z9q0',
@@ -315,9 +300,6 @@ class Typography extends StylingCard {
           'name'  => 'fea-tit-col',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
 
         /**
@@ -356,9 +338,6 @@ class Typography extends StylingCard {
           'name'  => 'fea-tlt-act',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
         array (
           'key'   => $this->slug . '6g4z9q0',
@@ -366,9 +345,6 @@ class Typography extends StylingCard {
           'name'  => 'fea-tlt-hov',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
 
         /**
@@ -407,9 +383,6 @@ class Typography extends StylingCard {
           'name'  => 'ff3-tlt-act',
           'type'  => 'rgba_color',
           'required' => 0,
-          'wrapper'  => array(
-            'width' => 50
-          )
         ),
       ),
 
@@ -430,9 +403,6 @@ class Typography extends StylingCard {
         'name'  => 'fea-con-col',
         'type'  => 'rgba_color',
         'required' => 0,
-        'wrapper'  => array(
-          'width' => 50
-        )
       ),
 
       /**
@@ -502,9 +472,6 @@ class Typography extends StylingCard {
         'name'  => 'ff3-but-col',
         'type'  => 'rgba_color',
         'required' => 0,
-        'wrapper'  => array(
-          'width' => 50
-        )
       ),
 
       /**
@@ -543,9 +510,6 @@ class Typography extends StylingCard {
         'name'  => 'tlh-hea-col',
         'type'  => 'rgba_color',
         'required' => 0,
-        'wrapper'  => array(
-          'width' => 50
-        )
       ),
 
       /**
@@ -584,9 +548,6 @@ class Typography extends StylingCard {
         'name'  => 'tlh-tit-col',
         'type'  => 'rgba_color',
         'required' => 0,
-        'wrapper'  => array(
-          'width' => 50
-        )
       ),
 		);	
 
