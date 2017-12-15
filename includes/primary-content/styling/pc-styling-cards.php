@@ -190,6 +190,22 @@ function render_manage_option_page( $field = array() ) {
 <?php 
 }
 
+function update_core_styles( $post_id ) {
+  // bail early if no ACF data
+  if( empty($_POST['acf']) ) {
+    return;
+  }
+
+  $css = Core::get_styles();
+  $uploads = wp_upload_dir();
+  $path = $uploads['path'] . '/core-styles.min.css';
+
+  $handle      = fopen($path, 'w');
+  fwrite($handle, $css);
+  fclose($handle);
+}
+add_action('acf/save_post', 'update_core_styles', 1);
+
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-cards.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-core.php' );
 //include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-typography.php' );

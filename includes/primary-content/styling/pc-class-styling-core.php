@@ -76,6 +76,14 @@ class Core extends StylingCard {
           'required' => 0,
         ),
         array (
+          'key' => 'fc_' . $i . '_iMI_3z396',
+          'label' => 'Submenu item Darken version',
+          'name' => 'sub_menu_darken_bg',
+          'type' => 'rgba_color',
+          'required' => 0,
+          'instructions' => 'Usually it is 7% darkener than Submenu item'
+        ),
+        array (
           'key' => 'fc_' . $i . '_iI_2x487',
           'label' => 'CTA Button',
           'name' => 'cta_button_bg',
@@ -121,6 +129,14 @@ class Core extends StylingCard {
           'required' => 0,
         ),
         array (
+          'key' => 'fc_' . $i . '_CH_7n851',
+          'label' => 'Hero CTA Lighten Button',
+          'name' => 'hero_cta_lighten_bg',
+          'type' => 'rgba_color',
+          'required' => 0,
+          'instruction' => 'Usually it is 10% lightener than Hero CTA Lighten Button'
+        ),
+        array (
           'key' => 'fc_' . $i . '_iI_8m942',
           'label' => 'Hero CTA Button fill',
           'name' => 'hero_cta_fill',
@@ -133,6 +149,22 @@ class Core extends StylingCard {
           'name' => 'hero_cta_content_bg',
           'type' => 'rgba_color',
           'required' => 0,
+        ),
+        array (
+          'key' => 'fc_' . $i . '_DI_7n851',
+          'label' => 'Content CTA Darken Button',
+          'name' => 'hero_cta_darken_content_bg',
+          'type' => 'rgba_color',
+          'required' => 0,
+          'instructions' => 'Usually it is 10% darkener than Content CTA Button'
+        ),
+        array (
+          'key' => 'fc_' . $i . '_LI_7n851',
+          'label' => 'Content CTA Lighten Button',
+          'name' => 'hero_cta_lighten_content_bg',
+          'type' => 'rgba_color',
+          'required' => 0,
+          'instructions' => 'Usually it is 10% lightener than Content CTA Button'
         ),
 
         array (
@@ -175,7 +207,14 @@ class Core extends StylingCard {
         array (
           'key'   => 'fc_' . $i . '_iI_2g497',
           'label' => 'Button background',
-          'name'  => 'btn_bg',
+          'name'  => 'tn_bg',
+          'type'  => 'rgba_color',
+          'required' => 0,
+        ),
+        array (
+          'key'   => 'fc_' . $i . '_BI_2g497',
+          'label' => 'Button lighten background',
+          'name'  => 'tn_lighten_bg',
           'type'  => 'rgba_color',
           'required' => 0,
         ),
@@ -253,6 +292,13 @@ class Core extends StylingCard {
           'type'  => 'rgba_color',
           'required' => 0,
         ),
+        array (
+          'key'   => 'fc_' . $i . '_iD_6q397',
+          'label' => 'Trip list item',
+          'name'  => 'trip_list_item_darken_bg',
+          'type'  => 'rgba_color',
+          'required' => 0,
+        ),
 
         array (
           'key'   => 'fc_' . $i . '_iI_7w488',
@@ -311,8 +357,9 @@ class Core extends StylingCard {
         $header_bg         = get_sub_field('header_bg');
         $secondary_menu_bg = get_sub_field('secondary_menu_bg');
 
-        $sub_menu_bg   = get_sub_field('sub_menu_bg');
-        $cta_button_bg = get_sub_field('cta_button_bg');
+        $sub_menu_bg        = get_sub_field('sub_menu_bg');
+        $sub_menu_darken_bg = get_sub_field('sub_menu_darken_bg');
+        $cta_button_bg      = get_sub_field('cta_button_bg');
 
         $se_bar_wrapper_bg = get_sub_field('se_bar_wrapper_bg');
         $se_sub_menu_bg    = get_sub_field('se_sub_menu_bg');
@@ -321,8 +368,11 @@ class Core extends StylingCard {
         $mob_tog_btn_bg_h = get_sub_field('mob_tog_btn_bg_h');
 
         $hero_cta_bg         = get_sub_field('hero_cta_bg');
+        $hero_cta_lighten_bg = get_sub_field('hero_cta_lighten_bg');
         $hero_cta_fill       = get_sub_field('hero_cta_fill');
         $hero_cta_content_bg = get_sub_field('hero_cta_content_bg');
+        $hero_cta_darken_content_bg  = get_sub_field('hero_cta_darken_content_bg');
+        $hero_cta_lighten_content_bg = get_sub_field('hero_cta_lighten_content_bg');
 
         $hero_image_tint = get_sub_field('hero_image_tint');
         $hero_title_bg   = get_sub_field('hero_title_bg');
@@ -331,8 +381,9 @@ class Core extends StylingCard {
         $point_of_diff_bg_fe = get_sub_field('point_of_diff_bg_fe');
         $se_menu_bg_tp       = get_sub_field('se_menu_bg_tp');
 
-        $tn_bg    = get_sub_field('tn_bg');
-        $btn_fill = get_sub_field('btn_fill');
+        $tn_bg         = get_sub_field('tn_bg');
+        $tn_lighten_bg = get_sub_field('tn_lighten_bg');
+        $btn_fill      = get_sub_field('btn_fill');
 
         $el_accent_bg = get_sub_field('el_accent_bg');
 
@@ -344,8 +395,9 @@ class Core extends StylingCard {
         $tile_image_tint  = get_sub_field('tile_image_tint');
         $cta_container_bg = get_sub_field('cta_container_bg');
 
-        $subscribe_container_bg = get_sub_field('subscribe_container_bg');
-        $trip_list_item_bg      = get_sub_field('trip_list_item_bg');
+        $subscribe_container_bg    = get_sub_field('subscribe_container_bg');
+        $trip_list_item_bg         = get_sub_field('trip_list_item_bg');
+        $trip_list_item_darken_bg  = get_sub_field('trip_list_item_darken_bg');
 
         $fl_box_bg_1  = get_sub_field('fl_box_bg_1');
         $fl_box_bg_2  = get_sub_field('fl_box_bg_2');
@@ -365,24 +417,24 @@ class Core extends StylingCard {
           $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .megamenu .sub-menu a,.main-nav-wrapper .genesis-nav-menu > .megamenu > .sm-container > .sm-inner,.main-nav-wrapper .genesis-nav-menu .sub-menu a{background:{$sub_menu_bg};}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container a{background:none;}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .megamenu:hover .megalink-wrap > a:after{border-color: transparent transparent {$sub_menu_bg} transparent;}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu:before{border-color: transparent transparent darken({$sub_menu_bg}, 7%) transparent;}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu .menu-item:first-child:before{background:{$sub_menu_bg};border-width:0 0 1px 1px;border-style: solid;border-color:darken({$sub_menu_bg}, 7%);}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu:before{border-color: transparent transparent {$sub_menu_darken_bg} transparent;}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu .menu-item:first-child:before{background:{$sub_menu_bg};border-width:0 0 1px 1px;border-style: solid;border-color:{$sub_menu_darken_bg}}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu .menu-item:first-child:hover:before{background:white}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu > .menu-item:first-child{border-top:5px solid darken({$sub_menu_bg}, 7%)}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu{border-bottom:4px solid darken({$sub_menu_bg}, 7%)}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu > .menu-item:first-child{border-top:5px solid {$sub_menu_darken_bg}}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu{border-bottom:4px solid {$sub_menu_darken_bg}}";
             $css .= ".main-nav-wrapper .genesis-nav-menu > .megamenu.menu-item > .sm-container > .sm-inner .menu-item a:hover{background:none}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .menu-item a:hover{background:#fff}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu .menu-item:first-child{border-top:0px solid darken({$sub_menu_bg}, 7%)}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu .menu-item:first-child{border-top:0px solid {$sub_menu_darken_bg}}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu .menu-item a:hover{background:#fff}";
             $css .= ".main-nav-wrapper .genesis-nav-menu > .megamenu.menu-item > .sm-container a{border-width:0}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu a{border-width:0 1px 1px 1px;border-style:solid;border-color:darken({$sub_menu_bg}, 7%)}";
-            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu{border-width:1px 1px 1px 1px;border-style:solid;border-color:darken({$sub_menu_bg}, 7%)}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu a{border-width:0 1px 1px 1px;border-style:solid;border-color:{$sub_menu_darken_bg}}";
+            $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu{border-width:1px 1px 1px 1px;border-style:solid;border-color:{$sub_menu_darken_bg}}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu a{border-width:1px 0px 0px 0px;}";
           $css .= ".site-container .genesis-nav-menu .giso-book-btn a{background:none}";
           $css .= ".site-container .genesis-nav-menu .regiondo-book-btn a, .site-container .genesis-nav-menu .rezdy-book-btn a, .site-container .genesis-nav-menu .trekksoft-book-btn a, .site-container .genesis-nav-menu .fareharbor-book-btn a, .site-container .genesis-nav-menu .xola-book-btn div, .site-container .genesis-nav-menu .peek-book-btn a, .site-container .genesis-nav-menu .giso-book-btn a, .site-container .genesis-nav-menu .book-btn a{background:{$cta_button_bg}}";
 
           $css .= ".secondary-nav-wrapper .container{background:{$se_bar_wrapper_bg}}";
-          $css .= ".secondary-nav-wrapper .genesis-nav-menu .sub-menu a{{$se_sub_menu_bg}}";
+          $css .= ".secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background:{$se_sub_menu_bg}}";
 
           $css .= ".navbar .navbar-toggle{background:{$mob_tog_btn_bg}}";
           $css .= ".navbar .navbar-toggle:hover,.navbar .navbar-toggle:focus{background:{$mob_tog_btn_bg_h}}";
@@ -395,19 +447,19 @@ class Core extends StylingCard {
 
           $css .= $hero_cta_fill ? ".site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{background:none;border-width:3px;}.site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn:hover{background:{$hero_cta_fill}}" : ".site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{background:{$hero_cta_bg}}";
             $css .= ".site-container .book-tour-wrapper .btn-default.book-btn, .site-container .tour-page-content .book-btn{background:{$hero_cta_content_bg}}";
-            $css .= ".site-container .book-tour-wrapper .book-btn2, .site-container .book-btn-wrapper .btn-default.book-btn2{background-color:lighten({$hero_cta_content_bg},3%)}";
-            $css .= ".site-container .book-tour-wrapper .book-btn2:hover{background-color:darken(({$hero_cta_content_bg},3%)}";
-            $css .= ".booking-sidebar .arrow-left{border-right: 10px solid darken({$hero_cta_content_bg}, 10%)}";
-            $css .= ".booking-sidebar .arrow-right{border-left: 10px solid darken({$hero_cta_content_bg}, 10%)}";
+            $css .= ".site-container .book-tour-wrapper .book-btn2, .site-container .book-btn-wrapper .btn-default.book-btn2{background-color:{$hero_cta_lighten_content_bg}}";
+            $css .= ".site-container .book-tour-wrapper .book-btn2:hover{background-color:{$hero_cta_darken_content_bg}}";
+            $css .= ".booking-sidebar .arrow-left{border-right: 10px solid {$hero_cta_darken_content_bg}}";
+            $css .= ".booking-sidebar .arrow-right{border-left: 10px solid {$hero_cta_darken_content_bg}}";
 
           $css .= ".booking-sidebar .trigger-txt{color:#000}";
           $css .= ".book-btn-wrapper .dropdown-menu > li > .regiondo-button, .site-container .book-btn-wrapper .dropdown-menu, .book-btn-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-btn-wrapper .dropdown-menu > li > a.giso_btn{background-color:rgba({$hero_cta_bg}, 1)}";
-          $css .= ".book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,.site-container .book-tour-wrapper .dropdown-menu, .book-tour-wrapper .dropdown-menu > li > a.regiondo-button, .book-tour-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-tour-wrapper .dropdown-menu > li > a.giso_btn{background-color: rgba({$hero_cta_content_bg}, 1)}";
+          $css .= ".book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,.site-container .book-tour-wrapper .dropdown-menu, .book-tour-wrapper .dropdown-menu > li > a.regiondo-button, .book-tour-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-tour-wrapper .dropdown-menu > li > a.giso_btn{background-color: {$hero_cta_content_bg}}";
 
-          $css .= ".book-btn-wrapper .dropdown-menu > li > .xola-custom, .book-btn-wrapper .dropdown-menu > li > a:hover {background:lighten({$hero_cta_bg}, 10%)}";
-          $css .= ".book-btn-wrapper .dropdown-menu > li > .xola-custom, .book-btn-wrapper .dropdown-menu > li > a:focus {background:lighten({$hero_cta_bg}, 10%)}";
-          $css .= ".book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,.book-tour-wrapper .dropdown-menu > li > .xola-custom, .book-tour-wrapper .dropdown-menu > li > a:hover{background: lighten({$hero_cta_content_bg}, 10%)}";
-          $css .= ".book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,.book-tour-wrapper .dropdown-menu > li > .xola-custom, .book-tour-wrapper .dropdown-menu > li > a:focus{background: lighten({$hero_cta_content_bg}, 10%)}";
+          $css .= ".book-btn-wrapper .dropdown-menu > li > .xola-custom, .book-btn-wrapper .dropdown-menu > li > a:hover {background:{$hero_cta_lighten_bg}}";
+          $css .= ".book-btn-wrapper .dropdown-menu > li > .xola-custom, .book-btn-wrapper .dropdown-menu > li > a:focus {background:{$hero_cta_lighten_bg}}";
+          $css .= ".book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,.book-tour-wrapper .dropdown-menu > li > .xola-custom, .book-tour-wrapper .dropdown-menu > li > a:hover{background: {$hero_cta_lighten_content_bg}}";
+          $css .= ".book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,.book-tour-wrapper .dropdown-menu > li > .xola-custom, .book-tour-wrapper .dropdown-menu > li > a:focus{background: {$hero_cta_lighten_content_bg}}";
           $css .= ".home .banner-bottom .container{background:{$point_of_diff_bg_fe}}";
           $css .= ".banner-bottom .container{background:{$se_menu_bg_tp}}";
           $css .= ".site-inner .content{background:{$content_area_bg}}";
@@ -417,8 +469,8 @@ class Core extends StylingCard {
           $css .= ".subscribe{background:{$subscribe_container_bg}}";
           $css .= ".site-footer{background:{$footer_bg}}";
 
-          $css .= ".trip-list .trip-item{background:{$trip_list_item_bg};border:1px solid darken($trip_list_item_bg, 20%)}";
-          $css .= ".trip-item li{border-top:1px solid darken({$trip_list_item_bg}, 30%)}";
+          $css .= ".trip-list .trip-item{background:{$trip_list_item_bg};border:1px solid {$trip_list_item_darken_bg}}";
+          $css .= ".trip-item li{border-top:1px solid {$trip_list_item_darken_bg}}";
           $css .= ".trip-item li:first-child{border-top:none}";
 
           $css .= ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{border:3px solid {$tn_bg}}";
@@ -432,8 +484,8 @@ class Core extends StylingCard {
           $css .= ".site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .open .btn-default{background:{$tn_bg}}";
           $css .= ".site-container .view-dropdown-wrapper .dropdown-menu{background-color:{$tn_bg}}";
 
-          $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:hover{background: lighten({$tn_bg}, 10%)}";
-          $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:focus{background: lighten({$tn_bg}, 10%)}";
+          $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:hover{background:{$tn_lighten_bg}}";
+          $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:focus{background:{$tn_lighten_bg}}";
 
           $css .= $featured_area_bs ? ".front-page-section .featured-tours-2, .featured-tours-2 .position-wrapper, .featured-tours-section{box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 15px 0px}" : '';
 
