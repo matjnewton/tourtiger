@@ -93,7 +93,7 @@ function tourtiger_scripts_method() {
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js?1.2', array('jquery'), null, true);
 
    if ( file_exists($uploads_dir['path'] . '/core-styles.min.css') )
-		  wp_enqueue_style('core-styles', $uploads_dir['path'] . '/core-styles.min.css');
+		  wp_enqueue_style('core-styles', $uploads_dir['url'] . '/core-styles.min.css');
 
 
 		if ( get_field('google_maps','apikey')  ) :
