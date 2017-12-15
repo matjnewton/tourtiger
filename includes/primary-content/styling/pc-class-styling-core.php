@@ -297,7 +297,7 @@ class Core extends StylingCard {
 	 * @var    string   $component   name of component   
 	 * @return string  
 	 */
-	public static function get_styles( $style = 'core_style-1' ) {
+	public static function get_styles( $style = 'core_style-one' ) {
 		$css = '';
 
 		if ( have_rows( $style, 'option' ) ) {
