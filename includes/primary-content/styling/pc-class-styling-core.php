@@ -297,7 +297,7 @@ class Core extends StylingCard {
 	 * @var    string   $component   name of component   
 	 * @return string  
 	 */
-	public static function get_styles( $style = '' ) {
+	public static function get_styles( $style = 'core_style-1' ) {
 		$css = '';
 
 		if ( have_rows( $style, 'option' ) ) {
@@ -352,6 +352,8 @@ class Core extends StylingCard {
         $trip_link_bg = get_sub_field('trip_link_bg');
 
         $footer_bg = get_sub_field('footer_bg');
+
+        $css .= '<style>';
 
           $css .= $base_wrapper_bs ? ".site-container{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 1px 4px rgba(0,0,0,0.45);}" : '';
           $css .= ".site-container{background:{$base_wrapper_bg}}";

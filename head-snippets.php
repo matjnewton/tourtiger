@@ -17,3 +17,9 @@
 	                        
 	<?php endif; ?>
 <?php //endif; ?>
+
+<?php
+
+if ( isset($_GET['test-base-styles']) ) :
+  echo Core::get_styles();
+endif;
