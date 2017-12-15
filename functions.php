@@ -152,7 +152,8 @@ function tourtiger_scripts_method() {
 		wp_enqueue_style('flexslider_css');
 		$spctrmdev = get_option('spctrmdev', '0');
 		if (!empty($spctrmdev) || !$spctrmdev == '0'):
-		wp_enqueue_style( 'theme', get_stylesheet_directory_uri() . '/theme.scss.php' );
+		//wp_enqueue_style( 'theme', get_stylesheet_directory_uri() . '/theme.scss.php' );
+      wp_enqueue_style('theme_prdctn');
 		else:
 		wp_enqueue_style('theme_prdctn');
 		endif;

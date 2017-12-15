@@ -156,36 +156,36 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
     endif; 
 ?>
 
-.site-container{
+.site-container{ // migrated
     background: $wbgc;
 }
-.above-header {
+.above-header { // migrated
     background: $ahabgc;
 }
-.site-container .site-header .header-bar-wrapper{
+.site-container .site-header .header-bar-wrapper{ // migrated
     background: $hbgc;
 }
-.site-container .site-header .secondary-menu-wrapper{
+.site-container .site-header .secondary-menu-wrapper{ // migrated
     background: $smbg;
 }
 .main-nav-wrapper .genesis-nav-menu .sub-menu .megamenu .sub-menu a,
 .main-nav-wrapper .genesis-nav-menu > .megamenu > .sm-container > .sm-inner,
-.main-nav-wrapper .genesis-nav-menu .sub-menu a{
+.main-nav-wrapper .genesis-nav-menu .sub-menu a{ // migrated
     background: $pmsbgc;
 }
-.main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container a{
+.main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container a{ // migrated
     background:none;
 }
 .main-nav-wrapper{
-    .genesis-nav-menu .megamenu:hover .megalink-wrap > a:after{
+    .genesis-nav-menu .megamenu:hover .megalink-wrap > a:after{ // migrated
         border-color: transparent transparent $pmsbgc transparent;
     }
-    .genesis-nav-menu > .menu-item > .sub-menu{
+    .genesis-nav-menu > .menu-item > .sub-menu{ // migrated
         &:before{
             border-color: transparent transparent darken($pmsbgc, 7%) transparent; 
         }
     }
-    .genesis-nav-menu .sub-menu .sub-menu{
+    .genesis-nav-menu .sub-menu .sub-menu{ // migrated
         .menu-item{
             &:first-child{
                 &:before{
@@ -202,7 +202,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
             }
         }
     }
-    .genesis-nav-menu > .menu-item > .sub-menu{
+    .genesis-nav-menu > .menu-item > .sub-menu{ // migrated
         > .menu-item{
             &:first-child{
                 border-top:5px solid darken($pmsbgc, 7%);
@@ -210,7 +210,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
         }
         border-bottom:4px solid darken($pmsbgc, 7%);
     }
-    .genesis-nav-menu > .megamenu.menu-item > .sm-container > .sm-inner{
+    .genesis-nav-menu > .megamenu.menu-item > .sm-container > .sm-inner{ // migrated
         .menu-item{
             a{
                 &:hover{
@@ -219,7 +219,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
             }
         }
     }
-    .genesis-nav-menu .sub-menu{
+    .genesis-nav-menu .sub-menu{ // migrated
         .menu-item{
             a{
                 &:hover{
@@ -228,7 +228,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
             }
         }
     }
-    .genesis-nav-menu .sub-menu .sub-menu{
+    .genesis-nav-menu .sub-menu .sub-menu{ // migrated
         .menu-item{
             &:first-child{
                 border-top:0px solid darken($pmsbgc, 7%);
@@ -240,15 +240,15 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
             }
         }
     }
-    .genesis-nav-menu > .megamenu.menu-item > .sm-container a{
+    .genesis-nav-menu > .megamenu.menu-item > .sm-container a{ // migrated
         border-width:0;
     }
-    .genesis-nav-menu .sub-menu a{
+    .genesis-nav-menu .sub-menu a{ // migrated
         border-width:0 1px 1px 1px;
         border-style:solid;
         border-color:darken($pmsbgc, 7%);
     }
-    .genesis-nav-menu .sub-menu .sub-menu{
+    .genesis-nav-menu .sub-menu .sub-menu{ // migrated
         border-width:1px 1px 1px 1px;
         border-style:solid;
         border-color:darken($pmsbgc, 7%);
@@ -258,37 +258,38 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
     }
     
 }
-.site-container .genesis-nav-menu .giso-book-btn a{
+.site-container .genesis-nav-menu .giso-book-btn a{ // migrated
     background:none;
 }
-.site-container .genesis-nav-menu .regiondo-book-btn a, .site-container .genesis-nav-menu .rezdy-book-btn a, .site-container .genesis-nav-menu .trekksoft-book-btn a, .site-container .genesis-nav-menu .fareharbor-book-btn a, .site-container .genesis-nav-menu .xola-book-btn div, .site-container .genesis-nav-menu .peek-book-btn a, .site-container .genesis-nav-menu .giso-book-btn a, .site-container .genesis-nav-menu .book-btn a{
+.site-container .genesis-nav-menu .regiondo-book-btn a, .site-container .genesis-nav-menu .rezdy-book-btn a, .site-container .genesis-nav-menu .trekksoft-book-btn a, .site-container .genesis-nav-menu .fareharbor-book-btn a, .site-container .genesis-nav-menu .xola-book-btn div, .site-container .genesis-nav-menu .peek-book-btn a, .site-container .genesis-nav-menu .giso-book-btn a, .site-container .genesis-nav-menu .book-btn a{ // migrated
     background: $mnhctabgc;
 }
-.secondary-nav-wrapper .container{
+.secondary-nav-wrapper .container{ // migrated
     background: $bwsmbgc;
 }
-.secondary-nav-wrapper .genesis-nav-menu .sub-menu a{
+.secondary-nav-wrapper .genesis-nav-menu .sub-menu a{ // migrated
     background: $smsbgc;
 }
-.navbar .navbar-toggle{
+.navbar .navbar-toggle{ // migrated
     background: $mtbbgc;
 }
-.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus{
+.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus{ // migrated
     background: $mtbhbgc;
 }
-.tint{
+.tint{ // migrated
     background: $himgt;
 }
-.tile-tint{
+.tile-tint{ // migrated
     background: $timgt;
 }
-.banner-top h1 span, .banner-top h2 span, .tour-2 .name{
+.banner-top h1 span, .banner-top h2 span, .tour-2 .name{ // migrated
     background: $htbgc;
 }
-.banner-top li span, .banner-top p span{
+.banner-top li span, .banner-top p span{ // migrated
     background: $hcbgc;
 }
-.site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{
+
+.site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{ // migrated
     <?php if (empty($hctabgcfill) || $hctabgcfill == '0'): ?>
     background:none;
     border-width:3px;
@@ -301,65 +302,65 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
     <?php endif; ?>
 }
 .site-container .book-tour-wrapper .btn-default.book-btn, .site-container .tour-page-content .book-btn{
-    background: $sctabgc;
+    background: $sctabgc; // migrated
 }
 .site-container .book-tour-wrapper .book-btn2, .site-container .book-btn-wrapper .btn-default.book-btn2{
-    background-color: lighten($sctabgc, 3%);
+    background-color: lighten($sctabgc, 3%); // migrated
 }
-.site-container .book-tour-wrapper .book-btn2:hover{
+.site-container .book-tour-wrapper .book-btn2:hover{ // migrated
     background-color: darken($sctabgc, 3%);
 }
-.booking-sidebar .arrow-left{
+.booking-sidebar .arrow-left{ // migrated
     border-right: 10px solid darken($sctabgc, 10%);
 }
-.booking-sidebar .arrow-right{
+.booking-sidebar .arrow-right{ // migrated
     border-left: 10px solid darken($sctabgc, 10%);
 }
-.booking-sidebar .trigger-txt{
+.booking-sidebar .trigger-txt{ // migrated
     color:#000;
 }
 .book-btn-wrapper .dropdown-menu > li > .regiondo-button, .site-container .book-btn-wrapper .dropdown-menu, .book-btn-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-btn-wrapper .dropdown-menu > li > a.giso_btn{
-    background-color: rgba($hctabgc, 1);
+    background-color: rgba($hctabgc, 1); // migrated
 }
 .book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,
 .site-container .book-tour-wrapper .dropdown-menu, .book-tour-wrapper .dropdown-menu > li > a.regiondo-button, .book-tour-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-tour-wrapper .dropdown-menu > li > a.giso_btn{
-    background-color: rgba($sctabgc, 1);
+    background-color: rgba($sctabgc, 1); // migrated
 }
 .book-btn-wrapper .dropdown-menu > li > .xola-custom, .book-btn-wrapper .dropdown-menu > li > a {
   &:hover,
-  &:focus {
+  &:focus { // migrated
     background: lighten($hctabgc, 10%);
   }
 }
 .book-tour-wrapper .dropdown-menu > li > .orioly-booknow button,
 .book-tour-wrapper .dropdown-menu > li > .xola-custom, .book-tour-wrapper .dropdown-menu > li > a{
     &:hover,
-    &:focus {
+    &:focus { // migrated
         background: lighten($sctabgc, 10%);
     }
 }
-.home .banner-bottom .container{
+.home .banner-bottom .container{ // migrated
     background: $podfbgc;
 }
-.banner-bottom .container{
+.banner-bottom .container{ // migrated
     background: $podtbgc;
 }
-.site-inner .content{
+.site-inner .content{ // migrated
     background: $cabgc;
 }
 .front-page-section .featured-tours-2, .featured-tours-section, .featured-tours .container, .featured-tours-2 .position-wrapper, .featured-section .container{
-    background: $facbgc;
+    background: $facbgc; // migrated
 }
 .front-page-section .container, .multi-column-area .container, .featured-tours .container.no-bg .col-sm-8.left-col, .testimonials .container, .reasons .container, .single-tour .left-col, .page-template-default .left-col, .page-template-page-templatestestimonials-php .left-col, .page-template-page-templatestours-php .left-col, .blog-left-col, .faq-page-content .container, .team-members .container, .single-tour .right-col>div, .page-template-default .right-col>div, .page-template-page-templatestestimonials-php .right-col>div, .page-template-page-templatestours-php .right-col>div, .single-tour .right-col .testimonials, .page-template-default .right-col .testimonials, .blog-right-col>div, .classic-itinerary-list .num-wrapper .itinery-num{
-    background:$ccbgc;
+    background:$ccbgc; // migrated
 }
-.site-container .book-tour-wrapper{
+.site-container .book-tour-wrapper{ // migrated
     background: $cctabgc;
 }
-.subscribe{
+.subscribe{ // migrated
     background: $scbgc;
 }
-.site-footer{
+.site-footer{ // migrated
     background: $fbgc;
 }
 .banner-top h1, .banner-top h2{
@@ -444,7 +445,7 @@ $tlbb: <?php echo get_option('tlbb', 'rgba(70,117,206,1)'); ?>;
   }
 }
 <?php if (!empty($scbxshdw) || !$scbxshdw == '0'): ?>
-.site-container{
+.site-container{ // migrated
     max-width:1440px; 
     margin-left:auto; 
     margin-right:auto;

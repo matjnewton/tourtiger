@@ -179,7 +179,7 @@ function render_manage_option_page( $field = array() ) {
 		'remove-style', 
 		false,
 		$other_attributes
-	); 
+	);
 
 ?>
 
