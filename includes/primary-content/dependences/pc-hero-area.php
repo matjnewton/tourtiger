@@ -1340,7 +1340,8 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'choices' => array (
-								'Custom' => 'Custom',
+                'Custom' => 'Custom',
+                'new-tab' => 'Open in new tab',
 								'iframe-popup' => 'iFrame Popup',
 								'Video' => 'Video',
 								'Search Box' => 'Search Box',
@@ -1361,13 +1362,20 @@ acf_add_local_field_group(array (
 										'value' => 'Custom' 
 									)
 								),
-								array (
-									array (
-										'field' => 'pc_ha_014',
-										'operator' => '==',
-										'value' => 'iframe-popup' 
-									)
-								)
+                array (
+                  array (
+                    'field' => 'pc_ha_014',
+                    'operator' => '==',
+                    'value' => 'iframe-popup'
+                  )
+                ),
+                array (
+                  array (
+                    'field' => 'pc_ha_014',
+                    'operator' => '==',
+                    'value' => 'new-tab'
+                  )
+                )
 							),
 							'wrapper' => array (
 								'width' => '33',
@@ -1611,6 +1619,7 @@ acf_add_local_field_group(array (
 							),
 							'choices' => array (
 								'Custom' => 'Custom',
+                'new-tab' => 'Open in new tab',
 								'iframe-popup' => 'iFrame Popup',
 							),
 						),
@@ -1634,6 +1643,13 @@ acf_add_local_field_group(array (
 										'field' => 'pc_ha_014_addt',
 										'operator' => '==',
 										'value' => 'iframe-popup' 
+									)
+								),
+								array (
+									array (
+										'field' => 'pc_ha_014_addt',
+										'operator' => '==',
+										'value' => 'new-tab'
 									)
 								)
 							),
