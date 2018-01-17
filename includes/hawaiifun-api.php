@@ -23,7 +23,7 @@ function hawaiifunapi_form(){
 					      activityids: [ 4043],
 					      guesttypeids: [ 1594 ],
 					      activityprices: {
-					        4043: { 1594: 189.00},
+					        4043: { 1594: 195.00},
 					        
 					      },
 					      activitydescriptions: {
