@@ -41,7 +41,7 @@ class acf_field_typography extends acf_field {
 
 		// Load json file for extra seting
 		//$dir = plugin_dir_url( __FILE__ );
-		$dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-typography/';
+		$dir = get_stylesheet_directory() . '/includes/plugins/acf-typography/';
 		$json = file_get_contents("{$dir}gf.json");
 		$fontArray = json_decode( $json);
 		
