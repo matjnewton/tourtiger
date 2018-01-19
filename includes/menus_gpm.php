@@ -150,7 +150,7 @@ class split_nav_walker extends Walker_Nav_Menu {
               $h_attribute .= ' itemprop="url"';
               $h_attribute .= ' data-purchase-type="gift-card"';
               $h_attribute .= ' data-button-text="'.$item->title.'"';
-            //$attributes .= ' data-partner-gid="'.$gid.'"';
+              $h_attribute .= ' data-partner-gid="'.$gid.'"';
             else:
               $h_attribute = ' href="https://www.peek.com/s/'.$gid.'"';
               $h_attribute .= ' class="peek-book-button-flat"';
