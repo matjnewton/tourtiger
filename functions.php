@@ -1431,15 +1431,17 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
           $attributes = '';
           if($classes[1] == 'gift'):
             $h_attribute = ' href="http://www.peek.com/purchase/gift_card/'.$gid.'"';
-            $attributes .= ' class="peek-book-button-flat"';
-            $attributes .= ' data-purchase-type="gift-card"';
-            $attributes .= ' data-button-text="'.$item->title.'"';
+            $h_attribute .= ' class="peek-book-button-flat"';
+            $h_attribute .= ' itemprop="url"';
+            $h_attribute .= ' data-purchase-type="gift-card"';
+            $h_attribute .= ' data-button-text="'.$item->title.'"';
           //$attributes .= ' data-partner-gid="'.$gid.'"';
           else:
             $h_attribute = ' href="https://www.peek.com/s/'.$gid.'"';
-            $attributes .= ' class="peek-book-button-flat"';
-            $attributes .= ' data-purchase-type="activity"';
-            $attributes .= ' data-button-text="'.$item->title.'"';
+            $h_attribute .= ' class="peek-book-button-flat"';
+            $h_attribute .= ' itemprop="url"';
+            $h_attribute .= ' data-purchase-type="activity"';
+            $h_attribute .= ' data-button-text="'.$item->title.'"';
             //$attributes .= ' data-activity-gid="'.$gid.'"';
           endif;
 
