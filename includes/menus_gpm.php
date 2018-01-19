@@ -142,7 +142,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         
         if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
-            $gid = preg_replace('#^https?://#', '', $t_gid);
+            $gid = preg_replace('^https?://', '', $t_gid);
             $attributes = '';
             if($classes[1] == 'gift'):
               $h_attribute = ' href="http://www.peek.com/purchase/gift_card/'.$gid.'"';
@@ -150,14 +150,14 @@ class split_nav_walker extends Walker_Nav_Menu {
               $h_attribute .= ' itemprop="url"';
               $h_attribute .= ' data-purchase-type="gift-card"';
               $h_attribute .= ' data-button-text="'.$item->title.'"';
-              $h_attribute .= ' data-partner-gid="'.$gid.'"';
+              //$h_attribute .= ' data-partner-gid="'.$gid.'"';
             else:
               $h_attribute = ' href="https://www.peek.com/s/'.$gid.'"';
               $h_attribute .= ' class="peek-book-button-flat"';
               $h_attribute .= ' itemprop="url"';
               $h_attribute .= ' data-purchase-type="activity"';
               $h_attribute .= ' data-button-text="'.$item->title.'"';
-              $h_attribute .= ' data-activity-gid="'.$gid.'"';
+              //$h_attribute .= ' data-activity-gid="'.$gid.'"';
             endif;
             
             $item_output = $args->before;
