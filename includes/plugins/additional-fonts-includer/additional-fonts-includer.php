@@ -45,13 +45,15 @@ include_once ( ADI_PATH . '/class-afincluder.php' );
 
 /**
  * Put font in fonts storage
- * @param  [type] $acf_available_fonts [description]
- * @return [type]                      [description]
  */
 function get_aifonts_from_dir( $font = '', $include = false ) {
 	$available_fonts = array();
 	$uploads_dir     = wp_upload_dir(); 
 	$root            = $uploads_dir['basedir'] . '/aif';
+
+  if (!file_exists($root))
+    return false;
+
 	$uri             = $uploads_dir['baseurl'] . '/aif';
 	$items           = scandir($root);
 
