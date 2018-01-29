@@ -2880,6 +2880,7 @@ acf_add_local_field_group(array (
 																				'pc--c__b-image--square' => 'Square',
 																				'pc--c__b-image--tall'   => 'Tall',
 																				'pc--c__b-image--really-tall'   => 'Really tall',
+																				'pc--c__b-image--especially-tall'   => 'Especially tall',
 																			),
 																			'allow_null' => 0,
 																			'other_choice' => 0,
