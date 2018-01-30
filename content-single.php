@@ -47,16 +47,11 @@ if ($posttags) { ?>
         </div>
 		</div>
 		
-        <?php if ('' != get_the_post_thumbnail()): ?>
-        <div class="featured-wrapper">
-    		<?php
-                            $thumb = get_post_thumbnail_id();
-                            $img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
-                            $image = aq_resize( $img_url, 600, 400, true ); //resize & crop img
-            ?>
-			<img src="<?=$image?>" class="center-block" />
-        </div>
-        <?php endif; ?>
+    <?php if ( '' != get_the_post_thumbnail() ):
+      $thumb = get_post_thumbnail_id();
+      $img_url = wp_get_attachment_url( $thumb,'full' ); //get img URL
+      echo "<div class='featured-wrapper article-image'><img src='{$img_url}' class='center-block' /></div>";
+    endif; ?>
             
 		<div class="entry-content">
 			<?php the_content(); ?>

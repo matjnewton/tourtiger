@@ -13,6 +13,13 @@
             <h2 class="blog-title entry-title" style="visibility: visible;">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h2>
+
+            <?php if ( '' != get_the_post_thumbnail() ):
+              $thumb = get_post_thumbnail_id();
+              $img_url = wp_get_attachment_url( $thumb,'full' ); //get img URL
+              echo "<div class='featured-wrapper article-image'><img src='{$img_url}' class='center-block' /></div>";
+            endif; ?>
+
             <div class="blog-info-wrapper">
                             <div class="blog-date">
                                 <i class="fa fa-calendar"></i>
