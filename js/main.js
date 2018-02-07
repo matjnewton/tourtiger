@@ -516,21 +516,18 @@ var FbBookNowButton = function (config) {
 
     btnLoader: function(){
       var $button   = $(this);
-      var $element  = $(this);
-      var isLoading = $button.hasClass('is-loading');
+
+      if ($button.children.length)
+        $button = $($button.children[0]);
 
       $button.addClass('btnLoaderInited');
 
-      if ($element.children.length)
-        $element = $($element.children[0]);
-
-			if (!isLoading) {
-				$button.attr('data-label', $element.innerText).addClass('is-loading');
-        $element.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
-					'<div class="bounce3"></div></div>');
+			if (!$button.hasClass('is-loading')) {
+				$button.attr('data-label', $button.innerText).addClass('is-loading')
+				.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>');
 
 			} else {
-        $element.html($button.attr('data-label'));
+        $button.html($button.attr('data-label'));
         $button.removeClass('is-loading');
 			}
 		}
