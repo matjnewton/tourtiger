@@ -521,8 +521,8 @@ var FbBookNowButton = function (config) {
 
       $button.addClass('btnLoaderInited');
 
-      while ($element.children.length)
-        $element = $($element.children);
+      if ($element.children.length)
+        $element = $($element.children[0]);
 
 			if (!isLoading) {
 				$button.attr('data-label', $element.innerText).addClass('is-loading');
