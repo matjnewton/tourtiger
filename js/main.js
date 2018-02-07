@@ -526,11 +526,11 @@ var FbBookNowButton = function (config) {
 
 			if (!isLoading) {
 				$button.attr('data-label', $element.innerText).addClass('is-loading');
-        $button.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
+        $element.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
 					'<div class="bounce3"></div></div>');
 
 			} else {
-        $element.html($button.attr('data-label'));
+        $element.innerText = $button.attr('data-label');
         $button.removeClass('is-loading');
 			}
 		}
