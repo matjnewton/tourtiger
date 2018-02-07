@@ -48,6 +48,7 @@
 		}
 	}
 
+
 	function refresToSeachIframeBtn() {
 
 		$('[data-iframe-popup]').on('click', function (e) {
@@ -101,6 +102,9 @@
 			} else {
 			
 				if ( $(window).width() > 768 ) {
+
+					$button.tourismTiger('btnLoader');
+
 					// Load backgound layout
 					if ( $('.iframe-popup__close').length == 0 ) {
 						$('body').append('<a href="javascript:" class="iframe-popup__close" style="opacity:0;pointer-events:none;"></a>');
@@ -158,6 +162,9 @@
 
 							return false;
 						});
+
+						// disable button's loader
+            $button.tourismTiger('btnLoader');
 					});
 
 				} else {
@@ -505,6 +512,27 @@ var FbBookNowButton = function (config) {
 
 			// return the anoying button
 			$('#js-mob-wrap-buttons').fadeIn();
+		},
+
+    btnLoader: function(){
+      var $button   = $(this);
+      var $element  = $(this);
+      var isLoading = $button.hasClass('is-loading');
+
+      $button.addClass('btnLoaderInited');
+
+      if ($element.children.length)
+        $element = $element.children;
+
+			if (!isLoading) {
+				$button.attr('data-label', $element.text()).addClass('is-loading');
+        $button.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
+					'<div class="bounce3"></div></div>');
+
+			} else {
+        $element.html($button.attr('data-label'));
+        $button.removeClass('is-loading');
+			}
 		}
 	};
 
