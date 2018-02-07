@@ -526,8 +526,8 @@ var FbBookNowButton = function (config) {
 
 			if (!isLoading) {
 				$button.attr('data-label', $element.innerText).addClass('is-loading');
-        $element.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
-					'<div class="bounce3"></div></div>');
+        $element.innerHTML = '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
+					'<div class="bounce3"></div></div>';
 
 			} else {
         $element.innerText = $button.attr('data-label');
