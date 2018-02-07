@@ -523,8 +523,12 @@ var FbBookNowButton = function (config) {
       $button.addClass('btnLoaderInited');
 
 			if (!$button.hasClass('is-loading')) {
-				$button.attr('data-label', $button.html()).addClass('is-loading')
-				.html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>');
+				$button.attr('data-label', $button.html());
+        setTimeout(function() {
+          $button.addClass('is-loading')
+          .html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3">' +
+						'</div></div>');
+        }, 0);
 
 			} else {
         $button.html($button.attr('data-label'));
