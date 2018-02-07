@@ -89,8 +89,10 @@ function tourtiger_scripts_method() {
 		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
 		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), null, false);
 		endif;
+
+    $theme = wp_get_theme();
 		
-		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js?1.2', array('jquery'), null, true);
+		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), $theme->get( 'Version' ), true);
 
    if ( file_exists($uploads_dir['path'] . '/core-styles.min.css') )
 		  wp_enqueue_style('core-styles', $uploads_dir['url'] . '/core-styles.min.css');
