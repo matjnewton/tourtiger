@@ -515,10 +515,10 @@ var FbBookNowButton = function (config) {
 		},
 
     btnLoader: function(){
-      var $button   = $(this);
+      var $button = $(this);
 
-      if ($button.children.length)
-        $button = $($button.children[0]);
+      if ($button.children().length)
+        $button = $button.children();
 
       $button.addClass('btnLoaderInited');
 
