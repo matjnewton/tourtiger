@@ -518,9 +518,10 @@ var FbBookNowButton = function (config) {
       var target = this[0];
 
       if (target.children.length && !target.classList.contains('btnLoaderInited')) {
-        target.classList.add('btnLoaderInited');
         target = target.firstElementChild;
 			}
+
+      target.classList.add('btnLoaderInited');
 
 			if (!target.classList.contains('is-loading')) {
 
