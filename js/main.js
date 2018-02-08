@@ -515,24 +515,22 @@ var FbBookNowButton = function (config) {
 		},
 
     btnLoader: function(){
-      var $button = $(this);
+      var target = this;
 
-      if ($button.children().length)
-        $button = $button.children();
+      if (target.children.length)
+        target = target.firstElementChild;
 
-      $button.addClass('btnLoaderInited');
+      target.classList.add('btnLoaderInited');
 
-			if (!$button.hasClass('is-loading')) {
-				$button.attr('data-label', $button.html());
-        setTimeout(function() {
-          $button.addClass('is-loading')
-          .html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3">' +
-						'</div></div>');
-        }, 0);
+			if (!target.classList.contains('is-loading')) {
+        target.dataset.label = target.innerText;
+				target.classList.add('is-loading');
+				target.innerHTML = '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
+					'<div class="bounce3"></div></div>';
 
 			} else {
-        $button.html($button.attr('data-label'));
-        $button.removeClass('is-loading');
+        target.innerText = target.dataset.label;
+        target.classList.remove('is-loading');
 			}
 		}
 	};
