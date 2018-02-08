@@ -515,7 +515,7 @@ var FbBookNowButton = function (config) {
 		},
 
     btnLoader: function(){
-      var target = this;
+      var target = this[0];
 
       if (target.children.length)
         target = target.firstElementChild;
