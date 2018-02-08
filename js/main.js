@@ -103,7 +103,7 @@
 			
 				if ( $(window).width() > 768 ) {
 
-					$button.tourismTiger('btnLoader');
+					$button.is([data-iframe-popup]) && $button.tourismTiger('btnLoader');
 
 					// Load backgound layout
 					if ( $('.iframe-popup__close').length == 0 ) {
@@ -164,7 +164,7 @@
 						});
 
 						// disable button's loader
-            $button.tourismTiger('btnLoader');
+            $button.is([data-iframe-popup]) && $button.tourismTiger('btnLoader');
 					});
 
 				} else {
@@ -528,14 +528,14 @@ var FbBookNowButton = function (config) {
           return null;
 
         this[0].classList.add('js-inited');
-        target.dataset.label = target.innerText;
+        this[0].dataset.label = target.innerText;
 				target.classList.add('is-loading');
 				target.innerHTML = '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
 					'<div class="bounce3"></div></div>';
 
 			} else {
         this[0].classList.remove('js-inited');
-        target.innerText = target.dataset.label;
+        target.innerText = this[0].dataset.label;
         target.classList.remove('is-loading');
 			}
 		}
