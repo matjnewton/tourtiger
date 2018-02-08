@@ -517,15 +517,16 @@ var FbBookNowButton = function (config) {
     btnLoader: function(){
       var target = this[0];
 
-      if (this[0].classList.contains('js-inited'))
-      	return null;
-
-      if (target.children.length)
+      if (target.children.length && !target.classList.contains('btnLoaderInited')) {
+        target.classList.add('btnLoaderInited');
         target = target.firstElementChild;
-
-      target.classList.add('btnLoaderInited');
+			}
 
 			if (!target.classList.contains('is-loading')) {
+
+        if (this[0].classList.contains('js-inited'))
+          return null;
+
         this[0].classList.add('js-inited');
         target.dataset.label = target.innerText;
 				target.classList.add('is-loading');
