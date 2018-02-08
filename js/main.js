@@ -530,14 +530,17 @@ var FbBookNowButton = function (config) {
 
         this[0].classList.add('js-inited');
         this[0].dataset.label = target.innerText;
+
 				target.classList.add('is-loading');
 				target.innerHTML = '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
 					'<div class="bounce3"></div></div>';
 
 			} else {
         this[0].classList.remove('js-inited');
+
         target.innerText = this[0].dataset.label;
         target.classList.remove('is-loading');
+        target.classList.remove('btnLoaderInited');
 			}
 		}
 	};
