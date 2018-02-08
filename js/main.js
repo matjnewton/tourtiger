@@ -103,7 +103,7 @@
 			
 				if ( $(window).width() > 768 ) {
 
-					$button.is([data-iframe-popup]) && $button.tourismTiger('btnLoader');
+					$button.is('[data-iframe-popup]') && $button.tourismTiger('btnLoader');
 
 					// Load backgound layout
 					if ( $('.iframe-popup__close').length == 0 ) {
@@ -164,7 +164,7 @@
 						});
 
 						// disable button's loader
-            $button.is([data-iframe-popup]) && $button.tourismTiger('btnLoader');
+            $button.is('[data-iframe-popup]') && $button.tourismTiger('btnLoader');
 					});
 
 				} else {
