@@ -3,10 +3,10 @@
 	$tour_column_classes = 'pc--r ';
 
   $margin_top    = get_sub_field('margin_top');
-  $margin_botton = get_sub_field('margin_bottom');
+  $margin_bottom = get_sub_field('margin_bottom');
 
   $tour_row_styles .= $margin_top ? "margin-top: {$margin_top}px;" : '';
-  $tour_row_styles .= $margin_botton != 0 ? "margin-bottom: {$margin_bottom}px;" : '';
+  $tour_row_styles .= $margin_bottom != 0 ? "margin-bottom: {$margin_bottom}px;" : '';
 
 
 
