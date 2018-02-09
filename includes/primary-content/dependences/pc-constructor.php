@@ -4071,6 +4071,28 @@ acf_add_local_field_group(array (
 											'rgba' => 'rgba(255,255,255,1)',
 											'return_value' => 0
 										),
+										array (
+										  'key' => 'field_!peds32fsd132!',
+										  'label' => 'Margin top',
+										  'name' => 'margin_top',
+										  'type' => 'number',
+										  'required' => '',
+										  'wrapper' => array(
+										    'width'=> '50'
+                      ),
+                      'append' => 'px'
+                    ),
+										array (
+										  'key' => 'field_!peds32fsd243!',
+										  'label' => 'Margin bottom',
+										  'name' => 'margin_bottom',
+										  'type' => 'number',
+										  'required' => '',
+										  'wrapper' => array(
+										    'width'=> '50'
+                      ),
+                      'append' => 'px'
+                    ),
 
 										array (
 											'key' => 'field_5821e990a49df',
