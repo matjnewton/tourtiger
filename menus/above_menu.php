@@ -57,6 +57,9 @@
                                    <?php if($icon == 'wechat'): ?>
                                    <i class="fa fa-weixin fa-lg"></i>
                                    <?php endif; ?>
+                                 <?php if($icon == 'yelp'): ?>
+                                   <i class="fa fa-yelp fa-lg"></i>
+                                 <?php endif; ?>
                                </a>
                            </li>
                            <?php endwhile; ?> 

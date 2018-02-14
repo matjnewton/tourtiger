@@ -1443,7 +1443,8 @@ acf_add_local_field_group(array (
 						'instagram'   => 'instagram',
 						'linkedin'    => 'linkedin',
 						'google-plus' => 'google-plus',
-						'wechat'      => 'wechat'
+            'wechat'      => 'wechat',
+            'yelp'        => 'yelp'
 					),
 					'default_value' => array (
 					),

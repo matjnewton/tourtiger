@@ -38,6 +38,8 @@
                                                 echo '<i class="fa fa-instagram fa-lg"></i>';
                                             elseif (get_sub_field('social_icon') == 'wechat') :
                                                 echo '<i class="fa fa-weixin fa-lg"></i>';
+                                            elseif (get_sub_field('social_icon') == 'yelp') :
+                                                echo '<i class="fa fa-yelp fa-lg"></i>';
                                             else :
                                                 echo '<i class="fa fa-' . get_sub_field('social_icon') . '-square fa-lg"></i>';
                                             endif; ?>
