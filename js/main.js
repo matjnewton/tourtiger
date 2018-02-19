@@ -103,7 +103,7 @@
 			
 				if ( $(window).width() > 768 ) {
 
-					$button.is('[data-iframe-popup]') && $button.not('.js-inited') && $button.tourismTiger('btnLoader');
+          $(this).is('[data-iframe-popup]:not(.js-inited)') && $(this).tourismTiger('btnLoader');
 
 					// Load backgound layout
 					if ( $('.iframe-popup__close').length == 0 ) {
