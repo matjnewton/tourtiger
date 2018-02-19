@@ -164,7 +164,7 @@
 						});
 
 						// disable button's loader
-            $button.is('.js-inited:[data-iframe-popup]') && $button.tourismTiger('btnLoader');
+            $button.is('[data-iframe-popup]').hasClass('js-inited') && $button.tourismTiger('btnLoader');
 					});
 
 				} else {
