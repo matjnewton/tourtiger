@@ -1838,9 +1838,44 @@ function booking_hound_button( $attrs ) {
 }
 
 
+/**
+ * A pulsing directive
+ */
+function inject_pulsing_directive() {
+  $elements  = get_field('pulsing_elements', 'option');
+  $selectors = array();
 
+  if ($elements) :
+    foreach ($elements as $el) :
+      if (isset($el['element'])) :
+        switch ($el['element']) :
+          case 'product-booking-btn':
+            $selectors[] = '.single-tour .book-btn2';
+            $selectors[] = '.single-product .book-btn2-product';
+            break;
+        endswitch;
+      endif;
+    endforeach;
 
+    $selector = implode(",", $selectors);
 
+    if ($selector) :
+      ?>
+
+      <script>
+        !(function(){
+          var elems = document.querySelectorAll('<?=$selector;?>');
+          elems.forEach(function(el){
+            el.classList.add('js-pulsing');
+          });
+        })();
+      </script>
+
+      <?php
+    endif;
+  endif;
+}
+add_action( 'wp_footer', 'inject_pulsing_directive' );
 
 
 

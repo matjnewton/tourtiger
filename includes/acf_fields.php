@@ -2285,7 +2285,7 @@ tour_finder',
       'sub_fields' => array(
         array(
           'key' => 'field_2I9n1P9G93k03-s3n0p5',
-          'label' => 'element',
+          'label' => 'Element',
           'name' => 'element',
           'type' => 'select',
           'choices' => array(
