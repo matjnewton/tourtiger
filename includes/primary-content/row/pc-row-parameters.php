@@ -54,7 +54,7 @@
 
 		$tour_column_classes .= ' arrows_size_' . $d['arrows_size'];
 		$tour_column_classes .= ' arrows_weight_' . $d['arrows_weight'];
-		$tour_column_classes .= $d['arrows_position'];
+		$tour_column_classes .= ' ' . $d['arrows_position'];
 		$scroll_data         .= ' data-color="'.$d['arrows_color'].'" ';
 	endif;
 
