@@ -1989,7 +1989,6 @@ function get_button( $btn = array(), $classes = array(), $attrs = array() ) {
  */
 function get_instagram_image_temp($url) {
   return "<img 
-    src='data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' 
-    data-aload='{$url}' 
+    src='{$url}' 
     class='instagram--thumb' alt='' />";
 }
