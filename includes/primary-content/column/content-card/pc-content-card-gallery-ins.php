@@ -10,7 +10,7 @@ $d = [
     'onclick'      => get_sub_field('inst_onclick'),
     'user-details' => get_sub_field('inst_user-details'),
     'img-resolution' => get_sub_field('inst_img-resolution') ? get_sub_field('inst_img-resolution') : 'thumbnail',
-    'token'        => '8555682.1677ed0.6285dcdb12c64c6587f6b7f4ac995d49'
+    'token'          => get_field('insta_token','apikey'),
 ];
 
 $root = 'https://api.instagram.com/v1';
@@ -47,7 +47,7 @@ if ($d['rest']) :
   endswitch;
 endif;
 
-if ( isset($response['data']) ) :
+if ( $d['token'] && isset($response['data']) ) :
 
   $attrs = convert_html_attributes([
     convert_html_attributes([
