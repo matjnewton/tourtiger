@@ -1360,122 +1360,86 @@ acf_add_local_field_group(array (
 																			'max_size' => '',
 																			'mime_types' => '',
 																		),
-																		array (
-																			'key' => 'field_5824983ef11c3',
-																			'label' => 'Height of this block',
-																			'name' => 'tour_pc-coltype--instagram',
-																			'type' => 'number',
-																			'instructions' => 'The width is same as column width.',
-																			'required' => '',
-																			'conditional_logic' => array (
-																				array (
-																					array (
-																						'field' => 'field_58249738f11c0',
-																						'operator' => '==',
-																						'value' => 'instagram',
-																					),
-																				),
-																			),
-																			'wrapper' => array (
-																				'width' => 20,
-																				'class' => '',
-																				'id' => '',
-																			),
-																			'default_value' => 200,
-																			'placeholder' => '',
-																			'prepend' => '',
-																			'append' => 'px',
-																			'min' => 200,
-																			'max' => '',
-																			'step' => '10',
-																			'readonly' => 0,
-																			'disabled' => 0,
-																		),
-																		array(
-																			'key' => 'field_582498a545453',
-																			'label' => 'Choose size',
-																			'name' => 'tour_pc-coltype--instagram_size',
-																			'type' => 'select',
-																			'required' => '',
-																			'conditional_logic' => array (
-																				array (
-																					array (
-																						'field' => 'field_58249738f11c0',
-																						'operator' => '==',
-																						'value' => 'instagram',
-																					),
-																				),
-																			),
-																			'choices' => array(
-																				'small'	=> 'Small',
-																				'medium' => 'Medium',
-																				'large' => 'Large',
-																				'xlarge' => 'XLarge'
-																			),
-																			'allow_null' => 0,
-																			'multiple' => 0,
-																			'ui' => 0,
-																			'ajax' => 0,
-																			'placeholder' => '',
-																		),
-																		array (
-																			'key' => 'field_58249872f11c4',
-																			'label' => 'Account ID',
-																			'name' => 'tour_pc-coltype--instagram_account',
-																			'type' => 'text',
-																			'instructions' => '',
-																			'required' => '',
-																			'conditional_logic' => array (
-																				array (
-																					array (
-																						'field' => 'field_58249738f11c0',
-																						'operator' => '==',
-																						'value' => 'instagram',
-																					),
-																				),
-																			),
-																			'wrapper' => array (
-																				'width' => '20',
-																				'class' => '',
-																				'id' => '',
-																			),
-																			'default_value' => '',
-																			'placeholder' => '',
-																			'prepend' => '',
-																			'append' => '',
-																			'maxlength' => '',
-																			'readonly' => 0,
-																			'disabled' => 0,
-																		),
-																		array (
-																			'key' => 'field_582498a5f11c5',
-																			'label' => 'Use specific hashtag',
-																			'name' => 'tour_pc-coltype--instagram_hash',
-																			'type' => 'text',
-																			'instructions' => 'Fill without #.',
-																			'required' => '',
-																			'conditional_logic' => array (
-																				array (
-																					array (
-																						'field' => 'field_58249738f11c0',
-																						'operator' => '==',
-																						'value' => 'instagram',
-																					),
-																				),
-																			),
-																			'wrapper' => array (
-																				'width' => '20',
-																				'class' => '',
-																				'id' => '',
-																			),
-																			'default_value' => '',
-																			'placeholder' => 'hashtag1, hashtag2, hashtag3',
-																			'prepend' => '#',
-																			'append' => '',
-																			'maxlength' => '',
-																			'readonly' => 0,
-																			'disabled' => 0,
-																		),
+
+                                    array (
+                                      'key' => 'inst_in21sNtcd48i3',
+                                      'label' => 'Type',
+                                      'name' => 'type',
+                                      'type' => 'select',
+                                      'required' => 0,
+                                      'choices' => array(
+                                        'recent-media' => 'Recent media'
+                                      ),
+                                      'allow_null' => 0,
+                                      'default_values' => array(
+                                        'recent-recent'
+                                      ),
+                                      'wrapper' => array(
+                                        'width' => 33
+                                      ),
+                                    ),
+                                    array (
+                                      'key' => 'inst_in21sNtcd4804',
+                                      'label' => 'Media count',
+                                      'name' => 'count',
+                                      'type' => 'number',
+                                      'required' => 0,
+                                      'min' => 1,
+                                      'default_value' => 25,
+                                      'wrapper' => array( 'width' => 33 ),
+                                    ),
+                                    array (
+                                      'key' => 'inst_in21sNtcd4895',
+                                      'label' => 'Columns',
+                                      'name' => 'columns',
+                                      'type' => 'number',
+                                      'required' => 0,
+                                      'min' => 1,
+                                      'max' => 10,
+                                      'default_value' => 5,
+                                      'wrapper' => array( 'width' => 33 ),
+                                    ),
+                                    array (
+                                      'key' => 'inst_in21sNtcd4886',
+                                      'label' => 'Rest images',
+                                      'name' => 'rest',
+                                      'type' => 'select',
+                                      'required' => 0,
+                                      'choices' => array(
+                                        'instagram' => 'Lead to Instagram',
+                                        // 'load-more' => 'Load more button',
+                                        // 'carousel'  => 'Carousel',
+                                      ),
+                                      'allow_null' => 1,
+                                      'wrapper' => array( 'width' => 33 ),
+                                    ),
+                                    array (
+                                      'key' => 'inst_in21sNtcd4882',
+                                      'label' => 'Onclick image',
+                                      'name' => 'onclick',
+                                      'type' => 'select',
+                                      'required' => 0,
+                                      'choices' => array(
+                                        'instagram' => 'Open in Instagram',
+                                        'popup' => 'Open in a popup',
+                                      ),
+                                      'allow_null' => 1,
+                                      'wrapper' => array( 'width' => 33 ),
+                                    ),
+
+                                    array (
+                                      'key'   => 'inst_i8tinstcd42F2',
+                                      'label' => 'User details',
+                                      'name' => 'user-details',
+                                      'type' => 'select',
+                                      'required' => '',
+                                      'wrapper' => array ( 'width' => 33 ),
+                                      'choices' => array(
+                                        'ava-and-username' => 'Ava and Username',
+                                      ),
+                                      'allow_null' => 1,
+                                    ),
+
 																		array (
 																			'key' => 'number_5odsith-328',
 																			'label' => 'Margin top',
