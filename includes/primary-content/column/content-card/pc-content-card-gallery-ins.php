@@ -9,7 +9,7 @@ $d = [
     'rest'         => get_sub_field('inst_rest'),
     'onclick'      => get_sub_field('inst_onclick'),
     'user-details' => get_sub_field('inst_user-details'),
-    'img-resolution' => get_sub_field('inst_img-resolution'),
+    'img-resolution' => get_sub_field('inst_img-resolution') ? get_sub_field('inst_img-resolution') : 'thumbnail',
     'token'        => '8555682.1677ed0.6285dcdb12c64c6587f6b7f4ac995d49'
 ];
 
