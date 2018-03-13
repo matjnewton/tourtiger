@@ -115,7 +115,8 @@ if ( isset($response['data']) ) :
       ?>
     </div>
 
-    <?=isset($d['rest-button']) ? $d['rest-button'] : '';?>
+    <?=isset($d['rest-button']) ? str_replace( '#.' , "https://instagram.com/{$response['data'][0]['user']['username']}"
+      , $d['rest-button']) : '';?>
 
   </div>
 

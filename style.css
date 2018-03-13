@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 0.6.6
+Version: 0.6.7
 Template: genesis
 Template Version: 2.0.27
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -1294,4 +1294,142 @@ iframe {
     8% {
         transform: scale(1.05);
     }
+}
+
+.instagram--items {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+}
+.instagram--items + .instagram--see-more {
+    margin-top: 2rem;
+}
+.instagram--user {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.instagram--user__picture {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.instagram--user__picture:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    opacity: 0;
+    transition: ease 0.2s;
+}
+.instagram--user__picture:hover:before {
+    opacity: 1;
+    transition: ease 0.1s;
+}
+.instagram--user__picture img {
+    max-width: 100%;
+    height: auto;
+}
+.instagram--user > * + * {
+    margin-left: 10px;
+}
+.instagram--user + .instagram--items {
+    margin-top: 1rem;
+}
+.instagram--see-more {
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+.instagram.columns_1 .instagram--item {
+    width: calc(100% - 1rem);
+}
+.instagram.columns_2 .instagram--item {
+    width: calc(50% - 1rem);
+}
+.instagram.columns_3 .instagram--item {
+    width: calc(33.3% - 1rem);
+}
+.instagram.columns_4 .instagram--item {
+    width: calc(25% - 1rem);
+}
+.instagram.columns_5 .instagram--item {
+    width: calc(20% - 1rem);
+}
+.instagram.columns_6 .instagram--item {
+    width: calc(16.6% - 1rem);
+}
+.instagram.columns_7 .instagram--item {
+    width: calc(14.2% - 1rem);
+}
+.instagram.columns_8 .instagram--item {
+    width: calc(12.5% - 1rem);
+}
+.instagram.columns_9 .instagram--item {
+    width: calc(11.1% - 1rem);
+}
+.instagram.columns_10 .instagram--item {
+    width: calc(10% - 1rem);
+}
+.instagram--item {
+    margin: .5rem;
+}
+.instagram--item__meta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0;
+    z-index: 1;
+    transition: ease 0.3s;
+}
+.instagram--item__meta-item {
+    margin: 0 .25rem;
+}
+.instagram--item_link {
+    position: relative;
+}
+.instagram--item_link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    opacity: 0;
+    transition: ease 0.2s;
+}
+.instagram--item_link:hover:before {
+    opacity: 1;
+    transition: ease 0.1s;
+}
+.instagram--item_link:hover .instagram--item__meta {
+    opacity: 1;
+}
+.instagram--thumb {
+    max-width: 100%;
+    height: auto;
 }
