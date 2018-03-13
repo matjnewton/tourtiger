@@ -9,6 +9,7 @@ $d = [
     'rest'         => get_sub_field('inst_rest'),
     'onclick'      => get_sub_field('inst_onclick'),
     'user-details' => get_sub_field('inst_user-details'),
+    'img-resolution' => get_sub_field('inst_img-resolution'),
     'token'        => '8555682.1677ed0.6285dcdb12c64c6587f6b7f4ac995d49'
 ];
 
@@ -87,7 +88,7 @@ if ( isset($response['data']) ) :
           ?>
 
           <a href="<?=$item['link'];?>" target="_blank" class="instagram--item instagram--item_link">
-            <?=get_instagram_image_temp($item['images']['thumbnail']['url']);?>
+            <?=get_instagram_image_temp($item['images'][$d['img-resolution']]['url']);?>
             <span class="instagram--item__meta">
             <span class="instagram--item__meta-item">
               <i class="fa fa-heart"></i> <?=$item['likes']['count'];?>
@@ -106,7 +107,7 @@ if ( isset($response['data']) ) :
           ?>
 
           <div class="instagram--item">
-            <?=get_instagram_image_temp($item['images']['thumbnail']['url']);?>
+            <?=get_instagram_image_temp($item['images'][$d['img-resolution']]['url']);?>
           </div>
 
         <?php

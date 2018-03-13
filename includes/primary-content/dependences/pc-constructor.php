@@ -1439,6 +1439,21 @@ acf_add_local_field_group(array (
                                       'allow_null' => 1,
                                     ),
 
+                                    array (
+                                      'key'   => 'inst_i1tinWtcd12F3',
+                                      'label' => 'Image resolution',
+                                      'name' => 'inst_img-resolution',
+                                      'type' => 'select',
+                                      'required' => '',
+                                      'wrapper' => array ( 'width' => 20 ),
+                                      'choices' => array(
+                                        'thumbnail' => 'Width 150px',
+                                        'low_resolution' => 'Width 320px',
+                                        'standard_resolution' => 'Width 640px',
+                                      ),
+                                      'allow_null' => 1,
+                                    ),
+
 																		array (
 																			'key' => 'number_5odsith-328',
 																			'label' => 'Margin top',
