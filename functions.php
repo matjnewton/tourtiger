@@ -1877,5 +1877,119 @@ function inject_pulsing_directive() {
 }
 add_action( 'wp_footer', 'inject_pulsing_directive' );
 
+/**
+ * @param $endpoint
+ * @return mixed
+ */
+function get( $endpoint ) {
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $endpoint);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  $output = curl_exec($ch);
+  curl_close($ch);
 
+  return $output;
+}
 
+/**
+ * Generate classlist from array
+ */
+function generate_classlist( $array ) {
+  if ( !is_array( $array ) || empty( $array ) )
+    return '';
+
+  // That will be returned
+  $list = '';
+  $counter   = 0;
+
+  foreach ( $array as $item ) :
+    if ( $item !== '' ) :
+      if ( $counter !== 0 )
+        $list .= ' ';
+
+      $list .= "{$item}";
+    endif;
+
+    $counter++;
+  endforeach;
+
+  return $list;
+}
+
+/**
+ * @param array  $array
+ * @param string $type - false, class, style
+ * @return string
+ */
+function convert_html_attributes( $array = array(), $type = '') {
+  $values = generate_classlist($array);
+
+  if (!$values)
+    return '';
+
+  if ($type)
+    return "{$type}='{$values}'";
+  else
+    return $values;
+}
+
+/**
+ * @param array $btn
+ * [type] => (str) url | popup-frame | page | anchor | permalink
+ * @param array $classes
+ * @param array $attrs
+ * @return null|string
+ */
+function get_button( $btn = array(), $classes = array(), $attrs = array() ) {
+  if ( ! is_array( $btn ) || ! is_array( $classes ) || ! is_array( $attrs ) )
+    return null;
+
+  // Converts classes array to string
+  $classes[] = 'type_' . $btn['type'];
+  $classes   = convert_html_attributes( apply_filters( 'get_button_classes', $classes, $btn ), 'class' );
+
+  $btn['permalink'] = get_the_permalink();
+
+  $default = "<a href='{$btn['permalink']}' {$classes}>{$btn['label']}</a>";
+
+  switch ( $btn['type'] ) :
+    case 'url':
+      $html = $btn['url'] ? "<a href='{$btn['url']}' target='_blank' {$classes}>{$btn['label']}</a>" : $default;
+      break;
+
+    case 'popup-frame':
+      $popup = '';
+      $popup .= 'data-handle-click="initIframePopup"';
+      $popup .= $btn['popup-style'] ? " data-popup-style='{$btn['popup-style']}'" : '';
+      $popup .= $btn['popup-size'] ? " data-popup-size='{$btn['popup-size']}'" : '';
+
+      $html = $btn['url'] ? "<a href='{$btn['url']}' {$popup} {$classes}>{$btn['label']}</a>" : $default;
+      break;
+
+    case 'page':
+      $html = $btn['page'] ? "<a href='{$btn['page']}' {$classes}>{$btn['label']}</a>" : $default;
+      break;
+
+    case 'anchor':
+      $html = $btn['anchor'] ? "<a href='{$btn['anchor']}' {$classes}>{$btn['label']}</a>" : $default;
+      break;
+
+    case 'permalink':
+    default:
+      $html = $default;
+      break;
+  endswitch;
+
+  return $html;
+}
+
+/**
+ * @param $url
+ * @return string
+ */
+function get_instagram_image_temp($url) {
+  return "<img 
+    src='data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' 
+    data-aload='{$url}' 
+    class='instagram--thumb' alt='' />";
+}

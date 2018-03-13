@@ -1364,7 +1364,7 @@ acf_add_local_field_group(array (
                                     array (
                                       'key' => 'inst_in21sNtcd48i3',
                                       'label' => 'Type',
-                                      'name' => 'type',
+                                      'name' => 'inst_type',
                                       'type' => 'select',
                                       'required' => 0,
                                       'choices' => array(
@@ -1381,7 +1381,7 @@ acf_add_local_field_group(array (
                                     array (
                                       'key' => 'inst_in21sNtcd4804',
                                       'label' => 'Media count',
-                                      'name' => 'count',
+                                      'name' => 'inst_count',
                                       'type' => 'number',
                                       'required' => 0,
                                       'min' => 1,
@@ -1391,7 +1391,7 @@ acf_add_local_field_group(array (
                                     array (
                                       'key' => 'inst_in21sNtcd4895',
                                       'label' => 'Columns',
-                                      'name' => 'columns',
+                                      'name' => 'inst_columns',
                                       'type' => 'number',
                                       'required' => 0,
                                       'min' => 1,
@@ -1402,7 +1402,7 @@ acf_add_local_field_group(array (
                                     array (
                                       'key' => 'inst_in21sNtcd4886',
                                       'label' => 'Rest images',
-                                      'name' => 'rest',
+                                      'name' => 'inst_rest',
                                       'type' => 'select',
                                       'required' => 0,
                                       'choices' => array(
@@ -1416,12 +1416,11 @@ acf_add_local_field_group(array (
                                     array (
                                       'key' => 'inst_in21sNtcd4882',
                                       'label' => 'Onclick image',
-                                      'name' => 'onclick',
+                                      'name' => 'inst_onclick',
                                       'type' => 'select',
                                       'required' => 0,
                                       'choices' => array(
                                         'instagram' => 'Open in Instagram',
-                                        'popup' => 'Open in a popup',
                                       ),
                                       'allow_null' => 1,
                                       'wrapper' => array( 'width' => 33 ),
@@ -1430,7 +1429,7 @@ acf_add_local_field_group(array (
                                     array (
                                       'key'   => 'inst_i8tinstcd42F2',
                                       'label' => 'User details',
-                                      'name' => 'user-details',
+                                      'name' => 'inst_user-details',
                                       'type' => 'select',
                                       'required' => '',
                                       'wrapper' => array ( 'width' => 33 ),
