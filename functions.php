@@ -1982,13 +1982,3 @@ function get_button( $btn = array(), $classes = array(), $attrs = array() ) {
 
   return $html;
 }
-
-/**
- * @param $url
- * @return string
- */
-function get_instagram_image_temp($url) {
-  return "<img 
-    src='{$url}' 
-    class='instagram--thumb' alt='' />";
-}
