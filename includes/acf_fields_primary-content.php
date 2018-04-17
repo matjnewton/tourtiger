@@ -863,12 +863,12 @@ function insert_recaptcha_html() {
 * @param $atts
 * @return null|string
 */
-function instgram_shortcode( $d ){
+function instagram_shortcode( $d ){
 
 	$d = shortcode_atts( array(
-		'type'           => '',
-		'count'          => '',
-		'columns'        => '',
+		'type'           => 'recent-media',
+		'count'          => '25',
+		'columns'        => '5',
 		'rest'           => '',
 		'onclick'        => '',
 		'user-details'   => '',
@@ -989,4 +989,4 @@ function instgram_shortcode( $d ){
 
 	return null;
 }
-add_shortcode( 'instgram_shortcode', 'instgram_shortcode_shortcode' );
+add_shortcode( 'instagram', 'instagram_shortcode' );
