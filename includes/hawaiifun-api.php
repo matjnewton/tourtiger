@@ -5,15 +5,15 @@
 
 
 function hawaiifunapi_form(){
-	global $post;
+  global $post;
 
-	$id = $post->ID;
+  $id = $post->ID;
 
-	switch ($id):
+  switch ($id):
 
-		// san_diego_form == del mar
-		case 7925:
-			$html = "
+    // san_diego_form == del mar
+    case 7925:
+      $html = "
 				<div id=\"hawaiifun\" class=\"pc--form hawaiifun--popup\">
 
 					<script type=\"text/javascript\">
@@ -23,7 +23,7 @@ function hawaiifunapi_form(){
 					      activityids: [ 4043],
 					      guesttypeids: [ 1594 ],
 					      activityprices: {
-					        4043: { 1594: 195.00},
+					        4043: { 1594: 210.00},
 					        
 					      },
 					      activitydescriptions: {
@@ -219,11 +219,11 @@ function hawaiifunapi_form(){
 					  </p>
   			</div>
 			";
-			break;
+      break;
 
-		// santa_barbara
-		case 7971:
-			$html = "
+    // santa_barbara
+    case 7971:
+      $html = "
 				<div id=\"hawaiifun\" class=\"pc--form hawaiifun--popup\">
 				  <script type=\"text/javascript\">
 				    // Activity group settings
@@ -411,13 +411,13 @@ function hawaiifunapi_form(){
 
 				</div>
 			";
-			break;
+      break;
 
-		// temecula
-		case 7970:
-			$html = "
+    // temecula
+    case 7970:
+      $html = "
 				<div id=\"hawaiifun\" class=\"pc--form hawaiifun--popup\">
-					<script type=\"text/javascript\">
+				<script type=\"text/javascript\">
 					// Activity group settings
 					var group1 = {
 					  supplierid: 465,
@@ -620,11 +620,11 @@ function hawaiifunapi_form(){
 					</p>
 				</div>
 			";
-			break;
+      break;
 
-		// giftflight
-		case 8077:
-			$html = "
+    // giftflight
+    case 8077:
+      $html = "
 				<form id=\"hawaiifun\" class=\"GroupsForm_861fe1c0 pc--form hawaiifun--popup\">
 				  <script type=\"text/javascript\">
 				    var groups_861fe1c0_contextData = {
@@ -720,11 +720,11 @@ function hawaiifunapi_form(){
 
 				</form>
 			";
-			break;
+      break;
 
-		// for others
-		default:
-			$html = "
+    // for others
+    default:
+      $html = "
 				<form id=\"hawaiifun\" class=\"GroupsForm_40e9607c pc--form hawaiifun--popup GroupsForm_9ad2b236\">
 					<script type=\"text/javascript\">
 					    var groups_9ad2b236_contextData = {
@@ -827,37 +827,37 @@ function hawaiifunapi_form(){
 					  </p>
 				</form>
 			";
-			break;
-	endswitch;
+      break;
+  endswitch;
 
-	echo $html;
+  echo $html;
 }
 
 function include_hawaiifun_scripts() {
 
-	wp_deregister_style('jquire-ui');
-	wp_enqueue_style('jquery-ui', '//www.ponorez.com/Calendar/REDMOND/jquery-ui.css');
+  wp_deregister_style('jquire-ui');
+  wp_enqueue_style('jquery-ui', '//www.ponorez.com/Calendar/REDMOND/jquery-ui.css');
 
-	wp_deregister_script( 'hawaiifun-calendarjs' );
-	wp_enqueue_script( 'hawaiifun-calendarjs', '//www.hawaiifun.org/reservation/common/calendar_js.jsp?jsversion=20121209', array(), null, true );
+  wp_deregister_script( 'hawaiifun-calendarjs' );
+  wp_enqueue_script( 'hawaiifun-calendarjs', '//www.hawaiifun.org/reservation/common/calendar_js.jsp?jsversion=20121209', array(), null, true );
 
-	wp_deregister_script( 'hawaiifun-functions' );
-	wp_enqueue_script( 'hawaiifun-functions', '//www.hawaiifun.org/reservation/external/functions.js?jsversion=20121209', array(), null, true );
+  wp_deregister_script( 'hawaiifun-functions' );
+  wp_enqueue_script( 'hawaiifun-functions', '//www.hawaiifun.org/reservation/external/functions.js?jsversion=20121209', array(), null, true );
 
-	wp_deregister_script( 'hawaiifun-functions2' );
-	wp_enqueue_script( 'hawaiifun-functions2', '//www.hawaiifun.org/reservation/external/functions2.js?jsversion=20121209', array(), null, true );
+  wp_deregister_script( 'hawaiifun-functions2' );
+  wp_enqueue_script( 'hawaiifun-functions2', '//www.hawaiifun.org/reservation/external/functions2.js?jsversion=20121209', array(), null, true );
 
-	wp_deregister_script( 'hawaiifun-activityswitch' );
-	wp_enqueue_script( 'hawaiifun-activityswitch', '//www.hawaiifun.org/reservation/external/activityswitch-1.js?jsversion=20170214', array(), null, true );
+  wp_deregister_script( 'hawaiifun-activityswitch' );
+  wp_enqueue_script( 'hawaiifun-activityswitch', '//www.hawaiifun.org/reservation/external/activityswitch-1.js?jsversion=20170214', array(), null, true );
 
-    // below write common scripts
-    //$data = '<script></script>';
-    
-	//wp_add_inline_script( 'hawaiifun-activityswitch', $data );
+  // below write common scripts
+  //$data = '<script></script>';
+
+  //wp_add_inline_script( 'hawaiifun-activityswitch', $data );
 }
 
 // if hawaiifun api activated, all functions above are working
 if ( get_field( 'is-hawaiifun', 'option' ) ) :
-	add_action( 'wp_enqueue_scripts', 'include_hawaiifun_scripts', 50 ); // includes scripts
-	add_action('wp_footer', 'hawaiifunapi_form');                        // print the html code to popup wrapper
+  add_action( 'wp_enqueue_scripts', 'include_hawaiifun_scripts', 50 ); // includes scripts
+  add_action('wp_footer', 'hawaiifunapi_form');                        // print the html code to popup wrapper
 endif;
