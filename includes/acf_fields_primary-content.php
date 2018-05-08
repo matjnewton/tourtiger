@@ -931,7 +931,7 @@ function instagram_shortcode( $d ){
 						href='<?="https://instagram.com/{$response['data'][0]['user']['username']}";?>'
 						class='instagram--user__picture'
 						target='_blank'>
-						<img src='data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' data-aload='<?=$response['data'][0]['user']['profile_picture'];?>'
+						<img src='<?=$response['data'][0]['user']['profile_picture'];?>'
 								 alt='Instagram | Username: <?=$response['data'][0]['user']['username'];?>' />
 					</a>
 					<p class="instagram--user__name">
@@ -990,3 +990,218 @@ function instagram_shortcode( $d ){
 	return null;
 }
 add_shortcode( 'instagram', 'instagram_shortcode' );
+
+if( function_exists('acf_add_local_field_group') ):
+
+  acf_add_local_field_group(array(
+    'key' => 'group_5af1bf6f61325',
+    'title' => 'Home page instagram widget',
+    'fields' => array(
+      array(
+        'key' => 'field_5af1bfaa689f7',
+        'label' => 'Instagram',
+        'name' => 'instagram',
+        'type' => 'group',
+        'instructions' => 'Will be appeared right above the footer',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'layout' => 'block',
+        'sub_fields' => array(
+          array(
+            'key' => 'field_5af1c00f689f8',
+            'label' => 'Type',
+            'name' => 'type',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'choices' => array(
+              'recent-media' => 'Recent media',
+            ),
+            'default_value' => array(
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 0,
+            'ajax' => 0,
+            'return_format' => 'value',
+            'placeholder' => '',
+          ),
+          array(
+            'key' => 'field_5af1c05f689f9',
+            'label' => 'Media count',
+            'name' => 'count',
+            'type' => 'number',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'default_value' => 25,
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'min' => 1,
+            'max' => '',
+            'step' => '',
+          ),
+          array(
+            'key' => 'field_5af1c084689fa',
+            'label' => 'Columns',
+            'name' => 'columns',
+            'type' => 'number',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'default_value' => 5,
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'min' => 0,
+            'max' => '',
+            'step' => '',
+          ),
+          array(
+            'key' => 'field_5af1c0cc689fb',
+            'label' => 'Rest images',
+            'name' => 'rest',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'choices' => array(
+              'instagram' => 'Lead to Instagram',
+            ),
+            'default_value' => array(
+            ),
+            'allow_null' => 1,
+            'multiple' => 0,
+            'ui' => 0,
+            'ajax' => 0,
+            'return_format' => 'value',
+            'placeholder' => '',
+          ),
+          array(
+            'key' => 'field_5af1c111689fc',
+            'label' => 'Onclick image',
+            'name' => 'onclick',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'choices' => array(
+              'instagram' => 'Open in Instagram',
+            ),
+            'default_value' => array(
+            ),
+            'allow_null' => 1,
+            'multiple' => 0,
+            'ui' => 0,
+            'ajax' => 0,
+            'return_format' => 'value',
+            'placeholder' => '',
+          ),
+          array(
+            'key' => 'field_5af1c152689fd',
+            'label' => 'User details',
+            'name' => 'user-details',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'choices' => array(
+              'ava-and-username' => 'Ava & Username',
+            ),
+            'default_value' => array(
+            ),
+            'allow_null' => 1,
+            'multiple' => 0,
+            'ui' => 0,
+            'ajax' => 0,
+            'return_format' => 'value',
+            'placeholder' => '',
+          ),
+          array(
+            'key' => 'field_5af1c19e689fe',
+            'label' => 'Image resolution',
+            'name' => 'img-resolution',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+              'width' => '33',
+              'class' => '',
+              'id' => '',
+            ),
+            'choices' => array(
+              'thumbnail' => '150px',
+              'low_resolution' => '320px',
+              'standard_resolution' => '640px',
+            ),
+            'default_value' => array(
+              0 => 'thumbnail',
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 0,
+            'ajax' => 0,
+            'return_format' => 'value',
+            'placeholder' => '',
+          ),
+        ),
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'page_type',
+          'operator' => '==',
+          'value' => 'front_page',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+  ));
+
+endif;

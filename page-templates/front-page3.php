@@ -942,6 +942,37 @@ function tourtiger_sub_contents(){ ?>
     <?php endif; /*end sections_area*/ ?>
     
     <?php get_sidebar('subscribe'); ?>
+
+    <?php
+    if ( get_field('instagram') ) :
+      $d = [
+        'token' => get_field('insta_token','apikey'),
+        'inst'  => get_field('instagram'),
+      ];
+      ?>
+
+      <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+          <div class="col-md-12">
+            <?php
+            $d['token'] && do_shortcode(
+              "[instagram 
+              type='{$d['inst']['type']}' 
+              count='{$d['inst']['count']}' 
+              columns='{$d['inst']['columns']}' 
+              rest='{$d['inst']['rest']}' 
+              onclick='{$d['inst']['onclick']}' 
+              user-details='{$d['inst']['user-details']}' 
+              img-resolution='{$d['inst']['img-resolution']}' 
+              token='{$d['token']}']"
+            );
+            ?>
+          </div>
+        </div>
+      </div>
+    <?php
+    endif;
+    ?>
     
 <?php }
 
