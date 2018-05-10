@@ -195,13 +195,16 @@ window.onload = function () {
       }
 
       if ( $(".pc--date").not('[data-inited]') ) {
-        $(".pc--date").daterangepicker({
-          locale: {
-            format: "YYYY-MM-DD"
-          },
-          singleDatePicker: true,
+        $(".pc--date").each(function(){
+          console.log($(this)[0].dataset.dateFormat);
+          $(this).daterangepicker({
+            locale: {
+              format: $(this)[0].dataset.dateFormat
+            },
+            singleDatePicker: true,
+          });
+          $(this).attr('data-inited', 1);
         });
-        $(".pc--date").attr('data-inited', 1);
       }
 
       $(document).bind('gform_confirmation_loaded', function(event, formId){
@@ -372,7 +375,11 @@ window.onload = function () {
                   if ( item.hasClass('pc--c__b-image--really-tall') ) {
                     blog_thumb_h = blog_thumb_w * 0.8;
                   } else {
-                    blog_thumb_h = blog_thumb_w * 0.5;
+                    if ( item.hasClass('pc--c__b-image--especially-tall') ) {
+                      blog_thumb_h = blog_thumb_w * 1.5;
+                    } else {
+                      blog_thumb_h = blog_thumb_w * 0.5;
+                    }
                   }
                 }
               }
@@ -390,7 +397,11 @@ window.onload = function () {
                   if ( item.hasClass('pc--c__b-image--really-tall') ) {
                     blog_thumb_h = blog_thumb_w * 2;
                   } else {
-                    blog_thumb_h = blog_thumb_w / 1.35;
+                    if ( item.hasClass('pc--c__b-image--especially-tall') ) {
+                      blog_thumb_h = blog_thumb_w * 2.35;
+                    } else {
+                      blog_thumb_h = blog_thumb_w * 1.25;
+                    }
                   }
                 }
               }
@@ -971,7 +982,7 @@ window.onload = function () {
     };
 
 
-    // create map           
+    // create map
     var map = new google.maps.Map( $el[0], args);
 
 

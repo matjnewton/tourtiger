@@ -276,14 +276,45 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                  * Date
                  */
                 case 'date':
+                  switch ($field['dateFormat']) :
+                    case 'mdy':
+                      $field['dateFormat'] = 'mm/dd/yyyy';
+                      break;
+                    case 'd-m-y':
+                      $field['dateFormat'] = 'DD-MM-YYYY';
+                      break;
+                    case 'm-d-y':
+                      $field['dateFormat'] = 'MM-DD-YYYY';
+                      break;
+                    case 'dmy':
+                      $field['dateFormat'] = 'DD/MM/YYYY';
+                      break;
+                    case 'dmy_dot':
+                      $field['dateFormat'] = 'DD.MM.YYYY';
+                      break;
+                    case 'ymd_slash':
+                      $field['dateFormat'] = 'YYYY/MM/DD';
+                      break;
+                    case 'ymd_dash':
+                      $field['dateFormat'] = 'YYYY-MM-DD';
+                      break;
+                    case 'ymd_dot':
+                      $field['dateFormat'] = 'YYYY.MM.DD';
+                      break;
+                    case 'dmy':
+                    default;
+                      $field['dateFormat'] = 'DD/mm/yyyy';
+                      break;
+                  endswitch;
+
                   $attr .= 'name="input_' . $field['id'] . '" ';
                   $attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
                   $class .= ' pc--date';
                   $attr  .= 'disabled ';
                   $attr  .= $field['defaltValue'] ? 'value="' . $field['defaltValue'] . '" ' : '';
                   $attr  .= 'type="text" ';
-                  $attr  .= $field['inputMask'] ? 'data-field-mask="' . $field['inputMaskValue'] . '" disabled ' : '';
-                  $attr  .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '"' : '';
+                  $attr  .= "data-date-format='{$field['dateFormat']}' ";
+                  $attr  .= $field['maxLength'] ? 'data-field-length="' . $field['maxLength'] . '" ' : '';
                   $attr  .= 'data-field-input ';
                   $attr  .= 'class="' . $class . '" ';
                   $attr  .= 'style="height:54px;" ';
