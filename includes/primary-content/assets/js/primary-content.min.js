@@ -14,14 +14,9 @@ function submit_gf_through_pc(url, values_json, $form) {
     /**
      * Redirect
      */
-    if (typeof data === 'string') {
-      document.location.href = data.split('rel="canonical" href="')[1].split('" />')[0];
-    }
-
-    /**
-     * Show confirmation message if it's exist
-     */
-    if (data.response) {
+    if (data.response.confirmation_type === 'redirect') {
+      document.location.href = data.response.confirmation_redirect;
+    } else {
       $form.hide();
       $form.parent().append(data.response.confirmation_message);
     }
