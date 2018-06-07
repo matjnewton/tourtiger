@@ -3098,6 +3098,159 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
+		
+		
+		array(
+            'key' => 'field_5375fd320eb18',
+            'label' => 'Button up',
+            'name' => 'button_up',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => 'Show Button-top?',
+        ),
+        array(
+            'key'        => 'field_53677fd320eb18',
+            'label'      => 'Button content type',
+            'name'       => 'content-choice',
+            'type'       => 'select',
+            'required'   => 0,
+            'choices'    => array(
+                'icon'   => 'Iсon',
+                'label'    => 'Label',
+                'both'    => 'Icon and label'
+            ),
+            'allow_null' => 0,
+            'default_values' => ['icon'],
+            'wrapper'    => array(
+                'width'    => 25
+            ),
+            'conditional_logic' => array (
+                array (
+                    array (
+                        'field' => 'field_5375fd320eb18',
+                        'operator' => '==',
+                        'value' => 1
+                    ),
+                )
+            )
+        ),
+        array(
+            'key'        => 'field_53dsffd3358',
+            'label'      => 'Button alignment',
+            'name'       => 'button-align',
+            'type'       => 'select',
+            'required'   => 0,
+            'choices'    => array(
+                'right'   => 'Right',
+                'left'    => 'Left'
+            ),
+            'allow_null' => 0,
+            'default_values' => ['right'],
+            'wrapper'    => array(
+                'width'    => 25
+            ),
+            'conditional_logic' => array (
+                array (
+                    array (
+                        'field' => 'field_5375fd320eb18',
+                        'operator' => '==',
+                        'value' => 1
+                    ),
+                )
+            )
+        ),
+        array (
+            'key' => 'field_53dsgd320eb18',
+            'label' => 'Button label',
+            'name' => 'label',
+            'type' => 'text',
+            'required' => 0,
+            'display' => 'group',
+            'layout' => 'block',
+            'prefix_label' => 0,
+            'prefix_name' => 0,
+            'wrapper' => [
+                'width' => 25
+            ],
+            'conditional_logic' => array (
+                array (
+                    // and
+                    array (
+                        'field' => 'field_53677fd320eb18',
+                        'operator' => '==',
+                        'value' => 'both'
+                    ),
+                    array (
+                        'field' => 'field_5375fd320eb18',
+                        'operator' => '==',
+                        'value' => 1
+                    ),
+                ),
+                array (
+                    // and
+                    array (
+                        'field' => 'field_53677fd320eb18',
+                        'operator' => '==',
+                        'value' => 'label'
+                    ),
+                    array (
+                        'field' => 'field_5375fd320eb18',
+                        'operator' => '==',
+                        'value' => 1
+                    ),
+                ),
+            )
+        ),
+
+        array (
+            'key' => 'field_53d34d320eb18',
+            'label' => 'Icon',
+            'name' => 'icon',
+            'type' => 'font-awesome',
+            'required' => 0,
+            'wrapper' => array (
+                'width' => '25',
+            ),
+            'save_format' => 'class',
+            'conditional_logic' => array (
+                // or
+                array (
+                    // and
+                    array (
+                        'field' => 'field_53677fd320eb18',
+                        'operator' => '==',
+                        'value' => 'both'
+                    ),
+                    array (
+                        'field' => 'field_5375fd320eb18',
+                        'operator' => '==',
+                        'value' => 1
+                    ),
+                ),
+                array (
+                    // and
+                    array (
+                        'field' => 'field_53677fd320eb18',
+                        'operator' => '==',
+                        'value' => 'icon'
+                    ),
+                    array (
+                        'field' => 'field_5375fd320eb18',
+                        'operator' => '==',
+                        'value' => 1
+                    ),
+                ),
+            ),
+            'fa_live_preview' => 0
+        ),
+		
 	),
 	'location' => array (
 		array (
