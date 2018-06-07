@@ -161,7 +161,8 @@
         <?php endif; ?>
       </div>
     </div>
-   <div class="button-up">
+    <?php if (get_field('button-up', 'option')) : ?>
+      <div class="button-up">
           <div class="button-up__container">
               <div <?php  echo 'class="button-wrapper button-up__align--'.get_field('button-align', 'option').'"';?>>
                   <button id="button-up__btn" class="button-up__btn" data-handle-click="scrollToTop">
@@ -188,12 +189,11 @@
               return false;
           });
           window.onscroll = function() {
-              const scroledClassName = 'is-scrolled'
-              const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-              let htmlElement = document.getElementsByTagName("html")[0];
+              var scroledClassName = 'is-scrolled';
+              var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+              var htmlElement = document.getElementsByTagName("html")[0];
               if (scrolled > 0) {
                   htmlElement.classList.add(scroledClassName);
-
               }
               else {
                   htmlElement.classList.remove(scroledClassName);
@@ -201,4 +201,4 @@
 
           }
       </script>
- 
+    <?php endif; ?>
