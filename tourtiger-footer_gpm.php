@@ -161,7 +161,7 @@
         <?php endif; ?>
       </div>
     </div>
-    <?php if (get_field('button-up', 'option')) : ?>
+    <?php if (get_field('button_up', 'option')) : ?>
       <div class="button-up">
           <div class="button-up__container">
               <div <?php  echo 'class="button-wrapper button-up__align--'.get_field('button-align', 'option').'"';?>>
