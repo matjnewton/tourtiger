@@ -7,8 +7,8 @@
 
 <div class="container">
   <div class="row">
-	<?php
-        $isButtonUp = get_field('button_up', 'option');
+    <?php
+    $isButtonUp = get_field('button_up', 'option');
 
     ?>
     <?php
@@ -163,42 +163,50 @@
     </div>
     <?php if (get_field('button_up', 'option')) : ?>
       <div class="button-up">
-          <div class="button-up__container">
-              <div <?php  echo 'class="button-wrapper button-up__align--'.get_field('button-align', 'option').'"';?>>
-                  <button id="button-up__btn" class="button-up__btn" data-handle-click="scrollToTop">
-                      <?php
-                      if (get_field('content-choice', 'option') == 'icon' || get_field('content-choice', 'option') == 'both'){
-                          echo '<i class="fa '.get_field('icon', 'option').'"></i>';
-                      }
-                      if (get_field('content-choice', 'option') == 'label' || get_field('content-choice', 'option') == 'both'){
-                          echo '<span>'.get_field('label', 'option').'</span>';
-                      }
-                      ?>
-                  </button>
-              </div>
-
+        <div class="button-up__container">
+          <div <?php  echo 'class="button-wrapper button-up__align--'.get_field('button-align', 'option').'"';?>>
+            <button id="button-up__btn" class="button-up__btn" data-handle-click="scrollToTop">
+              <?php
+              if (get_field('content-choice', 'option') == 'icon' || get_field('content-choice', 'option') == 'both'){
+                echo '<i class="fa '.get_field('icon', 'option').'"></i>';
+              }
+              if (get_field('content-choice', 'option') == 'label' || get_field('content-choice', 'option') == 'both'){
+                echo '<span>'.get_field('label', 'option').'</span>';
+              }
+              ?>
+            </button>
           </div>
+
+        </div>
       </div>
 
       <script>
-          $('#button-up__btn').click(function (e) {
-              e.preventDefault();
-              $("html, body").animate({
-                  scrollTop: 0
-              }, 600);
-              return false;
-          });
-          window.onscroll = function() {
-              var scroledClassName = 'is-scrolled';
-              var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-              var htmlElement = document.getElementsByTagName("html")[0];
-              if (scrolled > 0) {
-                  htmlElement.classList.add(scroledClassName);
-              }
-              else {
-                  htmlElement.classList.remove(scroledClassName);
-              }
-
+        $('#button-up__btn').click(function (e) {
+          e.preventDefault();
+          $("html, body").animate({
+            scrollTop: 0
+          }, 600);
+          return false;
+        });
+        window.onscroll = function() {
+          var scroledClassName = 'is-scrolled';
+          var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+          var htmlElement = document.getElementsByTagName("html")[0];
+          if (scrolled > 0) {
+            htmlElement.classList.add(scroledClassName);
           }
+          else {
+            htmlElement.classList.remove(scroledClassName);
+          }
+
+        }
       </script>
+
+    <?php if (get_field('btn-up-color', 'option')) : ?>
+      <style>
+        #button-up__btn {
+          background-color: <?php echo get_field('btn-up-color', 'option'); ?>;
+        }
+      </style>
+    <?php endif; ?>
     <?php endif; ?>
