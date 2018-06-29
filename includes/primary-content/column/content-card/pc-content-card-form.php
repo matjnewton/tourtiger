@@ -381,6 +381,9 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                     if ( $field['cssClass'] == 'user_email' ) $attr .= 'data-user-email="1"';
                     $attr .= $attr_conditional;
 
+                    $attr .= 'name="input_' . $field['id'] . '" ';
+                    $attr .= 'id="input_' . $form_id . '_' . $field['id'] . '" ';
+
                     echo "<input " . $attr . " />";
 
                   endif;
