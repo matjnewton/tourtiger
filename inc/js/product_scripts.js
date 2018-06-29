@@ -11,17 +11,16 @@ jQuery(document).ready(function($){
 	if ( $booking_sidebar.length > 0 ) {
 		$(window).scroll(function(){
 			var sidebar_height = $booking_sidebar.height() + 130; 
-			var header_bar     =$('.header-bar-wrapper.sticky');
-			//if ( sidebar_height < $(window).height() ) {
+			if ( sidebar_height < $(window).height() ) {
 				$booking_sidebar.sticky({
-					topSpacing:header_bar.length ? header_bar.height() : 30,
+					topSpacing:130,
 					bottomSpacing: $('.site-footer').height() + 100,
 					getWidthFrom:'.book-tour-wrapper_product'
 				});
-			//}
+			}
 		});
 	}
-//
+
 	$('.book-tour-title_product').hide();
 	$('#booking_product').on('sticky-start', function() { 
 		$('.book-tour-title_product').show();
