@@ -84,7 +84,7 @@
                                 <div class="arrow-right"></div>
                             </a>
                             <?php elseif ($button_type === 'iframe-popup') : ?>
-                              <a href="<?php echo $bbl;?>" class="book-btn2">
+                              <a data-iframe-popup="<?php echo $bbl;?>" href="javascript:" class="book-btn2">
                                 <?php echo $bbt; ?>
                               </a>
                             <?php else: ?>

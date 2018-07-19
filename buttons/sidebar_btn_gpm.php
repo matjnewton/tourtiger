@@ -105,9 +105,23 @@
                                 endif; 
 
                                 if (!$booking_hound) :
+
+                                  if ($button_type === 'iframe-popup') :
                                     ?>
+
+                                    <a data-iframe-popup="<?php echo $bbl;?>" href="javascript:" class="book-btn2">
+                                      <?php echo $bbt; ?>
+                                    </a>
+
+                                    <?php
+                                  else :
+                                    ?>
+
                                     <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2">
                                         <?php echo $bbt; ?>
                                     </a>
-                                <?php endif; ?>
-                            <?php endif; ?>
+
+                                    <?php
+                                  endif;
+                                endif;
+                              endif; ?>
