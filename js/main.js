@@ -724,7 +724,7 @@ var FbBookNowButton = function (config) {
 
       function getClientTopBorder() {
         var value = 30;
-        var header = [$('.position_sticky .header--primary'), $('.position_sticky .header--sup')];
+        var header = [$('.header-bar-wrapper.sticky'), {}];
         var $wpadminbar = $('#wpadminbar');
 
         if (header[0].length) {
