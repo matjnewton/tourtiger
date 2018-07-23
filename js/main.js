@@ -593,3 +593,236 @@ var FbBookNowButton = function (config) {
 	});
 
 }));
+
+/**
+ * Sidebar JS
+ */
+
+(function (factory) {
+  'use strict';
+
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports !== 'undefined') {
+    module.exports = factory(require('jquery'));
+  } else {
+    factory(jQuery);
+  }
+})(function ($) {
+
+  var methods = {
+
+    init: function init(parentSelector) {
+      var $sidebar = $(this).find('.sidebar').not('.js-inited');
+      var parentSelector = parentSelector ? parentSelector : 'body';
+
+      if (!$sidebar.length) return $(this);
+
+      if ($sidebar.hasClass('js-sticky') && $(window).width() >= 769) $sidebar.sidebarModule('initScrolling', parentSelector).addClass('js-inited');
+
+      return $(this);
+    },
+
+    /**
+     * Init event whether the sidebar exists
+     * @todo !$('#body-class').hasClass('view_grid') && $(window).width() > 768
+     */
+    initScrolling: function initScrolling(parentSelector) {
+
+      function insertPointer() {
+        var pointer = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '0px';
+        var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'red';
+        var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'inserted-pointer';
+        var position = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'absolute';
+
+        var el = document.createElement(id);
+
+        if (!el) {
+          el = document.createElement('div');
+          document.body.appendChild(el);
+        }
+
+        el.id = id;
+        el.style.position = position;
+        el.style.top = Number.isInteger(pointer) ? pointer + 'px' : pointer;
+        el.style.left = '0px';
+        el.style.width = '100%';
+        el.style.border = '1px solid ' + color;
+        el.style.zIndex = '9999';
+      }
+
+      /**
+       * @param sidebar
+       * @param type
+       * @param clientTopBorder
+       */
+      function setSidebar(sidebar, type) {
+        var clientTopBorder = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
+        switch (type) {
+          case 'top':
+            sidebar.style.top = '0px';
+            sidebar.style.bottom = 'auto';
+            sidebar.classList.remove('is-sticky');
+            break;
+
+          case 'topSticky':
+            sidebar.style.top = clientTopBorder + 'px';
+            sidebar.style.bottom = 'auto';
+            sidebar.classList.add('is-sticky');
+            break;
+
+          case 'bottom':
+            sidebar.style.top = 'auto';
+            sidebar.style.bottom = '0px';
+            sidebar.classList.remove('is-sticky');
+            break;
+
+          case 'bottomSticky':
+            sidebar.style.top = 'auto';
+            sidebar.style.bottom = '30px';
+            sidebar.classList.add('is-sticky');
+            break;
+
+          default:
+            sidebar.style.top = 'auto';
+            sidebar.style.bottom = 'auto';
+            sidebar.classList.remove('is-sticky');
+            break;
+        }
+      }
+
+      function refreshProperties(_ref13) {
+        var _ref13$sidebar = _ref13.sidebar,
+          sidebar = _ref13$sidebar === undefined ? {} : _ref13$sidebar,
+          _ref13$column = _ref13.column,
+          column = _ref13$column === undefined ? {} : _ref13$column,
+          _ref13$wrapper = _ref13.wrapper,
+          wrapper = _ref13$wrapper === undefined ? {} : _ref13$wrapper,
+          _ref13$container = _ref13.container,
+          container = _ref13$container === undefined ? {} : _ref13$container;
+
+        if (!wrapper || !container) {
+          return null;
+        }
+
+        column.style.width = wrapper.offsetWidth + 'px';
+        column.style.height = container.offsetHeight + 'px';
+
+        sidebar.style.width = wrapper.offsetWidth + 'px';
+      }
+
+      function getOffset(elem) {
+        // кроме IE8-
+        var box = elem.getBoundingClientRect();
+
+        return {
+          top: box.top + pageYOffset,
+          left: box.left + pageXOffset
+        };
+      }
+
+      function getClientTopBorder() {
+        var value = 30;
+        var header = [$('.position_sticky .header--primary'), $('.position_sticky .header--sup')];
+        var $wpadminbar = $('#wpadminbar');
+
+        if (header[0].length) {
+          value += header[0].height();
+        }
+
+        if (header[1].length) {
+          value += header[1].height();
+        }
+
+        if ($wpadminbar.length) {
+          value += $wpadminbar.height();
+        }
+
+        return value;
+      }
+
+      function getScrolledBottomCorner() {
+        return (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight;
+      }
+
+      /**
+       * @param el - html element
+       * @returns int
+       */
+      function getBottomBorder(el) {
+        return getOffset(el).top + $(el).height();
+      }
+
+      // const
+      var sidebar = this[0];
+      var wrapper = sidebar.parentNode;
+      var container = wrapper.parentNode.querySelector(parentSelector);
+      var column = $(sidebar).wrap('<div class="sidebar__column"></div>').wrap('<div class="sidebar__wrap"></div>').closest('.sidebar__column')[0];
+
+      refreshProperties({
+        sidebar: sidebar,
+        column: column,
+        wrapper: wrapper,
+        container: container
+      });
+
+      $(document).on('scroll', function () {
+        var clientTopBorder = getClientTopBorder();
+        var pageYOffset = window.pageYOffset + clientTopBorder;
+        var bottomBorderContainer = container ? getBottomBorder(container) : 0;
+        var offsetWrapper = getOffset(wrapper).top;
+        var offsetSidebar = getOffset(sidebar).top;
+
+        refreshProperties({
+          sidebar: sidebar,
+          column: column,
+          wrapper: wrapper,
+          container: container
+        });
+
+        //if (getScrolledBottomCorner() - 30 >= getBottomBorder(column)) {
+        if (bottomBorderContainer - pageYOffset + 50 <= $(sidebar).height()) {
+          setSidebar(sidebar, 'bottom');
+        } else {
+          if (sidebar.offsetHeight > window.innerHeight - clientTopBorder) {
+            if (pageYOffset >= offsetWrapper) {
+              if (getBottomBorder(sidebar.lastElementChild) > getScrolledBottomCorner() - 59) {
+                setSidebar(sidebar, 'top');
+              } else if (offsetSidebar < offsetWrapper) {
+                setSidebar(sidebar, 'top');
+              } else {
+                setSidebar(sidebar, 'bottomSticky');
+              }
+            } else {
+              setSidebar(sidebar, 'top');
+            }
+          } else {
+            if (pageYOffset >= offsetWrapper) {
+              setSidebar(sidebar, 'topSticky', clientTopBorder);
+            } else {
+              setSidebar(sidebar, 'top');
+            }
+          }
+        }
+      });
+
+      return $(this);
+    }
+
+  };
+
+  /**
+   * Init method
+   */
+  $.fn.sidebarModule = function (method) {
+
+    if (methods[method]) {
+      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if ((typeof method === 'undefined' ? 'undefined' : _typeof(method)) === 'object' || !method) {
+      return methods.init.apply(this, arguments);
+    } else {
+      $.error('Method named ' + method + ' isn\'t exist within jQuery.sidebarModule');
+    }
+  };
+});
