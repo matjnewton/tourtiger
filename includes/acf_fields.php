@@ -1096,6 +1096,7 @@ if( function_exists('acf_add_local_field_group') ):
             'post_type' => array (
               0 => 'page',
               1 => 'tour',
+              1 => 'post',
             ),
             'taxonomy' => array (
             ),
