@@ -54,7 +54,7 @@ if ( $gallery ) :
             ?>
 
             <a href="<?php echo $image['url']; ?>" class="gallery--item">
-              <img src='<?=$image['sizes']['large']?>' alt='<?php echo $image['alt']; ?>' />
+              <img data-aload='<?=$image['sizes']['large']?>' alt='<?php echo $image['alt']; ?>' />
             </a>
 
           <?php
@@ -62,7 +62,7 @@ if ( $gallery ) :
             ?>
 
             <div class="gallery--item">
-              <img src='<?=$image['sizes']['large']?>' alt='<?php echo $image['alt']; ?>' />
+              <img data-aload='<?=$image['sizes']['large']?>' alt='<?php echo $image['alt']; ?>' />
             </div>
 
           <?php
