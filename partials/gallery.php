@@ -47,13 +47,13 @@ if ( $gallery ) :
 
     <div class="gallery">
 
-      <div class="gallery--wrapper gallery--count__<?php echo $columns; ?>">
+      <div class="gallery--wrapper gallery--count__<?php echo $columns; ?> gallery--onclick__<?php echo $onclick; ?>">
         <?php
         foreach ( $gallery as $key => $image ) :
-          if ($onclick === 'source') :
+          if ($onclick === 'source' || $onclick === 'popup') :
             ?>
 
-            <a href="<?php echo $image['url']; ?>" class="gallery--item">
+            <a href="<?php echo $image['url']; ?>" class="gallery--item" title="<?php echo $image['alt']; ?>">
               <img data-aload='<?=$image['sizes']['large']?>' alt='<?php echo $image['alt']; ?>' />
             </a>
 

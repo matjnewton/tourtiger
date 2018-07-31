@@ -1304,6 +1304,7 @@ acf_add_local_field_group(array (
                                       'required' => '',
                                       'choices' => array(
                                         'source' => 'Attachment Source',
+                                        'popup'  => 'Popup',
                                       ),
                                       'allow_null' => true,
                                       'conditional_logic' => array (

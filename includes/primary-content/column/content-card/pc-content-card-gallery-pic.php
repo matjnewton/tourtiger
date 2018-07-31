@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Content card gallery
  */
