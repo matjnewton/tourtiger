@@ -1,0 +1,98 @@
+.home_page_search{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    top: 55%;
+    z-index: 99999;
+}
+
+.rezdy_box{
+    margin-bottom: 5px;
+}
+
+.add-on{
+	position:relative;
+}
+
+.cal{
+	position:absolute;
+	top:15px;
+	right:10px;
+}
+
+.sear{
+	position:absolute;
+	top:15px;
+	left:35px;
+}
+
+.rezdy_date{
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    height: 44px;
+    border: 2px solid white;
+}
+.rezdy_date:focus{
+    outline: none;
+    box-shadow: none;
+    border: 2px solid white;
+}
+.rezdy_search{
+    width: 100%;
+    background: transparent;
+    border: 2px solid white;
+    font-size: 20px;
+}
+.rezdy_search:hover{
+    border:2px solid #AEC445;
+    color:white;
+    background: transparent;
+}
+.rezdy_search:focus{
+    outline: none;
+    box-shadow: none;
+    border: 2px solid white;
+}
+.rezdy_search:active{
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    border: 2px solid yellowgreen;
+}
+
+
+/*dgamoni*/
+.anrow .viewtour {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+}
+div.preLoading2{
+    background-image: url("images/load2.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+        width: 128px;
+    height: 128px;
+}
+#ajax_preLoading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    /*opacity: 0;*/
+    opacity: 0.5;
+    z-index: 100;
+}
+
+
+.home_page_search_2 {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    top: 64%;
+    z-index: 99999;
+} 
+
+.timearrayLoadmore {
+	/*min-height: 510px;*/
+}
