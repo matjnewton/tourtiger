@@ -51,13 +51,13 @@
 
 	function refresToSeachIframeBtn() {
 
-		$('[data-iframe-popup], .onclick__popup').on('click', function (e) {
+		$('[data-iframe-popup], li.onclick__popup > a').on('click', function (e) {
 			e.preventDefault();
 
 			var $button   = $(this);
 
-			if ($button.hasClass('onclick__popup')) {
-        var reference = $button.attr('href') ? $button.attr('href') : $button.find('a').attr('href');
+			if ($button.closest('li').hasClass('onclick__popup')) {
+        var reference = $button.attr('href');
         var isResize = 0;
       } else {
         var reference = $button.attr('data-iframe-popup');
