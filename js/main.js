@@ -57,7 +57,7 @@
 			var $button   = $(this);
 
 			if ($button.hasClass('onclick__popup')) {
-        var reference = $button.attr('href');
+        var reference = $button.attr('href') ? $button.attr('href') : $button.find('a').attr('href');
         var isResize = 0;
       } else {
         var reference = $button.attr('data-iframe-popup');
