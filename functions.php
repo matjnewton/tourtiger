@@ -1853,6 +1853,11 @@ function inject_pulsing_directive() {
             $selectors[] = '.single-tour .book-btn2';
             $selectors[] = '.single-product .book-btn2-product';
             break;
+
+          case 'heroarea-booking-btn':
+            $selectors[] = '.pc_hero-area__action';
+            $selectors[] = '.banner .book-btn-wrapper';
+            break;
         endswitch;
       endif;
     endforeach;

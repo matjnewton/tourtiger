@@ -2290,7 +2290,8 @@ tour_finder',
             'name' => 'element',
             'type' => 'select',
             'choices' => array(
-              'product-booking-btn' => 'Booking Button on the product pages'
+              'product-booking-btn' => 'Booking Button on the product pages',
+              'heroarea-booking-btn' => 'Booking Button in Heroarea',
             ),
           )
         )
