@@ -351,17 +351,22 @@
 !(function($){
 	$(function(){
 
+		var $sliderPro = $('.slider-pro');
+		var $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
+
+    $sliderPro.width($coverImage.width());
+
 		/**
 		 * Init slick carousel
 		 */
-		$('.slider-pro--preview').on('click', function(){
+    $sliderPro.on('click', '.slider-pro--preview', function(){
 			$(this).tourismTiger('initGallery');
 		});
 
 		/**
 		 * Close carousel
 		 */
-		$('.slider-pro__close-link, .slider-pro__close-bg').on('click', function(){
+    $sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
 			$(this).tourismTiger('destroyGallery');
 		});
 	});
