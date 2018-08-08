@@ -353,7 +353,7 @@
 
 		var $sliderPro = $('.slider-pro');
 		var $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
-    var url =  $coverImage.attr('data-bg');
+    var url =  $coverImage.attr('src');
     var img = new Image();
 
     img.onload = function() { $sliderPro.width(img.width); }
