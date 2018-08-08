@@ -353,8 +353,11 @@
 
 		var $sliderPro = $('.slider-pro');
 		var $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
+    var url =  $coverImage.attr('data-bg');
+    var img = new Image();
 
-    $sliderPro.width($coverImage.width());
+    img.onload = function() { $sliderPro.width(img.width); }
+    img.src = url;
 
 		/**
 		 * Init slick carousel
