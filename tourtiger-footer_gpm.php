@@ -4,11 +4,10 @@
  */
 
 
-if (false && get_field('advanced_footer', 'option')) :
+if (current_user_can('edit_posts') && get_field('advanced_footer', 'option')) :
   ?>
 
   <div class="advanced-footer">
-    <div class="advanced-footer--box">
 
       <?php
       while (have_rows('advanced_footer', 'option')) :
@@ -17,91 +16,92 @@ if (false && get_field('advanced_footer', 'option')) :
         $layout = get_row_layout();
         ?>
 
-        <div class="advanced-footer--column layout_<?php echo $layout; ?>">
-
-          <?php
-          while (have_rows('column-1')) :
-            ?>
-
-            <div class="advanced-footer--element">
-              <?php get_advanced_footer_column_acf(); ?>
-            </div>
+        <div class="advanced-footer--box layout_<?php echo $layout; ?>">
+          <div class="advanced-footer--column layout_<?php echo $layout; ?>">
 
             <?php
-          endwhile;
-          ?>
+            while (have_rows('column-1')) :
+              ?>
 
-        </div>
+              <div class="advanced-footer--element">
+                <?php get_advanced_footer_column_acf(); ?>
+              </div>
 
-        <div class="advanced-footer--column">
-
-          <?php
-          while (have_rows('column-2')) :
+              <?php
+            endwhile;
             ?>
 
-            <div class="advanced-footer--element">
-              <?php get_advanced_footer_column_acf(); ?>
-            </div>
+          </div>
 
-          <?php
-          endwhile;
-          ?>
+          <div class="advanced-footer--column">
 
-        </div>
+            <?php
+            while (have_rows('column-2')) :
+              ?>
 
-        <div class="advanced-footer--column">
+              <div class="advanced-footer--element">
+                <?php get_advanced_footer_column_acf(); ?>
+              </div>
 
-          <?php
-          while (have_rows('column-3')) :
+            <?php
+            endwhile;
             ?>
 
-            <div class="advanced-footer--element">
-              <?php get_advanced_footer_column_acf(); ?>
-            </div>
+          </div>
 
-          <?php
-          endwhile;
-          ?>
+          <div class="advanced-footer--column">
 
-        </div>
+            <?php
+            while (have_rows('column-3')) :
+              ?>
 
-        <div class="advanced-footer--column">
+              <div class="advanced-footer--element">
+                <?php get_advanced_footer_column_acf(); ?>
+              </div>
 
-          <?php
-          while (have_rows('column-4')) :
+            <?php
+            endwhile;
             ?>
 
-            <div class="advanced-footer--element">
-              <?php get_advanced_footer_column_acf(); ?>
-            </div>
+          </div>
 
-          <?php
-          endwhile;
-          ?>
+          <div class="advanced-footer--column">
 
-        </div>
+            <?php
+            while (have_rows('column-4')) :
+              ?>
 
-        <div class="advanced-footer--column">
+              <div class="advanced-footer--element">
+                <?php get_advanced_footer_column_acf(); ?>
+              </div>
 
-          <?php
-          while (have_rows('column-5')) :
+            <?php
+            endwhile;
             ?>
 
-            <div class="advanced-footer--element">
-              <?php get_advanced_footer_column_acf(); ?>
-            </div>
+          </div>
 
-          <?php
-          endwhile;
-          ?>
+          <div class="advanced-footer--column">
 
+            <?php
+            while (have_rows('column-5')) :
+              ?>
+
+              <div class="advanced-footer--element">
+                <?php get_advanced_footer_column_acf(); ?>
+              </div>
+
+            <?php
+            endwhile;
+            ?>
+
+          </div>
         </div>
 
         <?php
       endwhile;
       ?>
 
-    </div>
   </div>
 
   <?php
