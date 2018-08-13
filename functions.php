@@ -1987,3 +1987,23 @@ function get_button( $btn = array(), $classes = array(), $attrs = array() ) {
 
   return $html;
 }
+
+function get_advanced_footer_column_acf() {
+  the_row();
+
+  switch (get_row_layout()) :
+    case 'menu':
+      echo wp_nav_menu([
+        'menu'        => get_sub_field('menu_name'),
+        'echo'        => false,
+        'fallback_cb' => '__return_empty_string',
+        'container'   => false,
+        'menu_class'  => 'advanced-footer--menu',
+      ]);
+      break;
+
+    case 'content':
+      echo '<div class="wysiwyg">' . get_sub_field('content') . '</div>';
+      break;
+  endswitch;
+}

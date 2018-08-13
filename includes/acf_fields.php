@@ -2892,10 +2892,105 @@ tour_finder',
     'description' => '',
   ));
 
+  function footer_subfields($id = '123') {
+    return [
+      array (
+        'key' => $id . '_4CD85',
+        'label' => 'Menu',
+        'name' => 'menu',
+        'display' => 'block',
+        'sub_fields' => array(
+          array(
+            'key' => $id . '_94CD15',
+            'label' => 'Menu name',
+            'name' => 'menu_name',
+            'type' => 'text',
+            'instructions' => 'Leave empty for using the Menu from Appearance -> Menus -> the Menu which is set to location: Footer',
+            'required' => 0,
+          )
+        )
+      ),
+      array (
+        'key' => $id . '_4CD86',
+        'label' => 'Content',
+        'name' => 'content',
+        'display' => 'block',
+        'sub_fields' => array(
+          array(
+            'key' => $id . '_94CDxs',
+            'label' => 'Content',
+            'name' => 'content',
+            'type' => 'wysiwyg',
+            'required' => 0,
+          )
+        )
+      )
+    ];
+  }
+
   acf_add_local_field_group(array (
     'key' => 'group_557b163078e89',
     'title' => 'Options: Footer',
     'fields' => array (
+
+      array (
+        'key' => 'advanced_fd320eb27',
+        'label' => 'Advanced Footer',
+        'name' => 'advanced_footer',
+        'type' => 'flexible_content',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'button_label' => 'Add Footer',
+        'min' => '',
+        'max' => '1',
+        'layouts' => array (
+          array (
+            'key' => 'advanced_s2fd320e',
+            'name' => 'five-columns',
+            'label' => 'Five columns layout',
+            'display' => 'block',
+            'sub_fields' => array (
+              array (
+                'key' => 'advanced_s2f234s5',
+                'label' => 'Column 1',
+                'name' => 'column-1',
+                'type' => 'flexible_content',
+                'layouts' => footer_subfields('s2f234s5')
+              ),
+              array (
+                'key' => 'advanced_s2f234s4',
+                'label' => 'Column 2',
+                'name' => 'column-2',
+                'type' => 'flexible_content',
+                'layouts' => footer_subfields('s2f234s4')
+              ),
+              array (
+                'key' => 'advanced_s2f234s3',
+                'label' => 'Column 3',
+                'name' => 'column-3',
+                'type' => 'flexible_content',
+                'layouts' => footer_subfields('s2f234s3')
+              ),
+              array (
+                'key' => 'advanced_s2f234s2',
+                'label' => 'Column 4',
+                'name' => 'column-4',
+                'type' => 'flexible_content',
+                'layouts' => footer_subfields('s2f234s2')
+              ),
+              array (
+                'key' => 'advanced_s2f234s1',
+                'label' => 'Column 5',
+                'name' => 'column-5',
+                'type' => 'flexible_content',
+                'layouts' => footer_subfields('s2f234s1')
+              ),
+            )
+          )
+        )
+      ),
+
       array (
         'key' => 'field_5375fd320eb27',
         'label' => 'Footer areas',
