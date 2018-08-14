@@ -4,7 +4,7 @@
  */
 
 
-if (current_user_can('edit_posts') && get_field('advanced_footer', 'option')) :
+if (get_field('advanced_footer', 'option')) :
   ?>
 
   <div class="advanced-footer">
@@ -17,7 +17,7 @@ if (current_user_can('edit_posts') && get_field('advanced_footer', 'option')) :
         ?>
 
         <div class="advanced-footer--box layout_<?php echo $layout; ?>">
-          <div class="advanced-footer--column layout_<?php echo $layout; ?>">
+          <div class="advanced-footer--column">
 
             <?php
             while (have_rows('column-1')) :
