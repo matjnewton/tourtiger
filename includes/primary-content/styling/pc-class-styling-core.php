@@ -329,6 +329,30 @@ class Core extends StylingCard {
           'type'  => 'rgba_color',
           'required' => 0,
         ),
+
+        array (
+          'key'   => 'fc_' . $i . '_bu_7w121_t0n',
+          'label' => 'Navigation button background',
+          'name'  => 'nav_button_bg',
+          'type'  => 'rgba_color',
+          'required' => 0,
+        ),
+
+        array (
+          'key'   => 'fc_' . $i . '_bu_7w121_t9n',
+          'label' => 'Navigation button background Mouseover',
+          'name'  => 'nav_button_bg_hover',
+          'type'  => 'rgba_color',
+          'required' => 0,
+        ),
+
+        array (
+          'key'   => 'fc_' . $i . '_bu_7w121_t1n',
+          'label' => 'Navigation button color',
+          'name'  => 'nav_button_color',
+          'type'  => 'rgba_color',
+          'required' => 0,
+        ),
       ),
 		);	
 
@@ -405,7 +429,23 @@ class Core extends StylingCard {
 
         $footer_bg = get_sub_field('footer_bg');
 
-        $css .= '<style>';
+        $nav_btn_bg = get_sub_field('nav_button_bg');
+        $nav_btn_bg_h = get_sub_field('nav_button_bg_hover');
+        $nav_btn_color = get_sub_field('nav_button_color');
+
+        //$css .= '<style>';
+
+          if ($nav_btn_bg) {
+            $css .= "#menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {background-color:{$nav_btn_bg}!important;}";
+          }
+
+          if ($nav_btn_bg_h) {
+            $css .= "#menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > *:hover {background-color:{$nav_btn_bg_h}!important;}";
+          }
+
+          if ($nav_btn_color) {
+            $css .= "#menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {color:{$nav_btn_color}!important;}";
+          }
 
           $css .= $base_wrapper_bs ? ".site-container{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 1px 4px rgba(0,0,0,0.45);}" : '';
           $css .= ".site-container{background:{$base_wrapper_bg}}";
@@ -509,7 +549,7 @@ class Core extends StylingCard {
           $css .= ".fluid-boxes .color-variation-2{background-color:{$fl_box_bg_2}}";
           $css .= ".link-tours .link-tour-wrapper a{background-color:{$trip_link_bg}}";
 
-        $css .= '</style>';
+        // $css .= '</style>';
 
 			}
 		} else {
