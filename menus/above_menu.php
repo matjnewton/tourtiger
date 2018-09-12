@@ -39,6 +39,9 @@
                                    <?php if($icon == 'pinterest'): ?>
                                    <i class="fa fa-pinterest-square fa-lg"></i>
                                    <?php endif; ?>
+                                   <?php if($icon == 'tripadvisor'): ?>
+                                   <i class="fa fa-tripadvisor fa-lg"></i>
+                                   <?php endif; ?>
                                    <?php if($icon == 'twitter'): ?>
                                    <i class="fa fa-twitter-square fa-lg"></i>
                                    <?php endif; ?>
@@ -59,6 +62,9 @@
                                    <?php endif; ?>
                                  <?php if($icon == 'yelp'): ?>
                                    <i class="fa fa-yelp fa-lg"></i>
+                                 <?php endif; ?>
+                                 <?php if($icon == 'tripadvisor'): ?>
+                                   <i class="fa fa-tripadvisor fa-lg"></i>
                                  <?php endif; ?>
                                </a>
                            </li>

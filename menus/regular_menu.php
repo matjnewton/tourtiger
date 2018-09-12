@@ -46,6 +46,9 @@
                                  <?php if($icon == 'yelp'): ?>
                                    <i class="fa fa-yelp fa-lg"></i>
                                  <?php endif; ?>
+                                 <?php if($icon == 'tripadvisor'): ?>
+                                   <i class="fa fa-tripadvisor fa-lg"></i>
+                                 <?php endif; ?>
                                </a>
                            </li>
                            <?php endwhile; ?> 

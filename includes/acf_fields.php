@@ -1445,7 +1445,8 @@ if( function_exists('acf_add_local_field_group') ):
               'linkedin'    => 'linkedin',
               'google-plus' => 'google-plus',
               'wechat'      => 'wechat',
-              'yelp'        => 'yelp'
+              'yelp'        => 'yelp',
+              'tripadvisor' => 'tripadvisor'
             ),
             'default_value' => array (
             ),

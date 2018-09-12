@@ -35,6 +35,7 @@ if ( get_field( 'social_media', 'option' ) && ( $use_media == true ) ) :
 
                 case 'instagram':
                 case 'yelp':
+                case 'tripadvisor':
                   echo "<i class='fa fa-{$icon} fa-lg'></i>";
                   break;
 
