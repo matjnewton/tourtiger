@@ -1658,3 +1658,11 @@ iframe {
 .book-btn2-product {
     z-index: 9;
 }
+
+.slider-pro {
+    max-width: 100%;
+}
+
+.main-nav-wrapper .menu-main-nav-container + .menu-main-nav-container {
+    display: none;
+}
