@@ -256,10 +256,10 @@ else :
           <?php
           $integrate_getinsellout = get_option( 'options_getinsellout' );
           if($integrate_getinsellout): ?>
-            <a class="poweredby" href="http://getinsellout.com"><img src="<?php bloginfo('stylesheet_directory');?>/images/poweredbygiso.png" /></a>
+            <a class="poweredby" href="https://getinsellout.com"><img src="<?php bloginfo('stylesheet_directory');?>/images/poweredbygiso.png" /></a>
           <?php else: ?>
             <strong>
-              <a href="http://www.tourismtiger.com/">Website by Tourismtiger</a>
+              <a href="https://www.tourismtiger.com/">Website by Tourismtiger</a>
             </strong>
           <?php endif; ?>
         </div>
