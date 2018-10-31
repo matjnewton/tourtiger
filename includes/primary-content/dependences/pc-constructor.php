@@ -303,7 +303,7 @@ acf_add_local_field_group(array (
                               'required' => 0,
                               'conditional_logic' => 0,
                               'wrapper' => array (
-                                'width' => '50',
+                                'width' => '33',
                                 'class' => '',
                                 'id' => '',
                               ),
@@ -315,6 +315,25 @@ acf_add_local_field_group(array (
                               'layout' => 'horizontal',
                             ),
                             array (
+                              'key' => 'field_content-padding',
+                              'label' => 'Padding style',
+                              'name' => 'tour_content-padding',
+                              'type' => 'select',
+                              'instructions' => '',
+                              'required' => 0,
+                              'conditional_logic' => 0,
+                              'wrapper' => array (
+                                'width' => '33',
+                                'class' => '',
+                                'id' => '',
+                              ),
+                              'choices' => array(
+                                'medium' => 'Medium',
+                                'none' => 'None',
+                              ),
+                              'medium' => 'style-one',
+                            ),
+                            array (
                               'key' => 'field_content-border',
                               'label' => 'Column border',
                               'name' => 'tour_content-border',
@@ -323,7 +342,7 @@ acf_add_local_field_group(array (
                               'required' => 0,
                               'conditional_logic' => 0,
                               'wrapper' => array (
-                                'width' => '50',
+                                'width' => '33',
                                 'class' => '',
                                 'id' => '',
                               ),

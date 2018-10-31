@@ -1,6 +1,7 @@
 <?php 
 
 	$cc_style = get_sub_field( 'tour_content-style' );
+	$cc_padding = get_sub_field( 'tour_content-padding' );
 	$tour_column_content_classes .= ' pc--c__content ' . $cc_style . ' ';
 
 	$border = array ( 
@@ -12,6 +13,7 @@
 	);
 
 	$tour_column_content_classes .= $border['is'];
+	$tour_column_content_classes .= $cc_padding ? "pc--c__padding_{$cc_padding}" : '';
 
 ?>
 
