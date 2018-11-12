@@ -2007,3 +2007,13 @@ function get_advanced_footer_column_acf() {
       break;
   endswitch;
 }
+
+function set_third_party_assets() {
+  $the_fly_book_account_id = get_field('the_fly_book_account_id','apikey');
+
+  if ($the_fly_book_account_id) :
+    echo "<script src='https://go.theflybook.com/custom/bootstrapper/flybookbootstrap.js' defer></script>";
+  endif;
+}
+
+add_action('wp_head', 'set_third_party_assets', 49);
