@@ -1,4 +1,21 @@
-<?php 
+<?php
+
+function get_hero_area_button_options() {
+  $the_fly_booking_api = get_field('the_fly_book_account_id','apikey');
+
+  $array = [
+    'Custom' => 'Custom',
+    'new-tab' => 'Open in new tab',
+    'iframe-popup' => 'iFrame Popup',
+    'Video' => 'Video',
+    'Search Box' => 'Search Box',
+  ];
+
+  if ($the_fly_booking_api)
+    $array['the_fly_booking'] = 'The Fly Booking Button';
+
+  return $array;
+}
 
 acf_add_local_field_group(array (
 	'key' => 'pc_hero_area_root',
@@ -1339,13 +1356,7 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'choices' => array (
-                'Custom' => 'Custom',
-                'new-tab' => 'Open in new tab',
-								'iframe-popup' => 'iFrame Popup',
-								'Video' => 'Video',
-								'Search Box' => 'Search Box',
-							),
+							'choices' => get_hero_area_button_options(),
 						),
 						array (
 							'key' => 'pc2131012133',
@@ -1617,11 +1628,7 @@ acf_add_local_field_group(array (
 							'wrapper' => array (
 								'width' => '33',
 							),
-							'choices' => array (
-								'Custom' => 'Custom',
-                'new-tab' => 'Open in new tab',
-								'iframe-popup' => 'iFrame Popup',
-							),
+							'choices' => get_hero_area_button_options(),
 						),
 						array (
 							'key' => 'pc2131012133_addt',

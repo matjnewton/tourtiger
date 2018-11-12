@@ -224,6 +224,27 @@ if(function_exists('acf_add_options_sub_page')) {
 				'readonly' => 0,
 				'disabled' => 0,
 			),
+			array (
+				'key' => 'field_58bd2s3a93sd2',
+				'label' => 'The Fly Book Account ID',
+				'name' => 'the_fly_book_account_id',
+				'type' => 'text',
+				'instructions' => 'get_field(\'the_fly_book_account_id\',\'apikey\');',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => 'e.g. 243',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'readonly' => 0,
+				'disabled' => 0,
+			),
 		),
 		'location' => array (
 			array (
