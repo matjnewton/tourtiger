@@ -2012,6 +2012,7 @@ function set_third_party_assets() {
   $the_fly_book_account_id = get_field('the_fly_book_account_id','apikey');
 
   if ($the_fly_book_account_id) :
+    echo "<link rel='stylesheet' href='https://go.theflybook.com/content/bootstrapper/flybookbootstrap.css' />";
     echo "<script src='https://go.theflybook.com/custom/bootstrapper/flybookbootstrap.js' defer></script>";
   endif;
 }
