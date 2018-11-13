@@ -11,7 +11,7 @@ define( "STYLING_MANAGER_DIR", PCA_DIR . '/styling/acf-styling-manager-field' );
 /**
  * Include ACF Plugins
  */
-include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-accordion.php' );
+// include_once( get_stylesheet_directory() . '/includes/plugins/acf-accordion/acf-accordion.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-rgba-color/acf-rgba-color.php' );
 include_once( get_stylesheet_directory() . '/includes/plugins/acf-typography/acf-typography.php' );
 
