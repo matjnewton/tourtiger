@@ -277,9 +277,6 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                  */
                 case 'date':
                   switch ($field['dateFormat']) :
-                    case 'mdy':
-                      $field['dateFormat'] = 'mm/dd/yyyy';
-                      break;
                     case 'd-m-y':
                       $field['dateFormat'] = 'DD-MM-YYYY';
                       break;
@@ -302,8 +299,11 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                       $field['dateFormat'] = 'YYYY.MM.DD';
                       break;
                     case 'dmy':
-                    default;
                       $field['dateFormat'] = 'DD/mm/yyyy';
+                      break;
+                    case 'mdy':
+                    default;
+                      $field['dateFormat'] = 'mm/dd/yyyy';
                       break;
                   endswitch;
 

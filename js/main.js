@@ -354,10 +354,15 @@
 		var $sliderPro = $('.slider-pro');
 		var $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
     var url =  $coverImage.attr('src');
+
     var img = new Image();
 
-    img.onload = function() { $sliderPro.width(img.width); }
-    img.src = url;
+    if (typeof url !== 'undefined') {
+      img.onload = function () {
+        $sliderPro.width(img.width);
+      };
+      img.src = url;
+    }
 
 		/**
 		 * Init slick carousel
