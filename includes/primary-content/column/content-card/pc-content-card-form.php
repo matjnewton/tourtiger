@@ -157,6 +157,7 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                  * Google reCaptcha
                  */
                 case 'gf_no_captcha_recaptcha':
+                case 'captcha':
                   $recaptcha = insert_recaptcha_html();
                   echo $recaptcha;
                   break;
