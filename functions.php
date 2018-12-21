@@ -94,8 +94,7 @@ function tourtiger_scripts_method() {
 		
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), $theme->get( 'Version' ), true);
 
-   if ( file_exists($uploads_dir['path'] . '/core-styles.min.css') )
-		  wp_enqueue_style('core-styles', $uploads_dir['url'] . '/core-styles.min.css');
+    wp_enqueue_style('core-styles', $uploads_dir['url'] . '/core-styles.min.css');
 
 
 		if ( get_field('google_maps','apikey')  ) :
@@ -2018,3 +2017,21 @@ function set_third_party_assets() {
 }
 
 add_action('wp_head', 'set_third_party_assets', 49);
+
+
+/* ---------------------------------------------------------------------------
+ * Set hreflang="x-default" with WPML
+ * --------------------------------------------------------------------------- */
+add_filter('wpml_alternate_hreflang', 'wps_head_hreflang_xdefault', 10, 2);
+function wps_head_hreflang_xdefault($url, $lang_code) {
+
+  if($lang_code == apply_filters('wpml_default_language', NULL )) {
+
+    echo '<link rel="alternate" href="' . $url . '" hreflang="x-default" />'.PHP_EOL;
+  }
+
+  return $url;
+}
+
+
+
