@@ -436,15 +436,15 @@ class Core extends StylingCard {
         //$css .= '<style>';
 
           if ($nav_btn_bg) {
-            $css .= "#menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {background-color:{$nav_btn_bg}!important;}";
+            $css .= ".book-btn > *, #menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {background-color:{$nav_btn_bg}!important;}";
           }
 
           if ($nav_btn_bg_h) {
-            $css .= "#menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > *:hover {background-color:{$nav_btn_bg_h}!important;}";
+            $css .= ".book-btn > *, #menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > *:hover {background-color:{$nav_btn_bg_h}!important;}";
           }
 
           if ($nav_btn_color) {
-            $css .= "#menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {color:{$nav_btn_color}!important;}";
+            $css .= ".book-btn > *, #menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {color:{$nav_btn_color}!important;}";
           }
 
           $css .= $base_wrapper_bs ? ".site-container{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 1px 4px rgba(0,0,0,0.45);}" : '';
