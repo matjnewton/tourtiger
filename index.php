@@ -30,6 +30,9 @@ function tourtiger_sub_contents(){ ?>
 
                     <?php endwhile; // end of the loop. ?>
                 </ul>
+
+                    <?php pagination_appear();?>
+
                 <?php if ( function_exists('wp_pagenavi') ) { ?>
                 <div class="page-nav-wrapper">
 			 <?php wp_pagenavi(); ?>
