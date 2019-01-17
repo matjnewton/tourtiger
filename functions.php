@@ -34,7 +34,7 @@ function tourtiger_scripts_method() {
 
         wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
         wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),null, 'all');
-		$uploads_dir = wp_upload_dir(); 
+		$uploads_dir = wp_upload_dir();
         wp_register_style('theme_prdctn', $uploads_dir['baseurl'] . '/wp-sass-cache/theme.css', array(),'all');
         wp_register_style('compass', get_stylesheet_directory_uri() .'/css/screen.css', array(),null, 'all');
         wp_register_style('bootstrap_select', get_stylesheet_directory_uri() .'/css/bootstrap-select.css', array(),null, 'all');
@@ -43,16 +43,16 @@ function tourtiger_scripts_method() {
         //wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(),'20120285', 'all' );
 		//wp_enqueue_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), 'v3.1.1', true );
 		//wp_register_script('ie_row_fix', get_stylesheet_directory_uri() . '/js/ie-row-fix.js', array('jquery'), '1.0', true);
-		
+
 		wp_register_script('respond', get_stylesheet_directory_uri() . '/js/respond.min.js', array('jquery'), null, true);
 		wp_register_script('respond_matchmedia', get_stylesheet_directory_uri() . '/js/respond.matchmedia.addListener.min.js', array('jquery'), null, true);
 		wp_register_script('booking_hound_api', get_stylesheet_directory_uri() . '/js/booking-hound-api.js', array(), false, true);
-		
+
 		wp_register_script('raty', get_stylesheet_directory_uri() . '/js/jquery.raty.min.js', array('jquery'), null, true);
 		wp_register_script('scrollit', get_stylesheet_directory_uri() . '/js/scrollIt.min.js', array('jquery'), null, true);
 		wp_register_script('magnific_popup', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
 		wp_register_script('flexslider_js', get_stylesheet_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), null, true);
-		
+
 		wp_register_script('slick-slider', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), null, true);
 
 		wp_register_script('match_height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), null, true);
@@ -60,7 +60,7 @@ function tourtiger_scripts_method() {
 		wp_register_script('browser_selector', get_stylesheet_directory_uri() . '/js/css_browser_selector.js', array('jquery'), null, false);
 		//wp_register_script('vendor', get_stylesheet_directory_uri() . '/js/vendor.js', array('jquery'), '2.8.3', false);
 		//wp_register_script('plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array('jquery'), '2.8.3', false);
-		
+
 		wp_register_script('bootstrap_selectjs', get_stylesheet_directory_uri() . '/js/bootstrap-select.js', array('jquery'), null, true);
 		//wp_register_script('customjs', get_stylesheet_directory_uri() . '/js/server-custom.js', array('jquery'), '1.2.8', true);
 		wp_register_script('custom_two', get_stylesheet_directory_uri() . '/js/custom2.js', array('jquery'), null, true);
@@ -68,7 +68,7 @@ function tourtiger_scripts_method() {
 		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
 		//wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
 		wp_register_script('rezdy_modal', get_stylesheet_directory_uri() . '/inc/init_api/js/rezdy.min.js', array('jquery'), null, true);
-		
+
 		$integrate_orioly = get_field('orioly','option');
 		$integrate_trekksoft = get_field('trekksoft','option');
 		$trekksoft_account = get_field('trekksoft_account','option');
@@ -76,22 +76,22 @@ function tourtiger_scripts_method() {
 		$integrate_rezdy = get_field('rezdy','option');
 		$integrate_regiondo = get_field('regiondo','option');
 		$integrate_zozi = get_field('zozi','option');
-		
+
 		if($integrate_orioly):
         wp_register_script('orioly', ("https://book-now.orioly.com/scripts/book.js"), array(), null, true);
         endif;
-        
+
 		if($integrate_trekksoft && $trekksoft_account):
 		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
 		endif;
-		
+
 		if($integrate_xola):
 		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
 		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), null, false);
 		endif;
 
     $theme = wp_get_theme();
-		
+
 		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), $theme->get( 'Version' ), true);
 
     wp_enqueue_style('core-styles', $uploads_dir['url'] . '/core-styles.min.css');
@@ -100,17 +100,17 @@ function tourtiger_scripts_method() {
 		if ( get_field('google_maps','apikey')  ) :
 		  wp_register_script( "api-key-maps", "https://maps.googleapis.com/maps/api/js?key=" . get_field('google_maps','apikey'), array(), null, true);
 		endif;
-		
-		
+
+
 		if($integrate_regiondo):
 		wp_register_script('regiondo_btn', ("https://cdn.regiondo.net/js/integration/regiondo-button.js"), array(), null, true);
 		endif;
-		
+
 		if($integrate_zozi):
 		wp_register_script('zozi_btn', ("https://a.zozi.com/assets/widgets/bookit.js"), array(), null, true);
 		wp_register_script('zozi_lightbox_btn_launcher', ("https://a.zozi.com/assets/widgets/lightbox-button-launcher.js"), array(), null, true);
 		endif;
-		
+
 		wp_enqueue_script( 'jquery' );
 		/*wp_register_script('ie8js', get_stylesheet_directory_uri() .'/js/ie8.js', array('jquery'), '1.0', false);
 		wp_enqueue_script( 'ie8js' );
@@ -122,33 +122,33 @@ function tourtiger_scripts_method() {
 		wp_enqueue_script('colorbox');
 		wp_enqueue_script('application1');
 		endif;
-		
+
 		if($integrate_orioly):
 		wp_enqueue_script('orioly');
 		endif;
-		
+
 		if($integrate_trekksoft && $trekksoft_account):
 		wp_enqueue_script('trekksoft');
 		endif;
-		
+
 		if($integrate_rezdy):
 		wp_enqueue_script('rezdy_modal');
 		endif;
-		
+
 		//if($integrate_xola):
 		wp_enqueue_script('xola_checkout');
 		wp_enqueue_script('xola_crossdomain');
 		//endif;
-		
+
 		if($integrate_regiondo):
 		wp_enqueue_script('regiondo_btn');
 		endif;
-		
+
 		if($integrate_zozi):
 		wp_enqueue_script('zozi_btn');
 		wp_enqueue_script('zozi_lightbox_btn_launcher');
 		endif;
-		
+
 		wp_enqueue_style('bootstrap');
 		wp_enqueue_style('compass');
 		wp_enqueue_style('bootstrap_select');
@@ -162,27 +162,27 @@ function tourtiger_scripts_method() {
 		wp_enqueue_style('theme_prdctn');
 		endif;
 		wp_enqueue_script( 'respond' );
-		     
+
 		wp_enqueue_script( 'respond_matchmedia' );
 		wp_enqueue_script( 'raty' );
 		wp_enqueue_script( 'scrollit' );
 		wp_enqueue_script( 'magnific_popup' );
 		wp_enqueue_script( 'flexslider_js' );
-		
-		
+
+
 		wp_enqueue_script( 'match_height' );
 		wp_enqueue_script( 'modernizr' );
 		//wp_enqueue_script('browser_selector');
 		//wp_enqueue_script( 'vendor' );
 		//wp_enqueue_script( 'plugins' );
-		
+
 		wp_enqueue_script('bootstrap_selectjs');
 		//wp_enqueue_script( 'customjs' );
 		//wp_enqueue_script( 'custom_two' );
 		wp_enqueue_script('slick-slider');
 		wp_enqueue_script( 'mainjs' );
 
-		wp_localize_script( 'mainjs', 'global_vars', array( 
+		wp_localize_script( 'mainjs', 'global_vars', array(
 			'postid'  => get_the_ID(),
 			'nonce'   => wp_create_nonce( 'nonce' ),
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -195,8 +195,8 @@ function tourtiger_scripts_method() {
 			'siteurl' => get_bloginfo('url'),
 			'is_admin' => current_user_can('edit_posts')
 		) );
-		
-		if ( is_page_template( 'page-templates/test-pc.php' ) ) 
+
+		if ( is_page_template( 'page-templates/test-pc.php' ) )
 			wp_enqueue_script( 'api-key-maps' );
 	}
 }
@@ -204,17 +204,17 @@ function tourtiger_scripts_method() {
 function bgmpShortcodeCalled()
 {
     global $post;
-    
+
     $shortcodePageSlugs = array(
         'contact-us',
         'about-us'
     );
-    
+
     $queried_post_type = get_query_var('post_type');
     if ( (is_single() && 'tour' ==  $queried_post_type) || is_page_template('page-templates/front-page.php') || is_page_template('page-templates/front-page3.php') ) {
       add_filter( 'bgmp_map-shortcode-called', '__return_true' );
     }
-    
+
     if( $post )
         if( in_array( $post->post_name, $shortcodePageSlugs ) )
             add_filter( 'bgmp_map-shortcode-called', '__return_true' );
@@ -225,7 +225,7 @@ function regiondo_script_loader_tag( $tag, $handle ){
     if ( $handle == 'regiondo_btn' ) {
         return str_replace( '<script', '<script id="regiondo-button-js" async defer', $tag );
     }
-    return $tag;    
+    return $tag;
 }
 add_filter( 'script_loader_tag', 'regiondo_script_loader_tag', 10 ,2 );
 
@@ -272,14 +272,14 @@ add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation 
 //* Wrap .nav-secondary in a custom div
 add_filter( 'genesis_do_subnav', 'genesis_child_subnav', 10, 3 );
 function genesis_child_subnav($subnav_output, $subnav, $args) {
- 
+
 return '<section class="secondary-nav-wrapper"><div class="hidden-xs container"><div class="row"><div class="col col-sm-12">' . $subnav_output . '</div></div></div></section>';
- 
+
 }
 
 add_action( 'wp_footer', 'mycustom_post_info', 9 );
 function mycustom_post_info(){
-    
+
 }
 
 /*add_theme_support( 'custom-header', array(
@@ -417,19 +417,19 @@ function tourtiger_footer(){
 
 //* Remove content/sidebar layout
 //genesis_unregister_layout( 'content-sidebar' );
- 
+
 //* Remove sidebar/content layout
 genesis_unregister_layout( 'sidebar-content' );
- 
+
 //* Remove content/sidebar/sidebar layout
 genesis_unregister_layout( 'content-sidebar-sidebar' );
- 
+
 //* Remove sidebar/sidebar/content layout
 genesis_unregister_layout( 'sidebar-sidebar-content' );
- 
+
 //* Remove sidebar/content/sidebar layout
 genesis_unregister_layout( 'sidebar-content-sidebar' );
- 
+
 //* Remove full-width content layout
 //genesis_unregister_layout( 'full-width-content' );
 
@@ -446,12 +446,12 @@ function get_read_more_link() {
 {
 	$settings['title'] = 'Global';
 	$settings['pages'] = array('Sidebar', 'Footer', 'Company details', 'Code snippets');
- 
+
 	return $settings;
 }
- 
+
 add_filter('acf/options_page/settings', 'my_acf_options_page_settings');*/
-if(function_exists('acf_add_options_page')) { 
+if(function_exists('acf_add_options_page')) {
 
 	acf_add_options_page();
 	acf_add_options_sub_page('Blog Hero');
@@ -463,13 +463,13 @@ if(function_exists('acf_add_options_page')) {
 }
 
 function acf_load_third_party_field_choices( $field ) {
-    
+
     // reset choices
     $field['choices'] = array();
-    
-    
+
+
     // get the textarea value from options page without any formatting
-    
+
     $integrate_xola = get_field('integrate_xola_with_this_website','option');
     $integrate_peek = get_field('integrate_peek_with_this_website','option');
     $integrate_fareharbor = get_field('fareharbor','option');
@@ -479,7 +479,7 @@ function acf_load_third_party_field_choices( $field ) {
     $integrate_regiondo = get_field('regiondo','option');
     $integrate_orioly = get_field('orioly','option');
     $integrate_zozi = get_field('zozi','option');
-    
+
     if($integrate_xola):
     $choices = get_field('xola_values', 'option', false);
     elseif($integrate_peek):
@@ -502,26 +502,26 @@ function acf_load_third_party_field_choices( $field ) {
     // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices);
 
-    
+
     // remove any unwanted white space
     $choices = array_map('trim', $choices);
 
-    
+
     // loop through array and add to field 'choices'
     if( is_array($choices) ) {
-        
+
         foreach( $choices as $choice ) {
-            
+
             $field['choices'][ $choice ] = $choice;
-            
+
         }
-        
+
     }
-    
+
 
     // return the field
     return $field;
-    
+
 }
 
 add_filter('acf/load_field/name=third_party', 'acf_load_third_party_field_choices');
@@ -550,186 +550,186 @@ function tourtiger_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css">' . "\n";
-        
+
         $wbgc = get_option('wbgc');
         if($wbgc != '' && $wbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-container {background: '.$wbgc.'; }' . "\n";
         elseif($wbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-container {background: none; }' . "\n";
         endif;
-        
+
         $ahabgc = get_option('ahabgc');
         if($ahabgc != '' && $ahabgc != 'rgba(0, 0, 0, 0)'):
         echo '	.above-header {background: '.$ahabgc.'; }' . "\n";
         elseif($ahabgc == 'rgba(0, 0, 0, 0)'):
         echo '	.above-header {background: none; }' . "\n";
         endif;
-        
+
         $hbgc = get_option('hbgc');
         if($hbgc != '' && $hbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .site-header .header-bar, .site-container .site-header .header-bar-wrapper{background: '.$hbgc.'; }' . "\n";
         elseif($hbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .site-header .header-bar, .site-container .site-header .header-bar-wrapper{background: none; }' . "\n";
         endif;
-        
-        
-        
+
+
+
         $pmsbgc = get_option('pmsbgc');
         if($pmsbgc != '' && $pmsbgc != 'rgba(0, 0, 0, 0)'):
         echo ' .main-nav-wrapper .genesis-nav-menu .sub-menu a{background: '.$pmsbgc.';}' . "\n";
         elseif($pmsbgc == 'rgba(0, 0, 0, 0)'):
         echo '.main-nav-wrapper .genesis-nav-menu .sub-menu a{background: none;}' . "\n";
         endif;
-        
+
         $mnhctabgc= get_option('mnhctabgc');
         if($mnhctabgc != '' && $mnhctabgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .genesis-nav-menu .book-btn  {background: '.$mnhctabgc.'; }' . "\n";
         elseif($mnhctabgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .genesis-nav-menu .book-btn {background: none;}' . "\n";
         endif;
-        
+
         $bwsmbgc = get_option('bwsmbgc');
         if($bwsmbgc != '' && $bwsmbgc != 'rgba(0, 0, 0, 0)'):
         echo ' .secondary-nav-wrapper .container{background: '.$bwsmbgc.';}' . "\n";
         elseif($bwsmbgc == 'rgba(0, 0, 0, 0)'):
         echo '.secondary-nav-wrapper .container{background: none;}' . "\n";
         endif;
-        
-        
+
+
         $smsbgc = get_option('smsbgc');
         if($smsbgc != '' && $smsbgc != 'rgba(0, 0, 0, 0)'):
         echo ' .secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background: '.$smsbgc.';}' . "\n";
         elseif($smsbgc == 'rgba(0, 0, 0, 0)'):
         echo '.secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background: none;}' . "\n";
         endif;
-        
+
         $mtbbgc = get_option('mtbbgc');
         if($mtbbgc != '' && $mtbbgc != 'rgba(0, 0, 0, 0)'):
         echo ' .navbar .navbar-toggle{background: '.$mtbbgc.';}' . "\n";
         elseif($mtbbgc == 'rgba(0, 0, 0, 0)'):
         echo '.navbar .navbar-toggle{background: none;}' . "\n";
         endif;
-        
+
         $mtbhbgc = get_option('mtbhbgc');
         if($mtbhbgc != '' && $mtbhbgc != 'rgba(0, 0, 0, 0)'):
         echo ' .navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus{background: '.$mtbhbgc.';}' . "\n";
         elseif($mtbhbgc == 'rgba(0, 0, 0, 0)'):
         echo '.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus{background: none;}' . "\n";
-        endif;    
-        
+        endif;
+
         $himgt= get_option('himgt');
         if($himgt != '' && $himgt != 'rgba(0, 0, 0, 0)'):
         echo '	.tint{background: '.$himgt.'; }' . "\n";
         elseif($himgt == 'rgba(0, 0, 0, 0)'):
         echo '	.tint{background: none; }' . "\n";
         endif;
-        
+
         $timgt= get_option('timgt');
         if($timgt != '' && $timgt != 'rgba(0, 0, 0, 0)'):
         echo '	.tile-tint{background: '.$timgt.'; }' . "\n";
         elseif($timgt == 'rgba(0, 0, 0, 0)'):
         echo '	.tile-tint{background: none; }' . "\n";
         endif;
-        
+
         $htbgc= get_option('htbgc');
         if($htbgc != '' && $htbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.banner-top h1 span, .banner-top h2 span, .tour-2 .name {background: '.$htbgc.'; }' . "\n";
         elseif($htbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.banner-top h1 span, .banner-top h2 span, .tour-2 .name {background: none; }' . "\n";
         endif;
-        
+
         $hcbgc= get_option('hcbgc');
         if($hcbgc != '' && $hcbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.banner-top li span, .banner-top p span {background: '.$hcbgc.' !important; }' . "\n";
         elseif($hcbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.banner-top li span, .banner-top p span {background: none !important; }' . "\n";
         endif;
-        
+
         $hctabgc= get_option('hctabgc');
         if($hctabgc != '' && $hctabgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .book-btn-wrapper .dropdown-menu, .site-container .book-btn-wrapper .btn-default.book-btn, .site-container .book-btn  {background: '.$hctabgc.'; }' . "\n";
         elseif($hctabgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .book-btn-wrapper .dropdown-menu, .site-container .book-btn-wrapper .btn-default.book-btn, .site-container .book-btn {background: none;}' . "\n";
         endif;
-        
+
         $podfbgc= get_option('podfbgc');
         if($podfbgc != '' && $podfbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.home .banner-bottom .container {background: '.$podfbgc.'; }' . "\n";
         elseif($podfbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.home .banner-bottom .container {background: none; }' . "\n";
         endif;
-        
+
         $podtbgc= get_option('podtbgc');
         if($podtbgc != '' && $podtbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.banner-bottom .container {background: '.$podtbgc.'; }' . "\n";
         elseif($podtbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.banner-bottom .container {background: none; }' . "\n";
         endif;
-        
+
         $ftabgc= get_option('ftabgc');
         if($ftabgc != '' && $ftabgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .featured-tours .view-tour-btn .xola-custom, .view-tour-btn a {background: '.$ftabgc.'; }' . "\n";
         elseif($ftabgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .featured-tours .view-tour-btn .xola-custom, .view-tour-btn a {background: none; }' . "\n";
         endif;
-        
+
         $cabgc= get_option('cabgc');
         if($cabgc != '' && $cabgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-inner .content {background: '.$cabgc.'; }' . "\n";
         elseif($cabgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-inner .content {background: none; }' . "\n";
         endif;
-        
+
         $facbgc= get_option('facbgc');
         if($facbgc != '' && $facbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.featured-tours .container, .featured-tours-2 .position-wrapper, .featured-section .container {background: '.$facbgc.'; }' . "\n";
         elseif($facbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.featured-tours .container, .featured-tours-2 .position-wrapper, .featured-section .container {background: none; }' . "\n";
         endif;
-        
+
         $ccbgc= get_option('ccbgc');
         if($ccbgc != '' && $ccbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.testimonials .container, .reasons .container, .single-tour .left-col, .page-template-default .left-col, .page-template-page-templatestestimonials-php .left-col, .page-template-page-templatestours-php .left-col, .blog-left-col, .faq-page-content .container, .team-members .container, .single-tour .right-col>div, .page-template-default .right-col>div, .page-template-page-templatestestimonials-php .right-col>div, .page-template-page-templatestours-php .right-col>div, .single-tour .right-col .testimonials, .page-template-default .right-col .testimonials, .blog-right-col>div, .classic-itinerary-list .num-wrapper .itinery-num{background: '.$ccbgc.'; }' . "\n";
         elseif($ccbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.testimonials .container, .reasons .container, .single-tour .left-col, .page-template-default .left-col, .page-template-page-templatestestimonials-php .left-col, .page-template-page-templatestours-php .left-col, .blog-left-col, .faq-page-content .container, .team-members .container, .single-tour .right-col>div, .page-template-default .right-col>div, .page-template-page-templatestestimonials-php .right-col>div, .page-template-page-templatestours-php .right-col>div, .single-tour .right-col .testimonials, .page-template-default .right-col .testimonials, .blog-right-col>div, .classic-itinerary-list .num-wrapper .itinery-num{background: none; }' . "\n";
         endif;
-        
+
         $cctabgc= get_option('cctabgc');
         if($cctabgc != '' && $cctabgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .book-tour-wrapper{background: '.$cctabgc.'; }' . "\n";
         elseif($cctabgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-container .book-tour-wrapper{background: none; }' . "\n";
         endif;
-        
+
         $scbgc= get_option('scbgc');
         if($scbgc != '' && $scbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.subscribe .container{background: '.$scbgc.'; }' . "\n";
         elseif($scbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.subscribe .container{background: none; }' . "\n";
         endif;
-        
+
         $tlib = get_option('tlib');
         if($tlib != '' && $tlib != 'rgba(0, 0, 0, 0)'):
         echo '	.trip-list .trip-item{background: '.$tlib.'; }' . "\n";
         elseif($tlib == 'rgba(0, 0, 0, 0)'):
         echo '	.trip-list .trip-item{background: none; }' . "\n";
         endif;
-        
+
         $fbgc= get_option('fbgc');
         if($fbgc != '' && $fbgc != 'rgba(0, 0, 0, 0)'):
         echo '	.site-footer{background: '.$fbgc.'; }' . "\n";
         elseif($fbgc == 'rgba(0, 0, 0, 0)'):
         echo '	.site-footer{background: none; }' . "\n";
         endif;
-        
+
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n"; }
 
-//add_action('wp_head', 'tourtiger_inline_css', 50); 
+//add_action('wp_head', 'tourtiger_inline_css', 50);
 
 add_action('admin_menu', 'themeoptions_admin_menu'); //action to display the menu
-function themeoptions_admin_menu() 
+function themeoptions_admin_menu()
 {
 	add_theme_page('spectrum styles', 'Spectrum styles', 'read', 'color_picker_option', 'color_picker_option_page');
 }
@@ -747,103 +747,103 @@ function load_theme_scripts() {
     wp_deregister_style( 'tourtiger' );
 }
 
-function color_picker_option_page() 
+function color_picker_option_page()
 {
 	/*This should normally go into a seperate function to provide default values for when the theme is just activated*/
-	
+
 	$wbgc = get_option('wbgc');
 	if (empty($wbgc) || $wbgc == '') {
 		add_option('wbgc', 'rgba(255,255,255,1)');
 	}
-	
+
 	$ahabgc = get_option('ahabgc');
 	if (empty($ahabgc) || $ahabgc == '') {
 		add_option('ahabgc', 'rgba(255,255,255,1)');
 	}
-		
+
 	$hbgc = get_option('hbgc');
 	if (empty($hbgc) || $hbgc == '') {
 		add_option('hbgc', 'rgba(24,68,104,1)');
 	}
-	
+
 	$smbg = get_option('smbg');
 	if (empty($smbg) || $smbg == '') {
 		add_option('smbg', 'rgba(187,173,154,1)');
 	}
-	
+
 	$pmsbgc = get_option('pmsbgc');
 	if (empty($pmsbgc) || $pmsbgc == '') {
 		add_option('pmsbgc', 'rgba(24,68,104,1)');
 	}
-	
+
 	$mnhctabgc = get_option('mnhctabgc');
 	if (empty($mnhctabgc) || $mnhctabgc == '') {
 		add_option('mnhctabgc', 'rgba(24,68,104,1)');
 	}
-	
+
 	$bwsmbgc = get_option('bwsmbgc');
 	if (empty($bwsmbgc) || $bwsmbgc == '') {
 		add_option('bwsmbgc', 'rgba(24,68,104,1)');
 	}
-	
-	
-	
+
+
+
 	$smsbgc = get_option('smsbgc');
 	if (empty($smsbgc) || $smsbgc == '') {
 		add_option('smsbgc', 'rgba(24,68,104,1)');
 	}
-	
+
 	$mtbbgc = get_option('mtbbgc');
 	if (empty($mtbbgc) || $mtbbgc == '') {
 		add_option('mtbbgc', 'rgba(116,172,223,.8)');
 	}
-	
-	
+
+
 	$mtbhbgc = get_option('mtbhbgc');
 	if (empty($mtbhbgc) || $mtbhbgc == '') {
 		add_option('mtbhbgc', 'rgba(116,172,223,.3)');
 	}
-	
+
 	$himgt = get_option('himgt');
 	if (empty($himgt) || $himgt == '') {
 		add_option('himgt', 'rgba(116,172,223,.8)');
 	}
-	
+
 	$timgt = get_option('timgt');
 	if (empty($timgt) || $timgt == '') {
 		add_option('timgt', 'rgba(116,172,223,.8)');
 	}
-	
+
 	$htbgc = get_option('htbgc');
 	if (empty($htbgc) || $htbgc == '') {
 		add_option('htbgc', 'rgba(12,50,79,.8)');
 	}
-	
+
 	$hcbgc = get_option('hcbgc');
 	if (empty($hcbgc) || $hcbgc == '') {
 		add_option('hcbgc', 'rgba(116,172,223,.8)');
 	}
-	
+
 	$hctabgc = get_option('hctabgc');
 	if (empty($hctabgc) || $hctabgc == '') {
 		add_option('hctabgc', 'rgba(194,39,47,1)');
 	}
-	
+
 	$sctabgc = get_option('sctabgc');
 	if (empty($sctabgc) || $sctabgc == '') {
 		add_option('sctabgc', 'rgba(194,39,47,1)');
 	}
-	
+
 	$podfbgc = get_option('podfbgc');
 	if (empty($podfbgc) || $podfbgc == '') {
 		add_option('podfbgc', 'rgba(116,172,223,1)');
 	}
-	
+
 	$podtbgc = get_option('podtbgc');
 	if (empty($podtbgc) || $podtbgc == '') {
 		add_option('podtbgc', 'rgba(243,245,246,1)');
 	}
-	
+
 	$ftabgc = get_option('ftabgc');
 	if (empty($ftabgc) || $ftabgc == '') {
 		add_option('ftabgc', 'rgba(194,39,47,1)');
@@ -860,45 +860,45 @@ function color_picker_option_page()
 	if (empty($cabgc) || $cabgc == '') {
 		add_option('cabgc', 'rgba(255,255,255,1)');
 	}
-	
+
 	$facbgc = get_option('facbgc');
 	if (empty($facbgc) || $facbgc == '') {
 		add_option('facbgc', 'rgba(243,245,246,1)');
 	}
-	
+
 	$ccbgc = get_option('ccbgc');
 	if (empty($ccbgc) || $ccbgc == '') {
 		add_option('ccbgc', 'rgba(255,255,255,1)');
 	}
-	
+
 	$cctabgc = get_option('cctabgc');
 	if (empty($cctabgc) || $cctabgc == '') {
 		add_option('cctabgc', 'rgba(238,240,242,1)');
 	}
-	
+
 	$scbgc = get_option('scbgc');
 	if (empty($scbgc) || $scbgc == '') {
 		add_option('scbgc', 'rgba(234,243,250,1)');
 	}
-	
+
 	$tlbb = get_option('tlbb');
 	if (empty($tlbb) || $tlbb == '') {
 		add_option('tlbb', 'rgba(70,117,206,1)');
 	}
-	
+
 	$fbgc = get_option('fbgc');
 	if (empty($fbgc) || $fbgc == '') {
 		add_option('fbgc', 'rgba(116,172,223,1)');
 	}
-	
+
 	/*The admin page*/
 	if ( isset($_POST['update_options'])) { color_picker_option_update(); }
 	?>
 	<div class="wrap">
 		<div id="icon-themes" class="icon32"><br /></div>
 		<h2>Spectrum Color picker Options</h2>
-	
-		<form method="POST" action="">	
+
+		<form method="POST" action="">
 			<table class="widefat color_picker_options">
 				<thead><tr><th colspan="2">&nbsp;</th></tr></thead>
 				<tbody>
@@ -916,7 +916,7 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Wrapper Background</th>
-					<td>	
+					<td>
 						<input type="text" id="wbgc" value="<?php if((get_option('wbgc')) != ''): echo get_option('wbgc'); else: echo 'rgba(255,255,255,1)'; endif; ?>" name="color_picker_wbgc" />
 						<div id="color_picker_wbgc"></div>
 					</td>
@@ -932,7 +932,7 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Above Header Area Background</th>
-					<td>	
+					<td>
 						<input type="text" id="ahabgc" value="<?php if((get_option('ahabgc')) != ''): echo get_option('ahabgc'); else: echo 'rgba(255,255,255,1)'; endif; ?>" name="color_picker_ahabgc" />
 						<div id="color_picker_ahabgc"></div>
 					</td>
@@ -942,7 +942,7 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Header Background</th>
-					<td>	
+					<td>
 						<input type="text" id="hbgc" value="<?php if((get_option('hbgc')) != ''): echo get_option('hbgc'); else: echo 'rgba(24,68,104,1)'; endif; ?>" name="color_picker_hbgc" />
 						<div id="color_picker_hbgc"></div>
 					</td>
@@ -952,74 +952,74 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Secondary Menu Background</th>
-					<td>	
+					<td>
 						<input type="text" id="smbg" value="<?php if((get_option('smbg')) != ''): echo get_option('smbg'); else: echo 'rgba(187,173,154,1)'; endif; ?>" name="color_picker_smbg" />
 						<div id="color_picker_smbg"></div>
 					</td>
 				</tr>
-				
+
 				<tr>
     				<td colspan="2"><h3>Main nav</h3></td>
 				</tr>
-				
+
 				<tr valign="top">
 					<th width="200px" scope="row">Submenu item Background</th>
-					<td>	
+					<td>
 						<input type="text" id="pmsbgc" value="<?php if((get_option('pmsbgc')) != ''): echo get_option('pmsbgc'); else: echo 'rgba(24,68,104,1)'; endif; ?>" name="color_picker_pmsbgc" />
 						<div id="color_picker_pmsbgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">CTA Button Background</th>
-					<td>	
+					<td>
 						<input type="text" id="mnhctabgc" value="<?php if((get_option('mnhctabgc')) != ''): echo get_option('mnhctabgc'); else: echo 'rgba(24,68,104,1)'; endif; ?>" name="color_picker_mnhctabgc" />
 						<div id="color_picker_mnhctabgc"></div>
 					</td>
 				</tr>
-				
+
 				<tr>
     				<td colspan="2"><h3>Secondary nav</h3></td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Bar wrapper Background</th>
-					<td>	
+					<td>
 						<input type="text" id="bwsmbgc" value="<?php if((get_option('bwsmbgc')) != ''): echo get_option('bwsmbgc'); else: echo 'rgba(24,68,104,1)'; endif; ?>" name="color_picker_bwsmbgc" />
 						<div id="color_picker_bwsmbgc"></div>
 					</td>
 				</tr>
-				
+
 				<tr valign="top">
 					<th width="200px" scope="row">Submenu item Background</th>
-					<td>	
+					<td>
 						<input type="text" id="smsbgc" value="<?php if((get_option('smsbgc')) != ''): echo get_option('smsbgc'); else: echo 'rgba(24,68,104,1)'; endif; ?>" name="color_picker_smsbgc" />
 						<div id="color_picker_smsbgc"></div>
 					</td>
 				</tr>
-				
+
 				<tr>
     				<td colspan="2"><h3>Mobile nav</h3></td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Toggle button Background</th>
-					<td>	
+					<td>
 						<input type="text" id="mtbbgc" value="<?php if((get_option('mtbbgc')) != ''): echo get_option('mtbbgc'); else: echo 'rgba(116,172,223,.8)'; endif; ?>" name="color_picker_mtbbgc" />
 						<div id="color_picker_mtbbgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Toggle button hover Background</th>
-					<td>	
+					<td>
 						<input type="text" id="mtbhbgc" value="<?php if((get_option('mtbhbgc')) != ''): echo get_option('mtbhbgc'); else: echo 'rgba(116,172,223,.3)'; endif; ?>" name="color_picker_mtbhbgc" />
 						<div id="color_picker_mtbhbgc"></div>
 					</td>
 				</tr>
-				
+
 				<tr>
     				<td colspan="2"><h3>CTA</h3></td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Hero CTA Button Background</th>
-					<td>	
+					<td>
 						<input type="text" id="hctabgc" value="<?php if((get_option('hctabgc')) != ''): echo get_option('hctabgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_hctabgc" />
 						<div id="color_picker_hctabgc"></div>
 					</td>
@@ -1032,46 +1032,46 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Content CTA Button Background</th>
-					<td>	
+					<td>
 						<input type="text" id="sctabgc" value="<?php if((get_option('sctabgc')) != ''): echo get_option('sctabgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_sctabgc" />
 						<div id="color_picker_sctabgc"></div>
 					</td>
 				</tr>
-				
+
 				<tr>
     				<td colspan="2"><h3>Hero Area</h3></td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Hero Image Tint</th>
-					<td>	
+					<td>
 						<input type="text" id="himgt" value="<?php if((get_option('himgt')) != ''): echo get_option('himgt'); else: echo 'rgba(116,172,223,.8)'; endif; ?>" name="color_picker_himgt" />
 						<div id="color_picker_himgt"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Hero Title Background</th>
-					<td>	
+					<td>
 						<input type="text" id="htbgc" value="<?php if((get_option('htbgc')) != ''): echo get_option('htbgc'); else: echo 'rgba(12,50,79,.8)'; endif; ?>" name="color_picker_htbgc" />
 						<div id="color_picker_htbgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Hero Content Background</th>
-					<td>	
+					<td>
 						<input type="text" id="hcbgc" value="<?php if((get_option('hcbgc')) != ''): echo get_option('hcbgc'); else: echo 'rgba(116,172,223,.8)'; endif; ?>" name="color_picker_hcbgc" />
 						<div id="color_picker_hcbgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Point of Difference Background on Front page</th>
-					<td>	
+					<td>
 						<input type="text" id="podfbgc" value="<?php if((get_option('podfbgc')) != ''): echo get_option('podfbgc'); else: echo 'rgba(116,172,223,1)'; endif; ?>" name="color_picker_podfbgc" />
 						<div id="color_picker_podfbgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Secondary Menu Background on Tour pages</th>
-					<td>	
+					<td>
 						<input type="text" id="podtbgc" value="<?php if((get_option('podtbgc')) != ''): echo get_option('podtbgc'); else: echo 'rgba(243,245,246,1)'; endif; ?>" name="color_picker_podtbgc" />
 						<div id="color_picker_podtbgc"></div>
 					</td>
@@ -1081,7 +1081,7 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Button background</th>
-					<td>	
+					<td>
 						<input type="text" id="ftabgc" value="<?php if((get_option('ftabgc')) != ''): echo get_option('ftabgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_ftabgc" />
 						<div id="color_picker_ftabgc"></div>
 					</td>
@@ -1097,7 +1097,7 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Button background</th>
-					<td>	
+					<td>
 						<input type="text" id="fbsbbgc" value="<?php if((get_option('fbsbbgc')) != ''): echo get_option('fbsbbgc'); else: echo 'rgba(194,39,47,1)'; endif; ?>" name="color_picker_fbsbbgc" />
 						<div id="color_picker_fbsbbgc"></div>
 					</td>
@@ -1113,7 +1113,7 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Background color</th>
-					<td>	
+					<td>
 						<input type="text" id="eabgc" value="<?php if((get_option('eabgc')) != ''): echo get_option('eabgc'); else: echo 'rgba(51,137,215,1)'; endif; ?>" name="color_picker_eabgc" />
 						<div id="color_picker_eabgc"></div>
 					</td>
@@ -1123,21 +1123,21 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Content Area Background</th>
-					<td>	
+					<td>
 						<input type="text" id="cabgc" value="<?php if((get_option('cabgc')) != ''): echo get_option('cabgc'); else: echo 'rgba(255,255,255,1)'; endif; ?>" name="color_picker_cabgc" />
 						<div id="color_picker_cabgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Content Containers Background</th>
-					<td>	
+					<td>
 						<input type="text" id="ccbgc" value="<?php if((get_option('ccbgc')) != ''): echo get_option('ccbgc'); else: echo 'rgba(255,255,255,1)'; endif; ?>" name="color_picker_ccbgc" />
 						<div id="color_picker_ccbgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Featured Area Container Background</th>
-					<td>	
+					<td>
 						<input type="text" id="facbgc" value="<?php if((get_option('facbgc')) != ''): echo get_option('facbgc'); else: echo 'rgba(243,245,246,1)'; endif; ?>" name="color_picker_facbgc" />
 						<div id="color_picker_facbgc"></div>
 					</td>
@@ -1150,21 +1150,21 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Tile Image Tint</th>
-					<td>	
+					<td>
 						<input type="text" id="timgt" value="<?php if((get_option('timgt')) != ''): echo get_option('timgt'); else: echo 'rgba(116,172,223,.8)'; endif; ?>" name="color_picker_timgt" />
 						<div id="color_picker_timgt"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">CTA Container Background</th>
-					<td>	
+					<td>
 						<input type="text" id="cctabgc" value="<?php if((get_option('cctabgc')) != ''): echo get_option('cctabgc'); else: echo 'rgba(238,240,242,1)'; endif; ?>" name="color_picker_cctabgc" />
 						<div id="color_picker_cctabgc"></div>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Subscribe Container Background</th>
-					<td>	
+					<td>
 						<input type="text" id="scbgc" value="<?php if((get_option('scbgc')) != ''): echo get_option('scbgc'); else: echo 'rgba(234,243,250,1)'; endif; ?>" name="color_picker_scbgc" />
 						<div id="color_picker_scbgc"></div>
 					</td>
@@ -1202,14 +1202,14 @@ function color_picker_option_page()
 				</tr>
 				<tr valign="top">
 					<th width="200px" scope="row">Footer Background</th>
-					<td>	
+					<td>
 						<input type="text" id="fbgc" value="<?php if((get_option('fbgc')) != ''): echo get_option('fbgc'); else: echo 'rgba(116,172,223,1)'; endif; ?>" name="color_picker_fbgc" />
 						<div id="color_picker_fbgc"></div>
 					</td>
 				</tr>
-				
+
 				</tbody>
-	
+
 				<tfoot><tr><th>&nbsp;</th><th>&nbsp;</th></tr></tfoot>
 			</table>
 			<p><input type="submit" name="update_options" value="Update Options" class="button-primary" /></p>
@@ -1217,7 +1217,7 @@ function color_picker_option_page()
 	</div>
 	<script type="text/javascript">
 		jQuery(document).ready(function($){
-		
+
 			$("#ahabgc, #wbgc, #hbgc, #smbg, #pmsbgc, #mnhctabgc, #bwsmbgc, #smsbgc, #mtbbgc, #mtbhbgc, #himgt, #timgt, #htbgc, #hcbgc, #hctabgc, #sctabgc, #podfbgc, #podtbgc, #ftabgc, #fbsbbgc, #eabgc, #cabgc, #facbgc, #ccbgc, #cctabgc, #scbgc, #tlib, #fbbcv1, #fbbcv2, #tlbb, #fbgc").spectrum({
                 showInput: true,
                 showPalette: true,
@@ -1227,11 +1227,11 @@ function color_picker_option_page()
                 showAlpha: true,
                 preferredFormat: "rgb"
             });
-            
-            			
+
+
 		});
 	</script>
-<?php 
+<?php
 }
 
 
@@ -1242,54 +1242,54 @@ function color_picker_option_update()
 	update_option('wbgc', esc_html($_POST['color_picker_wbgc']));
 	update_option('hbgc', esc_html($_POST['color_picker_hbgc']));
 	update_option('smbg', esc_html($_POST['color_picker_smbg']));
-	
+
 	update_option('pmsbgc', esc_html($_POST['color_picker_pmsbgc']));
 	update_option('mnhctabgc', esc_html($_POST['color_picker_mnhctabgc']));
 	update_option('bwsmbgc', esc_html($_POST['color_picker_bwsmbgc']));
 	update_option('smsbgc', esc_html($_POST['color_picker_smsbgc']));
-	
+
 	update_option('mtbbgc', esc_html($_POST['color_picker_mtbbgc']));
 	update_option('mtbhbgc', esc_html($_POST['color_picker_mtbhbgc']));
-	
+
 	update_option('himgt', esc_html($_POST['color_picker_himgt']));
 	update_option('timgt', esc_html($_POST['color_picker_timgt']));
 	update_option('htbgc', esc_html($_POST['color_picker_htbgc']));
 	update_option('hcbgc', esc_html($_POST['color_picker_hcbgc']));
-	
+
 	update_option('hctabgc', esc_html($_POST['color_picker_hctabgc']));
-	
+
 	$hcta_tweak = $_POST['hctabgcfill'] ? $_POST['hctabgcfill'] : '';
 	update_option('hctabgcfill', esc_html($hcta_tweak));
-	
+
 	update_option('sctabgc', esc_html($_POST['color_picker_sctabgc']));
-	
+
 	update_option('podfbgc', esc_html($_POST['color_picker_podfbgc']));
 	update_option('podtbgc', esc_html($_POST['color_picker_podtbgc']));
-	
+
 	update_option('ftabgc', esc_html($_POST['color_picker_ftabgc']));
 	update_option('fbsbbgc', esc_html($_POST['color_picker_fbsbbgc']));
 	update_option('eabgc', esc_html($_POST['color_picker_eabgc']));
-	
+
 	$shdw = $_POST['facbgcbs'] ? $_POST['facbgcbs'] : '';
 	update_option('facbgcbs', esc_html($shdw));
-	
+
 	$scshdw = $_POST['scbxshdw'] ? $_POST['scbxshdw'] : '';
 	update_option('scbxshdw', esc_html($scshdw));
-	
+
 	$devmode = $_POST['spctrmdev'] ? $_POST['spctrmdev'] : '';
 	update_option('spctrmdev', esc_html($devmode));
-	
+
 	$tweak = $_POST['ftabgcfill'] ? $_POST['ftabgcfill'] : '';
 	update_option('ftabgcfill', esc_html($tweak));
-	
+
 	$fbstweak = $_POST['fbsbbgcfill'] ? $_POST['fbsbbgcfill'] : '';
 	update_option('fbsbbgcfill', esc_html($fbstweak));
-	
+
 	update_option('cabgc', esc_html($_POST['color_picker_cabgc']));
 	update_option('facbgc', esc_html($_POST['color_picker_facbgc']));
 	update_option('ccbgc', esc_html($_POST['color_picker_ccbgc']));
 	update_option('cctabgc', esc_html($_POST['color_picker_cctabgc']));
-	
+
 	update_option('scbgc', esc_html($_POST['color_picker_scbgc']));
 	update_option('tlib', esc_html($_POST['color_picker_tlib']));
 	update_option('fbbcv1', esc_html($_POST['color_picker_fbbcv1']));
@@ -1307,8 +1307,8 @@ function tourtiger_customize_register( $wp_customize ) {
 
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'background_image' );
-    
-    
+
+
 }
 
 function language_selector_flags(){
@@ -1364,7 +1364,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
 
         $output .= $indent . '<li' . $id . $value . $class_names .'>';
 
-        
+
 
         $atts = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
@@ -1381,7 +1381,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-        
+
         $integrate_xola = get_field('integrate_xola_with_this_website','option');
         $integrate_peek = get_field('integrate_peek_with_this_website','option');
         $integrate_fareharbor = get_field('fareharbor','option');
@@ -1393,7 +1393,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_rezdy = get_field('rezdy','option');
         $integrate_regiondo = get_field('regiondo','option');
-        
+
         // get thumbnail
         $thumbnail = '';
         if ( has_post_thumbnail( $item->object_id ) && $classes[0] == 'megamenu-item') {
@@ -1401,7 +1401,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $img_url = wp_get_attachment_url( $thumb,'full' );
             $thumbnail = aq_resize( $img_url, 355, 207, true );
         }
-        
+
         // add custom data attributes for giso
         if ( $integrate_getinsellout == true && $depth == 0 && ($classes[0] == 'giso-book-btn')) { // remove if statement if depth check is not required
             // These lines adds your custom class and attribute
@@ -1410,7 +1410,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $attributes .= ' data-url="'.$getinsellout_data_url.'"';
             $attributes .= ' data-evt="'.$getinsellout_data_evt.'"';
         }
-        
+
         // add custom data attributes for peek
         /*if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
@@ -1421,11 +1421,11 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $attributes .= ' data-button-text="'.$item->title.'"';
             $attributes .= ' data-activity-gid="'.$gid.'"';
         }*/
-        
+
         if ( $integrate_rezdy == true && $depth == 0 && ($classes[0] == 'rezdy-book-btn')) {
             $attributes .= ' class="button-booking rezdy rezdy-modal"';
         }
-        
+
         if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
           $t_gid = $atts['href'];
           $gid = preg_replace('#^https?://#', '', $t_gid);
@@ -1456,11 +1456,11 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $t_xid = $atts['href'];
             $xid = preg_replace('#^https?://#', '', $t_xid);
             if($classes[1] == 'checkout' || $classes[1] == 'checkout-all' || $classes[1] == 'timeline'):
-            $def_class = 'xola-checkout'; 
+            $def_class = 'xola-checkout';
             elseif($classes[1] == 'gift'):
             $def_class = 'xola-gift';
             endif;
-            
+
             $class_attribute .= ' class="'.$def_class.' xola-custom"';
             if($classes[1] == 'checkout-all'):
                 $id_attribute .= ' data-seller="'.$xid.'"';
@@ -1469,7 +1469,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             else:
                 $id_attribute .= ' data-button-id="'.$xid.'"';
             endif;
-            
+
             $item_output = $args->before;
             $item_output .= '<div'. $class_attribute .' '.$id_attribute.'>';
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
@@ -1478,7 +1478,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         } elseif($integrate_fareharbor == true && $depth == 0 && ($classes[0] == 'fareharbor-book-btn')){
                 $t_fid = $atts['href'];
                 $fid = preg_replace('#^https?://#', '', $t_fid);
-                
+
                 if($classes[1] == 'grid'):
                 $h_attribute = ' href="https://fareharbor.com/'.$fareharbor_shortname.'/items/"';
                 $c_attribute = ' onclick="FH.open({ shortname:\''.$fareharbor_shortname.'\', fullItems: \'yes\' }); return false;"';
@@ -1489,7 +1489,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
                 $h_attribute = ' href="https://fareharbor.com/'.$fareharbor_shortname.'/items/'.$fid.'/"';
                 $c_attribute = ' onclick="FH.open({ shortname:\''.$fareharbor_shortname.'\', view: { item:'.$fid.'}, fullItems: \'yes\' }); return false;"';
                 endif;
-                
+
                 $item_output = $args->before;
                 $item_output .= '<a'. $h_attribute .''.$c_attribute.'>';
                 $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
@@ -1505,8 +1505,8 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $entryPoint = 'tour_details';
             elseif($classes[1] == 'tour_finder'):
             $entryPoint = 'tour_finder';
-            endif;        
-            
+            endif;
+
             $item_output = $args->before;
             $item_output .= '<a href="#" id="menubtn_trekksoft_'. $format1 .'">';
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
@@ -1540,7 +1540,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $item_output .= '<a'. $attributes .'><div><img src="'.$thumbnail.'" class="img-responsive" /></div><span>';
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
             $item_output .= '</span></a>';
-            $item_output .= $args->after;        
+            $item_output .= $args->after;
         } else {
             $item_output = $args->before;
             $item_output .= '<a'. $attributes .'>';
@@ -1548,10 +1548,10 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $item_output .= '</a>';
             $item_output .= $args->after;
         }
-        
+
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-    
+
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
         $class_names = $value = '';
 
@@ -1560,7 +1560,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
 
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-        
+
         $output .= apply_filters( 'walker_nav_menu_end_el', $item_output, $item, $depth, $args );
         if($classes[0] == 'megamenu'){
             $output .= "</div></div></li>\n";
@@ -1571,11 +1571,11 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
 }
 
 function my_acf_format_value( $value, $post_id, $field ) {
-	
+
 	// run do_shortcode on all textarea values
 	$value = do_shortcode($value);
-	
-	
+
+
 	// return
 	return $value;
 }
@@ -1619,20 +1619,20 @@ add_filter( 'script_loader_src', 'rem_wp_ver_css_js', 9999 );
 
 /**
  * Image insert
- * @param  integer $id     
- * @param  integer $width  
- * @param  integer $height 
+ * @param  integer $id
+ * @param  integer $width
+ * @param  integer $height
  * @param  boolean $link   optional
- * @param  [type]  $attr   
- * @param  boolean $circle 
- * @return null         
+ * @param  [type]  $attr
+ * @param  boolean $circle
+ * @return null
  */
 function tourtiger_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false ) {
 
 	if ( $circle !== false ) {
-		if ( $width > $height ) { 
+		if ( $width > $height ) {
 			$width = $height;
-		} else { 
+		} else {
 			$height = $width;
 		}
 
@@ -1643,7 +1643,7 @@ function tourtiger_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
 	echo $link ? '</a>':'';
 
-	if ( $circle !== false ) echo '</div>'; 
+	if ( $circle !== false ) echo '</div>';
 
 }
 
@@ -1651,7 +1651,7 @@ function tourtiger_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $
  * Add custom image size for product image
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'product-slider', 757, 484, false ); 
+	add_image_size( 'product-slider', 757, 484, false );
 }
 
 /**
@@ -1692,7 +1692,7 @@ endif;
 
 add_filter('body_class','add_motto_class_mobile');
 function add_motto_class_mobile( $classes ) {
-	
+
 	if( get_field( 'motto_mobile', 'options' ) )
 		$classes[] = 'show-motto-mobile';
 
@@ -1713,15 +1713,15 @@ add_action('wp_head', 'add_noindex_metatag');
 function set_styling_class($classes) {
 	global $post;
 
-	if ( is_singular( 'product' ) && get_field( 'is_dzv_prodpage_style' ) ) : 
+	if ( is_singular( 'product' ) && get_field( 'is_dzv_prodpage_style' ) ) :
 		$classes[] = get_field( 'dzv_prodpage_style' );
 	endif;
-	
-	if ( is_singular( 'testimonial' ) && get_field('is-style') ) : 
+
+	if ( is_singular( 'testimonial' ) && get_field('is-style') ) :
 	    $classes[] = get_field( 'testimonial-style' );
 	endif;
-	
-	if ( is_page_template( 'page-templates/testimonials.php' ) && get_field('is_dzv_teti_style') ) : 
+
+	if ( is_page_template( 'page-templates/testimonials.php' ) && get_field('is_dzv_teti_style') ) :
 	    $classes[] = get_field( 'dzv_teti_style' );
 	endif;
 
@@ -1745,7 +1745,7 @@ add_action('init', 'init_template_post_type');
 function init_template_post_type(){
 
     register_taxonomy('template-type', array('template'), array(
-        'label'                 => 'Template type', 
+        'label'                 => 'Template type',
         'labels'                => array(
             'name'              => 'Template types',
             'singular_name'     => 'Template type',
@@ -1753,9 +1753,9 @@ function init_template_post_type(){
             'all_items'         => 'All Types'
         ),
         'public'                => true,
-        'show_in_nav_menus'     => false, 
-        'show_ui'               => true, 
-        'show_tagcloud'         => false, 
+        'show_in_nav_menus'     => false,
+        'show_ui'               => true,
+        'show_tagcloud'         => false,
         'hierarchical'          => true,
         'show_admin_column'     => false,
         'has_archive'           => true,
@@ -1768,8 +1768,8 @@ function init_template_post_type(){
 
     register_post_type('template', array(
         'labels'                 => array(
-            'name'               => 'Templates', 
-            'singular_name'      => 'Template', 
+            'name'               => 'Templates',
+            'singular_name'      => 'Template',
             'add_new'            => 'Add new',
             'add_new_item'       => 'Add new Template',
             'edit_item'          => 'Edit Template',
@@ -2031,6 +2031,23 @@ function wps_head_hreflang_xdefault($url, $lang_code) {
   }
 
   return $url;
+}
+
+/* ------------------------------------------------------------------*/
+/* PAGINATION */
+/* this function affects pagination appearance mostly for blog page*/
+/* ------------------------------------------------------------------*/
+
+
+function pagination_appear() {
+    global $wp_query;
+    $big = 999999999; // need an unlikely integer
+    echo paginate_links( array(
+    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+    'format' => '?paged=%#%',
+    'current' => max( 1, get_query_var('paged') ),
+    'total' => $wp_query->max_num_pages
+) );
 }
 
 
