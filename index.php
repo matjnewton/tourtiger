@@ -14,17 +14,30 @@
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_sub_contents');
 function tourtiger_sub_contents(){ ?>
-<?php $site_layout = genesis_site_layout(); ?> 
-        
+<?php $site_layout = genesis_site_layout(); ?>
+
 <section class="tour-page-content">
         <div class="container">
+
+            <?php
+            /* PAGINATION */
+            global $wp_query;
+            $big = 999999999; // need an unlikely integer
+            echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $wp_query->max_num_pages
+            ) );
+            ?>
+
             <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?> blog-left-col">
                 <ul id="post-excerpts">
                     <?php while ( have_posts() ) : the_post(); ?>
 
                     <?php get_template_part( 'content', 'main' ); ?>
-                            
+
                     <?php endwhile; // end of the loop. ?>
                 </ul>
                 <?php if ( function_exists('wp_pagenavi') ) { ?>
@@ -35,46 +48,46 @@ function tourtiger_sub_contents(){ ?>
                 </div>
                 <?php if ( 'content-sidebar' == $site_layout ): ?>
                 <div class="col-sm-4 blog-right-col">
-                    
-                    
+
+
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('above-sidebar') ) : ?>
-<?php endif; ?>        
-                    
-                    
+<?php endif; ?>
+
+
                     <?php if(get_field('universal_sidebar', 'option')): ?>
                            <?php while(has_sub_field('universal_sidebar', 'option')): ?>
-                           
+
                            <?php if( get_row_layout() == 'content_editor' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php if( get_row_layout() == 'text_area' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php endwhile; ?>
                     <?php endif; ?>
-                    
+
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('below-sidebar') ) : ?>
 <?php endif; ?>
-                    
+
                 </div>
             </div>
         </div>
     </section>
-    
+
     <?php global $post; ?>
-            
+
             <?php if(get_field('tiles_area')): ?>
-            
+
             <?php while(has_sub_field('tiles_area')): ?>
             <?php
                 $section_headline = get_sub_field('section_headline');
@@ -93,7 +106,7 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
             <div class="row">
-                <?php 
+                <?php
                     $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -113,11 +126,11 @@ function tourtiger_sub_contents(){ ?>
                             break;
                     }
                     ?>
-                    
+
                     <?php
                         if (have_rows('tiles')):
                         while(have_rows('tiles')): the_row();
-                        
+
                         if( get_row_layout() == 'tours' ):
                             $pulled_specific = get_sub_field('pull_specific_from');
                             if($pulled_specific):
@@ -137,33 +150,33 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                         <?php
                         endif;
-                        
+
                         if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
-                         
+
                         endwhile;
                         endif;
-                       ?> 
-                    
-                           
+                       ?>
+
+
                 </div>
             </div>
-    </section>           
+    </section>
                 <?php endwhile; ?>
-            
+
             <?php endif; ?>
-    
+
     <?php //get_sidebar('subscribe'); ?>
     <?php endif; ?>
 <?php }
