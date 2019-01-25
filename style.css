@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.2.3
+Version: 1.2.2
 Template: genesis
 Template Version: 2.0.27
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -1130,19 +1130,19 @@ div.banner-wrapper {
     .product_content_wrapper {
         padding: 20px!important
     }
-    
+
     .product_content_wrapper.style1 .primary_content_content_card_wrap {
         padding: 27px 20px 1px!important
     }
-    
+
     .product_content_wrapper.product_title_area_details {
         padding: 0 20px 27px!important
     }
-    
+
     .style2 .primary_content_content_card_editor {
         padding: 0!important
     }
-    
+
     .product_content_wrapper ul li.primary_content_expandable_content_options_li {
         padding: 27px 0!important;
         margin: 0!important
@@ -1162,11 +1162,11 @@ div.banner-wrapper {
     .pc--r__col-5 .pc--c__content {
         padding: 0!important
     }
-    
+
     .pc--r__mar-normal.pc--r__wrap.pc--r__col-1 .pc--c {
         margin: 0!important
     }
-    
+
     .content .style2 h1.primary_content_content_card_headline,
     .content .style2 h2.primary_content_content_card_headline,
     .content .style2 h3.primary_content_content_card_headline,
@@ -1182,14 +1182,14 @@ div.banner-wrapper {
         padding: 10px!important;
         margin: 0
     }
-    
+
     .style2 .primary_content_content_card_headline_wrap {
         padding-top: 170px!important;
         background-repeat: no-repeat!important;
         height: auto!important;
         min-height: 162px!important
     }
-    
+
     .checkbox label,
     .radio label {
         padding-left: 30px!important
@@ -1212,7 +1212,7 @@ iframe {
     .ui-datepicker {
         width: 280px!important;
     }
-    
+
     .ui-datepicker td span,
     .ui-datepicker td a {
         padding: .7em .4em!important;
@@ -1239,7 +1239,7 @@ iframe {
     align-items: center;
 }
 
-.product_content_wrapper:not(.primary_content_featured-products) a:not([href="javascript:"]), 
+.product_content_wrapper:not(.primary_content_featured-products) a:not([href="javascript:"]),
 .pc--c__accordion--paragraf a {
     text-decoration: underline;
 }
