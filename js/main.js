@@ -845,3 +845,4 @@ var FbBookNowButton = function (config) {
     }
   };
 });
+
