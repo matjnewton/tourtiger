@@ -123,29 +123,10 @@ else :
   $address = get_option( 'options_address' );
   $phone_number = get_option( 'options_phone_number' );
 
-  if($address || $phone_number): ?>
+// It was here
 
-    <div class="col-sm-2">
 
-      <?php $i+=2; ?>
-      <?php if($address): ?>
-        <address>
-          <?php echo $address; ?>
-        </address>
-      <?php endif; ?>
-      <?php if($phone_number): ?>
-        <?php
-        $phone = preg_replace('/[+]/', '00', $phone_number);
-        $phone = preg_replace('/\D+/', '', $phone);
-        ?>
-        <div class="phone">
-          <a href="tel:<?php echo $phone; ?>">
-            <?php echo $phone_number; ?>
-          </a>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php        endif; ?>
+  ?>
 
   <?php
   $fa_rows = get_option( $footer_areas );
@@ -221,7 +202,37 @@ else :
       endswitch;
     endforeach;
   endif;
-  ?>
+
+
+  // Now it is here
+
+
+    if($address || $phone_number): ?>
+
+        <div class="col-sm-2">
+
+            <?php $i+=2; ?>
+            <?php if($address): ?>
+                <address>
+                    <?php echo $address; ?>
+                </address>
+            <?php endif; ?>
+            <?php if($phone_number): ?>
+                <?php
+                $phone = preg_replace('/[+]/', '00', $phone_number);
+                $phone = preg_replace('/\D+/', '', $phone);
+                ?>
+                <div class="phone">
+                    <a href="tel:<?php echo $phone; ?>">
+                        <?php echo $phone_number; ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php        endif;
+
+
+    ?>
 
   <div class="col-sm-4<?php if($i<8): ?> col-sm-offset-<?php $i=8-$i; echo $i; ?><?php endif; ?>">
     <?php $i+=4; ?>
