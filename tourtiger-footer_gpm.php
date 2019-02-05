@@ -214,9 +214,13 @@ else :
             <?php $i+=2; ?>
             <?php if($address): ?>
                 <address>
+                    <?php if (checkIfEmail($address)) { ?>
                     <a href="mailto:<?php echo $address; ?>">
                         <?php echo $address; ?>
                     </a>
+                    <?php } else {
+                        echo $address;
+                    } ?>
                 </address>
             <?php endif; ?>
             <?php if($phone_number): ?>
