@@ -236,8 +236,6 @@ else :
             <?php endif; ?>
         </div>
     <?php        endif;
-
-
     ?>
 
   <div class="col-sm-4<?php if($i<8): ?> col-sm-offset-<?php $i=8-$i; echo $i; ?><?php endif; ?>">
