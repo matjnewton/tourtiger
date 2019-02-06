@@ -114,21 +114,13 @@ else :
   <?php
   $isButtonUp = get_field('button_up', 'option');
 
-  ?>
-  <?php
-
 
   $i = (int)$col;
 
   $address = get_option( 'options_address' );
   $phone_number = get_option( 'options_phone_number' );
 
-// It was here
 
-
-  ?>
-
-  <?php
   $fa_rows = get_option( $footer_areas );
   if($fa_rows):
     foreach( (array) $fa_rows as $fa_count => $fa_row ):
@@ -203,20 +195,28 @@ else :
     endforeach;
   endif;
 
-
-  // Now it is here
-
-
     if($address || $phone_number): ?>
 
         <div class="col-sm-2">
 
             <?php $i+=2; ?>
-            <?php if($address): ?>
+            <?php
+            if($address): ?>
                 <address>
-                    <?php if (checkIfEmail($address)) { ?>
-                    <a href="mailto:<?php echo $address; ?>">
-                        <?php echo $address; ?>
+                    <?php if (checkIfEmail($address)) {
+                    $address_words = preg_split("/[\s]+/", $address);
+                    $not_email_address = ''; $email = '';
+                    foreach ($address_words as $value) {
+                            if (checkIfEmail($value)) {
+                                $email = $value;
+                            } else {
+                                $not_email_address = $not_email_address . $value . " ";
+                            }
+                        }
+                    echo $not_email_address; ?>
+                    Mail us to:<br>
+                    <a href="mailto:<?php echo $email; ?>">
+                        <?php echo $email; ?>
                     </a>
                     <?php } else {
                         echo $address;
