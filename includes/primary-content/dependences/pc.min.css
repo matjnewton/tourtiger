@@ -1,3 +1,7 @@
+.pc_hero-area__action-btn {
+    cursor: pointer;
+}
+
 .jq-checkbox,
 .jq-radio {
     position: relative;
