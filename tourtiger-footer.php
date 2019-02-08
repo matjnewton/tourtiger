@@ -17,26 +17,9 @@
     $address = get_field('address','option');
     $phone_number = get_field('phone_number','option');
 
-    if($address || $phone_number): ?>
+// It Was Here :)
 
-      <div class="col-sm-2">
-
-        <?php $i+=2; ?>
-        <?php if($address): ?>
-          <address>
-            <?php echo $address; ?>
-          </address>
-        <?php endif; ?>
-        <?php if($phone_number): ?>
-          <?php $phone = preg_replace('/\D+/', '', $phone_number); ?>
-          <div class="phone">
-            <a href="tel:<?php echo $phone; ?>">
-              <?php echo $phone_number; ?>
-            </a>
-          </div>
-        <?php endif; ?>
-      </div>
-    <?php        endif; ?>
+    ?>
 
     <?php
     if( have_rows('footer_areas','option') ):
@@ -112,6 +95,31 @@
     <?php    // no layouts found
 
     endif;
+
+    // Now it is Here
+
+
+    if($address || $phone_number): ?>
+
+        <div class="col-sm-2">
+
+            <?php $i+=2; ?>
+            <?php if($address): ?>
+                <address>
+                    <?php echo $address; ?>
+                </address>
+            <?php endif; ?>
+            <?php if($phone_number): ?>
+                <?php $phone = preg_replace('/\D+/', '', $phone_number); ?>
+                <div class="phone">
+                    <a href="tel:<?php echo $phone; ?>">
+                        <?php echo $phone_number; ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php        endif;
+
 
     ?>
 

@@ -2050,5 +2050,18 @@ function pagination_appear() {
 ) );
 }
 
+// Fixing Sup Panel Issue
+function sup_panel_fix() {
+    wp_enqueue_script('sup-panel-fix', get_stylesheet_directory_uri(). '/js/sup-panel-fix.js', NULL, 1.0, true);
+}
+add_action('wp_enqueue_scripts', 'sup_panel_fix');
+
+
+// Checking if Address is Email Address
+function checkIfEmail($email) {
+    $find1 = strpos($email, '@');
+    $find2 = strpos($email, '.');
+    return ($find1 !== false && $find2 !== false && $find2 > $find1 ? true : false);
+}
 
 

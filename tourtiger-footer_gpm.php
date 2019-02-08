@@ -114,40 +114,13 @@ else :
   <?php
   $isButtonUp = get_field('button_up', 'option');
 
-  ?>
-  <?php
-
 
   $i = (int)$col;
 
   $address = get_option( 'options_address' );
   $phone_number = get_option( 'options_phone_number' );
 
-  if($address || $phone_number): ?>
 
-    <div class="col-sm-2">
-
-      <?php $i+=2; ?>
-      <?php if($address): ?>
-        <address>
-          <?php echo $address; ?>
-        </address>
-      <?php endif; ?>
-      <?php if($phone_number): ?>
-        <?php
-        $phone = preg_replace('/[+]/', '00', $phone_number);
-        $phone = preg_replace('/\D+/', '', $phone);
-        ?>
-        <div class="phone">
-          <a href="tel:<?php echo $phone; ?>">
-            <?php echo $phone_number; ?>
-          </a>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php        endif; ?>
-
-  <?php
   $fa_rows = get_option( $footer_areas );
   if($fa_rows):
     foreach( (array) $fa_rows as $fa_count => $fa_row ):
@@ -221,7 +194,49 @@ else :
       endswitch;
     endforeach;
   endif;
-  ?>
+
+    if($address || $phone_number): ?>
+
+        <div class="col-sm-2">
+
+            <?php $i+=2; ?>
+            <?php
+            if($address): ?>
+                <address>
+                    <?php if (checkIfEmail($address)) {
+                    $address_words = preg_split("/[\s]+/", $address);
+                    $not_email_address = ''; $email = '';
+                    foreach ($address_words as $value) {
+                            if (checkIfEmail($value)) {
+                                $email = $value;
+                            } else {
+                                $not_email_address = $not_email_address . $value . " ";
+                            }
+                        }
+                    echo $not_email_address; ?>
+                    Mail us to:<br>
+                    <a href="mailto:<?php echo $email; ?>">
+                        <?php echo $email; ?>
+                    </a>
+                    <?php } else {
+                        echo $address;
+                    } ?>
+                </address>
+            <?php endif; ?>
+            <?php if($phone_number): ?>
+                <?php
+                $phone = preg_replace('/[+]/', '00', $phone_number);
+                $phone = preg_replace('/\D+/', '', $phone);
+                ?>
+                <div class="phone">
+                    <a href="tel:<?php echo $phone; ?>">
+                        <?php echo $phone_number; ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php        endif;
+    ?>
 
   <div class="col-sm-4<?php if($i<8): ?> col-sm-offset-<?php $i=8-$i; echo $i; ?><?php endif; ?>">
     <?php $i+=4; ?>
