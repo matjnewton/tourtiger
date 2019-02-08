@@ -1659,6 +1659,13 @@ acf_add_local_field_group(array (
 										'operator' => '==',
 										'value' => 'new-tab'
 									)
+								),
+								array (
+									array (
+										'field' => 'pc_ha_014_addt',
+										'operator' => '==',
+										'value' => 'xola'
+									)
 								)
 							),
 							'wrapper' => array (
