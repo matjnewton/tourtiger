@@ -9,6 +9,7 @@ function get_hero_area_button_options() {
     'iframe-popup' => 'iFrame Popup',
     'Video' => 'Video',
     'Search Box' => 'Search Box',
+    'xola' => 'Xola Booking'
   ];
 
   if ($the_fly_booking_api)

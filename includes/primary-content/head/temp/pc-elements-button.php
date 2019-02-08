@@ -30,6 +30,7 @@ $button_two_type = get_sub_field( 'pc_button_link_type_addt' );
   <?php endif; ?>
 
 	<?php if ( $cta_button_text_addt ) : ?>
+    <?php $cta_button_url_addt = get_sub_field( 'pc_cta_button_url_addt' ) ? get_sub_field( 'pc_cta_button_url_addt' ) : '#.'; ?>
     <?php if ($button_two_type === 'the_fly_booking' && $the_fly_book_account_id) : ?>
       <button
           class='
@@ -42,6 +43,10 @@ $button_two_type = get_sub_field( 'pc_button_link_type_addt' );
           fb-protocol-https
           pc_hero-area__action-btn
         '><?php echo get_sub_field( 'pc_cta_button_text_addt' ); ?></button>
+    <?php elseif ($button_two_type === 'xola') : ?>
+        <div
+          class="xola-checkout xola-custom pc_hero-area__action-btn"
+          data-button-id="<?php echo $cta_button_url_addt; ?>"><?php echo get_sub_field( 'pc_cta_button_text_addt' ); ?></div>
     <?php else : ?>
       <?php
       $iframe_popup = get_sub_field( 'pc_button_link_type_addt' ) == 'iframe-popup' ? 'data-iframe-popup="' . get_sub_field( 'pc_cta_button_url_addt' ) . '"' : '';
