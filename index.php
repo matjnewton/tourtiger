@@ -33,11 +33,6 @@ function tourtiger_sub_contents(){ ?>
 
                     <?php pagination_appear();?>
 
-                <?php if ( function_exists('wp_pagenavi') ) { ?>
-                <div class="page-nav-wrapper">
-			 <?php wp_pagenavi(); ?>
-                </div>
-            <?php }?>
                 </div>
                 <?php if ( 'content-sidebar' == $site_layout ): ?>
                 <div class="col-sm-4 blog-right-col">
