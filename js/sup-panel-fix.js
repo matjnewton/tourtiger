@@ -5,5 +5,6 @@
     $('#deleting-xs-hidding').find('*').each(function(){
         $(this).removeClass('hidden-xs');
     });
-    item.firstElementChild.firstElementChild.firstElementChild.firstElementChild.remove();}, 20);
+    // item.firstElementChild.firstElementChild.firstElementChild.firstElementChild.remove();
+    }, 20);
 })();
