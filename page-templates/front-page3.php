@@ -8,20 +8,20 @@
 
 /*add_action('genesis_before_content', 'tourtiger_before_content');
 function tourtiger_before_content(){ ?>
-    
+
 <?php }*/
 
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_sub_contents');
 function tourtiger_sub_contents(){ ?>
-<?php $site_layout = genesis_site_layout(); ?>    
-            
-            
-    
+<?php $site_layout = genesis_site_layout(); ?>
+
+
+
     <?php global $post; ?>
-            
+
             <?php if(get_field('tiles_area')): ?>
-            
+
             <?php while(has_sub_field('tiles_area')): ?>
             <?php
                 $section_headline = get_sub_field('section_headline');
@@ -31,8 +31,8 @@ function tourtiger_sub_contents(){ ?>
                 $testimonials_type = get_field('testimonials_type', 'option');
             ?>
 
-    
-        
+
+
     <section class="<?php if($section_headline == 'Featured tours'): ?>featured-tours-2<?php else: ?>testimonials<?php endif; ?>"<?php if($linked_to_hero_cta): ?> data-scroll-index='110'<?php endif; ?>>
         <div class="container position-wrapper">
             <?php if($custom_headline): ?>
@@ -45,7 +45,7 @@ function tourtiger_sub_contents(){ ?>
             </div>
             <?php endif; ?>
             <div class="row">
-                <?php 
+                <?php
                     $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -65,7 +65,7 @@ function tourtiger_sub_contents(){ ?>
                             break;
                     }
                     ?>
-                    
+
                     <?php
                         //if (have_rows('tiles')):
                         if(have_rows('tiles') && ($section_headline == 'Testimonials') && ($testimonials_type == 'Scrolling')): ?>
@@ -75,15 +75,15 @@ function tourtiger_sub_contents(){ ?>
                             <ul class="slides">
                             <?php while(have_rows('tiles')): the_row(); ?>
                             <?php if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
-        				        
+
         				        <?php get_template_part( 'content', 'scrltstmls' ); ?>
-        				        
-        				        <?php 
+
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
@@ -93,10 +93,10 @@ function tourtiger_sub_contents(){ ?>
                         </div>
         </div>
         </div>
-                        
+
                         <?php else:
                         while(have_rows('tiles')): the_row();
-                        
+
                         if( get_row_layout() == 'tours' ):
                             $pulled_specific = get_sub_field('pull_specific_from');
                             $button_label = get_sub_field('button_label');
@@ -107,7 +107,7 @@ function tourtiger_sub_contents(){ ?>
                             <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
                             <?php //get_template_part( 'content', 'feat_tours_2' ); ?>
                             <div class="tour-2">
-                        
+
                         <?php if (has_post_thumbnail()) {
             $thumb = get_post_thumbnail_id();
             $img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
@@ -135,8 +135,8 @@ function tourtiger_sub_contents(){ ?>
                     <div class="btn-tour">
                         <div class="txt-button-tour"><?php if($button_label): echo $button_label; else: echo "View Tour"; endif; ?></div>
                         <div class="hover-button-tour"></div>
-                    </div> 
-                        
+                    </div>
+
                     </div>
                             </div>
                             <?php
@@ -149,36 +149,36 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                         <?php
                         endif;
-                        
+
                         if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
-                         
+
                         endwhile;
                         endif;
-                       ?> 
-                    
-                           
+                       ?>
+
+
                 </div>
-        </div>     
+        </div>
     </section>
-        
-    
-          
+
+
+
                 <?php endwhile; ?>
-            
+
             <?php endif; ?>
-            
+
     <?php global $post; ?>
     <?php $testimonials_type = get_field('testimonials_type', 'option'); ?>
     <?php if( have_rows('testimonial_tiles_area') && ($testimonials_type == 'Scrolling') ): ?>
@@ -191,19 +191,19 @@ function tourtiger_sub_contents(){ ?>
                             <ul class="slides">
                             <?php while ( have_rows('testimonial_tiles_area') ) : the_row(); ?>
                             <?php if( get_row_layout() == 'testimonial' ): ?>
-                            <?php if(have_rows('tiles')):    
+                            <?php if(have_rows('tiles')):
                             while(have_rows('tiles')): the_row();
-                            
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <?php get_template_part( 'content', 'scrltstmls' ); ?>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
-                            
+
                             endwhile;
                             endif; ?>
                             <?php endif; ?>
@@ -220,10 +220,10 @@ function tourtiger_sub_contents(){ ?>
             <section class="testimonials">
             <div class="container">
             <div class="row even-grid">
-             
+
                <?php if( get_row_layout() == 'testimonial' ):
                         $number_of_columns = get_sub_field('number_of_columns');
-                        
+
                         $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -242,33 +242,33 @@ function tourtiger_sub_contents(){ ?>
                             $col = 5;
                             break;
                     }
-                        
-                        if(have_rows('tiles')):    
+
+                        if(have_rows('tiles')):
                             while(have_rows('tiles')): the_row();
-                            
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
-                            
+
                             endwhile;
                             endif;
-                            
+
                         endif; ?>
-                        
+
             </div>
             </div>
-            </section>    
+            </section>
             <?php endwhile; ?>
     <?php endif; ?>
-    
+
     <?php if(have_rows('multi_column_area')): ?>
     <section class="multi-column-area text-center">
         <div class="container">
@@ -280,10 +280,10 @@ function tourtiger_sub_contents(){ ?>
                 <?php endif; ?>
             <?php endif; ?>
             <?php if( get_row_layout() == '3_column_content'): ?>
-                <?php $line_under_subheading = get_sub_field('line_under_subheading'); 
+                <?php $line_under_subheading = get_sub_field('line_under_subheading');
                 if( have_rows('content') ): ?>
                 <ul class="row">
-                <?php $m = 0; ?> 
+                <?php $m = 0; ?>
                 <?php while( have_rows('content') ): the_row();
                     $subheading = get_sub_field('subheading');
                     $textarea = get_sub_field('textarea');
@@ -305,20 +305,20 @@ function tourtiger_sub_contents(){ ?>
                 </ul>
                 <?php endif;
                 ?>
-                
+
             <?php endif; ?>
         <?php endwhile; ?>
         </div>
     </section>
     <?php endif; ?>
-    
-    <?php if(get_field('headline_content')): ?>    
+
+    <?php if(get_field('headline_content')): ?>
     <section class="reasons">
         <div class="container">
             <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8 col-lg-9<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
                 <?php if(get_field('headline_content')): ?>
-                    <?php while(has_sub_field('headline_content')): 
+                    <?php while(has_sub_field('headline_content')):
                         $embed = get_sub_field('embed');
                         $headline_align = get_sub_field('headline_text_align');
                     ?>
@@ -331,7 +331,7 @@ function tourtiger_sub_contents(){ ?>
                                 <?php if($embed): echo $embed; endif; ?>
                             </div>
                             <div class="view-tours-wrapper">
-                                <?php $view_tours = get_sub_field('view_tours_link'); 
+                                <?php $view_tours = get_sub_field('view_tours_link');
                                     if($view_tours):
                                 ?>
                                 <a class="view-tours-btn" href="<?php the_sub_field('view_tours_link'); ?>">View tours</a>
@@ -345,23 +345,23 @@ function tourtiger_sub_contents(){ ?>
                 <div class="col-sm-4 col-lg-3 front-right-col">
                     <?php if(get_field('universal_sidebar', 'option')): ?>
                            <?php while(has_sub_field('universal_sidebar', 'option')): ?>
-                           
+
                            <?php if( get_row_layout() == 'content_editor' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php if( get_row_layout() == 'text_area' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
@@ -370,32 +370,33 @@ function tourtiger_sub_contents(){ ?>
         </div>
     </section>
     <?php endif; ?>
-    
+
     <?php if(have_rows('sections_area')): ?>
-    <?php 
+    <?php
                             $numm = 0;
                             $section_count = (int)$numm; ?>
         <?php while(have_rows('sections_area')): the_row(); ?>
-        <?php 
+        <?php
                 $heading = get_sub_field('section_heading');
                 $heading_align = get_sub_field('heading_text_align');
                 //$linked_to_hero_cta = get_sub_field('linked_to_hero_cta');
                 $custom_options = get_sub_field('custom_options');
                 $custom_margin_presets = get_sub_field('custom_margin_presets');
+                $custom_bottom_space = get_sub_field('bottom_space_options');
         ?>
         <?php $section_count++; ?>
-            <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
-                
+            <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?><?php if($custom_margin_presets == "0px 0px 0px 0px"): ?> custom-margin-preset2<?php endif;?> <?=$custom_bottom_space?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
+
             <?php if($heading): ?>
                     <div class="container">
                         <h2 class="section-heading<?php if($heading_align == 'Center'): echo ' text-center'; endif;?>">
                             <?php echo $heading; ?>
                         </h2>
                     </div>
-                    <?php endif; ?>      
+                    <?php endif; ?>
             <?php if(have_rows('section_elements')): ?>
                         <?php while(have_rows('section_elements')): the_row(); ?>
-                            
+
                             <?php if( get_row_layout() == 'heading'): ?>
                             <?php
                                 $text = get_sub_field('text');
@@ -408,21 +409,21 @@ function tourtiger_sub_contents(){ ?>
                                         </h2>
                             </div><!-- .container-->
                                 <?php endif; ?>
-                            
+
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == '3_column_content'): ?>
                             <div class="container">
                             <div class="multi-column-area text-center">
-                                
+
                                 <?php $line_under_subheading = get_sub_field('line_under_subheading'); ?>
                                 <?php $text = get_sub_field('heading'); ?>
                                 <?php if($text): ?>
                                     <h2 class="text-center"><?php echo $text; ?></h2>
-                                <?php endif; ?> 
+                                <?php endif; ?>
                                 <?php if( have_rows('columns_set') ): ?>
                                 <ul class="row">
-                                <?php $m = 0; ?> 
+                                <?php $m = 0; ?>
                                 <?php while( have_rows('columns_set') ): the_row();
                                     $subheading = get_sub_field('subheading');
                                     $textarea = get_sub_field('textarea');
@@ -443,7 +444,7 @@ function tourtiger_sub_contents(){ ?>
                                     endwhile; ?>
                                 </ul>
                                 <?php endif; ?>
-                                
+
                             </div>
                             </div><!-- end .container-->
                             <?php endif; ?>
@@ -452,7 +453,7 @@ function tourtiger_sub_contents(){ ?>
             <div class="row reasons">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8 col-lg-9<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
                 <?php if( have_rows('contents_set') ): ?>
-                    <?php while( have_rows('contents_set') ): the_row(); 
+                    <?php while( have_rows('contents_set') ): the_row();
                         $heading_align = get_sub_field('heading_text_align');
                         $heading = get_sub_field('heading');
                         $content_editor = get_sub_field('content_editor');
@@ -482,28 +483,28 @@ function tourtiger_sub_contents(){ ?>
                 <div class="col-sm-4 col-lg-3 front-right-col">
                     <?php if(get_field('universal_sidebar', 'option')): ?>
                            <?php while(has_sub_field('universal_sidebar', 'option')): ?>
-                           
+
                            <?php if( get_row_layout() == 'content_editor' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php if( get_row_layout() == 'text_area' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
-                
+
             </div><!-- end .reasons-->
                             </div><!-- end .container-->
     <?php endif; ?>
@@ -511,9 +512,9 @@ function tourtiger_sub_contents(){ ?>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            
+
                                 <?php $custom_heading = get_sub_field('custom_heading'); ?>
-                                <?php 
+                                <?php
                                     $center = get_sub_field('map_center_address');
                                     $zoom = get_sub_field('zoom');
                                  ?>
@@ -525,14 +526,14 @@ function tourtiger_sub_contents(){ ?>
                                 </h2>
                                 <?php endif; ?>
                                 <?php echo do_shortcode( $content ) ?>
-                            
+
                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div><!-- end .container-->
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'fluid_boxes'): ?>
                             <div class="container-fluid fluid-boxes">
                             	<div class="row even-grid">
@@ -541,7 +542,7 @@ function tourtiger_sub_contents(){ ?>
                                         <?php while ( have_rows('boxes_set') ) : the_row(); ?>
                                         <?php $n++; ?>
                                             <?php if( get_row_layout() == 'content_button'): ?>
-                                            <?php 
+                                            <?php
                                                 $pull = get_sub_field('pull');
                                                 $color_style = get_sub_field('background_color_style');
                                                 $heading = get_sub_field('heading');
@@ -567,17 +568,17 @@ function tourtiger_sub_contents(){ ?>
                                             </div>
                                             <?php endif; ?>
                                     	</div>
-                                    	
+
                                 	</div>
                                             <?php endif;/*end content_button*/ ?>
                                             <?php if( get_row_layout() == 'image'): ?>
-                                            <?php 
+                                            <?php
                                                 $pull = get_sub_field('pull');
-                                                $image_url = wp_get_attachment_url( get_sub_field('image'),'full'); 
+                                                $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
                                                 ?>
                                             <?php if($image_url): ?>
                                     <div class="col-sm-6 s-item<?php if( is_array($pull) && in_array('left', $pull)): ?> box-left<?php elseif(is_array($pull) && in_array('right', $pull)): ?> box-right<?php endif; ?>" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover; background-position:center center; min-height:410px;"></div>
-                                            <?php endif; ?>        
+                                            <?php endif; ?>
                                             <?php endif; /*end image*/ ?>
                                             <?php if((($n % 2) == 0)): ?>
                                             <hr class="col-sm-12" />
@@ -587,14 +588,14 @@ function tourtiger_sub_contents(){ ?>
                             	</div><!-- .row-->
                             </div>
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'image_gallery'): ?>
                             <div class="container-fluid fluid-gallery photo-gallery">
-                                    <div class="row">     
+                                    <div class="row">
                                 <?php $images = get_sub_field('gallery'); ?>
                                 <?php if( $images ): ?>
                                         <?php foreach( $images as $image ): ?>
-                            <?php 
+                            <?php
                                 $img_url = $image['url'];
                                 $thumbnail = aq_resize( $img_url, 384, 288, true );
                             ?>
@@ -604,17 +605,17 @@ function tourtiger_sub_contents(){ ?>
                                         </a>
                                     </div>
                                         <?php endforeach; ?>
-                                <?php endif; ?> 
+                                <?php endif; ?>
                                     </div>
-                            </div><!-- end .container-fluid--> 
+                            </div><!-- end .container-fluid-->
                             <?php endif; /*end image_gallery*/ ?>
-                            
+
                             <?php if( get_row_layout() == 'tour_boxes'): ?>
                             <div class="container">
-                                <div class="featured-tours-2">     
+                                <div class="featured-tours-2">
                                 <div class="row">
                                     <?php global $post; ?>
-                                    <?php 
+                                    <?php
                     $number_of_columns = get_sub_field('number_of_columns');
                     $col = 0;
                     if($number_of_columns):
@@ -639,68 +640,68 @@ function tourtiger_sub_contents(){ ?>
                     ?>
                     <?php if( have_rows('boxes_set') ): ?>
                     <?php while ( have_rows('boxes_set') ) : the_row(); ?>
-                    
+
                     <?php if( get_row_layout() == 'tours'): ?>
-                    <?php 
+                    <?php
                         $pulled_specific = get_sub_field('pull_specific_from');
                         if($pulled_specific):
                         $post = $pulled_specific;
-                        setup_postdata( $post );  
+                        setup_postdata( $post );
                     ?>
                         <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?>">
                             <?php include(locate_template('content-feat_tours_22.php' )); ?>
                         </div>
                     <?php
                        wp_reset_postdata();
-                       endif;/*end if pulled_specific*/ 
+                       endif;/*end if pulled_specific*/
                     ?>
-                                
+
                     <?php elseif(get_row_layout() == 'categories'): ?>
                     <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?>">
                             <?php include(locate_template('content-feat_cats_2.php' )); ?>
                             </div>
                     <?php endif; ?>
-                    
+
                     <?php endwhile; ?>
-                    
+
                     <?php endif; ?>
                                 </div>
                                 </div><!-- end .featured-tours-2-->
                             </div><!-- end .container-->
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'tour_links'): ?>
                             <div class="container container960">
                                 <?php global $post; ?>
                                 <?php if( have_rows('links_set') ): ?>
                                 <ul class="row link-tours">
                                 <?php while ( have_rows('links_set') ) : the_row(); ?>
-                                    
+
                                     <?php if( get_row_layout() == 'tours'): ?>
-                                    <?php 
+                                    <?php
                                         $pulled_specific = get_sub_field('pull_specific_from');
                                         if($pulled_specific):
                                         $post = $pulled_specific;
-                                        setup_postdata( $post );  
+                                        setup_postdata( $post );
                                     ?>
                                     <?php include(locate_template('partials/content-tour_links.php' )); ?>
                                     <?php
                                        wp_reset_postdata();
-                                       endif;/*end if pulled_specific*/ 
+                                       endif;/*end if pulled_specific*/
                                     ?>
-                                    
+
                                     <?php elseif(get_row_layout() == 'categories'): ?>
                                     <?php include(locate_template('partials/content-categories_links.php' )); ?>
                                     <?php endif; ?>
-                                    
-                                
+
+
                                 <?php endwhile; ?>
                                 </ul>
                                 <hr />
                                 <?php endif;/*links_set*/ ?>
                             </div>
                             <?php endif; /*end tour_links*/ ?>
-                            
+
                             <?php if( get_row_layout() == 'testimonials_boxes'): ?>
                             <?php $testimonials_type = get_field('testimonials_type', 'option'); ?>
                             <?php
@@ -724,8 +725,8 @@ function tourtiger_sub_contents(){ ?>
                                     $tcol = 5;
                                     break;
                             }
-                            endif;    
-                            ?>    
+                            endif;
+                            ?>
                             <?php
                                 if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'): ?>
                             <div class="container">
@@ -736,15 +737,15 @@ function tourtiger_sub_contents(){ ?>
                                         <ul class="slides">
                                         <?php while(have_rows('boxes_set')): the_row(); ?>
                                         <?php if( get_row_layout() == 'testimonials' ):
-                                        $pulled_specific = get_sub_field('pull_specific_from'); 
-                                        
+                                        $pulled_specific = get_sub_field('pull_specific_from');
+
                                         if($pulled_specific):
                                             $post = $pulled_specific;
                     				        setup_postdata( $post ); ?>
-                    				        
+
                     				        <?php get_template_part( 'content', 'scrltstmls' ); ?>
-                    				        
-                    				        <?php 
+
+                    				        <?php
                     				        wp_reset_postdata();
                                         endif;
                                     endif;
@@ -756,7 +757,7 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                                 </div><!-- end .row-->
                                 </div><!-- end .container-->
-                            <?php 
+                            <?php
                             else:
                             ?>
                             <div class="container">
@@ -771,7 +772,7 @@ function tourtiger_sub_contents(){ ?>
         				        <div class="<?php if($tcol==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $tcol; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                             endif;
@@ -779,10 +780,10 @@ function tourtiger_sub_contents(){ ?>
                             </div><!-- end .row.even-grid.testimonials-->
                             </div><!-- end .container-->
                             <?php
-                            endif;  
+                            endif;
                             ?>
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'blog_boxes'): ?>
                             <div class="container">
                             <div class="row even-grid testimonials front-blog-wrapper">
@@ -810,15 +811,15 @@ function tourtiger_sub_contents(){ ?>
                         'nopaging' => true,
                         'post_status' => 'publish'
                         );
-                         
+
                         $i = 0;
                         global $wp_query;
                         $wp_query = new WP_Query( $args );
-                         
+
                         if ( have_posts() ) :
-                        
+
                         while ( have_posts() ) : the_post();
-                        
+
                         $i++; ?>
                         <div<?php if($bcol): ?> class="col-xs-12 col-sm-<?php echo $bcol; ?> s-item"<?php endif; ?>>
                         <?php
@@ -828,18 +829,18 @@ function tourtiger_sub_contents(){ ?>
                         <?php
                         if($i == $number_of_posts):
                         break;
-                        endif; 
+                        endif;
                         endwhile;
-                        
+
                         do_action( 'genesis_after_endwhile' );
                         endif;
-                         
+
                         wp_reset_query();
                                 ?>
                             </div><!-- .row-->
                             </div><!-- .container-->
                             <?php endif; ?>
-                            
+
                         <?php if( get_row_layout() == 'content'): ?>
                         <?php
                             $heading = get_sub_field('heading');
@@ -861,9 +862,9 @@ function tourtiger_sub_contents(){ ?>
                                     </h2>
                                 <?php endif; ?>
                                 <?php if($content_editor): ?>
-                                    
+
                                         <?php echo $content_editor; ?>
-                                        
+
                                 <?php endif; ?>
                                 <?php if($embed):?>
                                         <?php echo $embed; ?>
@@ -874,13 +875,15 @@ function tourtiger_sub_contents(){ ?>
                                    </div>
                                    <a class="button slideouttrigger" href="#" data-ref="1"><?php echo $open_label; ?></a>
                                 <?php endif; ?>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                         </div>
                     </div><!-- end .container -->
                         <?php endif; ?>
-                    
+
+
+
                     <?php if( get_row_layout() == 'accreditation_logos'): ?>
                         <?php
                             $number_of_acclogos_columns = get_sub_field('number_of_acclogos_columns');
@@ -888,7 +891,7 @@ function tourtiger_sub_contents(){ ?>
                         <?php if( have_rows('columns_set') ): ?>
                             <div class="container">
                                 <ul class="row accreditation_logos">
-                                <?php 
+                                <?php
                                 $accol = 0;
                                 if($number_of_acclogos_columns):
                                 switch ($number_of_acclogos_columns) {
@@ -912,12 +915,12 @@ function tourtiger_sub_contents(){ ?>
                                         break;
                                 }
                                 endif;
-                                ?> 
+                                ?>
                                 <?php while( have_rows('columns_set') ): the_row();
-                                    $image_url = wp_get_attachment_url( get_sub_field('image'),'full'); 
+                                    $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
                                     //$image = aq_resize( $image_url, 377, 377, true );
                                     $link = get_sub_field('link');
-                                    $p++;
+//                                    $p++;
                                     ?>
                                     <li class="<?php if($accol==5): ?>five-cols <?php else: ?>col-xs-6 col-sm-<?php echo $accol; ?><?php endif; ?>">
                                     <?php if($image_url): ?>
@@ -932,15 +935,119 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                                 <?php endif; ?>
                         <?php endif; ?>
-                        
+
+<?php // --   - - - -   VIDEO AND LOGOS SECTION   - - - - -   -- ?>
+
+<?php if( get_row_layout() == 'video_and_logos_adv'):
+    $order = get_sub_field('order');
+    $color_style = get_sub_field('add_background');
+    ;?>
+    <div class="<?php if($order!='collapse'): ?>container-fluid<?php endif;?> fluid-boxes">
+        <div class="<?php if($order!='collapse'): ?>row even-grid<?php else: ?>container-special<?php endif;?>">
+            <?php // -- main video and logos section container -- ?>
+
+            <?php  $video_section = get_sub_field('video_section');?>
+
+            <div class="<?php if($order!='collapse'): ?>col-sm-6 s-item<?php if( $order == 'video_left'): ?> box-left<?php elseif($order == 'video_right'): ?> box-right<?php endif; ?><?php endif;?><?php if($color_style == 'Variation-1'): ?> color-variation-1<?php elseif($color_style == 'Variation-2'): ?> color-variation-2<?php endif; ?> <?php if($order=='collapse'): ?>extra-padding-top<?php endif;?>">
+                <?php // -- video section container -- ?>
+
+                <?php
+                 echo '<div class="container-special" style="text-align: center;">'.$video_section['video'].'</div>';
+                ?>
+
+            </div><?php // -- end of video section container -- ?>
+
+            <div class="<?php if($order!='collapse'): ?>col-sm-6 s-item<?php if($order == 'video_left' ): ?> box-right<?php elseif( $order == 'video_right'): ?> box-left<?php endif; ?><?php endif;?><?php if($color_style == 'Variation-1'): ?> color-variation-1<?php elseif($color_style == 'Variation-2'): ?> color-variation-2<?php endif; ?><?php if($order=='collapse'): ?> extra-padding-top<?php endif;?>"> <!-- logos section container -->
+            <?php
+
+            if ($order=='collapse') {echo '<div class="container" style="background: rgba(0,0,0,0)">';}
+
+            if( have_rows('accreditation_logos_section_repeater') ):
+
+                // loop through the rows of data
+                while ( have_rows('accreditation_logos_section_repeater') ) : the_row();
+
+
+                    if( have_rows('accreditation_logos_section') ):
+                        while ( have_rows('accreditation_logos_section') ) : the_row();
+
+                            $als_heading = get_sub_field('heading');
+
+                            if ($als_heading!='')
+                            echo "<h2 class='text-center extra-padding'>".$als_heading."</h2>";
+
+                            $number_of_acclogos_columns = get_sub_field('number_of_acclogos_columns'); ?>
+                            <?php if( have_rows('columns_set') ): ?>
+                                <ul class="row accreditation_logos">
+                                    <?php
+                                    $accol = 0;
+                                    if($number_of_acclogos_columns):
+                                        switch ($number_of_acclogos_columns) {
+                                            case 1:
+                                                $accol = 12;
+                                                break;
+                                            case 2:
+                                                $accol = 6;
+                                                break;
+                                            case 3:
+                                                $accol = 4;
+                                                break;
+                                            case 4:
+                                                $accol = 3;
+                                                break;
+                                            case 5:
+                                                $accol = 5;
+                                                break;
+                                            case 6:
+                                                $accol = 2;
+                                                break;
+                                        }
+                                    endif;
+                                    ?>
+                                    <?php while( have_rows('columns_set') ): the_row();
+                                        $image_url = get_sub_field('image');
+                                        $link = get_sub_field('url');
+                                        ?>
+                                        <li class="<?php if($accol==5): ?>five-cols <?php else: ?>col-xs-6 col-sm-<?php echo $accol; ?><?php endif; ?>">
+                                            <?php if($image_url): ?>
+                                        <a href="<?php if($link): echo $link; endif; ?>" target="_blank">
+                                            <img src="<?php echo $image_url; ?>" class="img-responsive" />
+                                        </a>
+                                            <?php endif; ?>
+                                        </li>
+                                    <?php
+                                    endwhile; ?>
+                                </ul>
+                            <?php endif;
+                        endwhile;
+                    endif;
+                endwhile; // inner loop accreditation_logos_section
+            endif;
+
+
+
+                if ($order=='collapse') {echo '</div>';}
+
+
+            ?>
+            </div><?php // -- end of logos section container -- ?>
+        </div><?php // -- .row-- ?>
+    </div><?php // -- end of main video and logos section container -- ?>
+
+
+<?php endif; ?>
+
+<?php // --   - - - -   END OF VIDEO AND LOGOS SECTION   - - - - -   -- ?>
+
                         <?php endwhile; ?>
             <?php endif; /*end section_elements*/ ?>
-                
-            </section><!-- end .section-item-->
+
+
+            </section><!-- -- end .section-item -->
         <?php endwhile; ?>
-        
+
     <?php endif; /*end sections_area*/ ?>
-    
+
     <?php get_sidebar('subscribe'); ?>
 
     <?php
@@ -973,7 +1080,7 @@ function tourtiger_sub_contents(){ ?>
     <?php
     endif;
     ?>
-    
+
 <?php }
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');

@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php 
+<?php
 $custom_header = get_option( 'options_include_custom_header' );
 
 if($custom_header == true): ?>
@@ -12,9 +12,9 @@ if($custom_header == true): ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    
+
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <?php 
+                            <?php
                                 $custom_header_image = get_option( 'options_custom_header_image' );
                                 $ch_url = wp_get_attachment_url( $custom_header_image,'full');
                                 $chimg = aq_resize( $ch_url, 278, 70, true );
@@ -23,15 +23,15 @@ if($custom_header == true): ?>
                             <img src="<?=$chimg?>" alt="<?=$chimg?>" />
                             <?php endif; ?>
                         </a>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 <?php endif; ?>
 
-<?php 
-    
+<?php
+
     $fha_rows = get_post_meta( get_the_ID(), 'hero_area', true );
     if($fha_rows):
     foreach( (array) $fha_rows as $fha_count => $fha_row ):
@@ -52,7 +52,7 @@ if($custom_header == true): ?>
 <div class="banner-wrapper<?php if($background_placement=='Under Header'): echo " under-header"; elseif($background_placement=='Down Below Header'): echo " below-header"; else: echo " no-banner"; endif;?>"<?php if($background_placement=='Under Header' && $hero_video): ?> style="max-width:1440px; max-height:620px; margin-left:auto; margin-right:auto;"<?php endif; ?><?php if($background_placement=='Down Below Header' && $hero_video): ?> style="max-width:1440px; max-height:545px; margin-left:auto; margin-right:auto;"<?php endif; ?>>
 <div class="tint under-header-tint"></div>
 <div class="banner-wrapper-mobile"></div>
-<?php 
+<?php
     $sticky_menu = get_option( 'options_sticky_menu' );
     $all_caps = get_option( 'options_all_caps_on_menu' );
 ?>
@@ -65,10 +65,10 @@ if($custom_header == true): ?>
                 <source src="<?php echo $hero_video_webm; ?>" type="video/webm">
                 <source src="<?php echo $hero_video_ogv; ?>" type="video/ogv">
             </video>
-<?php endif; ?>            
+<?php endif; ?>
     <div class="header-bar-wrapper<?php if($sticky_menu == true): ?> sticky<?php endif; ?><?php if($background_placement=='Under Header' && $slides_images && !$sticky_menu): ?> pos-abs<?php endif; ?>">
     <div class="header-bar">
-        <?php 
+        <?php
         $logo_covers_both_menus = get_option( 'options_logo_covers_both_menus' );
         $secondary_menu = get_option( 'options_include_secondary_menu' );
         if(($secondary_menu == true) && ($logo_covers_both_menus == false)): ?>
@@ -78,8 +78,8 @@ if($custom_header == true): ?>
             </div>
         </div>
         <?php endif; ?>
-        <?php 
-            $menu_type = get_option( 'options_menu_type' ); 
+        <?php
+            $menu_type = get_option( 'options_menu_type' );
         ?>
         <?php if($menu_type == 'Regular'): ?>
             <div class="hidden-xs hidden-sm container">
@@ -108,20 +108,20 @@ if($custom_header == true): ?>
         <?php elseif($menu_type == 'Logo Centered & Above Menu'):?>
             <?php include(locate_template('menus/above_menu_gpm.php' )); ?>
         <?php endif; ?>
-        
-        <div class="visible-xs visible-sm container">    
+
+        <div class="visible-xs visible-sm container">
             <div class="row">
                 <div class="col-sm-12">
                     <nav class="navbar navbar-default nav-panel" role="navigation">
-                            
+
                             <div class="navbar-header">
-                            
+
                 				<div class="row">
-                				
+
                 				<div class="col-xs-9" style="text-align:left;">
-                                    
+
                                     <a class="navbar-brand" id="brand-name" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                        <?php 
+                                        <?php
                                     $logo_image = get_option( 'options_logo_image' );
                                     $logo_url = wp_get_attachment_url( $logo_image,'full');
                                     $logo = aq_resize( $logo_url, 362, 64, false );
@@ -131,9 +131,9 @@ if($custom_header == true): ?>
                                 <!--<img class="mobile-logo img-responsive" src="<?=$logo_url?>" alt="<?=$logo?>" /> -->
                                 <?php endif; ?>
                                     </a>
-                                    
+
                 				</div>
-                				
+
                 				<div class="col-xs-3">
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex1-collapse">
                     					<span class="icon-bar"></span>
@@ -141,21 +141,21 @@ if($custom_header == true): ?>
                                         <span class="icon-bar"></span>
                     				</button>
                 				</div>
-                				
+
                 				</div><!-- end row-->
-                				
+
                             </div>
-                            
+
                     		<div class="collapse navbar-collapse" id="navbar-ex1-collapse">
                                     <?php wp_nav_menu( array( 'theme_location' => 'mobile', 'menu_class' => 'nav navbar-nav mobile-nav', 'fallback_cb'    => false, 'walker'  => new Wpse8170mobile_Menu_Walker() ) ); ?>
-                    		</div><!-- end .navbar-ex1-collapse-->			
+                    		</div><!-- end .navbar-ex1-collapse-->
                     </nav>
                 </div>
             </div>
         </div>
     </div><!-- end .header-bar-->
     </div><!-- end .header-bar-wrapper-->
-    
+
 <div class="banner-wrapper-inner">
     <?php if($background_placement=='Down Below Header' && $hero_video): ?>
     <?php
@@ -168,7 +168,7 @@ if($custom_header == true): ?>
 <div class="tint below-header-tint"<?php if($background_placement=='Down Below Header' && $hero_video): ?> style="height:545px;"<?php endif; ?>></div>
 <?php
 $queried_post_type = get_query_var('post_type');
- 
+
 if (is_page_template('page-templates/front-blog.php')) :
     get_template_part( 'content', 'front_hero' );
 elseif (is_home()):
@@ -180,9 +180,9 @@ elseif (is_page_template('page-templates/front-page2.php')):
 elseif (is_page_template('page-templates/front-page3.php')):
     get_template_part( 'content', 'front3_hero' );
 elseif(is_single() && 'tour' ==  $queried_post_type):
-    get_template_part( 'content', 'tour_hero_gpm' ); 
-else:    
-    get_template_part( 'content', 'default_hero' );    
+    get_template_part( 'content', 'tour_hero_gpm' );
+else:
+    get_template_part( 'content', 'default_hero' );
 endif; ?>
 </div><!-- .banner-wrapper-inner-->
 </div><!-- end .banner-wrapper-->

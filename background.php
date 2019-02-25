@@ -7,25 +7,25 @@
     $darray = explode('.', $_SERVER['HTTP_HOST']);
     $narray = array_reverse($darray);
     $domain_name = $narray[1];
-    unset($darray, $narray);    
+    unset($darray, $narray);
 ?>
 .banner-wrapper{
-    max-height:620px !important;   
+    max-height:620px !important;
 }
-<?php 
+<?php
     $sticky_menu = get_field('sticky_menu', 'option');
     if($sticky_menu == true): ?>
 @media (min-width:481px){
     .banner-wrapper.under-header{
         height:620px !important;
-        
+
     }
 }
 <?php endif; ?>
-<?php 
+<?php
     if( have_rows('hero_area') && !is_home() ):
     while ( have_rows('hero_area') ) : the_row();
-        if( get_row_layout() == 'hero'):        
+        if( get_row_layout() == 'hero'):
     $hero_image = get_sub_field('hero_image');
     $background_placement = get_sub_field('background_position');
     $hero_video = get_sub_field('hero_video');
@@ -53,7 +53,7 @@
     .banner-wrapper{
         background: url(<?php echo $himage; ?>), linear-gradient(0deg,#FFF,#CCC);
         background-size:1440px auto;
-        background-position: 0% 100%; 
+        background-position: 0% 100%;
     }
 }
 
@@ -62,7 +62,7 @@
     .banner-wrapper{
        height:296px;
        /*overflow:hidden;*/
-    }    
+    }
 }
 <?php endif; ?>
 <?php if($himage ): ?>
@@ -77,7 +77,7 @@
     min-height:100%;
 }
 <?php endif; ?>
- 
+
 <?php if(($hero_image) && ($background_placement=='Down Below Header')): ?>
     <?php $himage = aq_resize( $hero_image['url'], 1400, 545, true );   ?>
     <?php $himage_xs = aq_resize( $hero_image['url'], 480, 225, true );   ?>
@@ -91,7 +91,7 @@
         background-repeat:no-repeat;
         background-size:480px auto;
         background-image:url(<?php echo $himage_xs; ?>);
-    }    
+    }
 }
 <?php endif; ?>
 <?php if($himage ): ?>
@@ -124,7 +124,7 @@
         ?>
         background-image:url(<?php echo $poster_xs; ?>);
         position:relative;
-    }    
+    }
 }
 @media (max-width:480px){
     .banner-wrapper{
@@ -150,7 +150,7 @@
         background-size:480px auto;
         background-image:url(<?php echo $poster_xs; ?>);
     }
-}    
+}
 @media (min-width:481px) and (max-width: 991px) {
     .banner-wrapper-inner{
         background-repeat:no-repeat;
@@ -159,21 +159,21 @@
     }
 }
 <?php endif; ?>
-<?php 
+<?php
         endif;
     endwhile;
 endif; /*end hero_area*/
-?>   
+?>
 
 <?php //Blog hero ?>
-<?php 
+<?php
     if( have_rows('hero_area', 'option') && is_home() ):
     while ( have_rows('hero_area', 'option') ) : the_row();
         if( get_row_layout() == 'hero'):
-        
+
     $hero_image = get_sub_field('hero_image');
     $background_placement = get_sub_field('background_position');
-    ?> 
+    ?>
 
 <?php if(($hero_image) && ($background_placement=='Under Header')): ?>
     <?php $himage = aq_resize( $hero_image['url'], 1440, 620, true ); ?>
@@ -199,7 +199,7 @@ endif; /*end hero_area*/
     .banner-wrapper{
        height:296px;
        /*overflow:hidden;*/
-    }    
+    }
 }
 <?php endif; ?>
 <?php if($himage ): ?>
@@ -214,7 +214,7 @@ endif; /*end hero_area*/
     min-height:100%;
 }
 <?php endif; ?>
- 
+
 <?php if(($hero_image) && ($background_placement=='Down Below Header')): ?>
     <?php $himage = aq_resize( $hero_image['url'], 1440, 545, true ); ?>
     <?php $himage_xs = aq_resize( $hero_image['url'], 480, 225, true ); ?>
@@ -229,7 +229,7 @@ endif; /*end hero_area*/
         background-repeat:no-repeat;
         background-size:480px auto;
         background-image:url(<?php echo $himage_xs; ?>);
-    }    
+    }
 }
 <?php endif; ?>
 <?php if($himage ): ?>
@@ -255,7 +255,7 @@ endif; /*end hero_area*/
 <?php endif; ?>
 
 
-<?php 
+<?php
         endif;
     endwhile;
 endif;
@@ -278,12 +278,12 @@ $hero_margin = get_field('hero_headline_top_margin');
     }
 }
 @media (min-width:481px){
-.banner-top .headline-group{        
+.banner-top .headline-group{
         top:<?php echo $hero_margin; ?>px;
     }
 }
 @media (min-width: 768px) {
-        .banner-top .headline-group{       
+        .banner-top .headline-group{
         top:<?php echo $hero_margin; ?>px;
     }
 }
