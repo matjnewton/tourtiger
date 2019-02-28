@@ -2,11 +2,11 @@
 /* ===========================
  * Testimonial Page Class Extend
  * ======================== */
- 
+
 class Core extends StylingCard {
 
 	/**
-	 * Return Fields 
+	 * Return Fields
 	 * @return array
 	 */
 	function return_acf_group( $i = '', $c = '' ) {
@@ -50,6 +50,14 @@ class Core extends StylingCard {
           'key' => 'fc_' . $i . '_iI_49214',
           'label' => 'Above Header Area',
           'name' => 'above_header_bg',
+          'type' => 'rgba_color',
+          'required' => 0,
+        ),
+
+        array (
+          'key' => 'fc_' . $i . '_iI_41239214',
+          'label' => 'Above Header Area Text',
+          'name' => 'above_split_bar',
           'type' => 'rgba_color',
           'required' => 0,
         ),
@@ -354,7 +362,7 @@ class Core extends StylingCard {
           'required' => 0,
         ),
       ),
-		);	
+		);
 
 		return $fc_options_array;
 
@@ -362,10 +370,10 @@ class Core extends StylingCard {
 
 	/**
 	 * Get styles
-	 * 
+	 *
 	 * @var    string   $style       style number
-	 * @var    string   $component   name of component   
-	 * @return string  
+	 * @var    string   $component   name of component
+	 * @return string
 	 */
 	public static function get_styles( $style = 'core_style-one' ) {
 		$css = '';
@@ -378,6 +386,7 @@ class Core extends StylingCard {
         $base_wrapper_bs = get_sub_field('base_wrapper_bs');
 
         $above_header_bg   = get_sub_field('above_header_bg');
+        $above_split_bar   = get_sub_field('above_split_bar');
         $header_bg         = get_sub_field('header_bg');
         $secondary_menu_bg = get_sub_field('secondary_menu_bg');
 
@@ -451,6 +460,7 @@ class Core extends StylingCard {
           $css .= ".site-container{background:{$base_wrapper_bg}}";
 
           $css .= ".above-header{background:{$above_header_bg}}";
+          $css .= ".above-split-bar{color:{$above_split_bar}}";
           $css .= ".site-container .site-header .header-bar-wrapper{background:{$header_bg}}";
           $css .= ".site-container .site-header .secondary-menu-wrapper{background:{$secondary_menu_bg};}";
 
@@ -558,7 +568,7 @@ class Core extends StylingCard {
 
 		return $css;
 	}
-	
+
 }
 
 new Core( 'Core', 1, true );
