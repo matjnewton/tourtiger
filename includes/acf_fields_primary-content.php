@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* =======================
  * Primary Content Area
  * ==================== */
@@ -59,18 +59,18 @@ function get_instagram_image_temp($url) {
  * Add custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'pc-large', 1100, 1100, false ); 
-	add_image_size( 'pc-middle', 900, 900, false ); 
-	add_image_size( 'pc-medium', 700, 700, false ); 
-	add_image_size( 'pc-small', 500, 500, false ); 
-	add_image_size( 'pc-fit-iphone', 320, 320, false ); 
+	add_image_size( 'pc-large', 1100, 1100, false );
+	add_image_size( 'pc-middle', 900, 900, false );
+	add_image_size( 'pc-medium', 700, 700, false );
+	add_image_size( 'pc-small', 500, 500, false );
+	add_image_size( 'pc-fit-iphone', 320, 320, false );
 }
 
 /**
  * Enqueue Google Maps API
  */
 function google_api_acf_init() {
-	
+
 	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
 }
 
@@ -79,7 +79,7 @@ add_action('acf/init', 'google_api_acf_init', 999);
 /**
  * ACF Global Options
  */
-if(function_exists('acf_add_options_sub_page')) { 
+if(function_exists('acf_add_options_sub_page')) {
 
 	$primary_content = acf_add_options_page(array(
 		'page_title'   => 'Primary Styles',
@@ -419,7 +419,7 @@ if(function_exists('acf_add_options_sub_page')) {
 /**
  * Get css via ACF Font
  * @param  string $font - ACF Field
- * @return array        - [0] - Link to Google font; [1] - css styles  
+ * @return array        - [0] - Link to Google font; [1] - css styles
  */
 function pc_init_font_css( $font = '' ) {
 	if ( $font ) {
@@ -455,7 +455,7 @@ function pc_init_font_css( $font = '' ) {
 
 /**
  * This function builds css styles for forms
- * @param  string $font       Font ACF Fiels 
+ * @param  string $font       Font ACF Fiels
  * @param  string $color      Color value
  * @param  string $background Color value
  * @param  string $border     Color value
@@ -546,20 +546,20 @@ function transform_name( $name = '', $type = '' ) {
 
 /**
  * Image insert
- * @param  integer $id     
- * @param  integer $width  
- * @param  integer $height 
+ * @param  integer $id
+ * @param  integer $width
+ * @param  integer $height
  * @param  boolean $link   optional
- * @param  [type]  $attr   
- * @param  boolean $circle 
- * @return null         
+ * @param  [type]  $attr
+ * @param  boolean $circle
+ * @return null
  */
 function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false, $blank=false ) {
 
 	if ( $circle !== false ) {
-		if ( $width > $height ) { 
+		if ( $width > $height ) {
 			$width = $height;
-		} else { 
+		} else {
 			$height = $width;
 		}
 
@@ -573,13 +573,13 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
 	echo $link ? '</a>':'';
 
-	if ( $circle !== false ) echo '</div>'; 
+	if ( $circle !== false ) echo '</div>';
 
 }
 
 /**
  * Column borders
- * @param  array  $border 
+ * @param  array  $border
  * @return boolean
  */
 function get_pc_content_card_border( $border = array() ) {
@@ -660,7 +660,7 @@ function gf_button_get_form(){
 
 
 /**
- * Deregister unnessesarily scripts and styles 
+ * Deregister unnessesarily scripts and styles
  */
 
 add_action( 'wp_enqueue_scripts', 'primary_area_deregister_unnesesarily_scripts', 9999 );
@@ -709,28 +709,28 @@ function primary_area_deregister_unnesesarily_scripts() {
 		// wp_dequeue_script('jquerystickyjs');//dgamoni
 		// wp_dequeue_script('bxslider_min_js');//dgamoni
 		// wp_dequeue_script('rezdy_scripts');//dgamoni
-		
+
 		//wp_dequeue_script('wqs_functions_xola');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_search_box_xola');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_xola');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_functions_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_functions_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_angular');//dgamoni
 		// wp_dequeue_script('wqs_angular_animate');//dgamoni
 		// wp_dequeue_script('wqs_angular_filter');//dgamoni
 		// wp_dequeue_script('wqs_ng_infinite_scroll');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_moment');//dgamoni
 		// wp_dequeue_script('wqs_daterangepicker');//dgamoni
 		// wp_dequeue_script('wqs_multipledatepicker');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_functions_atlas');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_atlas');//dgamoni
 
@@ -779,7 +779,7 @@ function print_pc_scripts_after_footer() {
 
 /**
  * Get font corner
- * 
+ *
  * @param  string $field sub field value
  * @return string
  */
@@ -802,7 +802,7 @@ function get_font_corner_style( $field = '' ) {
 /**
  * Get mouseover styles
  * @param  string $field sub field value
- * @return array - 0 - defaul; 1 - hover 
+ * @return array - 0 - defaul; 1 - hover
  */
 function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_color = '' ) {
 	$css = false;
@@ -817,7 +817,7 @@ function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_co
 		}
 
 		if ( in_array( 'decor', $field  ) ) $css[0] .= 'text-decoration: underline;';
-	} 
+	}
 
 	return $css;
 }
@@ -826,7 +826,7 @@ function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_co
 /**
  * Get font border styles
  * @param  string $field sub field value
- * @return array - 0 - defaul; 1 - hover 
+ * @return array - 0 - defaul; 1 - hover
  */
 function get_font_border_styles( $style = '', $color = '', $width = '' ) {
 
@@ -862,7 +862,7 @@ function generateRandomString($length = 10) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
-} 
+}
 
 
 /**
@@ -870,7 +870,7 @@ function generateRandomString($length = 10) {
  *
  * 1. Generate HTML if key is exist
  * 2. Enqueue recaptcha script
- * 
+ *
  * @return string
  */
 function insert_recaptcha_html() {
@@ -895,6 +895,9 @@ function instagram_shortcode( $d ){
 		'user-details'   => '',
 		'img-resolution' => 'thumbnail',
 		'token'          => get_field('insta_token','apikey'),
+        'text_before_logo' => 'Visit us',
+        'text_before_logo_size' => '3',
+        'logo_size' => '2',
 	), $d );
 
   $root = 'https://api.instagram.com/v1';
@@ -931,6 +934,9 @@ function instagram_shortcode( $d ){
     endswitch;
   endif;
 
+        $logo_size = $d['logo_size']*0.3;
+        $text_before_logo_size = $d['text_before_logo_size'];
+
   if ( $d['token'] && isset($response['data']) ) :
 
     $attrs = convert_html_attributes([
@@ -948,19 +954,21 @@ function instagram_shortcode( $d ){
       <?php if ($d['user-details']) : ?>
 
 				<div class="instagram--user">
-					<a
-						href='<?="https://instagram.com/{$response['data'][0]['user']['username']}";?>'
-						class='instagram--user__picture'
-						target='_blank'>
-						<img src='<?=$response['data'][0]['user']['profile_picture'];?>'
-								 alt='Instagram | Username: <?=$response['data'][0]['user']['username'];?>' />
-					</a>
-					<p class="instagram--user__name">
-						<a href="<?="https://instagram.com/{$response['data'][0]['user']['username']}";?>"
-							 target='_blank'>
-              <?=$response['data'][0]['user']['username'];?>
-						</a>
-					</p>
+                    <div class="instagram--user__name">
+                        <a href="<?="https://instagram.com/{$response['data'][0]['user']['username']}";?>"
+                           target='_blank'>
+                            <h2 style="display: inline-block; font-size: <?=$text_before_logo_size?>rem"><?=$d['text_before_logo']?></h2>
+                        </a>
+                    </div>
+
+                    <a
+                        href='<?="https://instagram.com/{$response['data'][0]['user']['username']}";?>'
+                        class='instagram--user__picture'
+                        target='_blank' style="transform: scale(<?=$logo_size?>);"
+                    >
+                        <img src='<?=$response['data'][0]['user']['profile_picture'];?>'
+                                 alt='Instagram | Username: <?=$response['data'][0]['user']['username'];?>' />
+                    </a>
 				</div>
 
       <?php endif; ?>
@@ -1000,7 +1008,7 @@ function instagram_shortcode( $d ){
         ?>
 			</div>
 
-      <?=isset($d['rest-button']) ? str_replace( '#.' , "https://instagram.com/{$response['data'][0]['user']['username']}"
+            <?=isset($d['rest-button']) ? str_replace( '#.' , "https://instagram.com/{$response['data'][0]['user']['username']}"
         , $d['rest-button']) : '';?>
 
 		</div>
@@ -1203,6 +1211,74 @@ if( function_exists('acf_add_local_field_group') ):
             'return_format' => 'value',
             'placeholder' => '',
           ),
+            array (
+                'key' => 'field_539b474e4150f',
+                'label' => 'Text before logo',
+                'name' => 'text_before_logo',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 'Visit us on Instagram',
+                'placeholder' => 'Visit us on Instagram',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'none',
+                'maxlength' => '',
+                'readonly' => 0,
+                'disabled' => 0,
+            ),
+            array (
+                'key' => 'field_537d36e0910f3',
+                'label' => 'Text size',
+                'name' => 'text_before_logo_size',
+                'type' => 'number',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '17',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 3,
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => 1,
+                'max' => 6,
+                'step' => '1',
+                'readonly' => 0,
+                'disabled' => 0,
+            ),
+            array (
+                'key' => 'field_537d36e09dde5a',
+                'label' => 'Logo size',
+                'name' => 'logo_size',
+                'type' => 'number',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '16',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 2,
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'min' => 0.5,
+                'max' => 5,
+                'step' => '0.5',
+                'readonly' => 0,
+                'disabled' => 0,
+            ),
         ),
       ),
     ),

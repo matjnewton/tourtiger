@@ -1066,11 +1066,14 @@ function tourtiger_sub_contents(){ ?>
               "[instagram 
               type='{$d['inst']['type']}' 
               count='{$d['inst']['count']}' 
-              columns='{$d['inst']['columns']}' 
+              columns='{$d['inst']['columns']}'
               rest='{$d['inst']['rest']}' 
               onclick='{$d['inst']['onclick']}' 
               user-details='{$d['inst']['user-details']}' 
-              img-resolution='{$d['inst']['img-resolution']}' 
+              img-resolution='{$d['inst']['img-resolution']}'
+              text_before_logo='{$d['inst']['text_before_logo']}'
+              text_before_logo_size='{$d['inst']['text_before_logo_size']}'
+              logo_size='{$d['inst']['logo_size']}' 
               token='{$d['token']}']"
             );
             ?>

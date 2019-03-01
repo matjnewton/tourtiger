@@ -1593,6 +1593,103 @@ acf_add_local_field_group(array (
                                       )
                                     ),
 
+
+
+                                      array (
+                                          'key' => 'field_539b474eqgdhsj',
+                                          'label' => 'Text before logo',
+                                          'name' => 'inst_text_before_logo',
+                                          'type' => 'text',
+                                          'instructions' => '',
+                                          'required' => 0,
+                                          'conditional_logic' => array(
+                                            array(
+                                              array(
+                                                'field' => 'field_58249738f11c0',
+                                                'operator' => '==',
+                                                'value' => 'instagram',
+                                              )
+                                            )
+                                          ),
+                                          'wrapper' => array (
+                                              'width' => '50',
+                                              'class' => '',
+                                              'id' => '',
+                                          ),
+                                          'default_value' => 'Visit us on Instagram',
+                                          'placeholder' => 'Visit us on Instagram',
+                                          'prepend' => '',
+                                          'append' => '',
+                                          'formatting' => 'none',
+                                          'maxlength' => '',
+                                          'readonly' => 0,
+                                          'disabled' => 0,
+                                      ),
+                                      array (
+                                          'key' => 'field_537d36e0wdkcm',
+                                          'label' => 'Text size',
+                                          'name' => 'inst_text_before_logo_size',
+                                          'type' => 'number',
+                                          'instructions' => '',
+                                          'required' => 0,
+                                          'conditional_logic' => array(
+                                              array(
+                                                  array(
+                                                      'field' => 'field_58249738f11c0',
+                                                      'operator' => '==',
+                                                      'value' => 'instagram',
+                                                  )
+                                              )
+                                          ),
+                                          'wrapper' => array (
+                                              'width' => '25',
+                                              'class' => '',
+                                              'id' => '',
+                                          ),
+                                          'default_value' => 3,
+                                          'placeholder' => '',
+                                          'prepend' => '',
+                                          'append' => '',
+                                          'min' => 1,
+                                          'max' => 6,
+                                          'step' => '1',
+                                          'readonly' => 0,
+                                          'disabled' => 0,
+                                      ),
+                                      array (
+                                          'key' => 'field_537d36e09wdh8j2',
+                                          'label' => 'Logo size',
+                                          'name' => 'inst_logo_size',
+                                          'type' => 'number',
+                                          'instructions' => '',
+                                          'required' => 0,
+                                          'conditional_logic' => array(
+                                              array(
+                                                  array(
+                                                      'field' => 'field_58249738f11c0',
+                                                      'operator' => '==',
+                                                      'value' => 'instagram',
+                                                  )
+                                              )
+                                          ),
+                                          'wrapper' => array (
+                                              'width' => '25',
+                                              'class' => '',
+                                              'id' => '',
+                                          ),
+                                          'default_value' => 2,
+                                          'placeholder' => '',
+                                          'prepend' => '',
+                                          'append' => '',
+                                          'min' => 0.5,
+                                          'max' => 5,
+                                          'step' => '0.5',
+                                          'readonly' => 0,
+                                          'disabled' => 0,
+                                      ),
+
+
+
                                     array (
                                       'key' => 'number_5odsith-328',
                                       'label' => 'Margin top',
@@ -1632,7 +1729,7 @@ acf_add_local_field_group(array (
                                       'append' => 'px',
                                       'min' => '0',
                                       'max' => '100'
-                                    )
+                                    ),
                                   ),
                                   'min' => '',
                                   'max' => '',
