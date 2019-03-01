@@ -6,7 +6,7 @@
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_sub_contents');
 function tourtiger_sub_contents(){ ?>
-<?php //$site_layout = genesis_site_layout(); echo $site_layout; ?> 
+<?php //$site_layout = genesis_site_layout(); echo $site_layout; ?>
 <?php if(have_rows('sections')): ?>
 <?php while(have_rows('sections')): the_row(); ?>
     <?php if( get_row_layout() == 'featured_section'): ?>
@@ -21,7 +21,7 @@ function tourtiger_sub_contents(){ ?>
                         <?php echo $headline; ?>
                         </h2>
                         <?php endif; ?>
-                                    
+
                         <?php if($text_area): ?>
                         <p>
                         <?php echo $text_area; ?>
@@ -34,17 +34,17 @@ function tourtiger_sub_contents(){ ?>
     <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
-                        
+
 <section class="tour-page-content faq-page-content section-item">
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    
+
                     <?php
                     if( have_rows('contact_sections') ): ?>
     <div class="contact-wrapper">
-    <?php                
+    <?php
     while ( have_rows('contact_sections') ) : the_row(); ?>
         <section class="questions">
         <?php
@@ -59,7 +59,7 @@ function tourtiger_sub_contents(){ ?>
                         <?php if(have_rows('list_item')): ?>
                         <ul class="td-list">
                             <?php while(have_rows('list_item')): the_row(); ?>
-                                <?php 
+                                <?php
                                     $icon = get_sub_field('icons');
                                     $information = get_sub_field('information');
                                     $phone = get_sub_field('phone');
@@ -68,9 +68,9 @@ function tourtiger_sub_contents(){ ?>
                                     $skype = get_sub_field('skype');
                                  ?>
                                  <li>
-                            
+
                             <div class="info-wrapper<?php if(!$icon): ?> lp41<?php endif; ?><?php if($icon): ?> <?php if($icon == 'Phone'): ?>phone-icon<?php endif; ?><?php if($icon == 'Address'): ?>home-icon<?php endif; ?><?php if($icon == 'Facebook'): ?>facebook-square-icon<?php endif; ?><?php if($icon == 'Twitter'): ?>twitter-square-icon<?php endif; ?><?php if($icon == 'Email'): ?>envelope-square-icon<?php endif; ?><?php if($icon == 'Skype'): ?>skype-icon<?php endif; ?><?php if($icon == 'Whatsapp'): ?>phone-icon<?php endif; ?><?php endif; ?>">
-                                
+
                                 <?php if($phone): ?>
                                     <?php $phone_number = preg_replace('/\D+/', '', $information); ?>
                                     <?php if($phone_number): ?>
@@ -95,13 +95,13 @@ function tourtiger_sub_contents(){ ?>
                                 <?php endif; ?>
                             </div>
                         </li>
-                                
-                                
+
+
                             <?php endwhile; ?>
-                        </ul>        
+                        </ul>
                         <?php endif; ?>
-                    
-        <?php            
+
+        <?php
         endif; ?>
         </section>
     <?php
@@ -120,12 +120,12 @@ function tourtiger_sub_contents(){ ?>
                 <?php endif; ?>
             </div>
         </div>
-        
-        <?php                
+
+        <?php
     if( have_rows('contact_sections') ):
     while ( have_rows('contact_sections') ) : the_row(); ?>
         <?php
-        if( get_row_layout() == 'map'): 
+        if( get_row_layout() == 'map'):
         $headline = get_sub_field('headline');
         $center = get_sub_field('map_center_address');
         $zoom = get_sub_field('zoom');
@@ -145,18 +145,18 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
         </div>
-        
-        <?php 
+
+        <?php
         endif;
     endwhile;
     endif;
         ?>
     </section>
-    
+
     <?php global $post; ?>
-            
+
             <?php if(get_field('tiles_area')): ?>
-            
+
             <?php while(has_sub_field('tiles_area')): ?>
             <?php
                 $section_headline = get_sub_field('section_headline');
@@ -175,7 +175,7 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
             <div class="row even-grid">
-                <?php 
+                <?php
                     $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -195,11 +195,11 @@ function tourtiger_sub_contents(){ ?>
                             break;
                     }
                     ?>
-                    
+
                     <?php
                         if (have_rows('tiles')):
                         while(have_rows('tiles')): the_row();
-                        
+
                         if( get_row_layout() == 'tours' ):
                             $pulled_specific = get_sub_field('pull_specific_from');
                             if($pulled_specific):
@@ -219,35 +219,35 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                         <?php
                         endif;
-                        
+
                         if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
-                         
+
                         endwhile;
                         endif;
-                       ?> 
-                    
-                           
+                       ?>
+
+
                 </div>
             </div>
-    </section>           
+    </section>
                 <?php endwhile; ?>
-            
+
             <?php endif; ?>
-    
+
     <?php //get_sidebar('subscribe'); ?>
-    
+
 <?php }
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');

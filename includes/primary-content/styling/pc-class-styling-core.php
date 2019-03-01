@@ -361,8 +361,23 @@ class Core extends StylingCard {
           'type'  => 'rgba_color',
           'required' => 0,
         ),
+        array (
+            'key'   => 'fc_' . $i . '_bu_7w121_bas',
+            'label' => 'Linked text color',
+            'name'  => 'linked_text_color',
+            'type'  => 'rgba_color',
+            'required' => 0,
+        ),
+
+        array (
+            'key'   => 'fc_' . $i . '_bu_7w121_wqe8',
+            'label' => 'Linked text color - mouse over',
+            'name'  => 'linked_text_color_hover',
+            'type'  => 'rgba_color',
+            'required' => 0,
+        ),
       ),
-		);
+    );
 
 		return $fc_options_array;
 
@@ -442,7 +457,19 @@ class Core extends StylingCard {
         $nav_btn_bg_h = get_sub_field('nav_button_bg_hover');
         $nav_btn_color = get_sub_field('nav_button_color');
 
+        $linked_text_color = get_sub_field('linked_text_color');
+        $linked_text_color_hover = get_sub_field('linked_text_color_hover');
+
         //$css .= '<style>';
+
+        if ($linked_text_color) {
+            $css .= "a > * {color:{$linked_text_color}!important;}";
+        }
+
+        if ($linked_text_color_hover) {
+            $css .= "a:hover > * {color:{$linked_text_color_hover}!important;}";
+        }
+
 
           if ($nav_btn_bg) {
             $css .= ".book-btn > *, #menu-main-nav .xola-book-btn > *, #menu-main-nav .peek-book-btn > *, #menu-main-nav .book-btn > * {background-color:{$nav_btn_bg}!important;}";
