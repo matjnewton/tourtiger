@@ -121,8 +121,9 @@ function tourtiger_scripts_method() {
 		endif;
 
 		if($integrate_xola):
+        $theme = wp_get_theme();
 		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
-		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), null, false);
+		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), $theme->get( 'Version' ), false);
 		endif;
 
     $theme = wp_get_theme();
