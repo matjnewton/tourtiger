@@ -2099,11 +2099,3 @@ function checkIfEmail($email) {
     $find2 = strpos($email, '.');
     return ($find1 !== false && $find2 !== false && $find2 > $find1 ? true : false);
 }
-
-// defering parsing of JS files
-function defer_parsing_of_js ( $url ) {
-    if ( FALSE === strpos( $url, '.js' ) ) return $url;
-    if ( strpos( $url, 'jquery.js' ) ) return $url;
-    return "$url' defer ";
-}
-add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
