@@ -1,5 +1,40 @@
 <?php
 
+// no acf
+
+// ACF with all features support integration
+// 1. customize ACF path
+add_filter('acf/settings/path', 'acf_settings_path');
+
+function acf_settings_path() {
+
+    // update path
+    $path = get_stylesheet_directory() . '/includes/plugins/acf-plugin/';
+
+    // return
+    return $path;
+
+}
+
+
+// 2. customize ACF dir
+add_filter('acf/settings/dir', 'acf_settings_dir');
+
+function acf_settings_dir() {
+
+    // update path
+    $dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-plugin/';
+
+    // return
+    return $dir;
+
+}
+
+include_once get_stylesheet_directory() . '/includes/plugins/acf-plugin/acf.php';
+
+if ( ! class_exists( 'acf' ) )
+    return;
+
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
@@ -2063,5 +2098,3 @@ function checkIfEmail($email) {
     $find2 = strpos($email, '.');
     return ($find1 !== false && $find2 !== false && $find2 > $find1 ? true : false);
 }
-
-
