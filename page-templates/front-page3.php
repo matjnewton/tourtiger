@@ -706,6 +706,14 @@ function tourtiger_sub_contents(){ ?>
                             <?php $testimonials_type = get_field('testimonials_type', 'option'); ?>
                             <?php
                             $number_of_tstm_columns = get_sub_field('number_of_tstm_columns');
+
+                        $testimonials_text_color = get_sub_field('testimonials_styling')['testimonials_text_color'];
+                        $testimonials_text_weight = get_sub_field('testimonials_styling')['testimonials_text_weight'];
+                        $testimonials_background_url = get_sub_field('testimonials_styling')['background_image'];
+                        $testimonials_background_opacity = get_sub_field('testimonials_styling')['background_image_opacity'];
+                        $testimonials_background_cover_or_repeat = get_sub_field('testimonials_styling')['background_cover_or_repeat'];
+                        $testimonials_background_and_styling = get_sub_field('testimonials_styling_options');
+
                             $tcol = 0;
                             if($number_of_tstm_columns):
                             switch ($number_of_tstm_columns) {
@@ -728,13 +736,24 @@ function tourtiger_sub_contents(){ ?>
                             endif;
                             ?>
                             <?php
-                                if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'): ?>
-                            <div class="container">
-                                <div class="row testimonials">
+if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'):?>
+
+<div <?php if( $testimonials_background_and_styling == 1 ): ?>class="testimonials-div"<?php endif; ?>>
+    <div class="testimonials-background-image-container" style="background: url(<?=$testimonials_background_url?>) center center; opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
+    <div class="container " <?php if( $testimonials_background_and_styling == 1 ): ?>style="background: none"<?php endif; ?>>
+                            <div class="row testimonials">
                             <div class="col-sm-12">
                                 <div class="testimonials-slider-wrapper">
                                     <div class="testimonials-slider">
                                         <ul class="slides">
+                                            <style>
+                                                .txt-testimonial,
+                                                .txt-testimonial span.name,
+                                                div.txt-testimonial > div > a {
+                                                    color: <?=$testimonials_text_color?> !important;
+                                                    font-weight: <?=$testimonials_text_weight?>;
+                                                }
+                                            </style>
                                         <?php while(have_rows('boxes_set')): the_row(); ?>
                                         <?php if( get_row_layout() == 'testimonials' ):
                                         $pulled_specific = get_sub_field('pull_specific_from');
@@ -837,6 +856,11 @@ function tourtiger_sub_contents(){ ?>
 
                         wp_reset_query();
                                 ?>
+
+
+                            </div>
+
+
                             </div><!-- .row-->
                             </div><!-- .container-->
                             <?php endif; ?>

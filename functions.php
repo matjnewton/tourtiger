@@ -4,7 +4,7 @@
 
 // ACF with all features support integration
 // 1. customize ACF path
-add_filter('acf/settings/path', 'acf_settings_path');
+ add_filter('acf/settings/path', 'acf_settings_path');
 
 function acf_settings_path() {
 
@@ -18,7 +18,7 @@ function acf_settings_path() {
 
 
 // 2. customize ACF dir
-add_filter('acf/settings/dir', 'acf_settings_dir');
+ add_filter('acf/settings/dir', 'acf_settings_dir');
 
 function acf_settings_dir() {
 
@@ -30,7 +30,7 @@ function acf_settings_dir() {
 
 }
 
-include_once get_stylesheet_directory() . '/includes/plugins/acf-plugin/acf.php';
+ include_once get_stylesheet_directory() . '/includes/plugins/acf-plugin/acf.php';
 
 if ( ! class_exists( 'acf' ) )
     return;

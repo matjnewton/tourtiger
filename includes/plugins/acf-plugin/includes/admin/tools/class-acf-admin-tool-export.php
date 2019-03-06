@@ -304,8 +304,8 @@ class ACF_Admin_Tool_Export extends ACF_Admin_Tool {
 					'prefix'	=> false,
 					'value'		=> '',
 					'choices'	=> array(
-						'all'		=> 'Include all settings',
-						'minimal'	=> 'Ignore empty settings'
+						'all'		=> __('Include all settings', 'acf'),
+						'minimal'	=> __('Ignore empty settings', 'acf'),
 					)
 				));
 */
@@ -479,7 +479,11 @@ class ACF_Admin_Tool_Export extends ACF_Admin_Tool {
 					
 					
 					// tooltip
-					acf.tooltip.temp('Copied', $a);
+					acf.newTooltip({
+						text: 		"<?php _e('Copied', 'acf' ); ?>",
+						timeout:	250,
+						target: 	$(this),
+					});
 					
 				} catch (err) {
 					
@@ -585,7 +589,7 @@ class ACF_Admin_Tool_Export extends ACF_Admin_Tool {
 }
 
 // initialize
-acf_register_admin_tool( 'acf_admin_tool_export' );
+acf_register_admin_tool( 'ACF_Admin_Tool_Export' );
 
 endif; // class_exists check
 
