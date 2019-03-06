@@ -9,7 +9,7 @@
 function acf_settings_path() {
 
     // update path
-    $path = get_stylesheet_directory() . '/includes/plugins/acf-plugin/';
+    $path = get_stylesheet_directory() . '/includes/plugins/acf-5.7.9/';
 
     // return
     return $path;
@@ -23,14 +23,14 @@ function acf_settings_path() {
 function acf_settings_dir() {
 
     // update path
-    $dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-plugin/';
+    $dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-5.7.9/';
 
     // return
     return $dir;
 
 }
 
- include_once get_stylesheet_directory() . '/includes/plugins/acf-plugin/acf.php';
+ include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.9/acf.php';
 
 if ( ! class_exists( 'acf' ) )
     return;
