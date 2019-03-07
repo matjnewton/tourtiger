@@ -3152,7 +3152,7 @@ label.is-required:after {
     position: absolute;
     left: 50%;
     width: 20px;
-    border-top: 3px solid;    
+    border-top: 3px solid;
 }
 
 .pc-custom-arrow.arrows_weight_pc-bold-arrow .pc__c--arrow-p:before,
@@ -3641,3 +3641,12 @@ img.mfp-img {
     .mfp-container {
         padding-left: 6px;
         padding-right: 6px; } }
+
+[data-aload] {
+    background-image: none!important;
+}
+
+.pc_hero-area__banner [data-aload] {
+    opacity: 0;
+    max-height: 0;
+}

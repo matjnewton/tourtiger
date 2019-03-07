@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* =======================
  * Primary Content Area
  * ==================== */
@@ -49,18 +49,18 @@ if ( !is_admin() && 1 === 3 ) {
  * Add custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'pc-large', 1100, 1100, false ); 
-	add_image_size( 'pc-middle', 900, 900, false ); 
-	add_image_size( 'pc-medium', 700, 700, false ); 
-	add_image_size( 'pc-small', 500, 500, false ); 
-	add_image_size( 'pc-fit-iphone', 320, 320, false ); 
+	add_image_size( 'pc-large', 1100, 1100, false );
+	add_image_size( 'pc-middle', 900, 900, false );
+	add_image_size( 'pc-medium', 700, 700, false );
+	add_image_size( 'pc-small', 500, 500, false );
+	add_image_size( 'pc-fit-iphone', 320, 320, false );
 }
 
 /**
  * Enqueue Google Maps API
  */
 function google_api_acf_init() {
-	
+
 	acf_update_setting( 'google_api_key', get_field('google_maps','apikey') );
 }
 
@@ -69,7 +69,7 @@ add_action('acf/init', 'google_api_acf_init', 999);
 /**
  * ACF Global Options
  */
-if(function_exists('acf_add_options_sub_page')) { 
+if(function_exists('acf_add_options_sub_page')) {
 
 	$primary_content = acf_add_options_page(array(
 		'page_title'   => 'Primary Styles',
@@ -366,7 +366,7 @@ if(function_exists('acf_add_options_sub_page')) {
 /**
  * Get css via ACF Font
  * @param  string $font - ACF Field
- * @return array        - [0] - Link to Google font; [1] - css styles  
+ * @return array        - [0] - Link to Google font; [1] - css styles
  */
 function pc_init_font_css( $font = '' ) {
 	if ( $font ) {
@@ -400,7 +400,7 @@ function pc_init_font_css( $font = '' ) {
 
 /**
  * This function builds css styles for forms
- * @param  string $font       Font ACF Fiels 
+ * @param  string $font       Font ACF Fiels
  * @param  string $color      Color value
  * @param  string $background Color value
  * @param  string $border     Color value
@@ -489,20 +489,20 @@ function transform_name( $name = '', $type = '' ) {
 
 /**
  * Image insert
- * @param  integer $id     
- * @param  integer $width  
- * @param  integer $height 
+ * @param  integer $id
+ * @param  integer $width
+ * @param  integer $height
  * @param  boolean $link   optional
- * @param  [type]  $attr   
- * @param  boolean $circle 
- * @return null         
+ * @param  [type]  $attr
+ * @param  boolean $circle
+ * @return null
  */
 function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false, $blank=false ) {
 
 	if ( $circle !== false ) {
-		if ( $width > $height ) { 
+		if ( $width > $height ) {
 			$width = $height;
-		} else { 
+		} else {
 			$height = $width;
 		}
 
@@ -516,13 +516,13 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
 	echo $link ? '</a>':'';
 
-	if ( $circle !== false ) echo '</div>'; 
+	if ( $circle !== false ) echo '</div>';
 
 }
 
 /**
  * Column borders
- * @param  array  $border 
+ * @param  array  $border
  * @return boolean
  */
 function get_pc_content_card_border( $border = array() ) {
@@ -603,7 +603,7 @@ function gf_button_get_form(){
 
 
 /**
- * Deregister unnessesarily scripts and styles 
+ * Deregister unnessesarily scripts and styles
  */
 
 add_action( 'wp_enqueue_scripts', 'primary_area_deregister_unnesesarily_scripts', 9999 );
@@ -646,28 +646,28 @@ function primary_area_deregister_unnesesarily_scripts() {
 		// wp_dequeue_script('jquerystickyjs');//dgamoni
 		// wp_dequeue_script('bxslider_min_js');//dgamoni
 		// wp_dequeue_script('rezdy_scripts');//dgamoni
-		
+
 		//wp_dequeue_script('wqs_functions_xola');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_search_box_xola');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_xola');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_functions_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_functions_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_search_box_rezdyapi');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_rezdyapi');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_angular');//dgamoni
 		// wp_dequeue_script('wqs_angular_animate');//dgamoni
 		// wp_dequeue_script('wqs_angular_filter');//dgamoni
 		// wp_dequeue_script('wqs_ng_infinite_scroll');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_moment');//dgamoni
 		// wp_dequeue_script('wqs_daterangepicker');//dgamoni
 		// wp_dequeue_script('wqs_multipledatepicker');//dgamoni
-		
+
 		// wp_dequeue_script('wqs_functions_atlas');//dgamoni
 		// wp_dequeue_script('wqs_functions_for_check_available_atlas');//dgamoni
 
@@ -705,7 +705,7 @@ function print_pc_scripts_after_footer() {
 
 /**
  * Get font corner
- * 
+ *
  * @param  string $field sub field value
  * @return string
  */
@@ -728,7 +728,7 @@ function get_font_corner_style( $field = '' ) {
 /**
  * Get mouseover styles
  * @param  string $field sub field value
- * @return array - 0 - defaul; 1 - hover 
+ * @return array - 0 - defaul; 1 - hover
  */
 function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_color = '' ) {
 	$css = false;
@@ -743,7 +743,7 @@ function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_co
 		}
 
 		if ( in_array( 'decor', $field  ) ) $css[0] .= 'text-decoration: underline;';
-	} 
+	}
 
 	return $css;
 }
@@ -752,7 +752,7 @@ function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_co
 /**
  * Get font border styles
  * @param  string $field sub field value
- * @return array - 0 - defaul; 1 - hover 
+ * @return array - 0 - defaul; 1 - hover
  */
 function get_font_border_styles( $style = '', $color = '', $width = '' ) {
 
@@ -769,7 +769,7 @@ function get_font_border_styles( $style = '', $color = '', $width = '' ) {
 			$css[0] .= 'border:' . $width . 'px solid transparent;';
 		}
 
-	endif; 
+	endif;
 
 	return $css;
 }
@@ -785,7 +785,7 @@ function generateRandomString($length = 10) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
-} 
+}
 
 
 /**
@@ -793,7 +793,7 @@ function generateRandomString($length = 10) {
  *
  * 1. Generate HTML if key is exist
  * 2. Enqueue recaptcha script
- * 
+ *
  * @return string
  */
 function insert_recaptcha_html() {

@@ -544,6 +544,21 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
+add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload', $attr );
+
+function attachment_image_attributes_aload($attr) {
+
+    if ( isset( $attr['data-aload-on'] ) ) :
+        $attr['data-aload'] = $attr['src'];
+        $attr['data-aload-set'] = $attr['srcset'];
+
+        $attr['src'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
+        $attr['srcset'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
+    endif;
+
+    return $attr;
+}
+
 /**
  * Image insert
  * @param  integer $id
@@ -570,7 +585,11 @@ function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=
 	$link_attrs .= $blank ? " target='_blank'" : '';
 
 	echo $link ? "<a {$link_attrs}>":'';
+
+    echo '<!-- Open img tag -->';
+
 	echo wp_get_attachment_image( $id, array( $width, $height ), true, $attr );
+
 	echo $link ? '</a>':'';
 
 	if ( $circle !== false ) echo '</div>';

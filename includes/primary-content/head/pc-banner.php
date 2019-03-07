@@ -23,7 +23,7 @@
     $banner_type = get_sub_field( 'pc_image_type' ); ?>
 
         <section class="pc_hero-area__banner">
-            <div class="pc_hero-area__wrapper">  
+            <div class="pc_hero-area__wrapper">
 
                 <?php if ( $banner_type == 'Single image' ) :
                     include ( PCA_DIR . '/head/temp/pc-banner-image.php' );
@@ -32,7 +32,7 @@
                 elseif ( $banner_type == 'Background video' ) :
                     include ( PCA_DIR . '/head/temp/pc-banner-video.php' );
                 endif ?>
-            
+
             </div>
 
     <?php $banner_divi = get_sub_field( 'pc_ha_bd' );
@@ -42,7 +42,7 @@
                 echo $banner_divi_сss ? '<div style="' . $banner_divi_сss . '" id="pc_ha_' . $banner_divi . '"></div>' : '';
             } elseif ( $banner_divi == 'image' ) {
                 $banner_divi_сss = 'background: none;';
-                $banner_divi_content = '<img src="' . get_sub_field( 'pc_ha_bd_image' ) . '" alt="" />';
+                $banner_divi_content = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-aload="' . get_sub_field( 'pc_ha_bd_image' ) . '" alt="" />';
                 echo $banner_divi_сss ? '<div style="' . $banner_divi_сss . '" id="pc_ha_' . $banner_divi . '">' . $banner_divi_content . '</div>' : '';
             } elseif ( $banner_divi == 'gradient' ) {
                 $banner_divi_сss = ' 
@@ -55,7 +55,7 @@
             } ?>
 
         </section>
-    </div> 
+    </div>
 
 
 

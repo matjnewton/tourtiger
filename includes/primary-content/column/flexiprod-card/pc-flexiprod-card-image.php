@@ -1,6 +1,6 @@
-<?php 
+<?php
 /**
- * Flexi prod card: Image 
+ * Flexi prod card: Image
  */
 
 /* Common */
@@ -50,15 +50,22 @@ echo $open;
 
 	/**
 	 * Print image
+     *
+     * @todo add src attr
 	 */
-	pc_image( $tour_flexiprod_image_url, $thumb_width, $thumb_height, false, array( 'class' => 'pc--c__b-image_thumb' ) );
+	pc_image( $tour_flexiprod_image_url, $thumb_width, $thumb_height, false,
+        array(
+            'class' => 'pc--c__b-image_thumb' ,
+            'data-aload-on' => '' ,
+        )
+    );
 
 	/**
 	 * Print content
 	 */
 	$key = 'image';
 	include get_stylesheet_directory() . '/includes/primary-content/column/flexiprod-card/pc-flexiprod-card-image-content.php';
-	
+
 
 	/**
 	 * Print hover content
@@ -85,4 +92,4 @@ echo $open;
 /**
  * Close tag image
  */
-echo $close; 
+echo $close;
