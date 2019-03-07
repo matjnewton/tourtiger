@@ -709,7 +709,7 @@ function tourtiger_sub_contents(){ ?>
 
                         $testimonials_text_color = get_sub_field('testimonials_styling')['testimonials_text_color'];
                         $testimonials_text_weight = get_sub_field('testimonials_styling')['testimonials_text_weight'];
-                        $testimonials_background_url = get_sub_field('testimonials_styling')['background_image'];
+                        $testimonials_background_id = get_sub_field('testimonials_styling')['background_image'];
                         $testimonials_background_opacity = get_sub_field('testimonials_styling')['background_image_opacity'];
                         $testimonials_background_cover_or_repeat = get_sub_field('testimonials_styling')['background_cover_or_repeat'];
                         $testimonials_background_and_styling = get_sub_field('testimonials_styling_options');
@@ -739,7 +739,33 @@ function tourtiger_sub_contents(){ ?>
 if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'):?>
 
 <div <?php if( $testimonials_background_and_styling == 1 ): ?>class="testimonials-div"<?php endif; ?>>
-    <div class="testimonials-background-image-container" style="background: url(<?=$testimonials_background_url?>) center center; opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
+<?php // proper size background image selector
+$testimonials_background_id;
+    $img_srcset_full = wp_get_attachment_image_url( $testimonials_background_id, 'full' );
+    $img_srcset_large = wp_get_attachment_image_url( $testimonials_background_id, 'large' );
+    $img_srcset_medium_large = wp_get_attachment_image_url( $testimonials_background_id, 'medium_large' );
+    $img_srcset_medium = wp_get_attachment_image_url( $testimonials_background_id, 'medium' );
+
+    ?>
+    <style>
+        .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_full?>);
+        }
+        @media only screen and (min-width: 300px) {
+            .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_medium?>)
+        }}
+        @media only screen and (min-width: 768px) {
+            .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_medium_large?>)
+        }}
+        @media only screen and (min-width: 1024px) {
+            .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_large?>)
+        }}
+    </style>
+
+    <div class="testimonials-background-image-container" style="opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
     <div class="container " <?php if( $testimonials_background_and_styling == 1 ): ?>style="background: none"<?php endif; ?>>
                             <div class="row testimonials">
                             <div class="col-sm-12">

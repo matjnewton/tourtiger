@@ -9,7 +9,7 @@
 function acf_settings_path() {
 
     // update path
-    $path = get_stylesheet_directory() . '/includes/plugins/acf-5.7.9/';
+    $path = get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/';
 
     // return
     return $path;
@@ -23,14 +23,14 @@ function acf_settings_path() {
 function acf_settings_dir() {
 
     // update path
-    $dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-5.7.9/';
+    $dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-5.7.13/';
 
     // return
     return $dir;
 
 }
 
- include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.9/acf.php';
+ include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/acf.php';
 
 if ( ! class_exists( 'acf' ) )
     return;
@@ -1496,6 +1496,9 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             elseif($classes[1] == 'gift'):
             $def_class = 'xola-gift';
             endif;
+
+            $class_attribute = '';
+            $id_attribute ='';
 
             $class_attribute .= ' class="'.$def_class.' xola-custom"';
             if($classes[1] == 'checkout-all'):
