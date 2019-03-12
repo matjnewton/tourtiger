@@ -13,6 +13,8 @@
             $('.blog-content-wrapper').css("margin-top", 20);
             console.log('Height:', height);
         }
+
+        $('.wp-caption').css('max-width', '100%');
     }, 20);
 })();
 
