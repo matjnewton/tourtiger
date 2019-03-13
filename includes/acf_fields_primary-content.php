@@ -544,7 +544,7 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
-add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload', $attr );
+// add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload', $attr );
 
 function attachment_image_attributes_aload($attr) {
 
