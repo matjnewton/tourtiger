@@ -2091,9 +2091,11 @@ function pagination_appear() {
 
 // Different Fixes
 function different_fixes() {
-    wp_enqueue_script('hero-position-fix', get_stylesheet_directory_uri(). '/js/hero-position-fix.js', NULL, 1.0, true);
+    $theme = wp_get_theme();
 
-    wp_enqueue_script(' forms-with-capcha-fix', get_stylesheet_directory_uri(). '/js/forms-with-capcha-fix.min.js', NULL, 1.0, true);
+    wp_enqueue_script('hero-position-fix', get_stylesheet_directory_uri(). '/js/hero-position-fix.js', NULL, $theme->get( 'Version' ), true);
+
+    wp_enqueue_script(' forms-with-capcha-fix', get_stylesheet_directory_uri(). '/js/forms-with-capcha-fix.min.js', NULL, $theme->get( 'Version' ), true);
 }
  add_action('wp_enqueue_scripts', 'different_fixes');
 

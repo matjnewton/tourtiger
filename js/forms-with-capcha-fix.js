@@ -6,9 +6,12 @@ setTimeout(()=>$('#jivo-iframe-container').remove(), 5000); // DELETE THIS AFTER
 
 
 var onloadCallback = function() {
-    console.log("Captcha is ready!");
 
-    if ($( window ).width()>768) {
+    var checkForm = ($('.ginput_container_text').length>0 && $('.ginput_container_email').length>0 && $('.ginput_container_captcha').length>0 && !window.location.href.includes('contact-us'));
+
+    if (checkForm) {
+
+        if ($(window).width() > 768) {
 
             var recaptcha = $('.g-recaptcha');
             recaptcha.remove();
@@ -58,9 +61,10 @@ var onloadCallback = function() {
 
             $(".gform_footer").css({"display": "flex", "justify-content": "center", "flex-wrap": "wrap"});
 
-    }
+        }
 
-    if ($( window ).width()<768) {
-        $('.ginput_container_captcha').css({"display": "flex", "justify-content": "space-around"});
+        if ($(window).width() < 768) {
+            $('.ginput_container_captcha').css({"display": "flex", "justify-content": "space-around"});
+        }
     }
 };
