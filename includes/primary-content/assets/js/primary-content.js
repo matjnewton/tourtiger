@@ -586,7 +586,7 @@ window.onload = function () {
        * Load reCaptch lib
        */
       if ( $('.g-recaptcha').length > 0 ) {
-        $.getScript("//www.google.com/recaptcha/api.js");
+        $.getScript("//www.google.com/recaptcha/api.js?onload=onloadCallback");
       }
 
       $('.pc--c').on('change', 'input, select, textarea', function(){

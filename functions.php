@@ -2089,11 +2089,13 @@ function pagination_appear() {
 ) );
 }
 
-// Fixing Sup Panel Issue
-function hero_position_fix() {
+// Different Fixes
+function different_fixes() {
     wp_enqueue_script('hero-position-fix', get_stylesheet_directory_uri(). '/js/hero-position-fix.js', NULL, 1.0, true);
+
+    wp_enqueue_script(' forms-with-capcha-fix', get_stylesheet_directory_uri(). '/js/forms-with-capcha-fix.min.js', NULL, 1.0, true);
 }
- add_action('wp_enqueue_scripts', 'hero_position_fix');
+ add_action('wp_enqueue_scripts', 'different_fixes');
 
 
 // Checking if Address is Email Address

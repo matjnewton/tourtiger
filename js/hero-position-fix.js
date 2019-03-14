@@ -2,7 +2,6 @@
     setTimeout( function() {
 
         var href = window.location.href;
-        console.log(href.includes('/blog/'));
 
         if ($( window ).width()<768 && !href.includes('/blog/')) {
             var paddingTop = $('.header-bar').height();
