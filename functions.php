@@ -2095,7 +2095,7 @@ function different_fixes() {
 
     wp_enqueue_script('hero-position-fix', get_stylesheet_directory_uri(). '/js/hero-position-fix.js', NULL, $theme->get( 'Version' ), true);
 
-    wp_enqueue_script(' forms-with-capcha-fix', get_stylesheet_directory_uri(). '/js/forms-with-capcha-fix.min.js', NULL, $theme->get( 'Version' ), true);
+  //  wp_enqueue_script(' forms-with-capcha-fix', get_stylesheet_directory_uri(). '/js/forms-with-capcha-fix.min.js', NULL, $theme->get( 'Version' ), true);
 }
  add_action('wp_enqueue_scripts', 'different_fixes');
 
@@ -2106,3 +2106,13 @@ function checkIfEmail($email) {
     $find2 = strpos($email, '.');
     return ($find1 !== false && $find2 !== false && $find2 > $find1 ? true : false);
 }
+
+// -------------------------  EXTRA INPUT FOR CAPTCHA FIELD --------------
+function add_for_test_something($a, $b) {
+
+    if ($a == 250)
+    echo "<i>Add class name \"homepage-captcha-fix\" for fixing CAPTCHA form at Home Page bellow.</i>";
+}
+// add_action('gform_field_appearance_settings', 'add_for_test_something', 1, 2);
+
+
