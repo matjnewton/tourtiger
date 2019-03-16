@@ -2096,6 +2096,11 @@ function different_fixes() {
     wp_enqueue_script('hero-position-fix', get_stylesheet_directory_uri(). '/js/hero-position-fix.js', NULL, $theme->get( 'Version' ), true);
 
   //  wp_enqueue_script(' forms-with-capcha-fix', get_stylesheet_directory_uri(). '/js/forms-with-capcha-fix.min.js', NULL, $theme->get( 'Version' ), true);
+
+
+    // wp_enqueue_script('transmit-style-1-to-gform', get_stylesheet_directory_uri(). '/js/transmit-style-1-to-gform.js', NULL, $theme->get( 'Version' ), true);
+    /* This inserts file that copy pulsing button feature to the form submit button  */
+
 }
  add_action('wp_enqueue_scripts', 'different_fixes');
 

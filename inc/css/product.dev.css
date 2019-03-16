@@ -13,7 +13,7 @@ body.custom-background.single-product {
   background-color: #ffffff;
   /*padding: 27px 27px 27px 27px;*/
   padding: 30px 50px 30px 50px;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   /*margin-bottom: 30px;*/
   margin-bottom: -15px;
   padding-bottom: 32px;
@@ -163,7 +163,7 @@ body.custom-background.single-product {
   color: #ffffff;
   padding: 16px;
   position: relative;
-  background-color: #abc545; 
+  background-color: #abc545;
 }
 .book-btn2-product-title  i {
     font-size: 24px;
@@ -321,7 +321,7 @@ padding-bottom: 11px;
 .content h4.primary_content_subhead,
 .content h5.primary_content_subhead,
 .content h6.primary_content_subhead {
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #abc545;
@@ -347,7 +347,7 @@ padding-bottom: 11px;
     margin-left: 46px;
     display: inline-block;
         margin-top: 9px;
-    
+
 }
 .product_content_wrapper .highlights_options li {
     position: relative;
@@ -698,18 +698,18 @@ ul.primary_content_expandable_content_options li:last-child {
 
 /*embed*/
 
-.embed-container { 
-  position: relative; 
+.embed-container {
+  position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
   height: auto;
-} 
+}
 
 .embed-container iframe,
 .embed-container object,
-.embed-container embed { 
+.embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -717,9 +717,9 @@ ul.primary_content_expandable_content_options li:last-child {
   height: 100%;
 }
 
-/* 
+/*
 *
-* seacrh result page style 
+* seacrh result page style
 *
 */
 
@@ -809,7 +809,7 @@ body.custom-background.page-template-rezdy_search {
   font-size: 26px;
   border-bottom: solid 1px #ebe7e5;
   margin-bottom: 10px;
-    
+
     padding-right: 100px;
     line-height: 26px;
     padding-bottom: 10px;
@@ -934,10 +934,10 @@ body.custom-background.page-template-rezdy_search {
   padding: 15px 0 5px 0;
     text-align: center;
 }
-.availability_checker_check span {   
-  text-decoration: underline;   
-  padding-right: 5px;   
-  padding-left: 5px;    
+.availability_checker_check span {
+  text-decoration: underline;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 .availability_checker_check_prev:hover,
 .availability_checker_check_next:hover {
@@ -1031,14 +1031,14 @@ line-height: 40px;
 }
 
 /*end design2*/
-.styles .site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas,    
-.site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas {    
-    text-align: left;   
+.styles .site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas,
+.site-inner .content .product_content_wrapper span.availability_checker_col.availability_checker_col_atlas {
+    text-align: left;
  }
-.styles .site-inner .content .product_content_wrapper span.book_atlas,    
-.site-inner .content .product_content_wrapper span.book_atlas {   
-  text-decoration: underline;   
-  font-weight: bold;    
+.styles .site-inner .content .product_content_wrapper span.book_atlas,
+.site-inner .content .product_content_wrapper span.book_atlas {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .styles .site-inner .content .product_content_wrapper span.availability_checker_col,
@@ -1210,7 +1210,7 @@ line-height: 40px;
 #vinetrekker_piker.daterangepicker.opensright:after {
     left: 100px;
 }
-#vinetrekker_piker.daterangepicker td.active, 
+#vinetrekker_piker.daterangepicker td.active,
 #vinetrekker_piker.daterangepicker td.active:hover,
 #vinetrekker_piker.daterangepicker td.active.available.selectredzy,
 #vinetrekker_piker.daterangepicker td.active.available.selectredzy:hover,
@@ -1333,7 +1333,7 @@ line-height: 40px;
   margin-top: -35px;
 }*/
 /*.num_people-label {
-  
+
 }*/
 #startTime.rezdy_date:focus,
 #endTime.rezdy_date:focus {
@@ -1351,7 +1351,7 @@ line-height: 40px;
     background-color: #f3b04a;
 }
 .departure-text-0 {
-  
+
 }
 
 
@@ -1449,9 +1449,9 @@ select.form-control.rezdy_date.timeSelected  option:empty { display:none }
     width: 100%;
     border: none;
 }
-// .single-product .gfield_label {
-//   display: none;
-// }
+/* .single-product .gfield_label {
+  display: none;
+} */
 .primary_content_testimonials .bx-wrapper {
   margin: 0 auto 25px;
 }

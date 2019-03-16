@@ -1,0 +1,23 @@
+/* This content might be used as a snippet if desired */
+
+
+.product_page_style-one .product_content_wrapper .gform_wrapper .gform_button{font-size:15px!important;font-weight:500!important;font-style:normal!important;font-stretch:normal!important;text-align:center!important;color:#fff!important;padding:16px!important;position:relative!important;text-transform:uppercase;line-height:16px!important;font-family:Roboto,sans-serif}
+
+.gform_body > ul > li >div.ginput_container_checkbox > ul.gfield_checkbox > li,
+.gform_body > ul > li >div.ginput_container_radio > ul.gfield_radio > li
+{
+    display: flex;
+    margin-left: 20px;
+    padding-left: 5px;
+}
+
+.gform_body > ul > li >div.ginput_container_checkbox > ul.gfield_checkbox li *:nth-child(2),
+.gform_body > ul > li >div.ginput_container_radio > ul.gfield_radio li *:nth-child(2)
+{
+    margin-left: 10px;
+}
+
+body.product_page_style-one .product_content_wrapper .gform_wrapper .gfield .gfield_radio label {
+    background: none !important;
+    border: none !important;
+}
