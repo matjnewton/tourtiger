@@ -2151,5 +2151,3 @@ function get_the_password_form_custom( $post = 0 ) {
 
     return apply_filters( 'the_password_form', $output );
 }
-
-
