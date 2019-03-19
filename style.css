@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.8.14
+Version: 1.9.1
 Template: genesis
 Template Version: 2.0.27
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -1761,4 +1761,21 @@ textarea {
     background: none !important;
 }
 
-.above-split-bar{color:white}
+.password-form {
+    background: whitesmoke;
+    padding: 2vw;
+    text-align: center;
+}
+
+.password-form p {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.password-form .button {
+    border-radius: 3px;
+    padding: 2px 20px;
+}
+.password-form label {
+    font-weight: normal;
+}

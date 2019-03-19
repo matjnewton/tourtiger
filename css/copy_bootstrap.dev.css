@@ -5681,7 +5681,7 @@ button.close {
   position: fixed;
 }
 @-ms-viewport {
-  width: device-width;
+  width: 100vw;
 }
 .visible-xs,
 .visible-sm,
@@ -7869,7 +7869,7 @@ body {
     padding-bottom:40px;
 }*/
 /*.page-template-default .left-col{
-    
+
     h3{
         margin-top:0;
         margin-bottom:30px;
@@ -7978,11 +7978,11 @@ body {
 .tour-details .table td,
 .section-item .table td {
   text-align: center;
-  width: ;
+  /*width: 100vw;*/
 }
 .tour-details .table th,
 .section-item .table th {
-  font-family: 'Titillium Web';
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   width: 24%;
@@ -8043,7 +8043,7 @@ body {
   border-bottom-right-radius: 14px;
   border-bottom-left-radius: 14px;
   border-top-left-radius: 14px;
-  -moz-background-clip: padding-box;
+  /*-moz-background-clip: padding-box;*/
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   margin-right: 13px;
@@ -8429,36 +8429,36 @@ footer .main-searchform input[type="text"] {
 }
 footer .main-searchform ::-webkit-input-placeholder {
     color:#fff;
-}            
-.main-searchform :-moz-placeholder { 
+}
+.main-searchform :-moz-placeholder {
     color:#999;
     text-transform:uppercase;
     font-family: 'Titillium Web';
     font-weight: 400;
-    font-size:12px;  
+    font-size:12px;
 }
 footer .main-searchform :-moz-placeholder {
     color:#fff;
-}            
-.main-searchform ::-moz-placeholder {  
+}
+.main-searchform ::-moz-placeholder {
     color:#999;
     text-transform:uppercase;
     font-family: 'Titillium Web';
     font-weight: 400;
-    font-size:12px;  
+    font-size:12px;
 }
 footer .main-searchform ::-moz-placeholder{
     color:#fff;
-}            
-.main-searchform :-ms-input-placeholder {  
+}
+.main-searchform :-ms-input-placeholder {
     color:#999;
     text-transform:uppercase;
     font-family: 'Titillium Web';
     font-weight: 400;
-    font-size:12px;  
+    font-size:12px;
 }
 footer .main-searchform :-ms-input-placeholder {
-    color:#fff;    
+    color:#fff;
 }*/
 .main-searchform input[type="text"],
 .main-searchform input[type="text"]:focus {
@@ -8762,7 +8762,7 @@ footer .main-searchform input[type="text"]:focus {
   right: 0;
   bottom: 0;
   left: 0;
-  /*width:100%; 
+  /*width:100%;
         height:100%;*/
   z-index: 2;
 }
@@ -8776,7 +8776,7 @@ footer .main-searchform input[type="text"]:focus {
 .banner-bottom .book-tour-wrapper {
   padding: 0;
   overflow: visible;
-  background-color: none;
+  background-color: rgba(0,0,0,0);
   margin: 0;
   text-align: center;
 }
@@ -8784,7 +8784,7 @@ footer .main-searchform input[type="text"]:focus {
   float: none;
 }
 .banner-bottom .container {
-  background-color: none;
+  background-color: rgba(0,0,0,0);
 }
 @media (min-width: 768px) {
   .banner-bottom .container {
@@ -8798,7 +8798,7 @@ footer .main-searchform input[type="text"]:focus {
   line-height: 1em;
   margin: 0;
   font-size: 30px;
-  font-family: 'Titillium Web';
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 700;
 }
 .banner-bottom ul {
@@ -8833,7 +8833,7 @@ footer .main-searchform input[type="text"]:focus {
 /*home banner*/
 .home {
   /*.banner-bottom{
-        
+
         .container{
             background-color:#74acdf;
         }
@@ -9459,7 +9459,7 @@ footer .main-searchform input[type="text"]:focus {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
-  -moz-background-clip: padding-box;
+  /*-moz-background-clip: padding-box;*/
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   height: 47px;
@@ -9753,7 +9753,7 @@ footer .main-searchform input[type="text"]:focus {
 }
 .navbar-header {
   height: 71px;
-  background-color: none;
+  background-color: rgba(0,0,0,0);
 }
 .navbar-header {
   padding: 0;
@@ -9784,7 +9784,7 @@ footer .main-searchform input[type="text"]:focus {
 }
 .navbar .navbar-collapse {
   border: none;
-  background-color: none;
+  background-color: rgba(0,0,0,0);
   /*li{
             float:none;
             display:block;
@@ -9864,15 +9864,15 @@ footer .main-searchform input[type="text"]:focus {
     position:relative;
     top:0;
     padding:0;
-    
+
     .featured-tours-2{
             position:static;
             top:0;
         @media (min-width: @screen-sm) {
-            position:absolute; 
+            position:absolute;
             left:0;
         }
-        
+
     }
 }*/
 .featured-tours .row {
@@ -10139,7 +10139,7 @@ footer .main-searchform input[type="text"]:focus {
 .nav-secondary .wrap a {
   display: block;
   line-height: 1em;
-  font-family: 'Squada One';
+  font-family: 'Squada One', cursive;
   font-size: 20px;
   text-transform: uppercase;
 }

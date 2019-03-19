@@ -2121,3 +2121,35 @@ function add_for_test_something($a, $b) {
 // add_action('gform_field_appearance_settings', 'add_for_test_something', 1, 2);
 
 
+
+
+// Hide protected posts
+
+function exclude_protected($where) {
+    global $wpdb;
+    return $where .= " AND {$wpdb->posts}.post_password = '' ";
+}
+
+// Where to display protected posts
+function exclude_protected_action($query) {
+    if( !is_single() && !is_page() && !is_admin() ) {
+        add_filter( 'posts_where', 'exclude_protected' );
+    }
+}
+
+// Action to queue the filter at the right time
+add_action('pre_get_posts', 'exclude_protected_action');
+
+
+function get_the_password_form_custom( $post = 0 ) {
+    $post   = get_post( $post );
+    $label  = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
+    $output = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">
+	<p>' . __( 'This content is password protected. To view it please enter your password below.' ) . '</p>
+	<p><label for="' . $label . '">' . __( 'Your password:' ) . ' <input name="post_password" id="' . $label . '" type="password" size="20" /></label> <input class="button js-pulsing" type="submit" name="Submit" value="' . esc_attr_x( 'Enter', 'post password form' ) . '" /></p></form>
+	';
+
+    return apply_filters( 'the_password_form', $output );
+}
+
+
