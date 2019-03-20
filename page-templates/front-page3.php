@@ -398,7 +398,6 @@ function tourtiger_sub_contents(){ ?>
                     $img_srcset_large = wp_get_attachment_image_url( $testimonials_background_id, 'large' );
                     $img_srcset_medium_large = wp_get_attachment_image_url( $testimonials_background_id, 'medium_large' );
                     $img_srcset_medium = wp_get_attachment_image_url( $testimonials_background_id, 'medium' );
-                    /* label 1 */
                     ?>
                     <style>
                         .testimonials-background-image-container {
@@ -422,18 +421,22 @@ function tourtiger_sub_contents(){ ?>
         <?php $section_count++; ?>
             <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?><?php if($custom_margin_presets == "0px 0px 0px 0px"): ?> custom-margin-preset2<?php endif;?> <?=$custom_bottom_space?><?php if( $has_testimonials_background ): ?> testimonials-div<?php endif; ?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
 
-            <?php if($has_testimonials_background) : ?>
+
+        <?php if(have_rows('section_elements')): ?>
+            <?php while(have_rows('section_elements')): the_row(); ?>
+
+
+            <?php if($has_testimonials_background && get_row_layout() == 'testimonials_boxes') : ?>
             <div class="testimonials-background-image-container" style="opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
             <?php endif; ?>
             <?php if($heading): ?>
-                    <div class="container" <?php if( $has_testimonials_background ): ?>style="background: none; padding-top: <?php echo $adjust_header_vertically;?>;"<?php endif; ?>>
+                    <div class="container" <?php if( $has_testimonials_background && get_row_layout() == 'testimonials_boxes' ): ?>style="background: none; padding-top: <?php echo $adjust_header_vertically;?>;"<?php endif; ?>>
                         <h2 class="section-heading<?php if($heading_align == 'Center'): echo ' text-center'; endif;?>">
                             <?php echo $heading; ?>
                         </h2>
                     </div>
                     <?php endif; ?>
-            <?php if(have_rows('section_elements')): ?>
-                        <?php while(have_rows('section_elements')): the_row(); ?>
+
 
                             <?php if( get_row_layout() == 'heading'): ?>
                             <?php
