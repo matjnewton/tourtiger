@@ -383,60 +383,20 @@ function tourtiger_sub_contents(){ ?>
                 $custom_options = get_sub_field('custom_options');
                 $custom_margin_presets = get_sub_field('custom_margin_presets');
                 $custom_bottom_space = get_sub_field('bottom_space_options');
-
-                if( is_array($custom_options) && in_array('Add Background Picture and Text Styling', $custom_options)) :
-                    $has_testimonials_background = true;
-                    $testimonials_text_color = get_sub_field('testimonials_styling')['testimonials_text_color'];
-                    $testimonials_text_weight = get_sub_field('testimonials_styling')['testimonials_text_weight'];
-                    $testimonials_background_id = get_sub_field('testimonials_styling')['background_image'];
-                    $testimonials_background_opacity = get_sub_field('testimonials_styling')['background_image_opacity'];
-                    $testimonials_background_cover_or_repeat = get_sub_field('testimonials_styling')['background_cover_or_repeat'];
-                    $adjust_header_vertically = get_sub_field('testimonials_styling')['adjust_header_vertically'];
-                    ?>
-                    <?php // proper size background image selector
-                    $img_srcset_full = wp_get_attachment_image_url( $testimonials_background_id, 'full' );
-                    $img_srcset_large = wp_get_attachment_image_url( $testimonials_background_id, 'large' );
-                    $img_srcset_medium_large = wp_get_attachment_image_url( $testimonials_background_id, 'medium_large' );
-                    $img_srcset_medium = wp_get_attachment_image_url( $testimonials_background_id, 'medium' );
-                    ?>
-                    <style>
-                        .testimonials-background-image-container {
-                            background-image: url(<?=$img_srcset_full?>);
-                        }
-                        @media only screen and (min-width: 300px) {
-                            .testimonials-background-image-container {
-                                background-image: url(<?=$img_srcset_medium?>)
-                            }}
-                        @media only screen and (min-width: 768px) {
-                            .testimonials-background-image-container {
-                                background-image: url(<?=$img_srcset_medium_large?>)
-                            }}
-                        @media only screen and (min-width: 1024px) {
-                            .testimonials-background-image-container {
-                                background-image: url(<?=$img_srcset_large?>)
-                            }}
-                    </style>
-             <?php endif;
         ?>
         <?php $section_count++; ?>
-            <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?><?php if($custom_margin_presets == "0px 0px 0px 0px"): ?> custom-margin-preset2<?php endif;?> <?=$custom_bottom_space?><?php if( $has_testimonials_background ): ?> testimonials-div<?php endif; ?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
+            <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?><?php if($custom_margin_presets == "0px 0px 0px 0px"): ?> custom-margin-preset2<?php endif;?> <?=$custom_bottom_space?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
 
-
-        <?php if(have_rows('section_elements')): ?>
-            <?php while(have_rows('section_elements')): the_row(); ?>
-
-
-            <?php if($has_testimonials_background && get_row_layout() == 'testimonials_boxes') : ?>
-            <div class="testimonials-background-image-container" style="opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
-            <?php endif; ?>
             <?php if($heading): ?>
-                    <div class="container" <?php if( $has_testimonials_background && get_row_layout() == 'testimonials_boxes' ): ?>style="background: none; padding-top: <?php echo $adjust_header_vertically;?>;"<?php endif; ?>>
-                        <h2 class="section-heading<?php if($heading_align == 'Center'): echo ' text-center'; endif;?>">
-                            <?php echo $heading; ?>
-                        </h2>
-                    </div>
-                    <?php endif; ?>
+                <div class="container">
+                    <h2 class="section-heading<?php if($heading_align == 'Center'): echo ' text-center'; endif;?>">
+                        <?php echo $heading; ?>
+                    </h2>
+                </div>
+            <?php endif; ?>
 
+            <?php if(have_rows('section_elements')): ?>
+                        <?php while(have_rows('section_elements')): the_row(); ?>
 
                             <?php if( get_row_layout() == 'heading'): ?>
                             <?php
@@ -747,6 +707,17 @@ function tourtiger_sub_contents(){ ?>
                             <?php $testimonials_type = get_field('testimonials_type', 'option'); ?>
                             <?php
                             $number_of_tstm_columns = get_sub_field('number_of_tstm_columns');
+
+                        $testimonials_text_color = get_sub_field('testimonials_styling')['testimonials_text_color'];
+                        $testimonials_text_weight = get_sub_field('testimonials_styling')['testimonials_text_weight'];
+                        $testimonials_background_id = get_sub_field('testimonials_styling')['background_image'];
+                        $testimonials_background_opacity = get_sub_field('testimonials_styling')['background_image_opacity'];
+                        $testimonials_background_cover_or_repeat = get_sub_field('testimonials_styling')['background_cover_or_repeat'];
+                        $testimonials_background_and_styling = get_sub_field('testimonials_styling_options');
+                        $testimonials_heading = get_sub_field('testimonials_styling')['testimonials_heading'];
+                        $testimonials_heading_color_inherit = get_sub_field('testimonials_styling')['testimonials_heading_color_inherit'];
+
+
                             $tcol = 0;
                             if($number_of_tstm_columns):
                             switch ($number_of_tstm_columns) {
@@ -770,42 +741,79 @@ function tourtiger_sub_contents(){ ?>
                             ?>
                             <?php
 if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'):?>
-    <div class="container " <?php if( $has_testimonials_background ): ?>style="background: none"<?php endif; ?>>
-                            <div class="row testimonials">
-                            <div class="col-sm-12">
-                                <div class="testimonials-slider-wrapper" <?php if($heading) : ?>style="margin-top: 0;"<?php endif;?>>
-                                    <div class="testimonials-slider">
-                                        <ul class="slides">
-                                            <style>
-                                                .txt-testimonial,
-                                                .txt-testimonial span.name,
-                                                div.txt-testimonial > div > a {
-                                                    color: <?=$testimonials_text_color?> !important;
-                                                    font-weight: <?=$testimonials_text_weight?>;
-                                                }
-                                            </style>
-                                        <?php while(have_rows('boxes_set')): the_row(); ?>
-                                        <?php if( get_row_layout() == 'testimonials' ):
-                                        $pulled_specific = get_sub_field('pull_specific_from');
 
-                                        if($pulled_specific):
-                                            $post = $pulled_specific;
-                    				        setup_postdata( $post ); ?>
 
-                    				        <?php get_template_part( 'content', 'scrltstmls' ); ?>
+<?php // proper size background image selector
+$testimonials_background_id;
+    $img_srcset_full = wp_get_attachment_image_url( $testimonials_background_id, 'full' );
+    $img_srcset_large = wp_get_attachment_image_url( $testimonials_background_id, 'large' );
+    $img_srcset_medium_large = wp_get_attachment_image_url( $testimonials_background_id, 'medium_large' );
+    $img_srcset_medium = wp_get_attachment_image_url( $testimonials_background_id, 'medium' );
 
-                    				        <?php
-                    				        wp_reset_postdata();
-                                        endif;
+    ?>
+    <style>
+        .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_full?>);
+        }
+        @media only screen and (min-width: 300px) {
+            .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_medium?>)
+        }}
+        @media only screen and (min-width: 768px) {
+            .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_medium_large?>)
+        }}
+        @media only screen and (min-width: 1024px) {
+            .testimonials-background-image-container {
+            background-image: url(<?=$img_srcset_large?>)
+        }}
+    </style>
+
+<div <?php if( $testimonials_background_and_styling == 1 ): ?>class="testimonials-div"<?php endif; ?>>
+
+    <div class="testimonials-background-image-container" style="opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
+    <div class="container " <?php if( $testimonials_background_and_styling == 1 ): ?>style="background: none"<?php endif; ?>>
+
+        <style>
+            .txt-testimonial,
+            .txt-testimonial span.name,
+            div.txt-testimonial > div > a {
+                color: <?=$testimonials_text_color?> !important;
+                font-weight: <?=$testimonials_text_weight?>;
+            }
+        </style>
+
+        <?php if($testimonials_heading) : ?>
+        <h2 class="testimonials-heading"<?php if($testimonials_heading_color_inherit):?> style="color: <?php echo $testimonials_text_color;?>"<?php endif;?>><?=$testimonials_heading?></h2>
+        <?php endif; ?>
+
+        <div class="row testimonials">
+            <div class="col-sm-12 testimonials-box">
+                <div class="testimonials-slider-wrapper" <?php if( $testimonials_heading ) : ?>style="margin-top:0"<?php endif;?>>
+                    <div class="testimonials-slider">
+                        <ul class="slides">
+                            <?php while(have_rows('boxes_set')): the_row(); ?>
+                                <?php if( get_row_layout() == 'testimonials' ):
+                                    $pulled_specific = get_sub_field('pull_specific_from');
+                                    if($pulled_specific):
+                                        $post = $pulled_specific;
+                                        setup_postdata( $post ); ?>
+
+                                        <?php get_template_part( 'content', 'scrltstmls' ); ?>
+
+                                        <?php
+                                        wp_reset_postdata();
                                     endif;
-                                    ?>
-                                        <?php endwhile; ?>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                                </div><!-- end .row-->
-                                </div><!-- end .container-->
+                                endif;
+                                ?>
+                            <?php endwhile; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end .row-->
+    </div><!-- end .container-->
+</div> <?php // End of testimonials-div ?>
                             <?php
                             else:
                             ?>
@@ -886,9 +894,13 @@ if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'):?>
 
                         wp_reset_query();
                                 ?>
-                </div><!-- .row-->
-            </div><!-- .container-->
-                        <?php endif; ?>
+
+
+
+
+            </div><!-- .row-->
+</div><!-- .container-->
+                            <?php endif; ?>
 
                         <?php if( get_row_layout() == 'content'): ?>
                         <?php
