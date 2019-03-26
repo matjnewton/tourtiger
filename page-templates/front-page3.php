@@ -716,6 +716,9 @@ function tourtiger_sub_contents(){ ?>
                         $testimonials_background_and_styling = get_sub_field('testimonials_styling_options');
                         $testimonials_heading = get_sub_field('testimonials_styling')['testimonials_heading'];
                         $testimonials_heading_color_inherit = get_sub_field('testimonials_styling')['testimonials_heading_color_inherit'];
+                        $add_semi_opaque_background_over_bg_image = get_sub_field('testimonials_styling')['add_semi_opaque_background_over_bg_image'];
+                        $semi_opaque_background_opacity = get_sub_field('testimonials_styling')['semi_opaque_background_opacity'];
+                        $semi_opaque_background_border_radius = get_sub_field('testimonials_styling')['semi_opaque_background_border_radius'];
 
 
                             $tcol = 0;
@@ -755,10 +758,10 @@ $testimonials_background_id;
         .testimonials-background-image-container {
             background-image: url(<?=$img_srcset_full?>);
         }
-        @media only screen and (min-width: 300px) {
-            .testimonials-background-image-container {
-            background-image: url(<?=$img_srcset_medium?>)
-        }}
+        /*@media only screen and (min-width: 300px) {*/
+        /*    .testimonials-background-image-container {*/
+        /*    background-image: url(*/<?//=$img_srcset_medium?>/*)*/
+        /*}}*/
         @media only screen and (min-width: 768px) {
             .testimonials-background-image-container {
             background-image: url(<?=$img_srcset_medium_large?>)
@@ -790,7 +793,7 @@ $testimonials_background_id;
         <div class="row testimonials">
             <div class="col-sm-12 testimonials-box">
                 <div class="testimonials-slider-wrapper" <?php if( $testimonials_heading ) : ?>style="margin-top:0"<?php endif;?>>
-                    <div class="testimonials-slider">
+                    <div class="testimonials-slider" <?php if ($add_semi_opaque_background_over_bg_image):?>style="background: rgba(255,255,255,<?=$semi_opaque_background_opacity?>); border-radius: <?=$semi_opaque_background_border_radius?>px;"<?php endif; ?>>
                         <ul class="slides">
                             <?php while(have_rows('boxes_set')): the_row(); ?>
                                 <?php if( get_row_layout() == 'testimonials' ):
