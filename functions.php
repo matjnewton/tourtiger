@@ -495,6 +495,7 @@ if(function_exists('acf_add_options_page')) {
 	acf_add_options_sub_page('Footer');
 	acf_add_options_sub_page('Company details');
 	acf_add_options_sub_page('Code snippets');
+    acf_add_options_sub_page('Password Protected Page');
 
 }
 
@@ -2141,7 +2142,7 @@ function exclude_protected_action($query) {
 add_action('pre_get_posts', 'exclude_protected_action');
 
 
-function get_the_password_form_custom( $post = 0 ) {
+function get_the_password_form_custom( $post = 0 ) { // first version of a form for password protected pages
     $post   = get_post( $post );
     $label  = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
     $output = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">
@@ -2149,5 +2150,5 @@ function get_the_password_form_custom( $post = 0 ) {
 	<p><label for="' . $label . '">' . __( 'Your password:' ) . ' <input name="post_password" id="' . $label . '" type="password" size="20" /></label> <input class="button js-pulsing" type="submit" name="Submit" value="' . esc_attr_x( 'Enter', 'post password form' ) . '" /></p></form>
 	';
 
-    return apply_filters( 'the_password_form', $output );
+    // return apply_filters( 'the_password_form', $output );
 }

@@ -12,11 +12,8 @@ get_header( 'pc' );
             get_template_part( '/includes/primary-content/primary-content' );
 
         } else {
-            ?>
-            <div class="password-form">
-                <?php echo get_the_password_form_custom(); ?>
-            </div>
-            <?php
+
+            get_template_part( '/page-templates/password-protected-page' );
         }
 
 

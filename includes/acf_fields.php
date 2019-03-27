@@ -1148,6 +1148,111 @@ if( function_exists('acf_add_local_field_group') ):
     'description' => '',
   ));
 
+
+
+acf_add_local_field_group(array(
+    'key' => 'group_5c9b8cb002633',
+    'title' => 'Password Protected Page',
+    'fields' => array(
+        array(
+            'key' => 'field_5c9b8cf929ccb',
+            'label' => 'Title',
+            'name' => 'password_protected_page_title',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_5c9b8d1a29ccc',
+            'label' => 'Subtitle',
+            'name' => 'password_protected_page_subtitle',
+            'type' => 'textarea',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'maxlength' => '',
+            'rows' => 5,
+            'new_lines' => '',
+        ),
+        array(
+            'key' => 'field_5c9b8d5129ccd',
+            'label' => 'Text above password field',
+            'name' => 'password_protected_page_text_above_password_field',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 'This content is password protected. To view it please enter your password below.',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_5c9b8d8629cce',
+            'label' => 'Field after password',
+            'name' => 'password_protected_page_field_after_password',
+            'type' => 'wysiwyg',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'tabs' => 'all',
+            'toolbar' => 'full',
+            'media_upload' => 0,
+            'delay' => 0,
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'options_page',
+                'operator' => '==',
+                'value' => 'acf-options-password-protected-page',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+));
+
+
+
+
   acf_add_local_field_group(array (
     'key' => 'group_557b16305d905',
     'title' => 'Options: Company details',
