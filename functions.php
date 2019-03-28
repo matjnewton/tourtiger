@@ -2150,5 +2150,5 @@ function get_the_password_form_custom( $post = 0 ) { // first version of a form 
 	<p><label for="' . $label . '">' . __( 'Your password:' ) . ' <input name="post_password" id="' . $label . '" type="password" size="20" /></label> <input class="button js-pulsing" type="submit" name="Submit" value="' . esc_attr_x( 'Enter', 'post password form' ) . '" /></p></form>
 	';
 
-    // return apply_filters( 'the_password_form', $output );
+     return apply_filters( 'the_password_form', $output );
 }

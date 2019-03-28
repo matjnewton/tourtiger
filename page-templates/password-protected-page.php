@@ -29,4 +29,4 @@ $password_protected_page_field_after_password = get_field('password_protected_pa
     <?php  endif; ?>
 </div>
 
-<?php apply_filters( 'the_password_form', $output ); ?> <!-- probably, this thing is not needed -->
+<?php // apply_filters( 'the_password_form', $output ); ?> <!-- probably, this thing is not needed here -->

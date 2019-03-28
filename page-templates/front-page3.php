@@ -786,35 +786,39 @@ $testimonials_background_id;
             }
         </style>
 
-        <?php if($testimonials_heading) : ?>
-        <h2 class="testimonials-heading"<?php if($testimonials_heading_color_inherit):?> style="color: <?php echo $testimonials_text_color;?>"<?php endif;?>><?=$testimonials_heading?></h2>
-        <?php endif; ?>
+        <div class="semi-opaque-rectangle-background-holder" <?php if ($testimonials_background_and_styling == 1 && $add_semi_opaque_background_over_bg_image):?>style="background: rgba(255,255,255,<?=$semi_opaque_background_opacity?>); border-radius: <?=$semi_opaque_background_border_radius?>px;"<?php endif; ?>>  <?php // semi-opaque rectangle background holder ?>
 
-        <div class="row testimonials">
-            <div class="col-sm-12 testimonials-box">
-                <div class="testimonials-slider-wrapper" <?php if( $testimonials_heading ) : ?>style="margin-top:0"<?php endif;?>>
-                    <div class="testimonials-slider" <?php if ($add_semi_opaque_background_over_bg_image):?>style="background: rgba(255,255,255,<?=$semi_opaque_background_opacity?>); border-radius: <?=$semi_opaque_background_border_radius?>px;"<?php endif; ?>>
-                        <ul class="slides">
-                            <?php while(have_rows('boxes_set')): the_row(); ?>
-                                <?php if( get_row_layout() == 'testimonials' ):
-                                    $pulled_specific = get_sub_field('pull_specific_from');
-                                    if($pulled_specific):
-                                        $post = $pulled_specific;
-                                        setup_postdata( $post ); ?>
+            <?php if($testimonials_heading && $testimonials_background_and_styling == 1) : ?>
+            <h2 class="testimonials-heading"<?php if($testimonials_heading_color_inherit):?> style="color: <?php echo $testimonials_text_color;?>"<?php endif;?>><?=$testimonials_heading?></h2>
+            <?php endif; ?>
 
-                                        <?php get_template_part( 'content', 'scrltstmls' ); ?>
+            <div class="row testimonials">
+                <div class="col-sm-12 testimonials-box">
+                    <div class="testimonials-slider-wrapper" <?php if( $testimonials_heading ) : ?>style="margin-top:0"<?php endif;?>>
+                        <div class="testimonials-slider">
+                            <ul class="slides">
+                                <?php while(have_rows('boxes_set')): the_row(); ?>
+                                    <?php if( get_row_layout() == 'testimonials' ):
+                                        $pulled_specific = get_sub_field('pull_specific_from');
+                                        if($pulled_specific):
+                                            $post = $pulled_specific;
+                                            setup_postdata( $post ); ?>
 
-                                        <?php
-                                        wp_reset_postdata();
+                                            <?php get_template_part( 'content', 'scrltstmls' ); ?>
+
+                                            <?php
+                                            wp_reset_postdata();
+                                        endif;
                                     endif;
-                                endif;
-                                ?>
-                            <?php endwhile; ?>
-                        </ul>
+                                    ?>
+                                <?php endwhile; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- end .row-->
+            </div><!-- end .row-->
+        </div>  <?php // end of semi-opaque rectangle background ?>
+
     </div><!-- end .container-->
 </div> <?php // End of testimonials-div ?>
                             <?php

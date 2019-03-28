@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.9.8
+Version: 1.9.9
 Template: genesis
 Template Version: 2.0.27
 GitHub Theme URI: https://github.com/matjnewton/tourtiger
@@ -1802,8 +1802,7 @@ nav {
 
 .testimonials-heading {
     text-align: center;
-    padding-top: 40px;
-    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 @media(max-width: 768px) {
@@ -1821,4 +1820,8 @@ nav {
     .testimonials-slider:after {
         visibility: hidden;
     }
+}
+
+.semi-opaque-rectangle-background-holder {
+    margin: 40px;
 }
