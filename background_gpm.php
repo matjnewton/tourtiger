@@ -112,9 +112,11 @@
        overflow:hidden;
     }
 }
+<?php /**
 .banner-wrapper-inner{
-    min-height:545px;
+   min-height:545px;
 }
+ * */?>
 <?php endif; ?>
 <?php endif; ?>
 
