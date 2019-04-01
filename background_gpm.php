@@ -112,11 +112,13 @@
        overflow:hidden;
     }
 }
-<?php /**
-.banner-wrapper-inner{
-   min-height:545px;
+
+@media(min-width:480px) {
+    .banner-wrapper-inner{
+       min-height:545px;
+    }
 }
- * */?>
+
 <?php endif; ?>
 <?php endif; ?>
 
