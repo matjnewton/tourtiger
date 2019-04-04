@@ -1601,7 +1601,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-        $output .= apply_filters( 'walker_nav_menu_end_el', $item_output, $item, $depth, $args );
+        $output .= apply_filters( 'walker_nav_menu_end_el', null, $item, $depth, $args );
         if($classes[0] == 'megamenu'){
             $output .= "</div></div></li>\n";
         } else {
