@@ -57,9 +57,9 @@ abstract class StylingCard {
 
 
 	/**
-	 * Create table in database 
-	 * which will keep the styles count. 
-	 * 
+	 * Create table in database
+	 * which will keep the styles count.
+	 *
 	 * @return null
 	 */
 	public function create_db() {
@@ -79,15 +79,15 @@ abstract class StylingCard {
 			dbDelta( $sql );
 
 			pc_add_style( $this->slug );
-		} 
+		}
 
 		return null;
 	}
 
 
 	/**
-	 * Init ACF option pages 
-	 * @return null 
+	 * Init ACF option pages
+	 * @return null
 	 */
 	protected function init_acf_option_page() {
 
@@ -144,7 +144,7 @@ abstract class StylingCard {
 				'id' => '',
 			),
 			'icon_class' => 'dashicons-arrow-right',
-		);	
+		);
 
 		return $fc_tab_array;
 
@@ -152,7 +152,7 @@ abstract class StylingCard {
 
 
 	/**
-	 * Return Fields 
+	 * Return Fields
 	 * Each extended class must rewrite current method
 	 * @return array
 	 */
@@ -160,16 +160,16 @@ abstract class StylingCard {
 
 
 	/**
-	 * Register rows 
+	 * Register rows
 	 * in ACF Local field group
 	 *
-	 * @return null 
+	 * @return null
 	 */
 	protected function init_local_field_group() {
 
 		$fc_rows = $this->init_acf_fields();
 
-		acf_add_local_field_group(array ( 
+		acf_add_local_field_group(array (
 
 			'key' => 'group_optioncss' . $this->slug,
 			'title' => $this->name . ' styles',
@@ -243,7 +243,7 @@ abstract class StylingCard {
 	 * Return fonts
 	 */
 	function get_available_fonts() {
-		return null;
+        return null;
 	}
 
 

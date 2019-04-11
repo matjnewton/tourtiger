@@ -2,11 +2,11 @@
 /* ===========================
  * Content Card Class Extend
  * ======================== */
- 
+
 class ContentCard extends StylingCard {
 
 	/**
-	 * Return Fields 
+	 * Return Fields
 	 * @return array
 	 */
 	function return_acf_group( $i = '', $c = '' ) {
@@ -1704,7 +1704,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'logo',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1728,7 +1728,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'title',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1788,7 +1788,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'title',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1814,7 +1814,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'title',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1838,7 +1838,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'excerpt',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1898,7 +1898,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'excerpt',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1924,7 +1924,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'excerpt',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -1948,7 +1948,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'link',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -2008,7 +2008,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'link',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -2034,7 +2034,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'link',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -2060,7 +2060,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'link',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -2084,7 +2084,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'quotes',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -2110,7 +2110,7 @@ class ContentCard extends StylingCard {
 								'operator' => '==',
 								'value' => 'quotes',
 							)
-						) 
+						)
 					),
 					'wrapper' => array (
 						'width' => '',
@@ -3709,7 +3709,7 @@ class ContentCard extends StylingCard {
 					'type'  => 'rgba_color',
 					'required' => '',
 				),
-				
+
 				array (
 					'key' => $this->slug . $i . '_ga0413a400',
 					'label' => 'Gallery',
@@ -3749,12 +3749,12 @@ class ContentCard extends StylingCard {
 					'default_value' => 'rgba(255,255,255,1)',
 				),
 			),
-		);	
+		);
 
 		return $cc_options_array;
 
 	}
-	
+
 }
 
 new ContentCard( 'Content Card', 1 );

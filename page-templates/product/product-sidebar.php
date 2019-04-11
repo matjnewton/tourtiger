@@ -193,7 +193,7 @@ if ( have_rows( 'sidebar_1' ) ) :
                 		$view = 'class="book-tour-wrapper_product_row" style="margin-top:10px;padding:17px 15px;"';
                 	?>
 
-					<center id="trip_advisor_in_sidebar" <?=$view;?>>
+					<center id="trip_advisor_in_sidebar"<?=$view;?>>
 						<?php echo get_sub_field( 'html' ); ?>
 						<?php echo get_sub_field( 'javascript' ); ?>
 					</center>

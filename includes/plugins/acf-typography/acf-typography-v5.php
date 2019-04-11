@@ -26,7 +26,7 @@ class acf_field_typography extends acf_field {
 			if ($time > 2) {
 
 				$json = file_get_contents('https://www.googleapis.com/webfonts/v1/webfonts?key=' . $API_KEY);
- 
+
 				$myfile = fopen($filename, 'wb');
 				fwrite($myfile, $json);
 				fclose($myfile);
@@ -44,7 +44,7 @@ class acf_field_typography extends acf_field {
 		$dir = get_stylesheet_directory() . '/includes/plugins/acf-typography/';
 		$json = file_get_contents("{$dir}gf.json");
 		$fontArray = json_decode( $json);
-		
+
 		$font_familys = array();
 		$valueset = array();
 		foreach ( $fontArray as $k => $v ) {
@@ -56,9 +56,9 @@ class acf_field_typography extends acf_field {
 
 			       		if($key1== "family"){
 			       			$valueset = array($value1 => $value1);
-			        		// array_push($font_familys, $valueset); 
+			        		// array_push($font_familys, $valueset);
 			        		$font_familys = $font_familys + $valueset;
-			        	}		
+			        	}
 			       }
 			    }
 			}
@@ -98,7 +98,7 @@ class acf_field_typography extends acf_field {
 			'disabled'			=> 0,
 			'rows'				=> '',
 			'font_familys'		=> $font_familys,
-			'stylefont'	 		=> array( 
+			'stylefont'	 		=> array(
 						'100'		=> '100',
 						'300'		=> '300',
 						'400'		=> '400',
@@ -106,27 +106,27 @@ class acf_field_typography extends acf_field {
 						'700'		=> '700',
 						'800'		=> '800'
 					),
-			'backupfont'		=> array(
+			'backupfonts'		=> array(
 						'Arial, Helvetica, sans-serif'                          => 'Arial, Helvetica, sans-serif',
-            			'"Arial Black", Gadget, sans-serif'                     => '"Arial Black", Gadget, sans-serif',
-            			'"Bookman Old Style", serif'                            => '"Bookman Old Style", serif',
-            			'"Comic Sans MS", cursive'                              => '"Comic Sans MS", cursive',
+            			'Arial Black, Gadget, sans-serif'                     => 'Arial Black, Gadget, sans-serif',
+            			'Bookman Old Style, serif'                            => 'Bookman Old Style, serif',
+            			'Comic Sans MS, cursive'                              => 'Comic Sans MS, cursive',
             			'Courier, monospace'                                    => 'Courier, monospace',
             			'Garamond, serif'                                       => 'Garamond, serif',
             			'Georgia, serif'                                        => 'Georgia, serif',
             			'Impact, Charcoal, sans-serif'                          => 'Impact, Charcoal, sans-serif',
-            			'"Lucida Console", Monaco, monospace'                   => '"Lucida Console", Monaco, monospace',
-            			'"Lucida Sans Unicode", "Lucida Grande", sans-serif'    => '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
-            			'"MS Sans Serif", Geneva, sans-serif'                   => '"MS Sans Serif", Geneva, sans-serif',
-            			'"MS Serif", "New York", sans-serif'                    => '"MS Serif", "New York", sans-serif',
-            			'"Palatino Linotype", "Book Antiqua", Palatino, serif'  => '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+            			'Lucida Console, Monaco, monospace'                   => 'Lucida Console, Monaco, monospace',
+            			'Lucida Sans Unicode, Lucida Grande, sans-serif'    => 'Lucida Sans Unicode, Lucida Grande, sans-serif',
+            			'MS Sans Serif, Geneva, sans-serif'                   => 'MS Sans Serif, Geneva, sans-serif',
+            			'MS Serif, New York, sans-serif'                    => 'MS Serif, New York, sans-serif',
+            			'Palatino Linotype, Book Antiqua, Palatino, serif'  => 'Palatino Linotype, Book Antiqua, Palatino, serif',
             			'Tahoma,Geneva, sans-serif'                             => 'Tahoma, Geneva, sans-serif',
-            			'"Times New Roman", Times,serif'                        => '"Times New Roman", Times, serif',
-            			'"Trebuchet MS", Helvetica, sans-serif'                 => '"Trebuchet MS", Helvetica, sans-serif',
+            			'Times New Roman, Times,serif'                        => 'Times New Roman, Times, serif',
+            			'Trebuchet MS, Helvetica, sans-serif'                 => 'Trebuchet MS, Helvetica, sans-serif',
             			'Verdana, Geneva, sans-serif'                           => 'Verdana, Geneva, sans-serif',
         			)
 		);
-		
+
 		/*
 		 *  l10n (array) Array of strings that are used in JavaScript. This allows JS strings to be translated in PHP and loaded via:
 		 *  var message = acf._e('typography', 'error');
@@ -134,11 +134,11 @@ class acf_field_typography extends acf_field {
 		$this->l10n = array(
 			'error'	=> __('Error! Please enter a higher value', 'acf-typography'),
 		);
-		
-				
+
+
 		// Do not delete!
     	parent::__construct();
-    	
+
 	}
 
 	/*
@@ -200,7 +200,7 @@ class acf_field_typography extends acf_field {
 			'type'			=> 'select',
 			'ui'			=> 1,
 			'name'			=> 'backup-font',
-			'choices'		=>	$field['backupfont']
+			'choices'		=>	$field['backupfonts']
 		));
 
 		acf_render_field_setting( $field, array(
@@ -222,9 +222,9 @@ class acf_field_typography extends acf_field {
 			'choices'		=>	array(
 				'inherit',
 			 	'left'		=> 'left',
-			 	'right'		=> 'right', 
-			 	'center'	=> 'center', 
-			 	'justify'	=> 'justify', 
+			 	'right'		=> 'right',
+			 	'center'	=> 'center',
+			 	'justify'	=> 'justify',
 			 	'inital'	=> 'inital')
 		));
 
@@ -268,7 +268,7 @@ class acf_field_typography extends acf_field {
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Show Line Height ?','acf-typography'), 
+			'label'			=> __('Show Line Height ?','acf-typography'),
 			'instructions'	=> __('When line height don t load line height is 150%','acf-typography'),
 			'type'			=> 'radio',
 			'layout'  		=>  'horizontal',
@@ -287,7 +287,7 @@ class acf_field_typography extends acf_field {
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Show Letter Spacing ?','acf-typography'), 
+			'label'			=> __('Show Letter Spacing ?','acf-typography'),
 			'instructions'	=> __('','acf-typography'),
 			'type'			=> 'radio',
 			'layout'  		=>  'horizontal',
@@ -307,7 +307,7 @@ class acf_field_typography extends acf_field {
 
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Show Color Picker ?','acf-typography'), 
+			'label'			=> __('Show Color Picker ?','acf-typography'),
 			'type'			=> 'radio',
 			'layout'  		=>  'horizontal',
 			'name'			=> 'show_color_picker',
@@ -375,18 +375,18 @@ class acf_field_typography extends acf_field {
             $field['value'][''] = '';
             $field['value']['font-family']	 = 	$field['font-family'];
             $field['value']['font-weight']	 = 	$field['font-weight'];
-            $field['value']['backupfont']	 = 	$field['backup-font'];
+            $field['value']['backup-font']	 = 	$field['backup-font'];
             $field['value']['text_align']	 =	$field['text_align'];
             $field['value']['font_size']	 =	$field['font_size'];
             $field['value']['text-color']	 =	$field['text_color'];
             $field['value']['letter_spacing']=  $field['letter_spacing'];
-           
+
             if ($field['show_line_height']) {
             	$field['value']['line_height']	 =  $field['line_height'];
             } else {
             	$field['value']['line_height']	 =	'150%';
             }
-            
+
             $field['value']['direction']	 =	$field['direction'];
             $field['value']['font_style']	 =	$field['font_style'];
 
@@ -408,47 +408,53 @@ class acf_field_typography extends acf_field {
 		$s = 0;
 		$e = '';
 
-		$defaults_fonts = $field['backupfont'];
+		$default_backup_fonts = $field['backupfonts'];
 		$font_w = $field['stylefont'];
+        $default_font_families = $field['font_familys'];
 
-		$fontf = preg_replace('/\s+/', '+', $field_value['font-family']);
+		$fontf = preg_replace('/\s+/', '+', $field['font-family']);
 
 		/*
-		 * Show render field
+		 * Show render field   font_familys
 		 */
 		echo "<div class='rey_main'>";
 
 			echo "<div class='clearfix'>";
 				// Font Family selector
 				if ($field['show_font_familys']){
-					echo '<div class="acf-typography-subfield acf-typography-font-familys">';
-						echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Font Family</label> ';
-						echo '<input name="' . $field['name'] . '[font-family]" id="' . $field['key'] . 'attribute" class="select2-container font-familys" value="' . $field_value['font-family'] . '" />';
-					echo '</div>';
+
+                    echo '<div class="acf-typography-subfield acf-typography-font-familys">';
+                    echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Font Family</label> ';
+                    echo '<select name="' . $field['name'] . '[font-family]" id="' . $field['key'] . 'attribute" class="js-select2 value="' . $field['font-family'] . '" />';
+                    foreach ( $default_font_families as $k => $v ) {
+                        echo '<option value="' . $k . '"' . selected($field_value['font-family'], $k, false) . ' >' . $v . '</option>' ;
+                    }
+                    echo '</select>';
+                    echo '</div>';
 				}
 
 
 				// Font Weight Selector
 				if ($field['show_font_weight'] & $field['show_font_familys']) {
 					echo '<div class="acf-typography-subfield acf-typography-font-weight">';
-						echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Font Weight</label>';
-						echo '<select name="' . $field['name'] . '[font-weight]" id="' . $field['key'] . '" class="select2-container font-weight select2-weight" >';
-							//echo '<select name="' . $field['name'] . '[font_style]" id="' . $field['key'] . '-font-style"  class="js-select2 font-style">';
-							foreach ( $font_w as $k => $v) {
-								echo '<option value="' . $k . '"' . selected($field_value['font-weight'], $k, false) . ' >' . $v . '</option>' ;
-							}
-						echo '</select>';
+                    echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Font Weight</label>';
+                    echo '<select name="' . $field['name'] . '[font-weight]" id="' . $field['key'] . '" class="select2-container font-weight select2-weight" >';
+                        //echo '<select name="' . $field['name'] . '[font_style]" id="' . $field['key'] . '-font-style"  class="js-select2 font-style">';
+                        foreach ( $font_w as $k => $v) {
+                            echo '<option value="' . $k . '"' . selected($field_value['font-weight'], $k, false) . ' >' . $v . '</option>' ;
+                        }
+                    echo '</select>';
 					echo '</div>';
 				}
 
 				// Backup Font Family
 				if ($field['show_backup_font']) {
 					echo '<div class="acf-typography-subfield acf-typography-backup-font">';
-						echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Backup Font Family</label>';
-						echo '<select name="' . $field['name'] . '[backupfont]" class="js-select2">';
-							foreach ( $defaults_fonts as $k => $v ) {
-								echo '<option value="' . $k . '"' . selected($field_value['backupfont'], $k, false) . ' >' . $k . '</option>' ;
-							}
+                    echo '<label class="acf-typography-field-label" for="'. $field['key'] .'">Backup Font Family</label>';
+                    echo '<select name="' . $field['name'] . '[backup-font]" class="js-select2">';
+                        foreach ( $default_backup_fonts as $k => $v ) {
+                            echo '<option value="' . $k . '"' . selected($field_value['backup-font'], $k, false) . ' >' . $v . '</option>' ;
+                        }
 						echo '</select>';
 					echo '</div>';
 				}
@@ -565,7 +571,7 @@ class acf_field_typography extends acf_field {
         if (!empty($field['value'])) {
             foreach($field['value'] as $key=>$value) {
                 if (!empty($value)) {
-                    if ($key != "backupfont") {
+                    if ($key != "backupfonts") {
                     	switch ($key) {
                     		case 'text_align':
                     			$css .= "text-align".":".$value.";";
@@ -632,14 +638,14 @@ class acf_field_typography extends acf_field {
                 'dir' => $dir,
             )
         );
-		
-		// register & include CSS  
-		wp_register_style( 'acf-input-typography', $dir . 'css/input.css' ); 
+
+		// register & include CSS
+		wp_register_style( 'acf-input-typography', $dir . 'css/input.css' );
 		wp_enqueue_style( 'acf-input-typography' );
-		
+
 		wp_enqueue_media();
 	}
-	
+
 	/*
 	 * This filter is used to perform validation on the value prior to saving.
 	 * All values are validated regardless of the field's required setting.
@@ -647,47 +653,47 @@ class acf_field_typography extends acf_field {
 	 */
 	function validate_value( $valid, $value, $field, $input ){
 	    if ($field['required']) {
-		    if (empty($value['font-family']) || empty($value['font-weight']) || empty($value['backupfont']) || empty($value['text_align'])
+		    if (empty($value['font-family']) || empty($value['font-weight']) || empty($value['backupfonts']) || empty($value['text_align'])
 		    	 || empty($value['direction']) || empty($value['font_style']) || empty($value['font_size']) || empty($value['line_height'])
 		    	 || empty($value['text-color'])) {
 		    	$set = 0;
 		    	$txt = __('The value is empty!! : ','acf-typography');
-		    
+
 		    	if( empty($value['font-family']) & $field['show_font_familys']){
 		    		$txt .= __('font family, ','acf-typography');
 		    		$set = 1;
 		    	}
-		    
+
 		    	if( empty($value['font-weight']) & $field['show_font_weight']){
 		    		$txt .= __('font weight, ','acf-typography');
 		    		$set = 1;
 		    	}
-		   
-	 	   		if( empty($value['backupfont']) & $field['show_backup_font']){
-		    		$txt .= __('backupfont, ','acf-typography');
+
+	 	   		if( empty($value['backupfonts']) & $field['show_backup_font']){
+		    		$txt .= __('backupfonts, ','acf-typography');
 		    		$set = 1;
 		    	}
-		    
+
 		    	if( empty($value['text_align']) & $field['show_text_align']){
 		    		$txt .= __('text align, ','acf-typography');
 		    		$set = 1;
 		    	}
-		    
+
 		    	if( empty($value['direction']) & $field['show_text_direction']){
 		    		$txt .= __('direction, ','acf-typography');
 		    		$set = 1;
 		    	}
-		    
+
 		    	if( empty($value['font_style']) & $field['show_font_style']){
 		    		$txt .= __('font style, ','acf-typography');
 		    		$set = 1;
 		    	}
-		    
+
 		    	if( empty($value['font_size']) & $field['show_font_size']){
 		    		$txt .= __('font size, ','acf-typography');
 		    		$set = 1;
 		    	}
-		   
+
 		    	if( empty($value['line_height']) & $field['show_line_height']){
 		    		$txt .= __('line height, ','acf-typography');
 		    		$set = 1;
@@ -697,7 +703,7 @@ class acf_field_typography extends acf_field {
 		    		$txt .= __('text color, ','acf-typography');
 		    		$set = 1;
 		    	}
-		    	
+
 		    	if ($set) {
 		    		$valid = $txt;
 		    	}
