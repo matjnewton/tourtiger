@@ -563,6 +563,9 @@ function acf_load_third_party_field_choices( $field ) {
 
 add_filter('acf/load_field/name=third_party', 'acf_load_third_party_field_choices');
 
+/* multiple menus export */
+include_once(dirname(__FILE__).'/includes/acf/pc-acf-menu-template.php');
+
 /*acf export*/
 include_once(dirname(__FILE__).'/includes/acf_fields.php');
 
@@ -1805,6 +1808,38 @@ function init_template_post_type(){
      * Setup default categories
      */
     wp_insert_term( 'Sidebar widget', 'template-type', array( 'slug' => 'sidebar-widget' ) );
+
+    register_post_type('template', array(
+        'labels'                 => array(
+            'name'               => 'Templates',
+            'singular_name'      => 'Template',
+            'add_new'            => 'Add new',
+            'add_new_item'       => 'Add new Template',
+            'edit_item'          => 'Edit Template',
+            'new_item'           => 'New Template',
+            'view_item'          => 'View Template',
+            'search_items'       => 'Find Template',
+            'not_found'          => 'There are not any Template',
+            'not_found_in_trash' => 'There are not any Template in trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Templates'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'supports'           => array('title'),
+        'menu_icon'          => 'dashicons-welcome-widgets-menus'
+    ) );
+
+    wp_insert_term( 'Menu template', 'template-type', array( 'slug' => 'menu-template' ) );
 
     register_post_type('template', array(
         'labels'                 => array(

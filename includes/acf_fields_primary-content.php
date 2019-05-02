@@ -271,6 +271,7 @@ if(function_exists('acf_add_options_sub_page')) {
 	if( function_exists('acf_add_local_field_group') ):
 		include( PCA_DIR . '/styling/pc-styling-cards.php' );
 		include( PCA_DIR . '/dependences/pc-constructor.php' );
+        include( PCA_DIR . '/dependences/pc-multiple-menu.php' );
 		include( PCA_DIR . '/dependences/pc-hero-area.php' );
 	endif;
 

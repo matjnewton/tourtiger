@@ -4,13 +4,13 @@
  */
 ?>
 
-    <div class="above-header">
+    <div class="above-header hello">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="utilities-wrapper-container">
                     <div class="utilities-wrapper">
-                        <div class="search-form-wrapper">    
+                        <div class="search-form-wrapper">
                             <?php //get_search_form(); ?>
                             <form method="get" id="searchform" class="main-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
     		<input type="text" class="field" dir="auto" name="s" id="s" value="Search" />
@@ -49,7 +49,7 @@
                                    <?php endif; ?>
                                </a>
                            </li>
-                           <?php endwhile; ?> 
+                           <?php endwhile; ?>
                         </ul>
                         <?php endif; ?>
                     </div>

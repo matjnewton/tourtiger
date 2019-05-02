@@ -7,13 +7,19 @@ $ajaxload = isset($_POST['ajaxload']);
 
 ob_start();
 
+?>
+
+<!-- THIS IS SOMETHING TO FIND OUT WHERE IT IS -->
+
+<?php
+
 include( PCA_DIR . '/pc-header.php' );
 
 if ( have_rows( 'tour_primary-content' ) ) { ?>
 
 	<div id="pc_wrap" class="pc_wrap">
-	
-		<?php 
+
+		<?php
 		/**
 		 * Indlude Dependences
 		 */
@@ -44,14 +50,14 @@ if ( have_rows( 'tour_primary-content' ) ) { ?>
 			include( PCA_DIR . '/section/pc-section-parameters.php' );
 
 			//if ($section_count == 1 && !$ajaxload) break;
-		endwhile; 
+		endwhile;
 
 	    ?>
 
-	</div> 
+	</div>
 
-	<?php 
-} 
+	<?php
+}
 
 echo ob_get_clean();
 ?>
