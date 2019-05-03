@@ -58,7 +58,7 @@ $logo_covers_both_menus = get_option( 'options_logo_covers_both_menus' );
       ?>
       <?php wp_nav_menu( $args ); ?>
 
-      <?php if (current_user_can('edit_posts')) wp_nav_menu(['menu' => 'Languages', 'fallback_cb' => '__return_empty_string']); ?>
+      <?php // if (current_user_can('edit_posts')) wp_nav_menu(['menu' => 'Languages', 'fallback_cb' => '__return_empty_string']); ?>
 
     </div>
   </nav>
