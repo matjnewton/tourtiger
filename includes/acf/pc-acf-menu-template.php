@@ -88,7 +88,7 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'name' => 'message',
                             'type'  => 'message',
                             'required' => 0,
-                            'message' => 'Logo placed on left, Menu on right hand.'
+                            'message' => 'Logo is placed on the left, and Menu is on the right.'
                         ),
                         array(
                             'key' => $id . '_PR982bc694Cd91',
@@ -117,6 +117,12 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                     )
                 ),
 
+
+
+
+                /**
+
+
                 array(
                     'key' => $id . '_PR8HRbc694Cd82',
                     'name' => 'layout-2',
@@ -130,7 +136,8 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'name' => 'message',
                             'type'  => 'message',
                             'required' => 0,
-                            'message' => 'Logo placed on center, the first menu placed on left, the second on right.'
+                            // 'message' => 'Logo placed on center, the first menu placed on left, the second on right.'
+                            'message' => 'These features are temporary disabled and in state of development.'
                         ),
                         array(
                             'key' => $id . '_S2882bc694Cm81',
@@ -200,7 +207,8 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'name' => 'message',
                             'type'  => 'message',
                             'required' => 0,
-                            'message' => 'Logo and menu are centered, the last one is underneath of the logo.'
+                            // 'message' => 'Logo and menu are centered, the last one is underneath of the logo.'
+                            'message' => 'These features are temporary disabled and in state of development.'
                         ),
                         array(
                             'key' => $id . '_PX932bc694Cd91',
@@ -241,7 +249,8 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'name' => 'message',
                             'type'  => 'message',
                             'required' => 0,
-                            'message' => 'Logo placed on left, Menu on left hand as well.'
+                            // 'message' => 'Logo placed on left, Menu on left hand as well.'
+                            'message' => 'These features are temporary disabled and in state of development.'
                         ),
                         array(
                             'key' => $id . '_PR982bc694Cd9dx',
@@ -269,8 +278,16 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                         ),
                     )
                 ),
+
+
+
+                */
+
+
             )
         ),
+
+        /**
 
         array (
             'key' => $id . '_P2982bc694Cd13',
@@ -301,7 +318,16 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'type' => 'text',
                             'instructions' => 'Leave empty for using the Menu from Appearance -> Menus -> the Menu which is set to location: Sup panel',
                             'required' => 0,
-                        )
+                        ),
+                        array (
+                            'key' => $id . '_596506809234736',
+                            'label' => 'Nav Menu',
+                            'name' => 'nav_menu',
+                            'type' => 'select',
+                            'required' => 0,
+                            'choices' => get_registered_nav_menus(),
+                            'allow_null' => 1,
+                        ),
                     )
                 ),
                 array(
@@ -345,7 +371,7 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'name' => 'phone-numbers',
                             'type'  => 'message',
                             'required' => 0,
-                            'message' => '<p>You can configue contact phone numbers from Common settings page</p>'
+                            'message' => '<p>You can configure contact phone numbers from Common settings page</p>'
                         ),
                         array(
                             'key' => $id . '_SD1234ewe543433',
@@ -374,7 +400,7 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
                             'name' => 'contact-emails',
                             'type'  => 'message',
                             'required' => 0,
-                            'message' => '<p>You can configue contact emails from Common settings page</p>'
+                            'message' => '<p>You can configure contact emails from Common settings page</p>'
                         ),
                         array(
                             'key' => $id . '_SD1234ewe543434',
@@ -872,6 +898,13 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
             )
         ),
 
+
+
+
+    /**
+
+
+
         array (
             'key' => $id . '_596503919378g',
             'label' => 'Logotype position',
@@ -1133,5 +1166,10 @@ function get_header_panels_local_field( $id = '1234QWERasdf' ) {
             'required' => '',
             'return_format' => 'url'
         ),
+
+
+
+        */
+
     ), $id );
 }

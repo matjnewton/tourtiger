@@ -9,8 +9,6 @@ ob_start();
 
 ?>
 
-<!-- THIS IS SOMETHING TO FIND OUT WHERE IT IS -->
-
 <?php
 
 include( PCA_DIR . '/pc-header.php' );

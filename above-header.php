@@ -4,7 +4,7 @@
  */
 ?>
 
-    <div class="above-header hello">
+    <div class="above-header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

@@ -16,13 +16,6 @@
                 'value' => 'post',
             ),
         ),
-//        array (
-//            array (
-//                'param' => 'options_page',
-//                'operator' => '==',
-//                'value' => 'common',
-//            ),
-//        ),
         array (
             array (
                 'param' => 'post_type',
@@ -38,11 +31,6 @@
                 'operator' => '==',
                 'value' => 'template',
             ),
-//            array (
-//                'param' => 'post_taxonomy',
-//                'operator' => '==',
-//                'value' => 'template-type:header',
-//            ),
         ),
     ),
     'Singular' => array(
@@ -144,7 +132,7 @@ acf_add_local_field_group(array (
                             'post_type' => array (
                                 'template'
                             ),
-                            //'taxonomy' => get_languages_slugs_and_concat_to_string('template-type:header'),
+                            //'taxonomy' => get_languages_slugs_and_concat_to_string('template-type:menu-template'),
                             'taxonomy' => 'template-type:menu-template',
                             'allow_null' => 0,
                             'multiple' => 0,

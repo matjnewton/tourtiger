@@ -563,11 +563,12 @@ function acf_load_third_party_field_choices( $field ) {
 
 add_filter('acf/load_field/name=third_party', 'acf_load_third_party_field_choices');
 
-/* multiple menus export */
-include_once(dirname(__FILE__).'/includes/acf/pc-acf-menu-template.php');
 
 /*acf export*/
 include_once(dirname(__FILE__).'/includes/acf_fields.php');
+
+/* multiple menus export */
+include_once(dirname(__FILE__).'/includes/acf/pc-acf-menu-template.php');
 
 //include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
 include_once(dirname(__FILE__).'/includes/menus_gpm.php');
@@ -2186,4 +2187,12 @@ function get_the_password_form_custom( $post = 0 ) { // first version of a form 
 	';
 
      return apply_filters( 'the_password_form', $output );
+}
+
+function print_r_html( $value, $is_prod = false ) {
+    if ($is_prod)
+        if (!current_user_can('edit_posts'))
+            return null;
+
+    echo '<pre class="pre-code">' . print_r( $value, 1 ) . '</pre>';
 }

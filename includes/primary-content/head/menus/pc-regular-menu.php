@@ -1,34 +1,34 @@
 <div class="hidden-xs hidden-sm container">
     <div class="row">
-        <?php 
+        <?php
         $use_logo = get_field( 'use_logo_image', 'option' );
         if( $use_logo ): ?>
             <div class="col-sm-2 col-md-3 col-lg-3">
                 <div class="logo">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <?php 
+                        <?php
                         $logo_url = wp_get_attachment_url( get_field( 'logo_image', 'option' ), 'full' );
                         $logo = aq_resize( $logo_url, 362, 64, false );
-                            
+
                         if( $logo_url ) : ?>
                             <div class="logo-container" style="background-image: url(<?=$logo_url?>);"></div>
                         <?php endif; ?>
                     </a>
                 </div>
             </div>
-        <?php endif; ?>  
+        <?php endif; ?>
 
         <nav class="regular-type <?php if ( $use_logo ) echo 'col-sm-10 col-md-9 col-lg-9 use-logo'; ?>">
             <div class="main-nav-wrapper <?php if( $all_caps ) echo 'all-caps'; ?>">
-                        
-                <?php 
+
+                <?php
                 if ( !$secondary_menu ) :
                     if ( function_exists( 'icl_object_id' ) ) :
-                        wp_nav_menu( array( 
-                            'theme_location' => 'language_switcher', 
-                            'menu_class' => 'lang-nav', 
-                            'container_class' => 'menu-languages-container', 
-                            'fallback_cb'    => false 
+                        wp_nav_menu( array(
+                            'theme_location' => 'language_switcher',
+                            'menu_class' => 'lang-nav',
+                            'container_class' => 'menu-languages-container',
+                            'fallback_cb'    => false
                         ) );
                     endif;
 
@@ -53,21 +53,21 @@
                                             endif; ?>
                                         </a>
                                     </li>
-                                <?php endwhile; ?> 
+                                <?php endwhile; ?>
                             </ul>
                         </div>
                     <?php endif;
                 endif;
 
-                wp_nav_menu( array( 
-                    'theme_location' => 'primary', 
-                    'menu_class' => 'menu genesis-nav-menu main-nav', 
-                    'container_class' => 'menu-main-nav-container', 
-                    'fallback_cb'    => false, 'walker'  => new Wpse8170_Menu_Walker() 
+                wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'menu_class' => 'menu genesis-nav-menu main-nav',
+                    'container_class' => 'menu-main-nav-container',
+                    'fallback_cb'    => false, 'walker'  => new Wpse8170_Menu_Walker()
                 ) ); ?>
-                        
-                        
+
+
             </div>
         </nav>
     </div>
-</div>    
+</div>
