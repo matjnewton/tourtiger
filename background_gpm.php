@@ -37,7 +37,7 @@
                     $poster_url = wp_get_attachment_url( $full_video_poster,'full'); //get img URL
     ?>
 <?php if(($hero_image) && ($background_placement=='Under Header')): ?>
-<?php $himage = aq_resize( $hero_image, 1440, 620, true );  ?>
+<?php $himage = $hero_image;  ?>
 <?php $himage_xs = aq_resize( $hero_image, 480, 297, true );  ?>
 .banner-wrapper{
     width:100%;
