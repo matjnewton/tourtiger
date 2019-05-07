@@ -275,7 +275,7 @@ else :
         <a class="poweredby" href="https://getinsellout.com"><img src="<?php bloginfo('stylesheet_directory');?>/images/poweredbygiso.png" /></a>
       <?php else: ?>
         <strong>
-          <a href="https://www.tourismtiger.com/">Website by Tourismtiger</a>
+          <a href="https://www.tourismtiger.com/" target="_blank">Website by Tourismtiger</a>
         </strong>
       <?php endif; ?>
     </div>
