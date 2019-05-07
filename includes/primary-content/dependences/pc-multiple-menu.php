@@ -152,6 +152,13 @@ acf_add_local_field_group(array (
                 'value' => 'page-templates/test-pc.php',
             ),
         ),
+        array (
+            array (
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'product',
+            ),
+        ),
     ),
     'menu_order' => 1,
     'position' => 'acf_after_title',
