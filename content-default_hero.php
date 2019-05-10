@@ -6,15 +6,15 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
         if( have_rows('hero_area') ):
     while ( have_rows('hero_area') ) : the_row();
         if( get_row_layout() == 'hero'):
-        
-        /*$image = get_sub_field('image'); 
+
+        /*$image = get_sub_field('image');
         $gradient = get_sub_field('gradient');
         $background_type = get_sub_field('background_type');*/
         $headline = get_sub_field('headline');
         $content_editor = get_sub_field('content_editor');
         $cta_button_text = get_sub_field('cta_button_text');
         $button_type = get_sub_field('button_link_type');
-        
+
         $book_tours = get_sub_field('book_tours_link');
         $cta_button_radius = get_sub_field('cta_button_radius');
         $text_align = get_sub_field('text_align');
@@ -28,19 +28,19 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
          <div class="shadow"></div>
          <?php endif; ?>
         <div class="banner-top">
-        
-                    
+
+
                     <div class="flxslider-wrapper">
-                        <?php $images = get_sub_field('hero_slides');    
+                        <?php $images = get_sub_field('hero_slides');
                                 ?>
                                 <?php if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ): ?>
-                            <?php 
+                            <?php
                                 $simage = aq_resize( $slider_image['url'], 1440, 362, true );
                                 //$img_url = $slider_image['url'];
-                                
+
                             ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:362px;">
                                         <div class="container">
@@ -49,13 +49,13 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
                                             <img class="img-responsive center-block" src="<?php bloginfo('stylesheet_directory'); ?>/images/blank_full.png" />
                                             </div>
                                             </div>
-                                        </div>  
+                                        </div>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
                              </div>
-                                <?php endif; ?> 
-                    
+                                <?php endif; ?>
+
                     <div class="overlay-slider">
                     <div class="container">
             <div class="row">
@@ -95,10 +95,10 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
             </div>
         </div>
                     </div><!-- end of flxslider-wrapper position context-->
-                
+
         </div>
     </section>
-<?php 
+<?php
         endif;
     endwhile;
 endif;

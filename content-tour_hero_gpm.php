@@ -30,17 +30,17 @@ if( $ha_rows ):
          <a href="<?php if($video_button_link): echo $video_button_link; else: echo '#'; endif; ?>" class="video-play popup-video">
          <?php endif; ?>
         <div class="banner-top">
-        
-                    
+
+
                     <div class="flxslider-wrapper">
-                        <?php 
-                            $images = get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true );    
+                        <?php
+                            $images = get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true );
                                 ?>
                                 <?php if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ): ?>
-                            <?php 
+                            <?php
                                 $img_url = wp_get_attachment_url($slider_image);
                                 //$simage = aq_resize( $slider_image['url'], 1440, 362, true );
                                 if($background_placement=='Under Header'):
@@ -49,7 +49,7 @@ if( $ha_rows ):
                                 $simage = aq_resize( $img_url, 1440, 545, true );
                                 endif;
                                 //$img_url = $slider_image['url'];
-                                
+
                             ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:<?php if($background_placement=='Under Header'): ?>620<?php else: ?>539<?php endif; ?>px;">
                                         <div class="container">
@@ -58,13 +58,13 @@ if( $ha_rows ):
                                             <img class="img-responsive center-block" src="<?php bloginfo('stylesheet_directory'); ?>/images/blank_full.png" />
                                             </div>
                                             </div>
-                                        </div>  
+                                        </div>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
                              </div>
-                                <?php endif; ?> 
-                    
+                                <?php endif; ?>
+
                     <div class="overlay-slider">
                     <div class="container">
             <div class="row">
@@ -83,7 +83,7 @@ if( $ha_rows ):
                         <?php echo $content_editor; ?>
                     </div>
                     <?php endif; ?>
-                    
+
                     <?php if( $button_type == 'Play Video'): ?>
                     <img class="play-icon" src="<?php bloginfo('stylesheet_directory');?>/images/554cc0ad2cb6bf677667cea7_play.png" />
                     <?php else: ?>
@@ -93,22 +93,22 @@ if( $ha_rows ):
                         <?php include(locate_template('buttons/hero_mobd_gpm.php' )); ?>
                     <?php endif; ?><!-- end of button-->
                     <?php endif; /*end of Video/others condition*/?>
-                    
+
                 </div><!-- end of hero-elements-wrapper-->
                     </div>
                     </div>
             </div>
         </div>
                     </div><!-- end of flxslider-wrapper position context-->
-                
+
         </div>
         <?php if( $button_type == 'Play Video'): ?>
          </a>
          <?php endif; ?>
     </section>
-<?php 
-        
-            
+<?php
+
+
             break;
         endswitch;
     endforeach;

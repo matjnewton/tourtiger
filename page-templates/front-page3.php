@@ -560,7 +560,7 @@ function tourtiger_sub_contents(){ ?>
                                             <p><?php echo $textarea; ?></p>
                                             <?php endif; ?>
                                             <?php if($button_text): ?>
-                                            <div class="view-btn-wrapper">
+                                            <div class="view-btn-wrapper"> <?php //@todo:?>
                                                 <div class="view-tour-btn">
                                                     <a href="<?php if($button_link): echo $button_link; else: ?>#<?php endif; ?>">
                                                     <?php echo $button_text; ?>
