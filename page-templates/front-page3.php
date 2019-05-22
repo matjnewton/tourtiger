@@ -550,6 +550,7 @@ function tourtiger_sub_contents(){ ?>
                                                 $textarea = get_sub_field('textarea');
                                                 $button_text = get_sub_field('button_text');
                                                 $button_link = get_sub_field('button_link');
+                                                $open_in_iframe = get_sub_field('open_in_iframe');
                                                 ?>
                                     <div class="col-sm-6 s-item<?php if( (is_array($pull) && in_array('left', $pull)) && !(is_array($pull) && in_array('right', $pull))): ?> box-left<?php elseif( (is_array($pull) && in_array('right', $pull)) && !(is_array($pull) && in_array('left', $pull))): ?> box-right<?php endif; ?><?php if($color_style == 'Variation-1'): ?> color-variation-1<?php elseif($color_style == 'Variation-2'): ?> color-variation-2<?php endif; ?>">
                                     	<div class="inner-wrapper center-block">
@@ -562,11 +563,13 @@ function tourtiger_sub_contents(){ ?>
                                             <?php if($button_text): ?>
                                             <div class="view-btn-wrapper"> <?php //@todo:?>
                                                 <div class="view-tour-btn">
-                                                    <a href="<?php if($button_link): echo $button_link; else: ?>#<?php endif; ?>">
+                                                    <a <?php if($open_in_iframe):?>class="iframe-opener"<?php  endif; ?>href="<?php if($button_link): echo $button_link; else: ?>#<?php endif; ?>" <?php if($open_in_iframe):?>target="iframe1"<?php endif;?>>
                                                     <?php echo $button_text; ?>
                                                     </a>
                                                 </div>
                                             </div>
+
+
                                             <?php endif; ?>
                                     	</div>
 
@@ -1152,6 +1155,12 @@ $testimonials_background_id;
     endif;
     ?>
 
+<div class="popup-iframe-holder">
+    <div class="close-iframe">X</div>
+    <div class="popup-iframe-frame">
+        <iframe class="iframe-popup" name="iframe1" width="1000" height="600"></iframe>
+    </div>
+</div>
 <?php }
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');

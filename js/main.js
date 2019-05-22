@@ -22,12 +22,12 @@
 		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
-			var $unessesarily = $('.banner-wrapper-inner'); 
+			var $unessesarily = $('.banner-wrapper-inner');
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			var newMarginTop  = headerWrapper - secondary;
 
-			if ( !is_logged ) 
+			if ( !is_logged )
 				newMarginTop += 32;
 
 			if ( !is_banner ) {
@@ -70,9 +70,9 @@
 				if ( $('.iframe-popup__close').length == 0 ) {
 					$('body').append('<a href="javascript:" class="iframe-popup__close" style="opacity:0;pointer-events:none;"></a>');
 				}
-				
+
 				$('#hawaiifun').addClass('is-active');
-				
+
 				$('body').css({
 					'overflow': 'hidden'
 				});
@@ -106,7 +106,7 @@
 
 			// Load new site in iframe
 			} else {
-			
+
 				if ( $(window).width() > 768 ) {
 
           $(this).is('[data-iframe-popup]:not(.js-inited)') && $(this).tourismTiger('btnLoader');
@@ -123,7 +123,7 @@
 							var iframeContent = document.getElementById('iframe-popup').contentWindow.document;
 							if (iframeContent) {
 								iframeContent.querySelector('container').setAttribute("style", "width:100%;margin:0;");
-							} 
+							}
 						}
 
 						$('body').css({
@@ -195,7 +195,7 @@
 	}
 
 	refresToSeachIframeBtn();
-	
+
 
 	$(function() {
 
@@ -264,7 +264,7 @@
 
 
 			/**
-			 * Functions for Single Product page 
+			 * Functions for Single Product page
 			 * and devices which has width below 1140px
 			 */
 			if ( $('body').width() < 1140 ) {
@@ -292,7 +292,7 @@
 			}
 
 			/**
-			 * Functions for Single Product page 
+			 * Functions for Single Product page
 			 * and devices which has width below 768px
 			 */
 			if ( $('body').width() < 768 ) {
@@ -431,7 +431,7 @@ var FbBookNowButton = function (config) {
 	var methods = {
 
 		initGallery: function(){
-		    
+
 		    // Set DOM elements to the variables
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
@@ -454,7 +454,7 @@ var FbBookNowButton = function (config) {
 			.find('img')
 			.width(width)
 			.height(height);
-			
+
 			$panel.hide();
 
             // Get cover coordinates relative to the window
@@ -492,7 +492,7 @@ var FbBookNowButton = function (config) {
 			})
 			.slick('setOption', 'height', null, true);
 
-			// hide anoying button which usualy used to hover the X - button 
+			// hide anoying button which usualy used to hover the X - button
 			$('#js-mob-wrap-buttons').fadeOut();
 		},
 
@@ -564,7 +564,7 @@ var FbBookNowButton = function (config) {
 		}
 	};
 
-	/** 
+	/**
 	 * Include javascript files
 	 * which requery DOM reload
 	 */
@@ -576,7 +576,7 @@ var FbBookNowButton = function (config) {
 	      return methods.init.apply( this, arguments );
 	    } else {
 	      $.error( 'Method named ' +  method + ' isn\'t exist within jQuery.tourismTiger' );
-	    } 
+	    }
 
 	};
 
@@ -597,7 +597,7 @@ var FbBookNowButton = function (config) {
 	        $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
 	          $(this).tourismTiger('destroyGallery');
 	        });
-		    }	
+		    }
 
         if ( $('.slider-pro__close-bg').not('[data-inited]') ) {
 	        /**
@@ -606,7 +606,7 @@ var FbBookNowButton = function (config) {
 	        $('.slider-pro__close-bg').not('[data-inited]').on('click', function(){
 	          $(this).tourismTiger('destroyGallery');
 	        });
-		    }	
+		    }
 
         $('.slider-pro--preview, .slider-pro__close-link, .slider-pro__close-bg').attr('data-inited', 1);
 	});
@@ -845,4 +845,28 @@ var FbBookNowButton = function (config) {
     }
   };
 });
+
+!( function($){ $( function() {
+
+	var windowWidth = $( window ).width(), iframeWidth,
+	windowHeight = $( window ).height();;
+	var $iframeHolder = $('.popup-iframe-holder');
+
+	if(windowWidth>600) iframeWidth = windowWidth-120;
+	else iframeWidth = windowWidth-20;
+
+	$('.iframe-popup').attr("width",iframeWidth).attr("height",windowHeight-50);
+
+	function openIframe() {
+		$iframeHolder.css('display', 'block').css('left', 0);
+	}
+
+	function closeIframe() {
+		$iframeHolder.css('display', 'none');
+	}
+
+	$('.iframe-opener').click(openIframe);
+	$iframeHolder.click(closeIframe);
+
+}); } )( jQuery );
 
