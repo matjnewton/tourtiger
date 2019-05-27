@@ -846,27 +846,45 @@ var FbBookNowButton = function (config) {
   };
 });
 
-!( function($){ $( function() {
+!( function($) {
+	var peekTT1 = function () {
+		var $element = $('body');
 
-	var windowWidth = $( window ).width(), iframeWidth,
-	windowHeight = $( window ).height();;
-	var $iframeHolder = $('.popup-iframe-holder');
+		function peekConfigFunction() {
+			if ( typeof window._peekConfigFunction === 'function' ) {
+				window._peekConfigFunction.call();
+			} else {
+				$element.off('mouseover', peekConfigFunction);
+			}
+		}
 
-	if(windowWidth>600) iframeWidth = windowWidth-120;
-	else iframeWidth = windowWidth-20;
+		$element.on('mouseover', peekConfigFunction.bind());
+	};
 
-	$('.iframe-popup').attr("width",iframeWidth).attr("height",windowHeight-50);
+	$( function() {
 
-	function openIframe() {
-		$iframeHolder.css('display', 'block').css('left', 0);
-	}
+		var windowWidth = $( window ).width(), iframeWidth,
+		windowHeight = $( window ).height();;
+		var $iframeHolder = $('.popup-iframe-holder');
 
-	function closeIframe() {
-		$iframeHolder.css('display', 'none');
-	}
+		if(windowWidth>600) iframeWidth = windowWidth-120;
+		else iframeWidth = windowWidth-20;
 
-	$('.iframe-opener').click(openIframe);
-	$iframeHolder.click(closeIframe);
+		$('.iframe-popup').attr("width",iframeWidth).attr("height",windowHeight-50);
 
-}); } )( jQuery );
+		function openIframe() {
+			$iframeHolder.css('display', 'block').css('left', 0);
+		}
+
+		function closeIframe() {
+			$iframeHolder.css('display', 'none');
+		}
+
+		$('.iframe-opener').click(openIframe);
+		$iframeHolder.click(closeIframe);
+
+		peekTT1.call();
+
+	});
+} )( jQuery );
 

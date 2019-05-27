@@ -245,6 +245,18 @@ if(function_exists('acf_add_options_sub_page')) {
 				'readonly' => 0,
 				'disabled' => 0,
 			),
+			array (
+				'key' => 'field_p8be2sea9kdsd2',
+				'label' => 'Peek API Key',
+				'name' => 'peek_key',
+				'type' => 'text',
+				'instructions' => 'get_field(\'peek_key\',\'apikey\');',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '50',
+				),
+			),
 		),
 		'location' => array (
 			array (

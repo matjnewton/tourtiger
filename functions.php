@@ -2196,3 +2196,39 @@ function print_r_html( $value, $is_prod = false ) {
 
     echo '<pre class="pre-code">' . print_r( $value, 1 ) . '</pre>';
 }
+
+/**
+ * Peek integration
+ */
+function add_peek_integration() {
+
+    $key = get_field( 'peek_api', 'apikey' );
+
+    if ( $key ) :
+            ?>
+
+            <script type="text/javascript">
+                var _peekConfigFunction = function () {(function(config) {
+                    window._peekConfig = config || {};
+                    var idPrefix = 'peek-book-button';
+                    var id = idPrefix+'-js'; if (document.getElementById(id)) return;
+                    var head = document.getElementsByTagName('head')[0];
+                    var el = document.createElement('script'); el.id = id;
+                    var date = new Date; var stamp = date.getMonth()+"-"+date.getDate();
+                    var basePath = "https://js.peek.com";
+                    el.src = basePath + "/widget_button.js?ts="+stamp;
+                    el.setAttribute('defer', 'defer');
+                    head.appendChild(el); id = idPrefix+'-css'; el = document.createElement('link'); el.id = id;
+                    el.href = basePath + "/widget_button.css?ts="+stamp;
+                    el.rel="stylesheet"; el.type="text/css"; head.appendChild(el);
+
+                    window._peekConfigFunction = false;
+                })({key:'<?=$key?>'})};
+            </script>
+
+        <?php
+    endif;
+
+}
+
+add_action('wp_head', 'add_peek_integration');
