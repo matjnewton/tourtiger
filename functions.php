@@ -2202,7 +2202,7 @@ function print_r_html( $value, $is_prod = false ) {
  */
 function add_peek_integration() {
 
-    $key = get_field( 'peek_api', 'apikey' );
+    $key = get_field( 'peek_key', 'apikey' );
 
     if ( $key ) :
             ?>
