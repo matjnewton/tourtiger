@@ -5,10 +5,10 @@ class split_nav_walker extends Walker_Nav_Menu {
     var $current_menu = null;
     var $break_point  = null;
 
-
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 
-        global $wp_query;
+        $class_attribute  ="";
+        $id_attribute = "";
 
         if( !isset( $this->current_menu ) )
             $this->current_menu = wp_get_nav_menu_object( $args->menu );
@@ -59,9 +59,12 @@ class split_nav_walker extends Walker_Nav_Menu {
         $right_secondary_menu = '';
         endif;
 
-        $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo hello"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
+        if(!$item->menu_item_parent) :
+            $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo hello"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
+        endif;
+
         //if( $this->break_point == $item->menu_order )
-        if( $this->break_point == $this->displayed )
+        if( $this->break_point == $this->displayed && !$item->menu_item_parent)
             $output .= $indent . '</li></ul></div>'.$logo_item.'<div class="col-sm-12 col-md-5 col-lg-5 right-menu-part main-nav-wrapper"><div class="secondary-menu-wrapper"><div class="above-split-bar">'.$right_secondary_menu.'</div></div><ul class="menu genesis-nav-menu main-nav hidden-xs hidden-sm"><li' . $id . $value . $class_names .'>';
         else
             $output .= $indent . '<li' . $id . $value . $class_names .'>';
@@ -94,7 +97,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         }
 
         include(locate_template('includes/integrate_vars_gpm.php' ));
-        /*$integrate_xola = get_field('integrate_xola_with_this_website','option');
+        $integrate_xola = get_field('integrate_xola_with_this_website','option');
         $integrate_peek = get_field('integrate_peek_with_this_website','option');
         $integrate_fareharbor = get_field('fareharbor','option');
         $fareharbor_shortname = get_field('fareharbor_shortname','option');
@@ -103,7 +106,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         $getinsellout_data_url = get_field('getinsellout_data_url','option');
         $getinsellout_data_evt = get_field('getinsellout_data_evt','option');
         $integrate_trekksoft = get_field('trekksoft','option');
-        $integrate_zaui = get_field('zaui','option');*/
+        $integrate_zaui = get_field('zaui','option');
 
         // get thumbnail
         $thumbnail = '';
@@ -260,6 +263,7 @@ class split_nav_walker extends Walker_Nav_Menu {
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
         $class_names = $value = '';
+        $item_output = "";
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;

@@ -4,7 +4,7 @@
 // 'parent'       => 'group_557b16305d905'
 // style TAB
 
-acf_add_local_field( 
+acf_add_local_field(
 	// new style tab
 		array (
 			'key' => 'field_564757f5e2b00_newTAB',
@@ -24,7 +24,7 @@ acf_add_local_field(
 			'endpoint' => 0,
 		)
 );
-acf_add_local_field( 
+acf_add_local_field(
 		// new style
 		array (
 			'key' => 'field_580852c22b8e4_sub_tab_general',
@@ -8635,7 +8635,7 @@ acf_add_local_field(
 			'esc_html' => 0,
 		)
 );
-acf_add_local_field( 
+acf_add_local_field(
 		//Link Color
 		array (
 			'key' => 'field_58085e32cc83a_style_sub_tab_product_link_color',
