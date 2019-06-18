@@ -3593,6 +3593,14 @@ tour_finder',
         'readonly' => 0,
         'disabled' => 0,
       ),
+        array (
+            'key' => 'field_insert512e40eaaa222',
+            'label' => 'Place on all site pages',
+            'name' => 'place_on_all_site_pages',
+            'type' => 'true_false',
+            'message' => 'Yes',
+            'default_value' => 0,
+        ),
     ),
     'location' => array (
       array (

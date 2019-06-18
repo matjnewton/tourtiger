@@ -1119,7 +1119,7 @@ $testimonials_background_id;
 
     <?php endif; /*end sections_area*/ ?>
 
-    <?php get_sidebar('subscribe'); ?>
+    <?php get_sidebar('subscribe_gpm'); ?>
 
     <?php
     if ( get_field('instagram') ) :

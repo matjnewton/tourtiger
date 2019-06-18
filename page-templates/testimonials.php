@@ -6,9 +6,9 @@
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_archive');
 
-function tourtiger_archive() { 
+function tourtiger_archive() {
 
-    $site_layout = genesis_site_layout(); 
+    $site_layout = genesis_site_layout();
 
     /**
      * Include additional styles
@@ -21,12 +21,12 @@ function tourtiger_archive() {
     <section class="tour-page-content">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 /**
                  * Put class accordin to chosen layout
                  */
-                if ( 'content-sidebar' == $site_layout ) : 
-                    $div_class = 'col-sm-12 col-md-10 col-lg-8'; 
+                if ( 'content-sidebar' == $site_layout ) :
+                    $div_class = 'col-sm-12 col-md-10 col-lg-8';
                 elseif ( 'full-width-content' == $site_layout ) :
                     $div_class = 'col-sm-12';
                 endif;
@@ -35,7 +35,7 @@ function tourtiger_archive() {
                 <div class="<?=$div_class;?> left-col">
                     <section class="testimonials">
                         <div class="row">
-                            <?php 
+                            <?php
                             /**
                              * POst data
                              */
@@ -46,13 +46,13 @@ function tourtiger_archive() {
                                 'post_status'    => 'publish',
                                 'paged'          => get_query_var( 'paged' )
                             );
- 
+
                             /**
                              * Generate WP_Guery request
                              */
                             global $wp_query;
                             $wp_query = new WP_Query( $args );
- 
+
                             /**
                              * Loop testimonials
                              */
@@ -69,20 +69,20 @@ function tourtiger_archive() {
                     </section>
                 </div>
 
-                <?php 
+                <?php
                 /**
-                 * I dont know why a fouder of code below wrote that.
+                 * I dont know why a founder of code below wrote that.
                  */
                 if ( 'content-sidebar' == $site_layout ):
                     echo '<div class="col-sm-4 right-col"></div>';
-                endif; 
+                endif;
                 ?>
             </div>
         </div>
     </section>
 
-    <?php 
-    global $post; 
+    <?php
+    global $post;
     if ( get_field('tiles_area') ) :
         while( has_sub_field( 'tiles_area' ) ) :
 
@@ -97,7 +97,7 @@ function tourtiger_archive() {
              * Selector's variables
              */
             $div_attrs          = $linked_to_hero_cta ? "data-scroll-index='110'" : '';
-            $div_class          = $section_headline == 'Featured tours' ? 'featured-tours' : 'testimonials'; 
+            $div_class          = $section_headline == 'Featured tours' ? 'featured-tours' : 'testimonials';
 
             /**
              * Grid variable
@@ -127,9 +127,9 @@ function tourtiger_archive() {
                     <div class="row even-grid">
                         <?php
                         if ( have_rows( 'tiles' ) ) :
-                            while ( have_rows( 'tiles' ) ) : 
+                            while ( have_rows( 'tiles' ) ) :
                                 the_row();
-                            
+
                                 // Tours layout
                                 if( get_row_layout() == 'tours' ):
                                     $pulled_specific = get_sub_field( 'pull_specific_from' );
@@ -141,7 +141,7 @@ function tourtiger_archive() {
                                         setup_postdata( $post );
 
                                         // Class
-                                        $div_class = $col == 5 ? 'five-cols' : "col-sm-{$col} s-item"; 
+                                        $div_class = $col == 5 ? 'five-cols' : "col-sm-{$col} s-item";
 
                                         // View
                                         echo "<div class='{$div_class}'></div>";
@@ -153,23 +153,23 @@ function tourtiger_archive() {
                                 endif;
 
                                 // Categories layout
-                                if ( get_row_layout() == 'categories' ) : 
-                                    $div_class = $col == 5 ? 'five-cols' : "col-sm-{$col} s-item"; 
+                                if ( get_row_layout() == 'categories' ) :
+                                    $div_class = $col == 5 ? 'five-cols' : "col-sm-{$col} s-item";
 
                                     // View
                                     echo "<div class='{$div_class}'></div>";
                                         get_template_part( 'content', 'feat_cats' );
                                     echo '</div>';
                                 endif;
-                            
+
                                 // Testimonials
                                 if( get_row_layout() == 'testimonials' ):
-                                    $pulled_specific = get_sub_field('pull_specific_from'); 
-                                    $div_class = $col == 5 ? 'five-cols' : "col-sm-{$col} s-item"; 
-                                    
+                                    $pulled_specific = get_sub_field('pull_specific_from');
+                                    $div_class = $col == 5 ? 'five-cols' : "col-sm-{$col} s-item";
+
                                     if ( $pulled_specific ) :
                                         $post = $pulled_specific;
-                				        setup_postdata( $post ); 
+                				        setup_postdata( $post );
 
                                         // View
                                         echo "<div class='{$div_class}'></div>";
@@ -178,18 +178,23 @@ function tourtiger_archive() {
                 				        wp_reset_postdata();
                                     endif;
                                 endif;
-                                 
+
                             endwhile;
                         endif;
-                        ?> 
+                        ?>
                     </div>
                 </div>
-            </section>      
-                 
+            </section>
+
             <?php
         endwhile;
-    endif; 
+    endif;
+
+    if (get_field('place_on_all_site_pages', 'option'))
+        get_sidebar('subscribe_gpm');
 }
+
+
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');
 

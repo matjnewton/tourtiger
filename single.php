@@ -15,8 +15,8 @@
 remove_action('genesis_loop', 'genesis_do_loop');
 add_action('genesis_loop', 'tourtiger_sub_contents');
 function tourtiger_sub_contents(){ ?>
-<?php $site_layout = genesis_site_layout(); ?> 
-        
+<?php $site_layout = genesis_site_layout(); ?>
+
 <section class="tour-page-content blog-post-content">
         <div class="container">
             <div class="row">
@@ -24,17 +24,17 @@ function tourtiger_sub_contents(){ ?>
                     <?php while ( have_posts() ) : the_post(); ?>
 
                     <?php get_template_part( 'content', 'single' ); ?>
-                            
+
                     <?php endwhile; // end of the loop. ?>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <?php global $post; ?>
-            
+
             <?php if(get_field('tiles_area')): ?>
-            
+
             <?php while(has_sub_field('tiles_area')): ?>
             <?php
                 $section_headline = get_sub_field('section_headline');
@@ -53,7 +53,7 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
             <div class="row even-grid">
-                <?php 
+                <?php
                     $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -73,11 +73,11 @@ function tourtiger_sub_contents(){ ?>
                             break;
                     }
                     ?>
-                    
+
                     <?php
                         if (have_rows('tiles')):
                         while(have_rows('tiles')): the_row();
-                        
+
                         if( get_row_layout() == 'tours' ):
                             $pulled_specific = get_sub_field('pull_specific_from');
                             if($pulled_specific):
@@ -97,35 +97,35 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                         <?php
                         endif;
-                        
+
                         if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
-                         
+
                         endwhile;
                         endif;
-                       ?> 
-                    
-                           
+                       ?>
+
+
                 </div>
             </div>
-    </section>           
+    </section>
                 <?php endwhile; ?>
-            
+
             <?php endif; ?>
-    
-    <?php get_sidebar('subscribe'); ?>
-    
+
+    <?php get_sidebar('subscribe_gpm'); ?>
+
 <?php }
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');

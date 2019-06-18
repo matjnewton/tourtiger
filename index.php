@@ -165,7 +165,8 @@ function tourtiger_sub_contents(){ ?>
 
             <?php endif; ?>
 
-    <?php //get_sidebar('subscribe'); ?>
+    <?php if (get_field('place_on_all_site_pages', 'option'))
+            get_sidebar('subscribe_gpm'); ?>
     <?php endif; ?>
 <?php }
 
