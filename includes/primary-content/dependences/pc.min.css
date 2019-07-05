@@ -3209,7 +3209,7 @@ label.is-required:after {
     bottom: 11px;
 }
 
-@media(min-width: 767px){.flxslider-wrapper--bg{background: none!important;}}
+@media(min-width: 769px){.flxslider-wrapper--bg{background: none!important;}}
 
 .gallery--wrapper {
     display: flex;
