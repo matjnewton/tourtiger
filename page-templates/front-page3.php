@@ -761,10 +761,6 @@ $testimonials_background_id;
         .testimonials-background-image-container {
             background-image: url(<?=$img_srcset_full?>);
         }
-        /*@media only screen and (min-width: 300px) {*/
-        /*    .testimonials-background-image-container {*/
-        /*    background-image: url(*/<?//=$img_srcset_medium?>/*)*/
-        /*}}*/
         @media only screen and (min-width: 768px) {
             .testimonials-background-image-container {
             background-image: url(<?=$img_srcset_medium_large?>)
@@ -1161,7 +1157,11 @@ $testimonials_background_id;
         <iframe class="iframe-popup" name="iframe1" width="1000" height="600"></iframe>
     </div>
 </div>
-<?php }
+<?php
+
+    if (get_field('place_on_all_site_pages', 'option'))
+        get_sidebar('subscribe_gpm');
+}
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');
 

@@ -72,7 +72,7 @@ function tourtiger_sub_contents(){ ?>
                                 $headline_align = get_sub_field('headline_text_align');
                             ?>
                             <section class="section-item">
-                    <?php $section_count++; ?>
+                    <?php // $section_count++; ?>
                     <?php if($headline): ?>
                         <h2<?php if($headline_align == 'Center'): echo ' class="text-center"'; endif;?>>
                             <span><?php echo $headline; ?></span><!--<hr />-->
@@ -445,6 +445,9 @@ function tourtiger_sub_contents(){ ?>
                                         <ul class="slides">
                                         <?php while(have_rows('boxes_set')): the_row(); ?>
                                         <?php if( get_row_layout() == 'testimonials' ):
+
+                                        global $post;
+
                                         $pulled_specific = get_sub_field('pull_specific_from');
 
                                         if($pulled_specific):

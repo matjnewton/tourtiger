@@ -4,7 +4,7 @@
  */
 
 global $sitepress_settings;
-$sitepress_settings     = get_option( 'icl_sitepress_settings' );
+$sitepress_settings = get_option( 'icl_sitepress_settings' );
 $adm_lng = $sitepress_settings['admin_default_language'] ? $sitepress_settings['admin_default_language'] : 'en';
 
 $footer_areas = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_footer_areas' : 'options_footer_areas';
