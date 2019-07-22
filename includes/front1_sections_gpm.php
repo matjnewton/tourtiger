@@ -27,10 +27,10 @@ if( $tiles_area ):
             </div>
             <?php endif; ?>
             <div class="row-eq-height">
-                
-                <?php 
+
+                <?php
                     $col = 0;
-                    
+
                     if($number_of_columns):
                     switch ($number_of_columns) {
                         case 1:
@@ -49,7 +49,7 @@ if( $tiles_area ):
                             $col = 5;
                             break;
                     }
-                    
+
                     else:
                     switch ($number_of_blog_columns) {
                         case 1:
@@ -73,19 +73,19 @@ if( $tiles_area ):
                             </h2>
                         <?php endif; ?>
                         <?php if($content): ?>
-                            
+
                                 <?php echo $content; ?>
-                                
+
                         <?php endif; ?>
                         <?php if($embed):?>
                                 <?php echo $embed; ?>
                         <?php endif; ?>
                             </div>
-                              
+
                         </div>
                     <?php endif; ?>
-                    <?php if($section_headline == 'Blog'): 
-                    
+                    <?php if($section_headline == 'Blog'):
+
                         $args = array(
                         'post_type' => 'post',
                         'orderby' => 'date',
@@ -93,15 +93,15 @@ if( $tiles_area ):
                         'nopaging' => true,
                         'post_status' => 'publish'
                         );
-                         
+
                         $i = 0;
                         global $wp_query;
                         $wp_query = new WP_Query( $args );
-                         
+
                         if ( have_posts() ) :
-                        
+
                         while ( have_posts() ) : the_post();
-                        
+
                         $i++; ?>
                         <div<?php if($col): ?> class="col-xs-12 col-sm-<?php echo $col; ?> col-eq-height"<?php endif; ?>>
                         <?php
@@ -111,36 +111,36 @@ if( $tiles_area ):
                         <?php
                         if($i == $number_of_blog_tiles):
                         break;
-                        endif; 
+                        endif;
                         endwhile;
-                        
+
                         do_action( 'genesis_after_endwhile' );
                         endif;
-                         
+
                         wp_reset_query();
                     endif;?>
                     <?php
                         $tile_rows = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles', true );
-                        
+
                         if($tile_rows && ($section_headline == 'Testimonials') && ($testimonials_type == 'Scrolling')): ?>
                         <div class="col-sm-12">
         <div class="testimonials-slider-wrapper">
                         <div class="testimonials-slider">
                             <ul class="slides">
-                            <?php 
+                            <?php
                                 foreach( (array) $tile_rows as $tile_count => $tile_row ):
                                     switch( $tile_row ):
                                         case 'testimonials':
                                             $pulled_specific = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' . $tile_count . '_pull_specific_from', true );
                                             if($pulled_specific):
                                                 $post = $pulled_specific;
-                        				        setup_postdata( $post ); 
-                        				        get_template_part( 'content', 'scrltstmls_gpm' ); 
+                        				        setup_postdata( $post );
+                        				        get_template_part( 'content', 'scrltstmls_gpm' );
                         				        wp_reset_postdata();
                                             endif;
                                         break;
                                     endswitch;
-                                endforeach; 
+                                endforeach;
                             ?>
                             </ul>
                         </div>
@@ -177,25 +177,25 @@ if( $tiles_area ):
                                         $pulled_specific = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' . $tile_count . '_pull_specific_from', true );
                                         if($pulled_specific):
                                         $post = $pulled_specific;
-                                        setup_postdata( $post ); 
+                                        setup_postdata( $post );
         				    ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                                     break;
                                 endswitch;
                             endforeach;
                         endif;
-                       ?> 
+                       ?>
                 </div>
             </div>
     </section>
-<?php      
+<?php
     endfor;
-endif;  
+endif;
 ?>
 
 <?php
@@ -212,7 +212,7 @@ endif;
                     if($text):
 ?>
             <h2 class="text-center"><?php echo $text; ?></h2>
-<?php 
+<?php
                     endif;
                 break;
                 case '3_column_content':
@@ -237,7 +237,7 @@ endif;
                     <p><?php echo $textarea; ?></p>
                     <?php endif; ?>
                 </li>
-<?php                          
+<?php
                         endfor;
 ?>
             </ul>
@@ -261,8 +261,8 @@ if( $headline_content ):
         <div class="container">
             <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8 col-lg-9<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
-                <?php 
-                    if( $headline_content ): 
+                <?php
+                    if( $headline_content ):
                         for( $hc = 0; $hc < $headline_content; $hc++ ):
                             $headline_align = get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_headline_text_align', true );
                             $headline = get_post_meta( get_the_ID(), 'headline_content_' . $hc . '_headline', true );
@@ -276,27 +276,27 @@ if( $headline_content ):
                         </h2>
                         <div class="subcontent">
                                 <?php echo $subcontent; ?>
-                                <?php 
+                                <?php
                                 if($embed): echo $embed; endif;
                                 ?>
                         </div>
-                                <?php 
+                                <?php
                                 if($view_tours):
                                 ?>
                         <div class="view-tours-wrapper">
                             <a class="view-tours-btn" href="<?php echo $view_tours; ?>">View tours</a>
                         </div>
                                 <?php endif; ?>
-                            
+
                     </div>
-                <?php 
+                <?php
                         endfor;
-                    endif; 
+                    endif;
                 ?>
                 </div>
                 <?php if ( 'content-sidebar' == $site_layout ): ?>
                 <div class="col-sm-4 col-lg-3 front-right-col">
-                    <?php 
+                    <?php
                         $us_rows = get_option( 'options_universal_sidebar' );
                         if($us_rows): ?>
                            <?php
@@ -308,7 +308,7 @@ if( $headline_content ):
                            <div class="widget-item">
                            <?php echo $content; ?>
                            </div>
-                           <?php 
+                           <?php
                                     break;
                                     case 'text_area':
                                         $content = get_option( 'options_universal_sidebar_' . $us_count . '_content' );
@@ -319,7 +319,7 @@ if( $headline_content ):
                            <?php
                                     break;
                                 endswitch;
-                               endforeach; 
+                               endforeach;
                             ?>
                     <?php endif; ?>
                 </div>
@@ -376,7 +376,7 @@ if( $sections ):
         <div class="multi-column-area text-center">
         <?php if($text): ?>
             <h2 class="text-center"><?php echo $text; ?></h2>
-        <?php endif; ?> 
+        <?php endif; ?>
         <?php $columns_set = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set', true ); ?>
         <?php
                 if( $columns_set ):
@@ -387,7 +387,7 @@ if( $sections ):
                         $subheading = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_subheading', true ));
                         $textarea = nl2br( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_textarea', true ));
         ?>
-            <li class="col-sm-4 col-md-4">    
+            <li class="col-sm-4 col-md-4">
                 <?php if($subheading): ?>
                 <h3><?php echo $subheading; ?></h3>
                 <?php endif; ?>
@@ -404,9 +404,9 @@ if( $sections ):
             </ul>
         <?php
                 endif;
-        ?>                   
+        ?>
         </div>
-    </div><!-- end .container-->            
+    </div><!-- end .container-->
                 <?php
                 break;
                 case 'heading_content':
@@ -443,7 +443,7 @@ if( $sections ):
         <?php
                     endfor;
                 endif;
-        ?>        
+        ?>
             </div>
             <?php if ( 'content-sidebar' == $site_layout ): ?>
             <div class="col-sm-5 col-md-4 col-lg-3 front-right-col">
@@ -475,7 +475,7 @@ if( $sections ):
             ?>
             </div>
             <?php endif; ?>
-            
+
         </div><!-- end .reasons-->
     </div><!-- end .container-->
                 <?php
@@ -495,7 +495,7 @@ if( $sections ):
                     <?php echo $custom_heading; ?>
                     </h2>
                     <?php endif; ?>
-                    <?php echo do_shortcode( $content ) ?>   
+                    <?php echo do_shortcode( $content ) ?>
                 </div>
             </div>
         </div>
@@ -536,7 +536,7 @@ if( $sections ):
                         </div>
                     </div>
                     <?php endif; ?>
-                </div>                 	
+                </div>
             </div>
                             <?php
                             break; //end of content_button
@@ -570,7 +570,7 @@ if( $sections ):
         <div class="row">
             <?php if( $images ): ?>
                 <?php foreach( $images as $image ): ?>
-                    <?php 
+                    <?php
                     $img_url = wp_get_attachment_url($image);
                     //$img_url = $image['url'];
                     $thumbnail = aq_resize( $img_url, 384, 288, true );
@@ -610,7 +610,7 @@ if( $sections ):
                     endif;
                 ?>
     <div class="container">
-        <div class="featured-tours featured-tours-section">     
+        <div class="featured-tours featured-tours-section">
             <div class="row-eq-height">
             <?php
                 $bs_rows = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set', true );
@@ -629,7 +629,7 @@ if( $sections ):
                 </div>
                             <?php
                        wp_reset_postdata();
-                       endif;/*end if pulled_specific*/ 
+                       endif;/*end if pulled_specific*/
                     ?>
                             <?php
                             break;
@@ -643,7 +643,7 @@ if( $sections ):
                             $link = esc_html(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_link', true ));
                             $excerpt = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_excerpt', true ));
                             $mobd = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tb_count . '_multi_option_button_dropdown', true );
-                               
+
                             ?>
                 <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?> col-eq-height">
                 <?php include(locate_template('content-frontbox_feat_cats_gpm.php' )); ?>
@@ -663,7 +663,7 @@ if( $sections ):
                 $ls_rows = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_links_set', true );
                 ?>
     <div class="container container960">
-        <ul class="row link-tours">            
+        <ul class="row link-tours">
                 <?php
                 if($ls_rows):
                 foreach( (array) $ls_rows as $tl_count => $ls_row ):
@@ -690,7 +690,7 @@ if( $sections ):
                 ?>
         </ul>
         <hr />
-    </div>                
+    </div>
                 <?php
                 break;/*end tour_links*/
                 case 'testimonials_boxes':
@@ -726,7 +726,7 @@ if( $sections ):
                         <ul class="slides">
                         <?php
                         $tsm_rows = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set', true );
-                    if($tsm_rows):    
+                    if($tsm_rows):
                     foreach( (array) $tsm_rows as $tsm_count => $tsm_row ):
                         switch( $tsm_row ):
                             case 'testimonials':
@@ -734,21 +734,21 @@ if( $sections ):
                             $testimonial_quote = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tsm_count . '_testimonial_quote', true );
                             if($pulled_specific):
                                 $post = $pulled_specific;
-                                setup_postdata( $post );  
-                                get_template_part( 'content', 'scrltstmls_gpm' ); 
+                                setup_postdata( $post );
+                                get_template_part( 'content', 'scrltstmls_gpm' );
                                 wp_reset_postdata();
                             endif;
                             break;
                         endswitch;
                     endforeach;
-                    endif;    
+                    endif;
                         ?>
                         </ul>
                     </div>
                 </div>
             </div>
         </div><!-- end .row-->
-    </div><!-- end .container-->               
+    </div><!-- end .container-->
                     <?php
                     else:
                     ?>
@@ -766,17 +766,17 @@ if( $sections ):
                                 setup_postdata( $post );
                                 ?>
             <div class="<?php if($tcol==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $tcol; ?><?php endif; ?>">
-                                <?php  
+                                <?php
                                 get_template_part( 'content', 'home_tstmls_gpm' );
                                 ?>
             </div>
-                                <?php 
+                                <?php
                                 wp_reset_postdata();
                             endif;
                             break;
                         endswitch;
                     endforeach;
-                    endif; 
+                    endif;
             ?>
         </div><!-- end .row.even-grid.testimonials-->
     </div><!-- end .container-->
@@ -812,9 +812,9 @@ if( $sections ):
                     $wp_query = new WP_Query( $args );
                     ?>
     <div class="container">
-        <div class="row row-eq-height testimonials front-blog-wrapper">                
+        <div class="row row-eq-height testimonials front-blog-wrapper">
                     <?php
-                    if ( have_posts() ) : 
+                    if ( have_posts() ) :
                         while ( have_posts() ) : the_post();
                         $bbi++; ?>
                         <div<?php if($bcol): ?> class="col-xs-12 col-sm-<?php echo $bcol; ?> col-eq-height"<?php endif; ?>>
@@ -825,11 +825,11 @@ if( $sections ):
                         <?php
                         if($bbi == $number_of_posts):
                         break;
-                        endif; 
+                        endif;
                         endwhile;
-                        
+
                         do_action( 'genesis_after_endwhile' );
-                    endif;     
+                    endif;
                     wp_reset_query();
                 ?>
         </div><!-- .row-->
@@ -865,19 +865,20 @@ if( $sections ):
                         </div>
                         <a class="button slideouttrigger" href="#" data-ref="1"><?php echo $open_label; ?></a>
                         <?php endif; ?>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </div>
     </div><!-- end .container -->
-                <?php  
+                <?php
                 break;
                 case 'accreditation_logos':
                     $number_of_acclogos_columns = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_number_of_acclogos_columns', true );
                     $columns_set = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set', true );
+                    $acclogos_size = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_acclogos_size', true );
                 if( $columns_set ):
                 ?>
-                <?php 
+                <?php
                     $accol = 0;
                     if($number_of_acclogos_columns):
                         switch ($number_of_acclogos_columns):
@@ -914,7 +915,7 @@ if( $sections ):
             <li class="<?php if($accol==5): ?>five-cols <?php else: ?>col-xs-6 col-sm-<?php echo $accol; ?><?php endif; ?>">
                     <?php if($image_url): ?>
                 <a href="<?php if($link): echo $link; endif; ?>" target="_blank">
-                    <img src="<?php echo $image_url; ?>" class="img-responsive" />
+                    <img src="<?php echo $image_url; ?>" class="img-responsive" style="max-height: <?=$acclogos_size?>px" />
                 </a>
                     <?php endif; ?>
             </li>

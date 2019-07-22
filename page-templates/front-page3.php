@@ -954,6 +954,7 @@ $testimonials_background_id;
                     <?php if( get_row_layout() == 'accreditation_logos'): ?>
                         <?php
                             $number_of_acclogos_columns = get_sub_field('number_of_acclogos_columns');
+                            $acclogos_size = get_sub_field('acclogos_size');
                         ?>
                         <?php if( have_rows('columns_set') ): ?>
                             <div class="container">
@@ -992,7 +993,7 @@ $testimonials_background_id;
                                     <li class="<?php if($accol==5): ?>five-cols <?php else: ?>col-xs-6 col-sm-<?php echo $accol; ?><?php endif; ?>">
                                     <?php if($image_url): ?>
                                         <a href="<?php if($link): echo $link; endif; ?>" target="_blank">
-                                            <img src="<?php echo $image_url; ?>" class="img-responsive" />
+                                            <img src="<?php echo $image_url; ?>" class="img-responsive" style="max-height: <?=$acclogos_size?>px" />
                                         </a>
                                     <?php endif; ?>
                                     </li>
