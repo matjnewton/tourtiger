@@ -499,6 +499,8 @@ function transform_name( $name = '', $type = '' ) {
  */
 function pc_image( $id=0, $width=0, $height=0, $link=false, $attr=null, $circle=false, $blank=false ) {
 
+	// looks like this function is rewritten at another file and is used from there
+
 	if ( $circle !== false ) {
 		if ( $width > $height ) {
 			$width = $height;

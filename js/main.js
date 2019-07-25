@@ -888,3 +888,10 @@ var FbBookNowButton = function (config) {
 	});
 } )( jQuery );
 
+!( function($) {
+$( document ).ready(()=>{
+	if ($('#wpadminbar').height()>0) {
+		$('.header-bar-wrapper').css('top', 32);
+	}
+});
+} )( jQuery );

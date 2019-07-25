@@ -308,9 +308,10 @@ window.onload = function () {
             var item_w = item.width();
             var item_h = item.height();
 
-            if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) {
+            // if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) { @todo: ??? working weird
+              if ( item.find('img').width() == 0) {
 
-              if ( item_w < item_h ) {
+                if ( item_w < item_h ) {
                 item.height(item_w);
               } else {
                 item.width(item_h);
