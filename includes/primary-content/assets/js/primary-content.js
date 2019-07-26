@@ -292,11 +292,32 @@ window.onload = function () {
 
       if ( $('.pc_circle-image--wrapper.js-new-circle').length > 0 ) {
 
+        var numb = 0; // good for debugging
+
         $('.pc_circle-image--wrapper.js-new-circle').each(function(){
 
           var item = $(this);
-          var img_w = item.find('img').attr('width');
-          var img_h = item.find('img').attr('height');
+          var img = item.find('img');
+          var img_w = img.attr('width');
+          var img_h = img.attr('height');
+          var img_href = item.find('a').attr('href');
+          var item_w = item.width();
+          var item_h = item.height();
+
+          var ver1, ver2;
+          ver1 = 1;
+
+          numb++;
+
+          var cond = img_href === "https://www.gyu-kaku.com/times-square/" || img_href=== 'http://www.outlatinfood.net/' || img_href === "https://www.wotif.com/";
+
+
+          if(cond) {
+            console.debug(numb + ")", img_href);
+            console.debug("item_w:", item_w, "item_h:", item_h, "img_h:", img_h, "img_w:", img_w);
+          }
+
+
 
           if ( item.width() == 0 || item.height() == 0 ) {
 
@@ -305,13 +326,9 @@ window.onload = function () {
 
           } else {
 
-            var item_w = item.width();
-            var item_h = item.height();
+            if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) { // @todo: check
 
-            // if ( item.find('img').width() == 0 || item.find('img').height() == 0 ) { @todo: ??? working weird
-              if ( item.find('img').width() == 0) {
-
-                if ( item_w < item_h ) {
+              if ( item_w < item_h ) {
                 item.height(item_w);
               } else {
                 item.width(item_h);
@@ -320,19 +337,34 @@ window.onload = function () {
             } else {
 
               if ( img_w > img_h ) {
+
                 if ( img_h > item_w ) {
-                  item.find('img').height(item_w);
+                  /**item.find('img').height(item_w); former code */
+
+                  if(ver1) img.height(item_w).width(item_w);
+                  if (ver2) img.height(item_w);
+                  img.removeAttr('width').removeAttr('height');
+                  if(cond) console.debug("1. img_w > img_h && img_h > item_w");
                 } else if ( img_h <= item_w ) {
-                  item.height(img_h);
-                  item.width(img_h);
+                  /**
+                   * item.height(img_h);
+                   item.width(img_h); - former thing */
+
+                  img.removeAttr('width').removeAttr('height');
+                  if (ver2) img.css({'height':item_w});
+                  if (ver1) img.css({'height':item_w, 'width':item_w});
+
+                  if(cond) console.debug("2. img_w > img_h && img_h <= item_w");
                 }
               } else if ( img_w <= img_h ) {
                 if ( img_w > item_w ) {
                   item.find('img').width(item_w);
                   item.height(item_w);
+                  if(cond) console.debug("3. img_w <= img_h && img_w > item_w");
                 } else if ( img_w <= item_w ) {
                   item.height(img_w);
                   item.width(img_w);
+                  if(cond) console.debug("4. img_w <= img_h && img_w <= item_w");
                 }
               }
 
