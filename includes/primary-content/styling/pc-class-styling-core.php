@@ -508,7 +508,7 @@ class Core extends StylingCard {
             $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu{border-width:1px 1px 1px 1px;border-style:solid;border-color:{$sub_menu_darken_bg}}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .sub-menu a{border-width:1px 0px 0px 0px;}";
           $css .= ".site-container .genesis-nav-menu .giso-book-btn a{background:none}";
-          $css .= ".site-container .genesis-nav-menu .regiondo-book-btn a, .site-container .genesis-nav-menu .rezdy-book-btn a, .site-container .genesis-nav-menu .trekksoft-book-btn a, .site-container .genesis-nav-menu .fareharbor-book-btn a, .site-container .genesis-nav-menu .xola-book-btn div, .site-container .genesis-nav-menu .peek-book-btn a, .site-container .genesis-nav-menu .giso-book-btn a, .site-container .genesis-nav-menu .book-btn a{background:{$cta_button_bg}}";
+          $css .= ".site-container .genesis-nav-menu .regiondo-book-btn a, .site-container .genesis-nav-menu .rezdy-book-btn a, .site-container .genesis-nav-menu .trekksoft-book-btn a, .site-container .genesis-nav-menu .fareharbor-book-btn a, .site-container .genesis-nav-menu .xola-book-btn div, .site-container .genesis-nav-menu .peek-book-btn a, .site-container .genesis-nav-menu .giso-book-btn a, .site-container .genesis-nav-menu .book-btn a, .site-container li.btn a {background:{$cta_button_bg}}";
 
           $css .= ".secondary-nav-wrapper .container{background:{$se_bar_wrapper_bg}}";
           $css .= ".secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background:{$se_sub_menu_bg}}";
