@@ -359,7 +359,7 @@
 
     if (typeof url !== 'undefined') {
       img.onload = function () {
-        $sliderPro.width(img.width);
+        // $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
       };
       img.src = url;
     }
