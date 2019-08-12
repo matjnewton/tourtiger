@@ -84,7 +84,7 @@
 
 <?php if(($hero_image) && ($background_placement=='Down Below Header')): ?>
     <?php $himage = aq_resize( $hero_image, 1400, 545, true );   ?>
-    <?php $himage_xs = aq_resize( $hero_image, 480, 225, true );   ?>
+    <?php $himage_xs = aq_resize( $hero_image, 960, 550, true );   ?>
 <?php if($himage_xs ): ?>
 @media (max-width:480px){
     .banner-wrapper{
