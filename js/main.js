@@ -755,7 +755,7 @@ var FbBookNowButton = function (config) {
         }
 
         if ($wpadminbar.length) {
-          value += $wpadminbar.height();
+          // value += $wpadminbar.height();
         }
 
         return value;
