@@ -33,11 +33,10 @@ if ( $gallery ) :
         <div class="slider-pro__slider">
           <?php
           foreach ( $gallery as $key => $image ) :
-            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-height=\"{$image['height']}\" data-width=\"{$image['width']}\" data-caption='{$image['caption']}' alt='' />";
-          // print_r_html([$image]);
+            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-height=\"{$image['height']}\" data-width=\"{$image['width']}\" alt='' />";
             ?>
                 <div>
-                    <div class='slider-pro__item' style="width: <?=$image['width'];?>; height: <?=$image['height']?>">
+                    <div class='slider-pro__item'>
                         <?=$the_image?>
                         <?php if($image['caption']) : ?>
                         <div class="slider-pro__img-caption">

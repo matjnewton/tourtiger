@@ -900,78 +900,61 @@ $( document ).ready(()=>{
 !( function($) {
 	$( document ).ready(()=>{
 
-		var $sliderImages = {};
-		var $slides = {};
-		var heightBefore, heightAfter, captureBottom, slickHeight;
-
-
+		var $slides, $caption, $sliderTrack, captionWidth;
 
 		$(document).on('allImagesLoaded', ()=>{
-			console.debug("Images loaded");
-
-			var $areaPolite = $('[aria-live="polite"]');
-
-			$areaPolite.ready(()=>{
-				slickHeight = $areaPolite.height();
-				console.debug('slickHeight:', slickHeight);
-			});
-
+			// console.debug("Images loaded");
+			$sliderTrack = $('.slick-slider');
 			$slides = $('.slick-slide');
-			$slides.each((id)=>{
-				var $slide = $($slides[id]);
-				var $img = $slide.find('.slider-image');
-				if ($slide.attr('aria-hidden')==='false') {
-					var imWIdth = $img.width();
-					var imHeight = $img.height();
-					console.debug("img:", imHeight, imWIdth, imWIdth - imHeight);
-				}
-			})
+			$slides.each(insertCaption);
 		});
 
-
-
-		$('.slider-pro').on('click', ()=>{
-			var $areaPolite = $('[aria-live="polite"]');
-			$areaPolite.ready(()=>{
-				var slickHeight = $areaPolite.height();
-				heightBefore = slickHeight;
-				console.debug('Before change slickHeight:', slickHeight);
-			});
+		$(document).on('beforeChange', ()=>{
+			// console.debug('Before change');
+			$caption = $sliderTrack.find('.displayed-caption');
+			$slides.each(restoreCaption);
+			$caption.removeClass('displayed-caption');
 		});
-
 
 
 		$(document).on('afterChange', ()=>{
-			// console.debug('Changed');
-			var $areaPolite = $('[aria-live="polite"]');
-			$areaPolite.ready(()=>{
+			// console.debug('After change');
+			$slides.each(changeCaption);
+		});
 
-				slickHeight = $areaPolite.height();
-				console.debug('Changed slickHeight:', slickHeight);
 
-				$slides.each((ind)=>{
-					// console.debug($slides[ind]);
-					var $slide = $($slides[ind]);
-					var $img = $slide.find('.slider-image');
-					if ($slide.attr('aria-hidden')==='false') {
-						heightAfter = $img.height();
-						console.debug("$img.height():", $img.height(), 'data-height:', $img.attr('data-height'), '$img.width():', $img.width(), 'data-width:', $img.attr('data-width'));
-						console.debug('-----------');
-						if(heightBefore>heightAfter) {
-							captureBottom = heightBefore - heightAfter;
-						}
-						else {
-							captureBottom = 0;
-						}
+		function insertCaption() {
+			var $slide = $(this);
+			var $img = $slide.find('.slider-image');
+			if ($slide.attr('aria-hidden')==='false') {
+				$caption = $slide.find('.slider-pro__img-caption');
+				$caption.addClass('displayed-caption');
+				captionWidth = $img.width();
+				$caption.css('width', captionWidth);
+				$sliderTrack.append($caption);
+			}
+		}
 
-						$slide.find('.slider-pro__img-caption').css({'bottom':captureBottom,'width':$img.width()});
-						$slide.find('.slider-pro__item').css({'justify-content': 'center'});
-						$slide.find('.slider-pro__img-caption').css({'opacity':1});
-					}
-				})
-			});
-		})
+		function changeCaption() {
+			var $slide = $(this);
+			var $img = $slide.find('.slider-image');
+			if ($slide.attr('aria-hidden')==='false') {
+				$sliderTrack.find('.displayed-caption');
+				captionWidth = $img.width();
+				$caption = $slide.find('.slider-pro__img-caption');
+				$caption.css('width', captionWidth);
+				$caption.addClass('displayed-caption');
+				$sliderTrack.append($caption);
+			}
+		}
 
+		function restoreCaption() {
+			var $slide = $(this);
+			var $img = $slide.find('.slider-image');
+			if ($slide.attr('aria-hidden')==='false') {
+				$slide.append($caption);
+			}
+		}
 	});
 } )( jQuery );
 
