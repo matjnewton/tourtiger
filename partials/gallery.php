@@ -33,8 +33,19 @@ if ( $gallery ) :
         <div class="slider-pro__slider">
           <?php
           foreach ( $gallery as $key => $image ) :
-            $the_image = "<img data-lazy='{$image['sizes']['large']}' alt='' />";
-            echo "<div><div class='slider-pro__item'>{$the_image}</div></div>";
+            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-height=\"{$image['height']}\" data-width=\"{$image['width']}\" alt='' />";
+            ?>
+                <div>
+                    <div class='slider-pro__item'>
+                        <?=$the_image?>
+                        <?php if($image['caption']) : ?>
+                        <div class="slider-pro__img-caption">
+                            <span class="slider-pro--panel__btn"><?=$image['caption']?></span>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php
           endforeach;
           ?>
         </div>
