@@ -1012,6 +1012,10 @@ html body .sidebar_links_options_wrap a {
     text-transform: none;
 }
 
+.slider-pro__img-caption > .slider-pro--panel__btn {
+    border: none !important;
+}
+
 .slider-pro__arrow {
     position: absolute;
     z-index: 100;
