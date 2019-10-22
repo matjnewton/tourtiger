@@ -785,7 +785,7 @@ function load_theme_scripts() {
 	wp_register_style('spectrum_style', get_stylesheet_directory_uri() .'/css/spectrum.css', array(),'20120285', 'all');
 	wp_enqueue_style( 'spectrum_style' );
 	wp_enqueue_script( 'spectrum_js' );
-	wp_enqueue_style( 'style-theme', get_stylesheet_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ), 'all' );
+	wp_enqueue_style( 'style-theme', get_stylesheet_directory_uri() . '/style.css?=theme_ver'.wp_get_theme()->get( 'Version' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
 
     wp_deregister_style( 'tourtiger' );
 }
