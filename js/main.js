@@ -911,7 +911,6 @@ $( document ).ready(()=>{
 
 		$(document).on('unslick', ()=>{
 			// console.debug("Unslick");
-			// $('.displayed-caption').remove();
 			$caption = $sliderTrack.find('.displayed-caption');
 			$slides.each(restoreCaption);
 			$caption.removeClass('displayed-caption');
