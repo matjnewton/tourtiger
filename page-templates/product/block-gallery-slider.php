@@ -14,9 +14,10 @@ if( get_row_layout() == 'primary_content_maingallery_area' ):
 			// Core variables
 			$gallery       = $row['primary_content_maingallery_slides'];
 			$label         = $row['label'] ? $row['label'] : 'Click to view gallery';
+			$display_caption = $row['display_caption'];
 
 			include get_stylesheet_directory() . '/partials/gallery.php';
 		endforeach;
 	endif;
 endif;
-?> 
+?>

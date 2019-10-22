@@ -897,64 +897,87 @@ $( document ).ready(()=>{
 } )( jQuery );
 
 
-// !( function($) {
-// 	$( document ).ready(()=>{
-//
-// 		var $slides, $caption, $sliderTrack, captionWidth;
-//
-// 		$(document).on('allImagesLoaded', ()=>{
-// 			// console.debug("Images loaded");
-// 			$sliderTrack = $('.slick-slider');
-// 			$slides = $('.slick-slide');
-// 			$slides.each(insertCaption);
-// 		});
-//
-// 		$(document).on('beforeChange', ()=>{
-// 			// console.debug('Before change');
-// 			$caption = $sliderTrack.find('.displayed-caption');
-// 			$slides.each(restoreCaption);
-// 			$caption.removeClass('displayed-caption');
-// 		});
-//
-//
-// 		$(document).on('afterChange', ()=>{
-// 			// console.debug('After change');
-// 			$slides.each(changeCaption);
-// 		});
-//
-//
-// 		function insertCaption() {
-// 			var $slide = $(this);
-// 			var $img = $slide.find('.slider-image');
-// 			if ($slide.attr('aria-hidden')==='false') {
-// 				$caption = $slide.find('.slider-pro__img-caption');
-// 				$caption.addClass('displayed-caption');
-// 				captionWidth = $img.width();
-// 				$caption.css('width', captionWidth);
-// 				$sliderTrack.append($caption);
-// 			}
-// 		}
-//
-// 		function changeCaption() {
-// 			var $slide = $(this);
-// 			var $img = $slide.find('.slider-image');
-// 			if ($slide.attr('aria-hidden')==='false') {
-// 				$sliderTrack.find('.displayed-caption');
-// 				captionWidth = $img.width();
-// 				$caption = $slide.find('.slider-pro__img-caption');
-// 				$caption.css('width', captionWidth);
-// 				$caption.addClass('displayed-caption');
-// 				$sliderTrack.append($caption);
-// 			}
-// 		}
-//
-// 		function restoreCaption() {
-// 			var $slide = $(this);
-// 			var $img = $slide.find('.slider-image');
-// 			if ($slide.attr('aria-hidden')==='false') {
-// 				$slide.append($caption);
-// 			}
-// 		}
-// 	});
-// } )( jQuery );
+!( function($) {
+	$( document ).ready(()=>{
+
+		var $slides, $caption, $sliderTrack, captionWidth;
+
+		$(document).on('allImagesLoaded', (el)=>{
+			// console.debug("Images loaded");
+			$sliderTrack = $(el.target).closest('.slick-slider');
+			$slides = $sliderTrack.find('.slick-slide');
+			$slides.each(insertCaption);
+		});
+
+		$(document).on('unslick', ()=>{
+			// console.debug("Unslick");
+			// $('.displayed-caption').remove();
+			$caption = $sliderTrack.find('.displayed-caption');
+			$slides.each(restoreCaption);
+			$caption.removeClass('displayed-caption');
+		});
+
+		$(document).on('beforeChange', ()=>{
+			// console.debug('Before change');
+			$caption = $sliderTrack.find('.displayed-caption');
+			$slides.each(restoreCaption);
+			$caption.removeClass('displayed-caption');
+		});
+
+		$(document).on('afterChange', ()=>{
+			// console.debug('After change');
+			$slides.each(changeCaption);
+		});
+
+		function insertCaption() {
+			var $slide = $(this);
+			var $img = $slide.find('.slider-image');
+			if ($slide.attr('aria-hidden')==='false') {
+				$caption = $slide.find('.slider-pro__img-caption');
+				$caption.addClass('displayed-caption');
+				captionWidth = $img.width();
+				$caption.css({'width': captionWidth});
+				$sliderTrack.append($caption);
+			}
+		}
+
+		function changeCaption() {
+			var $slide = $(this);
+			var $img = $slide.find('.slider-image');
+			if ($slide.attr('aria-hidden')==='false') {
+				$sliderTrack.find('.displayed-caption');
+				captionWidth = $img.width();
+				$caption = $slide.find('.slider-pro__img-caption');
+				$caption.css('width', captionWidth);
+				$caption.addClass('displayed-caption');
+				$sliderTrack.append($caption);
+			}
+		}
+
+		function restoreCaption() {
+			var $slide = $(this);
+			if ($slide.attr('aria-hidden')==='false') {
+				$slide.append($caption);
+			}
+		}
+
+		// keyboard keys handler
+		$(window).keydown(function (e) {
+			switch (e.keyCode) {
+				case 39:
+					console.debug("Next");
+					$('.slider-pro__next').trigger('click');
+					break;
+				case 37:
+					console.debug("Prev");
+					$('.slider-pro__prev').trigger('click');
+					break;
+				case 27:
+					console.debug("Exit");
+					$('.slider-pro__close-link').trigger('click');
+					break;
+			}
+		})
+	});
+} )( jQuery );
 

@@ -7,6 +7,7 @@
  */
 
 $label = $label ? $label : 'Click to view gallery';
+$display_caption = $display_caption ? $display_caption : 0;
 
 /**
  * Check whether the gallery has any images
@@ -33,12 +34,12 @@ if ( $gallery ) :
         <div class="slider-pro__slider">
           <?php
           foreach ( $gallery as $key => $image ) :
-            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-height=\"{$image['height']}\" data-width=\"{$image['width']}\" alt='' />";
+            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' alt='' />";
             ?>
                 <div>
                     <div class='slider-pro__item'>
                         <?=$the_image?>
-                        <?php if($image['caption']) : ?>
+                        <?php if($display_caption && $image['caption']) : ?>
                         <div class="slider-pro__img-caption">
                             <span class="slider-pro--panel__btn"><?=$image['caption']?></span>
                         </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 // acf field for product
 
 
@@ -300,9 +300,9 @@ function get_icons_list_local_field( $id = '1234QWERasdf' ) {
 						)
 					)
 				),
-			) 
+			)
 		),
- 
+
 
 		array (
 			'key' => $id . '_T9H5zULiip28f3',
@@ -1416,14 +1416,14 @@ acf_add_local_field_group(array (
 							'disabled' => 0,
 						),
 					),
-				),	
+				),
 				// Sub-Headline
 				array (
 					'key' => '57fe33ac7b26f_sub_headline',
 					'name' => 'primary_content_sub_headline',
 					'label' => 'Sub-Headline',
 					'display' => 'row',
-					'sub_fields' => array (	
+					'sub_fields' => array (
 						array (
 							'key' => 'field_538caa676f58c_sub_headline_text',
 							'label' => 'Text',
@@ -1479,7 +1479,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 						),//end seo
 					),
-				),			
+				),
 				// Alert Box
 				array (
 					'key' => '57fe33ac7b26f_alert_box',
@@ -1643,8 +1643,19 @@ acf_add_local_field_group(array (
 										'width' => '80',
 									),
 								),
+                                array (
+                                    'key' => 'field_53a3772d7f080_maingallery_slides_display_caption',
+                                    'label' => 'Display caption',
+                                    'name' => 'display_caption',
+                                    'type' => 'true_false',
+                                    'required' => 0,
+                                    'default_value' => 0,
+                                    'wrapper' => array (
+                                        'width' => '80',
+                                    ),
+                                ),
 							),//end subfield maingallery
-						), 
+						),
 					),
 				),//end maingallery
 
@@ -1815,7 +1826,7 @@ acf_add_local_field_group(array (
 						),//end repeat
 					),
 				),//end expand content
-				
+
 				//Images/Video
 				array (
 					'key' => '57fe33ac7b26f_images_video_row',
@@ -1918,7 +1929,7 @@ acf_add_local_field_group(array (
 
 					),
 				),// end Images/Video
-				
+
 				//seperate
 				array (
 					'key' => '57fe33ac7b26f_separation_grey_gap_row',
@@ -3066,7 +3077,7 @@ acf_add_local_field_group(array (
 									'message' => '',
 									'default_value' => 0,
 								),
-							
+
 							),//end sub
 						),//end repeater
 					),
@@ -3171,7 +3182,7 @@ acf_add_local_field_group(array (
 								),
 							),
 						),//end repeater
-						
+
 					 ), //end sub field
 					//'collapsed' => '',
 				),// end highlights
@@ -4010,7 +4021,7 @@ acf_add_local_field_group(array (
 		                    "disabled"=> 0,
 		                    "readonly"=> 0,
 		                ),
-		                //special message 
+		                //special message
 		                array (
 							'key' => 'field_5398639196c4e_availability_checker_special_message',
 							'label' => 'Special Message',
@@ -5249,7 +5260,7 @@ acf_add_local_field_group(array (
 							'layout' => 'row',
 							'button_label' => 'Add new Link',
 							'sub_fields' => array (
-								
+
 									array (
 										'key' => 'field_57fce1a63863b_links',
 										'label' => 'icon',
@@ -6505,4 +6516,4 @@ acf_add_local_field_group(array (
 ));
 
 
-endif; 
+endif;

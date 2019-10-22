@@ -533,7 +533,7 @@
         var a = this;
         if (1 === a.options.slidesToShow && a.options.adaptiveHeight === !0 && a.options.vertical === !1) {
             var b = a.$slides.eq(a.currentSlide).outerHeight(!0);
-            a.$list.css("height", b)
+            if (b>1) a.$list.css("height", b);
         }
     }, b.prototype.setOption = b.prototype.slickSetOption = function() {
         var c, d, e, f, h, b = this,
