@@ -895,3 +895,83 @@ $( document ).ready(()=>{
 	}
 });
 } )( jQuery );
+
+
+!( function($) {
+	$( document ).ready(()=>{
+
+		var $sliderImages = {};
+		var $slides = {};
+		var heightBefore, heightAfter, captureBottom, slickHeight;
+
+
+
+		$(document).on('allImagesLoaded', ()=>{
+			console.debug("Images loaded");
+
+			var $areaPolite = $('[aria-live="polite"]');
+
+			$areaPolite.ready(()=>{
+				slickHeight = $areaPolite.height();
+				console.debug('slickHeight:', slickHeight);
+			});
+
+			$slides = $('.slick-slide');
+			$slides.each((id)=>{
+				var $slide = $($slides[id]);
+				var $img = $slide.find('.slider-image');
+				if ($slide.attr('aria-hidden')==='false') {
+					var imWIdth = $img.width();
+					var imHeight = $img.height();
+					console.debug("img:", imHeight, imWIdth, imWIdth - imHeight);
+				}
+			})
+		});
+
+
+
+		$('.slider-pro').on('click', ()=>{
+			var $areaPolite = $('[aria-live="polite"]');
+			$areaPolite.ready(()=>{
+				var slickHeight = $areaPolite.height();
+				heightBefore = slickHeight;
+				console.debug('Before change slickHeight:', slickHeight);
+			});
+		});
+
+
+
+		$(document).on('afterChange', ()=>{
+			// console.debug('Changed');
+			var $areaPolite = $('[aria-live="polite"]');
+			$areaPolite.ready(()=>{
+
+				slickHeight = $areaPolite.height();
+				console.debug('Changed slickHeight:', slickHeight);
+
+				$slides.each((ind)=>{
+					// console.debug($slides[ind]);
+					var $slide = $($slides[ind]);
+					var $img = $slide.find('.slider-image');
+					if ($slide.attr('aria-hidden')==='false') {
+						heightAfter = $img.height();
+						console.debug("$img.height():", $img.height(), 'data-height:', $img.attr('data-height'), '$img.width():', $img.width(), 'data-width:', $img.attr('data-width'));
+						console.debug('-----------');
+						if(heightBefore>heightAfter) {
+							captureBottom = heightBefore - heightAfter;
+						}
+						else {
+							captureBottom = 0;
+						}
+
+						$slide.find('.slider-pro__img-caption').css({'bottom':captureBottom,'width':$img.width()});
+						$slide.find('.slider-pro__item').css({'justify-content': 'center'});
+						$slide.find('.slider-pro__img-caption').css({'opacity':1});
+					}
+				})
+			});
+		})
+
+	});
+} )( jQuery );
+

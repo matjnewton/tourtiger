@@ -987,7 +987,27 @@ html body .sidebar_links_options_wrap a {
 }
 
 .slider-pro__item {
-    width: 100vw
+    width: 100vw;
+    display: flex;
+    /*justify-content: center;*/
+}
+
+.slider-pro__img-caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    padding: 15px 30px;
+    text-align: center;
+    opacity: 0;
+    transition: .5s opacity;
+    /*left: 0;*/
+    /*width: 100%;*/
+}
+
+.slider-pro__img-caption span {
+     /*width: 100%;*/
+    text-align: center;
+    text-transform: none;
 }
 
 .slider-pro__arrow {
