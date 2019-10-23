@@ -24,7 +24,7 @@ if ( $gallery ) :
             <img src="<?=$gallery[0]['url'];?>" alt="">
               <?php if($display_caption && $gallery[0]['caption']) : ?>
                   <div class="slider-pro__img-caption first-caption" data-img-src="<?=$gallery[0]['url'];?>">
-                      <span class="slider-pro--panel__btn"><?=$gallery[0]['caption']?></span>
+                      <span><?=$gallery[0]['caption']?></span>
                   </div>
               <?php endif; ?>
           </div>
