@@ -900,7 +900,23 @@ $( document ).ready(()=>{
 !( function($) {
 	$( document ).ready(()=>{
 
-		var $slides, $caption, $sliderTrack, captionWidth;
+		var $slides, $caption, $sliderTrack, captionWidth, firstCaption, firstImgUrl, el, firstWidth;
+
+		$(document).on('init', (e, ...args)=>{
+			el = e;
+			firstCaption = $(e.target).closest('.slider-pro').find('.first-caption')[0];
+			firstImgUrl = $(firstCaption).attr('data-img-src');
+		});
+
+		$(document).on('lazyLoaded', (...args)=>{
+			if(args[3]===firstImgUrl) {
+				firstWidth = $(args[2]).data().imgWidth;
+				firstWidth = firstWidth ? firstWidth : '100%';
+				$sliderTrack = $(el.target).closest('.slick-slider');
+				$slides = $sliderTrack.find('.slick-slide');
+				$slides.each(insertCaption);
+			}
+		});
 
 		$(document).on('allImagesLoaded', (el)=>{
 			// console.debug("Images loaded");
@@ -934,7 +950,7 @@ $( document ).ready(()=>{
 			if ($slide.attr('aria-hidden')==='false') {
 				$caption = $slide.find('.slider-pro__img-caption');
 				$caption.addClass('displayed-caption');
-				captionWidth = $img.width();
+				captionWidth = $img.width() ? $img.width() : firstWidth;
 				$caption.css({'width': captionWidth});
 				$sliderTrack.append($caption);
 				$caption.css({'opacity':1});

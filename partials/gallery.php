@@ -22,6 +22,11 @@ if ( $gallery ) :
         <a href="javascript:" class="slider-pro--preview">
           <div class="slider-pro--preview__image">
             <img src="<?=$gallery[0]['url'];?>" alt="">
+              <?php if($display_caption && $gallery[0]['caption']) : ?>
+                  <div class="slider-pro__img-caption first-caption" data-img-src="<?=$gallery[0]['url'];?>">
+                      <span class="slider-pro--panel__btn"><?=$gallery[0]['caption']?></span>
+                  </div>
+              <?php endif; ?>
           </div>
         </a>
         <div class="slider-pro--panel">
@@ -34,7 +39,7 @@ if ( $gallery ) :
         <div class="slider-pro__slider">
           <?php
           foreach ( $gallery as $key => $image ) :
-            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' alt='' />";
+            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-img-width=\"{$image['width']}\" alt='' />";
             ?>
                 <div>
                     <div class='slider-pro__item'>
