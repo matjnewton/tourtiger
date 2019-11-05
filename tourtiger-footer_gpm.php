@@ -245,7 +245,7 @@ else :
     if(in_array ('footer_image', $fa_rows)) :
         $fa_count = array_search('footer_image', $fa_rows);
         $image_id = get_option( $footer_areas . '_' . $fa_count . '_footer_image' );
-        $img_url = wp_get_attachment_image($image_id, 'thumbnail');
+        $img_url = wp_get_attachment_image($image_id, 'medium');
         ?>
         <div class="col-sm-<?php echo 10-$i;?> footer-image-wrapper" style="text-align: center;">
             <?=$img_url;?>
