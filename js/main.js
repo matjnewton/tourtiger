@@ -890,7 +890,7 @@ var FbBookNowButton = function (config) {
 
 !( function($) {
 $( document ).ready(()=>{
-	if ($(window).width()>767 && $('#wpadminbar').height()>0) {
+	if ($(window).width()>767 && $('#wpadminbar').height()>0 && !$('body').hasClass('page-template-test-pc')) {
 		$('.header-bar-wrapper').css('margin-top', 32);
 	}
 });
