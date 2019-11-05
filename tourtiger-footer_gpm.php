@@ -247,7 +247,7 @@ else :
         $image_id = get_option( $footer_areas . '_' . $fa_count . '_footer_image' );
         $img_url = wp_get_attachment_image($image_id, 'thumbnail');
         ?>
-        <div class="col-sm-<?php echo 10-$i;?> footer-image-wrapper">
+        <div class="col-sm-<?php echo 10-$i;?> footer-image-wrapper" style="text-align: center;">
             <?=$img_url;?>
         </div>
         <?php
