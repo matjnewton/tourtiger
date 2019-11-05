@@ -126,7 +126,8 @@ else :
 
 
   $fa_rows = get_option( $footer_areas );
-  if($fa_rows):
+
+  if(in_array ('footer_links', $fa_rows) || in_array ('tours', $fa_rows) || in_array ('additional', $fa_rows)):
     foreach( (array) $fa_rows as $fa_count => $fa_row ):
       switch( $fa_row ):
         case 'tours':
@@ -240,9 +241,21 @@ else :
             <?php endif; ?>
         </div>
     <?php        endif;
+
+    if(in_array ('footer_image', $fa_rows)) :
+        $fa_count = array_search('footer_image', $fa_rows);
+        $image_id = get_option( $footer_areas . '_' . $fa_count . '_footer_image' );
+        $img_url = wp_get_attachment_image($image_id, 'thumbnail');
+        ?>
+        <div class="col-sm-<?php echo 10-$i;?> footer-image-wrapper">
+            <?=$img_url;?>
+        </div>
+        <?php
+        $i+=12;
+        endif;
     ?>
 
-  <div class="col-sm-4<?php if($i<8): ?> col-sm-offset-<?php $i=8-$i; echo $i; ?><?php endif; ?>">
+  <div class="col-sm-2<?php if($i<10): ?> col-sm-offset-<?php $i=10-$i; echo $i; ?><?php endif; ?>">
     <?php $i+=4; ?>
     <div class="utilities-wrapper-container">
       <div class="utilities-wrapper">

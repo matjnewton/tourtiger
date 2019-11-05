@@ -3300,10 +3300,31 @@ tour_finder',
             'min' => '',
             'max' => 1,
           ),
+          array (
+                'key' => '557b1630892d0123',
+                'name' => 'footer_image',
+                'label' => 'Footer Image',
+                'display' => 'row',
+                'sub_fields' => array (
+                    array(
+                        'key' => 'field_5dc17ba4dffd5',
+                        'label' => 'Footer Image',
+                        'name' => 'footer_image',
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                        'max_width' => '',
+                        'max_height' => '',
+                        'max_size' => '',
+                        'mime_types' => '',
+                    ),
+                ),
+                'min' => '',
+                'max' => 1,
+          ),
         ),
       ),
-
-
       array(
         'key' => 'field_5375fd320eb18',
         'label' => 'Button up',
