@@ -916,7 +916,7 @@ acf_add_local_field_group(array (
                                       'required' => 0,
                                       'conditional_logic' => 0,
                                       'wrapper' => array (
-                                        'width' => '',
+                                        'width' => '33%',
                                         'class' => '',
                                         'id' => '',
                                       ),
@@ -940,7 +940,7 @@ acf_add_local_field_group(array (
                                       'required' => 0,
                                       'conditional_logic' => '',
                                       'wrapper' => array (
-                                        'width' => '',
+                                        'width' => '33%',
                                         'class' => '',
                                         'id' => '',
                                       ),
@@ -954,6 +954,74 @@ acf_add_local_field_group(array (
                                       'default_value' => 'no-circle',
                                       'layout' => 'horizontal',
                                     ),
+                                      array (
+                                          'key' => 'field_5824928siviert',
+                                          'label' => 'Use spritesheet',
+                                          'name' => 'tour_pc-coltype--use_spritesheet',
+                                          'type' => 'true_false',
+                                          'message' => 'Note: Attached image will be ignored',
+                                          'wrapper' => array (
+                                              'width' => '33%',
+                                          ),
+                                      ),
+                                      array (
+                                          'key' => 'field_582491e81e6123',
+                                          'label' => 'Spritesheet ID',
+                                          'name' => 'tour_pc-coltype--spritesheet_add',
+                                          'type' => 'text',
+                                          'instructions' => '',
+                                          'required' => 1,
+                                          'conditional_logic' => array (
+                                              array (
+                                                  array (
+                                                      'field' => 'field_5824928siviert',
+                                                      'operator' => '==',
+                                                      'value' => 1,
+                                                  ),
+                                              ),
+                                          ),
+                                          'wrapper' => array (
+                                              'width' => '33%',
+                                              'class' => '',
+                                              'id' => '',
+                                          ),
+                                          'return_format' => 'id',
+                                          'preview_size' => 'rpwe-thumbnail',
+                                          'library' => 'all',
+                                          'min_width' => '',
+                                          'min_height' => '',
+                                          'min_size' => '',
+                                          'max_width' => '',
+                                          'max_height' => '',
+                                          'max_size' => '',
+                                          'mime_types' => '',
+                                      ),
+                                      array (
+                                          'key' => 'field_cir492141e6321',
+                                          'label' => 'Spritesheet class',
+                                          'name' => 'tour_pc-coltype--spritesheet_class',
+                                          'type' => 'text',
+                                          'instructions' => '',
+                                          'required' => 1,
+                                          'wrapper' => array (
+                                              'width' => '66%',
+                                              'class' => '',
+                                              'id' => '',
+                                          ),
+                                          'allow_null' => 0,
+                                          'other_choice' => 0,
+                                          'save_other_choice' => 0,
+                                          'layout' => 'horizontal',
+                                          'conditional_logic' => array (
+                                              array (
+                                                  array (
+                                                      'field' => 'field_5824928siviert',
+                                                      'operator' => '==',
+                                                      'value' => 1,
+                                                  ),
+                                              ),
+                                          ),
+                                      ),
                                     array (
                                       'key' => 'field_582492141e631',
                                       'label' => 'Url',

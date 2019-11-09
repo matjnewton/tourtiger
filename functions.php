@@ -498,6 +498,7 @@ if(function_exists('acf_add_options_page')) {
 	acf_add_options_sub_page('Company details');
 	acf_add_options_sub_page('Code snippets');
     acf_add_options_sub_page('Password Protected Page');
+    acf_add_options_sub_page('Spritesheets');
 
 }
 
@@ -2234,3 +2235,12 @@ function add_peek_integration() {
 }
 
 add_action('wp_head', 'add_peek_integration');
+//
+//function check_if_spritesheet_are_used() {
+//    $spritesheets = get_field('spritesheets', 'acf-options-spritesheets');
+//    var_dump($spritesheets);
+//}
+//
+//// check_if_spritesheet_are_used();
+//
+//// add_action('pre_get_posts', 'check_if_spritesheet_are_used');

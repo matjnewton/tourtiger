@@ -1250,8 +1250,117 @@ acf_add_local_field_group(array(
     'description' => '',
 ));
 
-
-
+    acf_add_local_field_group(array(
+        'key' => 'group_5dc561ebbbe05',
+        'title' => 'Spritesheets',
+        'fields' => array(
+            array(
+                'key' => 'field_5dc5620171172',
+                'label' => 'Spritesheets',
+                'name' => 'spritesheets',
+                'type' => 'repeater',
+                'max' => 1,
+                'instructions' => '<p>You may use spritesheet generator
+<a href="https://spritegen.website-performance.org" target="_blank"> here </a>.</p>
+<p>All you need is to drag and drop small images to the window, download Spritesheet and Stylesheet, and then place Spritesheet image to the field "Spritesheet Image",	and Stylesheet text to "Spritesheet Stylesheet". 
+In the Spritesheet Stylesheet you will be able to find class names associated with each image. You should not insert them with a dot, and they will containe the name of an appropriate image file.</p>
+<p>You also should invent some ID that will be unique for spritesheets.</p>',
+                'layout' => 'table',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5dc5621471173',
+                        'label' => 'Add Spritesheet',
+                        'name' => 'add_spritesheet',
+                        'type' => 'group',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'layout' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_5dc5622471174',
+                                'label' => 'Spritesheet Image',
+                                'name' => 'spritesheet_image',
+                                'type' => 'image',
+                                'instructions' => '',
+                                'required' => 1,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'return_format' => 'url',
+                                'preview_size' => 'medium',
+                                'library' => 'all',
+                            ),
+                            array(
+                                'key' => 'field_5dc5626471175',
+                                'label' => 'Spritesheet Unique ID',
+                                'name' => 'spritesheet_unique_id',
+                                'type' => 'text',
+                                'instructions' => '',
+                                'required' => 1,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
+                                'prepend' => '',
+                                'append' => '',
+                                'maxlength' => '',
+                            ),
+                            array(
+                                'key' => 'field_5dc5629571176',
+                                'label' => 'Spritesheet Stylesheet',
+                                'name' => 'spritesheet_stylesheet',
+                                'type' => 'textarea',
+                                'instructions' => '',
+                                'required' => 1,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
+                                'maxlength' => '',
+                                'rows' => 60,
+                                'new_lines' => '',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-spritesheets',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
 
   acf_add_local_field_group(array (
     'key' => 'group_557b16305d905',

@@ -2,6 +2,7 @@
 /* =======================
  * PC: Header
  * ==================== */
+include_once ('styling/pc-spritesheets-css.php');
 
 if( have_rows('pc_hero_area') ): $hero_counts = 0; //fix bug Hero loaded twice
     while ( have_rows('pc_hero_area') ) : the_row();
@@ -15,7 +16,7 @@ if( have_rows('pc_hero_area') ): $hero_counts = 0; //fix bug Hero loaded twice
 
         $button_type = get_sub_field( 'pc_button_link_type' );
 
-        $hero_width_box = get_sub_field( 'pc_hero_area_banner-width' ); 
+        $hero_width_box = get_sub_field( 'pc_hero_area_banner-width' );
         $hero_height = get_sub_field( 'pc_hero_area_size' );
         $hero_align_h = get_sub_field( 'pc_hero_area_align' );
         $hero_align_t = get_sub_field( 'pc_hero_area_text-align' );
