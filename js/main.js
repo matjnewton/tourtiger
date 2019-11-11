@@ -943,7 +943,7 @@ $( document ).ready(()=>{
 
 		$(document).on('afterChange', ()=>{
 			// console.debug('After change');
-			$slides.each(changeCaption);
+            if($slides) $slides.each(changeCaption);
 		});
 
 		function insertCaption() {
