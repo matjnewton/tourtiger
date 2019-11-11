@@ -932,7 +932,7 @@ $( document ).ready(()=>{
 			$caption.removeClass('displayed-caption');
 		});
 
-		$(document).on('beforeChange', ()=>{
+		$(document).on('beforeChange', (el)=>{
 			// console.debug('Before change');
 			$sliderTrack = $sliderTrack ? $sliderTrack : $(el.target).closest('.slick-slider');
 			$caption = $sliderTrack.find('.displayed-caption');
