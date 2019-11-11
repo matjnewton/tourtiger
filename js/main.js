@@ -934,10 +934,11 @@ $( document ).ready(()=>{
 
 		$(document).on('beforeChange', (el)=>{
 			// console.debug('Before change');
-			$sliderTrack = $sliderTrack ? $sliderTrack : $(el.target).closest('.slick-slider');
-			$caption = $sliderTrack.find('.displayed-caption');
-			$slides.each(restoreCaption);
-			$caption.removeClass('displayed-caption');
+			if($sliderTrack) {
+                $slides.each(restoreCaption);
+                $caption.removeClass('displayed-caption');
+                $caption = $sliderTrack.find('.displayed-caption');
+            }
 		});
 
 		$(document).on('afterChange', ()=>{
