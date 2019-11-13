@@ -557,7 +557,7 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
-add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' );
+// add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' ); // @TODO - crashes slick slider
 
 function attachment_image_attributes_aload($attr) {
 
