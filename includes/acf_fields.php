@@ -1289,7 +1289,7 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
                                 'name' => 'spritesheet_image',
                                 'type' => 'image',
                                 'instructions' => '',
-                                'required' => 1,
+                                'required' => 0,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
@@ -1306,7 +1306,7 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
                                 'name' => 'spritesheet_unique_id',
                                 'type' => 'text',
                                 'instructions' => '',
-                                'required' => 1,
+                                'required' => 0,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',

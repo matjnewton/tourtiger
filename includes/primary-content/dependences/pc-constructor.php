@@ -921,7 +921,7 @@ acf_add_local_field_group(array (
                                         'id' => '',
                                       ),
                                       'return_format' => 'id',
-                                      'preview_size' => 'rpwe-thumbnail',
+                                      'preview_size' => 'medium', // rpwe-thumbnail ?
                                       'library' => 'all',
                                       'min_width' => '',
                                       'min_height' => '',
@@ -970,7 +970,7 @@ acf_add_local_field_group(array (
                                           'name' => 'tour_pc-coltype--spritesheet_add',
                                           'type' => 'text',
                                           'instructions' => '',
-                                          'required' => 1,
+                                          'required' => 0,
                                           'conditional_logic' => array (
                                               array (
                                                   array (
@@ -1002,7 +1002,7 @@ acf_add_local_field_group(array (
                                           'name' => 'tour_pc-coltype--spritesheet_class',
                                           'type' => 'text',
                                           'instructions' => '',
-                                          'required' => 1,
+                                          'required' => 0,
                                           'wrapper' => array (
                                               'width' => '66%',
                                               'class' => '',
