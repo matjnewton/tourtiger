@@ -557,16 +557,19 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
-// add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload', $attr );
+add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' );
 
 function attachment_image_attributes_aload($attr) {
 
-    if ( isset( $attr['data-aload-on'] ) ) :
-        $attr['data-aload'] = $attr['src'];
-        $attr['data-aload-set'] = $attr['srcset'];
+    if ( strpos($attr['src'], 'http') === 0 ) :
 
+        $attr['data-aload'] = $attr['src'];
         $attr['src'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
-        $attr['srcset'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
+
+        if ( $attr['srcset'] ) :
+            $attr['data-aload-set'] = $attr['srcset'];
+            $attr['srcset'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
+        endif;
     endif;
 
     return $attr;
