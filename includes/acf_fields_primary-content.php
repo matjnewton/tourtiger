@@ -557,9 +557,21 @@ function transform_name( $name = '', $type = '' ) {
     return $new;
 }
 
-// add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' ); // @TODO - crashes slick slider
+
+$image_params = array();
+
+add_filter( 'wp_get_attachment_image_src', 'attachment_image_src_aload' );
+
+function attachment_image_src_aload($attr) {
+    global $image_params;
+    $image_params = $attr;
+    return $attr;
+}
+
+add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' ); // @TODO
 
 function attachment_image_attributes_aload($attr) {
+    global $image_params;
 
     if ( strpos($attr['src'], 'http') === 0 ) :
 
@@ -570,8 +582,12 @@ function attachment_image_attributes_aload($attr) {
             $attr['data-aload-set'] = $attr['srcset'];
             $attr['srcset'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
         endif;
-    endif;
 
+        $attr['data-image-width'] = $image_params[1];
+        $attr['data-image-height'] = $image_params[2];
+
+        $attr['style'] = 'width:'.$image_params[1].'px;height:'.$image_params[2].'px'; // todo: check this
+    endif;
     return $attr;
 }
 

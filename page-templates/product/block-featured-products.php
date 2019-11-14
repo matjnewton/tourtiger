@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Product primary area component: Featured Products
  */
@@ -9,17 +9,17 @@ if ( get_row_layout() == 'primary_content_f_products' ) :
 	$post_objects = get_sub_field('featured_products');
 	$tour_label   = get_sub_field('featured_products--label') ? get_sub_field('featured_products--label') : 'View Tour Now';
 
-	if ( $post_objects ) : 
+	if ( $post_objects ) :
 		?>
 
 		<div class="product_content_wrapper primary_content_featured-products">
 			<div class="pc_featured-products-carousel">
 
-				<?php 
+				<?php
 				/**
 				 * Roll each selected product
 				 */
-				foreach ( $post_objects as $key => $post_object ) : 
+				foreach ( $post_objects as $key => $post_object ) :
 
 					/**
 					 * Get thumbnail
@@ -29,7 +29,7 @@ if ( get_row_layout() == 'primary_content_f_products' ) :
 					    $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true);
 					    $this_thumb = $thumb_url[0];
 					    $show = true;
-					} else { 
+					} else {
 						$show = false;
 					}
 
@@ -45,19 +45,19 @@ if ( get_row_layout() == 'primary_content_f_products' ) :
 						<?php endif; ?>
 
 						<div class="pc_featured-products__body">
-							<h6><?php echo get_the_title( $post_object->ID ); ?></h4>
+							<h4><?php echo get_the_title( $post_object->ID ); ?></h4>
 							<a href="<?php the_permalink( $post_object->ID ); ?>" class="pc_featured-products__body-link"><?=$tour_label;?></a>
 						</div>
 					</div>
 
-					<?php 
-				endforeach; 
+					<?php
+				endforeach;
 				?>
 
 			</div>
 		</div>
 
-		<?php 
+		<?php
 	endif;
 
-endif;  
+endif;

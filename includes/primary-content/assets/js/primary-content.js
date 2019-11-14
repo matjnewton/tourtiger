@@ -25,7 +25,11 @@ function submit_gf_through_pc(url, values_json, $form) {
   return null;
 }
 
-function aload(t){"use strict";var e="data-aload";return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t}
+function aload(t){ // not active
+  "use strict";
+  var e="data-aload";
+  return t=t||window.document.querySelectorAll("["+e+"]"),void 0===t.length&&(t=[t]),[].forEach.call(t,function(t){t["LINK"!==t.tagName?"src":"href"]=t.getAttribute(e),t.removeAttribute(e)}),t
+}
 
 window.onload = function () {
   aload();
