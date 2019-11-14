@@ -560,7 +560,7 @@ function transform_name( $name = '', $type = '' ) {
 
 $image_params = array();
 
-add_filter( 'wp_get_attachment_image_src', 'attachment_image_src_aload' );
+// add_filter( 'wp_get_attachment_image_src', 'attachment_image_src_aload' ); // @todo - ???
 
 function attachment_image_src_aload($attr) {
     global $image_params;
@@ -568,7 +568,7 @@ function attachment_image_src_aload($attr) {
     return $attr;
 }
 
-add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' ); // @TODO
+// add_filter( 'wp_get_attachment_image_attributes', 'attachment_image_attributes_aload' ); // @TODO
 
 function attachment_image_attributes_aload($attr) {
     global $image_params;
