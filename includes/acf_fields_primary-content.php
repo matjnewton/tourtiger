@@ -586,7 +586,7 @@ function attachment_image_attributes_aload($attr) {
         $attr['data-image-width'] = $image_params[1];
         $attr['data-image-height'] = $image_params[2];
 
-        $attr['style'] = 'width:'.$image_params[1].'px;height:'.$image_params[2].'px'; // todo: check this
+        // $attr['style'] = 'width:'.$image_params[1].'px;height:'.$image_params[2].'px'; // todo: check this
     endif;
     return $attr;
 }
