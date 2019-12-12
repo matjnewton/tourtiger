@@ -189,9 +189,9 @@ else :
           break;
         case 'additional':
           $content = get_option( $footer_areas . '_' . $fa_count . '_content' );
-          $i+=2;
+          $i+=4;
           ?>
-          <div class="col-sm-2">
+          <div class="col-sm-4">
             <?php echo $content;  ?>
           </div>
           <?php
