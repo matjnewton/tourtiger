@@ -475,7 +475,7 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
 function get_read_more_link() {
-   return '<div class="clear"><a href="' . get_permalink() . '" class="blog-continue-reading">Continue Reading</a></div>';
+   return '<div class="clear"><a href="' . get_permalink() . '" class="blog-continue-reading" target="_blank">Continue Reading</a></div>';
 }
 
 /*acf functions*/

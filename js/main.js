@@ -10,22 +10,27 @@
 	 * Fix header paddings
 	 */
 	var fix_header_paddings = function fix_header_paddings() {
+		var $body = $('body');
 		var $header    = $('.site-header');
 		var $sticky    = $header.find('.sticky');
-		var is_home    = $('body').hasClass('home');
-		var is_tour    = $('body').hasClass('tour-template-default');
-		var is_logged  = $('body').hasClass('logged-in');
-		var is_product = $('body').hasClass('single-product');
-		var is_404     = $('body').hasClass('error404');
-		var is_search  = $('body').hasClass('page-template-rezdy_search');
-		var is_blog    = $('body').not('.page-template-front-page3').hasClass('blog');
+		var is_home    = $body.hasClass('home');
+		var is_tour    = $body.hasClass('tour-template-default');
+		var is_logged  = $body.hasClass('logged-in');
+		var is_product = $body.hasClass('single-product');
+		var is_post	   = $body.hasClass('single-post');
+		var is_404     = $body.hasClass('error404');
+		var is_search  = $body.hasClass('page-template-rezdy_search');
+		var is_blog    = $body.not('.page-template-front-page3').hasClass('blog');
 		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
+		var adminbar_height = $('#wpadminbar').height();
+		var newMarginTop;
 
 		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
+
 			var $unessesarily = $('.banner-wrapper-inner');
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
-			var newMarginTop  = headerWrapper - secondary;
+			newMarginTop  = headerWrapper - secondary;
 
 			if ( !is_logged )
 				newMarginTop += 32;
@@ -35,18 +40,31 @@
 				$unessesarily.css('margin-top', 0);
 			}
 
+			if ( is_post  ) {
+				newMarginTop = $('.header-bar-wrapper').height();
+				$('.site-inner').css( 'margin-top', newMarginTop );
+			}
+
+			if ( is_blog  ) {
+				newMarginTop = $('.header-bar-wrapper').height();
+				$('.site-inner').css( 'margin-top', newMarginTop + adminbar_height );
+			}
+
 		} else if ( is_404 ) {
-			var newMarginTop = $('.header-bar-wrapper').height();
+
+			newMarginTop = $('.header-bar-wrapper').height();
 			$('.site-inner').css( 'margin-top', newMarginTop );
 
 		} else if ( is_blog ) {
-			var newMarginTop = $('.header-bar-wrapper').height();
+
+			newMarginTop = $('.header-bar-wrapper').height();
 			$('.site-inner').css( 'margin-top', newMarginTop );
 
 		} else {
+
 			$('.banner-wrapper-inner').css('margin-top', 0);
 		}
-	}
+	};
 
 
 	function refresToSeachIframeBtn() {

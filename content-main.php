@@ -11,7 +11,7 @@
     <div class="gdl-blog-full gdl-border-x bottom">
         <div class="blog-content-wrapper">
             <h2 class="blog-title entry-title" style="visibility: visible;">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
             </h2>
 
             <?php if ( '' != get_the_post_thumbnail() ):
@@ -37,7 +37,7 @@ if ($posttags) { ?>
     $count++;
     if($count == 0): endif;
     echo '<a rel="tag" href="'.get_tag_link($tag->term_id).'">' .$tag->name . '</a>';
-    if($count == $len): echo ' '; else: echo ', '; endif; 
+    if($count == $len): echo ' '; else: echo ', '; endif;
   }
 }
 ?>
@@ -53,12 +53,11 @@ if ($posttags) { ?>
                             $image = aq_resize( $img_url, 119, 119, true );*/
                         ?>
                             <!--<a href="<?php the_permalink() ?>"><img src="<?=$image?>" class="img-responsive" /></a>-->
-            <?php //} endif; ?>       
+            <?php //} endif; ?>
             <?php the_excerpt(); ?>
             </div>
-            
+
         </div>
     </div>
 </li>
-  	
-	
+

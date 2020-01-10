@@ -15,44 +15,48 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="gdl-blog-full gdl-border-x bottom">
-        <div class="blog-content-wrapper">
-    		
-			<h1 class="blog-title entry-title"><?php the_title(); ?></h1>
-			
-			<div class="blog-info-wrapper">
-                            <div class="blog-date">
-                                <i class="fa fa-calendar"></i>
-                                <a href="http://www.labicicletaverde.com/2015/10/06/"><?php the_time('j M Y'); ?></a>
-                            </div>
-                            <div class="blog-tag">
-                                <?php
-$posttags = get_the_tags();
-$count=0;
-$len = count($posttags);
-if ($posttags) { ?>
-<i class="fa fa-tags"></i>
-<?php
-  foreach($posttags as $tag) {
-    $count++;
-    if($count == 0): endif;
-    echo '<a rel="tag" href="'.get_tag_link($tag->term_id).'">' .$tag->name . '</a>';
-    if($count == $len): echo ' '; else: echo ', '; endif; 
-  }
-}
-?>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-		
-        </div>
+            <div class="blog-post-content-wrapper">
+
+                <h2 class="blog-title entry-title"><a href="#"><?php the_title(); ?></a></h2>
+
+                <?php
+                $posttags = get_the_tags();
+                $count=0;
+                $len = count($posttags);
+
+                if ($posttags) : ?>
+
+                <div class="blog-info-wrapper">
+                    <div class="blog-date">
+                        <i class="fa fa-calendar"></i>
+                            <a href="http://www.labicicletaverde.com/2015/10/06/"><?php the_time('j M Y'); ?></a>
+                    </div>
+                    <div class="blog-tag">
+                        <i class="fa fa-tags"></i>
+                        <?php
+                            foreach ($posttags as $tag) :
+                                $count++;
+                                echo '<a rel="tag" href="'.get_tag_link($tag->term_id).'">' .$tag->name . '</a>';
+                                if ($count == $len) :
+                                    echo ' ';
+                                else :
+                                    echo ', ';
+                                endif;
+                            endforeach; ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <?php  endif; ?>
+
+            </div>
 		</div>
-		
+
     <?php if ( '' != get_the_post_thumbnail() ):
       $thumb = get_post_thumbnail_id();
       $img_url = wp_get_attachment_url( $thumb,'full' ); //get img URL
       echo "<div class='featured-wrapper article-image'><img src='{$img_url}' class='center-block' /></div>";
     endif; ?>
-            
+
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php if ( function_exists( 'sharing_display' ) ): ?>
@@ -65,7 +69,9 @@ if ($posttags) { ?>
             <?php endif; ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'tourtiger' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
+        <?php if (false) : // todo: what was this for??? ?>
 		<footer class="entry-meta">
-			<?php edit_post_link( __( 'Edit', 'tourtiger' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'tourtiger' ), '<span class="edit-link">', '</span>' );?>
 		</footer><!-- .entry-meta -->
+        <?php endif; ?>
 	</article><!-- #post -->
