@@ -40,7 +40,7 @@
 				$unessesarily.css('margin-top', 0);
 			}
 
-			if ( is_post  ) {
+			if ( is_post || is_product ) {
 				newMarginTop = $('.header-bar-wrapper').height();
 				$('.site-inner').css( 'margin-top', newMarginTop );
 			}
