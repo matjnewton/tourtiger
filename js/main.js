@@ -47,12 +47,12 @@
 
 			if ( is_blog  ) {
 				newMarginTop = $('.header-bar-wrapper').height();
-				$('.site-inner').css( 'margin-top', newMarginTop + adminbar_height );
+				$('.site-inner').css( 'margin-top', newMarginTop );
 			}
 
 			if ( is_tour || is_home ) {
 				newMarginTop = $('.header-bar-wrapper').height();
-				$('.banner-wrapper-inner').css( 'margin-top', newMarginTop + adminbar_height );
+				$('.banner-wrapper-inner').css( 'margin-top', newMarginTop );
 			}
 
 		} else if ( is_404 ) {
