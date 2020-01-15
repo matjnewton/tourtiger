@@ -25,7 +25,7 @@
 		var adminbar_height = $('#wpadminbar').height();
 		var newMarginTop;
 
-		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
+		if ( !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 
 			var $unessesarily = $('.banner-wrapper-inner');
 			var headerWrapper = $sticky.height() || 0;
