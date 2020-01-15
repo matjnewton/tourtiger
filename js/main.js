@@ -17,6 +17,7 @@
 		var is_tour    = $body.hasClass('tour-template-default');
 		var is_logged  = $body.hasClass('logged-in');
 		var is_product = $body.hasClass('single-product');
+		var is_tour    = $body.hasClass('single-tour');
 		var is_post	   = $body.hasClass('single-post');
 		var is_404     = $body.hasClass('error404');
 		var is_search  = $body.hasClass('page-template-rezdy_search');
