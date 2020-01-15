@@ -25,7 +25,7 @@
 		var adminbar_height = $('#wpadminbar').height();
 		var newMarginTop;
 
-		if ( !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
+		if ( !is_tour && !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
 
 			var $unessesarily = $('.banner-wrapper-inner');
 			var headerWrapper = $sticky.height() || 0;
@@ -40,7 +40,7 @@
 				$unessesarily.css('margin-top', 0);
 			}
 
-			if ( is_post || is_product || is_tour) {
+			if ( is_post || is_product ) {
 				newMarginTop = $('.header-bar-wrapper').height();
 				$('.site-inner').css( 'margin-top', newMarginTop );
 			}
@@ -59,6 +59,11 @@
 
 			newMarginTop = $('.header-bar-wrapper').height();
 			$('.site-inner').css( 'margin-top', newMarginTop );
+
+		} else if ( is_tour ) {
+
+			newMarginTop = $('.header-bar-wrapper').height();
+			$('.banner-wrapper-inner').css( 'margin-top', newMarginTop );
 
 		} else {
 
