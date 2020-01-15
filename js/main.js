@@ -25,7 +25,7 @@
 		var adminbar_height = $('#wpadminbar').height();
 		var newMarginTop;
 
-		if ( !is_home && $sticky.length === 1 && $(window).width() >= 768 ) {
+		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
 
 			var $unessesarily = $('.banner-wrapper-inner');
 			var headerWrapper = $sticky.height() || 0;
@@ -50,7 +50,7 @@
 				$('.site-inner').css( 'margin-top', newMarginTop + adminbar_height );
 			}
 
-			if ( is_tour  ) {
+			if ( is_tour || is_home ) {
 				newMarginTop = $('.header-bar-wrapper').height();
 				$('.banner-wrapper-inner').css( 'margin-top', newMarginTop + adminbar_height );
 			}
