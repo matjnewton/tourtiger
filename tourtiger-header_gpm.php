@@ -6,6 +6,8 @@
 
 <?php
 $custom_header = get_option( 'options_include_custom_header' );
+$use_media_mob = get_option( 'options_use_social_media_in_mobile_header' );
+$social_media = get_option( 'options_social_media' );
 
 if($custom_header == true): ?>
         <div class="hidden-xs custom-header">
@@ -120,7 +122,9 @@ if($custom_header == true): ?>
 
                 				<div class="row">
 
-                				<div class="col-xs-9" style="text-align:left;">
+                                <?php $logo_class = ($use_media_mob) ? "col-xs-6 col-sm-9" : "col-xs-9 col-sm-9"; ?>
+
+                				<div class="<?=$logo_class;?>" style="text-align:left;">
 
                                     <a class="navbar-brand" id="brand-name" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                         <?php
@@ -136,7 +140,17 @@ if($custom_header == true): ?>
 
                 				</div>
 
-                				<div class="col-xs-3">
+                                 <?php
+
+                                 if($use_media_mob && $social_media && ($use_media == true)): ?>
+                                    <div class="social-media social-media-mobile col-xs-3 hidden-sm">
+                                        <ul class="genesis-nav-menu">
+                                            <?php include(locate_template('partials/social_media_gpm.php' )); ?>
+                                        </ul>
+                                    </div>
+                                    <?php endif; ?>
+
+                				<div class="col-xs-3 col-sm-3">
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex1-collapse">
                     					<span class="icon-bar"></span>
                                         <span class="icon-bar"></span>

@@ -115,6 +115,14 @@ class Core extends StylingCard {
         ),
 
         array (
+            'key' => 'fc_' . $i . '_iI_6b77eh',
+            'label' => 'Social Icons On Mobile',
+            'name' => 'social_icons_on_mobile',
+            'type' => 'rgba_color',
+            'required' => 0,
+        ),
+
+        array (
           'key' => 'fc_' . $i . '_iI_5v669',
           'label' => 'Mobile Toggle button',
           'name' => 'mob_tog_btn_bg',
@@ -412,6 +420,8 @@ class Core extends StylingCard {
         $se_bar_wrapper_bg = get_sub_field('se_bar_wrapper_bg');
         $se_sub_menu_bg    = get_sub_field('se_sub_menu_bg');
 
+        $social_icons_on_mobile = get_sub_field('social_icons_on_mobile');
+
         $mob_tog_btn_bg   = get_sub_field('mob_tog_btn_bg');
         $mob_tog_btn_bg_h = get_sub_field('mob_tog_btn_bg_h');
 
@@ -512,6 +522,8 @@ class Core extends StylingCard {
 
           $css .= ".secondary-nav-wrapper .container{background:{$se_bar_wrapper_bg}}";
           $css .= ".secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background:{$se_sub_menu_bg}}";
+
+          $css .= ".navbar .social-media-mobile ul li a{color:{$social_icons_on_mobile}}";
 
           $css .= ".navbar .navbar-toggle{background:{$mob_tog_btn_bg}}";
           $css .= ".navbar .navbar-toggle:hover,.navbar .navbar-toggle:focus{background:{$mob_tog_btn_bg_h}}";

@@ -1707,13 +1707,28 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array (
-          'width' => '',
-          'class' => '',
-          'id' => '',
+          'width' => 50,
         ),
         'message' => '',
         'default_value' => 0,
       ),
+
+    array (
+        'key' => 'field_53c6d1a6110ienmd',
+        'label' => 'Use Social media in mobile header',
+        'name' => 'use_social_media_in_mobile_header',
+        'type' => 'true_false',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array (
+            'width' => 50,
+        ),
+        'message' => '',
+        'default_value' => 0,
+    ),
+
+
       array (
         'key' => 'field_552061311b125',
         'label' => 'Keep Search Box',
