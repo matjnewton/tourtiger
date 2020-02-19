@@ -58,6 +58,9 @@ define( 'CHILD_THEME_VERSION', '2.0.2' );
 add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 999 );
 function tourtiger_scripts_method() {
 
+    $theme = wp_get_theme();
+    $theme_version = $theme->get( 'Version' );
+
     if(!is_admin()) {
         wp_deregister_script( 'jquery' );
         wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
@@ -68,7 +71,7 @@ function tourtiger_scripts_method() {
         wp_register_script('jquery-ui',("https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"), false, null, true);
 
         wp_register_script('bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
-        wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(),null, 'all');
+        wp_register_style('bootstrap', get_stylesheet_directory_uri() .'/css/main.css', array(), $theme_version, 'all');
 		$uploads_dir = wp_upload_dir();
         wp_register_style('theme_prdctn', $uploads_dir['baseurl'] . '/wp-sass-cache/theme.css', array(),'all');
         wp_register_style('compass', get_stylesheet_directory_uri() .'/css/screen.css', array(),null, 'all');
