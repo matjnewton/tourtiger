@@ -2247,3 +2247,21 @@ add_action('wp_head', 'add_peek_integration');
 //// check_if_spritesheet_are_used();
 //
 //// add_action('pre_get_posts', 'check_if_spritesheet_are_used');
+
+
+
+/**
+ * Adding 410 redirects for the removed pages
+ */
+include get_stylesheet_directory() . '/inc/class-410-redirect.php';
+
+function is_410() {
+    global $wp_query;
+
+    if ( ! isset( $wp_query ) ) {
+        _doing_it_wrong( __FUNCTION__, __( 'Conditional query tags do not work before the query is run. Before then, they always return false.' ), '3.1.0' );
+        return false;
+    }
+
+    return $wp_query->get('is_410');
+}
