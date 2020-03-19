@@ -2454,6 +2454,11 @@ div.pc--c__accordion + div.pc--c__accordion {
         height: auto!important;
         min-height: auto!important
     }
+
+    .pc_hero-area__wrapper .flxslider-wrapper {
+        height: 70vh!important;
+    }
+
     #pc_wrap .pc--c__testimonial--title {
         font-size: 17px!important
     }
