@@ -8,6 +8,9 @@ $sitepress_settings = get_option( 'icl_sitepress_settings' );
 $adm_lng = $sitepress_settings['admin_default_language'] ? $sitepress_settings['admin_default_language'] : 'en';
 
 $footer_areas = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_footer_areas' : 'options_footer_areas';
+$options_address = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_address' : 'options_address';
+$options_phone_number = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_phone_number' : 'options_phone_number';
+
 
 if (get_field('advanced_footer', 'option')) :
   ?>
@@ -116,13 +119,13 @@ else :
   <div class="container">
   <div class="row">
   <?php
-  $isButtonUp = get_field('button_up', 'option');
+  $isButtonUp = get_option('button_up', 'option');
 
 
   $i = (int)$col;
 
-  $address = get_option( 'options_address' );
-  $phone_number = get_option( 'options_phone_number' );
+  $address = get_option( $options_address );
+  $phone_number = get_option( $options_phone_number );
 
 
   $fa_rows = get_option( $footer_areas );
