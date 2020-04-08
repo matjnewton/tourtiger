@@ -67,7 +67,8 @@
 
 		} else {
 
-			$('.banner-wrapper-inner').css('margin-top', 0);
+			newMarginTop = $('.secondary-menu-wrapper').height();
+			$('.banner-wrapper-inner').css('margin-top', 0 + newMarginTop);
 		}
 	};
 
