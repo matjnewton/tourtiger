@@ -17,7 +17,7 @@
     if($sticky_menu == true): ?>
 @media (min-width:481px){
     .banner-wrapper.under-header{
-        height:620px !important;
+<!--        height:620px !important;  -->
 
     }
 }
