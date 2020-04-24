@@ -40,9 +40,13 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 
           <li id="field_<?=$form_id;?>_<?=$form['counter'];?>" data-id="<?=$field['id']?>" class="gfield">
 
-            <?php $label_class = $field['isRequired'] ? 'is-required' : ''; ?>
+            <?php $label_class = $field['isRequired'] ? 'is-required' : '';
 
-            <label class="gfield_label <?=$label_class;?>" for="field_<?=$form_id;?>_<?=$form['counter'];?>"><?=$field['label'];?></label>
+            $label_for = ( $field['type'] !== 'consent' ) ? 'for="field_' . $form_id . '_' . $form['counter'].'"' : '';
+
+            ?>
+
+            <label class="gfield_label <?=$label_class;?>" <?=$label_for;?>><?=$field['label'];?></label>
 
             <div class="ginput_container ginput_container_<?=$field['type'];?>">
 
@@ -390,6 +394,45 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                   endif;
                   break;
 
+
+                case 'consent':
+
+                    // print_r_html($field);
+
+                    $i = $field['inputs'];
+
+                    // print_r_html($field['inputs']);
+
+
+                    $at = 'placeholder="" data-field-label="'. $field['label'] .'" ';
+                    $at .= $field['isRequired'] ? '" data-field-required="true"' : '';
+                    $at .= 'name="input_' . $i[0]['id'] . '" ';
+                    $at .= 'id="input_' . $form_id . '_' . $field['id'] . '_1" ';
+                    $at .= 'class="' . $class . ' ' . $field['cssClass'] . '" ';
+                    $at .= 'type="checkbox" ';
+                    $at .= 'value="1" ';
+                    $at .= 'aria-describedby="gfield_consent_description_' . $form_id . '_' . $field['id'] . '" ';
+                    $at .= 'aria-invalid="false" ';
+                    $at .= $field['isRequired'] ? 'aria-required="true"' : '';
+                    $at .= 'data-field-input tabindex="0" data-handled="1"';
+
+                    $label_text = $field['checkboxLabel'];
+                    $label_attr = 'for="input_'. $form_id . '_' . $field['id'] . '_1"';
+
+                     // echo "Attr: $attr";
+
+
+                    ?>
+
+                    <input <?=$at;?>>
+                    <label class="gfield_consent_label" <?=$label_attr;?>><?=$label_text;?></label>
+                    <input type="hidden" name="input_<?=$i[1]['id'];?>" value="<?=$label_text?>" class="gform_hidden">
+                    <input type="hidden" name="input_<?=$i[2]['id'];?>" value="<?=$field['id'];?>" class="gform_hidden">
+
+                    <?php
+                    break;
+
+
                 /**
                  * Text, number, email, url
                  */
@@ -419,6 +462,15 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
               ?>
 
             </div>
+
+          <?php if ($field['type'] === 'consent') : ?>
+
+          <div class="gfield_description gfield_consent_description" id="gfield_consent_description_<?php echo $form_id . '_' . $field['id'];?>">
+              <?php echo nl2br($field['description']);?>
+          </div>
+
+          <?php endif; ?>
+
           </li>
 
           <?php
