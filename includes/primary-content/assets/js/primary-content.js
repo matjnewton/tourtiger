@@ -23,10 +23,12 @@ function submit_gf_through_pc(url, values_json, $form) {
 
       if (data.response.validation_messages) {
 
-        console.debug(data.response.validation_messages);
+        // console.debug(data.response.validation_messages);
 
-        // const msg = '<h6 class="validation_message">' + data.response.validation_messages[2] + '</h6>';
-        // $form.append(msg);
+        if (data.response.validation_messages[1] === "At least one field must be filled out" ) { //
+          const msg = '<h5 class="validation_message">At least one field must be filled out</h5>';
+          $form.append(msg);
+        }
       }
 
       else {
