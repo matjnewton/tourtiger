@@ -1439,13 +1439,30 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array (
-          'width' => '',
+          'width' => '50',
           'class' => '',
           'id' => '',
         ),
         'message' => '',
         'default_value' => 0,
       ),
+
+        array (
+            'key' => 'field_53cyehgds0dc',
+            'label' => 'Hero Area - Set Margin Top to 0',
+            'name' => 'hero-margin-top-zero',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '50',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 0,
+        ),
       array (
         'key' => 'field_53c13dac55a12',
         'label' => 'Custom Header Image',

@@ -24,10 +24,14 @@
 		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
 		var adminbar_height = $('#wpadminbar').height();
 		var newMarginTop;
+		var $bannerWrapperInner = $('.banner-wrapper-inner');
+		var heroMarginTopZero = $bannerWrapperInner.data().marginTopZero;
+
+		console.debug(heroMarginTopZero);
 
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
 
-			var $unessesarily = $('.banner-wrapper-inner');
+			var $unessesarily = $bannerWrapperInner;
 			var headerWrapper = $sticky.height() || 0;
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			newMarginTop  = headerWrapper - secondary;
@@ -36,7 +40,11 @@
 				newMarginTop += 32;
 
 			if ( !is_banner ) {
-				$('.site-inner').css( 'margin-top', newMarginTop );
+
+				if (heroMarginTopZero && !$('body').hasClass('error404')) {
+					$('.site-inner').css( 'margin-top', 0 );
+				} else $('.site-inner').css( 'margin-top', newMarginTop );
+
 				$unessesarily.css('margin-top', 0);
 			}
 
@@ -52,7 +60,12 @@
 
 			if ( is_tour || is_home ) {
 				newMarginTop = $('.header-bar-wrapper').height();
-				$('.banner-wrapper-inner').css( 'margin-top', newMarginTop );
+
+				if (heroMarginTopZero) {
+					$bannerWrapperInner.css( 'margin-top', 0 );
+					$('.site-inner').css( 'margin-top', 0 );
+				}
+				else $bannerWrapperInner.css( 'margin-top', newMarginTop );
 			}
 
 		} else if ( is_404 ) {
@@ -68,7 +81,7 @@
 		} else {
 
 			newMarginTop = $('.secondary-menu-wrapper').height();
-			$('.banner-wrapper-inner').css('margin-top', 0 + newMarginTop);
+			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
 		}
 	};
 

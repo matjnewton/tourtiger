@@ -8,6 +8,7 @@
 $custom_header = get_option( 'options_include_custom_header' );
 $use_media_mob = get_option( 'options_use_social_media_in_mobile_header' );
 $social_media = get_option( 'options_social_media' );
+$hero_margin_top_zero = get_option( 'options_hero-margin-top-zero' ) ? 'data-margin-top-zero=1' : '';
 
 if($custom_header == true): ?>
         <div class="hidden-xs custom-header">
@@ -172,7 +173,7 @@ if($custom_header == true): ?>
     </div><!-- end .header-bar-->
     </div><!-- end .header-bar-wrapper-->
 
-<div class="banner-wrapper-inner">
+<div class="banner-wrapper-inner" <?=$hero_margin_top_zero?>>
     <?php if($background_placement=='Down Below Header' && $hero_video): ?>
     <?php
     $poster = aq_resize( $poster_url, 1440, 545, true );
