@@ -25,8 +25,8 @@ function submit_gf_through_pc(url, values_json, $form) {
 
         console.debug(data.response.validation_messages);
 
-        const msg = '<h6 class="validation_message">' + data.response.validation_messages[2] + '</h6>';
-        $form.append(msg);
+        // const msg = '<h6 class="validation_message">' + data.response.validation_messages[2] + '</h6>';
+        // $form.append(msg);
       }
 
       else {

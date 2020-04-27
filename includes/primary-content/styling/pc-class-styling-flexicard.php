@@ -2,11 +2,11 @@
 /* ===========================
  * Flexi Card Class Extend
  * ======================== */
- 
+
 class FlexiCard extends StylingCard {
 
 	/**
-	 * Return Fields 
+	 * Return Fields
 	 * @return array
 	 */
 	function return_acf_group( $i = '', $c = '' ) {
@@ -5050,12 +5050,12 @@ class FlexiCard extends StylingCard {
 					'default_value' => 0,
 				),
 			),
-		);	
+		);
 
 		return $fc_options_array;
 
 	}
-	
+
 }
 
 new FlexiCard( 'Flexi Card', 1 );

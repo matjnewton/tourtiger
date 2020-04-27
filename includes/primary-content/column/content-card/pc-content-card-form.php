@@ -1,4 +1,26 @@
 <?php
+
+if (get_sub_field( 'tour_pc-coltype--form_la' ) === 'pc--form__native') :
+
+    $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
+    $form_font = get_sub_field('tour_pc-coltype--form_font');
+    $ff = (isset($form_font['font-family']) && $form_font['font-family']) ? "style='font-family:\"{$form_font['font-family']}\", Arial, sans-serif'" : '';
+
+//     {$form_font["font-family"]}
+
+    // print_r_html([$form_font]);
+
+    ?>
+        <div class="gravity-form-native-layout-wrapper" <?=$ff?>>
+            <div class="gravity-form-native-layout">
+                <?php echo do_shortcode("[gravityforms id={$form_id} ajax=1]"); ?>
+            </div>
+        </div>
+    <?php
+
+else :
+
+
 $tour_content_content_classes .= ' pc--form';
 $tour_content_content_classes .= ' ' . get_sub_field( 'tour_pc-coltype--form_la' );
 $tour_content_content_classes .= ' ' . get_sub_field( 'tour_pc-coltype--form_ti' );
@@ -397,6 +419,19 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 
                 case 'consent':
 
+                    ?>
+                    <div style='color:orangered; width:80vw'>
+
+                        <h4>Please use "Native Form Layout" in "Form layout" setting in order to make this field work correctly.</h4>
+                        <h4>Note: this will display styles in original gravity-form way.</h4>
+
+                    </div>
+                    <?php
+
+                    break;
+
+                case 'consent-1st-attempt-not-working':    // TODO: might be completed in future
+
                     // print_r_html($field);
 
                     $i = $field['inputs'];
@@ -458,12 +493,14 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
 
                   echo "<input " . $attr . " />";
                   break;
+
+
               endswitch;
               ?>
 
             </div>
 
-          <?php if ($field['type'] === 'consent') : ?>
+          <?php if ($field['type'] === 'consent-test') : ?>
 
           <div class="gfield_description gfield_consent_description" id="gfield_consent_description_<?php echo $form_id . '_' . $field['id'];?>">
               <?php echo nl2br($field['description']);?>
@@ -548,3 +585,6 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
   </form>
 
 </div>
+
+
+<?php endif;
