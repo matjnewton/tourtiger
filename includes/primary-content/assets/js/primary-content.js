@@ -8,6 +8,9 @@
  * @return {null}
  */
 function submit_gf_through_pc(url, values_json, $form) {
+
+  console.debug({url, values_json, $form});
+
   $.post(url, values_json, function(data){
     console.log(data);
 
@@ -17,8 +20,24 @@ function submit_gf_through_pc(url, values_json, $form) {
     if (data.response.confirmation_type === 'redirect') {
       document.location.href = data.response.confirmation_redirect;
     } else {
-      $form.hide();
-      $form.parent().append(data.response.confirmation_message);
+
+      if (data.response.validation_messages) {
+
+        // console.debug(data.response.validation_messages);
+
+        if (data.response.validation_messages[1] === "At least one field must be filled out" ) { //
+          const msg = '<h5 class="validation_message">At least one field must be filled out</h5>';
+          $form.append(msg);
+        }
+      }
+
+      else {
+
+        $('.validation_message').remove();
+
+        $form.hide();
+        $form.parent().append(data.response.confirmation_message);
+      }
     }
   });
 

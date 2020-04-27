@@ -242,7 +242,7 @@ abstract class StylingCard {
 	/**
 	 * Return fonts
 	 */
-	function get_available_fonts() {
+	public static function get_available_fonts() {
         return null;
 	}
 

@@ -1885,3 +1885,58 @@ nav {
     font-size: 3rem;
     cursor: pointer;
 }
+
+
+.gfield_consent_description {
+    width: 100%;
+    max-height: 240px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    margin-top: 12px;
+    padding: 6px 8px;
+    font-size: .688em;
+}
+
+/* -------- gravity-form-native-layout styles ---------- */
+
+.gravity-form-native-layout .gform_title,
+.gravity-form-native-layout .gfield_label,
+.gravity-form-native-layout .gfield_description,
+.gravity-form-native-layout .gfield_consent_label,
+.gravity-form-native-layout .gform_confirmation_message,
+.gravity-form-native-layout .ginput_container {
+    color:black;
+}
+
+.gravity-form-native-layout .gform_footer input[type='submit'] {
+    color: white;
+    background-color: grey;
+    width: 10em !important;
+    height: 2.5em !important;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.2em !important;
+}
+
+.gravity-form-native-layout .gform_footer input[type='submit']:hover {
+    color: white;
+    background-color: darkgrey;
+}
+
+.gravity-form-native-layout h3.gform_title {
+    font-size: 2em !important;
+}
+
+.gravity-form-native-layout .gfield_consent_description {
+    font-size: 1em !important;
+    /*max-height: 400px !important;*/
+}
+
+.gravity-form-native-layout {
+    max-width:1000px;
+    margin: 0 auto;
+}
+
+.gravity-form-native-layout-wrapper {
+    text-align: center;
+}
