@@ -1,4 +1,4 @@
-<?php 
+<?php
                                for( $sm = 0; $sm < $social_media; $sm++ ):
                                     $link = get_option( 'options_social_media_' . $sm . '_link' );
                                     $icon = get_option( 'options_social_media_' . $sm . '_social_icon' );
@@ -35,8 +35,11 @@
                                    <?php if($icon == 'tripadvisor'): ?>
                                    <i class="fa fa-tripadvisor fa-lg"></i>
                                    <?php endif; ?>
+                                   <?php if($icon == 'ebird'): ?>
+                                   <i class="fas fa-ebird"></i>
+                                   <?php endif; ?>
                                </a>
                            </li>
                            <?php
-                               endfor; 
+                               endfor;
                             ?>

@@ -48,6 +48,8 @@
                                                 echo '<i class="fa fa-yelp fa-lg"></i>';
                                             elseif (get_sub_field('social_icon') == 'tripadvisor') :
                                                 echo '<i class="fa fa-tripadvisor fa-lg"></i>';
+                                            elseif (get_sub_field('social_icon') == 'ebird') :
+                                                echo '<i class="fas fa-ebird"></i>';
                                             else :
                                                 echo '<i class="fa fa-' . get_sub_field('social_icon') . '-square fa-lg"></i>';
                                             endif; ?>

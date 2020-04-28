@@ -152,6 +152,9 @@
                     <?php if($icon == 'twitter'): ?>
                       <i class="fa fa-twitter-square fa-lg"></i>
                     <?php endif; ?>
+                  <?php if($icon == 'ebird'): ?>
+                      <i class="fas fa-ebird"></i>
+                  <?php endif; ?>
                     <?php if($icon == 'youtube'): ?>
                       <i class="fa fa-youtube-square fa-lg"></i>
                     <?php endif; ?>

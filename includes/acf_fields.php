@@ -1678,7 +1678,8 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
               'google-plus' => 'google-plus',
               'wechat'      => 'wechat',
               'yelp'        => 'yelp',
-              'tripadvisor' => 'tripadvisor'
+              'tripadvisor' => 'tripadvisor',
+              'ebird'       => 'eBird'
             ),
             'default_value' => array (
             ),

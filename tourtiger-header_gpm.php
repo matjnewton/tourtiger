@@ -144,14 +144,14 @@ if($custom_header == true): ?>
                                  <?php
 
                                  if($use_media_mob && $social_media && ($use_media == true)): ?>
-                                    <div class="social-media social-media-mobile col-xs-3 hidden-sm">
+                                    <div class="social-media social-media-mobile col-xs-4 hidden-sm">
                                         <ul class="genesis-nav-menu">
                                             <?php include(locate_template('partials/social_media_gpm.php' )); ?>
                                         </ul>
                                     </div>
                                     <?php endif; ?>
 
-                				<div class="col-xs-3 col-sm-3">
+                				<div class="col-xs-2 col-sm-3">
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex1-collapse">
                     					<span class="icon-bar"></span>
                                         <span class="icon-bar"></span>

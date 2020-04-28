@@ -36,6 +36,9 @@
                                     <?php if($icon == 'facebook'): ?>
                                    <i class="fa fa-facebook-square fa-lg"></i>
                                    <?php endif; ?>
+                                   <?php if($icon == 'ebird'): ?>
+                                   <i class="fas fa-ebird"></i>
+                                   <?php endif; ?>
                                    <?php if($icon == 'pinterest'): ?>
                                    <i class="fa fa-pinterest-square fa-lg"></i>
                                    <?php endif; ?>

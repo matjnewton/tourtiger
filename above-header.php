@@ -47,6 +47,9 @@
                                    <?php if($icon == 'tripadvisor'): ?>
                                    <i class="fa fa-tripadvisor fa-lg"></i>
                                    <?php endif; ?>
+                                   <?php if($icon == 'ebird'): ?>
+                                   <i class="fas fa-ebird"></i>
+                                   <?php endif; ?>
                                </a>
                            </li>
                            <?php endwhile; ?>
