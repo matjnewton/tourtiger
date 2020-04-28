@@ -3984,6 +3984,35 @@ i {
     -moz-osx-font-smoothing: grayscale
 }
 
+@font-face {
+    font-family: 'FontAwesome-New';
+    src:  url('../fonts/fas-1/fas-1.eot?rqaa2a');
+    src:  url('../fonts/fas-1/fas-1.eot?rqaa2a#iefix') format('embedded-opentype'),
+    url('../fonts/fas-1/fas-1.ttf?rqaa2a') format('truetype'),
+    url('../fonts/fas-1/fas-1.woff?rqaa2a') format('woff'),
+    url('../fonts/fas-1/fas-1.svg?rqaa2a#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+.fas {
+    font: normal normal normal 14px/1 FontAwesome-New;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+
+.icon-accessible-icon-brands:before {
+    content: "\e900";
+}
+.icon-dog-solid:before {
+    content: "\e901";
+}
+
 .fa-lg {
     font-size: 1.3333333333em;
     line-height: .75em;
