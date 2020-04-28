@@ -4004,16 +4004,16 @@ i {
     -moz-osx-font-smoothing: grayscale
 }
 
-.fa-language:before {
+.fas.fa-language:before {
     content: "\e903";
 }
-.fa-accessible-icon:before {
+.fas.fa-accessible-icon:before {
     content: "\e900";
 }
-.fa-dog:before {
+.fas.fa-dog:before {
     content: "\e901";
 }
-.fa-ebird:before {
+.fas.fa-ebird:before {
     content: "\e902";
 }
 
