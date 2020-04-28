@@ -4006,10 +4006,10 @@ i {
 }
 
 
-.icon-accessible-icon-brands:before {
+.fa-accessible-icon:before {
     content: "\e900";
 }
-.icon-dog-solid:before {
+.fa-dog:before {
     content: "\e901";
 }
 
