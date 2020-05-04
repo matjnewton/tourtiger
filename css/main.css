@@ -9432,11 +9432,11 @@ main.content .col-sm-12 section {
     text-align: center;
     line-height: 120px;
     vertical-align: middle;
-    opacity: .5
+    opacity: 1;
 }
 
 .accreditation_logos li:hover {
-    opacity: 1
+    opacity: .7;
 }
 
 .accreditation_logos li img {
