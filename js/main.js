@@ -76,7 +76,7 @@
 			newMarginTop = $('.header-bar-wrapper').height();
 			// $('.site-inner').css( 'margin-top', newMarginTop );
 
-		} else if ($('.no-banner').length) {
+		} else if (!$('.no-banner').length) {
 
 			newMarginTop = $('.secondary-menu-wrapper').height();
 			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
