@@ -79,7 +79,7 @@
 		} else {
 
 			newMarginTop = $('.secondary-menu-wrapper').height();
-			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+			// $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
 		}
 	};
 
