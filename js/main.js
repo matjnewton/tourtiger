@@ -27,8 +27,6 @@
 		var $bannerWrapperInner = $('.banner-wrapper-inner');
 		var heroMarginTopZero = $bannerWrapperInner.data().marginTopZero;
 
-		console.debug(heroMarginTopZero);
-
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
 
 			var $unessesarily = $bannerWrapperInner;
@@ -76,7 +74,7 @@
 		} else if ( is_blog ) {
 
 			newMarginTop = $('.header-bar-wrapper').height();
-			$('.site-inner').css( 'margin-top', newMarginTop );
+			// $('.site-inner').css( 'margin-top', newMarginTop );
 
 		} else {
 
