@@ -3,7 +3,7 @@
 
         var href = window.location.href;
 
-        if ($( window ).width()<768 && !href.includes('/blog/')) {
+        if ($( window ).width()<768 && !$('body').hasClass('blog')) {
             var paddingTop = $('.header-bar').height();
             $('.blog-content-wrapper').css( "padding-top", paddingTop );
         }

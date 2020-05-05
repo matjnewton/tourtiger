@@ -60,7 +60,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         endif;
 
         if(!$item->menu_item_parent) :
-            $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo hello"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
+            $logo_item = '<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm"><div class="logo"><a href="'.$home_url.'"><img class="img-responsive" src="'.$logo_url.'" /></a></div></div>';
         endif;
 
         //if( $this->break_point == $item->menu_order )
