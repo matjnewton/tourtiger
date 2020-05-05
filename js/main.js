@@ -76,10 +76,10 @@
 			newMarginTop = $('.header-bar-wrapper').height();
 			// $('.site-inner').css( 'margin-top', newMarginTop );
 
-		} else {
+		} else if ($('.no-banner').length) {
 
 			newMarginTop = $('.secondary-menu-wrapper').height();
-			// $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
 		}
 	};
 
