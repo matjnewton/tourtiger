@@ -37,7 +37,7 @@
 			if ( is_logged )
 				newMarginTop += 32;
 
-			if (is_logged && !is_banner ) {
+			if ( (is_post || is_product) && is_logged ) {
 				$('.header-bar-wrapper').css('top', 32);
 			}
 
