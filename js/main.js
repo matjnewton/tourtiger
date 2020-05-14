@@ -37,6 +37,10 @@
 			if ( is_logged )
 				newMarginTop += 32;
 
+			if (is_logged && !is_banner ) {
+				$('.header-bar-wrapper').css('top', 32);
+			}
+
 			if ( !is_banner ) {
 
 				if (heroMarginTopZero && !$('body').hasClass('error404')) {
