@@ -1978,6 +1978,7 @@ nav {
 .ui-datepicker-year {
     color: #444;
 }
-.ui-datepicker-div {
-    width:auto;
+
+#ui-datepicker-div {
+    width:auto !important;
 }
