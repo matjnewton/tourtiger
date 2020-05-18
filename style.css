@@ -1951,7 +1951,7 @@ nav {
 .gravity-form-native-layout .ginput_container_select,
 .gravity-form-native-layout #pc_wrap .ginput_complex > span {
     border: 1px solid lightgray;
-    width: 50%;
+    width: 50% !important;
 }
 
 .gravity-form-native-layout .ginput_container_select .btn-group.bootstrap-select.medium.gfield_select {
@@ -1959,7 +1959,8 @@ nav {
 }
 
 @media only screen and (max-width:768px) {
-    .gravity-form-native-layout .ginput_container_select {
+    .gravity-form-native-layout .ginput_container_select,
+    .gravity-form-native-layout #pc_wrap .ginput_complex > span {
         width: 100%;
     }
 }
