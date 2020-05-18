@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.13.41.4
+Version: 1.13.41.5
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -1974,7 +1974,7 @@ nav {
     height: 32px;
 }
 
-.gravity-form-native-layout .ui-datepicker-month,
-.gravity-form-native-layout .ui-datepicker-year {
+.ui-datepicker-month,
+.ui-datepicker-year {
     color: #444;
 }
