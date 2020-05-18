@@ -1966,7 +1966,7 @@ nav {
     .gravity-form-native-layout .ginput_container_select,
     .gravity-form-native-layout .address_city,
     .gravity-form-native-layout .address_country {
-        width: 100%;
+        width: 100% !important;
     }
 }
 
