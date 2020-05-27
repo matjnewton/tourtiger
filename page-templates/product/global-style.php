@@ -1,4 +1,4 @@
-<?php
+<?php 
 // Background
 $style_sub_tab_product_rgba = get_field('style_sub_tab_product_rgba', 'options');
 $style_sub_tab_product_bg_image = get_field('style_sub_tab_product_bg_image', 'options');
@@ -7,7 +7,7 @@ $style_sub_tab_product_bg_repeat = get_field('style_sub_tab_product_bg_repeat', 
 $style_sub_tab_product_rgba_content = get_field('style_sub_tab_product_rgba_content', 'options');
 $style_sub_tab_product_bg_image_content = get_field('style_sub_tab_product_bg_image_content', 'options');
 $style_sub_tab_product_bg_repeat_content = get_field('style_sub_tab_product_bg_repeat_content', 'options');
-//content
+//content 
 $style_sub_tab_product_content_corner_alias = get_field('style_sub_tab_product_content_corner_alias', 'options');
 $style_sub_tab_product_content_area_dropshadow = get_field('style_sub_tab_product_content_area_dropshadow', 'options');
 $style_sub_tab_product_content_area_border = get_field('style_sub_tab_product_content_area_border', 'options');
@@ -35,7 +35,7 @@ $style_sub_tab_product_link_color_visited = get_field('style_sub_tab_product_lin
 
 // Background Color
 if ($style_sub_tab_product_rgba != '') : ?>
-	<style type="text/css">
+	<style>
 	.single-product .site-inner .content {
 		background: <?php echo $style_sub_tab_product_rgba; ?>;
 	}
@@ -49,17 +49,17 @@ if ($style_sub_tab_product_rgba != '') : ?>
 //var_dump($style_sub_tab_product_bg_image);
 if ($style_sub_tab_product_bg_image) : ?>
 
-	<style type="text/css">
+	<style>
 		.single-product .site-inner .content {
 			background-image: url("<?php echo $style_sub_tab_product_bg_image['url']; ?>");
-
+			
 			<?php if (!$style_sub_tab_product_bg_repeat) { ?>
 				background-repeat: no-repeat;
 			<?php } ?>
-
+			
 		}
 		body.custom-background.single-product {
-
+		    
 		}
 	</style>
 <?php endif; ?>
@@ -67,7 +67,7 @@ if ($style_sub_tab_product_bg_image) : ?>
 
 <?php // Content Background Color
 if ($style_sub_tab_product_rgba_content != '') : ?>
-	<style type="text/css">
+	<style>
 		.product_content_wrapper {
 			background-color: <?php echo $style_sub_tab_product_rgba_content; ?>;
 		}
@@ -76,7 +76,7 @@ if ($style_sub_tab_product_rgba_content != '') : ?>
 
 <?php // content Background image
 if ($style_sub_tab_product_bg_image_content) : ?>
-	<style type="text/css">
+	<style>
 		.product_content_wrapper {
 			background-image: url("<?php echo $style_sub_tab_product_bg_image_content['url']; ?>");
 			<?php if (!$style_sub_tab_product_bg_repeat_content) { ?>
@@ -86,28 +86,28 @@ if ($style_sub_tab_product_bg_image_content) : ?>
 	</style>
 <?php endif; ?>
 
-<?php // content
-// $style_sub_tab_product_content_corner_alias
-// $style_sub_tab_product_content_area_dropshadow
+<?php // content 
+// $style_sub_tab_product_content_corner_alias 
+// $style_sub_tab_product_content_area_dropshadow 
 // $style_sub_tab_product_content_area_border
 // $style_sub_tab_product_content_area_border_color
 // $style_sub_tab_product_content_area_border_thickness
 
 if ($style_sub_tab_product_content_corner_alias) : ?>
-	<style type="text/css">
+	<style>
 		.product_content_wrapper {
 			border-radius: <?php echo $style_sub_tab_product_content_corner_alias; ?>px;
 		}
 	</style>
 <?php endif; ?>
 <?php if ($style_sub_tab_product_content_area_dropshadow) : ?>
-	<style type="text/css">
+	<style>
 		.product_content_wrapper {
 			<?php if($style_sub_tab_product_content_area_dropshadow == 'none') { ?>
 				box-shadow: none;
 			<?php } else { ?>
 				/*box-shadow: 0 0 <?php echo $style_sub_tab_product_content_area_dropshadow; ?>px rgba(0,0,0,0.1);*/
-
+	
 				/*box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 15px -4px rgba(31, 73, 125, 0.8);*/
 
 			<?php } ?>
@@ -116,7 +116,7 @@ if ($style_sub_tab_product_content_corner_alias) : ?>
 	</style>
 <?php endif; ?>
 <?php if ($style_sub_tab_product_content_area_border) : ?>
-	<style type="text/css">
+	<style>
 		.product_content_wrapper {
 			<?php if($style_sub_tab_product_content_area_border_color) { ?>
 				border-color:<?php echo $style_sub_tab_product_content_area_border_color; ?>;
@@ -143,7 +143,7 @@ if ($style_sub_tab_product_content_corner_alias) : ?>
 			<?php if($style_sub_tab_product_content_area_border_thickness) { ?>
 				border-top-width:<?php echo $style_sub_tab_product_content_area_border_thickness; ?>px;
 				border-top-style: solid;
-			<?php }  ?>
+			<?php }  ?>			
 		}
 		.product_content_wrapper.product_content_wrapper_end,
 		.product_content_wrapper.product_content_wrapper_footer {
@@ -154,17 +154,17 @@ if ($style_sub_tab_product_content_corner_alias) : ?>
 			<?php if($style_sub_tab_product_content_area_border_thickness) { ?>
 				border-bottom-width:<?php echo $style_sub_tab_product_content_area_border_thickness; ?>px;
 				border-bottom-style: solid;
-			<?php }  ?>
+			<?php }  ?>			
 		}
 	</style>
 <?php endif; ?>
 
 <?php // content elements
-// $style_sub_tab_product_content_area_icon_color
+// $style_sub_tab_product_content_area_icon_color 
 // $style_sub_tab_product_content_area_hr_line_color
 // $style_sub_tab_product_content_area_hr_line_thickness
 if ($style_sub_tab_product_content_area_icon_color) : ?>
-	<style type="text/css">
+	<style>
 		.product_content_wrapper i {
 		    color: <?php echo $style_sub_tab_product_content_area_icon_color; ?>;
 		}
@@ -177,14 +177,14 @@ if ($style_sub_tab_product_content_area_icon_color) : ?>
       } ?>
 
 <?php if ($style_sub_tab_product_content_area_hr_line_color) : ?>
-	<style type="text/css">
+	<style>
 		.primary_content_content_card_hr_line,
 		.product_content_wrapper hr {
 		    border-top: <?php echo $style_sub_tab_product_content_area_hr_line_thickness_size; ?> solid <?php echo $style_sub_tab_product_content_area_hr_line_color; ?>;
 		}
 	</style>
 <?php elseif ( $style_sub_tab_product_content_area_hr_line_thickness && (!$style_sub_tab_product_content_area_hr_line_color)) : ?>
-	<style type="text/css">
+	<style>
 		.primary_content_content_card_hr_line,
 		.product_content_wrapper hr {
 		    border-top: <?php echo $style_sub_tab_product_content_area_hr_line_thickness; ?>px solid #abc545;
@@ -195,7 +195,7 @@ if ($style_sub_tab_product_content_area_icon_color) : ?>
 <?php
 // headline
 if ($style_sub_tab_product_font_headline) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_headline['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_headline['font-family']."';";
 		} ?>
@@ -222,7 +222,7 @@ if ($style_sub_tab_product_font_headline) : ?>
 <?php
 // headline details
 if ($style_sub_tab_product_font_headline_details) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_headline_details['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_headline_details['font-family']."';";
 		} ?>
@@ -240,7 +240,7 @@ if ($style_sub_tab_product_font_headline_details) : ?>
 <?php
 // sub_headline
 if ($style_sub_tab_product_font_sub_headline) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_sub_headline['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_sub_headline['font-family']."';";
 		} ?>
@@ -267,7 +267,7 @@ if ($style_sub_tab_product_font_sub_headline) : ?>
 <?php
 // special_content
 if ($style_sub_tab_product_font_special_content) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_special_content['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_special_content['font-family']."';";
 		} ?>
@@ -286,7 +286,7 @@ if ($style_sub_tab_product_font_special_content) : ?>
 <?php
 // highlights
 if ($style_sub_tab_product_font_highlights) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_highlights['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_highlights['font-family']."';";
 		} ?>
@@ -303,7 +303,7 @@ if ($style_sub_tab_product_font_highlights) : ?>
 <?php
 //trip details label
 if ($style_sub_tab_product_font_tripdetailslabel) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_tripdetailslabel['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_tripdetailslabel['font-family']."';";
 		} ?>
@@ -321,7 +321,7 @@ if ($style_sub_tab_product_font_tripdetailslabel) : ?>
 <?php
 //trip details content
 if ($style_sub_tab_product_font_tripdetails_content) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_tripdetails_content['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_tripdetails_content['font-family']."';";
 		} ?>
@@ -343,7 +343,7 @@ if ($style_sub_tab_product_font_tripdetails_content) : ?>
 <?php
 // expandable content_title
 if ($style_sub_tab_product_font_expandablecontent_title) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_expandablecontent_title['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_expandablecontent_title['font-family']."';";
 		} ?>
@@ -378,7 +378,7 @@ if ($style_sub_tab_product_font_expandablecontent_title) : ?>
 <?php
 // expandable content_label
 if ($style_sub_tab_product_font_expandablecontent_label) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_expandablecontent_label['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_expandablecontent_label['font-family']."';";
 		} ?>
@@ -390,14 +390,14 @@ if ($style_sub_tab_product_font_expandablecontent_label) : ?>
 }
 .styles .site-inner .content a.primary_content_expandable_content_toggle.customstyle,
 .site-inner .content a.primary_content_expandable_content_toggle.customstyle,
-.styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span,
+.styles .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span, 
 .site-inner .content .product_content_wrapper .primary_content_expandable_content_toggle span
  {
 		  font-family: '<?php echo $style_sub_tab_product_font_expandablecontent_label['font-family']; ?>', sans-serif;
 		  font-size: <?php echo $style_sub_tab_product_font_expandablecontent_label['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_expandablecontent_label['font-weight']; ?>;
 		  color: <?php echo $style_sub_tab_product_font_expandablecontent_label['text-color']; ?>;
-}
+} 
 	</style>
 <?php endif; ?>
 
@@ -405,7 +405,7 @@ if ($style_sub_tab_product_font_expandablecontent_label) : ?>
 <?php
 // paragraph_content
 if ($style_sub_tab_product_font_paragraph_content) : ?>
-	<style type="text/css">
+	<style>
 		<?php if ($style_sub_tab_product_font_paragraph_content['font-family'] != 'Roboto') {
 			echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_product_font_paragraph_content['font-family']."';";
 		} ?>
@@ -417,25 +417,25 @@ if ($style_sub_tab_product_font_paragraph_content) : ?>
 		  font-size: <?php echo $style_sub_tab_product_font_paragraph_content['font_size']; ?>px;
 		  font-weight: <?php echo $style_sub_tab_product_font_paragraph_content['font-weight']; ?>;
 		  color: <?php echo $style_sub_tab_product_font_paragraph_content['text-color']; ?>;
-}
+} 
 	</style>
 <?php endif; ?>
 
 <?php
 // link_color
 if ($style_sub_tab_product_link_color) : ?>
-	<style type="text/css">
+	<style>
 		.styles .site-inner .content .product_content_wrapper a,
 		.site-inner .content .product_content_wrapper a {
 			color: <?php echo $style_sub_tab_product_link_color; ?>;
-		}
+		} 
 	</style>
 <?php endif; ?>
 
 <?php
 // color_hover
 if ($style_sub_tab_product_link_color_hover) : ?>
-	<style type="text/css">
+	<style>
 		.styles .site-inner .content .product_content_wrapper a:hover,
 		.styles .site-inner .content .product_content_wrapper a:focus,
 		.styles .site-inner .content .product_content_wrapper a:active,
@@ -443,17 +443,17 @@ if ($style_sub_tab_product_link_color_hover) : ?>
 		.site-inner .content .product_content_wrapper a:focus,
 		.site-inner .content .product_content_wrapper a:active {
 			color: <?php echo $style_sub_tab_product_link_color_hover; ?>;
-		}
+		} 
 	</style>
 <?php endif; ?>
 
 <?php
 // color_visited
 if ($style_sub_tab_product_link_color_visited) : ?>
-	<style type="text/css">
+	<style>
 		.styles .site-inner .content .product_content_wrapper a:visited,
 		.site-inner .content .product_content_wrapper a:visited {
 			color: <?php echo $style_sub_tab_product_link_color_visited; ?>;
-		}
+		} 
 	</style>
 <?php endif; ?>

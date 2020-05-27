@@ -2,11 +2,11 @@
 /* ===========================
  * Testimonial Page Class Extend
  * ======================== */
-
+ 
 class Testimonial extends StylingCard {
 
 	/**
-	 * Return Fields
+	 * Return Fields 
 	 * @return array
 	 */
 	function return_acf_group( $i = '', $c = '' ) {
@@ -231,7 +231,7 @@ class Testimonial extends StylingCard {
 					),
 				),
 			),
-		);
+		);	
 
 		return $fc_options_array;
 
@@ -239,10 +239,10 @@ class Testimonial extends StylingCard {
 
 	/**
 	 * Get styles
-	 *
+	 * 
 	 * @var    string   $style       style number
-	 * @var    string   $component   name of component
-	 * @return string
+	 * @var    string   $component   name of component   
+	 * @return string  
 	 */
 	public static function get_styles( $style = '' ) {
 		$css = '';
@@ -251,7 +251,7 @@ class Testimonial extends StylingCard {
 			while ( have_rows( $style, 'option' ) ) {
 				the_row();
 
-				$css .= '<style type="text/css">';
+				$css .= '<style>';
 
 				$font = pc_init_font_css( get_sub_field( 'quote' ) );
 				$css .= $font[0] ? $font[0]:'';
@@ -310,7 +310,7 @@ class Testimonial extends StylingCard {
 
 		return $css;
 	}
-
+	
 }
 
 new Testimonial( 'Testimonial', 1 );

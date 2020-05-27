@@ -1,4 +1,4 @@
-<style type="text/css">
+<style>
 .btn-primary {
     color: #fff;
     background-color: #337ab7;
@@ -147,7 +147,7 @@ text-transform: uppercase;
 
 <script>
 antes=parseInt(j('#reserved_time').val());
-!antes ? antes = 0 : false;
+!antes ? antes = 0 : false; 
 var date = new Date();
 d = date.setDate(date.getDate());
 h = date.setHours(date.getHours() + antes);
@@ -155,12 +155,12 @@ flag_hr = 0;
 flag_dt = 0;
 
   j(function () {
-
+   
 
    j('#arr_fl_dt').datetimepicker({ignoreReadonly: true, minDate: h, format: 'DD/MM/YYYY', locale: 'en-gb'});
 
    j('#arr_fl_tm').datetimepicker({ignoreReadonly: true, minDate: h, format: 'HH:mm',locale: 'en-gb'});
-
+     
    j('.panel-body,  .type-1 ,.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover').css('background',j('.color').val());
 
    j('#per_de_country').html('<option value=""> </option><option value="AUS">Áustria</option><option value="DE">Alemanha</option><option value="AST">Austrália</option><option value="BR">Brasil</option><option value="BUL">Bulgária</option><option value="BEL">Bélgica</option><option value="CAN">Canadá</option><option value="CH">China</option><option value="DIN">Dinamarca</option><option value="EGP">Egito</option><option value="ESP">Espanha</option><option value="USA">Estados Unidos</option><option value="FR">França</option><option value="GR">Grécia</option><option value="HL">Holanda</option><option value="HK">Hong Kong</option><option value="HG">Hungria</option><option value="IRL">Irlanda</option><option value="IT">Itália</option><option value="JP">Japão</option><option value="LX">Luxemburgo</option><option value="MAL">Malta</option><option value="MCB">Moçambique</option><option value="MX">México</option><option value="MN">Mónaco</option><option value="NRG">Noruega</option><option value="PL">Polónia</option><option value="PT">Portugal</option><option value="GB">Reino Unido</option><option value="RM">Romania</option><option value="RS">Rússia</option><option value="SUI">Suíça</option><option value="IND">Índia</option><option value="OTR">Outro</option>');
@@ -204,9 +204,9 @@ j.ajax({
       else{
       pay='';
 
-arr[0].payments == 'Bank' ? pay= j('.BANK_TRANSFER').text() : false;
-arr[0].payments == 'Driver' ? pay = j('.TO_DRIVER').text() : false;
-arr[0].payments == 'Paypal' ? pay = j('.PAYPAL').text() : false;
+arr[0].payments == 'Bank' ? pay= j('.BANK_TRANSFER').text() : false; 
+arr[0].payments == 'Driver' ? pay = j('.TO_DRIVER').text() : false; 
+arr[0].payments == 'Paypal' ? pay = j('.PAYPAL').text() : false; 
 !arr[0].obs ? arr[0].obs = '-/-' : false;
 !arr[0].promo ? arr[0].promo = '-/-' : false;
 !arr[0].voo_che_mor ? arr[0].voo_che_mor = '-/-' : false;
@@ -238,7 +238,7 @@ bootbox.dialog({
   buttons: {
     default: {
       label: "<span class='glyphicon glyphicon-remove-sign'></span> "+j('.CLOSE').val(),
-      className: "btn-default",
+      className: "btn-default", 
       callback: function() {
       j('body').css('padding-right','0');
      }
@@ -273,7 +273,7 @@ bootbox.dialog({
           j('#match-places, #all-classes').prop("disabled", true);
           j('#promo-code').prop('readonly', true);
           j('#info-user-ok').addClass('pop-txt');
-           if (arr[0].invalid == 10){
+           if (arr[0].invalid == 10){ 
              j("#pop-modal-ok" ).trigger("click" );
              j('#info-user-ok').html(j(".PAYMENT_TO_DRIVER").text()+'<br>'+j(".EMAIL_KO").text()+'<a class="btn btn-warning" href="tel:'+tel+'">'+tel+'</a><br>'+j(".YOUR_ORDER").text()+' <strong>'+arr[0].order+'</strong><br>'+j(".THANK_YOU").text());
             }
@@ -281,15 +281,15 @@ bootbox.dialog({
              j("#pop-modal-ok" ).trigger( "click" );
              j('#info-user-ok').html(j(".PAYMENT_TO_DRIVER").text()+'<br>'+j(".EMAIL_OK").text()+' <strong>'+arr[0].order+'</strong><br>'+j(".THANK_YOU").text());
             }
-            else if (arr[0].invalid == 20){
+            else if (arr[0].invalid == 20){ 
              j("#pop-modal-ok" ).trigger( "click" );
              j('#info-user-ok').html(j(".PAYMENT_BANK").text()+'<br>'+j(".EMAIL_KO").text()+'<a class="btn btn-warning" href="tel:'+tel+'">'+tel+'</a><br>'+j(".YOUR_ORDER").text()+' <strong>'+arr[0].order+'</strong><br>'+j(".THANK_YOU").text());
             }
-            else if (arr[0].invalid == 21){
+            else if (arr[0].invalid == 21){ 
              j("#pop-modal-ok" ).trigger( "click" );
              j('#info-user-ok').html(j(".PAYMENT_BANK").text()+'<br>'+j(".EMAIL_OK").text()+' <strong>'+arr[0].order+'</strong><br>'+j(".THANK_YOU").text());
             }
-            else if (arr[0].invalid == 30){
+            else if (arr[0].invalid == 30){ 
              j("#pop-modal-ok" ).trigger( "click" );
              j('#info-user-ok').html(j(".PAYMENT_PAYPAL").text()+'<br>'+j(".EMAIL_KO").text()+'<a class="btn btn-warning" href="tel:'+tel+'">'+tel+'</a><br>'+j(".YOUR_ORDER").text()+' <strong>'+arr[0].order+'</strong><br>'+j(".THANK_YOU").text());
             }

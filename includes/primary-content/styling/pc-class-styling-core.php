@@ -470,7 +470,7 @@ class Core extends StylingCard {
         $linked_text_color = get_sub_field('linked_text_color');
         $linked_text_color_hover = get_sub_field('linked_text_color_hover');
 
-        //$css .= '<style type="text/css">';
+        //$css .= '<style>';
 
         if ($linked_text_color) {
             $css .= "a > * {color:{$linked_text_color}!important;}";

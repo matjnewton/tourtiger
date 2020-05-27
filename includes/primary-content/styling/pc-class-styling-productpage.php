@@ -2,11 +2,11 @@
 /* ===========================
  * Product Page Class Extend
  * ======================== */
-
+ 
 class ProductPage extends StylingCard {
 
 	/**
-	 * Return Fields
+	 * Return Fields 
 	 * @return array
 	 */
 	function return_acf_group( $i = '', $c = '' ) {
@@ -2407,7 +2407,7 @@ class ProductPage extends StylingCard {
 					),
 				),
 			),
-		);
+		);	
 
 		return $fc_options_array;
 
@@ -2415,10 +2415,10 @@ class ProductPage extends StylingCard {
 
 	/**
 	 * Get styles
-	 *
+	 * 
 	 * @var    string   $style       style number
-	 * @var    string   $component   name of component
-	 * @return string
+	 * @var    string   $component   name of component   
+	 * @return string  
 	 */
 	public static function get_styles( $style = '' ) {
 		$css = '';
@@ -2430,7 +2430,7 @@ class ProductPage extends StylingCard {
 			while ( have_rows( $style, 'option' ) ) {
 				the_row();
 
-				$css .= "<style type="text/css">";
+				$css .= "<style>";
 
 				/**
 				 * Background
@@ -2669,7 +2669,7 @@ class ProductPage extends StylingCard {
 						$css .= "body.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, body.{$style} .styles .site-inner .content a.primary_content_expandable_content_toggle::after, body.{$style} .site-inner .content a.primary_content_expandable_content_toggle.collapsed::after, body.{$style} .site-inner .content a.primary_content_expandable_content_toggle::after {";
 							$css .= "color: {$font_style_exco_title['text-color']};";
 						$css .= '}';
-
+						
 						$css .= "body.{$style} .styles .content h{$i}.primary_content_subhead{";
 
 							$css .= $font[1] ? $font[1]:'';
@@ -2694,14 +2694,14 @@ class ProductPage extends StylingCard {
 				}
 
 				/**
-				 * Featured Products
+				 * Featured Products 
 				 */
 				$font_style_fepr_title = get_sub_field( 'font-style_featprod' );
 				$font = pc_init_font_css( $font_style_fepr_title );
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_fepr_title ) {
-
+					
 					$css .= "body.{$style} .pc_featured-products__body .pc_featured-products__title {";
 
 						$css .= $font[1] ? $font[1]:'';
@@ -2709,7 +2709,7 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 
-					// Common for text section css
+					// Common for text section css 
 					// $css .= "body.{$style} .pc_featured-products__body {";
 
 					// 	$css .= "text-align: {$font_style_fepr_title['text_align']};";
@@ -2725,7 +2725,7 @@ class ProductPage extends StylingCard {
 				$css .= $font[0] ? $font[0]:'';
 
 				if ( $font_style_fepr_link ) {
-
+					
 					$css .= "body.{$style} .pc_featured-products__body-link, .content-404 a {";
 
 						$css .= $font[1] ? $font[1]:'';
@@ -2746,7 +2746,7 @@ class ProductPage extends StylingCard {
 					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper a:hover, body.{$style} .styles .site-inner .content .product_content_wrapper a:focus, body.{$style} .styles .site-inner .content .product_content_wrapper a:active, body.{$style} .site-inner .content .product_content_wrapper a:hover, body.{$style} .site-inner .content .product_content_wrapper a:focus, body.{$style} .site-inner .content .product_content_wrapper a:active{";
 						$css .= "color:{$link_hover_color};";
 					$css .= '}';
-				}
+				} 
 
 				$css .= "body.{$style} .primary_content_headline_details_options li i {";
 
@@ -2764,7 +2764,7 @@ class ProductPage extends StylingCard {
 					$css .= "body.{$style} .styles .site-inner .content .product_content_wrapper a.active, body.{$style} .site-inner .content .product_content_wrapper a.active{";
 						$css .= "background-color:{$link_visited_color};";
 					$css .= '}';
-				}
+				} 
 
 				$book_now_bg = get_sub_field( 'bkn_background-color' );
 				$book_now_bg_h = get_sub_field( 'bkn_background-color_h' );
@@ -2833,7 +2833,7 @@ class ProductPage extends StylingCard {
 
 				$css .= '.book-tour-wrapper_product .sidebar_phone_row { margin-top: 25px!important; }';
 
-
+                
                 /**
                  * Gallery panel bg
                  */
@@ -2845,7 +2845,7 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 				}
-
+                
                 /**
                  * Gallery panel color
                  */
@@ -2857,7 +2857,7 @@ class ProductPage extends StylingCard {
 
 					$css .= '}';
 				}
-
+                
                 /**
                  * Gallery panel border
                  */
@@ -2875,7 +2875,7 @@ class ProductPage extends StylingCard {
 				/**
 				 * New sidebar
 				 */
-
+				
 				// Button
 				$button_color       = get_sub_field('button-color');
 				$button_color_hover = get_sub_field('button-color-hover');
@@ -2904,8 +2904,8 @@ class ProductPage extends StylingCard {
 						$css .= $button_color_hover ? "color:{$button_color_hover}!important;" : '';
 
 					$css .= '}';
-				endif;
-
+				endif; 
+				
 				// Title
 				$titles_color = get_sub_field('titles-color');
 
@@ -2918,7 +2918,7 @@ class ProductPage extends StylingCard {
 					$css .= $titles_color ? "color:{$titles_color};" : '';
 
 				$css .= '}';
-
+				
 				// content
 				$content_color = get_sub_field('content-color');
 
@@ -2950,7 +2950,7 @@ class ProductPage extends StylingCard {
 
 				$font = pc_init_font_css( $title_font );
 				$css .= $font[0] ? $font[0]:'';
-
+ 
 				$css .= "body.{$style} .site-inner .content .pc_featured-products .pc_featured-products__body h6 {";
 					$css .= $font[1] ? $font[1] : '';
 					$css .= $title_color ? "color: {$title_color};" : '';
@@ -2974,9 +2974,9 @@ class ProductPage extends StylingCard {
 				/**
 				 * Title
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_tit_f' ),
-					get_sub_field( 'cc_style__fo_tit_c' )
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_tit_f' ), 
+					get_sub_field( 'cc_style__fo_tit_c' ) 
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
@@ -2985,9 +2985,9 @@ class ProductPage extends StylingCard {
 				/**
 				 * Description
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_titd_f' ),
-					get_sub_field( 'cc_style__fo_titd_c' )
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_titd_f' ), 
+					get_sub_field( 'cc_style__fo_titd_c' ) 
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
@@ -2996,9 +2996,9 @@ class ProductPage extends StylingCard {
 				/**
 				 * Field Label
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_lab_f' ),
-					get_sub_field( 'cc_style__fo_lab_c' )
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_lab_f' ), 
+					get_sub_field( 'cc_style__fo_lab_c' ) 
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
@@ -3007,9 +3007,9 @@ class ProductPage extends StylingCard {
 				/**
 				 * Steps title
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_stt_f' ),
-					get_sub_field( 'cc_style__fo_stt_c' )
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_stt_f' ), 
+					get_sub_field( 'cc_style__fo_stt_c' ) 
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
@@ -3018,9 +3018,9 @@ class ProductPage extends StylingCard {
 				/**
 				 * Steps progress
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_stp_f' ),
-					get_sub_field( 'cc_style__fo_stp_c' )
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_stp_f' ), 
+					get_sub_field( 'cc_style__fo_stp_c' ) 
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
@@ -3029,9 +3029,9 @@ class ProductPage extends StylingCard {
 				/**
 				 * Field description
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_des_f' ),
-					get_sub_field( 'cc_style__fo_des_c' )
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_des_f' ), 
+					get_sub_field( 'cc_style__fo_des_c' ) 
 				);
 
 				$css .= $cc_style__ccc_css[0] ? $cc_style__ccc_css[0] : '';
@@ -3048,8 +3048,8 @@ class ProductPage extends StylingCard {
 				/**
 				 * Next Button
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_ne_f' ),
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_ne_f' ), 
 					get_sub_field( 'cc_style__fo_ne_c' )
 				);
 
@@ -3059,18 +3059,18 @@ class ProductPage extends StylingCard {
 
 				$cc_style__ccc_css[2] = '';
 
-				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles(
-					get_sub_field( 'cc__fo_butts_hover' ),
-					get_sub_field( 'cc_style__fo_ne_c' ),
-					get_sub_field( 'cc_style__fo_ne_bg' )
+				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+					get_sub_field( 'cc__fo_butts_hover' ), 
+					get_sub_field( 'cc_style__fo_ne_c' ), 
+					get_sub_field( 'cc_style__fo_ne_bg' ) 
 				);
 				$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
 
-				$cc_style_btn_border = get_font_border_styles(
-					get_sub_field( 'cc__fo_butts_border' ),
-					get_sub_field( 'cc_style__fo_ne_c' ),
-					get_sub_field( 'cc__fo_butts_border_thickness' )
+				$cc_style_btn_border = get_font_border_styles( 
+					get_sub_field( 'cc__fo_butts_border' ), 
+					get_sub_field( 'cc_style__fo_ne_c' ), 
+					get_sub_field( 'cc__fo_butts_border_thickness' ) 
 				);
 				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
@@ -3082,8 +3082,8 @@ class ProductPage extends StylingCard {
 				/**
 				 * Previous Button
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_pr_f' ),
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_pr_f' ), 
 					get_sub_field( 'cc_style__fo_pr_c' )
 				);
 
@@ -3093,19 +3093,19 @@ class ProductPage extends StylingCard {
 
 				$cc_style__ccc_css[2] = '';
 
-				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles(
-					get_sub_field( 'cc__fo_butts_hover' ),
-					get_sub_field( 'cc_style__fo_pr_c' ),
+				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+					get_sub_field( 'cc__fo_butts_hover' ), 
+					get_sub_field( 'cc_style__fo_pr_c' ), 
 					get_sub_field( 'cc_style__fo_pr_bg' )
 				);
 
 				$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
 
-				$cc_style_btn_border = get_font_border_styles(
-					get_sub_field( 'cc__fo_butts_border' ),
-					get_sub_field( 'cc_style__fo_pr_c' ),
-					get_sub_field( 'cc__fo_butts_border_thickness' )
+				$cc_style_btn_border = get_font_border_styles( 
+					get_sub_field( 'cc__fo_butts_border' ), 
+					get_sub_field( 'cc_style__fo_pr_c' ), 
+					get_sub_field( 'cc__fo_butts_border_thickness' ) 
 				);
 				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
@@ -3117,8 +3117,8 @@ class ProductPage extends StylingCard {
 				/**
 				 * Submit Button
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_su_f' ),
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_su_f' ), 
 					get_sub_field( 'cc_style__fo_su_c' )
 				);
 
@@ -3128,19 +3128,19 @@ class ProductPage extends StylingCard {
 
 				$cc_style__ccc_css[2] = '';
 
-				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles(
-					get_sub_field( 'cc__fo_butts_hover' ),
-					get_sub_field( 'cc_style__fo_su_c' ),
+				$cc_style_btn_mouse_over = get_font_mouseover_effect_styles( 
+					get_sub_field( 'cc__fo_butts_hover' ), 
+					get_sub_field( 'cc_style__fo_su_c' ), 
 					get_sub_field( 'cc_style__fo_su_bg' )
 				);
 
 				$cc_style__ccc_css[1] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_mouse_over ? $cc_style_btn_mouse_over[1] : '';
 
-				$cc_style_btn_border = get_font_border_styles(
-					get_sub_field( 'cc__fo_butts_border' ),
-					get_sub_field( 'cc_style__fo_su_c' ),
-					get_sub_field( 'cc__fo_butts_border_thickness' )
+				$cc_style_btn_border = get_font_border_styles( 
+					get_sub_field( 'cc__fo_butts_border' ), 
+					get_sub_field( 'cc_style__fo_su_c' ), 
+					get_sub_field( 'cc__fo_butts_border_thickness' ) 
 				);
 				$cc_style__ccc_css[1] .= $cc_style_btn_border ? $cc_style_btn_border[0] : '';
 				$cc_style__ccc_css[2] .= $cc_style_btn_border ? $cc_style_btn_border[1] : '';
@@ -3152,8 +3152,8 @@ class ProductPage extends StylingCard {
 				/**
 				 * Input/Textarea field
 				 */
-				$cc_style__ccc_css = pc_content_init_form(
-					get_sub_field( 'cc_style__fo_fi_f' ),
+				$cc_style__ccc_css = pc_content_init_form( 
+					get_sub_field( 'cc_style__fo_fi_f' ), 
 					get_sub_field( 'cc_style__fo_te_c' ),
 					get_sub_field( 'cc_style__fo_bg_c' )
 				);
@@ -3187,7 +3187,7 @@ class ProductPage extends StylingCard {
 
 		return $css;
 	}
-
+	
 }
 
 new ProductPage( 'Product Page', 1 );

@@ -373,7 +373,7 @@ function hawaiifunapi_form(){
 				      return true;
 				    }
 				  </script>
-				  <style type="text/css">
+				  <style>
 				    .ui-widget { font-size: 0.75em; }
 				    .ui-datepicker td.un { color:red;text-decoration:line-through; }
 				    div.ex1 {
@@ -565,7 +565,7 @@ function hawaiifunapi_form(){
 					  return true;
 					}
 					</script>
-					<style type="text/css">
+					<style>
 					 .ui-widget { font-size: 0.75em; }
 					 .ui-datepicker td.un { color:red;text-decoration:line-through; }
 					 div.ex1 {
@@ -767,7 +767,7 @@ function hawaiifunapi_form(){
 					      }
 					    };
 				    </script>
-					<style type="text/css">
+					<style>
 					.ui-widget{font-size: 0.75em;}.ui-datepicker td.un{color:red;text-decoration:line-through;}div.ex1{width:500px;margin: auto;}
 					</style>
 

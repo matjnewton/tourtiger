@@ -347,7 +347,7 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                   $attr  .= 'style="height:54px;" ';
                   $attr .= $attr_conditional;
 
-                  echo "<input " . $attr . " /><style type="text/css">#vinetrekker_piker.daterangepicker{margin-left:0!important;
+                  echo "<input " . $attr . " /><style>#vinetrekker_piker.daterangepicker{margin-left:0!important;
 										}</style>";
 
                   break;

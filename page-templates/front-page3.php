@@ -757,7 +757,7 @@ $testimonials_background_id;
     $img_srcset_medium = wp_get_attachment_image_url( $testimonials_background_id, 'medium' );
 
     ?>
-    <style type="text/css">
+    <style>
         .testimonials-background-image-container {
             background-image: url(<?=$img_srcset_full?>);
         }
@@ -776,7 +776,7 @@ $testimonials_background_id;
     <div class="testimonials-background-image-container" style="opacity: <?=$testimonials_background_opacity?>;<?php if($testimonials_background_cover_or_repeat == "cover"): ?> background-size: cover;<?php endif;?>"></div>
     <div class="container " <?php if( $testimonials_background_and_styling == 1 ): ?>style="background: none"<?php endif; ?>>
 
-        <style type="text/css">
+        <style>
             .txt-testimonial,
             .txt-testimonial span.name,
             div.txt-testimonial > div > a {

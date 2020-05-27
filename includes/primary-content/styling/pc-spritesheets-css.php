@@ -33,7 +33,7 @@ if($has_spritesheet && $spritesheets_settings) :
     $spritesheet_stylesheet = str_replace('.sprite', '.sprite-'.$spritesheet_image_id, $spritesheet_stylesheet);
 
     ?>
-    <style type="text/css">
+    <style>
         <?php echo $spritesheet_stylesheet;?>
     </style>
 <?php

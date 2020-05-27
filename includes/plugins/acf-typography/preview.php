@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<style type="text/css">
+		<style>
 			<?php
 			if( $_GET["font"] ) {
 				echo '@import url(http://fonts.googleapis.com/css?family=' . str_replace(' ', '+', $_GET["font"]) . ':' . $_GET["wi"] . ');';
