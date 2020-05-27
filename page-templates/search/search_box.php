@@ -16,14 +16,14 @@
 
 		$search_tour_cat = get_the_terms( $post->ID, 'tour_cat' )[0]->slug;
 		//var_dump($search_tour_cat);
-        
+
         $search_settings_type = get_sub_field('search_settings_type');
         $search_settings_type_category_select = get_sub_field('search_settings_type_category_select');
         $search_settings_type_category = get_sub_field('search_settings_type_category');
 
         //var_dump($search_settings_type);
         if ($search_settings_type =='Search by one date') {
-            $search_by_onedate = true; 
+            $search_by_onedate = true;
             $type_search= '<input type="hidden" name="type_search" id="type_search" value="one_date"/>';
             ?>
             <script>
@@ -34,10 +34,10 @@
                         $start = $('#startTime').val();
                         $('#endTime').val($start);
                     });
-                   
+
                 });
             </script>
-            <?php 
+            <?php
             $block = '<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 rezdy_box"></div>'; ?>
         <?php } else {
             $block = '';
@@ -72,8 +72,8 @@
                 $search_tour_for_category =  '<input type="hidden" name="search_tour_cat" id="search_tour_cat" value="'.$search_tour_cat.'"/>';
             } else {
                 $search_tour_for_category =  '<input type="hidden" name="search_tour_cat" id="search_tour_cat" value=""/>';
-            } 
-            
+            }
+
         } else {
             $search_tour_for_category ='';
         }
@@ -98,7 +98,7 @@
 
         if($search_aviliable != ''){
             $search_content = '
-            <style>
+            <style type="text/css">
               div.book-btn-wrapper{
                  display:none !important;
               }
@@ -201,15 +201,15 @@
                     //         singleDatePicker: true,
                     //         select :  {
                     //                  //100 : "2016-11-13"
-                    //             <?php           //available 
+                    //             <?php           //available
                     //                 $ii = 0;
                     //                     foreach (check_available_single_tour($post->ID) as $key => $this_available) :
-                    //                         if($this_available) : 
+                    //                         if($this_available) :
                     //                             //echo 'date: '.$key.' availabile: '.$this_available.'</br>';
-                    //                             echo $this_available.': "' .$key.'",'; 
+                    //                             echo $this_available.': "' .$key.'",';
                     //                             $ii++;
                     //                         endif;
-                    //                     endforeach;     
+                    //                     endforeach;
                     //             ?>
                     //     }
                     // });
@@ -221,18 +221,18 @@
                     //         singleDatePicker: true,
                     //         select :  {
                     //                  //100 : "2016-11-13"
-                    //             <?php           //available 
+                    //             <?php           //available
                     //                 $ii = 0;
                     //                     foreach (check_available_single_tour($post->ID) as $key => $this_available) :
-                    //                         if($this_available) : 
+                    //                         if($this_available) :
                     //                             //echo 'date: '.$key.' availabile: '.$this_available.'</br>';
-                    //                             echo $this_available.': "' .$key.'",'; 
+                    //                             echo $this_available.': "' .$key.'",';
                     //                             $ii++;
                     //                         endif;
-                    //                     endforeach;     
+                    //                     endforeach;
                     //             ?>
                     //     }
-                    // });               
+                    // });
 
 
                 });

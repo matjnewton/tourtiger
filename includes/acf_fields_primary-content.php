@@ -443,9 +443,9 @@ function pc_init_font_css( $font = '' ) {
 
 			if ( ! is_font_loaded( $font['font-family'] ) ) :
 				if ( !$is_custom_font ) {
-					$css[0] = $font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
+					$css[0] = $font['font-family'] ? "</style><style type="text/css">@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
 				} else {
-					$css[0] = "</style>{$is_custom_font}<style>";
+					$css[0] = "</style>{$is_custom_font}<style type="text/css">";
 				}
 			endif;
 
@@ -481,9 +481,9 @@ function pc_content_init_form( $font='', $color='', $background='', $border='' )
 
 		if ( ! is_font_loaded( $font['font-family'] ) ) :
 			if ( !$is_custom_font ) {
-				$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
+				$css[0] = "</style><style type="text/css">@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
 			} else {
-				$css[0] = "</style>{$is_custom_font}<style>";
+				$css[0] = "</style>{$is_custom_font}<style type="text/css">";
 			}
 		endif;
 

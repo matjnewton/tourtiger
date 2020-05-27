@@ -2,11 +2,11 @@
 /* ===========================
  * Testimonial Page Class Extend
  * ======================== */
- 
+
 class Typography extends StylingCard {
 
 	/**
-	 * Return Fields 
+	 * Return Fields
 	 * @return array
 	 */
 	function return_acf_group( $i = '', $c = '' ) {
@@ -1821,7 +1821,7 @@ class Typography extends StylingCard {
           'required' => 0,
         ),
       ),
-		);	
+		);
 
 		return $fc_options_array;
 
@@ -1829,10 +1829,10 @@ class Typography extends StylingCard {
 
 	/**
 	 * Get styles
-	 * 
+	 *
 	 * @var    string   $style       style number
-	 * @var    string   $component   name of component   
-	 * @return string  
+	 * @var    string   $component   name of component
+	 * @return string
 	 */
 	public static function get_styles( $style = '' ) {
 		$css = '';
@@ -1841,7 +1841,7 @@ class Typography extends StylingCard {
 			while ( have_rows( $style, 'option' ) ) {
 				the_row();
 
-				$css .= '<style>';
+				$css .= '<style type="text/css">';
 
 
 				$css .= '</style>';
@@ -1853,7 +1853,7 @@ class Typography extends StylingCard {
 
 		return $css;
 	}
-	
+
 }
 
 new Typography( 'Typography', 1, true );

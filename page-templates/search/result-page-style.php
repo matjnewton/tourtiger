@@ -1,32 +1,32 @@
 <?php
 $style_sub_tab_results_page_flag = get_field('style_sub_tab_results_page_flag', 'options');
-$style_sub_tab_results_page_booking_button = get_field('style_sub_tab_results_page_booking_button', 'options'); 
-$style_sub_tab_results_page_view_tour_button = get_field('style_sub_tab_results_page_view_tour_button', 'options'); 
-$style_sub_tab_results_text_color = get_field('style_sub_tab_results_text_color', 'options');  
+$style_sub_tab_results_page_booking_button = get_field('style_sub_tab_results_page_booking_button', 'options');
+$style_sub_tab_results_page_view_tour_button = get_field('style_sub_tab_results_page_view_tour_button', 'options');
+$style_sub_tab_results_text_color = get_field('style_sub_tab_results_text_color', 'options');
 $style_sub_tab_results_available_color = get_field('style_sub_tab_results_available_color', 'options');
 $style_sub_tab_results_font_all = get_field('style_sub_tab_results_font_all', 'options');
 
 // flag Color
 if ($style_sub_tab_results_page_flag != '') : ?>
-	<style>
+	<style type="text/css">
 	.most_popular {
     	background-color: <?php echo $style_sub_tab_results_page_flag; ?>;
 	}
 	</style>
-<?php endif; 
+<?php endif;
 
 // booking_button Color
 if ($style_sub_tab_results_page_booking_button != '') : ?>
-	<style>
+	<style type="text/css">
 	.button-viewtour.button-book {
     	background-color: <?php echo $style_sub_tab_results_page_booking_button; ?>;
 	}
 	</style>
-<?php endif; 
+<?php endif;
 
 // button-viewtour Color
 if ($style_sub_tab_results_page_view_tour_button != '') : ?>
-	<style>
+	<style type="text/css">
 	.button-viewtour,
 	#searchfilter .btn-datepicker {
     	background-color: <?php echo $style_sub_tab_results_page_view_tour_button; ?>;
@@ -35,20 +35,20 @@ if ($style_sub_tab_results_page_view_tour_button != '') : ?>
 		color: <?php echo $style_sub_tab_results_page_view_tour_button; ?>;
 	}
 	</style>
-<?php endif; 
+<?php endif;
 
 // available Color
 if ($style_sub_tab_results_available_color != '') : ?>
-	<style>
+	<style type="text/css">
 	.search-descript-available {
     	color: <?php echo $style_sub_tab_results_available_color; ?>;
 	}
 	</style>
-<?php endif; 
+<?php endif;
 
 // available Color
 if ($style_sub_tab_results_font_all != '') : ?>
-	<style>
+	<style type="text/css">
 	<?php if ($style_sub_tab_product_font_headline['font-family'] != 'Roboto') {
 		echo "@import 'https://fonts.googleapis.com/css?family=".$style_sub_tab_results_font_all['font-family']."';";
 	} ?>
@@ -60,12 +60,12 @@ if ($style_sub_tab_results_font_all != '') : ?>
 	    font-family: <?php echo $style_sub_tab_results_font_all['font-family']; ?>, sans-serif;
 	}
 	</style>
-<?php endif; 
+<?php endif;
 
 
 // available Color
 if ($style_sub_tab_results_text_color != '') : ?>
-	<style>
+	<style type="text/css">
 	.styles .site-inner .content p.cDate2,
 	.styles .content .search-descript-wrap h3,
 	.site-inner .content p.cDate2,
@@ -83,4 +83,4 @@ if ($style_sub_tab_results_text_color != '') : ?>
 	    border-bottom: solid 1px <?php echo $style_sub_tab_results_text_color; ?>;
 	}
 	</style>
-<?php endif; 
+<?php endif;

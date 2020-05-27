@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 if ( have_rows( $bc_style, 'option' ) ) {
 	while ( have_rows( $bc_style, 'option' ) ) { the_row();
 
-		echo '<style>';
+		echo '<style type="text/css">';
 
 		/*
 			Title
@@ -18,7 +18,7 @@ if ( have_rows( $bc_style, 'option' ) ) {
 			Excerpt
 		 */
 		$bc_style__excerpt_set = pc_init_font_css( get_sub_field( 'bc_style__excerpt' ) );
-		$bc_style__excerpt_set[1] .= get_sub_field( 'bc_style__excerpt-color' ) ? "color:" . get_sub_field( 'bc_style__excerpt-color' ) . ";" :''; 
+		$bc_style__excerpt_set[1] .= get_sub_field( 'bc_style__excerpt-color' ) ? "color:" . get_sub_field( 'bc_style__excerpt-color' ) . ";" :'';
 
 		echo $bc_style__excerpt_set[0] ? $bc_style__excerpt_set[0] : '';
 		echo $bc_style__excerpt_set[1] ? '.pc_wrap .' . $bc_style . ' .pc--blog__post .pc--blog__excerpt {' . $bc_style__excerpt_set[1] . '}' : '';
@@ -27,13 +27,13 @@ if ( have_rows( $bc_style, 'option' ) ) {
 			Date
 		 */
 		$bc_style__date_set = pc_init_font_css( get_sub_field( 'bc_style__date' ) );
-		$bc_style__date_set[1] .= get_sub_field( 'bc_style__excerpt-color' ) ? "color:" . get_sub_field( 'bc_style__date-color' ) . ";" :''; 
+		$bc_style__date_set[1] .= get_sub_field( 'bc_style__excerpt-color' ) ? "color:" . get_sub_field( 'bc_style__date-color' ) . ";" :'';
 		$bc_style__date_bg_color = get_sub_field( 'bc_style__date-bg-color' );
 
-		if ( 
-			   $bc_style__date_bg_color == '' 
-			|| $bc_style__date_bg_color == 'transparent' 
-			|| !$bc_style__date_bg_color 
+		if (
+			   $bc_style__date_bg_color == ''
+			|| $bc_style__date_bg_color == 'transparent'
+			|| !$bc_style__date_bg_color
 		) {
 			$bc_style__date_set[1] .= "padding: 0; background-color: transparent; ";
 		} else {
@@ -50,7 +50,7 @@ if ( have_rows( $bc_style, 'option' ) ) {
 		$bc_style__button_bg_color = get_sub_field( 'bc_style__button-bg-color' );
 
 		$bc_style__button_set = pc_init_font_css( get_sub_field( 'bc_style__button' ) );
-		$bc_style__button_set[1] .= $bc_style__button_color ? "color:" . $bc_style__button_color . ";" :''; 
+		$bc_style__button_set[1] .= $bc_style__button_color ? "color:" . $bc_style__button_color . ";" :'';
 		$bc_style__button_set_hover = '';
 		$bc_style__button = get_sub_field( 'bc_style__button' );
 		$bc_style__button_bg_color = $bc_style__button_bg_color ? 'backgrond-color:' . $bc_style__button_bg_color . ';':'';

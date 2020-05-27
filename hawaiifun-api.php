@@ -164,7 +164,7 @@ function hawaiifunapi_form(){
 					      return true;
 					    }
 					</script>
-					<style>
+					<style type="text/css">
 
 					 .ui-widget { font-size: 0.75em; }
 
@@ -387,7 +387,7 @@ function hawaiifunapi_form(){
 					      return true;
 					    }
 					</script>
-				<style>
+				<style type="text/css">
 
 				 .ui-widget { font-size: 0.75em; }
 
@@ -592,7 +592,7 @@ function hawaiifunapi_form(){
 					      return true;
 					    }
 				  </script>
-				<style>
+				<style type="text/css">
 
 				 .ui-widget { font-size: 0.75em; }
 
@@ -778,7 +778,7 @@ function hawaiifunapi_form(){
 					      }
 					    };
 				    </script>
-					<style>
+					<style type="text/css">
 
 					 .ui-widget { font-size: 0.75em; }
 
@@ -873,7 +873,7 @@ function include_hawaiifun_scripts() {
 
     // below write common scripts
     //$data = '<script></script>';
-    
+
 	//wp_add_inline_script( 'hawaiifun-activityswitch', $data );
 }
 

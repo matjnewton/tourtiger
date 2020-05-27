@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $cc_style__ccc_css = '';
 
@@ -25,6 +25,6 @@ if ( get_sub_field( 'cc_style__sub-headline' ) ) {
 	$cc_style__ccc_css .=  "color:" . get_sub_field( 'cc_style__sub-headline-color' ) . ";";
 	$cc_style__ccc_css .=  "font-style:" . $cc_style__sub_headline['font_style'] . ";";
 
-	echo $cc_style__sub_headline['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $cc_style__sub_headline['font-family'] . "');" : '';
+	echo $cc_style__sub_headline['font-family'] ? "</style><style type="text/css">@import url('https://fonts.googleapis.com/css?family=" . $cc_style__sub_headline['font-family'] . "');" : '';
 	echo '#pc_wrap .' . $cc_style . ' div.pc--c__subheadline > *  {' . $cc_style__ccc_css . ';}';
 }

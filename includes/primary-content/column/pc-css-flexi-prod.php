@@ -1,8 +1,8 @@
 <?php add_action("wp_footer", "add_primary_area_fp_styles");
- 
-function add_primary_area_fp_styles() { 
 
-	for ( $i = 1; $i < 11; $i++ ) { 
+function add_primary_area_fp_styles() {
+
+	for ( $i = 1; $i < 11; $i++ ) {
 		if ( $i == 1 ) {
 			$fc_style = 'fc_style-one';
 			$cc_style = 'cc_style-one';
@@ -35,9 +35,9 @@ function add_primary_area_fp_styles() {
 			$cc_style = 'cc_style-ten';
 		}
 
-		while ( have_rows( $fc_style, 'option' ) ) { 
+		while ( have_rows( $fc_style, 'option' ) ) {
 
-			the_row(); 
+			the_row();
 
 			$fc_style_bg = get_sub_field( 'fc_style__bg' );
 
@@ -120,9 +120,9 @@ function add_primary_area_fp_styles() {
 					$fc_style_pa_css = $fc_style_pa_width;
 					$fc_style_pa_css_fix = 'bottom: 0;';
 				}
-			} 
+			}
 
-			/** 
+			/**
 	         * Image styling
 			 */
 
@@ -192,7 +192,7 @@ function add_primary_area_fp_styles() {
 			}  elseif ( get_sub_field( 'fc_style__imte_dec' ) == 'underline' ) {
 				$fc_style__imte_dec_top = 'display: none';
 				$fc_style__imte_dec_bot = 'content: ""';
-			} 
+			}
 
 			/* Text dropshadow */
 			if ( get_sub_field( 'fc_style__imte_drsh' ) ) {
@@ -345,7 +345,7 @@ function add_primary_area_fp_styles() {
 			}
 
 			/* Label Font Field */
-			
+
 			$fc_style__imla_font = get_sub_field( 'fc_style__imla_font' );
 			$fc_style__imla_font_color = get_sub_field( 'fc_style__imla_font-color' );
 			$fc_style__imla_font_set = '';
@@ -353,10 +353,10 @@ function add_primary_area_fp_styles() {
 
 			if ( get_sub_field( 'fc_style__imla_font-bg' ) || get_sub_field( 'fc_style__imla_font-bg' ) != '' ) {
 				$fc_style__imla_font_set .= 'padding: 8px 13px; background-color:' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
-			
+
 				if ( in_array( 'color', get_sub_field( 'fc_style__imla_butt_hovef' ) ) ) {
 					$fc_style__image_labe_in = 'background-color: ' . $fc_style__imla_font_color . '; color: ' . get_sub_field( 'fc_style__imla_font-bg' ) . ';';
-				} 
+				}
 			}
 
 			if ( $fc_style__imla_font['font_family'] ) {
@@ -398,7 +398,7 @@ function add_primary_area_fp_styles() {
 			}
 
 			/* Border parameters */
-			$show = get_sub_field( 'fc_style__co' ); 
+			$show = get_sub_field( 'fc_style__co' );
 
 			if ( in_array( 'top-border', $show ) && get_sub_field( 'fc_style__co_tobo-w' ) && get_sub_field( 'fc_style__co_tobo-c' ) && get_sub_field( 'fc_style__co_tobo-t' ) ) {
 				$fc_style__co_tobo_w_content = 'content: ""';
@@ -683,7 +683,7 @@ function add_primary_area_fp_styles() {
 			}
 
 			/* Border parameters */
-			$show = get_sub_field( 'fc_style__co' ); 
+			$show = get_sub_field( 'fc_style__co' );
 
 			if ( in_array( 'top-border', $show ) && get_sub_field( 'fc_style__ct_tobo-w' ) && get_sub_field( 'fc_style__ct_tobo-c' ) && get_sub_field( 'fc_style__ct_tobo-t' ) ) {
 				$fc_style__ct_tobo_w_content = 'content: ""';
@@ -956,7 +956,7 @@ function add_primary_area_fp_styles() {
 				$fc_style__ct_butt_bord_hover = 'none';
 			} ?>
 
-				<style>
+				<style type="text/css">
 
 					#pc_wrap .<?php echo $fc_style; ?> {
 						position: relative;
@@ -980,7 +980,7 @@ function add_primary_area_fp_styles() {
 						border-bottom-right-radius: <?php echo $fc_style__imru_bottom; ?>;
 						border-bottom-left-radius: <?php echo $fc_style__imru_bottom; ?>;
 						text-decoration: none;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image:before {
 						position: absolute;
 						content: '';
@@ -989,7 +989,7 @@ function add_primary_area_fp_styles() {
 						width: 100%;
 						pointer-events: none;
 						<?php echo $fc_style_ov_bg; ?>;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image:after {
 						content: '';
 						position: absolute;
@@ -1001,21 +1001,21 @@ function add_primary_area_fp_styles() {
 						border: <?php echo $fc_style__imbo_bet_width . 'px solid ' . $fc_style__imbo_bet_color; ?>;
 						width: 100%;
 						z-index: 5;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_text {
 						background-color: <?php echo $fc_style__imte_bg; ?>;
 						position: relative;
 						z-index: 4;
 						<?php echo $fc_style__image_text__css; ?>
 						padding: 5px 0;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title {
 						position: relative;
 						padding: 5px 0;
 						text-decoration: <?php echo $fc_style__imte_und; ?>;
 						text-shadow: <?php echo $fc_style__imte_drsh; ?>;
 						<?php echo $fc_style__imte_font_set; ?>
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title:before {
 						display: inline-block;
 						position: absolute;
@@ -1026,7 +1026,7 @@ function add_primary_area_fp_styles() {
 						-webkit-transform: translateX(-50%);
 						transform: translateX(-50%);
 						<?php echo $fc_style__imte_dec_top; ?>;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title:after {
 						display: inline-block;
 						position: absolute;
@@ -1037,7 +1037,7 @@ function add_primary_area_fp_styles() {
 						-webkit-transform: translateX(-50%);
 						transform: translateX(-50%);
 						<?php echo $fc_style__imte_dec_bot; ?>;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_title + .fc_style--image_desc {
 						margin-top: 4px;
 					}
@@ -1053,18 +1053,18 @@ function add_primary_area_fp_styles() {
 						<?php echo $fc_style__impr_font_set; ?>
 						<?php echo $fc_style__image_pric__css; ?>
 						padding: 5px 14px;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_label {
 						<?php echo $fc_style__imla_pos; ?>;
 						<?php echo $fc_style__image_labe__css; ?>
 						<?php echo $fc_style__imla_font_set; ?>
 						<?php echo $fc_style__image_labe_lh; ?>
 						transition: ease .1s;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--image_label:hover {
 						<?php echo $fc_style__image_labe_lh_h; echo $fc_style__image_labe_in; ?>
 						transition: ease .1s;
-					}	
+					}
 					#pc_wrap .<?php echo $fc_style; ?> .fc_style--first {
 						position: relative;
 						background-color: <?php echo $fc_style__co_color; ?>;
@@ -1163,7 +1163,7 @@ function add_primary_area_fp_styles() {
 
 		<?php }
 
-		while ( have_rows( $cc_style, 'option' ) ) { 
+		while ( have_rows( $cc_style, 'option' ) ) {
 			the_row();
 
 			/* Set BG */
@@ -1595,8 +1595,8 @@ function add_primary_area_fp_styles() {
 			}
 
 			?>
-			
-				<style>
+
+				<style type="text/css">
 					#pc_wrap .<?php echo $cc_style; ?>.pc--c__content {
 						background: <?php echo $cc_style__bg; ?>;
 					}
@@ -1718,7 +1718,7 @@ function add_primary_area_fp_styles() {
 					}
 				</style>
 
-		<?php } 
+		<?php }
 
 	}
 

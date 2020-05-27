@@ -20,7 +20,7 @@
  * to do things like database access within stylesheets.
  * This temptation must be resisted.
  * Keep in mind that Sass stylesheets are only compiled once and then left as
- * static CSS files. Any dynamic CSS should be left in <style> tags in the
+ * static CSS files. Any dynamic CSS should be left in <style type="text/css"> tags in the
  * HTML.
  *
  * @author      Chris Yates <chris.l.yates@gmail.com>
@@ -324,10 +324,10 @@ class SassScriptFunctions
   public static function tint($colour, $amount)
   {
     $white = new SassColour('white');
-	
+
     return self::mix($white,$colour,$amount);
   }
-  
+
    /**
    * Changes the shade of a colour, mixing it with the $amount of black.
    * @param SassColour $colour The colour to adjust
@@ -339,7 +339,7 @@ class SassScriptFunctions
   public static function shade($colour, $amount)
   {
     $black = new SassColour('black');
-	
+
     return self::mix($black,$colour,$amount);
   }
 

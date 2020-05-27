@@ -11,11 +11,11 @@ $search_settings_type_datepicker_position = get_sub_field('search_settings_type_
 $datepicker_position = '';
 $datepicker_style = '';
 if( $search_settings_type_datepicker_position ):
-     foreach( $search_settings_type_datepicker_position as $position ): 
+     foreach( $search_settings_type_datepicker_position as $position ):
         if ($position =='drop-up') {
             $datepicker_position .= ' dropup ';
             $datepicker_style = '
-            <style>
+            <style type="text/css">
                 #vinetrekker_piker.daterangepicker {
                     margin-top: -8px;
                 }
@@ -39,13 +39,13 @@ if( $search_settings_type_datepicker_position ):
         // if ($position =='left') {
         //     $datepicker_position .= ' pull-right ';
         // }
-     endforeach; 
-endif; 
- 
+     endforeach;
+endif;
+
 if ($search_settings_type =='Search by one date') {
-    $search_by_onedate = true; 
+    $search_by_onedate = true;
     $type_search= '<input type="hidden" name="type_search" id="type_search" value="one_date"/>';
-    
+
     ?>
     <script>
         jQuery(function() {
@@ -59,10 +59,10 @@ if ($search_settings_type =='Search by one date') {
             //     $('#endTime').val(startt);
             // });
 
-           
+
         });
     </script>
-    <?php 
+    <?php
     $block = '<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 rezdy_box"></div>'; ?>
 <?php } else {
     $block = '';
@@ -84,8 +84,8 @@ if ($search_settings_type_category) {
         $search_tour_for_category =  '<input type="hidden" name="search_tour_cat" id="search_tour_cat" value="'.$search_tour_cat.'"/>';
     } else {
         $search_tour_for_category =  '<input type="hidden" name="search_tour_cat" id="search_tour_cat" value=""/>';
-    } 
-    
+    }
+
 } else {
     $search_tour_for_category ='';
 }
@@ -104,7 +104,7 @@ if ($search_settings_type_special_message != null) {
     $special_message ='';
 }
 
-$search_content = null; 
+$search_content = null;
 
 // margin for serch box
 // $hero_margin = get_field('hero_headline_top_margin');
@@ -118,7 +118,7 @@ $search_content = null;
 
             $search_content = '
             '.$datepicker_style.'
-            <style>
+            <style type="text/css">
               div.book-btn-wrapper{
                  display:none !important;
               }
@@ -215,4 +215,4 @@ $search_content = null;
 
 
 
-echo $search_content; 
+echo $search_content;

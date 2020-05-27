@@ -342,7 +342,7 @@ else :
   </script>
 
 <?php if (get_field('btn-up-color', 'option')) : ?>
-  <style>
+  <style type="text/css">
     #button-up__btn {
       background-color: <?php echo get_field('btn-up-color', 'option'); ?>;
     }

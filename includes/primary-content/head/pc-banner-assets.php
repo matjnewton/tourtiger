@@ -1,11 +1,11 @@
-<?php  
+<?php
 /**
  * Benner assets
  */
 
 if ( have_rows( $ha_style, 'option' ) ) :
 
-    echo '<style>';
+    echo '<style type="text/css">';
 
         while ( have_rows( $ha_style, 'option' ) ) : the_row();
 
@@ -44,12 +44,12 @@ if ( have_rows( $ha_style, 'option' ) ) :
                             $css       .= get_sub_field( 'margin-top' ) ? 'margin-top:' . get_sub_field( 'margin-top' ) . 'px;' : '';
                             $css       .= get_sub_field( 'margin-bottom' ) ? 'margin-bottom:' . get_sub_field( 'margin-bottom' ) . 'px;' : '';
 
-                            
+
                             echo '@media (max-width: ' . get_sub_field( 'device' ) . ') {';
 
                                 echo '.' . $ha_style . ' #pc_hero-area ' . $tag[$ii] . '.hero-area_title-' . $ii . ' {' . $css . '}';
 
-                            echo '}'; 
+                            echo '}';
                         }
                     }
                 }
@@ -102,11 +102,11 @@ if ( have_rows( $ha_style, 'option' ) ) :
                 if ( $ha_style__button_hover_object_color ) {
                     $ha_style__ccc_css_hover .= 'background-color:' . $ha_style__button_font_color .';';
                     $ha_style__ccc_css_hover .= 'color:' . get_sub_field( 'ha_style__button_bg' ) .';';
-                } 
+                }
 
                 if ( $ha_style__button_hover_object_text ) {
                     $ha_style__ccc_css_hover .= 'text-decoration:underline;';
-                } 
+                }
             }
 
             /* Set Button border */
@@ -146,7 +146,7 @@ if ( have_rows( $ha_style, 'option' ) ) :
                 /**
                  * Search box styles
                  */
-                
+
                 /**
                  * Input/Textarea field
                  */
@@ -175,7 +175,7 @@ if ( have_rows( $ha_style, 'option' ) ) :
                 $ha_base_color = get_sub_field('ha_style__base-color') ? 'color:' . get_sub_field( 'ha_style__base-color' ) . ';' : '';
 
                 echo $ha_base_color ? '.' . $ha_style . ' .home_page_search .fa:not(.fa-search), #vinetrekker_piker .fa, #vinetrekker_piker .active, #vinetrekker_piker .table-condensed .prev.available i:before, #vinetrekker_piker .table-condensed .next.available i:before {' . $ha_base_color . '}' : '';
-                echo $ha_base_color ? '#vinetrekker_piker.daterangepicker td.active, #vinetrekker_piker.daterangepicker td.active:hover, #vinetrekker_piker.daterangepicker td.active.available.selectredzy, #vinetrekker_piker.daterangepicker td.active.available.selectredzy:hover, #vinetrekker_piker.daterangepicker .calendar td.active.available.selectredzy, #vinetrekker_piker.daterangepicker .calendar td.active.available {background-'.$ha_base_color.'}' : ''; 
+                echo $ha_base_color ? '#vinetrekker_piker.daterangepicker td.active, #vinetrekker_piker.daterangepicker td.active:hover, #vinetrekker_piker.daterangepicker td.active.available.selectredzy, #vinetrekker_piker.daterangepicker td.active.available.selectredzy:hover, #vinetrekker_piker.daterangepicker .calendar td.active.available.selectredzy, #vinetrekker_piker.daterangepicker .calendar td.active.available {background-'.$ha_base_color.'}' : '';
 
 
                 /**
@@ -224,11 +224,11 @@ if ( have_rows( $ha_style, 'option' ) ) :
                         $ha_style__ccc_css_hover .= 'background-color:' . $ha_style__button_font_color .';';
                         $ha_style__ccc_css_hover .= 'color:' . get_sub_field( 'ha_style__sabt_bg' ) .';';
                         echo  '.' . $ha_style . ' .home_page_search .add-on .rezdy_search:hover + i, .' . $ha_style . ' .home_page_search .add-on .rezdy_search:active + i { transition: ease .3s; color:'.get_sub_field( 'ha_style__sabt_bg' ).';}';
-                    } 
+                    }
 
                     if ( $ha_style__button_hover_object_text ) {
                         $ha_style__ccc_css_hover .= 'text-decoration:underline;';
-                    } 
+                    }
                 }
 
                 /* Set Button border */
