@@ -1,16 +1,16 @@
 ;(function(){
     setTimeout( function() {
 
-        var href = window.location.href;
+        const href = window.location.href;
+        const $el = $('.blog-content-wrapper');
 
         if ($( window ).width()<768 && !$('body').hasClass('blog')) {
             var paddingTop = $('.header-bar').height();
-            $('.blog-content-wrapper').css( "padding-top", paddingTop );
+            $el.css( "padding-top", paddingTop );
         }
 
-        if ($('.blog-content-wrapper').css("margin-top") < 20) {
-            $('.blog-content-wrapper').css("margin-top", 20);
-            console.log('Height:', height);
+        if ($el.css("margin-top") < 20) {
+            $el.css("margin-top", 20);
         }
 
         $('.wp-caption').css('max-width', '100%');

@@ -390,30 +390,30 @@
 !(function($){
 	$(function(){
 
-		var $sliderPro = $('.slider-pro');
-		var $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
-    var url =  $coverImage.attr('src');
+		const $sliderPro = $('.slider-pro');
+		const $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
+		const url = $coverImage.attr('src');
 
-    var img = new Image();
+		const img = new Image();
 
-    if (typeof url !== 'undefined') {
-      img.onload = function () {
-        // $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
-      };
-      img.src = url;
-    }
+		if (typeof url !== 'undefined') {
+		  img.onload = function () {
+			// $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
+		  };
+		  img.src = url;
+    	}
 
 		/**
 		 * Init slick carousel
 		 */
-    $sliderPro.on('click', '.slider-pro--preview', function(){
-			$(this).tourismTiger('initGallery');
+		$sliderPro.on('click', '.slider-pro--preview', function(){
+				$(this).tourismTiger('initGallery');
 		});
 
 		/**
 		 * Close carousel
 		 */
-    $sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
+    	$sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
 			$(this).tourismTiger('destroyGallery');
 		});
 	});
@@ -530,6 +530,15 @@ var FbBookNowButton = function (config) {
 				lazyLoad: 'progressive',
 			})
 			.slick('setOption', 'height', null, true);
+
+
+			$(".slider-image").each((ind, img)=>{
+				const $img = $(img);
+				const imgHeight = $img.data('img-height');
+				const imgWidth = $img.data('img-width');
+				if (imgWidth > globalWidth) $img.css({'height': imgHeight * globalWidth / imgWidth});
+			});
+
 
 			// hide anoying button which usualy used to hover the X - button
 			$('#js-mob-wrap-buttons').fadeOut();
