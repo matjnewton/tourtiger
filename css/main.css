@@ -11473,4 +11473,9 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
 
 .pc--c__col.pc--c__editor ul {
     list-style: initial;
+    padding:2rem;
+}
+
+.pc--c__col.pc--c__editor ul li {
+    padding:2rem;
 }
