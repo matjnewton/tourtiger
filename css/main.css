@@ -11470,3 +11470,7 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
         padding-right: 0
     }
 }
+
+.pc--c__col.pc--c__editor ul {
+    list-style: initial;
+}
