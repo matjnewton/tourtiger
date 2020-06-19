@@ -11488,4 +11488,5 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
 
 .pc--c__col.pc--c__editor h4,
 .pc--c__col.pc--c__editor h5,
-.pc--c__col.pc--c__editor h6 {margin: 1rem;}
+.pc--c__col.pc--c__editor h6,
+.pc--c__col.pc--c__editor p {margin: 1rem;}
