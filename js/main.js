@@ -34,11 +34,9 @@
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			newMarginTop  = headerWrapper - secondary;
 
-			if ( is_logged )
-				newMarginTop += 32;
-
-			if ( (is_post || is_product) && is_logged ) {
+			if ( is_logged ) {
 				$('.header-bar-wrapper').css('top', 32);
+				newMarginTop += 32;
 			}
 
 			if ( !is_banner ) {
