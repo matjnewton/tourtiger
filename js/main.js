@@ -1045,5 +1045,32 @@ $( document ).ready(()=>{
 			}
 		})
 	});
+
+
+	function burgerMenuScrollFix(){
+		const $btn = $('.navbar-toggle');
+		const $body = $('body');
+
+		if($btn.hasClass('collapsed')) {
+			$btn.menuState = 'collapsed';
+		} else {
+			$btn.menuState = 'closed';
+		}
+
+		$btn.on('click', (e)=>{
+
+			if ($btn.menuState === 'closed') {
+				$btn.menuState = 'collapsed';
+				$body.css({'overflow':'hidden'});
+
+			} else if ($btn.menuState === 'collapsed') {
+				$btn.menuState = 'closed';
+				$body.css({'overflow':'scroll'});
+			}
+		})
+	}
+
+	burgerMenuScrollFix();
+
 } )( jQuery );
 
