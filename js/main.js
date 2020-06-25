@@ -35,7 +35,7 @@
 			newMarginTop  = headerWrapper - secondary;
 
 			if ( is_logged ) {
-				$('.header-bar-wrapper').css('top', 32);
+				if (!is_home) $('.header-bar-wrapper').css('top', 32);
 				newMarginTop += 32;
 			}
 
