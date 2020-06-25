@@ -1059,6 +1059,11 @@ $( document ).ready(()=>{
 
 		$btn.on('click', (e)=>{
 
+			const $nav = $('#menu-main-nav-1');
+			const height = $(window).height() - $('.navbar-header').height() - $('.corona-alert').height() - $('#wpadminbar').height() - 33;
+
+			$nav.css({height});
+
 			if ($btn.menuState === 'closed') {
 				$btn.menuState = 'collapsed';
 				$body.css({'overflow':'hidden'});
