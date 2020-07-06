@@ -11470,3 +11470,25 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
         padding-right: 0
     }
 }
+
+.pc--c__col.pc--c__editor ul {
+    list-style: initial;
+    margin: 0 3rem 3rem;
+}
+
+.pc--c__col.pc--c__editor ul li {
+    padding-top:2rem;
+}
+
+.pc--c__col.pc--c__editor h1 {margin: 4rem;}
+
+.pc--c__col.pc--c__editor h2 {margin: 5rem 3rem 3rem;}
+
+.pc--c__col.pc--c__editor h3 {margin: 3rem 2rem 2rem;}
+
+.pc--c__col.pc--c__editor h4,
+.pc--c__col.pc--c__editor h5,
+.pc--c__col.pc--c__editor h6,
+.pc--c__col.pc--c__editor p {margin: 1rem;}
+
+

@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.13.36
+Version: 1.13.55
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -672,7 +672,7 @@ html body .sidebar_links_options_wrap a {
 
 .header-bar-wrapper.no-sticky .container>.row {
     display: flex!important;
-    align-items: center!important
+    /*align-items: center!important*/
 }
 
 .js-navigated-gallery__front .slick-arrow {
@@ -1946,4 +1946,39 @@ nav {
 
 .gravity-form-native-layout-wrapper {
     text-align: center;
+}
+
+.gravity-form-native-layout .ginput_container_select {
+    border: 1px solid lightgray;
+}
+
+.gravity-form-native-layout .ginput_container_select,
+.gravity-form-native-layout .address_city,
+.gravity-form-native-layout .address_country {
+    width: 50% !important;
+}
+
+.gravity-form-native-layout .ginput_container_select .btn-group.bootstrap-select.medium.gfield_select {
+    width:100% !important;
+}
+
+@media only screen and (max-width:768px) {
+    .gravity-form-native-layout .ginput_container_select,
+    .gravity-form-native-layout .address_city,
+    .gravity-form-native-layout .address_country {
+        width: 100% !important;
+    }
+}
+
+.gravity-form-native-layout select {
+    height: 32px;
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+    color: #444;
+}
+
+#ui-datepicker-div {
+    width:auto !important;
 }

@@ -39,7 +39,7 @@ if ( $gallery ) :
         <div class="slider-pro__slider">
           <?php
           foreach ( $gallery as $key => $image ) :
-            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-img-width=\"{$image['width']}\" alt='' />";
+            $the_image = "<img class=\"slider-image\" data-lazy='{$image['sizes']['large']}' data-img-height=\"{$image['height']}\" data-img-width=\"{$image['width']}\" alt='' />";
             ?>
                 <div>
                     <div class='slider-pro__item'>

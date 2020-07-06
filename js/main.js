@@ -34,8 +34,10 @@
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			newMarginTop  = headerWrapper - secondary;
 
-			if ( !is_logged )
+			if ( is_logged ) {
+				if (!is_home) $('.header-bar-wrapper').css('top', 32);
 				newMarginTop += 32;
+			}
 
 			if ( !is_banner ) {
 
@@ -386,30 +388,30 @@
 !(function($){
 	$(function(){
 
-		var $sliderPro = $('.slider-pro');
-		var $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
-    var url =  $coverImage.attr('src');
+		const $sliderPro = $('.slider-pro');
+		const $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
+		const url = $coverImage.attr('src');
 
-    var img = new Image();
+		const img = new Image();
 
-    if (typeof url !== 'undefined') {
-      img.onload = function () {
-        // $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
-      };
-      img.src = url;
-    }
+		if (typeof url !== 'undefined') {
+		  img.onload = function () {
+			// $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
+		  };
+		  img.src = url;
+    	}
 
 		/**
 		 * Init slick carousel
 		 */
-    $sliderPro.on('click', '.slider-pro--preview', function(){
-			$(this).tourismTiger('initGallery');
+		$sliderPro.on('click', '.slider-pro--preview', function(){
+				$(this).tourismTiger('initGallery');
 		});
 
 		/**
 		 * Close carousel
 		 */
-    $sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
+    	$sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
 			$(this).tourismTiger('destroyGallery');
 		});
 	});
@@ -526,6 +528,15 @@ var FbBookNowButton = function (config) {
 				lazyLoad: 'progressive',
 			})
 			.slick('setOption', 'height', null, true);
+
+
+			$(".slider-image").each((ind, img)=>{
+				const $img = $(img);
+				const imgHeight = $img.data('img-height');
+				const imgWidth = $img.data('img-width');
+				if (imgWidth > globalWidth) $img.css({'height': imgHeight * globalWidth / imgWidth});
+			});
+
 
 			// hide anoying button which usualy used to hover the X - button
 			$('#js-mob-wrap-buttons').fadeOut();
@@ -1034,5 +1045,37 @@ $( document ).ready(()=>{
 			}
 		})
 	});
+
+
+	function burgerMenuScrollFix(){
+		const $btn = $('.navbar-toggle');
+		const $body = $('body');
+
+		if($btn.hasClass('collapsed')) {
+			$btn.menuState = 'collapsed';
+		} else {
+			$btn.menuState = 'closed';
+		}
+
+		$btn.on('click', (e)=>{
+
+			const $nav = $('#menu-main-nav-1');
+			const height = $(window).height() - $('.navbar-header').height() - $('.corona-alert').height() - $('#wpadminbar').height() - 33;
+
+			$nav.css({height});
+
+			if ($btn.menuState === 'closed') {
+				$btn.menuState = 'collapsed';
+				$body.css({'overflow':'hidden'});
+
+			} else if ($btn.menuState === 'collapsed') {
+				$btn.menuState = 'closed';
+				$body.css({'overflow':'scroll'});
+			}
+		})
+	}
+
+	burgerMenuScrollFix();
+
 } )( jQuery );
 
