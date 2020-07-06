@@ -36,8 +36,9 @@
 
 			if ( is_logged ) {
 				if (!is_home) $('.header-bar-wrapper').css('top', 32);
-				newMarginTop += 32;
 			}
+
+			newMarginTop += 32;
 
 			if ( !is_banner ) {
 
