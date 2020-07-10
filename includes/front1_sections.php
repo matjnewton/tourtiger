@@ -1,9 +1,9 @@
-<?php $site_layout = genesis_site_layout(); ?>    
-            
+<?php $site_layout = genesis_site_layout(); ?>
+
             <?php global $post; ?>
-            
+
             <?php if(get_field('tiles_area')): ?>
-            
+
             <?php while(has_sub_field('tiles_area')): ?>
             <?php
                 $section_headline = get_sub_field('section_headline');
@@ -30,10 +30,10 @@
             </div>
             <?php endif; ?>
             <div class="row-eq-height">
-                
-                <?php 
+
+                <?php
                     $col = 0;
-                    
+
                     if($number_of_columns):
                     switch ($number_of_columns) {
                         case 1:
@@ -52,7 +52,7 @@
                             $col = 5;
                             break;
                     }
-                    
+
                     else:
                     switch ($number_of_blog_columns) {
                         case 1:
@@ -76,19 +76,19 @@
                             </h2>
                         <?php endif; ?>
                         <?php if($content): ?>
-                            
+
                                 <?php echo $content; ?>
-                                
+
                         <?php endif; ?>
                         <?php if($embed):?>
                                 <?php echo $embed; ?>
                         <?php endif; ?>
                             </div>
-                              
+
                         </div>
                     <?php endif; ?>
-                    <?php if($section_headline == 'Blog'): 
-                    
+                    <?php if($section_headline == 'Blog'):
+
                         $args = array(
                         'post_type' => 'post',
                         'orderby' => 'date',
@@ -96,15 +96,15 @@
                         'nopaging' => true,
                         'post_status' => 'publish'
                         );
-                         
+
                         $i = 0;
                         global $wp_query;
                         $wp_query = new WP_Query( $args );
-                         
+
                         if ( have_posts() ) :
-                        
+
                         while ( have_posts() ) : the_post();
-                        
+
                         $i++; ?>
                         <div<?php if($col): ?> class="col-xs-12 col-sm-<?php echo $col; ?> col-eq-height"<?php endif; ?>>
                         <?php
@@ -114,12 +114,12 @@
                         <?php
                         if($i == $number_of_blog_tiles):
                         break;
-                        endif; 
+                        endif;
                         endwhile;
-                        
+
                         do_action( 'genesis_after_endwhile' );
                         endif;
-                         
+
                         wp_reset_query();
                     endif;?>
                     <?php
@@ -131,15 +131,15 @@
                             <ul class="slides">
                             <?php while(have_rows('tiles')): the_row(); ?>
                             <?php if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
-        				        
+
         				        <?php get_template_part( 'content', 'scrltstmls' ); ?>
-        				        
-        				        <?php 
+
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
@@ -151,7 +151,7 @@
         </div>
                         <?php else:
                         while(have_rows('tiles')): the_row();
-                        
+
                         if( get_row_layout() == 'tours' ):
                             $pulled_specific = get_sub_field('pull_specific_from');
                             if($pulled_specific):
@@ -173,31 +173,31 @@
                             </div>
                         <?php
                         endif;
-                        
+
                         if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
-                         
+
                         endwhile;
                         endif;
-                       ?> 
-                    
-                       
+                       ?>
+
+
                 </div>
             </div>
-    </section>           
+    </section>
                 <?php endwhile; ?>
-            
+
             <?php endif; ?>
     <?php if(have_rows('multi_column_area')): ?>
     <section class="multi-column-area text-center">
@@ -210,10 +210,10 @@
                 <?php endif; ?>
             <?php endif; ?>
             <?php if( get_row_layout() == '3_column_content'): ?>
-                <?php $line_under_subheading = get_sub_field('line_under_subheading'); 
+                <?php $line_under_subheading = get_sub_field('line_under_subheading');
                 if( have_rows('content') ): ?>
                 <ul class="row">
-                <?php $m = 0; ?> 
+                <?php $m = 0; ?>
                 <?php while( have_rows('content') ): the_row();
                     $subheading = get_sub_field('subheading');
                     $textarea = get_sub_field('textarea');
@@ -235,20 +235,20 @@
                 </ul>
                 <?php endif;
                 ?>
-                
+
             <?php endif; ?>
         <?php endwhile; ?>
         </div>
     </section>
     <?php endif; ?>
-    
-    <?php if(get_field('headline_content')): ?>        
+
+    <?php if(get_field('headline_content')): ?>
     <section class="reasons">
         <div class="container">
             <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8 col-lg-9<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
                 <?php if(get_field('headline_content')): ?>
-                    <?php while(has_sub_field('headline_content')): 
+                    <?php while(has_sub_field('headline_content')):
                         $headline_align = get_sub_field('headline_text_align');
                     ?>
                         <div class="headline-content">
@@ -257,19 +257,19 @@
                             </h2>
                             <div class="subcontent">
                                 <?php the_sub_field('subcontent'); ?>
-                                <?php $embed = get_sub_field('embed'); 
+                                <?php $embed = get_sub_field('embed');
                                 if($embed): echo $embed; endif;
                                 ?>
                             </div>
-                            
-                                <?php $view_tours = get_sub_field('view_tours_link'); 
+
+                                <?php $view_tours = get_sub_field('view_tours_link');
                                     if($view_tours):
                                 ?>
                                 <div class="view-tours-wrapper">
                                 <a class="view-tours-btn" href="<?php the_sub_field('view_tours_link'); ?>">View tours</a>
                                 </div>
                                 <?php endif; ?>
-                            
+
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
@@ -278,39 +278,39 @@
                 <div class="col-sm-4 col-lg-3 front-right-col">
                     <?php if(get_field('universal_sidebar', 'option')): ?>
                            <?php while(has_sub_field('universal_sidebar', 'option')): ?>
-                           
+
                            <?php if( get_row_layout() == 'content_editor' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php if( get_row_layout() == 'text_area' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
-                
+
             </div>
         </div>
     </section>
     <?php endif; ?>
-    
+
     <?php if(have_rows('sections_area')): ?>
-    <?php 
+    <?php
                             $numm = 0;
                             $section_count = (int)$numm; ?>
         <?php while(have_rows('sections_area')): the_row(); ?>
-        <?php 
+        <?php
                 $heading = get_sub_field('section_heading');
                 $heading_align = get_sub_field('heading_text_align');
                 //$linked_to_hero_cta = get_sub_field('linked_to_hero_cta');
@@ -319,17 +319,17 @@
         ?>
         <?php $section_count++; ?>
             <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
-                
+
             <?php if($heading): ?>
             <div class="container">
                         <h2 class="section-heading<?php if($heading_align == 'Center'): echo ' text-center'; endif;?>">
                             <?php echo $heading; ?>
                         </h2>
             </div><!-- .container-->
-                    <?php endif; ?>      
+                    <?php endif; ?>
             <?php if(have_rows('section_elements')): ?>
                         <?php while(have_rows('section_elements')): the_row(); ?>
-                            
+
                             <?php if( get_row_layout() == 'heading'): ?>
                             <?php
                                 $text = get_sub_field('text');
@@ -342,21 +342,21 @@
                                         </h2>
                             </div><!-- .container-->
                                 <?php endif; ?>
-                            
+
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == '3_column_content'): ?>
                             <div class="container">
                             <div class="multi-column-area text-center">
-                                
+
                                 <?php $line_under_subheading = get_sub_field('line_under_subheading'); ?>
                                 <?php $text = get_sub_field('heading'); ?>
                                 <?php if($text): ?>
                                     <h2 class="text-center"><?php echo $text; ?></h2>
-                                <?php endif; ?> 
+                                <?php endif; ?>
                                 <?php if( have_rows('columns_set') ): ?>
                                 <ul class="row">
-                                <?php $m = 0; ?> 
+                                <?php $m = 0; ?>
                                 <?php while( have_rows('columns_set') ): the_row();
                                     $subheading = get_sub_field('subheading');
                                     $textarea = get_sub_field('textarea');
@@ -377,18 +377,18 @@
                                     endwhile; ?>
                                 </ul>
                                 <?php endif; ?>
-                                
+
                             </div>
                             </div><!-- end .container-->
                             <?php endif; ?>
                             <?php if(get_row_layout() == 'heading_content'): ?>
                             <div class="container">
-                                
+
             <div class="row reasons">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-7 col-md-8 col-lg-9<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
-                    
+
                 <?php if( have_rows('contents_set') ): ?>
-                    <?php while( have_rows('contents_set') ): the_row(); 
+                    <?php while( have_rows('contents_set') ): the_row();
                         $heading_align = get_sub_field('heading_text_align');
                         $heading = get_sub_field('heading');
                         $content_editor = get_sub_field('content_editor');
@@ -413,34 +413,34 @@
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
-                
+
                 </div>
                 <?php if ( 'content-sidebar' == $site_layout ): ?>
                 <div class="col-sm-5 col-md-4 col-lg-3 front-right-col">
                     <?php if(get_field('universal_sidebar', 'option')): ?>
                            <?php while(has_sub_field('universal_sidebar', 'option')): ?>
-                           
+
                            <?php if( get_row_layout() == 'content_editor' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php if( get_row_layout() == 'text_area' ): ?>
                            <div class="widget-item">
-                           <?php $content = get_sub_field('content'); 
+                           <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
                            </div>
                            <?php endif; ?>
-                           
+
                            <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
-                
+
             </div><!-- end .reasons-->
                             </div><!-- end .container-->
     <?php endif; ?>
@@ -448,9 +448,9 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            
+
                                 <?php $custom_heading = get_sub_field('custom_heading'); ?>
-                                <?php 
+                                <?php
                                     $center = get_sub_field('map_center_address');
                                     $zoom = get_sub_field('zoom');
                                  ?>
@@ -462,14 +462,14 @@
                                 </h2>
                                 <?php endif; ?>
                                 <?php echo do_shortcode( $content ) ?>
-                            
+
                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div><!-- end .container-->
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'fluid_boxes'): ?>
                             <div class="container-fluid fluid-boxes">
                             	<div class="row even-grid">
@@ -504,17 +504,17 @@
                                             </div>
                                             <?php endif; ?>
                                     	</div>
-                                    	
+
                                 	</div>
                                             <?php endif;/*end content_button*/ ?>
                                             <?php if( get_row_layout() == 'image'): ?>
-                                            <?php 
+                                            <?php
                                                 $pull = get_sub_field('pull');
-                                                $image_url = wp_get_attachment_url( get_sub_field('image'),'full'); 
+                                                $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
                                                 ?>
                                             <?php if($image_url): ?>
                                     <div class="col-sm-6 s-item<?php if( is_array($pull) && in_array('left', $pull)): ?> box-left<?php elseif(is_array($pull) && in_array('right', $pull)): ?> box-right<?php endif; ?>" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover; background-position:center center; min-height:410px;"></div>
-                                            <?php endif; ?>        
+                                            <?php endif; ?>
                                             <?php endif; /*end image*/ ?>
                                             <?php if((($n % 2) == 0)): ?>
                                             <hr class="col-sm-12" />
@@ -524,14 +524,14 @@
                             	</div><!-- .row-->
                             </div>
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'image_gallery'): ?>
                             <div class="container-fluid fluid-gallery photo-gallery">
-                                    <div class="row">          
+                                    <div class="row">
                                 <?php $images = get_sub_field('gallery'); ?>
                                 <?php if( $images ): ?>
                                         <?php foreach( $images as $image ): ?>
-                            <?php 
+                            <?php
                                 $img_url = $image['url'];
                                 $thumbnail = aq_resize( $img_url, 384, 288, true );
                             ?>
@@ -543,15 +543,15 @@
                                         <?php endforeach; ?>
                                 <?php endif; ?>
                                     </div>
-                            </div><!-- end .container-fluid--> 
+                            </div><!-- end .container-fluid-->
                             <?php endif; /*end image_gallery*/ ?>
-                            
+
                             <?php if( get_row_layout() == 'tour_boxes'): ?>
                             <div class="container">
-                                <div class="featured-tours featured-tours-section">     
+                                <div class="featured-tours featured-tours-section">
                                 <div class="row-eq-height">
                                     <?php global $post; ?>
-                                    <?php 
+                                    <?php
                     $number_of_columns = get_sub_field('number_of_columns');
                     $col = 0;
                     if($number_of_columns):
@@ -576,69 +576,69 @@
                     ?>
                     <?php if( have_rows('boxes_set') ): ?>
                     <?php while ( have_rows('boxes_set') ) : the_row(); ?>
-                    
+
                     <?php if( get_row_layout() == 'tours'): ?>
-                    <?php 
+                    <?php
                         $pulled_specific = get_sub_field('pull_specific_from');
                         if($pulled_specific):
                         $post = $pulled_specific;
-                        setup_postdata( $post );  
+                        setup_postdata( $post );
                     ?>
                         <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?> col-eq-height">
                             <?php include(locate_template('content-front_feat_tours.php' )); ?>
                         </div>
                     <?php
                        wp_reset_postdata();
-                       endif;/*end if pulled_specific*/ 
+                       endif;/*end if pulled_specific*/
                     ?>
-                                
+
                     <?php endif;
                         if(get_row_layout() == 'categories'): ?>
                     <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?> col-eq-height">
                             <?php include(locate_template('content-frontbox_feat_cats.php' )); ?>
                             </div>
                     <?php endif; ?>
-                    
+
                     <?php endwhile; ?>
-                    
+
                     <?php endif; ?>
                                 </div>
                                 </div><!-- end .featured-tours-->
                             </div><!-- end .container-->
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'tour_links'): ?>
                             <div class="container container960">
                                 <?php global $post; ?>
                                 <?php if( have_rows('links_set') ): ?>
                                 <ul class="row link-tours">
                                 <?php while ( have_rows('links_set') ) : the_row(); ?>
-                                    
+
                                     <?php if( get_row_layout() == 'tours'): ?>
-                                    <?php 
+                                    <?php
                                         $pulled_specific = get_sub_field('pull_specific_from');
                                         if($pulled_specific):
                                         $post = $pulled_specific;
-                                        setup_postdata( $post );  
+                                        setup_postdata( $post );
                                     ?>
                                     <?php include(locate_template('partials/content-tour_links.php' )); ?>
                                     <?php
                                        wp_reset_postdata();
-                                       endif;/*end if pulled_specific*/ 
+                                       endif;/*end if pulled_specific*/
                                     ?>
-                                    
+
                                     <?php elseif(get_row_layout() == 'categories'): ?>
                                     <?php include(locate_template('partials/content-categories_links.php' )); ?>
                                     <?php endif; ?>
-                                    
-                                
+
+
                                 <?php endwhile; ?>
                                 </ul>
                                 <hr />
                                 <?php endif;/*links_set*/ ?>
                             </div>
                             <?php endif; /*end tour_links*/ ?>
-                            
+
                             <?php if( get_row_layout() == 'testimonials_boxes'): ?>
                             <?php $testimonials_type = get_field('testimonials_type', 'option'); ?>
                             <?php
@@ -662,8 +662,8 @@
                                     $tcol = 5;
                                     break;
                             }
-                            endif;    
-                            ?>    
+                            endif;
+                            ?>
                             <?php
                                 if(have_rows('boxes_set') && $testimonials_type == 'Scrolling'): ?>
                             <div class="container">
@@ -674,15 +674,15 @@
                                         <ul class="slides">
                                         <?php while(have_rows('boxes_set')): the_row(); ?>
                                         <?php if( get_row_layout() == 'testimonials' ):
-                                        $pulled_specific = get_sub_field('pull_specific_from'); 
-                                        
+                                        $pulled_specific = get_sub_field('pull_specific_from');
+
                                         if($pulled_specific):
                                             $post = $pulled_specific;
                     				        setup_postdata( $post ); ?>
-                    				        
+
                     				        <?php get_template_part( 'content', 'scrltstmls' ); ?>
-                    				        
-                    				        <?php 
+
+                    				        <?php
                     				        wp_reset_postdata();
                                         endif;
                                     endif;
@@ -694,7 +694,7 @@
                             </div>
                                 </div><!-- end .row-->
                                 </div><!-- end .container-->
-                            <?php 
+                            <?php
                             else:
                             ?>
                             <div class="container">
@@ -709,7 +709,7 @@
         				        <div class="<?php if($tcol==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $tcol; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                             endif;
@@ -717,10 +717,10 @@
                             </div><!-- end .row.even-grid.testimonials-->
                             </div><!-- end .container-->
                             <?php
-                            endif;  
+                            endif;
                             ?>
                             <?php endif; ?>
-                            
+
                             <?php if( get_row_layout() == 'blog_boxes'): ?>
                             <div class="container">
                             <div class="row row-eq-height testimonials front-blog-wrapper">
@@ -748,15 +748,15 @@
                         'nopaging' => true,
                         'post_status' => 'publish'
                         );
-                         
+
                         $i = 0;
                         global $wp_query;
                         $wp_query = new WP_Query( $args );
-                         
+
                         if ( have_posts() ) :
-                        
+
                         while ( have_posts() ) : the_post();
-                        
+
                         $i++; ?>
                         <div<?php if($bcol): ?> class="col-xs-12 col-sm-<?php echo $bcol; ?> col-eq-height"<?php endif; ?>>
                         <?php
@@ -766,18 +766,18 @@
                         <?php
                         if($i == $number_of_posts):
                         break;
-                        endif; 
+                        endif;
                         endwhile;
-                        
+
                         do_action( 'genesis_after_endwhile' );
                         endif;
-                         
+
                         wp_reset_query();
                                 ?>
                             </div><!-- .row-->
                             </div><!-- .container-->
                             <?php endif; ?>
-                            
+
                         <?php if( get_row_layout() == 'content'): ?>
                         <?php
                             $heading = get_sub_field('heading');
@@ -799,9 +799,9 @@
                                     </h2>
                                 <?php endif; ?>
                                 <?php if($content_editor): ?>
-                                    
+
                                         <?php echo $content_editor; ?>
-                                        
+
                                 <?php endif; ?>
                                 <?php if($embed):?>
                                         <?php echo $embed; ?>
@@ -812,13 +812,13 @@
                                    </div>
                                    <a class="button slideouttrigger" href="#" data-ref="1"><?php echo $open_label; ?></a>
                                 <?php endif; ?>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                         </div>
                     </div><!-- end .container -->
                         <?php endif; ?>
-                        
+
                         <?php if( get_row_layout() == 'accreditation_logos'): ?>
                         <?php
                             $number_of_acclogos_columns = get_sub_field('number_of_acclogos_columns');
@@ -826,7 +826,7 @@
                         <?php if( have_rows('columns_set') ): ?>
                             <div class="container">
                                 <ul class="row accreditation_logos">
-                                <?php 
+                                <?php
                                 $accol = 0;
                                 if($number_of_acclogos_columns):
                                 switch ($number_of_acclogos_columns) {
@@ -850,9 +850,9 @@
                                         break;
                                 }
                                 endif;
-                                ?> 
+                                ?>
                                 <?php while( have_rows('columns_set') ): the_row();
-                                    $image_url = wp_get_attachment_url( get_sub_field('image'),'full'); 
+                                    $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
                                     //$image = aq_resize( $image_url, 377, 377, true );
                                     $link = get_sub_field('link');
                                     $p++;
@@ -860,7 +860,7 @@
                                     <li class="<?php if($accol==5): ?>five-cols <?php else: ?>col-xs-6 col-sm-<?php echo $accol; ?><?php endif; ?>">
                                     <?php if($image_url): ?>
                                         <a href="<?php if($link): echo $link; endif; ?>" target="_blank">
-                                            <img src="<?php echo $image_url; ?>" class="img-responsive" />
+                                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive" />
                                         </a>
                                     <?php endif; ?>
                                     </li>
@@ -870,11 +870,11 @@
                             </div>
                                 <?php endif; ?>
                         <?php endif; ?>
-                        
+
                         <?php endwhile; ?>
             <?php endif; /*end section_elements*/ ?>
-                
-            </section><!-- end .section-item-->                                    
+
+            </section><!-- end .section-item-->
         <?php endwhile; ?>
-        
+
     <?php endif; /*end sections_area*/ ?>

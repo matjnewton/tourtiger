@@ -993,7 +993,7 @@ $testimonials_background_id;
                                     <li class="<?php if($accol==5): ?>five-cols <?php else: ?>col-xs-6 col-sm-<?php echo $accol; ?><?php endif; ?>">
                                     <?php if($image_url): ?>
                                         <a href="<?php if($link): echo $link; endif; ?>" target="_blank">
-                                            <img src="<?php echo $image_url; ?>" class="img-responsive" style="max-height: <?=$acclogos_size?>px" />
+                                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_url; ?>" class="img-responsive" style="max-height: <?=$acclogos_size?>px" />
                                         </a>
                                     <?php endif; ?>
                                     </li>
