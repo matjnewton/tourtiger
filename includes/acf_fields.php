@@ -1619,6 +1619,12 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'rows' => 2,
         'new_lines' => '',
       ),
+        array (
+            'key' => 'field_5378wuefbdwdc',
+            'label' => 'Use Custom phone HTML in Footer',
+            'name' => 'custom_phone_html_in_footer',
+            'type' => 'true_false',
+        ),
       array (
         'key' => 'field_571b51f415fc4',
         'label' => 'Phone number on mobile',

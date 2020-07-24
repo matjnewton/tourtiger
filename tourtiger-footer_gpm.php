@@ -10,6 +10,8 @@ $adm_lng = $sitepress_settings['admin_default_language'] ? $sitepress_settings['
 $footer_areas = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_footer_areas' : 'options_footer_areas';
 $options_address = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_address' : 'options_address';
 $options_phone_number = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_phone_number' : 'options_phone_number';
+$options_phone_html = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_custom_phone_html' : 'options_custom_phone_html';
+$options_use_phone_html = defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE !== $adm_lng ? '  options_' . ICL_LANGUAGE_CODE . '_custom_phone_html_in_footer' : 'options_custom_phone_html_in_footer';
 
 
 if (get_field('advanced_footer', 'option')) :
@@ -126,6 +128,8 @@ else :
 
   $address = get_option( $options_address );
   $phone_number = get_option( $options_phone_number );
+  $use_phone_html = get_option( $options_use_phone_html );
+  $phone_html = $use_phone_html ? get_option( $options_phone_html ) : '';
 
 
   $fa_rows = get_option( $footer_areas );
@@ -203,7 +207,7 @@ else :
     endforeach;
   endif;
 
-    if($address || $phone_number): ?>
+    if($address || $phone_number || ($use_phone_html && $phone_html)): ?>
 
         <div class="col-sm-2">
 
@@ -230,18 +234,22 @@ else :
                         echo $address;
                     } ?>
                 </address>
-            <?php endif; ?>
-            <?php if($phone_number): ?>
+            <?php endif;
+            if($phone_number || ($use_phone_html && $phone_html)): ?>
                 <?php
-                $phone = preg_replace('/[+]/', '00', $phone_number);
-                $phone = preg_replace('/\D+/', '', $phone);
-                ?>
-                <div class="phone">
-                    <a href="tel:<?php echo $phone; ?>">
-                        <?php echo $phone_number; ?>
-                    </a>
-                </div>
-            <?php endif; ?>
+
+                if ($use_phone_html && $phone_html) :
+                    echo $phone_html;
+                else :
+                    $phone = preg_replace('/[+]/', '00', $phone_number);
+                    $phone = preg_replace('/\D+/', '', $phone); ?>
+                    <div class="phone">
+                        <a href="tel:<?php echo $phone; ?>">
+                            <?php echo $phone_number; ?>
+                        </a>
+                    </div><?php
+                endif;
+            endif; ?>
         </div>
     <?php        endif;
 
