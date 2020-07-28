@@ -31,7 +31,7 @@ if( have_rows('hero_area', 'option') ):
                         <?php $images = get_sub_field('hero_slides');
                                 ?>
                                 <?php if( $images ): ?>
-                             <div id="slider" class="flexslider hello">
+                             <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ): ?>
                             <?php
@@ -39,7 +39,7 @@ if( have_rows('hero_area', 'option') ):
                                 //$img_url = $slider_image['url'];
 
                             ?>
-                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:539px;">
+                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:539px;">
                                         <div class="tint"></div>
                                         <div class="container">
                                             <div class="row">
