@@ -95,7 +95,18 @@
 }
 <?php endif; ?>
 <?php if($himage ): ?>
-@media (min-width:481px){
+
+@media (min-width:1441px){
+    .banner-wrapper-inner{
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: 50%;
+    background-image:url(<?php echo $himage; ?>);
+    }
+}
+
+
+@media (min-width:481px) and (max-width:1440px){
     .banner-wrapper-inner{
         background-repeat:no-repeat;
         background-size:1440px auto;
@@ -233,7 +244,17 @@ endif; /*end hero_area*/
 }
 <?php endif; ?>
 <?php if($himage ): ?>
-@media (min-width:481px){
+@media (min-width:1441px){
+    .banner-wrapper-inner{
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: 50%;
+        background-image:url(<?php echo $himage; ?>);
+    }
+}
+
+
+@media (min-width:481px) and (max-width:1440px){
     .banner-wrapper-inner{
         background-repeat:no-repeat;
         background-size:1440px auto;
