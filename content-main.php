@@ -46,15 +46,13 @@ if ($posttags) { ?>
                         </div>
             <!--<span class="entry-date"><?php echo get_the_date(); ?></span>-->
 
+            <?php
+            $excerpt = ( strlen($post->post_content) < 400 )
+                ? preg_replace('/<img.*?>/', '', $post->post_content)
+                : get_the_excerpt();
+            ?>
             <div class="blog-content excerpt-container">
-            <?php /*if ('' != get_the_post_thumbnail()): {
-                            $thumb = get_post_thumbnail_id();
-                            $img_url = wp_get_attachment_url( $thumb,'full');
-                            $image = aq_resize( $img_url, 119, 119, true );*/
-                        ?>
-                            <!--<a href="<?php the_permalink() ?>"><img src="<?=$image?>" class="img-responsive" /></a>-->
-            <?php //} endif; ?>
-            <?php the_excerpt(); ?>
+            <?php echo $excerpt; ?>
             </div>
 
         </div>
