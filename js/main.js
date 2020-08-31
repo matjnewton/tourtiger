@@ -238,13 +238,21 @@ $(window).resize(function () {
 
 			if ($sticky.length === 1) {
 
+				const $bw = $('.banner-wrapper');
 				const regex1 = /(.+url\(.+)/g;
+				const regex2 = /(url\(.+)/g;
+
 				const bwiTop = $('.corona-alert').height() + $('.header-bar').height() - 5;
 
 				if ($bannerWrapperInner.css('background').match(regex1)) {
 
 					$bannerWrapperInner.css({'top': bwiTop, 'position':'relative'});
 					$('.site-inner').css({'top': bwiTop, 'position':'relative'});
+
+				} else if ($bw.css('background').match(regex2)) {
+					const bwh = $bw.height();
+					$bw.height( bwh + bwiTop);
+					$bw.css({'background-size': 'cover', 'background-position': '0% ' + bwiTop + 'px'})
 
 				}
 			}
