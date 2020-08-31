@@ -254,6 +254,8 @@ $(window).resize(function () {
 					$bw.height( bwh + bwiTop);
 					$bw.css({'background-size': 'cover', 'background-position': '0% ' + bwiTop + 'px'})
 
+				} else {
+					$('.site-inner').css({'top': bwiTop, 'position':'relative'});
 				}
 			}
 		}
