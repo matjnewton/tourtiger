@@ -235,6 +235,19 @@ $(window).resize(function () {
 
 			newMarginTop = $('.secondary-menu-wrapper').height();
 			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+
+			if ($sticky.length === 1) {
+
+				const regex1 = /(.+url\(.+)/g;
+				const bwiTop = $('.corona-alert').height() + $('.header-bar').height() - 5;
+
+				if ($bannerWrapperInner.css('background').match(regex1)) {
+
+					$bannerWrapperInner.css({'top': bwiTop, 'position':'relative'});
+					$('.site-inner').css({'top': bwiTop, 'position':'relative'});
+
+				}
+			}
 		}
 	};
 
