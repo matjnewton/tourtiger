@@ -236,22 +236,6 @@ $(window).resize(function () {
 
 			newMarginTop = $('.secondary-menu-wrapper').height();
 			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
-
-			if ($sticky.length === 1) {
-
-				const $bw = $('.banner-wrapper');
-				const bwiTop = $('.corona-alert').height() + $('.header-bar').height() - 5;
-				const bwh = $bw.height();
-				
-				if ($('body').hasClass('single')) {
-					$bw.css({'background-size': 'contain'});
-				} else {
-					$bannerWrapperInner.css({'top': bwiTop, 'position':'relative'});
-					$si.css({'top': bwiTop, 'position':'relative'});
-					$bw.height( bwh + bwiTop/2);
-					$bw.css({'background-size': 'cover', 'background-position': '0% ' + bwiTop + 'px'});
-				}
-			}
 		}
 	};
 
