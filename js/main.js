@@ -178,7 +178,6 @@ $(window).resize(function () {
 		var newMarginTop;
 		var $bannerWrapperInner = $('.banner-wrapper-inner');
 		var heroMarginTopZero = $bannerWrapperInner.data().marginTopZero;
-		const $si = $('.site-inner');
 
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
 
