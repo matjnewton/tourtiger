@@ -178,6 +178,7 @@ $(window).resize(function () {
 		var newMarginTop;
 		var $bannerWrapperInner = $('.banner-wrapper-inner');
 		var heroMarginTopZero = $bannerWrapperInner.data().marginTopZero;
+		const $si = $('.site-inner');
 
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
 
@@ -195,7 +196,7 @@ $(window).resize(function () {
 			if ( !is_banner ) {
 
 				if (heroMarginTopZero && !$('body').hasClass('error404')) {
-					$('.site-inner').css( 'margin-top', 0 );
+					$si.css( 'margin-top', 0 );
 				} else $('.site-inner').css( 'margin-top', newMarginTop );
 
 				$unessesarily.css('margin-top', 0);
@@ -203,12 +204,12 @@ $(window).resize(function () {
 
 			if ( is_post || is_product ) {
 				newMarginTop = $('.header-bar-wrapper').height();
-				$('.site-inner').css( 'margin-top', newMarginTop );
+				$si.css( 'margin-top', newMarginTop );
 			}
 
 			if ( is_blog  ) {
 				newMarginTop = $('.header-bar-wrapper').height();
-				$('.site-inner').css( 'margin-top', newMarginTop );
+				$si.css( 'margin-top', newMarginTop );
 			}
 
 			if ( is_tour || is_home ) {
@@ -216,7 +217,7 @@ $(window).resize(function () {
 
 				if (heroMarginTopZero) {
 					$bannerWrapperInner.css( 'margin-top', 0 );
-					$('.site-inner').css( 'margin-top', 0 );
+					$si.css( 'margin-top', 0 );
 				}
 				else $bannerWrapperInner.css( 'margin-top', newMarginTop );
 			}
@@ -224,7 +225,7 @@ $(window).resize(function () {
 		} else if ( is_404 ) {
 
 			newMarginTop = $('.header-bar-wrapper').height();
-			$('.site-inner').css( 'margin-top', newMarginTop );
+			$si.css( 'margin-top', newMarginTop );
 
 		} else if ( is_blog ) {
 
@@ -239,23 +240,16 @@ $(window).resize(function () {
 			if ($sticky.length === 1) {
 
 				const $bw = $('.banner-wrapper');
-				const regex1 = /(.+url\(.+)/g;
-				const regex2 = /(url\(.+)/g;
-
 				const bwiTop = $('.corona-alert').height() + $('.header-bar').height() - 5;
-
-				if ($bannerWrapperInner.css('background').match(regex1)) {
-
-					$bannerWrapperInner.css({'top': bwiTop, 'position':'relative'});
-					$('.site-inner').css({'top': bwiTop, 'position':'relative'});
-
-				} else if ($bw.css('background').match(regex2)) {
-					const bwh = $bw.height();
-					$bw.height( bwh + bwiTop);
-					$bw.css({'background-size': 'cover', 'background-position': '0% ' + bwiTop + 'px'})
-
+				const bwh = $bw.height();
+				
+				if ($('body').hasClass('single')) {
+					$bw.css({'background-size': 'contain'});
 				} else {
-					$('.site-inner').css({'top': bwiTop, 'position':'relative'});
+					$bannerWrapperInner.css({'top': bwiTop, 'position':'relative'});
+					$si.css({'top': bwiTop, 'position':'relative'});
+					$bw.height( bwh + bwiTop/2);
+					$bw.css({'background-size': 'cover', 'background-position': '0% ' + bwiTop + 'px'});
 				}
 			}
 		}
