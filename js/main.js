@@ -189,7 +189,7 @@ $(window).resize(function () {
 			newMarginTop  = headerWrapper - secondary;
 
 			if ( is_logged ) {
-				if (!is_home) $('.header-bar-wrapper').css('top', 32);
+				// if (!is_home) $('.header-bar-wrapper').css('top', 32);
 			}
 
 			newMarginTop += 32;
