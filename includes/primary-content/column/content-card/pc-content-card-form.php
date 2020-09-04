@@ -78,9 +78,9 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                */
               $class = $field['type'] . ' gfield_' . $field['type'];
               $attr  = '';
-              $attr .= 'placeholder="' . $field['placeholder'] . '" ';
+              $attr .= $field['placeholder'] ? 'placeholder="' . $field['placeholder'] . '" ' : '';
               $attr .= 'data-field-label="' . $field['label'] . '" ';
-              $attr .= 'data-field-required="' . $field['isRequired'] . '" ';
+              $attr .= $field['isRequired'] ? 'data-field-required="' . $field['isRequired'] . '" ' : '';
 
               /**
                * Conditional logic
@@ -304,10 +304,10 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                  */
                 case 'date':
                   switch ($field['dateFormat']) :
-                    case 'd-m-y':
+                    case 'dmy_dash':
                       $field['dateFormat'] = 'DD-MM-YYYY';
                       break;
-                    case 'm-d-y':
+                    case 'mdy_dash':
                       $field['dateFormat'] = 'MM-DD-YYYY';
                       break;
                     case 'dmy':
@@ -324,9 +324,6 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                       break;
                     case 'ymd_dot':
                       $field['dateFormat'] = 'YYYY.MM.DD';
-                      break;
-                    case 'dmy':
-                      $field['dateFormat'] = 'DD/mm/yyyy';
                       break;
                     case 'mdy':
                     default;
@@ -346,6 +343,8 @@ $form_id = get_sub_field( 'tour_pc-coltype--form_ob' );
                   $attr  .= 'class="' . $class . '" ';
                   $attr  .= 'style="height:54px;" ';
                   $attr .= $attr_conditional;
+                  $attr .= $field['limitDateRangeMinDate'] ? 'data-min-date="'.$field['limitDateRangeMinDate'].'"' : '';
+                  $attr .= $field['limitDateRangeMaxDate'] ? 'data-max-date="'.$field['limitDateRangeMaxDate'].'"' : '';
 
                   echo "<input " . $attr . " /><style>#vinetrekker_piker.daterangepicker{margin-left:0!important;
 										}</style>";

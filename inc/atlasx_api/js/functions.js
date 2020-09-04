@@ -18,13 +18,13 @@
     wqs_xola.controller('wqs_search_controller', function ($scope, $http, $q, dataServiceXola, dataServiceXolaAjax, dataServiceXolaAjaxMore, dataServiceXolaAjaxMoreNext, dataServiceXolaAjaxMorePrev, $timeout, $filter, $window, GetUrlParameter, TimeArray, dataServiceAtlas, dataServiceAtlasAjax) {
     	//console.log('load wqs_search_controller');
 	// load cpt product
-	    var wqs_api_url = jQuery('#wqs_api_url').val(); 
+	    var wqs_api_url = jQuery('#wqs_api_url').val();
 	      $http.get(wqs_api_url)
 	        .then(function(response){
 	        	var cpt_product ={};
 	        	cpt_product = response.data;
 	            $scope.cpt_product = response.data;
-	            
+
 	            // only for local
 	            //$scope.message();
 	            //$scope.SetGroupAvailableSeats();
@@ -47,8 +47,8 @@
 
     // enable load animations
          $scope.loading = true;
-	
-	// get XOLA product list 
+
+	// get XOLA product list
 
 	//https://silent.xola.com/api/experiences/56098357cf8b9cc6348b45f0/availability?_format=json
 	//https://silent.xola.com/api/experiences/56098357cf8b9cc6348b45f0/availability?_format=json&start=2016-11-26&end=2016-11-26
@@ -59,12 +59,12 @@
 		    .then(function(response){
 		        var api_products_xola = {};
 		        $scope.api_products_xola = {};
-		        
+
 		        api_products_xola = response.data.data;
 		        $scope.api_products_xola.products = api_products_xola;
 		        return api_products_xola;
 		   	}).then(function(api_products_xola){
-		   			
+
 		   			//atlas
 		   			var start = GetUrlParameter.getURL('startTime');
 		         	var finish = GetUrlParameter.getURL('endTime');
@@ -80,7 +80,7 @@
 		         	//console.log(start_finish);
 		         	var finish_plus1 = moment.utc(finish).add(1, 'days').format('YYYY-MM-DD');
 					$scope.timearray = start_finish;
-					// Loadmore 
+					// Loadmore
 					var start_finish_more = [];
 					start_finish_more.push( finish_plus1 );
 					$scope.timearrayLoadmore = start_finish_more;
@@ -94,7 +94,7 @@
 		         	angular.forEach(start_finish, function(atlas_date, key) {
 
 			            promiseObj_atlas=dataServiceAtlas.getData(products.id,atlas_date);
-			            promiseObj_atlas.then(function(value, products) { 
+			            promiseObj_atlas.then(function(value, products) {
 			            });
 
 			        	promises.push(promiseObj_atlas);
@@ -102,7 +102,7 @@
 		            });
 
 		        });
-	          
+
 			// promise api_availability
 		        $q.all(promises).then(function(e){
 		        	//console.log(e);
@@ -130,7 +130,7 @@
 		    }
 		    return total;
 		}
-	    //-duration 
+	    //-duration
 	    $scope.duration = function(start, end ) {
 			var timestamp1 = new Date(start).getTime();
 			var timestamp2 = new Date(end).getTime();
@@ -192,14 +192,14 @@
 										//console.log(Object.keys(seats_array)[0]);
 										departure = $scope.parseFloat(Object.keys(seats_array)[0]);
 									}
-									
+
 									sum += parseInt($scope.get_all_seat(seats_array));
 									if(departure !=0) {
 										priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
 									}
 									// priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
 								}
-								
+
 							});
 						});
 					AllSetGroup.push({ cpt_id : cptproducts.id, time: $filter('asDate')(timearrays), sumseat: sum, price: priceGroup });
@@ -239,14 +239,14 @@
 										//console.log(Object.keys(seats_array)[0]);
 										departure = $scope.parseFloat(Object.keys(seats_array)[0]);
 									}
-									
+
 									sum += parseInt($scope.get_all_seat(seats_array));
 									if(departure !=0) {
 										priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
 									}
 									// priceGroup.push({ price: $scope.get_price(xolaproduct.productCode), departure: departure });
 								}
-								
+
 							});
 						});
 					AllSetGroup.push({ cpt_id : cptproducts.id, time: $filter('asDate')(timearrays), sumseat: sum, price: priceGroup });
@@ -376,7 +376,7 @@
 			angular.forEach($scope.timearrayLoadmore, function(timearrays, key) {
 				angular.forEach($scope.api_products_xola.products, function(products, index) {
 					angular.forEach($scope.api_availability_xola_more , function(api_availability, keys) {
-						
+
 						if ( $filter('asDate')(api_availability.atlas_date) == $filter('asDate')(timearrays) && products.id == api_availability.productCode && $scope.available_seat( api_availability[api_availability.atlas_date], api_availability.query_people ).available ) {
 							var yes = 0;
 							angular.forEach($scope.cpt_product , function(cptproducts, keyss) {
@@ -407,8 +407,8 @@
 				  //experience: $(e.target).data('experience')
 				};
 			xola.checkout(data);
-			
-		    //console.log(data);  
+
+		    //console.log(data);
 		};
 
 		$scope.widgetload_ = function (e) {
@@ -421,7 +421,7 @@
 				};
 
 			bookNowCabinById(data.experience, data.term);
-		    console.log(data);  
+		    console.log(data);
 		};
 
     //+ click availability use factory dataServiceAjax.getData
@@ -435,13 +435,13 @@
 		    .then(function(response){
 		        var api_products_xola = {};
 		        $scope.api_products_xola = {};
-		        
+
 		        api_products_xola = response.data.data;
 		        $scope.api_products_xola.products = api_products_xola;
 		        return api_products_xola;
 
 		   	}).then(function(api_products_xola){
-		   			
+
 		   			//atlas
 		   			var numpeople_ajax = $("#num_people_val").val();
 		   			if(numpeople_ajax) {
@@ -450,7 +450,7 @@
 		   			var start = $("#datepicker-from-input").val();
 		         	var finish = $("#datepicker-to-input").val();
 				    var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-			            return $(this).val();         
+			            return $(this).val();
 			        }).get();
 			        //console.log(tour_cat_arr);
 				    if (tour_cat_arr && tour_cat_arr != 0) {
@@ -467,7 +467,7 @@
 		         	//console.log(start_finish);
 		         	var finish_plus1 = moment.utc(finish).add(1, 'days').format('YYYY-MM-DD');
 					$scope.timearray = start_finish;
-					// Loadmore 
+					// Loadmore
 					var start_finish_more = [];
 					start_finish_more.push( finish_plus1 );
 					$scope.timearrayLoadmore = start_finish_more;
@@ -481,7 +481,7 @@
 		         	angular.forEach(start_finish, function(atlas_date, key) {
 
 			            promiseObj_atlas=dataServiceAtlasAjax.getData(products.id,atlas_date,$scope.num_people);
-			            promiseObj_atlas.then(function(value, products) { 
+			            promiseObj_atlas.then(function(value, products) {
 			            });
 
 			        	promises_click.push(promiseObj_atlas);
@@ -489,7 +489,7 @@
 		            });
 
 		        });
-	          
+
 			// promise api_availability
 
 		        $q.all(promises_click).then(function(e){
@@ -520,20 +520,20 @@
 		    .then(function(response){
 		        var api_products_xola = {};
 		        $scope.api_products_xola = {};
-		        
+
 		        api_products_xola = response.data.data;
 		        $scope.api_products_xola.products = api_products_xola;
 		        return api_products_xola;
 		   	}).then(function(api_products_xola){
 		         angular.forEach(api_products_xola, function(products, key) {
 		            var promiseObj_xola=dataServiceXolaAjaxMore.getData(products.id,$scope.num_people);
-		            promiseObj_xola.then(function(value, products) { 
+		            promiseObj_xola.then(function(value, products) {
 
 		            });
-		            
+
 		            promises_click.push(promiseObj_xola);
 		        });
-	          
+
 			// promise api_availability
 
 		        $q.all(promises_click).then(function(e){
@@ -560,13 +560,13 @@
 		    .then(function(response){
 		        var api_products_xola = {};
 		        $scope.api_products_xola = {};
-		        
+
 		        api_products_xola = response.data.data;
 		        $scope.api_products_xola.products = api_products_xola;
 		        return api_products_xola;
 
 		   	}).then(function(api_products_xola){
-		   			
+
 		   			//atlas
 		   			var start = $scope.timearrayLoadmore[0];
 		   			var lmlength = $scope.timearrayLoadmore.length;
@@ -586,14 +586,14 @@
 		         	angular.forEach(start_finish, function(atlas_date, key) {
 
 			            promiseObj_atlas=dataServiceAtlas.getData(products.id,atlas_date);
-			            promiseObj_atlas.then(function(value, products) { 
+			            promiseObj_atlas.then(function(value, products) {
 			            });
 
 			        	promises_click.push(promiseObj_atlas);
 
 		            });
 
-		        });	          
+		        });
 			// promise api_availability
 
 		        $q.all(promises_click).then(function(e){
@@ -624,13 +624,13 @@
 		    .then(function(response){
 		        var api_products_xola = {};
 		        $scope.api_products_xola = {};
-		        
+
 		        api_products_xola = response.data.data;
 		        $scope.api_products_xola.products = api_products_xola;
 		        return api_products_xola;
 
 		   	}).then(function(api_products_xola){
-		   			
+
 		   			//atlas
 		   			var numpeople_ajax = $("#num_people_val").val();
 		   			if(numpeople_ajax) {
@@ -641,7 +641,7 @@
 		   			start = start_plus1;
 		         	var finish = start;
 				    var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-			            return $(this).val();         
+			            return $(this).val();
 			        }).get();
 			        //console.log(tour_cat_arr);
 				    if (tour_cat_arr && tour_cat_arr != 0) {
@@ -658,7 +658,7 @@
 		         	//console.log(start_finish);
 		         	var finish_plus1 = moment.utc(finish).add(1, 'days').format('YYYY-MM-DD');
 					$scope.timearray = start_finish;
-					// Loadmore 
+					// Loadmore
 					var start_finish_more = [];
 					start_finish_more.push( finish_plus1 );
 					$scope.timearrayLoadmore = start_finish_more;
@@ -672,7 +672,7 @@
 		         	angular.forEach(start_finish, function(atlas_date, key) {
 
 			            promiseObj_atlas=dataServiceAtlasAjax.getData(products.id,atlas_date,$scope.num_people);
-			            promiseObj_atlas.then(function(value, products) { 
+			            promiseObj_atlas.then(function(value, products) {
 			            });
 
 			        	promises_click.push(promiseObj_atlas);
@@ -692,7 +692,7 @@
 					$scope.message();
 					//$scope.SetGroupAvailableSeats();
 		            //$scope.messageGroup();
-		            console.log($scope);					
+		            console.log($scope);
 
 					var startTime_next = $("#datepicker-from-input").val();
 					startTime_next = moment.utc(startTime_next).add(1, 'days').format('YYYY-MM-DD');
@@ -704,7 +704,7 @@
 			        });
 			    }); //end then
 			console.log($scope);
-		}; 
+		};
 	//end next xola click check_availability_angular
 
     //+ prev xola click availability use factory dataServiceAjaxNext.getData
@@ -719,21 +719,21 @@
 		    .then(function(response){
 		        var api_products_xola = {};
 		        $scope.api_products_xola = {};
-		        
+
 		        api_products_xola = response.data.data;
 		        $scope.api_products_xola.products = api_products_xola;
 		        return api_products_xola;
 		   	// }).then(function(api_products_xola){
 		    //      angular.forEach(api_products_xola, function(products, key) {
 		    //         var promiseObj_xola=dataServiceXolaAjaxMorePrev.getData(products.id);
-		    //         promiseObj_xola.then(function(value, products) { 
+		    //         promiseObj_xola.then(function(value, products) {
 
 		    //         });
-		            
+
 		    //         promises_click.push(promiseObj_xola);
 		    //     });
 		   	}).then(function(api_products_xola){
-		   			
+
 		   			//atlas
 		   			var numpeople_ajax = $("#num_people_val").val();
 		   			if(numpeople_ajax) {
@@ -744,7 +744,7 @@
 		   			start = start_minus1;
 		         	var finish = start;
 				    var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-			            return $(this).val();         
+			            return $(this).val();
 			        }).get();
 			        //console.log(tour_cat_arr);
 				    if (tour_cat_arr && tour_cat_arr != 0) {
@@ -761,7 +761,7 @@
 		         	//console.log(start_finish);
 		         	var finish_plus1 = moment.utc(finish).add(1, 'days').format('YYYY-MM-DD');
 					$scope.timearray = start_finish;
-					// Loadmore 
+					// Loadmore
 					var start_finish_more = [];
 					start_finish_more.push( finish_plus1 );
 					$scope.timearrayLoadmore = start_finish_more;
@@ -775,14 +775,14 @@
 		         	angular.forEach(start_finish, function(atlas_date, key) {
 
 			            promiseObj_atlas=dataServiceAtlasAjax.getData(products.id,atlas_date,$scope.num_people);
-			            promiseObj_atlas.then(function(value, products) { 
+			            promiseObj_atlas.then(function(value, products) {
 			            });
 
 			        	promises_click.push(promiseObj_atlas);
 
 		            });
 
-		        });	          
+		        });
 			// promise api_availability
 
 		        $q.all(promises_click).then(function(e){
@@ -810,7 +810,7 @@
 			        });
 			    }); //end then
 			console.log($scope);
-		}; 
+		};
 	//end prev xola click check_availability_angular
 
 
@@ -832,11 +832,11 @@
 
 		      if ( ( $(window).scrollTop() >=  $('#mainContentAng').height() -400 && load ) && (type_search != 'one_date') ) {
 			      	console.log('infinite js 01');
-			      	
+
 			      	$scope.loading = true;
 			        scrollLoad = false;
 
-			        $scope.check_availability_atlas_more(); // check available 
+			        $scope.check_availability_atlas_more(); // check available
 
 			        var start = $scope.timearrayLoadmore[0];
 			        var next = $scope.timearrayLoadmore[0];
@@ -856,14 +856,14 @@
 		       }
 
         },3000);
-		
+
 
         });
 
 
 
     // end infinite js
-	    
+
     });
 //end controler
 
@@ -894,7 +894,7 @@ wqs_xola.factory('TimeArray', function () {
 	return{
 		EnumerateDaysBetweenDates : function(startDate, endDate) {
 		    var now = startDate, dates = [];
-		      
+
 		    while (now.isBefore(endDate) || now.isSame(endDate)) {
 		            dates.push(now.format('YYYY-MM-DD'));
 		            now.add('days', 1);
@@ -929,7 +929,7 @@ wqs_xola.factory('TimeArray', function () {
 				// get
 				//http://customxolareports.azurewebsites.net/northwood/ziplineavailability/{experienceid}/{date yyyy-MM-dd}/{guests}
                 // $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences/'+productCode+'/availability?_format=json&start='+startTime+'&end='+endTime+''}).
-                
+
 
 
 	                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/http://customxolareports.azurewebsites.net/northwood/ziplineavailability/'+productCode+'/'+atlas_date+'/'+num_people+''}).
@@ -981,7 +981,7 @@ wqs_xola.factory('TimeArray', function () {
         return{
             getData: function(productCode,startTime,endTime){
                 var deferred = $q.defer();
-        		
+
         		//console.log('dataServiceXola 03');
 
 			    //var search_tour_cat = getUrlParameter('search_tour_cat');
@@ -1022,7 +1022,7 @@ wqs_xola.factory('TimeArray', function () {
 				angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
 				//console.log(daysOfYear);
 
-				// Loadmore 
+				// Loadmore
 				var daysOfYearMore = [];
 				daysOfYearMore.push( endTime_plus1 );
 				angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore = daysOfYearMore;
@@ -1033,7 +1033,7 @@ wqs_xola.factory('TimeArray', function () {
 				// get
 				//http://customxolareports.azurewebsites.net/northwood/ziplineavailability/{experienceid}/{date yyyy-MM-dd}/{guests}
                 // $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences/'+productCode+'/availability?_format=json&start='+startTime+'&end='+endTime+''}).
-                
+
 
 
 	                $http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/http://customxolareports.azurewebsites.net/northwood/ziplineavailability/'+productCode+'/'+startTime+'/'+num_people+''}).
@@ -1062,7 +1062,7 @@ wqs_xola.factory('TimeArray', function () {
 	        var datepicker_from = $("#datepicker-from-input").val();
 	        var datepicker_to = $("#datepicker-to-input").val();
 	        var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-	            return $(this).val();         
+	            return $(this).val();
 	        }).get();
 
 
@@ -1084,11 +1084,11 @@ wqs_xola.factory('TimeArray', function () {
 			var toDate = moment.utc(endTime);
 			daysOfYear = TimeArray.EnumerateDaysBetweenDates(fromDate, toDate);
 			angular.element('[ng-controller=wqs_search_controller]').scope().timearray = daysOfYear;
-				
+
 			//set scrollindex
 			angular.element('[ng-controller=wqs_search_controller]').scope().scrollindex = 1;
 
-			// load timearray for Loadmore 
+			// load timearray for Loadmore
 			var daysOfYearMore = [];
 			daysOfYearMore.push( endTime_plus1 );
 			angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore = daysOfYearMore;
@@ -1097,7 +1097,7 @@ wqs_xola.factory('TimeArray', function () {
 			var num_people = $("#num_people_val").val();
 			angular.element('[ng-controller=wqs_search_controller]').scope().num_people = num_people;
 
-            	$http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/http://customxolareports.azurewebsites.net/northwood/ziplineavailability/'+productCode+'/'+startTime+'/'+num_people+''}).    
+            	$http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/http://customxolareports.azurewebsites.net/northwood/ziplineavailability/'+productCode+'/'+startTime+'/'+num_people+''}).
                 //$http({method: 'GET', url: 'https://cors-anywhere.herokuapp.com/https://silent.xola.com/api/experiences/'+productCode+'/availability?_format=json&start='+startTime+'&end='+endTime+''}).
                  success(function(data, status, headers, config) {
                     //deferred.resolve(data.sessions);
@@ -1119,12 +1119,12 @@ wqs_xola.factory('TimeArray', function () {
         return{
             getData: function(productCode,startTime,endTime,num_people){
                 var deferred = $q.defer();
-        	
+
         	//console.log('factory dataServiceAjaxmore xola 02');
 
         	// load category
 		        var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-		            return $(this).val();         
+		            return $(this).val();
 		        }).get();
 
 			    if (tour_cat_arr && tour_cat_arr != 0) {
@@ -1143,7 +1143,7 @@ wqs_xola.factory('TimeArray', function () {
 			    var length = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore.length;
 				var endTime = angular.element('[ng-controller=wqs_search_controller]').scope().timearrayLoadmore[length-1];
 				//console.log('endTime');console.log(endTime);
-			    
+
 			  //   var endTime_plus1 = new Date(endTime);
 			  //   endTime_plus1.setDate(endTime_plus1.getDate() + 1);
  				// endTime_plus1 = $filter('date')(new Date(endTime_plus1), 'yyyy-MM-dd');
@@ -1173,12 +1173,12 @@ wqs_xola.factory('TimeArray', function () {
         return{
             getData: function(productCode,startTime,endTime){
                 var deferred = $q.defer();
-        
+
             //console.log('dataServiceXolaAjaxMoreNext 02');
 	        var datepicker_from = $("#datepicker-from-input").val();
 	        var datepicker_to = $("#datepicker-to-input").val();
 	        var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-	            return $(this).val();         
+	            return $(this).val();
 	        }).get();
 
 		    if (tour_cat_arr && tour_cat_arr != 0) {
@@ -1221,13 +1221,13 @@ wqs_xola.factory('TimeArray', function () {
         return{
             getData: function(productCode,startTime,endTime){
                 var deferred = $q.defer();
-        
+
             //console.log('dataServiceXolaAjaxMorePrev 02');
 
 	        var datepicker_from = $("#datepicker-from-input").val();
 	        var datepicker_to = $("#datepicker-to-input").val();
 	        var tour_cat_arr = $(".checkbox_term:checked").map(function() {
-	            return $(this).val();         
+	            return $(this).val();
 	        }).get();
 
 		    if (tour_cat_arr && tour_cat_arr != 0) {
@@ -1241,7 +1241,7 @@ wqs_xola.factory('TimeArray', function () {
 			    var startTime_minus2 = moment(startTime_minus1).subtract(1, 'days').format('YYYY-MM-DD');
 				var endTime = datepicker_to;
 				//console.log('endTime '+endTime);
-			    
+
 				// load timearray
 				var daysOfYear = [];
 				var fromDate = moment.utc(startTime_minus1);
@@ -1342,8 +1342,8 @@ function bookNowCabinById(id, resource, isStaff) {
     } else {
     	$('#booknowmodal').show();
     }
-    
-    
+
+
 
 }
 

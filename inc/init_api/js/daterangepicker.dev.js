@@ -66,7 +66,7 @@
 
         this.locale = {
             direction: 'ltr',
-            format: 'MM/DD/YYYY',
+            format: this.element.data().dateFormat ? this.element.data().dateFormat.toUpperCase() : 'MM/DD/YYYY',
             separator: ' - ',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
@@ -92,7 +92,10 @@
         //data-api options will be overwritten with custom javascript options
         options = $.extend(this.element.data(), options);
 
-        //html template for the picker UI
+        if ( this.element.data().minDate ) options.minDate = moment(this.element.data().minDate, this.locale.format);
+        if ( this.element.data().maxDate ) options.maxDate = moment(this.element.data().maxDate, this.locale.format);
+
+            //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template = '<div id="vinetrekker_piker" class="daterangepicker dropdown-menu">' +
                 '<div class="calendar left">' +
@@ -332,7 +335,7 @@
 
                 // If the end of the range is before the minimum or the start of the range is
                 // after the maximum, don't display this range option at all.
-                if ((this.minDate && end.isBefore(this.minDate, this.timepicker ? 'minute' : 'day')) 
+                if ((this.minDate && end.isBefore(this.minDate, this.timepicker ? 'minute' : 'day'))
                   || (maxDate && start.isAfter(maxDate, this.timepicker ? 'minute' : 'day')))
                     continue;
 
@@ -452,7 +455,7 @@
             this.element.val(this.startDate.format(this.locale.format) + this.locale.separator + this.endDate.format(this.locale.format));
             this.element.trigger('change');
         } else if (this.element.is('input') && this.autoUpdateInput) {
-            this.element.val(this.startDate.format(this.locale.format));
+            this.element.val(this.startDate.format(this.locale.format.toUpperCase()));
             this.element.trigger('change');
         }
 
@@ -523,7 +526,7 @@
             this.updateMonthsInView();
         },
 
-        // dgamoni 
+        // dgamoni
         setMinDate: function(minDate) {
             if (typeof minDate === 'string')
                 this.minDate = moment(minDate, this.locale.format);
@@ -542,7 +545,7 @@
 
             this.updateMonthsInView();
         },
-        
+
         isInvalidDate: function() {
             return false;
         },
@@ -867,7 +870,7 @@
                     }
                     if (!disabled)
                         cname += 'available';
-                    
+
                     // dgamoni
                     var classselect= '';
                     var availablecount ='';
@@ -1212,7 +1215,7 @@
             this.container.addClass('show-calendar');
             this.move();
             this.element.trigger('showCalendar.daterangepicker', this);
-            
+
         },
 
         hideCalendars: function() {
@@ -1563,7 +1566,7 @@
             this.container.find('input[name="daterangepicker_start"], input[name="daterangepicker_end"]').removeClass('active');
             $(e.target).addClass('active');
 
-            // Set the state such that if the user goes back to using a mouse, 
+            // Set the state such that if the user goes back to using a mouse,
             // the calendars are aware we're selecting the end of the range, not
             // the start. This allows someone to edit the end of a date range without
             // re-selecting the beginning, by clicking on the end date input then
