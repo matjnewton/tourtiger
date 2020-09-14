@@ -6932,7 +6932,8 @@ ul {
 .site-container .main-nav-wrapper .social-media {
     display: inline-block;
     float: right;
-    margin-left: 20px
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .site-container .above-split-bar .social-media li,
