@@ -11188,7 +11188,8 @@ footer .btn.btn-search:hover {
 footer .search-form-wrapper {
     background: 0 0;
     border: 1px solid #fff;
-    line-height: 1em
+    line-height: 1em;
+    width:100%
 }
 .search-form-wrapper input[type=text] {
     border: none;
