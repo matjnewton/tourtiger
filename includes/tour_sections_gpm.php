@@ -5,8 +5,8 @@
         <?php $hero_area = get_post_meta( get_the_ID(), 'hero_area', true ); ?>
             <div class="col-sm-12 right-col<?php if( $hero_area ): echo " bear-banner"; else: echo " skip-banner"; endif;?>">
             <?php $rows = get_post_meta( get_the_ID(), 'sidebar_1', true ); ?>
-            <?php 
-                if($rows): 
+            <?php
+                if($rows):
                     foreach( (array) $rows as $count => $row ):
                         switch( $row ):
                             case 'button':
@@ -18,7 +18,7 @@
                                $third_party = get_post_meta( get_the_ID(), 'sidebar_1_' . $count . '_third_party', true );
                                $mobd = get_post_meta( get_the_ID(), 'sidebar_1_' . $count . '_multi_option_button_dropdown', true );
                                $click_to_call = get_option( 'options_click_to_call' );
-                               $phone_number = get_option( 'options_phone_number' );     
+                               $phone_number = get_option( 'options_phone_number' );
                     ?>
                                 <?php if($click_to_call && $phone_number): ?>
                         <?php $phone = preg_replace('/\D+/', '', $phone_number); ?>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <?php endif; ?>
-                        
+
                         <div class="center-block center-booking<?php if($click_to_call && $phone_number): ?> relative-pos<?php endif; ?>">
                                 <div<?php if(!$click_to_call): ?> id="booking2"<?php endif; ?> class="book-tour-wrapper booking-sidebar">
                         <?php if($bbt && !$mobd): ?>
@@ -40,11 +40,11 @@
                         <?php endif; ?><!-- end of button-->
                                 </div>
                         </div>
-                    <?php 
+                    <?php
                             break;
                         endswitch;
                     endforeach;
-                endif; 
+                endif;
             ?>
             </div>
         </div>
@@ -54,12 +54,12 @@
         <div class="container">
             <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?> left-col"><!-- not closed yet-->
-                <?php $sections = get_post_meta( get_the_ID(), 'sections_area', true ); 
+                <?php $sections = get_post_meta( get_the_ID(), 'sections_area', true );
                         if( $sections ):
                             for( $i = 0; $i < $sections; $i++ ):
                                 $headline = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_headline', true ) );
                                 $headline_align = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_headline_text_align', true );
-                                
+
                 ?>
                     <section class="section-item">
                         <?php if($headline): ?>
@@ -67,21 +67,21 @@
                             <?php echo $headline; ?>
                         </h2>
                         <?php endif; ?>
-                        <?php 
+                        <?php
                             $rows = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements', true );
                             if($rows):
                                 foreach( (array) $rows as $count => $row ):
                                     switch( $row ):
                                         case 'section_subheadline':
                                             $subheadline = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_subheadline', true ) );
-                                            
+
                         ?>
                         <?php if($subheadline): ?>
                         <h3>
                             <?php echo $subheadline; ?>
                         </h3>
                         <?php endif; ?>
-                        <?php 
+                        <?php
                                         break;
                                         case 'image':
                                             $img = (int) get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_image', true );
@@ -96,7 +96,7 @@
                         <img src="<?=$img_url?>" alt="<?=$img_url?>" class="full-embed img-responsive" />
                                 <?php endif; ?>
                         </div>
-                        <?php                  
+                        <?php
                                         break;
                                         case 'content_editor':
                                             $content = apply_filters('the_content', get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_content', true ));
@@ -107,12 +107,12 @@
                             <?php if($content): echo $content; endif; ?>
                             </div>
                         </div>
-                        <?php                
+                        <?php
                                         break;
                                         case 'classic_details':
                                             $details_list = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_details_list', true );
                                             if($details_list):
-                        ?>                
+                        ?>
                         <ul class="classic-details-list">
                         <?php
                                                 for( $j = 0; $j < $details_list; $j++ ):
@@ -130,14 +130,14 @@
                                 </div>
                             </li>
                         <?php
-                                                endfor;    
+                                                endfor;
                         ?>
                         </ul>
-                        <?php              
+                        <?php
                                             endif; //$details_list
                                         break;
                                         case 'classic_itinerary':
-                                            $num = 1; 
+                                            $num = 1;
                                             $ki = (int)$num;
                                             $itinerary_list = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list', true );
                                             if($itinerary_list):
@@ -149,7 +149,7 @@
                                                     $img = (int) get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list_' . $k . '_image', true );
                                                     $img_url = wp_get_attachment_url( $img,'full');
                                                     $image = aq_resize( $img_url, 600, 258, true );
-                                                    $paragraph = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list_' . $k . '_paragraph', true ));      
+                                                    $paragraph = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_itinerary_list_' . $k . '_paragraph', true ));
                         ?>
                             <div class="row">
                                 <div class="col-sm-12 itinerary-inner-offset">
@@ -174,14 +174,14 @@
                             </div><!-- end .row -->
                         <?php
                                                 $ki++;
-                                                endfor;  
-                        ?>    
-                        </div><!-- end .classic-itinerary-list-->                  
+                                                endfor;
+                        ?>
+                        </div><!-- end .classic-itinerary-list-->
                         <?php
                                             endif; //$itinerary_list
                                         break;
                                         case 'multiple_trip_details':
-                                            $gal_num = 0; 
+                                            $gal_num = 0;
                                             $gn = (int)$gal_num;
                                             $trip_list = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list', true );
                                             if($trip_list):
@@ -195,7 +195,7 @@
                                                     $image = aq_resize( $img_url, 715, 303, true );
                                                     $images = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_gallery', true );
                                                     $paragraph = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_paragraph', true ));
-                                                    $custom_options = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_custom_options', true );  
+                                                    $custom_options = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_custom_options', true );
                         ?>
                         <div class="trip-item">
                                     <?php if($image): ?>
@@ -204,8 +204,8 @@
                                 <?php if( $images ): ?>
                                 <div class="gallery">
                                     <div class="photo-gallery gallery-one gallery-<?php echo $gn; ?>">
-                                        <?php 
-                                            foreach( $images as $image ): 
+                                        <?php
+                                            foreach( $images as $image ):
                                         ?>
                             <?php
                                 $img_url = wp_get_attachment_url($image);
@@ -214,12 +214,12 @@
                                         <a href="<?php echo $img_url; ?>" class="w-inline-block photo-thumbnail">
                                             <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']; ?>" class="image-thumb img-responsive" />
                                         </a>
-                                        <?php 
-                                            endforeach; 
+                                        <?php
+                                            endforeach;
                                         ?>
                                     </div>
                                 </div>
-                                <?php endif; ?> 
+                                <?php endif; ?>
                                     <?php if($title): ?>
                                         <h4 class="trip-title text-center"><span><?php echo $title; ?></span></h4>
                                     <?php endif; ?>
@@ -237,9 +237,9 @@
                                         <?php else: ?>
                                             <ul class="details-row-wrapper">
                                         <?php endif; ?>
-                                        
-                                    <?php 
-                                        for( $mn = 0; $mn < $details_list; $mn++ ): 
+
+                                    <?php
+                                        for( $mn = 0; $mn < $details_list; $mn++ ):
                                     ?>
                                     <?php
                                     $label = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_trip_list_' . $m . '_details_list_' .$mn. '_label', true ));
@@ -254,7 +254,7 @@
                                             </div>
                                         </li>
                                     <?php endfor; ?>
-                                    
+
                                         </ul>
                                     <?php endif; ?>
 
@@ -266,9 +266,9 @@
                                     </div><!-- end .trip-item-->
                                     <?php $gn++; ?>
                         <?php
-                                                endfor;  
+                                                endfor;
                         ?>
-                            </div>                
+                            </div>
                         <?php
                                             endif; //$trip_list
                                         break;
@@ -277,7 +277,7 @@
                                         if($list_item):
                                         ?>
                                         <ul class="td-list">
-                                        <?php for( $p = 0; $p < $list_item; $p++ ): 
+                                        <?php for( $p = 0; $p < $list_item; $p++ ):
                                                 $icon = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_list_item_' . $p . '_icons', true );
                                                 $description = nl2br(get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_list_item_' . $p . '_description', true ));
                                         ?>
@@ -288,83 +288,83 @@
                                                     <?php if($icon == 'Accommodation'): ?>
                                                     <i class="fa fa-home"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Activities'): ?>
                                                     <i class="fa fa-spoon"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Ages'): ?>
                                                     <i class="fa fa-child"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Carbon Offset'): ?>
                                                     <i class="fa fa-leaf"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Departure Time'): ?>
                                                     <i class="fa fa-clock-o"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Difficulty'): ?>
                                                     <i class="fa fa-signal"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Duration'): ?>
                                                     <i class="fa fa-play"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Finish'): ?>
                                                     <i class="fa fa-flag-checkered"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Group size'): ?>
                                                     <i class="fa fa-group"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Highlights'): ?>
                                                     <i class="fa fa-camera"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Inclusions'): ?>
                                                     <i class="fa fa-list-ol"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Languages'): ?>
                                                     <i class="fa fa-globe"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Meals'): ?>
                                                     <i class="fa fa-cutlery"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Meeting Place'): ?>
                                                     <i class="fa fa-map-marker"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Options'): ?>
                                                     <i class="fa fa-file-text-o"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Places Visited'): ?>
                                                     <i class="fa fa-picture-o"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Price'): ?>
                                                     <i class="fa fa-tag"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Start'): ?>
                                                     <i class="fa fa-flag"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Transport'): ?>
                                                     <i class="fa fa-cab"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'Travel Style'): ?>
                                                     <i class="fa fa-tachometer"></i>
                                                     <?php endif; ?>
-                                                    
+
                                                     <?php if($icon == 'When'): ?>
                                                     <i class="fa fa-calendar"></i>
                                                     <?php endif; ?>
@@ -376,7 +376,7 @@
                                                     <?php if($description): echo $description; endif; ?>
                                                 </div>
                                             </li>
-                                        <?php endfor; ?>    
+                                        <?php endfor; ?>
                                         </ul>
                                         <?php
                                         endif; //$list_item
@@ -387,7 +387,7 @@
                                         ?>
                                         <div class="table-responsive">
                                             <table class="table table-bordered">
-                                            <?php for( $t = 0; $t < $table_row; $t++ ): 
+                                            <?php for( $t = 0; $t < $table_row; $t++ ):
                                                     $cell_1 = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_table_row_' .$t. '_cell_1', true );
                                                     $cell_2 = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_table_row_' .$t. '_cell_2', true );
                                                     $cell_3 = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_table_row_' .$t. '_cell_3', true );
@@ -401,7 +401,7 @@
                                                 <td><?php if($cell_4): echo $cell_4; else: echo '&nbsp;'; endif; ?></td>
                                                 <td><?php if($cell_5): echo $cell_5; else: echo '&nbsp;'; endif; ?></td>
                                             </tr>
-                                            <?php endfor; ?>    
+                                            <?php endfor; ?>
                                             </table>
                                         </div>
                                         <?php
@@ -422,19 +422,19 @@
                                             $img = (int) get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_image', true );
                                             $img_url = wp_get_attachment_url( $img,'full');
                                             $image = aq_resize( $img_url, 279, 158, true );
-                                            
+
                                             ?>
                                             <?php if($img_url && ($img_embed == 'embed on the Side')): ?>
                                             <img src="<?=$image?>" alt="<?=$image?>" class="side-embed img-responsive" />
                                             <?php elseif($img_url && ($img_embed == 'embed to the full width')): ?>
                                             <img src="<?=$img_url?>" alt="<?=$img_url?>" class="full-embed img-responsive" />
                                             <?php endif; ?>
-                                            
+
                                             <div class="c-editor">
                                             <?php if($subcontent): echo $subcontent; endif; ?>
                                             </div>
                                         </div>
-                                        <?php  
+                                        <?php
                                         break;
                                         case 'booking_button':
                                             $bbt = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_booking_button_text', true );
@@ -470,7 +470,7 @@
                                             <?php if($text_align == 'Left'): ?><br clear="both" /><?php endif; ?>
                                             <?php endif; ?>
                                         </div>
-                                        <?php  
+                                        <?php
                                         break;
                                         case 'map':
                                             $custom_headline = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_custom_headline', true );
@@ -486,20 +486,20 @@
                                             <?php endif; ?>
                                             <?php echo do_shortcode( $content ) ?>
                                         </div>
-                                        <?php  
+                                        <?php
                                         break;
                                         case 'image_gallery':
                                             $images = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_gallery', true );
-                                            $gal_num2 = 0; 
+                                            $gal_num2 = 0;
                                             $gn2 = (int)$gal_num2;
                                             if( $images ):
                                             ?>
                                             <div class="gallery">
                                         <div class="photo-gallery gallery-two gallery2-<?php echo $gn2; ?>">
                                             <?php
-                                                foreach( $images as $image ): 
+                                                foreach( $images as $image ):
                                             ?>
-                                    <?php 
+                                    <?php
                                         $img_url = wp_get_attachment_url($image);
                                         $thumbnail = aq_resize( $img_url, 250, 250, true );
                                     ?>
@@ -515,7 +515,7 @@
                                         break; /*end image_gallery*/
                                         case 'tour_boxes':
                                         ?>
-                                        <div class="featured-tours featured-tours-section">     
+                                        <div class="featured-tours featured-tours-section">
                                             <div class="row-eq-height">
                                             <?php
                                                 $number_of_columns = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_number_of_columns', true );
@@ -553,7 +553,7 @@
                                             <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $col; ?><?php endif; ?> col-eq-height">
                                             <?php include(locate_template('content-feat_tours_gpm.php' )); ?>
                                             </div>
-                                             <?php 
+                                             <?php
                                                         wp_reset_postdata();
                                                         endif; /*end if pulled_specific*/
                                                         break;
@@ -566,7 +566,7 @@
                                                         break;
                                                     endswitch;
                                                  endforeach;
-                                                 endif; 
+                                                 endif;
                                             ?>
                                             </div>
                                         </div><!-- end .featured-tours-->
@@ -602,21 +602,21 @@
                                                     <div class="testimonials-slider-wrapper">
                                                         <div class="testimonials-slider">
                                                             <ul class="slides">
-                                                            <?php 
+                                                            <?php
                                                                 $tsm_rows = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set', true );
-                                                                if($tsm_rows):    
+                                                                if($tsm_rows):
                                                                 foreach( (array) $tsm_rows as $tsm_count => $tsm_row ):
                                                                     switch( $tsm_row ):
                                                                         case 'testimonials':
                                                             ?>
                                                             <?php
                                                             $pulled_specific = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_boxes_set_' . $tsm_count . '_pull_specific_from', true );
-                                                             
+
                                                             if($pulled_specific):
                                                                 $post = $pulled_specific;
-                                        				        setup_postdata( $post ); 
-                                        				        //get_template_part( 'content', 'scrltstmls' ); 
-                                            				    include(locate_template('content-scrltstmls_gpm.php' )); 
+                                        				        setup_postdata( $post );
+                                        				        //get_template_part( 'content', 'scrltstmls' );
+                                            				    include(locate_template('content-scrltstmls_gpm.php' ));
                                         				        wp_reset_postdata();
                                                             endif;
                                                                 break;
@@ -646,7 +646,7 @@
                             				        <div class="<?php if($tcol==5): ?>five-cols <?php else: ?>col-xs-12 col-sm-<?php echo $tcol; ?><?php endif; ?>">
                             				        <?php get_template_part( 'content', 'home_tstmls_gpm' ); ?>
                             				        </div>
-                            				        <?php 
+                            				        <?php
                             				        wp_reset_postdata();
                                                 endif;
                                                         break;
@@ -664,7 +664,7 @@
                                         <?php
                                             $number_of_blog_columns = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_number_of_blog_columns', true );
                                             $number_of_posts = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count .'_number_of_posts', true );
-                                            
+
                                             $bcol = 0;
                                             if($number_of_columns):
                                                 switch ($number_of_blog_columns):
@@ -686,15 +686,15 @@
                                         'nopaging' => true,
                                         'post_status' => 'publish'
                                         );
-                                         
+
                                         $bbi = 0;
                                         global $wp_query;
                                         $wp_query = new WP_Query( $args );
-                                         
+
                                         if ( have_posts() ) :
-                                        
+
                                         while ( have_posts() ) : the_post();
-                                        
+
                                         $bbi++; ?>
                                         <div<?php if($bcol): ?> class="col-xs-12 col-sm-<?php echo $bcol; ?> s-item"<?php endif; ?>>
                                         <?php get_template_part( 'content', 'front_blog' ); ?>
@@ -702,94 +702,94 @@
                                         <?php
                                         if($bbi == $number_of_posts):
                                         break;
-                                        endif; 
+                                        endif;
                                         endwhile;
-                                        
+
                                         do_action( 'genesis_after_endwhile' );
                                         endif;
-                                         
+
                                         wp_reset_query();
                         ?>
                                         </div><!-- .row-->
                                         <?php
                                         break;
                                         case 'sitewide_modules':
-                                            $section_module = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_section_module', true ); 
+                                            $section_module = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_section_module', true );
                                                 if( $section_module ):
                                                     for( $ri = 0; $ri < $section_module; $ri++ ):
-                                                    $pulled_specific = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_section_module_' . $ri . '_pull_specific_from', true ); 
-                                    
+                                                    $pulled_specific = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_section_module_' . $ri . '_pull_specific_from', true );
+
                                         if($pulled_specific):
                                             $post = $pulled_specific;
-                    				        setup_postdata( $post ); 
+                    				        setup_postdata( $post );
                     				        //in progress
-                    				        //get_template_part( 'content', 'sitewide_sections_gpm' ); 
+                    				        //get_template_part( 'content', 'sitewide_sections_gpm' );
                     				        wp_reset_postdata();
                                         endif;
-                                        
+
                                                     endfor;
                                                 endif;
-                                        
+
                                         break; //sitewide_modules
                                     endswitch;
                                 endforeach;
                             endif; //$rows, end section_elements
                         ?>
                         </section>
-                <?php 
+                <?php
                             endfor;
-                        endif; 
+                        endif;
                 ?>
-                <?php 
+                <?php
                     $testimonials_type = get_option( 'options_testimonials_type' );
-                    $testimonials = get_post_meta( get_the_ID(), 'testimonials', true ); 
+                    $testimonials = get_post_meta( get_the_ID(), 'testimonials', true );
                     if($testimonials && ($testimonials_type == 'Scrolling')):
                 ?>
                         <section class="testimonials">
                             <div class="testimonials-slider-wrapper">
                                 <div class="testimonials-slider">
                                     <ul class="slides">
-                <?php 
+                <?php
                                 for( $te = 0; $te < $testimonials; $te++ ):
                                     $pulled_specific = get_post_meta( get_the_ID(), 'testimonials_' . $te . '_pull_specific_from', true );
-                                    $testimonial_quote = get_post_meta( get_the_ID(), 'testimonials_' . $te . '_testimonial_quote', true );      
+                                    $testimonial_quote = get_post_meta( get_the_ID(), 'testimonials_' . $te . '_testimonial_quote', true );
                                     if($pulled_specific):
                                         $post = $pulled_specific;
-                				        setup_postdata( $post ); 
+                				        setup_postdata( $post );
                 				        get_template_part( 'content', 'scrltstmls_gpm' );
                 				        wp_reset_postdata();
                                     endif;
-                                endfor; 
+                                endfor;
                 ?>
                                     </ul>
                                 </div>
                             </div>
                         </section>
-                <?php 
-                    elseif($testimonials): 
+                <?php
+                    elseif($testimonials):
                 ?>
                 <section class="testimonials">
                         <h2>
                             <span>Testimonials</span>
                         </h2>
-                        
+
                         <div class="row multi-columns-row even-grid">
-                <?php           
+                <?php
                                 for( $te = 0; $te < $testimonials; $te++ ):
                                     $pulled_specific = get_post_meta( get_the_ID(), 'testimonials_' . $te . '_pull_specific_from', true );
                                     if($pulled_specific):
                                         $post = $pulled_specific;
-                				        setup_postdata( $post ); 
+                				        setup_postdata( $post );
                 				        get_template_part( 'content', 'tour_tstmls_gpm' );
-                				         
+
                 				        wp_reset_postdata();
                                     endif;
-                                endfor; 
+                                endfor;
                 ?>
                         </div>
                 </section>
-                <?php 
-                    endif; 
+                <?php
+                    endif;
                 ?>
                 </div><!-- end col-->
                 <?php if ( 'content-sidebar' == $site_layout ): ?>
@@ -802,20 +802,20 @@
                 <div class="center-block center-booking hidden-xs">
                     <div id="booking" class="book-tour-wrapper booking-sidebar">
                     <?php
-                        foreach( (array) $s1_rows as $sr_count => $s1_row ):
-                            switch( $s1_row ):
-                                case 'button':
-                                    $bbt = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_text', true );
-                                    $cta_onclick = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_cta_onclick', true );
-                                    $button_type = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_link_type', true );
-                                    $bbl = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_custom_button_link', true );
-                                    $b_radius = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_radius', true );
-                                    $rb1 = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_reason_to_book_1', true );
-                                    $rb2 = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_reason_to_book_2', true );
-                                    $third_party = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_third_party', true );
-                                    $mobd = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_multi_option_button_dropdown', true );
+                    foreach( (array) $s1_rows as $sr_count => $s1_row ):
+                        switch( $s1_row ):
+                            case 'button':
+                                $bbt = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_text', true );
+                                $cta_onclick = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_cta_onclick', true );
+                                $button_type = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_link_type', true );
+                                $bbl = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_custom_button_link', true );
+                                $b_radius = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_radius', true );
+                                $rb1 = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_reason_to_book_1', true );
+                                $rb2 = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_reason_to_book_2', true );
+                                $third_party = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_third_party', true );
+                                $mobd = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_multi_option_button_dropdown', true );
                     ?>
-                    <?php if($bbt && !$mobd): ?>
+                    <?php if($bbt && !$mobd):       ?>
                     <?php include(locate_template('buttons/sidebar_btn_gpm.php' )); ?>
                     <?php elseif($bbt && $mobd): ?>
                     <?php include(locate_template('buttons/sidebar_mobd_gpm.php' )); ?>
@@ -823,7 +823,7 @@
                     <?php if($rb1 || $rb2): ?>
                             <div class="hidden-xs text-left">
                                 <?php if($rb1): ?>
-                              <div class="trigger-txt"><?php echo $rb1; ?></div> 
+                              <div class="trigger-txt"><?php echo $rb1; ?></div>
                               <div class="separator2"></div>
                               <?php endif; ?>
                               <?php if($rb2): ?>
@@ -831,17 +831,10 @@
                               <div class="separator2"></div>
                               <?php endif; ?>
                             </div>
-                    <?php endif; /*end reasons to book*/ ?>                    
+                    <?php endif; /*end reasons to book*/ ?>
                     <?php
                                 break; //end button layout
                                 case 'content_editor':
-                                    $content = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_content', true );
-                    ?>
-                    <div class="widget-item">
-                    <?php echo $content; ?>
-                    </div>
-                    <?php              
-                                break;
                                 case 'text_area':
                                     $content = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_content', true );
                     ?>
@@ -876,7 +869,7 @@
                     <div class="widget-item"><div class="row"><div class="col-sm-10 col-sm-offset-1">
                     <?php echo $content; ?>
                     </div></div></div>
-                    <?php          
+                    <?php
                                 break;
                                 case 'testimonials':
                                     $pulled_specific = get_post_meta( get_the_ID(), 'sidebar_2_' . $srt_count . '_pull_specific_from', true );
@@ -896,15 +889,15 @@
                 				setup_postdata( $post );
                 				get_template_part( 'content', 'tour_tstml_gpm' );
                 				wp_reset_postdata();
-                            endif;    
+                            endif;
                         ?>
                         </div>
                     </section>
-                    <?php            
+                    <?php
                                 break;
                             endswitch;
                         endforeach;
-                        endif; //$s2_rows    
+                        endif; //$s2_rows
                     ?>
                 </div><!-- end content-sidebar-->
                 <?php endif; ?>
@@ -930,7 +923,7 @@ if( $tiles_area ):
         <div class="container<?php if ( 'content-sidebar' == $site_layout ): ?> no-bg<?php endif; ?>">
         <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-8 left-col<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
-            <?php if($custom_headline): ?>    
+            <?php if($custom_headline): ?>
             <div class="row">
                 <div class="col-sm-12">
                     <h2>
@@ -940,7 +933,7 @@ if( $tiles_area ):
             </div>
             <?php endif; ?>
             <div class="row-eq-height">
-                <?php 
+                <?php
                     $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -960,10 +953,10 @@ if( $tiles_area ):
                             break;
                     }
                     ?>
-                    
+
                     <?php
                         $tile_rows = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles', true );
-                        
+
                         if ($tile_rows):
                         foreach( (array) $tile_rows as $tile_count => $tile_row ):
                             switch( $tile_row ):
@@ -987,39 +980,39 @@ if( $tiles_area ):
                             <div class="<?php if($col==5): ?>five-cols <?php else: ?><?php echo $col_def.$col; ?> col-eq-height<?php endif; ?>">
                             <?php //get_template_part( 'content', 'feat_cats' ); ?>
                             <?php
-                                include(locate_template('content-feat_cats_gpm.php' )); 
+                                include(locate_template('content-feat_cats_gpm.php' ));
                             ?>
                             </div>
                         <?php
                                 break;
                                 case 'testimonials':
-                                    $pulled_specific = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' .$tile_count. '_pull_specific_from', true ); 
-                            
+                                    $pulled_specific = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' .$tile_count. '_pull_specific_from', true );
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?> col-eq-height<?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls_gpm' ); //need revision ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
-                        
-                            
+
+
                                 break;
                             endswitch;
                          endforeach;
                         //endwhile;
                         endif;
-                       ?> 
-                    
-                           
+                       ?>
+
+
                 </div>
                 </div>
         </div>
             </div><!-- .container-->
-    </section>        
+    </section>
 <?php
     endfor;
-endif;    
+endif;
 ?>

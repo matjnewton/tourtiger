@@ -8367,6 +8367,7 @@ tour_finder',
                 ),
                 'choices' => array (
                   'Custom'        => 'Custom',
+                  'custom-in-new-tab'=> 'Custom Link - open in new tab',
                   'iframe-popup'  => 'Popup iFrame',
                   'booking-hound' => 'Booking Hound API',
                   'Link to form'  => 'Link to form',
@@ -8524,6 +8525,18 @@ tour_finder',
                       'value' => 'Custom',
                     ),
                   ),
+                    array (
+                        array (
+                            'field' => 'field_55c88bbf2b1f0',
+                            'operator' => '!=',
+                            'value' => '1',
+                        ),
+                        array (
+                            'field' => 'field_539f6a270a9f6',
+                            'operator' => '==',
+                            'value' => 'custom-in-new-tab',
+                        ),
+                    ),
                   array (
                     array (
                       'field' => 'field_55c88bbf2b1f0',

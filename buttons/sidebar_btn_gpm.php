@@ -54,7 +54,7 @@
                                 $format2 = $arr[1];
                             ?>
                             <a href="#" class="book-btn2" id="<?php if($bbl): echo 'sbtn_trekksoft_' . $format1; endif; ?>">
-                            <?php echo $bbt; ?>    
+                            <?php echo $bbt; ?>
                             </a>
                             <script>// <![CDATA[
 (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") <?php if($third_party == "tour_details"): ?> .setAttrib("entryPoint", "tour_details") .setAttrib("tourId", "<?php echo $format2; ?>") <?php elseif($third_party == "tour_finder"): ?> .setAttrib("entryPoint", "tour_finder")<?php endif;?> .registerOnClick("#<?php if($bbl): echo 'sbtn_trekksoft_' . $format1; endif; ?>"); })();
@@ -77,7 +77,7 @@
                                     <a class="orioly-booknow" data="<?php if($bbl): echo $bbl; endif; ?>" style="color:#fff !important;"><?php echo $bbt; ?></a>
                                 <div class="arrow-right"></div>
                             </div>
-                            
+
                             <?php elseif($integrate_regiondo && ($button_type == 'Use as third party integration Link')): ?>
                             <a class="regiondo-button book-btn2" data-url="<?php if($bbl): echo $bbl; endif; ?>">
                                 <div class="arrow-left"></div>
@@ -102,7 +102,7 @@
                                             echo do_shortcode( "[booking-hound-button api-hash='{$api_hash}' item-code='{$item_code}' id='{$unique_id}' class='{$class}']" );
                                         endif;
                                     endwhile;
-                                endif; 
+                                endif;
 
                                 if (!$booking_hound) :
 
@@ -117,7 +117,7 @@
                                   else :
                                     ?>
 
-                                    <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2">
+                                    <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2"  <?php if($button_type === 'custom-in-new-tab'): ?>  target="_blank" <?php endif;?>>
                                         <?php echo $bbt; ?>
                                     </a>
 

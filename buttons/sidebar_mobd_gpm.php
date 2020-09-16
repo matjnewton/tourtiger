@@ -10,14 +10,14 @@
                         <?php $button_sub_options = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_sub_options', true ); ?>
                         <?php if( $button_sub_options ): ?>
                         	<ul class="dropdown-menu" data-checker="sidebar_mobd_gpm">
-                        	<?php 
+                        	<?php
                             	for( $sbd = 0; $sbd < $button_sub_options; $sbd++ ):
                                     $button_text = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_sub_options_' . $sbd . '_button_text', true );
-                                    $link = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_sub_options_' . $sbd . '_link', true );         
+                                    $link = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_button_sub_options_' . $sbd . '_link', true );
                         		?>
                         		<li>
                         		<?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
-                                    
+
                                     <?php if($third_party == "xola-single-item"): ?>
                                     <?php
                                         $xsi = explode(",",$link);
@@ -52,8 +52,8 @@
                                         $format2 = $arr[1];
                                     ?>
                                     <a href="#" id="<?php if($link): echo 'smobd'.$sbd.'_trekksoft_' . $format1; endif; ?>">
-                                    <?php echo $button_text; ?>    
-                                    </a>  
+                                    <?php echo $button_text; ?>
+                                    </a>
                                     <script>// <![CDATA[
         (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") <?php if($third_party == "tour_details"): ?> .setAttrib("entryPoint", "tour_details") .setAttrib("tourId", "<?php echo $format2; ?>") <?php elseif($third_party == "tour_finder"): ?> .setAttrib("entryPoint", "tour_finder")<?php endif;?> .registerOnClick("#<?php if($link): echo 'smobd'.$sbd.'_trekksoft_' . $format1; endif; ?>"); })();
         // ]]></script>
@@ -73,7 +73,7 @@
                         		    </a>
                         		<?php else: ?>
                         		    <?php if($button_text): ?>
-                                        <a href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
+                                        <a href="<?php echo $link; ?>" <?php if($button_type === 'custom-in-new-tab'): ?>  target="_blank" <?php endif;?>><?php echo $button_text; ?></a>
                         		    <?php endif; ?>
                                 <?php endif; ?>
                                 </li>
