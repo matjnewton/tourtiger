@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.13.83
+Version: 1.13.84
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -1960,6 +1960,10 @@ nav {
 
 .gravity-form-native-layout .ginput_container_select .btn-group.bootstrap-select.medium.gfield_select {
     width:100% !important;
+}
+
+.gravity-form-native-layout .clear-multi {
+    justify-content: flex-start;
 }
 
 @media only screen and (max-width:768px) {
