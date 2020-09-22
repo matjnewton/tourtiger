@@ -10,7 +10,7 @@
     unset($darray, $narray);
 ?>
 .banner-wrapper{
-    max-height:620px !important;
+    max-height:620px;
 }
 <?php
     $sticky_menu = get_option( 'options_sticky_menu' );
