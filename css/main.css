@@ -7846,7 +7846,7 @@ ul {
 @media (min-height: 481px)
 }
 
-@media(mix-width:480px) {
+@media(min-width:480px) {
     .home .banner-top,
     .page-template-page-templatesfront-page-php .banner-top .flxslider-wrapper {
         min-height: 539px
@@ -7899,6 +7899,16 @@ ul {
     .flxslider-wrapper {
         height: 225px
     }
+
+    .banner-top .flxslider-wrapper {
+        height: 400px;
+    }
+
+    .banner, .banner-top {
+        height: auto;
+    }
+
+
     .flxslider-wrapper #slider .slides li {
         height: 225px!important;
         background-size: auto 225px!important

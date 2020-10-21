@@ -68,7 +68,7 @@ $(window).resize(function () {
 			}),
 				$("#booking2").on("affix.bs.affix", function () {
 					if ($(".sticky").length > 0 && "fixed" === $(".sticky").css("position")) {
-						var e = $(".header-bar-wrapper").height();
+						var e = $(".header-bar-wrapper").height() + $('#wpadminbar').height();
 						$("#booking2").css("top", e + 10 + "px");
 					}
 				})),
@@ -235,8 +235,7 @@ $(window).resize(function () {
 
 		} else {
 
-			newMarginTop = $('.secondary-menu-wrapper').height();
-			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+			$sticky.length === 1 && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + $sticky.height());
 		}
 	};
 
