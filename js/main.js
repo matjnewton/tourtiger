@@ -235,6 +235,8 @@ $(window).resize(function () {
 
 		} else {
 
+			adminbar_height = adminbar_height ? adminbar_height : 0;
+
 			$sticky.length === 1 && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + $sticky.height());
 		}
 	};
