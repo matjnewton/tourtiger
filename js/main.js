@@ -188,7 +188,7 @@ $(window).resize(function () {
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			newMarginTop  = headerWrapper - secondary;
 
-			if ( is_logged && !$body.hasClass('page-template-test-pc')) {
+			if ( is_logged ) {
 				 $('.header-bar-wrapper').css('top', 32);
 			}
 
