@@ -240,7 +240,7 @@ $(window).resize(function () {
 			newMarginTop = $headerBarWrapper.height();
 
 			$sticky.length === 1 && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + $sticky.height());
-			!$sticky.length && $sticky.css('top', newMarginTop) && $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+			!$sticky.length && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
 
 		}
 	};
