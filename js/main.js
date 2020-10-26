@@ -234,18 +234,24 @@ $(window).resize(function () {
 			newMarginTop = $headerBarWrapper.height();
 			// $si.css( 'margin-top', newMarginTop );
 
-		} else {
+		} else if ($(window).width() < 768) {
 
 			adminbar_height = adminbar_height ? adminbar_height : 0;
 			newMarginTop = $headerBarWrapper.height();
 
 			// $sticky.length === 1 && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + $sticky.height());
 
-			if (!$body.hasClass('single')) {
+			if (!$body.hasClass('single') || $sticky.length === 1) {
 				$headerBarWrapper.css('top', adminbar_height);
 			}
 
-			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+			if ($sticky.length === 1 && $body.hasClass('single')) {
+				$sticky.css('position', 'fixed');
+				$si.css({'position':'relative', 'top':newMarginTop});
+				$('footer').css({'position':'relative', 'top':newMarginTop});
+			}
+
+			if (!$sticky.length || !$body.hasClass('single')) $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
 
 		}
 	};
