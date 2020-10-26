@@ -239,8 +239,6 @@ $(window).resize(function () {
 			adminbar_height = adminbar_height ? adminbar_height : 0;
 			newMarginTop = $headerBarWrapper.height();
 
-			// $sticky.length === 1 && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + $sticky.height());
-
 			if (!$body.hasClass('single') || $sticky.length === 1) {
 				$headerBarWrapper.css('top', adminbar_height);
 			}
