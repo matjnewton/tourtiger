@@ -301,14 +301,14 @@ if (is_page_template('page-templates/front-page2.php') || is_page_template('page
     $hero_margin = get_post_meta( get_the_ID(), 'hero_headline_top_margin', true );
     if($hero_margin):
     ?>
-@media (max-width:480px){
-    .under-header .overlay-slider-content{
-        margin-top:0 !important;
-    }
-    .banner-top .headline-group{
-        margin-top:0;
-    }
-}
+<!--@media (max-width:480px){-->
+<!--    .under-header .overlay-slider-content{-->
+<!--        margin-top:0 !important;-->
+<!--    }-->
+<!--    .banner-top .headline-group{-->
+<!--        margin-top:0;-->
+<!--    }-->
+<!--}-->
 @media (min-width:481px){
 .banner-top .headline-group{
         top:<?php echo $hero_margin; ?>px;
