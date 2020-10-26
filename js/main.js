@@ -179,6 +179,7 @@ $(window).resize(function () {
 		var $bannerWrapperInner = $('.banner-wrapper-inner');
 		var heroMarginTopZero = $bannerWrapperInner.data().marginTopZero;
 		var $si = $('.site-inner');
+		var $headerBarWrapper = $('.header-bar-wrapper');
 
 
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
@@ -189,7 +190,7 @@ $(window).resize(function () {
 			newMarginTop  = headerWrapper - secondary;
 
 			if ( is_logged ) {
-				 $('.header-bar-wrapper').css('top', 32);
+				$headerBarWrapper.css('top', 32);
 			}
 
 			// newMarginTop += 32;
@@ -204,17 +205,17 @@ $(window).resize(function () {
 			}
 
 			if ( is_post || is_product ) {
-				newMarginTop = $('.header-bar-wrapper').height();
+				newMarginTop = $headerBarWrapper.height();
 				$si.css( 'margin-top', newMarginTop );
 			}
 
 			if ( is_blog  ) {
-				newMarginTop = $('.header-bar-wrapper').height();
+				newMarginTop = $headerBarWrapper.height();
 				$si.css( 'margin-top', newMarginTop );
 			}
 
 			if ( is_tour || is_home ) {
-				newMarginTop = $('.header-bar-wrapper').height();
+				newMarginTop = $headerBarWrapper.height();
 
 				if (heroMarginTopZero) {
 					$bannerWrapperInner.css( 'margin-top', 0 );
@@ -223,21 +224,24 @@ $(window).resize(function () {
 				else $bannerWrapperInner.css( 'margin-top', newMarginTop );
 			}
 
-		} else if ( is_404 ) {
+		} else if ( is_404 && $(window).width() >= 768 ) {
 
-			newMarginTop = $('.header-bar-wrapper').height();
+			newMarginTop = $headerBarWrapper.height();
 			$si.css( 'margin-top', newMarginTop );
 
-		} else if ( is_blog ) {
+		} else if ( is_blog && $(window).width() >= 768 ) {
 
-			newMarginTop = $('.header-bar-wrapper').height();
+			newMarginTop = $headerBarWrapper.height();
 			// $si.css( 'margin-top', newMarginTop );
 
 		} else {
 
 			adminbar_height = adminbar_height ? adminbar_height : 0;
+			newMarginTop = $headerBarWrapper.height();
 
 			$sticky.length === 1 && $sticky.css('top', adminbar_height) && $bannerWrapperInner.css('margin-top', 0 + $sticky.height());
+			!$sticky.length && $sticky.css('top', newMarginTop) && $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+
 		}
 	};
 
