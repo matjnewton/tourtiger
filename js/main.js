@@ -192,7 +192,7 @@ $(window).resize(function () {
 				 $('.header-bar-wrapper').css('top', 32);
 			}
 
-			newMarginTop += 32;
+			// newMarginTop += 32;
 
 			if ( !is_banner ) {
 
