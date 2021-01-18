@@ -4222,8 +4222,7 @@ acf_add_local_field_group(array (
 								'Custom' => 'Custom',
 								'iframe-popup' => 'iFrame popup',
 								'Link to form' => 'Link to form',
-								'Use as third party integration Link' => 'Use as third party integration Link',
-                                'Simple link' => 'Simple link'
+								'Use as third party integration Link' => 'Use as third party integration Link'
 							),
 							'other_choice' => 0,
 							'save_other_choice' => 0,
@@ -4280,18 +4279,6 @@ acf_add_local_field_group(array (
 										'value' => 'Custom',
 									),
 								),
-                                array (
-                                    array (
-                                        'field' => 'field_55c88bbf2b1f0_pr',
-                                        'operator' => '!=',
-                                        'value' => '1',
-                                    ),
-                                    array (
-                                        'field' => 'field_539f6a270a9f6_pr',
-                                        'operator' => '==',
-                                        'value' => 'Simple link',
-                                    ),
-                                ),
 								array (
 									array (
 										'field' => 'field_55c88bbf2b1f0_pr',

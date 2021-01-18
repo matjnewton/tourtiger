@@ -209,16 +209,6 @@ elseif ( $integrate_atlasx_with_this_website && ( $button_type == 'Use as third 
 
     <?php
 
-elseif ($button_type == 'Simple link') :
-?>
-    <a href="<?=$bbl?>">
-        <div class="book-btn2-product-title">
-            <span><?=$bbt;?></span>
-            <i class="fa fa-angle-right"></i>
-        </div>
-    </a>
-<?php
-
 else:
 
     $dz_btn_attrs = '';
