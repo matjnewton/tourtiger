@@ -46,22 +46,7 @@ if ( have_rows( 'sidebar_1' ) ) :
                          * Include button template
                          * if button text is exist
                          */
-                        if ( false && $servername =='northwoodszipline.com' && $button_type !== 'iframe-popup') {
-                        	$cur_terms = get_the_terms( get_the_ID() , 'rezdy_cat' );
-                        	?>
-						                  <div onclick="bookNowCabinById('<?php echo get_field('xola_id',get_the_ID()); ?>','<?php if($cur_terms){ echo $cur_terms[0]->name;} ?>')"
-                              class="book-btn2-product xola-checkout xola-custom _book-btn2"
-                              data-seller="<?=$check_user_id_xola;?>"
-                              data-version="2"
-                              data-term="<?php if($cur_terms){ echo $cur_terms[0]->name;} ?>">
 
-                                  <div class="book-btn2-product-title">
-                                      <span><?=$bbt;?></span>
-                                      <i class="fa fa-angle-right"></i>
-                                  </div>
-                              </div>
-                          <?php
-                        } else {
 	                        if ( $bbt ) :
 		                        if ( !$mobd ) :
 		                        	include(locate_template('buttons/sidebar_btn_product.php' ));
@@ -69,7 +54,6 @@ if ( have_rows( 'sidebar_1' ) ) :
 		                        	include(locate_template('buttons/sidebar_mobd_product.php' ));
 		                        endif;
 	                        endif;
-						            }
 
                         /**
                          * Reason to book check the loop
