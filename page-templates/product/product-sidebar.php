@@ -47,13 +47,13 @@ if ( have_rows( 'sidebar_1' ) ) :
                          * if button text is exist
                          */
 
-	                        if ( $bbt ) :
-		                        if ( !$mobd ) :
-		                        	include(locate_template('buttons/sidebar_btn_product.php' ));
-		                        elseif ( $mobd ) :
-		                        	include(locate_template('buttons/sidebar_mobd_product.php' ));
-		                        endif;
-	                        endif;
+                        if ( $bbt ) :
+                            if ( !$mobd ) :
+                                include(locate_template('buttons/sidebar_btn_product.php' ));
+                            elseif ( $mobd ) :
+                                include(locate_template('buttons/sidebar_mobd_product.php' ));
+                            endif;
+                        endif;
 
                         /**
                          * Reason to book check the loop
