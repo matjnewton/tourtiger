@@ -46,7 +46,7 @@ if ( have_rows( 'sidebar_1' ) ) :
                          * Include button template
                          * if button text is exist
                          */
-                        if ( $servername =='northwoodszipline.com' && $button_type !== 'iframe-popup') {
+                        if ( false && $servername =='northwoodszipline.com' && $button_type !== 'iframe-popup') {
                         	$cur_terms = get_the_terms( get_the_ID() , 'rezdy_cat' );
                         	?>
 						                  <div onclick="bookNowCabinById('<?php echo get_field('xola_id',get_the_ID()); ?>','<?php if($cur_terms){ echo $cur_terms[0]->name;} ?>')"
