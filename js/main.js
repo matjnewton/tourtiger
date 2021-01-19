@@ -573,7 +573,8 @@ $(window).resize(function () {
 		/**
 		 * Init slick carousel
 		 */
-		$sliderPro.on('click', '.slider-pro--preview', function(){
+		$sliderPro.on('click', '.slider-pro--preview', function(e){
+				e.stopPropagation();
 				$(this).tourismTiger('initGallery');
 		});
 
@@ -798,16 +799,21 @@ var FbBookNowButton = function (config) {
 	};
 
 	$(function(){
-        if ( $('.slider-pro--preview').not('[data-inited]') ) {
+		const $sliderPro = $('.slider-pro--preview');
+
+        if ( $sliderPro.not('[data-inited]') ) {
 	        /**
 	         * Init slick carousel
 	         */
-	        $('.slider-pro--preview').not('[data-inited]').on('click', function(){
-	          $(this).tourismTiger('initGallery');
+			$sliderPro.not('[data-inited]').on('click', function(e){
+				e.stopPropagation();
+				if ( $sliderPro.data('[data-inited]') ) {
+					$(this).tourismTiger('initGallery');
+				}
 	        });
 	    }
 
-        if ( $('.slider-pro__close-link').not('[data-inited]') ) {
+        if ( $sliderPro.not('[data-inited]') ) {
 	        /**
 	         * Close carousel
 	         */
@@ -816,7 +822,7 @@ var FbBookNowButton = function (config) {
 	        });
 		    }
 
-        if ( $('.slider-pro__close-bg').not('[data-inited]') ) {
+        if ( $sliderPro.not('[data-inited]') ) {
 	        /**
 	         * Close carousel
 	         */
