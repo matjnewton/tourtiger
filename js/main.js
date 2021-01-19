@@ -745,7 +745,9 @@ var FbBookNowButton = function (config) {
 			.slick('unslick');
 
 			// return the anoying button
-			$('#js-mob-wrap-buttons').fadeIn();
+			$('#js-mob-wrap-buttons')
+				.fadeIn()
+				.css({display:'block'});
 		},
 
     btnLoader: function(){
