@@ -806,7 +806,6 @@ var FbBookNowButton = function (config) {
 	         * Init slick carousel
 	         */
 			$sliderPro.not('[data-inited]').on('click', function(e){
-				e.stopPropagation();
 				if ( $sliderPro.data('[data-inited]') ) {
 					$(this).tourismTiger('initGallery');
 				}
