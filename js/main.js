@@ -112,17 +112,17 @@ $(window).resize(function () {
 						$e.attr("aria-expanded", "false");
 
 						$e.find('.fa-angle-down').on('click', function(e){
-						e.preventDefault();
-						e.stopPropagation();
-						var $t = $(e.target);
-						if ($e.attr('aria-expanded')==='false') {
-							$t.closest('.menu-item-has-children').addClass('open');
-							$e.attr("aria-expanded", "true");
-						} else {
-							$t.closest('.menu-item-has-children').removeClass('open');
-							$e.attr("aria-expanded", "false");
-						}
-					})}
+							e.preventDefault();
+							e.stopPropagation();
+							var $t = $(e.target);
+							if ($e.attr('aria-expanded')==='false') {
+								$t.closest('.menu-item-has-children').addClass('open');
+								$e.attr("aria-expanded", "true");
+							} else {
+								$t.closest('.menu-item-has-children').removeClass('open');
+								$e.attr("aria-expanded", "false");
+							}
+						})}
 				}),
 
 				$(".mobile-nav .menu-item-has-children > ul").addClass("dropdown-menu"),
@@ -263,12 +263,12 @@ $(window).resize(function () {
 			var $button   = $(this);
 
 			if ($button.closest('li').hasClass('onclick__popup')) {
-        var reference = $button.attr('href');
-        var isResize = 0;
-      } else {
-        var reference = $button.attr('data-iframe-popup');
-        var isResize  = $button.attr('data-iframe-popup-resize');
-      }
+				var reference = $button.attr('href');
+				var isResize = 0;
+			} else {
+				var reference = $button.attr('data-iframe-popup');
+				var isResize  = $button.attr('data-iframe-popup-resize');
+			}
 
 			// Load hawaiifun api
 			if (reference == 'hawaiifun' && global_vars.hawaiifun == 1) {
@@ -310,12 +310,12 @@ $(window).resize(function () {
 
 				return false;
 
-			// Load new site in iframe
+				// Load new site in iframe
 			} else {
 
 				if ( $(window).width() > 768 ) {
 
-          $(this).is('[data-iframe-popup]:not(.js-inited)') && $(this).tourismTiger('btnLoader');
+					$(this).is('[data-iframe-popup]:not(.js-inited)') && $(this).tourismTiger('btnLoader');
 
 					// Load backgound layout
 					if ( $('.iframe-popup__close').length == 0 ) {
@@ -376,7 +376,7 @@ $(window).resize(function () {
 						});
 
 						// disable button's loader
-            $button.is('[data-iframe-popup]') && $button.hasClass('js-inited') && $button.tourismTiger('btnLoader');
+						$button.is('[data-iframe-popup]') && $button.hasClass('js-inited') && $button.tourismTiger('btnLoader');
 					});
 
 				} else {
@@ -511,13 +511,13 @@ $(window).resize(function () {
 
 				$('.js-show-certificate-mob').appendTo( $('#js-mob-wrap-buttons') );
 				$('.js-show-certificate-mob').css({
-					    'display': 'block',
-					    'margin-bottom': '16px'
+					'display': 'block',
+					'margin-bottom': '16px'
 				});
 				$('.js-show-certificate-mob a').addClass('book-btn2-product-title').css({
 					'margin-left': '0px',
-				    'display': 'block',
-				    'color': '#fff'
+					'display': 'block',
+					'color': '#fff'
 				});
 				$('.js-show-certificate-mob span').css({'margin-left': '0'});
 
@@ -529,23 +529,23 @@ $(window).resize(function () {
 		}
 
 		$('.js-navigated-gallery__front').slick({
-		  infinite: true,
-		  arrows: true,
-		  dots: false,
-		  adaptiveHeight: true,
-		  speed: 1000,
-		  prevArrow: '<button type="button" class="slick-arrow slick-prev"><i class="fa fa-angle-left"></i></button>',
-		  nextArrow: '<button type="button" class="slick-arrow slick-next"><i class="fa fa-angle-right"></i></button>'
+			infinite: true,
+			arrows: true,
+			dots: false,
+			adaptiveHeight: true,
+			speed: 1000,
+			prevArrow: '<button type="button" class="slick-arrow slick-prev"><i class="fa fa-angle-left"></i></button>',
+			nextArrow: '<button type="button" class="slick-arrow slick-next"><i class="fa fa-angle-right"></i></button>'
 		});
 
 		$('.js-navigated-gallery__navigation').slick({
-		  infinite: true,
-		  arrows: false,
-		  dots: false,
-		  speed: 1000,
-		  slidesToShow: 5,
-		  variableWidth: true,
-  		  focusOnSelect: true
+			infinite: true,
+			arrows: false,
+			dots: false,
+			speed: 1000,
+			slidesToShow: 5,
+			variableWidth: true,
+			focusOnSelect: true
 		});
 
 	});
@@ -560,78 +560,76 @@ $(window).resize(function () {
 		const $sliderPro = $('.slider-pro');
 		const $coverImage = $sliderPro.find('.slider-pro--preview__image').find('img');
 		const url = $coverImage.attr('src');
+		const $sliderImages = $sliderPro.find('.slider-pro__slider');
 
 		const img = new Image();
 
 		if (typeof url !== 'undefined') {
-		  img.onload = function () {
-			// $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
-		  };
-		  img.src = url;
-    	}
+			img.onload = function () {
+				// $sliderPro.width(img.width); @todo: it's difficult to say what for it was needed, but it didn't allow image to fill up necessary space
+			};
+			img.src = url;
+		}
 
 		/**
 		 * Init slick carousel
 		 */
 		$sliderPro.on('click', '.slider-pro--preview', function(e){
-				e.stopPropagation();
-				$(this).tourismTiger('initGallery');
+			$(this).tourismTiger('initGallery');
 		});
 
 		/**
 		 * Close carousel
 		 */
-    	$sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
+		$sliderPro.on('click', '.slider-pro__close-link, .slider-pro__close-bg', function(){
 			$(this).tourismTiger('destroyGallery');
 		});
 	});
 })(jQuery);
 
-
-
 // fly book now button
 var FbBookNowButton = function (config) {
-    var generateGuid = function () {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    };
-    function getCookie(name, accountId) {
-        var value = "; " + document.cookie;
-        var parts = value.split("; " + name + "=");
-        if (parts.length === 2)
-            return parts.pop().split(";").shift();
-        if (window.localStorage)
-            return window.localStorage["flybook-front-end-session" + accountId];
-    };
-    function setCookie(cname, cvalue, exdays, accountId) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        var cookieName = cname + "=" + cvalue + "; " + expires;
-        document.cookie = cookieName;
-        if (window.localStorage)
-            window.localStorage["flybook-front-end-session" + accountId] = cvalue;
-    };
-    var sessionId = getCookie("flybook-front-end-session" + config.accountId, config.accountId);
-    if (!sessionId) {
-        sessionId = generateGuid();
-        setCookie("flybook-front-end-session" + config.accountId, sessionId, 5, config.accountId);
-    }
-    var id = "BOOKNOWBUTTON-" + config.entityId + "-" + config.entityType;
-    document.getElementById(config.targetId).innerHTML = '<a class="flybook-book-now-button" id="' + id + '" href="' + config.protocol + '://' + config.domain + '/Scheduler/' + config.entityId + '/' + config.entityType + '/' + sessionId + '/' + config.accountId + '/' + window.flybookAgentId + window.location.search + '" target="_blank"><img src="' + config.protocol + '://' + config.domain + '/content/images/buy_now_button.png"/></a>';
+	var generateGuid = function () {
+		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+			var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		});
+	};
+	function getCookie(name, accountId) {
+		var value = "; " + document.cookie;
+		var parts = value.split("; " + name + "=");
+		if (parts.length === 2)
+			return parts.pop().split(";").shift();
+		if (window.localStorage)
+			return window.localStorage["flybook-front-end-session" + accountId];
+	};
+	function setCookie(cname, cvalue, exdays, accountId) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		var expires = "expires=" + d.toUTCString();
+		var cookieName = cname + "=" + cvalue + "; " + expires;
+		document.cookie = cookieName;
+		if (window.localStorage)
+			window.localStorage["flybook-front-end-session" + accountId] = cvalue;
+	};
+	var sessionId = getCookie("flybook-front-end-session" + config.accountId, config.accountId);
+	if (!sessionId) {
+		sessionId = generateGuid();
+		setCookie("flybook-front-end-session" + config.accountId, sessionId, 5, config.accountId);
+	}
+	var id = "BOOKNOWBUTTON-" + config.entityId + "-" + config.entityType;
+	document.getElementById(config.targetId).innerHTML = '<a class="flybook-book-now-button" id="' + id + '" href="' + config.protocol + '://' + config.domain + '/Scheduler/' + config.entityId + '/' + config.entityType + '/' + sessionId + '/' + config.accountId + '/' + window.flybookAgentId + window.location.search + '" target="_blank"><img src="' + config.protocol + '://' + config.domain + '/content/images/buy_now_button.png"/></a>';
 };
 
 (function(factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
-    } else {
-        factory(jQuery);
-    }
+	'use strict';
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	} else if (typeof exports !== 'undefined') {
+		module.exports = factory(require('jquery'));
+	} else {
+		factory(jQuery);
+	}
 
 }(function($) {
 
@@ -639,7 +637,7 @@ var FbBookNowButton = function (config) {
 
 		initGallery: function(){
 
-		    // Set DOM elements to the variables
+			// Set DOM elements to the variables
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
 			var $image        = $wrapper.find('.slider-pro--preview__image');
@@ -650,21 +648,27 @@ var FbBookNowButton = function (config) {
 			var $cover        = $wrapper.find('.slider-pro__cover');
 			var $panel        = $wrapper.find('.slider-pro--panel');
 
-            // Core values
+			// console.debug({
+			// 	$self,
+			// 	el: $wrapper.find('.slider-pro__slider'),
+			// 	test:$wrapper.find('.slider-pro__slider').hasClass('slick-slider')
+			// });
+
+			// Core values
 			var globalWidth   = $(window).width();
 			var globalHeight  = $(window).height();
 
-            // Set width and height values to cover area and image
+			// Set width and height values to cover area and image
 			$cover
-			.width(width)
-			.height(height)
-			.find('img')
-			.width(width)
-			.height(height);
+				.width(width)
+				.height(height)
+				.find('img')
+				.width(width)
+				.height(height);
 
 			$panel.hide();
 
-            // Get cover coordinates relative to the window
+			// Get cover coordinates relative to the window
 			var coverTop  = $cover.offset().top - $(window).scrollTop();
 			var coverLeft = $cover.offset().left;
 
@@ -684,35 +688,40 @@ var FbBookNowButton = function (config) {
 				$row.css('z-index', 6);
 
 			$carousel
-			.css({
-				'display': 'flex',
-			})
-			.animate({
-				'opacity': '1'
-			}, 300)
-			.find('.slider-pro__slider')
-			.slick({
-				prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
-				nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
-				adaptiveHeight: true,
-				lazyLoad: 'progressive',
-			})
-			.slick('setOption', 'height', null, true);
+				.css({
+					'display': 'flex',
+				})
+				.animate({
+					'opacity': '1'
+				}, 300);
+
+			if ( !$carousel.find('.slider-pro__slider').hasClass('slick-slider') ) {
+				$carousel
+					.find('.slider-pro__slider')
+					.slick({
+						prevArrow: '<button type="button" class="slider-pro__prev slider-pro__arrow"></button>',
+						nextArrow: '<button type="button" class="slider-pro__next slider-pro__arrow"></button>',
+						adaptiveHeight: true,
+						lazyLoad: 'progressive',
+					})
+					.slick('setOption', 'height', null, true);
 
 
-			$(".slider-image").each((ind, img)=>{
-				const $img = $(img);
-				const imgHeight = $img.data('img-height');
-				const imgWidth = $img.data('img-width');
-				if (imgWidth > globalWidth) $img.css({'height': imgHeight * globalWidth / imgWidth});
-			});
-
+				$carousel.find(".slider-image").each((ind, img)=>{
+					const $img = $(img);
+					const imgHeight = $img.data('img-height');
+					const imgWidth = $img.data('img-width');
+					if (imgWidth > globalWidth) $img.css({'height': imgHeight * globalWidth / imgWidth});
+				});
+			}
 
 			// hide anoying button which usualy used to hover the X - button
 			$('#js-mob-wrap-buttons').fadeOut();
 		},
 
 		destroyGallery: function(){
+			// console.debug("Gallery destroy");
+
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
 			var $image        = $wrapper.find('.slider-pro--preview__image');
@@ -725,12 +734,12 @@ var FbBookNowButton = function (config) {
 			var coverLeft = $cover.offset().left;
 
 			$image
-			.css({
-				'top': coverTop,
-				'left': coverLeft,
-				'position': 'static',
-			})
-			.show();
+				.css({
+					'top': coverTop,
+					'left': coverLeft,
+					'position': 'static',
+				})
+				.show();
 
 			$panel.fadeIn(300);
 
@@ -738,46 +747,43 @@ var FbBookNowButton = function (config) {
 				$row.css('z-index', 5);
 
 			$carousel
-			.hide()
-			.animate({
-				'opacity': '0'
-			}, 300)
-			.find('.slider-pro__slider')
-			.slick('unslick');
+				.hide()
+				.animate({
+					'opacity': '0'
+				}, 300);
 
 			// return the anoying button
 			$('#js-mob-wrap-buttons')
-				.fadeIn()
-				.css({display:'block'});
+				.fadeIn();
 		},
 
-    btnLoader: function(){
-      var target = this[0];
+		btnLoader: function(){
+			var target = this[0];
 
-      if (target.children.length && !target.classList.contains('btnLoaderInited')) {
-        target = target.firstElementChild;
+			if (target.children.length && !target.classList.contains('btnLoaderInited')) {
+				target = target.firstElementChild;
 			}
 
-      target.classList.add('btnLoaderInited');
+			target.classList.add('btnLoaderInited');
 
 			if (!target.classList.contains('is-loading')) {
 
-        if (this[0].classList.contains('js-inited'))
-          return null;
+				if (this[0].classList.contains('js-inited'))
+					return null;
 
-        this[0].classList.add('js-inited');
-        this[0].dataset.label = target.innerText;
+				this[0].classList.add('js-inited');
+				this[0].dataset.label = target.innerText;
 
 				target.classList.add('is-loading');
 				target.innerHTML = '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div>' +
 					'<div class="bounce3"></div></div>';
 
 			} else {
-        this[0].classList.remove('js-inited');
+				this[0].classList.remove('js-inited');
 
-        target.innerText = this[0].dataset.label;
-        target.classList.remove('is-loading');
-        target.classList.remove('btnLoaderInited');
+				target.innerText = this[0].dataset.label;
+				target.classList.remove('is-loading');
+				target.classList.remove('btnLoaderInited');
 			}
 		}
 	};
@@ -788,51 +794,15 @@ var FbBookNowButton = function (config) {
 	 */
 	$.fn.tourismTiger = function( method ) {
 
-	    if ( methods[method] ) {
-	      return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-	    } else if ( typeof method === 'object' || ! method ) {
-	      return methods.init.apply( this, arguments );
-	    } else {
-	      $.error( 'Method named ' +  method + ' isn\'t exist within jQuery.tourismTiger' );
-	    }
+		if ( methods[method] ) {
+			return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+		} else if ( typeof method === 'object' || ! method ) {
+			return methods.init.apply( this, arguments );
+		} else {
+			$.error( 'Method named ' +  method + ' isn\'t exist within jQuery.tourismTiger' );
+		}
 
 	};
-
-	$(function(){
-		const $sliderPro = $('.slider-pro--preview');
-
-        if ( $sliderPro.not('[data-inited]') ) {
-	        /**
-	         * Init slick carousel
-	         */
-			$sliderPro.not('[data-inited]').on('click', function(e){
-				if ( $sliderPro.data('[data-inited]') ) {
-					$(this).tourismTiger('initGallery');
-				}
-	        });
-	    }
-
-        if ( $sliderPro.not('[data-inited]') ) {
-	        /**
-	         * Close carousel
-	         */
-	        $('.slider-pro__close-link').not('[data-inited]').on('click', function(){
-	          $(this).tourismTiger('destroyGallery');
-	        });
-		    }
-
-        if ( $sliderPro.not('[data-inited]') ) {
-	        /**
-	         * Close carousel
-	         */
-	        $('.slider-pro__close-bg').not('[data-inited]').on('click', function(){
-	          $(this).tourismTiger('destroyGallery');
-	        });
-		    }
-
-        $('.slider-pro--preview, .slider-pro__close-link, .slider-pro__close-bg').attr('data-inited', 1);
-	});
-
 }));
 
 /**
@@ -840,232 +810,232 @@ var FbBookNowButton = function (config) {
  */
 
 (function (factory) {
-  'use strict';
+	'use strict';
 
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
-  } else if (typeof exports !== 'undefined') {
-    module.exports = factory(require('jquery'));
-  } else {
-    factory(jQuery);
-  }
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	} else if (typeof exports !== 'undefined') {
+		module.exports = factory(require('jquery'));
+	} else {
+		factory(jQuery);
+	}
 })(function ($) {
 
-  var methods = {
+	var methods = {
 
-    init: function init(parentSelector) {
-      var $sidebar = $(this).find('.sidebar').not('.js-inited');
-      var parentSelector = parentSelector ? parentSelector : 'body';
+		init: function init(parentSelector) {
+			var $sidebar = $(this).find('.sidebar').not('.js-inited');
+			var parentSelector = parentSelector ? parentSelector : 'body';
 
-      if (!$sidebar.length) return $(this);
+			if (!$sidebar.length) return $(this);
 
-      if ($sidebar.hasClass('js-sticky') && $(window).width() >= 769) $sidebar.sidebarModule('initScrolling', parentSelector).addClass('js-inited');
+			if ($sidebar.hasClass('js-sticky') && $(window).width() >= 769) $sidebar.sidebarModule('initScrolling', parentSelector).addClass('js-inited');
 
-      return $(this);
-    },
+			return $(this);
+		},
 
-    /**
-     * Init event whether the sidebar exists
-     * @todo !$('#body-class').hasClass('view_grid') && $(window).width() > 768
-     */
-    initScrolling: function initScrolling(parentSelector) {
+		/**
+		 * Init event whether the sidebar exists
+		 * @todo !$('#body-class').hasClass('view_grid') && $(window).width() > 768
+		 */
+		initScrolling: function initScrolling(parentSelector) {
 
-      function insertPointer() {
-        var pointer = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '0px';
-        var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'red';
-        var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'inserted-pointer';
-        var position = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'absolute';
+			function insertPointer() {
+				var pointer = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '0px';
+				var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'red';
+				var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'inserted-pointer';
+				var position = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'absolute';
 
-        var el = document.createElement(id);
+				var el = document.createElement(id);
 
-        if (!el) {
-          el = document.createElement('div');
-          document.body.appendChild(el);
-        }
+				if (!el) {
+					el = document.createElement('div');
+					document.body.appendChild(el);
+				}
 
-        el.id = id;
-        el.style.position = position;
-        el.style.top = Number.isInteger(pointer) ? pointer + 'px' : pointer;
-        el.style.left = '0px';
-        el.style.width = '100%';
-        el.style.border = '1px solid ' + color;
-        el.style.zIndex = '9999';
-      }
+				el.id = id;
+				el.style.position = position;
+				el.style.top = Number.isInteger(pointer) ? pointer + 'px' : pointer;
+				el.style.left = '0px';
+				el.style.width = '100%';
+				el.style.border = '1px solid ' + color;
+				el.style.zIndex = '9999';
+			}
 
-      /**
-       * @param sidebar
-       * @param type
-       * @param clientTopBorder
-       */
-      function setSidebar(sidebar, type) {
-        var clientTopBorder = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+			/**
+			 * @param sidebar
+			 * @param type
+			 * @param clientTopBorder
+			 */
+			function setSidebar(sidebar, type) {
+				var clientTopBorder = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-        switch (type) {
-          case 'top':
-            sidebar.style.top = '0px';
-            sidebar.style.bottom = 'auto';
-            sidebar.classList.remove('is-sticky');
-            break;
+				switch (type) {
+					case 'top':
+						sidebar.style.top = '0px';
+						sidebar.style.bottom = 'auto';
+						sidebar.classList.remove('is-sticky');
+						break;
 
-          case 'topSticky':
-            sidebar.style.top = clientTopBorder + 'px';
-            sidebar.style.bottom = 'auto';
-            sidebar.classList.add('is-sticky');
-            break;
+					case 'topSticky':
+						sidebar.style.top = clientTopBorder + 'px';
+						sidebar.style.bottom = 'auto';
+						sidebar.classList.add('is-sticky');
+						break;
 
-          case 'bottom':
-            sidebar.style.top = 'auto';
-            sidebar.style.bottom = '0px';
-            sidebar.classList.remove('is-sticky');
-            break;
+					case 'bottom':
+						sidebar.style.top = 'auto';
+						sidebar.style.bottom = '0px';
+						sidebar.classList.remove('is-sticky');
+						break;
 
-          case 'bottomSticky':
-            sidebar.style.top = 'auto';
-            sidebar.style.bottom = '30px';
-            sidebar.classList.add('is-sticky');
-            break;
+					case 'bottomSticky':
+						sidebar.style.top = 'auto';
+						sidebar.style.bottom = '30px';
+						sidebar.classList.add('is-sticky');
+						break;
 
-          default:
-            sidebar.style.top = 'auto';
-            sidebar.style.bottom = 'auto';
-            sidebar.classList.remove('is-sticky');
-            break;
-        }
-      }
+					default:
+						sidebar.style.top = 'auto';
+						sidebar.style.bottom = 'auto';
+						sidebar.classList.remove('is-sticky');
+						break;
+				}
+			}
 
-      function refreshProperties(_ref13) {
-        var _ref13$sidebar = _ref13.sidebar,
-          sidebar = _ref13$sidebar === undefined ? {} : _ref13$sidebar,
-          _ref13$column = _ref13.column,
-          column = _ref13$column === undefined ? {} : _ref13$column,
-          _ref13$wrapper = _ref13.wrapper,
-          wrapper = _ref13$wrapper === undefined ? {} : _ref13$wrapper,
-          _ref13$container = _ref13.container,
-          container = _ref13$container === undefined ? {} : _ref13$container;
+			function refreshProperties(_ref13) {
+				var _ref13$sidebar = _ref13.sidebar,
+					sidebar = _ref13$sidebar === undefined ? {} : _ref13$sidebar,
+					_ref13$column = _ref13.column,
+					column = _ref13$column === undefined ? {} : _ref13$column,
+					_ref13$wrapper = _ref13.wrapper,
+					wrapper = _ref13$wrapper === undefined ? {} : _ref13$wrapper,
+					_ref13$container = _ref13.container,
+					container = _ref13$container === undefined ? {} : _ref13$container;
 
-        if (!wrapper || !container) {
-          return null;
-        }
+				if (!wrapper || !container) {
+					return null;
+				}
 
-        column.style.width = wrapper.offsetWidth + 'px';
-        column.style.height = container.offsetHeight + 'px';
+				column.style.width = wrapper.offsetWidth + 'px';
+				column.style.height = container.offsetHeight + 'px';
 
-        sidebar.style.width = wrapper.offsetWidth + 'px';
-      }
+				sidebar.style.width = wrapper.offsetWidth + 'px';
+			}
 
-      function getOffset(elem) {
-        // кроме IE8-
-        var box = elem.getBoundingClientRect();
+			function getOffset(elem) {
+				// кроме IE8-
+				var box = elem.getBoundingClientRect();
 
-        return {
-          top: box.top + pageYOffset,
-          left: box.left + pageXOffset
-        };
-      }
+				return {
+					top: box.top + pageYOffset,
+					left: box.left + pageXOffset
+				};
+			}
 
-      function getClientTopBorder() {
-        var value = 30;
-        var header = [$('.header-bar-wrapper.sticky'), {}];
-        var $wpadminbar = $('#wpadminbar');
+			function getClientTopBorder() {
+				var value = 30;
+				var header = [$('.header-bar-wrapper.sticky'), {}];
+				var $wpadminbar = $('#wpadminbar');
 
-        if (header[0].length) {
-          value += header[0].height();
-        }
+				if (header[0].length) {
+					value += header[0].height();
+				}
 
-        if (header[1].length) {
-          value += header[1].height();
-        }
+				if (header[1].length) {
+					value += header[1].height();
+				}
 
-        if ($wpadminbar.length) {
-          value += $wpadminbar.height();
-        }
+				if ($wpadminbar.length) {
+					value += $wpadminbar.height();
+				}
 
-        return value;
-      }
+				return value;
+			}
 
-      function getScrolledBottomCorner() {
-        return (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight;
-      }
+			function getScrolledBottomCorner() {
+				return (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight;
+			}
 
-      /**
-       * @param el - html element
-       * @returns int
-       */
-      function getBottomBorder(el) {
-        return getOffset(el).top + $(el).height();
-      }
+			/**
+			 * @param el - html element
+			 * @returns int
+			 */
+			function getBottomBorder(el) {
+				return getOffset(el).top + $(el).height();
+			}
 
-      // const
-      var sidebar = this[0];
-      var wrapper = sidebar.parentNode;
-      var container = wrapper.parentNode.querySelector(parentSelector);
-      var column = $(sidebar).wrap('<div class="sidebar__column"></div>').wrap('<div class="sidebar__wrap"></div>').closest('.sidebar__column')[0];
+			// const
+			var sidebar = this[0];
+			var wrapper = sidebar.parentNode;
+			var container = wrapper.parentNode.querySelector(parentSelector);
+			var column = $(sidebar).wrap('<div class="sidebar__column"></div>').wrap('<div class="sidebar__wrap"></div>').closest('.sidebar__column')[0];
 
-      refreshProperties({
-        sidebar: sidebar,
-        column: column,
-        wrapper: wrapper,
-        container: container
-      });
+			refreshProperties({
+				sidebar: sidebar,
+				column: column,
+				wrapper: wrapper,
+				container: container
+			});
 
-      $(document).on('scroll', function () {
-        var clientTopBorder = getClientTopBorder();
-        var pageYOffset = window.pageYOffset + clientTopBorder;
-        var bottomBorderContainer = container ? getBottomBorder(container) : 0;
-        var offsetWrapper = getOffset(wrapper).top;
-        var offsetSidebar = getOffset(sidebar).top;
+			$(document).on('scroll', function () {
+				var clientTopBorder = getClientTopBorder();
+				var pageYOffset = window.pageYOffset + clientTopBorder;
+				var bottomBorderContainer = container ? getBottomBorder(container) : 0;
+				var offsetWrapper = getOffset(wrapper).top;
+				var offsetSidebar = getOffset(sidebar).top;
 
-        refreshProperties({
-          sidebar: sidebar,
-          column: column,
-          wrapper: wrapper,
-          container: container
-        });
+				refreshProperties({
+					sidebar: sidebar,
+					column: column,
+					wrapper: wrapper,
+					container: container
+				});
 
-        //if (getScrolledBottomCorner() - 30 >= getBottomBorder(column)) {
-        if (bottomBorderContainer - pageYOffset + 50 <= $(sidebar).height()) {
-          setSidebar(sidebar, 'bottom');
-        } else {
-          if (sidebar.offsetHeight > window.innerHeight - clientTopBorder) {
-            if (pageYOffset >= offsetWrapper) {
-              if (getBottomBorder(sidebar.lastElementChild) > getScrolledBottomCorner() - 59) {
-                setSidebar(sidebar, 'top');
-              } else if (offsetSidebar < offsetWrapper) {
-                setSidebar(sidebar, 'top');
-              } else {
-                setSidebar(sidebar, 'bottomSticky');
-              }
-            } else {
-              setSidebar(sidebar, 'top');
-            }
-          } else {
-            if (pageYOffset >= offsetWrapper) {
-              setSidebar(sidebar, 'topSticky', clientTopBorder);
-            } else {
-              setSidebar(sidebar, 'top');
-            }
-          }
-        }
-      });
+				//if (getScrolledBottomCorner() - 30 >= getBottomBorder(column)) {
+				if (bottomBorderContainer - pageYOffset + 50 <= $(sidebar).height()) {
+					setSidebar(sidebar, 'bottom');
+				} else {
+					if (sidebar.offsetHeight > window.innerHeight - clientTopBorder) {
+						if (pageYOffset >= offsetWrapper) {
+							if (getBottomBorder(sidebar.lastElementChild) > getScrolledBottomCorner() - 59) {
+								setSidebar(sidebar, 'top');
+							} else if (offsetSidebar < offsetWrapper) {
+								setSidebar(sidebar, 'top');
+							} else {
+								setSidebar(sidebar, 'bottomSticky');
+							}
+						} else {
+							setSidebar(sidebar, 'top');
+						}
+					} else {
+						if (pageYOffset >= offsetWrapper) {
+							setSidebar(sidebar, 'topSticky', clientTopBorder);
+						} else {
+							setSidebar(sidebar, 'top');
+						}
+					}
+				}
+			});
 
-      return $(this);
-    }
+			return $(this);
+		}
 
-  };
+	};
 
-  /**
-   * Init method
-   */
-  $.fn.sidebarModule = function (method) {
+	/**
+	 * Init method
+	 */
+	$.fn.sidebarModule = function (method) {
 
-    if (methods[method]) {
-      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    } else if ((typeof method === 'undefined' ? 'undefined' : _typeof(method)) === 'object' || !method) {
-      return methods.init.apply(this, arguments);
-    } else {
-      $.error('Method named ' + method + ' isn\'t exist within jQuery.sidebarModule');
-    }
-  };
+		if (methods[method]) {
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		} else if ((typeof method === 'undefined' ? 'undefined' : _typeof(method)) === 'object' || !method) {
+			return methods.init.apply(this, arguments);
+		} else {
+			$.error('Method named ' + method + ' isn\'t exist within jQuery.sidebarModule');
+		}
+	};
 });
 
 !( function($) {
@@ -1086,7 +1056,7 @@ var FbBookNowButton = function (config) {
 	$( function() {
 
 		var windowWidth = $( window ).width(), iframeWidth,
-		windowHeight = $( window ).height();;
+			windowHeight = $( window ).height();;
 		var $iframeHolder = $('.popup-iframe-holder');
 
 		if(windowWidth>600) iframeWidth = windowWidth-120;
@@ -1111,11 +1081,11 @@ var FbBookNowButton = function (config) {
 } )( jQuery );
 
 !( function($) {
-$( document ).ready(()=>{
-	if ($(window).width()>767 && $('#wpadminbar').height()>0 && !$('body').hasClass('page-template-test-pc')) {
-		// $('.header-bar-wrapper').css('margin-top', 32);
-	}
-});
+	$( document ).ready(()=>{
+		if ($(window).width()>767 && $('#wpadminbar').height()>0 && !$('body').hasClass('page-template-test-pc')) {
+			// $('.header-bar-wrapper').css('margin-top', 32);
+		}
+	});
 } )( jQuery );
 
 
@@ -1157,15 +1127,15 @@ $( document ).ready(()=>{
 		$(document).on('beforeChange', (el)=>{
 			// console.debug('Before change');
 			if($sliderTrack) {
-                $slides.each(restoreCaption);
-                $caption.removeClass('displayed-caption');
-                $caption = $sliderTrack.find('.displayed-caption');
-            }
+				$slides.each(restoreCaption);
+				$caption.removeClass('displayed-caption');
+				$caption = $sliderTrack.find('.displayed-caption');
+			}
 		});
 
 		$(document).on('afterChange', ()=>{
 			// console.debug('After change');
-            if($slides) $slides.each(changeCaption);
+			if($slides) $slides.each(changeCaption);
 		});
 
 		function insertCaption() {
