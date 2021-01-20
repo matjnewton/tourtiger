@@ -636,7 +636,6 @@ var FbBookNowButton = function (config) {
 	var methods = {
 
 		initGallery: function(){
-
 			// Set DOM elements to the variables
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
@@ -647,12 +646,7 @@ var FbBookNowButton = function (config) {
 			var $carousel     = $wrapper.find('.slider-pro__carousel');
 			var $cover        = $wrapper.find('.slider-pro__cover');
 			var $panel        = $wrapper.find('.slider-pro--panel');
-
-			// console.debug({
-			// 	$self,
-			// 	el: $wrapper.find('.slider-pro__slider'),
-			// 	test:$wrapper.find('.slider-pro__slider').hasClass('slick-slider')
-			// });
+			var trackWidth    = $wrapper.data('track-width');
 
 			// Core values
 			var globalWidth   = $(window).width();
@@ -672,15 +666,17 @@ var FbBookNowButton = function (config) {
 			var coverTop  = $cover.offset().top - $(window).scrollTop();
 			var coverLeft = $cover.offset().left;
 
-			$image.css({
-				'position': 'fixed',
-				'z-index': '9999',
-				'top': coverTop,
-				'left': coverLeft,
-			}).animate({
-				'top': (globalHeight / 2) - (height / 2),
-				'left': (globalWidth / 2) - (width / 2),
-			}, 300);
+			$image
+				.css({
+					'position': 'fixed',
+					'z-index': '9999',
+					'top': coverTop,
+					'left': coverLeft,
+				})
+				.animate({
+					'top': (globalHeight / 2) - (height / 2),
+					'left': (globalWidth / 2) - (width / 2),
+				}, 300);
 
 			$image.fadeOut(500);
 
@@ -705,23 +701,22 @@ var FbBookNowButton = function (config) {
 						lazyLoad: 'progressive',
 					})
 					.slick('setOption', 'height', null, true);
-
-
-				$carousel.find(".slider-image").each((ind, img)=>{
-					const $img = $(img);
-					const imgHeight = $img.data('img-height');
-					const imgWidth = $img.data('img-width');
-					if (imgWidth > globalWidth) $img.css({'height': imgHeight * globalWidth / imgWidth});
-				});
+			} else if ( trackWidth !== undefined ) {
+				setTimeout(()=>$carousel.find('.slider-pro__slider .slick-track').css('width', trackWidth), 500);
 			}
+
+			$carousel.find(".slider-image").each((ind, img)=>{
+				const $img = $(img);
+				const imgHeight = $img.data('img-height');
+				const imgWidth = $img.data('img-width');
+				if (imgWidth > globalWidth) $img.css({'height': imgHeight * globalWidth / imgWidth});
+			});
 
 			// hide anoying button which usualy used to hover the X - button
 			$('#js-mob-wrap-buttons').fadeOut();
 		},
 
 		destroyGallery: function(){
-			// console.debug("Gallery destroy");
-
 			var $self         = $(this);
 			var $wrapper      = $self.closest('.slider-pro');
 			var $image        = $wrapper.find('.slider-pro--preview__image');
@@ -732,6 +727,8 @@ var FbBookNowButton = function (config) {
 
 			var coverTop  = $cover.offset().top - $(window).scrollTop();
 			var coverLeft = $cover.offset().left;
+
+			$wrapper.attr('data-track-width', $wrapper.find('.slick-track').width());
 
 			$image
 				.css({
@@ -1111,21 +1108,18 @@ var FbBookNowButton = function (config) {
 		});
 
 		$(document).on('allImagesLoaded', (el)=>{
-			// console.debug("Images loaded");
 			$sliderTrack = $(el.target).closest('.slick-slider');
 			$slides = $sliderTrack.find('.slick-slide');
 			$slides.each(insertCaption);
 		});
 
 		$(document).on('unslick', ()=>{
-			// console.debug("Unslick");
 			$caption = $sliderTrack.find('.displayed-caption');
 			$slides.each(restoreCaption);
 			$caption.removeClass('displayed-caption');
 		});
 
 		$(document).on('beforeChange', (el)=>{
-			// console.debug('Before change');
 			if($sliderTrack) {
 				$slides.each(restoreCaption);
 				$caption.removeClass('displayed-caption');
@@ -1134,7 +1128,6 @@ var FbBookNowButton = function (config) {
 		});
 
 		$(document).on('afterChange', ()=>{
-			// console.debug('After change');
 			if($slides) $slides.each(changeCaption);
 		});
 
