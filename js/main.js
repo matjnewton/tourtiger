@@ -647,6 +647,7 @@ var FbBookNowButton = function (config) {
 			var $cover        = $wrapper.find('.slider-pro__cover');
 			var $panel        = $wrapper.find('.slider-pro--panel');
 			var trackWidth    = $wrapper.data('track-width');
+			var trackHeight    = $wrapper.data('track-height');
 
 			// Core values
 			var globalWidth   = $(window).width();
@@ -701,8 +702,11 @@ var FbBookNowButton = function (config) {
 						lazyLoad: 'progressive',
 					})
 					.slick('setOption', 'height', null, true);
-			} else if ( trackWidth !== undefined ) {
-				setTimeout(()=>$carousel.find('.slider-pro__slider .slick-track').css('width', trackWidth), 500);
+			} else {
+				( trackWidth !== undefined )
+				&& setTimeout(()=>$carousel.find('.slider-pro__slider .slick-track').css('width', trackWidth), 500);
+				( trackHeight !== undefined )
+				&& setTimeout(()=>$carousel.find('.slider-pro__slider .slick-list').css('height', trackHeight), 500);
 			}
 
 			$carousel.find(".slider-image").each((ind, img)=>{
@@ -729,6 +733,7 @@ var FbBookNowButton = function (config) {
 			var coverLeft = $cover.offset().left;
 
 			$wrapper.attr('data-track-width', $wrapper.find('.slick-track').width());
+			$wrapper.attr('data-track-height', $wrapper.find('.slick-list').height());
 
 			$image
 				.css({
