@@ -61,7 +61,7 @@ if( have_rows('pc_hero_area') ): $hero_counts = 0; //fix bug Hero loaded twice
         /**
          * Load mobile under-hero area
          */
-        if ( get_sub_field( 'pc_ha_action_button_url' ) && wp_is_mobile() ) :
+        if ( get_sub_field( 'pc_ha_action_button' ) && get_sub_field( 'pc_ha_action_button_url' ) && wp_is_mobile() ) :
             include ( PCA_DIR . '/head/pc-under-hero.php' );
         endif;
 
