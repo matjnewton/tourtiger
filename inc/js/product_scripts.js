@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 	}
 
 	$('.book-tour-title_product').hide();
-	$('#booking_product:not(.non-sticky)').on('sticky-start', function() {
+	$('#booking_product').on('sticky-start', function() {
 		$('.book-tour-title_product').show();
 	});
 

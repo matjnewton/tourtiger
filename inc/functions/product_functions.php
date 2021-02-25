@@ -1,13 +1,15 @@
-<?php 
+<?php
 
 // include script and css for product cpt
-add_action( 'wp_enqueue_scripts', 'product_scripts_method' ); 
+add_action( 'wp_enqueue_scripts', 'product_scripts_method' );
 function product_scripts_method() {
 
     $template = array('page-templates/rezdy_search.php');
+    $theme = wp_get_theme();
+    $theme_version = $theme->get( 'Version' );
 
     if(  is_front_page() || is_page_template( $template ) || is_singular('product')) :
-        wp_register_style('product_css', CORE_URL .'/css/product.css', array(),null, 'all');
+        wp_register_style('product_css', CORE_URL .'/css/product.css', array(),$theme_version, 'all');
         wp_enqueue_style('product_css');
     endif;
     if( is_page_template( $template ) || is_singular('product')) :
@@ -19,7 +21,7 @@ function product_scripts_method() {
         wp_enqueue_script( 'jquerystickyjs' );
         wp_register_script('bxslider_min_js', CORE_URL . '/js/jquery.bxslider.min.js', array('jquery'), '', true);
         wp_enqueue_script( 'bxslider_min_js' );
-        wp_register_script( 'product_scripts', CORE_URL . '/js/product_scripts.js', array('jquery', 'bxslider_min_js'), '', true );
+        wp_register_script( 'product_scripts', CORE_URL . '/js/product_scripts.js', array('jquery', 'bxslider_min_js'), $theme_version, true );
         wp_enqueue_script( 'product_scripts');
         wp_register_style('bxslider_css', CORE_URL .'/css/jquery.bxslider.css', array(),'', 'all');
         wp_enqueue_style('bxslider_css');
@@ -27,7 +29,7 @@ function product_scripts_method() {
         wp_enqueue_style('product_css_adaptive');
 
     endif;
-} 
+}
 
 function custom_admin_theme_style() {
     wp_enqueue_style('custom-admin-style', CORE_URL .'/css/custom_admin_style.css');
@@ -38,13 +40,13 @@ function my_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
     //$title = '';
 
     if( $text = get_sub_field('primary_content_content_editor_label') ) {
-        
+
         $title .= ' - ' . $text . '';
     } else if( $text = get_sub_field('primary_content_content_card_headline') ) {
-        
+
         $title .= ' - ' . $text . '';
     } else if( $text = get_sub_field('primary_content_expandable_content_label') ) {
-        
+
         $title .= ' - ' . $text . '';
     }
     return $title;
@@ -125,7 +127,7 @@ function gp_parse_request_trick( $query ) {
         return;
 
     // 'name' will be set if post permalinks are just post_name, otherwise the page rule will match
-    if ( ! empty( $query->query['name'] ) ) 
+    if ( ! empty( $query->query['name'] ) )
         $query->set( 'post_type', array( 'post', 'page', 'testimonial' ) );
 
 }
