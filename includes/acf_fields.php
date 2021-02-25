@@ -3771,7 +3771,7 @@ tour_finder',
             'type' => 'true_false',
             'ui_on_text'	=> 'Not sticky',
             'ui_off_text'	=> 'Sticky',
-            'default_value' => 1,
+            'default_value' => 0,
             'ui'=> 1,
             'wrapper' => array (
                 'width' => 25,
