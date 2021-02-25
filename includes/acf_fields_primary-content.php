@@ -356,6 +356,44 @@ if(function_exists('acf_add_options_sub_page')) {
 		'description' => '',
 	));
 
+    acf_add_local_field_group(array (
+        'key' => 'grloca3bd24st1piu8763e',
+        'title' => 'Sidebar options',
+        'fields' => array(
+            array (
+                'key' => 'sticky-sidebar_12345678',
+                'label' => '',
+                'name' => 'sticky-sidebar',
+                'type' => 'select',
+                'required' => 0,
+                'choices' => array(
+                    'sticky' => 'Sticky',
+                    'non-sticky' => 'Non sticky'
+                ),
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => 'sticky',
+                'layout' => 'horizontal',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'product',
+                ),
+            ),
+        ),
+        'menu_order' => 10,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'active' => 1,
+    ));
+
 
 	acf_add_local_field_group(array (
 		'key' => 'Grloca3bd24st1proddzvone',

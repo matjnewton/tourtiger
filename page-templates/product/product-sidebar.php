@@ -4,10 +4,12 @@
  */
 
 if ( have_rows( 'sidebar_1' ) ) :
+    $class = get_field('sticky-sidebar', 'option') || get_field('sticky-sidebar') === 'non-sticky'
+        ? 'book-tour-wrapper_product non-sticky' : 'book-tour-wrapper_product';
 	?>
 
     <div class="hidden-xs">
-        <div id="booking_product" class="book-tour-wrapper_product">
+        <div id="booking_product" class="<?=$class?>">
 
             <?php
             /**

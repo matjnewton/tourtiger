@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
 	// 	getWidthFrom:'.book-tour-wrapper_product'
 	// });
 
-	var $booking_sidebar = $("#booking_product");
+	var $booking_sidebar = $("#booking_product:not(.non-sticky)");
 
 	if ( $booking_sidebar.length > 0 ) {
 		$(window).scroll(function(){
@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 	}
 
 	$('.book-tour-title_product').hide();
-	$('#booking_product').on('sticky-start', function() { 
+	$('#booking_product').on('sticky-start', function() {
 		$('.book-tour-title_product').show();
 	});
 
@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
 	//   pagerCustom: '#bx-pager'
 	// });
 
-	$('.primary_content_expandable_content_toggle').click(function(){ 
+	$('.primary_content_expandable_content_toggle').click(function(){
 		var close = $(this).attr('data-close');
 		var open = $(this).attr('data-open');
 
@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
 
 	$('#scroll_to_form').click(function(e) {
 		e.preventDefault();
-		$('.gform_wrapper').scrollTo(500); 
+		$('.gform_wrapper').scrollTo(500);
 	});
 
 	$('.primary_content_separation_grey_gap').next('.product_content_wrapper').addClass('product_content_wrapper_first');
@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
 	$('.product_content_wrapper.primary_content_content_card').next('.product_content_wrapper.primary_content_trip_details').addClass('content_card_plus_trip_details');
 
 
-}); //end ready 
+}); //end ready
 
 jQuery.fn.extend(
 {
@@ -74,11 +74,11 @@ jQuery(document).ready(function($){
 	      hideControlOnEnd:true,
 	      onSlideBefore:function($slideElement, oldIndex, newIndex){
 	        changeRealThumb(realThumbSlider,newIndex);
-	        
+
 	      }
-	      
+
 	    });
-	    
+
 	    var realThumbSlider=$("ul#bxslider-pager").bxSlider({
 	      minSlides: 4,
 	      maxSlides: 7,
@@ -98,7 +98,7 @@ jQuery(document).ready(function($){
 
 	      }
 	    });
-	    
+
 	    linkRealSliders(realSlider,realThumbSlider);
 
 	    if($("#bxslider-pager li").length<5){
@@ -107,7 +107,7 @@ jQuery(document).ready(function($){
 
 	// sincronizza sliders realizzazioni
 	function linkRealSliders(bigS,thumbS){
-	  
+
 	  $("ul#bxslider-pager").on("click","a",function(event){
 	    event.preventDefault();
 	    var newIndex=$(this).parent().attr("data-slideIndex");
@@ -117,14 +117,14 @@ jQuery(document).ready(function($){
 
 	//slider!=$thumbSlider. slider is the realslider
 	function changeRealThumb(slider,newIndex){
-	  
+
 	  var $thumbS=$("#bxslider-pager");
 	  $thumbS.find('.active').removeClass("active");
 	  $thumbS.find('li[data-slideIndex="'+newIndex+'"]').addClass("active");
-	  
+
 	  if(slider.getSlideCount()-newIndex>=1)slider.goToSlide(newIndex);
 	  else slider.goToSlide(slider.getSlideCount()-1);
 
 	}
 
-}); //end ready 
+}); //end ready
