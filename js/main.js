@@ -197,11 +197,13 @@ $(window).resize(function () {
 
 			if ( !is_banner ) {
 
-				if (heroMarginTopZero && !$('body').hasClass('error404')) {
-					$si.css( 'margin-top', 0 );
-				} else $si.css( 'margin-top', newMarginTop );
-
-				$unessesarily.css('margin-top', 0);
+				// if ( heroMarginTopZero && !$('body').hasClass('error404') ) {
+				// 	$si.css( 'margin-top', 0 );
+				// } else {
+				// 	$si.css( 'margin-top', newMarginTop );
+				// }
+				//
+				// $unessesarily.css('margin-top', 0);
 			}
 
 			if ( is_post || is_product ) {
