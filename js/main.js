@@ -189,6 +189,12 @@ $(window).resize(function () {
 			var secondary     = $('.secondary-menu-wrapper').height() || 0;
 			newMarginTop  = headerWrapper - secondary;
 
+			if ( $sticky.length === 1 ) {
+				$sticky.css('position', 'fixed');
+				$si.css({'position':'relative', 'top':newMarginTop});
+				$('footer').css({'position':'relative', 'top':newMarginTop});
+			}
+
 			if ( is_logged ) {
 				$headerBarWrapper.css('top', 32);
 			}
@@ -197,13 +203,13 @@ $(window).resize(function () {
 
 			if ( !is_banner ) {
 
-				// if ( heroMarginTopZero && !$('body').hasClass('error404') ) {
-				// 	$si.css( 'margin-top', 0 );
-				// } else {
-				// 	$si.css( 'margin-top', newMarginTop );
-				// }
-				//
-				// $unessesarily.css('margin-top', 0);
+				if ( heroMarginTopZero && !$('body').hasClass('error404') ) {
+					$si.css( 'margin-top', 0 );
+				} else {
+					$si.css( 'margin-top', newMarginTop );
+				}
+
+				$unessesarily.css('margin-top', 0);
 			}
 
 			if ( is_post || is_product ) {
@@ -243,12 +249,6 @@ $(window).resize(function () {
 
 			if (!$body.hasClass('single') || $sticky.length === 1) {
 				$headerBarWrapper.css('top', adminbar_height);
-			}
-
-			if ($sticky.length === 1 && $body.hasClass('single')) {
-				$sticky.css('position', 'fixed');
-				$si.css({'position':'relative', 'top':newMarginTop});
-				$('footer').css({'position':'relative', 'top':newMarginTop});
 			}
 
 			if (!$sticky.length || !$body.hasClass('single')) $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
