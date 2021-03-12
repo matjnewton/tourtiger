@@ -9,8 +9,6 @@
  */
 function submit_gf_through_pc(url, values_json, $form) {
 
-  console.debug({url, values_json, $form});
-
   $.post(url, values_json, function(data){
     console.log(data);
 
@@ -215,13 +213,7 @@ window.onload = function () {
       if ( $(".pc--date").not('[data-inited]') ) {
         $(".pc--date").each(function(){
           console.log($(this)[0].dataset.dateFormat);
-          $(this).daterangepicker({
-            locale: {
-              format: $(this)[0].dataset.dateFormat
-            },
-            singleDatePicker: true,
-          });
-          $(this).attr('data-inited', 1);
+          $(this).datepicker();
         });
       }
 

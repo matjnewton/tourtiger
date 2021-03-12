@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.14.17
+Version: 1.14.18
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -1100,17 +1100,14 @@ html body .sidebar_links_options_wrap a {
 .hawaiifun--popup p {
     margin: 0
 }
-.ui-widget-header {
-    background: rgba(20, 41, 97, 1)!important;
-    border-color: rgba(20, 41, 97, 1)!important
+
+#ui-datepicker-div {
+    font-family: inherit !important;
 }
-.ui-state-highlight,
-.ui-state-hover,
-.ui-widget-content .ui-state-highlight,
-.ui-widget-header .ui-state-highlight {
-    background: rgba(20, 41, 97, .1)!important;
-    border-color: rgba(20, 41, 97, 1)!important
-}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {width:100%;text-align: center;}
+
+
 .hawaiifun--popup *+hr,
 .hawaiifun--popup *+script+*,
 .hawaiifun--popup hr+*,
