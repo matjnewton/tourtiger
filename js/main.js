@@ -324,7 +324,7 @@ $(window).resize(function () {
 						$('body').append('<a href="javascript:" class="iframe-popup__close" style="opacity:0;pointer-events:none;"></a>');
 					}
 
-					$('body').append('<iframe src="'+reference+'" id="iframe-popup" style="opacity:0;pointer-events:none;" class="iframe-popup"></iframe>');
+					!reference.includes('checkout.xola.com') && $('body').append('<iframe src="'+reference+'" id="iframe-popup" style="opacity:0;pointer-events:none;" class="iframe-popup"></iframe>');
 
 					$('#iframe-popup').load(function(){
 						if (isResize){
