@@ -213,7 +213,9 @@ window.onload = function () {
       if ( $(".pc--date").not('[data-inited]') ) {
         $(".pc--date").each(function(){
           console.log($(this)[0].dataset.dateFormat);
-          $(this).datepicker();
+          $(this).datepicker({
+            dateFormat: $(this)[0].dataset.dateFormat
+          });
         });
       }
 
