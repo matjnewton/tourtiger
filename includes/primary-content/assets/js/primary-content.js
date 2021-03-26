@@ -212,10 +212,10 @@ window.onload = function () {
 
       if ( $(".pc--date").not('[data-inited]') ) {
         $(".pc--date").each(function(){
-          console.log($(this)[0].dataset.dateFormat);
-          $(this).datepicker({
-            dateFormat: $(this)[0].dataset.dateFormat
-          });
+          let dateFormat = $(this)[0].dataset.dateFormat;
+          // console.debug(dateFormat.toLowerCase().replace('yyyy', 'yy'));
+          dateFormat = dateFormat.toLowerCase().replace('yyyy', 'yy');
+          $(this).datepicker({dateFormat});
         });
       }
 
