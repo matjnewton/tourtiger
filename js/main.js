@@ -191,8 +191,8 @@ $(window).resize(function () {
 
 			if ( $sticky.length === 1 ) {
 				$sticky.css('position', 'fixed');
-				$si.css({'position':'relative', 'top':newMarginTop});
-				$('footer').css({'position':'relative', 'top':newMarginTop});
+				// $si.css({'position':'relative', 'top':newMarginTop});
+				// $('footer').css({'position':'relative', 'top':newMarginTop});
 			}
 
 			if ( is_logged ) {
