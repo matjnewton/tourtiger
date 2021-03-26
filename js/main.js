@@ -174,6 +174,7 @@ $(window).resize(function () {
 		var is_search  = $body.hasClass('page-template-rezdy_search');
 		var is_blog    = $body.not('.page-template-front-page3').hasClass('blog');
 		var is_banner  = $('.banner-wrapper-inner > .banner').length > 0;
+		var is_pc_banner  = $('.pc_hero-area__banner').length > 0;
 		var adminbar_height = $('#wpadminbar').height();
 		var newMarginTop;
 		var $bannerWrapperInner = $('.banner-wrapper-inner');
@@ -191,7 +192,7 @@ $(window).resize(function () {
 
 			if ( $sticky.length === 1 ) {
 				$sticky.css('position', 'fixed');
-				!is_banner
+				!is_banner && !is_pc_banner
 					&& $si.css({'position':'relative', 'top':newMarginTop})
 					&& $('footer').css({'position':'relative', 'top':newMarginTop});
 			}
