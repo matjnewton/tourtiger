@@ -213,7 +213,7 @@ window.onload = function () {
       if ( $(".pc--date").not('[data-inited]') ) {
         $(".pc--date").each(function(){
           let dateFormat = $(this)[0].dataset.dateFormat;
-          // console.debug(dateFormat.toLowerCase().replace('yyyy', 'yy'));
+          console.debug(dateFormat.toLowerCase().replace('yyyy', 'yy'));
           dateFormat = dateFormat.toLowerCase().replace('yyyy', 'yy');
           $(this).datepicker({dateFormat});
         });
