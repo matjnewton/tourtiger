@@ -2265,3 +2265,5 @@ function is_410() {
 
     return $wp_query->get('is_410');
 }
+
+include get_stylesheet_directory() . '/inc/blocking-links-in-gravity-forms.php';
