@@ -3,6 +3,7 @@
 $the_fly_book_account_id = get_field('the_fly_book_account_id','apikey');
 $button_one_type = get_sub_field( 'pc_button_link_type' );
 $button_two_type = get_sub_field( 'pc_button_link_type_addt' );
+$button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
 ?>
 
 <div class="pc_hero-area__action">
@@ -58,4 +59,33 @@ $button_two_type = get_sub_field( 'pc_button_link_type_addt' );
       </a>
 	  <?php endif; ?>
 	<?php endif; ?>
+    <?php if ( $cta_button_text_addt2 ) : ?>
+        <?php $cta_button_url_addt2 = get_sub_field( 'pc_cta_button_url_addt2' ) ? get_sub_field( 'pc_cta_button_url_addt2' ) : '#.'; ?>
+        <?php if ($button_three_type === 'the_fly_booking' && $the_fly_book_account_id) : ?>
+            <button
+                    class='
+          flybook-book-now-button
+          fb-widget-type-frontend
+          fb-default-category-id-0
+          fb-account-id-<?=$the_fly_book_account_id?>
+          fb-entity-config-id-
+          fb-domain-go.theflybook.com
+          fb-protocol-https
+          pc_hero-area__action-btn
+        '><?php echo get_sub_field( 'pc_cta_button_text_addt2' ); ?></button>
+        <?php elseif ($button_three_type === 'xola') : ?>
+            <div
+                    class="xola-checkout xola-custom pc_hero-area__action-btn"
+                    data-button-id="<?php echo $cta_button_url_addt; ?>"><?php echo get_sub_field( 'pc_cta_button_text_addt2' ); ?></div>
+        <?php else : ?>
+            <?php
+            $iframe_popup = get_sub_field( 'pc_button_link_type_addt2' ) == 'iframe-popup' ? 'data-iframe-popup="' . get_sub_field( 'pc_cta_button_url_addt2' ) . '"' : '';
+            $new_tab = get_sub_field( 'pc_button_link_type_addt2' ) == 'new-tab' ? 'target="_blank"' : '';
+            ?>
+
+            <a href="<?php echo get_sub_field( 'pc_cta_button_url_addt2' ) ? get_sub_field( 'pc_cta_button_url_addt2' ) : '#.'; ?>" <?=$iframe_popup;?> <?=$new_tab;?> class="pc_hero-area__action-btn">
+                <?php echo get_sub_field( 'pc_cta_button_text_addt2' ); ?>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
 </div>
