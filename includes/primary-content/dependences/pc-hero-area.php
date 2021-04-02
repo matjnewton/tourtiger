@@ -311,7 +311,7 @@ acf_add_local_field_group(array (
 							'max_height' => 0,
 							'max_size' => 0,
 							'mime_types' => '',
-						), 
+						),
 						array (
 							'key' => 'pc_ha_010-2-2',
 							'label' => 'Bottom Divider',
@@ -343,7 +343,7 @@ acf_add_local_field_group(array (
 							'max_height' => 0,
 							'max_size' => 0,
 							'mime_types' => '',
-						), 
+						),
 						array (
 							'key' => 'pc_ha_010-2-3-1',
 							'label' => 'Bottom divider',
@@ -451,7 +451,7 @@ acf_add_local_field_group(array (
 							'max_height' => 0,
 							'max_size' => 0,
 							'mime_types' => '',
-						), 
+						),
 						array (
 							'key' => 'pc_ha_tab_1',
 							'label' => 'Background',
@@ -1305,7 +1305,9 @@ acf_add_local_field_group(array (
 							'append' => 'px',
 							'formatting' => 'none',
 						),
-						
+
+						// Button (1) fields
+
 						array (
 							'key' => 'pc_ha_tab_6',
 							'label' => 'Button',
@@ -1371,7 +1373,7 @@ acf_add_local_field_group(array (
 									array (
 										'field' => 'pc_ha_014',
 										'operator' => '==',
-										'value' => 'Custom' 
+										'value' => 'Custom'
 									)
 								),
                 array (
@@ -1587,7 +1589,7 @@ acf_add_local_field_group(array (
 							'toggle' => 0,
 						),
 
-						
+                        // Button 2 fields
 						array (
 							'key' => 'pc_ha_tab_6_addt',
 							'label' => 'Button 2',
@@ -1643,14 +1645,14 @@ acf_add_local_field_group(array (
 									array (
 										'field' => 'pc_ha_014_addt',
 										'operator' => '==',
-										'value' => 'Custom' 
+										'value' => 'Custom'
 									)
 								),
 								array (
 									array (
 										'field' => 'pc_ha_014_addt',
 										'operator' => '==',
-										'value' => 'iframe-popup' 
+										'value' => 'iframe-popup'
 									)
 								),
 								array (
@@ -1678,7 +1680,101 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						
+
+                        // Button 3 fields
+                        array (
+                            'key' => 'pc_ha_tab_6_addt2',
+                            'label' => 'Button 3',
+                            'name' => 'pc_ha_tab_6_addt2',
+                            'type' => 'tab',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'placement' => 'top',
+                            'endpoint' => 0,
+                        ),
+                        array (
+                            'key' => 'pc_ha_013_addt2',
+                            'label' => 'CTA Button text',
+                            'name' => 'pc_cta_button_text_addt2',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array (
+                                'width' => '33',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'formatting' => 'none',
+                            'maxlength' => '',
+                            'readonly' => 0,
+                            'disabled' => 0,
+                        ),
+                        array (
+                            'key' => 'pc_ha_014_addt2',
+                            'label' => 'Button link type',
+                            'name' => 'pc_button_link_type_addt2',
+                            'type' => 'select',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array (
+                                'width' => '33',
+                            ),
+                            'choices' => get_hero_area_button_options(),
+                        ),
+                        array (
+                            'key' => 'pc2131012133_addt2',
+                            'label' => 'CTA Button link',
+                            'name' => 'pc_cta_button_url_addt2',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => array (
+                                array (
+                                    array (
+                                        'field' => 'pc_ha_014_addt2',
+                                        'operator' => '==',
+                                        'value' => 'Custom'
+                                    )
+                                ),
+                                array (
+                                    array (
+                                        'field' => 'pc_ha_014_addt2',
+                                        'operator' => '==',
+                                        'value' => 'iframe-popup'
+                                    )
+                                ),
+                                array (
+                                    array (
+                                        'field' => 'pc_ha_014_addt2',
+                                        'operator' => '==',
+                                        'value' => 'new-tab'
+                                    )
+                                ),
+                                array (
+                                    array (
+                                        'field' => 'pc_ha_014_addt2',
+                                        'operator' => '==',
+                                        'value' => 'xola'
+                                    )
+                                )
+                            ),
+                            'wrapper' => array (
+                                'width' => '33',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => 'https://example.com',
+                            'formatting' => 'none',
+                            'maxlength' => '',
+                            'readonly' => 0,
+                            'disabled' => 0,
+                        ),
+
+						// Mobile devices fields
+
 						array (
 							'key' => 'pc_ha_tab_7',
 							'label' => 'Mobile devices',
@@ -1782,6 +1878,6 @@ acf_add_local_field_group(array (
 	),
 	'active' => 1,
 	'description' => '',
-)); 
+));
 
 ?>
