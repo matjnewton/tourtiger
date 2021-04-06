@@ -1994,3 +1994,68 @@ nav {
 }
 
 [type="submit"]:active{transform:scale(.9)}
+
+.flex-control-nav.flex-control-paging {
+    text-align: center;
+    margin: -2rem;
+}
+
+.flex-control-nav.flex-control-paging li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.flex-control-nav.flex-control-paging li a {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.flex-control-nav.flex-control-paging li a:hover,
+.flex-control-nav.flex-control-paging li a:focus
+{
+    outline: none;
+}
+.flex-control-nav.flex-control-paging li a:hover:before,
+.flex-control-nav.flex-control-paging li a:focus:before
+{
+    opacity: 1;
+}
+.flex-control-nav.flex-control-paging li a:before
+{
+    font-family: 'slick';
+    font-size: 35px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.flex-control-nav.flex-control-paging li a.flex-active:before
+{
+    opacity: .75;
+    color: black;
+}

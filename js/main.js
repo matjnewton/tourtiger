@@ -49,7 +49,14 @@ $(window).resize(function () {
 				$(".gallery2-" + e).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
 			})),
 			$(".flexslider").length > 0 && $(".flexslider").flexslider({ animation: "fade", controlNav: !1 }),
-			$(".testimonials-slider").length > 0 && $(".testimonials-slider").flexslider({ animation: "fade", controlNav: !1 }),
+			$(".testimonials-slider").length > 0
+			&& $(".testimonials-slider").flexslider({
+				animation: "fade",
+				controlNav: 1,
+				// directionNav: true,
+				dots: 1,
+				pauseOnHover: true
+			}),
 			$("#booking").length > 0 &&
 			($(".bear-banner").length > 0 && $("#booking").affix({ offset: { top: 409 } }),
 			$(".skip-banner").length > 0 && $("#booking").affix({ offset: { top: $(".site-header").height() } }),
