@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.14.32
+Version: 1.14.33
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -1997,7 +1997,7 @@ nav {
 
 .flex-control-nav.flex-control-paging {
     text-align: center;
-    margin: -2rem;
+    margin: -3rem;
 }
 
 .flex-control-nav.flex-control-paging li {
