@@ -251,7 +251,7 @@ $(window).resize(function () {
 			newMarginTop = $headerBarWrapper.height();
 			// $si.css( 'margin-top', newMarginTop );
 
-		} else if (false && $(window).width() < 768) {
+		} else if ( $(window).width() < 768 ) {
 
 			adminbar_height = adminbar_height ? adminbar_height : 0;
 			newMarginTop = $headerBarWrapper.height();
