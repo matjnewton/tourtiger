@@ -170,8 +170,6 @@ $(window).resize(function () {
 	 */
 	var fix_header_paddings = function fix_header_paddings() {
 
-		console.debug('fix_header_paddings');
-
 		var $body = $('body');
 		var $header    = $('.site-header');
 		var $sticky    = $header.find('.sticky');
