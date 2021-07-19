@@ -33,7 +33,7 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
                     <div class="flxslider-wrapper">
                         <?php $images = get_sub_field('hero_slides');
                                 ?>
-                                <?php if( $images ): ?>
+                                <?php if( get_sub_field( 'image_type' ) === 'Slider images' && $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ): ?>

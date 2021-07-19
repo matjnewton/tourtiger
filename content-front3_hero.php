@@ -6,8 +6,8 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
 if( have_rows('hero_area') ):
     while ( have_rows('hero_area') ) : the_row();
         if( get_row_layout() == 'hero'):
-        
-        /*$image = get_sub_field('image'); 
+
+        /*$image = get_sub_field('image');
         $gradient = get_sub_field('gradient');
         $background_type = get_sub_field('background_type');*/
         $headline = get_sub_field('headline');
@@ -15,12 +15,12 @@ if( have_rows('hero_area') ):
         $cta_button_text = get_sub_field('cta_button_text');
         $cta_onclick = get_sub_field('cta_onclick');
         $button_type = get_sub_field('button_link_type');
-        
+
         $book_tours = get_sub_field('book_tours_link');
         $cta_button_radius = get_sub_field('cta_button_radius');
         $text_align = get_sub_field('text_align');
         $background_placement = get_sub_field('background_position');
-        
+
         $third_party = get_sub_field('third_party');
         $mobd = get_sub_field('multi_option_button_dropdown');
         $video_button_link = get_sub_field('video_button_link');
@@ -29,13 +29,13 @@ if( have_rows('hero_area') ):
 
     <!-- update dgamoni get search settings -->
     <?php global $search_content; ?>
-    <?php 
+    <?php
     $integrate_atlasx_with_this_website = get_field('integrate_atlasx_with_this_website', 'option');
 
     if ($integrate_atlasx_with_this_website) {
-        get_template_part( 'page-templates/search/search_box_settings_atlas' ); 
+        get_template_part( 'page-templates/search/search_box_settings_atlas' );
     } else {
-        get_template_part( 'page-templates/search/search_box_settings' ); 
+        get_template_part( 'page-templates/search/search_box_settings' );
     }
     ?>
 
@@ -50,29 +50,29 @@ if( have_rows('hero_area') ):
 
         <!-- update dgamoni  print search -->
         <?php  echo $search_content; ?>
-        
+
         <div class="flxslider-wrapper">
                         <?php $images = get_sub_field('hero_slides');
-                            //$domain_name = $_SERVER['HTTP_HOST']; 
+                            //$domain_name = $_SERVER['HTTP_HOST'];
                             $darray = explode('.', $_SERVER['HTTP_HOST']);
                             $narray = array_reverse($darray);
                             $domain_name = $narray[1];
-                            unset($darray, $narray);   
+                            unset($darray, $narray);
                                 ?>
-                                <?php if( $images ): ?>
+                                <?php if( get_sub_field( 'image_type' ) === 'Slider images' && $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ): ?>
-                            <?php 
-                                
-                                if($background_placement=='Under Header'): 
+                            <?php
+
+                                if($background_placement=='Under Header'):
                                 $simage = aq_resize( $slider_image['url'], 1440, 620, true );
                                 else:
                                 $simage = aq_resize( $slider_image['url'], 1440, 545, true );
                                 endif;
-                                
+
                                 //$img_url = $slider_image['url'];
-                                
+
                             ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:<?php if($background_placement=='Under Header'): ?>620<?php else: ?>539<?php endif; ?>px;">
                                         <div class="tint"></div>
@@ -82,13 +82,13 @@ if( have_rows('hero_area') ):
                                             <img class="img-responsive center-block" src="<?php bloginfo('stylesheet_directory'); ?>/images/blank_full.png" />
                                             </div>
                                             </div>
-                                        </div>  
+                                        </div>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
                              </div>
-                                <?php endif; ?> 
-                    
+                                <?php endif; ?>
+
                     <div class="overlay-slider">
                     <div class="container">
             <div class="row">
@@ -107,7 +107,7 @@ if( have_rows('hero_area') ):
                         <?php echo $content_editor; ?>
                     </div>
                     <?php endif; ?>
-                    
+
                     <?php if( $button_type == 'Play Video'): ?>
                     <img class="play-icon" src="<?php bloginfo('stylesheet_directory');?>/images/554cc0ad2cb6bf677667cea7_play.png" />
                     <?php else: ?>
@@ -117,24 +117,24 @@ if( have_rows('hero_area') ):
                         <?php include(locate_template('buttons/hero_mobd.php' )); ?>
                     <?php endif; ?><!-- end of button-->
                     <?php endif; /*end of Video/others condition*/?>
-                    
+
                 </div><!-- end of hero-elements-wrapper-->
                     </div>
                     </div>
             </div>
         </div><br clear="both" />
                     </div><!-- end of flxslider-wrapper position context-->
-        
+
         </div>
-        
-        
+
+
     <?php if( $button_type == 'Play Video'): ?>
          </a>
-         <?php endif; ?>    
+         <?php endif; ?>
     </section>
-    
-        
-<?php 
+
+
+<?php
         endif;
     endwhile;
 endif;

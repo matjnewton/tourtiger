@@ -36,7 +36,7 @@ if( $ha_rows ):
                         <?php
                             $images = get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true );
                                 ?>
-                                <?php if( $images ): ?>
+                                <?php if( get_sub_field( 'image_type' ) === 'Slider images' && $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ): ?>
