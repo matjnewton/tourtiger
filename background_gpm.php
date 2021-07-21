@@ -132,50 +132,62 @@
 <?php endif; ?>
 <?php endif; ?>
 
-<?php if($background_placement=='Under Header' && $hero_video): ?>
-@media (max-width: 991px) {
-    .banner-wrapper{
-        background-repeat:no-repeat;
-        <?php
-        $poster = aq_resize( $poster_url, 1440, 620, true );
-        $poster_xs = aq_resize( $poster_url, 480, 297, true );
-        ?>
-        background-image:url(<?php echo $poster_xs; ?>);
-        position:relative;
-    }
-}
-@media (max-width:480px){
-    .banner-wrapper{
-        background-size:480px auto;
-    }
-}
-@media (min-width: 481px) and (max-width: 991px) {
-    .banner-wrapper{
-        background-size:1440px auto;
-        background-image:url(<?php echo $poster; ?>);
-    }
-}
-
-<?php endif; ?>
-<?php if($background_placement=='Down Below Header' && $hero_video): ?>
-    <?php
-    $poster = aq_resize( $poster_url, 1440, 545, true );
-    $poster_xs = aq_resize( $poster_url, 480, 225, true );
+<?php if( $background_placement=='Under Header' && $hero_video ):
+    $poster = aq_resize($poster_url ?: $hero_image, 1440, 620, true);
+    $poster_xs = aq_resize($poster_url ?: $hero_image, 480, 297, true);
     ?>
-@media (max-width:480px){
-    .banner-wrapper-inner{
-        background-repeat:no-repeat;
-        background-size:480px auto;
-        background-image:url(<?php echo $poster_xs; ?>);
-    }
-}
-@media (min-width:481px) and (max-width: 991px) {
-    .banner-wrapper-inner{
-        background-repeat:no-repeat;
-        background-size:1440px auto;
-        background-image:url(<?php echo $poster; ?>);
-    }
-}
+        @media (max-width: 991px) {
+            .banner-wrapper{
+                background-repeat:no-repeat;
+                background-image:url(<?php echo $poster_xs; ?>);
+                position:relative;
+            }
+        }
+        @media (max-width:480px){
+            .banner-wrapper{
+                background-size:480px auto;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 991px) {
+            .banner-wrapper{
+                background-size:1440px auto;
+                background-image:url(<?php echo $poster; ?>);
+            }
+        }<?php
+
+        if ( !$poster_url ) : ?>
+            @media (max-width: 768px) {
+                .wrap .banner-wrapper.under-header {
+                background-position: 50% 50%;
+                background-size: auto;
+                }
+            }
+            @media (max-width: 768px) and (min-width: 480px) {
+            .page-template-page-templatesfront-page-php .banner-top .flxslider-wrapper {
+                    min-height: 500px;
+                }
+            }<?php
+        endif;
+endif; ?>
+<?php if( $background_placement=='Down Below Header' && $hero_video ): ?>
+    <?php
+    $poster = aq_resize( $poster_url ?: $hero_image, 1440, 545, true );
+    $poster_xs = aq_resize( $poster_url ?: $hero_image, 480, 225, true );
+    ?>
+        @media (max-width:480px){
+            .banner-wrapper-inner{
+                background-repeat:no-repeat;
+                background-size:480px auto;
+                background-image:url(<?php echo $poster_xs; ?>);
+            }
+        }
+        @media (min-width:481px) and (max-width: 991px) {
+            .banner-wrapper-inner{
+                background-repeat:no-repeat;
+                background-size:1440px auto;
+                background-image:url(<?php echo $poster; ?>);
+            }
+        }
 <?php endif; ?>
 <?php
         break;
@@ -201,7 +213,7 @@
                 case 'hero':
 
                 $img = (int) get_post_meta( get_the_ID(), 'options_hero_area_' . $bhaop_count . '_hero_image', true );
-                $hero_image = wp_get_attachment_url( $img,'full');
+                $hero_image = wp_get_attachment_url( $img );
                 $background_placement = get_option( 'options_hero_area_' . $bhaop_count . '_background_position' );
 
     ?>
