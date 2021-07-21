@@ -52,7 +52,7 @@ if($custom_header == true): ?>
     endforeach;
     endif;
 ?>
-<div class="banner-wrapper<?php if($background_placement=='Under Header'): echo " under-header"; elseif($background_placement=='Down Below Header'): echo " below-header"; else: echo " no-banner"; endif;?>"<?php if($background_placement=='Under Header' && $hero_video): ?> style="max-width:1440px; max-height:620px; margin-left:auto; margin-right:auto;"<?php endif; ?><?php if($background_placement=='Down Below Header' && $hero_video): ?> style="max-width:1440px; max-height:545px; margin-left:auto; margin-right:auto;"<?php endif; ?>>
+<div class="banner-wrapper<?php if($background_placement=='Under Header'): echo " under-header"; elseif($background_placement=='Down Below Header'): echo " below-header"; else: echo " no-banner"; endif;?>"<?php if($background_placement=='Under Header' && $hero_video): ?> style="max-width:1980px; max-height:620px; margin-left:auto; margin-right:auto;"<?php endif; ?><?php if($background_placement=='Down Below Header' && $hero_video): ?> style="max-width:1440px; max-height:545px; margin-left:auto; margin-right:auto;"<?php endif; ?>>
 <div class="tint under-header-tint"></div>
 <div class="banner-wrapper-mobile"></div>
 <?php
