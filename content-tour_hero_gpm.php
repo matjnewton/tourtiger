@@ -32,25 +32,28 @@ if( $ha_rows ):
         <div class="banner-top">
 
 
-                    <div class="flxslider-wrapper">
+                    <div class="flxslider-wrapper content-tour_hero_gpm">
                         <?php
-                            $images = get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true );
+                        $images = get_sub_field( 'image_type' ) === 'Slider images'
+                            ? get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true )
+                            : ( get_sub_field( 'image_type' ) === 'Single image'
+                                ? [get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_image', true )]
+                                : ''
+                            );
                                 ?>
-                                <?php if( get_sub_field( 'image_type' ) === 'Slider images' && $images ): ?>
+                                <?php if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
-                                    <?php foreach( $images as $slider_image ): ?>
-                            <?php
-                                $img_url = wp_get_attachment_url($slider_image);
-                                //$simage = aq_resize( $slider_image['url'], 1440, 362, true );
-                                if($background_placement=='Under Header'):
-                                $simage = aq_resize( $img_url, 1440, 620, true );
-                                else:
-                                $simage = aq_resize( $img_url, 1440, 545, true );
-                                endif;
-                                //$img_url = $slider_image['url'];
+                                    <?php foreach( $images as $slider_image ) :
 
-                            ?>
+                                    $img_url = wp_get_attachment_url($slider_image);
+                                    if( $background_placement=='Under Header' ):
+                                        $simage = aq_resize( $img_url, 1440, 620, true ) ?: $img_url;
+                                    else:
+                                        $simage = aq_resize( $img_url, 1440, 545, true ) ?: $img_url;
+                                    endif;
+
+                                        ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:<?php if($background_placement=='Under Header'): ?>620<?php else: ?>539<?php endif; ?>px;">
                                         <div class="container">
                                             <div class="row">

@@ -30,20 +30,23 @@ $ha_rows = get_post_meta( get_the_ID(), 'hero_area', true );
          <?php endif; ?>
         <div class="banner-top">
 
-        <div class="flxslider-wrapper">
+        <div class="flxslider-wrapper content-front_hero_gpm">
                         <?php
-                            $images = get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true );
+                        $images = get_sub_field( 'image_type' ) === 'Slider images'
+                            ? get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_slides', true )
+                            : ( get_sub_field( 'image_type' ) === 'Single image'
+                                    ? [get_post_meta( get_the_ID(), 'hero_area_' . $ha_count . '_hero_image', true )]
+                                    : ''
+                            );
                                 ?>
-                                <?php if( get_sub_field( 'image_type' ) === 'Slider images' && $images ): ?>
+                                <?php if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
-                                    <?php foreach( $images as $slider_image ): ?>
-                            <?php
+                                    <?php foreach( $images as $slider_image ) :
                                 $img_url = wp_get_attachment_url($slider_image);
-                                $simage = aq_resize( $img_url, 1440, 545, true );
-                                //$img_url = $slider_image['url'];
+                                $simage = aq_resize( $img_url, 1440, 545, true ) ?: $img_url;
 
-                            ?>
+                                         ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:539px;">
                                         <div class="tint"></div>
                                         <div class="container">

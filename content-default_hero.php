@@ -30,17 +30,19 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
         <div class="banner-top">
 
 
-                    <div class="flxslider-wrapper">
-                        <?php $images = get_sub_field('hero_slides'); ?>
-                        <?php if( get_sub_field( 'image_type' ) === 'Slider images' && $images ): ?>
+                    <div class="flxslider-wrapper content-default_hero">
+                        <?php $images = get_sub_field( 'image_type' ) === 'Slider images'
+                            ? get_sub_field('hero_slides')
+                            : ( get_sub_field( 'image_type' ) === 'Single image'
+                                ? [get_sub_field('hero_image')]
+                                : ''
+                            ) ?>
+                        <?php if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
-                                    <?php foreach( $images as $slider_image ): ?>
-                                    <?php
-                                     $simage = aq_resize( $slider_image['url'], 1440, 362, true );
-                                //$img_url = $slider_image['url'];
-
-                            ?>
+                                    <?php foreach( $images as $slider_image ) :
+                                     $simage = aq_resize( $slider_image['url'], 1440, 362, true ) ?: $slider_image['url'];
+                                        ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:362px;">
                                         <div class="container">
                                             <div class="row">
