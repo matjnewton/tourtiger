@@ -16,43 +16,45 @@
 
             <?php if ( '' != get_the_post_thumbnail() ):
               $thumb = get_post_thumbnail_id();
-              $img_url = wp_get_attachment_url( $thumb,'full' ); //get img URL
-              echo "<div class='featured-wrapper article-image'><img src='{$img_url}' class='center-block' /></div>";
+              $img_url = wp_get_attachment_url( $thumb ); //get img URL
+              echo "<div class='featured-wrapper article-image'><img src='$img_url' class='center-block' alt='$img_url' /></div>";
             endif; ?>
 
             <div class="blog-info-wrapper">
-                            <div class="blog-date">
-                                <i class="fa fa-calendar"></i>
-                                <a href="http://www.labicicletaverde.com/2015/10/06/"><?php the_time('j M Y'); ?></a>
-                            </div>
-                            <div class="blog-tag">
-                                <?php
-$posttags = get_the_tags();
-$count=0;
-$len = count($posttags);
-if ($posttags) { ?>
-<i class="fa fa-tags"></i>
-<?php
-  foreach($posttags as $tag) {
-    $count++;
-    if($count == 0): endif;
-    echo '<a rel="tag" href="'.get_tag_link($tag->term_id).'">' .$tag->name . '</a>';
-    if($count == $len): echo ' '; else: echo ', '; endif;
-  }
-}
-?>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
+                <div class="blog-date">
+                    <i class="fa fa-calendar"></i>
+                    <a href="http://www.labicicletaverde.com/2015/10/06/"><?php the_time('j M Y'); ?></a>
+                </div>
+                <div class="blog-tag"><?php
+
+                $posttags = get_the_tags();
+                $count=0;
+                $len = count($posttags);
+                if ($posttags) { ?>
+                    <i class="fa fa-tags"></i>
+                    <?php foreach($posttags as $tag) {
+                        $count++;
+                        echo '<a rel="tag" href="'.get_tag_link($tag->term_id).'">' .$tag->name . '</a>';
+                        if($count == $len): echo ' '; else: echo ', '; endif;
+                      }
+                    }
+                    ?>
+                </div>
+                <div class="clear"></div>
+            </div>
             <!--<span class="entry-date"><?php echo get_the_date(); ?></span>-->
 
             <?php
-            $excerpt = ( strlen($post->post_content) < 400 )
+
+            $additional_content = get_field('additional_content_to_display_in_blog_feed');
+
+            $excerpt = ( isset($post) && strlen( $post->post_content ) < 400 )
                 ? preg_replace('/<img.*?>/', '', $post->post_content)
                 : get_the_excerpt();
             ?>
             <div class="blog-content excerpt-container">
-            <?php echo $excerpt; ?>
+                <?php echo $additional_content ?>
+                <?php echo $excerpt; ?>
             </div>
 
         </div>

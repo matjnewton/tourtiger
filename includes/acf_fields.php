@@ -11623,3 +11623,36 @@ tour_finder',
   ));
 
 endif;
+
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_61039de4b9deb',
+        'title' => 'Additional content to display in blog feed',
+        'fields' => array(
+            array(
+                'key' => 'field_61039e07c8295',
+                'label' => 'Additional content to display in blog feed',
+                'name' => 'additional_content_to_display_in_blog_feed',
+                'type' => 'textarea',
+                'required' => 0,
+                'conditional_logic' => 0,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+    ));
+
+endif;
