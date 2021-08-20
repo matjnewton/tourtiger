@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.14.38.3
+Version: 1.14.38.4
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -255,7 +255,7 @@ body.single-product #fixed-on-mobile-productpage.fixed>:first-child {
 
 @media (max-width:1024px) {
     body.single-product #fixed-on-mobile-productpage .open .dropdown-menu {
-        position: initial;
+        position: relative;
         width: 100%;
         text-align: center;
         padding-bottom: 1rem;
