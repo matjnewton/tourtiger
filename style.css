@@ -258,11 +258,12 @@ body.single-product #fixed-on-mobile-productpage.fixed>:first-child {
         position: relative;
         width: 100%;
         text-align: center;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
     }
 
     body.single-product #fixed-on-mobile-productpage .open .dropdown-menu li {
-        padding: 0.5rem;
+        padding: 1rem;
         font-size: 1.7rem;
     }
 }
