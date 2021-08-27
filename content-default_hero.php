@@ -37,7 +37,7 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
                                 ? [get_sub_field('hero_image')]
                                 : ''
                             ) ?>
-                        <?php if( $images ): ?>
+                        <?php if( $images && get_sub_field( 'image_type' ) === 'Slider images' ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ) :
