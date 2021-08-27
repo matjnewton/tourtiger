@@ -200,9 +200,12 @@ $(window).resize(function () {
 
 			if ( $sticky.length === 1 ) {
 				$sticky.css('position', 'fixed');
+
 				!is_banner && !is_pc_banner
 					&& $si.css({'position':'relative', 'top':newMarginTop})
 					&& $('footer').css({'position':'relative', 'top':newMarginTop});
+
+				is_banner && $bannerWrapperInner.css({'margin-top':headerWrapper});
 			}
 
 			if ( is_logged ) {
