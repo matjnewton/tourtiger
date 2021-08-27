@@ -123,11 +123,11 @@
     }
 }
 
-@media(min-width:480px) {
-    .banner-wrapper-inner{
-       min-height:545px;
-    }
-}
+<!--@media(min-width:480px) {-->
+<!--    .banner-wrapper-inner{-->
+<!--       min-height:545px;-->
+<!--    }-->
+<!--}-->
 
 <?php endif; ?>
 <?php endif; ?>
@@ -289,11 +289,11 @@ endif; ?>
        overflow:hidden;
     }
 }
-@media (min-width:481px){
-    .banner-wrapper-inner{
-        min-height:545px;
-    }
-}
+<!--@media (min-width:481px){-->
+<!--    .banner-wrapper-inner{-->
+<!--        min-height:545px;-->
+<!--    }-->
+<!--}-->
 <?php endif; ?>
 <?php endif; ?>
 
