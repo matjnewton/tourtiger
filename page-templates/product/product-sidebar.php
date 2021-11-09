@@ -171,7 +171,7 @@ if ( have_rows( 'sidebar_1' ) ) :
                 elseif ( get_row_layout() == 'content_editor' || get_row_layout() == 'text_area' ) :
 
                     $content = get_sub_field('content');
-                	echo $content ? '<div class="widget-item">' . $content . '</div>' : '';
+                	echo $content ? '<div class="widget-item book-tour-wrapper_product_row">' . $content . '</div>' : '';
 
                 elseif ( get_row_layout() == 'trip_advisor' ) :
 

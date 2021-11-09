@@ -838,7 +838,7 @@
                                 case 'text_area':
                                     $content = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_content', true );
                     ?>
-                    <div class="widget-item">
+                    <div class="widget-item book-tour-wrapper_product_row">
                     <?php echo $content; ?>
                     </div>
                     <?php
@@ -866,7 +866,7 @@
                                 case 'text_area':
                                     $content = get_post_meta( get_the_ID(), 'sidebar_2_' . $srt_count . '_content', true );
                     ?>
-                    <div class="widget-item"><div class="row"><div class="col-sm-10 col-sm-offset-1">
+                    <div class="widget-item book-tour-wrapper_product_row"><div class="row"><div class="col-sm-10 col-sm-offset-1">
                     <?php echo $content; ?>
                     </div></div></div>
                     <?php

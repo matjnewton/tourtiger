@@ -305,7 +305,7 @@ if( $headline_content ):
                                     case 'content_editor':
                                         $content = get_option( 'options_universal_sidebar_' . $us_count . '_content' );
                             ?>
-                           <div class="widget-item">
+                           <div class="widget-item book-tour-wrapper_product_row">
                            <?php echo $content; ?>
                            </div>
                            <?php
@@ -313,7 +313,7 @@ if( $headline_content ):
                                     case 'text_area':
                                         $content = get_option( 'options_universal_sidebar_' . $us_count . '_content' );
                             ?>
-                           <div class="widget-item">
+                           <div class="widget-item book-tour-wrapper_product_row">
                            <?php echo $content; ?>
                            </div>
                            <?php
@@ -456,7 +456,7 @@ if( $sections ):
                 case 'content_editor':
                 $content = get_option( 'options_universal_sidebar_' . $us_count . '_content' );
                 ?>
-                <div class="widget-item">
+                <div class="widget-item book-tour-wrapper_product_row">
                 <?php echo $content; ?>
                 </div>
                 <?php
@@ -464,7 +464,7 @@ if( $sections ):
                 case 'text_area':
                 $content = get_option( 'options_universal_sidebar_' . $us_count . '_content' );
                 ?>
-                <div class="widget-item">
+                <div class="widget-item book-tour-wrapper_product_row">
                 <?php echo $content; ?>
                 </div>
                 <?php

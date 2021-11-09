@@ -367,7 +367,7 @@ if ( function_exists('register_sidebar') ) {
 register_sidebar(array(
 'name' => 'Above Sidebar',
 'id' => 'above-sidebar',
-'before_widget' => '<div class="widget-item">',
+'before_widget' => '<div class="widget-item book-tour-wrapper_product_row">',
 'after_widget' => '</div>',
 'before_title' => '<h2>',
 'after_title' => '</h2>',
@@ -376,7 +376,7 @@ register_sidebar(array(
 register_sidebar(array(
 'name' => 'Below Sidebar',
 'id' => 'below-sidebar',
-'before_widget' => '<div class="widget-item">',
+'before_widget' => '<div class="widget-item book-tour-wrapper_product_row">',
 'after_widget' => '</div>',
 'before_title' => '<h2>',
 'after_title' => '</h2>',

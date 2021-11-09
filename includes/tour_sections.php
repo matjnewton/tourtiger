@@ -820,7 +820,7 @@
                             <?php if( get_row_layout() == 'content_editor' ):
                                 $content = get_sub_field('content');
                             ?>
-                            <div class="widget-item">
+                            <div class="widget-item book-tour-wrapper_product_row">
                                 <?php echo $content; ?>
                             </div>
                             <?php endif; ?>
@@ -828,7 +828,7 @@
                             <?php if( get_row_layout() == 'text_area' ):
                                 $content = get_sub_field('content');
                             ?>
-                            <div class="widget-item">
+                            <div class="widget-item book-tour-wrapper_product_row">
                                 <?php echo $content; ?>
                             </div>
                             <?php endif; ?>
@@ -854,7 +854,7 @@
                            <?php endif; ?>
 
                            <?php if( get_row_layout() == 'text_area' ): ?>
-                           <div class="widget-item"><div class="row"><div class="col-sm-10 col-sm-offset-1">
+                           <div class="widget-item book-tour-wrapper_product_row"><div class="row"><div class="col-sm-10 col-sm-offset-1">
                            <?php $content = get_sub_field('content');
                                echo $content;
                            ?>

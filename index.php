@@ -46,7 +46,7 @@ function tourtiger_sub_contents(){ ?>
                            <?php while(has_sub_field('universal_sidebar', 'option')): ?>
 
                            <?php if( get_row_layout() == 'content_editor' ): ?>
-                           <div class="widget-item">
+                           <div class="widget-item book-tour-wrapper_product_row">
                            <?php $content = get_sub_field('content');
                                echo $content;
                            ?>
@@ -54,7 +54,7 @@ function tourtiger_sub_contents(){ ?>
                            <?php endif; ?>
 
                            <?php if( get_row_layout() == 'text_area' ): ?>
-                           <div class="widget-item">
+                           <div class="widget-item book-tour-wrapper_product_row">
                            <?php $content = get_sub_field('content');
                                echo $content;
                            ?>

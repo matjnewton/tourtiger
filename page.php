@@ -677,7 +677,7 @@ function tourtiger_sub_contents(){ ?>
                             <?php if( get_row_layout() == 'content_editor' ):
                                 $content = get_sub_field('content');
                             ?>
-                            <div class="widget-item">
+                            <div class="widget-item book-tour-wrapper_product_row">
                                 <?php echo $content; ?>
                             </div>
                             <?php endif; ?>
@@ -685,7 +685,7 @@ function tourtiger_sub_contents(){ ?>
                             <?php if( get_row_layout() == 'text_area' ):
                                 $content = get_sub_field('content');
                             ?>
-                            <div class="widget-item">
+                            <div class="widget-item book-tour-wrapper_product_row">
                                 <?php echo $content; ?>
                             </div>
                             <?php endif; ?>
