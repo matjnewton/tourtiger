@@ -17,7 +17,7 @@
 		<div class="gdl-blog-full gdl-border-x bottom">
             <div class="blog-post-content-wrapper">
 
-                <h2 class="blog-title entry-title"><a href="#"><?php the_title(); ?></a></h2>
+                <h1 class="blog-title entry-title"><a href="#"><?php the_title(); ?></a></h1>
 
                 <?php
                 $posttags = get_the_tags();

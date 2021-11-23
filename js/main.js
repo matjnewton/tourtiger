@@ -201,7 +201,7 @@ $(window).resize(function () {
 			if ( $sticky.length === 1 ) {
 				$sticky.css('position', 'fixed');
 
-				!is_banner && !is_pc_banner
+				!is_banner && !is_pc_banner && !is_post
 					&& $si.css({'position':'relative', 'top':newMarginTop})
 					&& $('footer').css({'position':'relative', 'top':newMarginTop});
 
@@ -214,7 +214,7 @@ $(window).resize(function () {
 
 			// newMarginTop += 32;
 
-			if ( !is_banner ) {
+			if ( !is_banner && !is_post ) {
 
 				if ( heroMarginTopZero && !$('body').hasClass('error404') ) {
 					$si.css( 'margin-top', 0 );
@@ -225,7 +225,7 @@ $(window).resize(function () {
 				$unessesarily.css('margin-top', 0);
 			}
 
-			if ( is_post || is_product ) {
+			if ( is_product ) {
 				newMarginTop = $headerBarWrapper.height();
 				$si.css( 'margin-top', newMarginTop );
 			}
