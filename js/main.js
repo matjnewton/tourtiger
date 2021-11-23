@@ -201,7 +201,7 @@ $(window).resize(function () {
 			if ( $sticky.length === 1 ) {
 				$sticky.css('position', 'fixed');
 
-				!is_banner && !is_pc_banner && !is_post
+				!is_banner && !is_pc_banner && !is_post && !is_product
 					&& $si.css({'position':'relative', 'top':newMarginTop})
 					&& $('footer').css({'position':'relative', 'top':newMarginTop});
 
@@ -225,10 +225,10 @@ $(window).resize(function () {
 				$unessesarily.css('margin-top', 0);
 			}
 
-			if ( is_product ) {
-				newMarginTop = $headerBarWrapper.height();
-				$si.css( 'margin-top', newMarginTop );
-			}
+			// if ( is_product ) {
+			// 	newMarginTop = $headerBarWrapper.height();
+			// 	$si.css( 'margin-top', newMarginTop );
+			// }
 
 			if ( is_blog  ) {
 				newMarginTop = $headerBarWrapper.height();
