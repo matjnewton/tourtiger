@@ -189,6 +189,7 @@ $(window).resize(function () {
 		var heroMarginTopZero = $bannerWrapperInner.data().marginTopZero;
 		var $si = $('.site-inner');
 		var $headerBarWrapper = $('.header-bar-wrapper');
+		var templateFrontpage = $body.not('.page-template-front-page')
 
 
 		if ( $sticky.length === 1 && $(window).width() >= 768 ) {
@@ -201,7 +202,7 @@ $(window).resize(function () {
 			if ( $sticky.length === 1 ) {
 				$sticky.css('position', 'fixed');
 
-				!is_banner && !is_pc_banner && !is_post && !is_product
+				!is_banner && !is_pc_banner && !is_post && !templateFrontpage
 					&& $si.css({'position':'relative', 'top':newMarginTop})
 					&& $('footer').css({'position':'relative', 'top':newMarginTop});
 
@@ -214,7 +215,7 @@ $(window).resize(function () {
 
 			// newMarginTop += 32;
 
-			if ( !is_banner && !is_post ) {
+			if ( !is_banner && !is_post && !templateFrontpage ) {
 
 				if ( heroMarginTopZero && !$('body').hasClass('error404') ) {
 					$si.css( 'margin-top', 0 );
@@ -225,10 +226,10 @@ $(window).resize(function () {
 				$unessesarily.css('margin-top', 0);
 			}
 
-			// if ( is_product ) {
-			// 	newMarginTop = $headerBarWrapper.height();
-			// 	$si.css( 'margin-top', newMarginTop );
-			// }
+			if ( is_product ) {
+				newMarginTop = $headerBarWrapper.height();
+				$si.css( 'margin-top', newMarginTop );
+			}
 
 			if ( is_blog  ) {
 				newMarginTop = $headerBarWrapper.height();
