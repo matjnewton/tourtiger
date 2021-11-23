@@ -17,6 +17,7 @@
     if($sticky_menu == true): ?>
 @media (min-width:481px){
     .banner-wrapper.under-header{
+        /** height:620px !important; **/
         background-size: cover;
     }
 }
@@ -51,7 +52,7 @@
         background-position: 0% 100%;
     }
 }
-@media (min-width:481px) and (max-width:1440px){
+@media (min-width:481px){
     .banner-wrapper{
         background: url(<?php echo $himage; ?>), linear-gradient(0deg,#FFF,#CCC);
         background-size:1440px auto;
@@ -63,6 +64,7 @@
 @media (max-width:480px){
     .banner-wrapper{
        height:296px;
+       /*overflow:hidden;*/
     }
 }
 <?php endif; ?>
@@ -86,6 +88,7 @@
 @media (max-width:480px){
     .banner-wrapper{
        height:297px;
+       /*overflow:hidden;*/
     }
     .banner-wrapper-inner{
         background-repeat:no-repeat;
@@ -118,6 +121,12 @@
        overflow:hidden;
     }
 }
+
+<!--@media(min-width:480px) {-->
+<!--    .banner-wrapper-inner{-->
+<!--       min-height:545px;-->
+<!--    }-->
+<!--}-->
 
 <?php endif; ?>
 <?php endif; ?>

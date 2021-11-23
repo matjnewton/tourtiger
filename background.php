@@ -40,17 +40,18 @@
     margin:0 auto;
     background-repeat:no-repeat;
     position:relative;
-    background-size:cover;
 }
 @media (max-width:480px){
     .banner-wrapper{
         background: url(<?php echo $himage_xs; ?>), linear-gradient(0deg,#FFF,#CCC);
+        background-size:480px auto;
         background-position: 0% 100%;
     }
 }
 @media (min-width:481px){
     .banner-wrapper{
         background: url(<?php echo $himage; ?>), linear-gradient(0deg,#FFF,#CCC);
+        background-size:1440px auto;
         background-position: 0% 100%;
     }
 }
@@ -59,6 +60,7 @@
 @media (max-width:480px){
     .banner-wrapper{
        height:296px;
+       /*overflow:hidden;*/
     }
 }
 <?php endif; ?>
@@ -82,6 +84,7 @@
 @media (max-width:480px){
     .banner-wrapper{
        height:297px;
+       /*overflow:hidden;*/
     }
     .banner-wrapper-inner{
         background-repeat:no-repeat;
@@ -197,7 +200,7 @@ endif; /*end hero_area*/
 }
 @media (min-width:481px){
     .banner-wrapper{
-        background-size:cover;
+        background-size:1440px auto;
         background-image:url(<?php echo $himage; ?>);
     }
 }
@@ -205,6 +208,7 @@ endif; /*end hero_area*/
 @media (max-width:480px){
     .banner-wrapper{
        height:296px;
+       /*overflow:hidden;*/
     }
 }
 <?php endif; ?>
@@ -229,6 +233,7 @@ endif; /*end hero_area*/
 @media (max-width:480px){
     .banner-wrapper{
        height:297px;
+       /*overflow:hidden;*/
     }
     .banner-wrapper-inner{
         background-repeat:no-repeat;
@@ -238,12 +243,6 @@ endif; /*end hero_area*/
 }
 <?php endif; ?>
 <?php if($himage ): ?>
-@media (min-width:481px){
-    .banner-wrapper-inner{
-        min-height:545px;
-        background-size:cover;
-    }
-}
 @media (min-width:1441px){
     .banner-wrapper-inner{
         background-repeat:no-repeat;
@@ -265,6 +264,11 @@ endif; /*end hero_area*/
     .banner-wrapper{
        height:620px;
        overflow:hidden;
+    }
+}
+@media (min-width:481px){
+    .banner-wrapper-inner{
+        min-height:545px;
     }
 }
 <?php endif; ?>
