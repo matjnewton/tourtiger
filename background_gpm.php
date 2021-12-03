@@ -81,54 +81,82 @@
 }
 <?php endif; ?>
 
+<?php if(($hero_image) && ($background_placement=='Down Below Header - full size')): ?>
+    <?php $himage = $hero_image  ?>
+    <?php $himage_xs = aq_resize( $hero_image, 960, 550, true );   ?>
+    <?php if(  $himage_xs ): ?>
+        @media (max-width:480px){
+        .banner-wrapper{
+                height:297px;
+            }
+        .banner-wrapper-inner{
+                background-repeat:no-repeat;
+                background-size:480px auto;
+                background-image:url(<?php echo $himage_xs; ?>);
+            }
+        }
+    <?php endif; ?>
+    <?php if( $himage ): ?>
+
+        @media (min-width:481px) {
+            .banner-wrapper-inner{
+                background-repeat:no-repeat;
+                background-size: 100%;
+                background-image:url(<?php echo $himage; ?>);
+            }
+        }
+
+        @media (min-width: 480px) {
+            .banner-top {
+                min-height: 80vh;
+            }
+            .banner-wrapper {
+                max-height: none;
+            }
+        }
+    <?php endif; ?>
+<?php endif; ?>
+
 <?php if(($hero_image) && ($background_placement=='Down Below Header')): ?>
     <?php $himage = aq_resize( $hero_image, 1400, 545, true );   ?>
     <?php $himage_xs = aq_resize( $hero_image, 960, 550, true );   ?>
-<?php if($himage_xs ): ?>
-@media (max-width:480px){
-    .banner-wrapper{
-       height:297px;
-       /*overflow:hidden;*/
+    <?php if($himage_xs ): ?>
+    @media (max-width:480px){
+        .banner-wrapper{
+           height:297px;
+        }
+        .banner-wrapper-inner{
+            background-repeat:no-repeat;
+            background-size:480px auto;
+            background-image:url(<?php echo $himage_xs; ?>);
+        }
     }
-    .banner-wrapper-inner{
-        background-repeat:no-repeat;
-        background-size:480px auto;
-        background-image:url(<?php echo $himage_xs; ?>);
+    <?php endif; ?>
+    <?php if($himage ): ?>
+    @media (min-width:1441px){
+        .banner-wrapper-inner{
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position: 50%;
+            background-image:url(<?php echo $himage; ?>);
+        }
     }
-}
-<?php endif; ?>
-<?php if($himage ): ?>
-@media (min-width:1441px){
-    .banner-wrapper-inner{
-        background-repeat:no-repeat;
-        background-size:cover;
-        background-position: 50%;
-        background-image:url(<?php echo $himage; ?>);
-    }
-}
 
 
-@media (min-width:481px) and (max-width:1440px){
-    .banner-wrapper-inner{
-        background-repeat:no-repeat;
-        background-size:1440px auto;
-        background-image:url(<?php echo $himage; ?>);
+    @media (min-width:481px) and (max-width:1440px){
+        .banner-wrapper-inner{
+            background-repeat:no-repeat;
+            background-size:1440px auto;
+            background-image:url(<?php echo $himage; ?>);
+        }
     }
-}
-@media (min-width:481px) and (max-width:767px){
-    .banner-wrapper{
-       height:620px;
-       overflow:hidden;
+    @media (min-width:481px) and (max-width:767px){
+        .banner-wrapper{
+           height:620px;
+           overflow:hidden;
+        }
     }
-}
-
-<!--@media(min-width:480px) {-->
-<!--    .banner-wrapper-inner{-->
-<!--       min-height:545px;-->
-<!--    }-->
-<!--}-->
-
-<?php endif; ?>
+    <?php endif; ?>
 <?php endif; ?>
 
 <?php if( $background_placement=='Under Header' && $hero_video ):
