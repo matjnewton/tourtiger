@@ -107,7 +107,7 @@
         }
 
         @media (min-width: 480px) {
-            .banner-top {
+            .banner .banner-top {
                 min-height: 80vh;
             }
             .banner-wrapper {
