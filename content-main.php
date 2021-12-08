@@ -54,7 +54,7 @@
             ?>
             <div class="blog-content excerpt-container">
                 <?php echo $additional_content ?>
-                <?php echo $excerpt; ?>
+                <?php echo do_shortcode($excerpt); ?>
             </div>
 
         </div>
