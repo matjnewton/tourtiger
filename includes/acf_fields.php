@@ -935,7 +935,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Content',
                 'name' => 'after_all_posts_content',
                 'type' => 'flexible_content',
-                'button_label' => 'Add C0ntent',
+                'button_label' => 'Add Content',
                 'min' => '',
                 'max' => 1,
                 'layouts' => array (
