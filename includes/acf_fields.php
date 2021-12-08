@@ -925,6 +925,83 @@ if( function_exists('acf_add_local_field_group') ):
     'description' => '',
   ));
 
+
+  acf_add_local_field_group(array (
+        'key' => 'group_557b166t35er4',
+        'title' => 'After all posts content',
+        'fields' => array (
+            array (
+                'key' => 'field_538uhywedgets7d',
+                'label' => 'Content',
+                'name' => 'after_all_posts_content',
+                'type' => 'flexible_content',
+                'button_label' => 'Add C0ntent',
+                'min' => '',
+                'max' => 1,
+                'layouts' => array (
+                    array (
+                        'key' => '0oeiidnjbchdhh764gfbvdnk',
+                        'name' => 'button',
+                        'label' => 'Button',
+                        'display' => 'row',
+                        'sub_fields' => array (
+                            array (
+                                'key' => 'field_ueuhrhfbhcvbhd9r9',
+                                'label' => 'CTA Button text',
+                                'name' => 'cta_button_text',
+                                'type' => 'text',
+                            ),
+                            array (
+                                'key' => 'field_uweyhfvvdyc7r78',
+                                'label' => 'CTA Button link',
+                                'name' => 'cta_button_link',
+                                'type' => 'text',
+                                'placeholder' => 'http://',
+                                'prepend' => '',
+                                'append' => '',
+                                'maxlength' => '',
+                                'readonly' => 0,
+                                'disabled' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-blog',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'acf_after_title',
+        'style' => 'seamless',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => array (
+            0 => 'the_content',
+            1 => 'custom_fields',
+            2 => 'discussion',
+            3 => 'comments',
+            4 => 'slug',
+            5 => 'author',
+            6 => 'format',
+            7 => 'categories',
+            8 => 'tags',
+            9 => 'send-trackbacks',
+        ),
+        'active' => 1,
+        'description' => '',
+    ));
+
+
+
   acf_add_local_field_group(array (
     'key' => 'group_557b16304f56b',
     'title' => 'Options: Code snippets',

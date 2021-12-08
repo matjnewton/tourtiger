@@ -31,6 +31,8 @@ function tourtiger_sub_contents(){ ?>
                     <?php endwhile; // end of the loop. ?>
                 </ul>
 
+                    <?php // get_template_part( 'content', 'after-all-posts' ); ?>
+
                     <?php pagination_appear();?>
 
                 </div>
@@ -70,6 +72,9 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
         </div>
+
+        <?php if ( is_home() && get_post_type()==='post' )
+            get_template_part( 'content', 'after-all-posts' ); ?>
     </section>
 
     <?php global $post; ?>
