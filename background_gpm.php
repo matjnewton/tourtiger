@@ -108,7 +108,7 @@
 
         @media (min-width: 480px) {
             .banner .banner-top {
-                min-height: 100vh;
+                min-height: 80vh;
             }
             .banner-wrapper {
                 max-height: none;
