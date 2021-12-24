@@ -93,7 +93,7 @@ if( have_rows('after_post_content_on_post_page', 'options' ) ):
             ?>
             <div class="after_post_content_on_post_page">
                 <div class="book-tour-wrapper text-center">
-                    <a href="<?=$button_link?>" class="book-btn"><?=$button_text?></a>
+                    <a href="<?=$button_link?>" class="book-btn" target="_blank"><?=$button_text?></a>
                 </div>
             </div><?php
         endif;
