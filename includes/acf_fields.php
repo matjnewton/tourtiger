@@ -928,7 +928,7 @@ if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array (
         'key' => 'group_557b166t35er4',
-        'title' => 'After all posts content',
+        'title' => 'After all posts content on Blog Archive Page',
         'fields' => array (
             array (
                 'key' => 'field_538uhywedgets7d',
@@ -975,7 +975,82 @@ if( function_exists('acf_add_local_field_group') ):
                 array (
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'acf-options-blog',
+                    'value' => 'acf-options-blog-posts-and-blog-archive',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'acf_after_title',
+        'style' => 'seamless',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => array (
+            0 => 'the_content',
+            1 => 'custom_fields',
+            2 => 'discussion',
+            3 => 'comments',
+            4 => 'slug',
+            5 => 'author',
+            6 => 'format',
+            7 => 'categories',
+            8 => 'tags',
+            9 => 'send-trackbacks',
+        ),
+        'active' => 1,
+        'description' => '',
+    ));
+
+
+  acf_add_local_field_group(array (
+        'key' => 'group_557buhryf6d7',
+        'title' => 'After post content on Post Page',
+        'fields' => array (
+            array (
+                'key' => 'field_538uhehrf7dy',
+                'label' => 'Content',
+                'name' => 'after_post_content_on_post_page',
+                'type' => 'flexible_content',
+                'button_label' => 'Add Content',
+                'min' => '',
+                'max' => 1,
+                'layouts' => array (
+                    array (
+                        'key' => '0oeiidnjuerhfncdjif9v',
+                        'name' => 'button',
+                        'label' => 'Button',
+                        'display' => 'row',
+                        'sub_fields' => array (
+                            array (
+                                'key' => 'field_ueuhruejhrbvfdfvoi',
+                                'label' => 'CTA Button text',
+                                'name' => 'cta_button_text',
+                                'type' => 'text',
+                            ),
+                            array (
+                                'key' => 'field_uwekekjjfvi999876',
+                                'label' => 'CTA Button link',
+                                'name' => 'cta_button_link',
+                                'type' => 'text',
+                                'placeholder' => 'http://',
+                                'prepend' => '',
+                                'append' => '',
+                                'maxlength' => '',
+                                'readonly' => 0,
+                                'disabled' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-blog-posts-and-blog-archive',
                 ),
             ),
         ),

@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.14.52
+Version: 1.14.54
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -2074,3 +2074,11 @@ nav {
     opacity: .75;
     color: black;
 }
+
+.after_post_content_on_post_page {margin-top:5rem}
+
+@media screen and (max-width: 768px) {
+    .after_post_content_on_post_page {margin-top:3rem}
+}
+
+.after_post_content_on_post_page .book-tour-wrapper.text-center {margin:0}

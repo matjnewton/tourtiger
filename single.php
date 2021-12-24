@@ -120,13 +120,11 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
     </section>
-                <?php endwhile; ?>
+    <?php endwhile;
+endif;
 
-            <?php endif; ?>
-
-    <?php get_sidebar('subscribe_gpm'); ?>
-
-<?php }
+get_sidebar('subscribe_gpm');
+}
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');
 
