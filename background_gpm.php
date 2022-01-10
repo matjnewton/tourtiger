@@ -101,7 +101,7 @@
         @media (min-width:481px) {
             .banner-wrapper-inner{
                 background-repeat:no-repeat;
-                background-size: 100%;
+                background-size: cover;
                 background-image:url(<?php echo $himage; ?>);
             }
         }
