@@ -224,11 +224,17 @@ endif;
 <?php
                         for( $tcc = 0; $tcc < $content; $tcc++ ):
                             $subheading = get_post_meta( get_the_ID(), 'multi_column_area_' . $mca_count . '_content_' . $tcc . '_subheading', true );
+                            $subheading_anchor = get_post_meta( get_the_ID(), 'multi_column_area_' . $mca_count . '_content_' . $tcc . '_subheading-anchor', true );
                             $textarea = nl2br(get_post_meta( get_the_ID(), 'multi_column_area_' . $mca_count . '_content_' . $tcc . '_textarea', true ));
 ?>
-                <li class="col-sm-4<?php //if($m == 3): echo " col-sm-offset-3 col-md-offset-0"; endif; ?> col-md-4">
-                    <?php if($subheading): ?>
-                    <h3><?php echo $subheading; ?></h3>
+                <li class="col-sm-4 col-md-4">
+                    <?php if( $subheading && !$subheading_anchor) : ?>
+                        <h3><?php echo $subheading; ?></h3>
+                    <?php elseif( $subheading && $subheading_anchor) : ?>
+                        <h3 data-anchor="<?=$subheading_anchor?>"><?php echo $subheading; ?></h3>
+                        <noscript>
+                            <a href="<?=$subheading_anchor?>"><h3><?php echo $subheading; ?></h3></a>
+                        </noscript>
                     <?php endif; ?>
                     <?php if($line_under_subheading): ?>
                     <hr />
@@ -385,11 +391,17 @@ if( $sections ):
         <?php
                     for( $j = 0; $j < $columns_set; $j++ ):
                         $subheading = esc_html( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_subheading', true ));
+                        $subheading_anchor = get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_subheading-anchor', true );
                         $textarea = nl2br( get_post_meta( get_the_ID(), 'sections_area_' . $i . '_section_elements_' . $count . '_columns_set_' . $j . '_textarea', true ));
         ?>
             <li class="col-sm-4 col-md-4">
-                <?php if($subheading): ?>
-                <h3><?php echo $subheading; ?></h3>
+                <?php if( $subheading && !$subheading_anchor) : ?>
+                    <h3><?php echo $subheading; ?></h3>
+                <?php elseif( $subheading && $subheading_anchor) : ?>
+                    <h3 data-anchor="<?=$subheading_anchor?>"><?php echo $subheading; ?></h3>
+                    <noscript>
+                        <a href="<?=$subheading_anchor?>"><h3><?php echo $subheading; ?></h3></a>
+                    </noscript>
                 <?php endif; ?>
                 <?php if($line_under_subheading): ?>
                 <hr />

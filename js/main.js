@@ -1240,5 +1240,25 @@ var FbBookNowButton = function (config) {
 
 	burgerMenuScrollFix();
 
+	// ---------------
+	function smoothAnchoring(){
+		$(document).on( 'click', '[data-anchor]', (e) =>{
+			const $target = $(e.target);
+			const anchorId = $target.data('anchor');
+
+			const elementPosition = $(anchorId).offset().top;
+			const $header = $('.header-bar-wrapper');
+			const headerHeight = $header.hasClass('sticky') ? $header.height() : 0;
+			const adminBarHeight = $('wpadminbar').height();
+
+			window.scroll({
+				top: + elementPosition - headerHeight - adminBarHeight - 40,
+				behavior: 'smooth'
+			});
+		})
+	}
+
+	smoothAnchoring();
+
 } )( jQuery );
 
