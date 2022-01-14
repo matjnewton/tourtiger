@@ -28,22 +28,28 @@ if( have_rows('hero_area', 'option') ):
         <div class="banner-top">
 
         <div class="flxslider-wrapper content-blog_hero_gpm">
-                        <?php $images = get_sub_field( 'image_type' ) === 'Slider images'
+                        <?php
+                        $bg_full_height = get_sub_field( 'background_position' ) === 'Down Below Header - full size';
+                        $bg_height = !$bg_full_height ? '539px' : '100vh';
+
+                        $images = get_sub_field( 'image_type' ) === 'Slider images'
                             ? get_sub_field('hero_slides')
                             : ( get_sub_field( 'image_type' ) === 'Single image'
                                     ? [get_sub_field('hero_image')]
                                     : ''
                             );
-
-                                ?>
-                                <?php if( $images ): ?>
+                             if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ) :
-                                    $simage = aq_resize( $slider_image['url'], 1440, 545, true ) ?: $slider_image['url'];
+
+                                    $simage = $bg_full_height
+                                        ? $slider_image['url'] :
+                                        aq_resize( $slider_image['url'], 1440, 545, true )
+                                            ?: $slider_image['url'];
 
                                         ?>
-                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:539px;">
+                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:<?=$bg_height?>;">
                                         <div class="tint"></div>
                                         <div class="container">
                                             <div class="row">
@@ -56,7 +62,7 @@ if( have_rows('hero_area', 'option') ):
                                     <?php endforeach; ?>
                                 </ul>
                              </div>
-                                <?php endif; ?>
+                            <?php endif; ?>
 
                     <div class="overlay-slider">
                     <div class="container">
