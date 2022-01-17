@@ -34,6 +34,14 @@ $(window).resize(function () {
 		const $testimonialSlider = $(".testimonials-slider");
 		const $booking = $("#booking");
 		const $booking2 = $("#booking2");
+		const $bearBanner = $(".bear-banner");
+		const $skipBanner = $(".skip-banner");
+		const $sticky = $(".sticky");
+		const $youtubeFrame = $(".c-editor iframe[src*=youtube]");
+		const $subcontentYoutubeFrame = $(".subcontent iframe[src*=youtube]");
+		const $mainNavChildrenLink = $(".main-nav .menu-item-has-children > a");
+		const $gfieldSelect = $(".gfield_select");
+		const $popupVideo = $(".popup-video");
 
 		if (
 			($inputText.length > 0 &&
@@ -74,13 +82,13 @@ $(window).resize(function () {
 			$(".page").length > 0 && $photoGallery.length > 0 && $photoGallery.magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } }),
 
 			$singleTour.length > 0 && $photoGallery.length > 0 &&
-				( $photoGallery.hasClass("gallery-one") &&
-					$photoGallery.each(function (e) {
-						$(".gallery-" + e).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
+			( $photoGallery.hasClass("gallery-one") &&
+					$photoGallery.each(function (e, gal) {
+						$(gal).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
 					} ),
-			$photoGallery.hasClass("gallery-two") &&
-				$photoGallery.each(function (e) {
-				$(".gallery2-" + e).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
+			  $photoGallery.hasClass("gallery-two") &&
+				$photoGallery.each(function (e, gal) {
+				$(gal).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
 			})),
 
 			$flexSlider.length > 0 && $flexSlider.flexslider({ animation: "fade", controlNav: !1 }),
@@ -95,8 +103,8 @@ $(window).resize(function () {
 			}),
 
 			$booking.length > 0 &&
-			($(".bear-banner").length > 0 && $booking.affix({ offset: { top: 409 } }),
-			$(".skip-banner").length > 0 && $booking.affix({ offset: { top: $(".site-header").height() } }),
+			( $bearBanner.length > 0 && $booking.affix({ offset: { top: 409 } }),
+				$skipBanner.length > 0 && $booking.affix({ offset: { top: $(".site-header").height() } }),
 				$booking.on("affixed-top.bs.affix", function () {
 					$booking.css("top", "0px");
 				}),
@@ -111,26 +119,26 @@ $(window).resize(function () {
 				$booking2.css("top", "0px");
 			}),
 				$booking2.on("affix.bs.affix", function () {
-					if ($(".sticky").length > 0 && "fixed" === $(".sticky").css("position")) {
+					if ( $sticky.length > 0 && "fixed" === $sticky.css("position")) {
 						var e = $(".header-bar-wrapper").height() + $('#wpadminbar').height();
 						$booking2.css("top", e + 10 + "px");
 					}
 				})),
-			$booking2.length > 0 && $(".bear-banner").length > 0 && $booking2.affix({ offset: { top: 409 } }),
-			$booking2.length > 0 && $(".skip-banner").length > 0)
+			$booking2.length > 0 && $bearBanner.length > 0 && $booking2.affix({ offset: { top: 409 } }),
+			$booking2.length > 0 && $skipBanner.length > 0)
 		) {
 			var e = $(".header-bar-wrapper").height();
 			$booking2.affix({ offset: { top: e + 10 } });
 		}
 		if (
-			($(".sticky").length > 0 && ($(".below-header").length > 0 || $(".no-banner").length > 0) && checkDisplay(),
-			$(".sticky").length > 0 && $(".under-header").length > 0 && checkSticky(),
-			$(".c-editor iframe[src*=youtube]").length > 0 && $(".c-editor iframe[src*=youtube]").wrap('<div class="row video-row"><div class="col-xs-10 col-xs-offset-1"><div class="video-responsive"></div></div></div>'),
-			$(".subcontent iframe[src*=youtube]").length > 0 && $(".subcontent iframe[src*=youtube]").wrap('<div class="row video-row"><div class="col-xs-10 col-xs-offset-1"><div class="video-responsive"></div></div></div>'),
+			($sticky.length > 0 && ($(".below-header").length > 0 || $(".no-banner").length > 0) && checkDisplay(),
+			$sticky.length > 0 && $(".under-header").length > 0 && checkSticky(),
+			$youtubeFrame.length > 0 && $youtubeFrame.wrap('<div class="row video-row"><div class="col-xs-10 col-xs-offset-1"><div class="video-responsive"></div></div></div>'),
+			$subcontentYoutubeFrame.length > 0 && $subcontentYoutubeFrame.wrap('<div class="row video-row"><div class="col-xs-10 col-xs-offset-1"><div class="video-responsive"></div></div></div>'),
 			$(".menu-item-has-children").length > 0 &&
 			($(".mobile-nav > .menu-item-has-children > a, .mobile-nav > .menu-item-has-children .menu-item-has-children > a, .main-nav > .menu-item-has-children > a").append('<i class="fa fa-angle-down"></i>'),
 				$(".main-nav > .menu-item-has-children > ul > .menu-item-has-children > a").append('<i class="fa fa-angle-right"></i>'),
-				$(".main-nav .menu-item-has-children > a").each(function () {
+				$mainNavChildrenLink.each(function () {
 					var e = $(this);
 					e.length > 0 &&
 					"#" === e.attr("href") &&
@@ -139,7 +147,7 @@ $(window).resize(function () {
 							e.preventDefault();
 						}));
 				}),
-				$(".main-nav .menu-item-has-children > a").click(function () {
+				$mainNavChildrenLink.click(function () {
 					var e = $(this).attr("href");
 					return "#" !== e ? (console.log(e), (window.location.href = e), !1) : void 0;
 				})),
@@ -190,8 +198,8 @@ $(window).resize(function () {
 			$(n).clone().appendTo(".split-menu .right-menu-part");
 		}
 		$(".even-grid").length > 0 && $(".s-item").matchHeight(),
-		$(".gfield_select").length > 0 && !($(".keep-dropdown-unstyled").length > 0) && $(".gfield_select").selectpicker({ style: "", width: "150px" }),
-		$(".popup-video").length > 0 && $(".popup-video").magnificPopup({ disableOn: 700, type: "iframe", mainClass: "mfp-fade", removalDelay: 160, preloader: !1, fixedContentPos: !1 }),
+		$gfieldSelect.length > 0 && !($(".keep-dropdown-unstyled").length > 0) && $gfieldSelect.selectpicker({ style: "", width: "150px" }),
+		$popupVideo.length > 0 && $popupVideo.magnificPopup({ disableOn: 700, type: "iframe", mainClass: "mfp-fade", removalDelay: 160, preloader: !1, fixedContentPos: !1 }),
 		$(".rpwe-ul").length > 0 && ($(".rpwe-title").find("a").append(" &gt;&gt;"), $(".rpwe-time").append('<i class="fa fa-calendar"></i>'));
 	});
 
