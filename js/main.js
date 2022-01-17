@@ -1,89 +1,126 @@
 "use strict";
+
+!( function($) {
+
 function checkDisplay() {
-	var e = $(".header-bar-wrapper").height(),
-		n = $(".header-bar-wrapper").find(".hidden-xs");
-	n.is(":visible") ? $(".banner-wrapper-inner").css("margin-top", e + "px") : n.is(":hidden") && $(".banner-wrapper-inner").css("margin-top", "0px");
+	const $headerBarWrapper = $(".header-bar-wrapper");
+	const $bannerWrapperInner = $(".banner-wrapper-inner");
+	const e = $headerBarWrapper.height(),
+		n = $headerBarWrapper.find(".hidden-xs");
+	n.is(":visible") ? $bannerWrapperInner.css("margin-top", e + "px") : n.is(":hidden") && $bannerWrapperInner.css("margin-top", "0px");
 }
+
 function checkSticky() {
-	var e = $(".header-bar-wrapper").height();
-	"fixed" === $(".sticky").css("position") ? $(".under-header .overlay-slider-content").css("margin-top", e + "px") : $(".under-header .overlay-slider-content").css("margin-top", "0px");
+	const e = $(".header-bar-wrapper").height();
+	const $underHeader =  $(".under-header .overlay-slider-content");
+	"fixed" === $(".sticky").css("position") ? $underHeader.css("margin-top", e + "px") : $underHeader.css("margin-top", "0px");
 }
+
 $(window).resize(function () {
-	$(".sticky").length > 0 && ($(".below-header").length > 0 || $(".no-banner").length > 0) && checkDisplay(), $(".sticky").length > 0 && $(".under-header").length > 0 && checkSticky();
+	const $sticky = $(".sticky");
+
+	$sticky.length > 0 && ($(".below-header").length > 0 || $(".no-banner").length > 0) && checkDisplay(),
+	$sticky.length > 0 && $(".under-header").length > 0 && checkSticky();
 }),
 	$(document).ready(function () {
+		const $inputText = $("input:text");
+		const $bannerTopCEditor = $(".banner-top .c-editor");
+		const $singleTour = $(".single-tour");
+		const $selectionItem = $(".section-item");
+		const $sectionItemCEditor = $(".section-item .c-editor>ul");
+		const $imageGallery = $(".image-gallery");
+		const $photoGallery = $(".photo-gallery");
+		const $flexSlider = $(".flexslider");
+		const $testimonialSlider = $(".testimonials-slider");
+		const $booking = $("#booking");
+		const $booking2 = $("#booking2");
+
 		if (
-			($("input:text").length > 0 &&
-			($("input:text").addClass("inputDefault"),
-				$("input:text")
-					.focus(function () {
-						this.value === this.defaultValue && (this.value = "");
-					})
-					.blur(function () {
-						"" === this.value && (this.value = this.defaultValue);
-					})),
-			$(".banner-top .c-editor ul").length > 0 && $(".banner-top .c-editor").find("li").wrapInner("<span></span>"),
-			$(".banner-top .c-editor p").length > 0 && $(".banner-top .c-editor").find("p").wrapInner("<span></span>"),
+			($inputText.length > 0 &&
+			($inputText.addClass("inputDefault"),
+
+			$inputText
+				.focus(function () {
+					this.value === this.defaultValue && (this.value = "");
+				})
+				.blur(function () {
+					"" === this.value && (this.value = this.defaultValue);
+				})),
+
+			$(".banner-top .c-editor ul").length > 0 && $bannerTopCEditor.find("li").wrapInner("<span></span>"),
+
+			$(".banner-top .c-editor p").length > 0 && $bannerTopCEditor.find("p").wrapInner("<span></span>"),
+
 			$(".banner-top").length > 0 && $(".banner-top .c-editor li").find("span").prepend('<i class="fa fa-chevron-right"></i> '),
-			$(".single-tour").length > 0 && $(".section-item").length > 0 && $(".section-item .c-editor>ul").find("li").prepend('<i class="fa fa-chevron-right"></i> '),
-			$(".page-template-default").length > 0 && $(".section-item").length > 0 && $(".section-item .c-editor>ul").find("li").prepend('<i class="fa fa-chevron-right"></i> '),
-			$(".single-tour").length > 0 && $(".right-col").length > 0 && $(".right-col .why-list").find("li").prepend('<i class="fa fa-check"></i> '),
-				$('.main-nav li:contains("search")').replaceWith('<li class="search-wrapper"><a><span class="glyphicon glyphicon-search"></span></a></li>'),
-				$(".search-wrapper a").click(function () {
-					var e = $(this).parents(".site-header").siblings(".above-header");
-					$(e).is(":hidden")
-						? ($(this).find("span").removeClass("glyphicon-search").addClass("glyphicon-remove"), $(e).slideDown("slow"))
-						: ($(this).find("span").removeClass("glyphicon-remove").addClass("glyphicon-search"), $(e).slideUp("slow"));
-				}),
-			$(".front-page-section, .tour-nav, .featured-tours, .featured-tours-2").length > 0 && $.scrollIt({ upKey: 38, downKey: 40, easing: "linear", scrollTime: 600, activeClass: "active", onPageChange: null }),
-			$(".image-gallery").length > 0 && $(".image-gallery").magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } }),
-			$(".page").length > 0 && $(".photo-gallery").length > 0 && $(".photo-gallery").magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } }),
-			$(".single-tour").length > 0 &&
-			$(".photo-gallery").length > 0 &&
-			($(".photo-gallery").hasClass("gallery-one") &&
-			$(".photo-gallery").each(function (e) {
-				$(".gallery-" + e).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
+
+			$singleTour.length > 0 && $selectionItem.length > 0 && $sectionItemCEditor.find("li").prepend('<i class="fa fa-chevron-right"></i> '),
+
+			$(".page-template-default").length > 0 && $selectionItem.length > 0 && $sectionItemCEditor.find("li").prepend('<i class="fa fa-chevron-right"></i> '),
+
+			$singleTour.length > 0 && $(".right-col").length > 0 && $(".right-col .why-list").find("li").prepend('<i class="fa fa-check"></i> '),
+
+			$('.main-nav li:contains("search")').replaceWith('<li class="search-wrapper"><a><span class="glyphicon glyphicon-search"></span></a></li>'),
+
+			$(".search-wrapper a").click(function () {
+				var e = $(this).parents(".site-header").siblings(".above-header");
+				$(e).is(":hidden")
+					? ($(this).find("span").removeClass("glyphicon-search").addClass("glyphicon-remove"), $(e).slideDown("slow"))
+					: ($(this).find("span").removeClass("glyphicon-remove").addClass("glyphicon-search"), $(e).slideUp("slow"));
 			}),
-			$(".photo-gallery").hasClass("gallery-two") &&
-			$(".photo-gallery").each(function (e) {
+
+			$(".front-page-section, .tour-nav, .featured-tours, .featured-tours-2").length > 0 && $.scrollIt({ upKey: 38, downKey: 40, easing: "linear", scrollTime: 600, activeClass: "active", onPageChange: null }),
+
+			$imageGallery.length > 0 && $imageGallery.magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } }),
+			$(".page").length > 0 && $photoGallery.length > 0 && $photoGallery.magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } }),
+
+			$singleTour.length > 0 && $photoGallery.length > 0 &&
+				( $photoGallery.hasClass("gallery-one") &&
+					$photoGallery.each(function (e) {
+						$(".gallery-" + e).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
+					} ),
+			$photoGallery.hasClass("gallery-two") &&
+				$photoGallery.each(function (e) {
 				$(".gallery2-" + e).magnificPopup({ delegate: "a", type: "image", gallery: { enabled: !0 } });
 			})),
-			$(".flexslider").length > 0 && $(".flexslider").flexslider({ animation: "fade", controlNav: !1 }),
-			$(".testimonials-slider").length > 0
-			&& $(".testimonials-slider").flexslider({
+
+			$flexSlider.length > 0 && $flexSlider.flexslider({ animation: "fade", controlNav: !1 }),
+
+			$testimonialSlider.length > 0
+			&& $testimonialSlider.flexslider({
 				animation: "fade",
 				controlNav: 1,
 				// directionNav: true,
 				dots: 1,
 				pauseOnHover: true
 			}),
-			$("#booking").length > 0 &&
-			($(".bear-banner").length > 0 && $("#booking").affix({ offset: { top: 409 } }),
-			$(".skip-banner").length > 0 && $("#booking").affix({ offset: { top: $(".site-header").height() } }),
-				$("#booking").on("affixed-top.bs.affix", function () {
-					$("#booking").css("top", "0px");
+
+			$booking.length > 0 &&
+			($(".bear-banner").length > 0 && $booking.affix({ offset: { top: 409 } }),
+			$(".skip-banner").length > 0 && $booking.affix({ offset: { top: $(".site-header").height() } }),
+				$booking.on("affixed-top.bs.affix", function () {
+					$booking.css("top", "0px");
 				}),
-				$("#booking").on("affix.bs.affix", function () {
+				$booking.on("affix.bs.affix", function () {
 					if ($(".sticky").length > 0) {
 						var e = $(".header-bar-wrapper").height();
-						$("#booking").css("top", e + 10 + "px");
+						$booking.css("top", e + 10 + "px");
 					}
 				})),
-			$("#booking2").length > 0 &&
-			($("#booking2").on("affixed-top.bs.affix", function () {
-				$("#booking2").css("top", "0px");
+			$booking2.length > 0 &&
+			($booking2.on("affixed-top.bs.affix", function () {
+				$booking2.css("top", "0px");
 			}),
-				$("#booking2").on("affix.bs.affix", function () {
+				$booking2.on("affix.bs.affix", function () {
 					if ($(".sticky").length > 0 && "fixed" === $(".sticky").css("position")) {
 						var e = $(".header-bar-wrapper").height() + $('#wpadminbar').height();
-						$("#booking2").css("top", e + 10 + "px");
+						$booking2.css("top", e + 10 + "px");
 					}
 				})),
-			$("#booking2").length > 0 && $(".bear-banner").length > 0 && $("#booking2").affix({ offset: { top: 409 } }),
-			$("#booking2").length > 0 && $(".skip-banner").length > 0)
+			$booking2.length > 0 && $(".bear-banner").length > 0 && $booking2.affix({ offset: { top: 409 } }),
+			$booking2.length > 0 && $(".skip-banner").length > 0)
 		) {
 			var e = $(".header-bar-wrapper").height();
-			$("#booking2").affix({ offset: { top: e + 10 } });
+			$booking2.affix({ offset: { top: e + 10 } });
 		}
 		if (
 			($(".sticky").length > 0 && ($(".below-header").length > 0 || $(".no-banner").length > 0) && checkDisplay(),
@@ -162,8 +199,6 @@ $(window).resize(function () {
 /**
  * Make properly marging between top and site-inner
  */
-
-!(function ($) {
 
 	/**
 	 * Fix header paddings
@@ -626,8 +661,7 @@ var FbBookNowButton = function (config) {
 		var d = new Date();
 		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
 		var expires = "expires=" + d.toUTCString();
-		var cookieName = cname + "=" + cvalue + "; " + expires;
-		document.cookie = cookieName;
+		document.cookie = cname + "=" + cvalue + "; " + expires;
 		if (window.localStorage)
 			window.localStorage["flybook-front-end-session" + accountId] = cvalue;
 	};
