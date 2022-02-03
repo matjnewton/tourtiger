@@ -10,9 +10,9 @@
 <li class="post">
     <div class="gdl-blog-full gdl-border-x bottom">
         <div class="blog-content-wrapper">
-            <h1 class="blog-title entry-title" style="visibility: visible;">
+            <h2 class="blog-title entry-title" style="visibility: visible;">
                 <a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
-            </h1>
+            </h2>
 
             <?php if ( '' != get_the_post_thumbnail() ):
               $thumb = get_post_thumbnail_id();
