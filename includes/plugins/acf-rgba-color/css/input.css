@@ -200,11 +200,14 @@
 
 /* Default theme */
 .minicolors-theme-default .minicolors-swatch {
-    top: 5px;
-    left: 5px;
-    width: 18px;
-    height: 18px;   
+    top: unset;
+    bottom: 2px;
+    left: unset;
+    right: 0;
+    width: 0;
+    height: 0;
 }
+
 .minicolors-theme-default.minicolors-position-right .minicolors-swatch {
     left: auto;
     right: 5px;
