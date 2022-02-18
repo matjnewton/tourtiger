@@ -117,12 +117,7 @@
 <?php endif; ?>
 
 <?php if(($hero_image) && ($background_placement=='Down Below Header - full image')): ?>
-<?php $himage = $hero_image;
-
-                    $hero_image_src = wp_get_attachment_image_src( $img,'full');
-
-print_r_html([['$hero_image'=>$hero_image, '$hero_image_src'=>$hero_image_src]])
-                    ?>
+<?php $himage = $hero_image; ?>
 <?php $himage_xs = aq_resize( $hero_image, 960, 550, true );   ?>
 <?php if(  $himage_xs ): ?>
     @media (max-width:480px){
@@ -137,7 +132,6 @@ print_r_html([['$hero_image'=>$hero_image, '$hero_image_src'=>$hero_image_src]])
     }
 <?php endif; ?>
 <?php if( $himage ): ?>
-
     @media (min-width:481px) {
         .banner-wrapper-inner{
             background-repeat:no-repeat;
@@ -145,15 +139,11 @@ print_r_html([['$hero_image'=>$hero_image, '$hero_image_src'=>$hero_image_src]])
             background-image:url(<?php echo $himage; ?>);
         }
     }
-
-<!--    @media (min-width: 480px) {-->
-<!--        .banner .banner-top {-->
-<!--            min-height: 100vh;-->
-<!--        }-->
-<!--        .banner-wrapper {-->
-<!--            max-height: none;-->
-<!--        }-->
-<!--    }-->
+    @media (min-width: 480px) {
+        .banner-wrapper {
+            max-height: none;
+        }
+    }
 <?php endif; ?>
 <?php endif; ?>
 

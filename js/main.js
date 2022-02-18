@@ -1312,7 +1312,6 @@ var FbBookNowButton = function (config) {
 			const height = Math.floor( winWidth / bgWidth * bgHeight );
 
 			$( '.banner .banner-top' ).css({height});
-			$( '.banner-wrapper' ).css({height, maxHeight: height});
 			$bannerWrapperInner.css({height});
 		}
 	}
