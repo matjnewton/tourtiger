@@ -805,6 +805,7 @@ acf_add_local_field_group(array (
 							'choices' => array (
 								'Down Below Header' => 'Down Below Header',
                                 'Down Below Header - full size' => 'Down Below Header - full size',
+                                'Down Below Header - full image' => 'Down Below Header - full image',
 								'Under Header' => 'Under Header',
 							),
 							'other_choice' => 0,

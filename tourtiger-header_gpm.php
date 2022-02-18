@@ -192,7 +192,35 @@ if($custom_header == true): ?>
     </div><!-- end .header-bar-->
     </div><!-- end .header-bar-wrapper-->
 
-<div class="banner-wrapper-inner" <?=$hero_margin_top_zero?>>
+<?php
+
+$hero_image_attrs = '';
+$hero_image_class = '';
+
+if ( $background_placement === 'Down Below Header - full image' ) :
+    $bha_rows = get_post_meta( get_the_ID(), 'hero_area', true );
+
+    foreach( (array) $bha_rows as $bha_count => $bha_row ):
+        switch( $bha_row ):
+        case 'hero':
+            $img = (int) get_post_meta( get_the_ID(), 'hero_area_' . $bha_count . '_hero_image', true );
+            $hero_image_src = wp_get_attachment_image_src( $img,'full');
+
+                if ( !empty($hero_image_src) && is_array($hero_image_src) && $bha_count===0 ) :
+                    $hero_image_attrs .= 'data-bg-height="' . $hero_image_src[2].'"';
+                    $hero_image_attrs .= ' data-bg-width="' . $hero_image_src[1].'"';
+
+                    $hero_image_class = 'full-image-background';
+                endif;
+
+            break;
+        endswitch;
+    endforeach;
+endif;
+
+?>
+
+<div class="banner-wrapper-inner <?=$hero_image_class?>" <?=$hero_margin_top_zero?> <?=$hero_image_attrs?>>
     <?php if($background_placement=='Down Below Header' && $hero_video): ?>
     <?php
     $poster = aq_resize( $poster_url, 1440, 545, true );

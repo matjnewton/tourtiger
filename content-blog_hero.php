@@ -30,7 +30,8 @@ if( have_rows('hero_area', 'option') ):
         <div class="flxslider-wrapper content-blog_hero_gpm">
                         <?php
                         $bg_full_height = get_sub_field( 'background_position' ) === 'Down Below Header - full size';
-                        $bg_height = !$bg_full_height ? '539px' : '100vh';
+                        $bg_full_image = get_sub_field( 'background_position' ) === 'Down Below Header - full image';
+                        $bg_height = !$bg_full_height || !$bg_full_image ? '539px' : '100vh';
 
                         $images = get_sub_field( 'image_type' ) === 'Slider images'
                             ? get_sub_field('hero_slides')
@@ -38,12 +39,15 @@ if( have_rows('hero_area', 'option') ):
                                     ? [get_sub_field('hero_image')]
                                     : ''
                             );
+
+                        print_r_html(get_sub_field('hero_image'));
+
                              if( $images ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ) :
 
-                                    $simage = $bg_full_height
+                                    $simage = $bg_full_height || $bg_full_image
                                         ? $slider_image['url'] :
                                         aq_resize( $slider_image['url'], 1440, 545, true )
                                             ?: $slider_image['url'];

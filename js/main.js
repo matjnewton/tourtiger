@@ -1302,5 +1302,22 @@ var FbBookNowButton = function (config) {
 
 	smoothAnchoring();
 
+	//--------------------
+	function adjustBackgroundHeight(){
+		const winWidth = $( window ).width();
+		const $bannerWrapperInner = $('.banner-wrapper-inner');
+		if ( winWidth > 480 && $bannerWrapperInner.hasClass('full-image-background') ) {
+			const bgHeight = $bannerWrapperInner.data( 'bg-height' );
+			const bgWidth = $bannerWrapperInner.data( 'bg-width' );
+			const height = Math.floor( winWidth / bgWidth * bgHeight );
+
+			$( '.banner .banner-top' ).css({height});
+			$( '.banner-wrapper' ).css({height, maxHeight: height});
+			$bannerWrapperInner.css({height});
+		}
+	}
+
+	adjustBackgroundHeight()
+
 } )( jQuery );
 

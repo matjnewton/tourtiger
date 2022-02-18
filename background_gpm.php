@@ -64,7 +64,6 @@
 @media (max-width:480px){
     .banner-wrapper{
        height:296px;
-       /*overflow:hidden;*/
     }
 }
 <?php endif; ?>
@@ -115,6 +114,47 @@
             }
         }
     <?php endif; ?>
+<?php endif; ?>
+
+<?php if(($hero_image) && ($background_placement=='Down Below Header - full image')): ?>
+<?php $himage = $hero_image;
+
+                    $hero_image_src = wp_get_attachment_image_src( $img,'full');
+
+print_r_html([['$hero_image'=>$hero_image, '$hero_image_src'=>$hero_image_src]])
+                    ?>
+<?php $himage_xs = aq_resize( $hero_image, 960, 550, true );   ?>
+<?php if(  $himage_xs ): ?>
+    @media (max-width:480px){
+        .banner-wrapper{
+            height:297px;
+        }
+        .banner-wrapper-inner{
+            background-repeat:no-repeat;
+            background-size:480px auto;
+            background-image:url(<?php echo $himage_xs; ?>);
+        }
+    }
+<?php endif; ?>
+<?php if( $himage ): ?>
+
+    @media (min-width:481px) {
+        .banner-wrapper-inner{
+            background-repeat:no-repeat;
+            background-size: contain;
+            background-image:url(<?php echo $himage; ?>);
+        }
+    }
+
+<!--    @media (min-width: 480px) {-->
+<!--        .banner .banner-top {-->
+<!--            min-height: 100vh;-->
+<!--        }-->
+<!--        .banner-wrapper {-->
+<!--            max-height: none;-->
+<!--        }-->
+<!--    }-->
+<?php endif; ?>
 <?php endif; ?>
 
 <?php if(($hero_image) && ($background_placement=='Down Below Header')): ?>
