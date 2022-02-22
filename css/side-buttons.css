@@ -2,7 +2,8 @@
     position: fixed;
     right: -4rem;
     top: 50%;
-    transform: rotate(90deg)
+    transform: rotate(90deg);
+    z-index: 999999999;
 }
 
 .side-buttons-wrapper svg {

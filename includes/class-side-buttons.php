@@ -29,7 +29,13 @@ class Side_Buttons
             if ( !empty($button['button']['button__icon']) )
                 $svg = self::get_button_icon_svg( $button['button']['button__icon'] );
 
-            if ( $button['button']['button_type'] === 'existing' && !empty($button['button']['existing_button']) ) :
+            if ( $button['button']['button_type'] === 'existing'
+                && !empty($button['button']['existing_button'])
+                && ( $button['button']['display-on'] === 'all-pages'
+                    || $button['button']['display-on'] === 'tour-pages'
+                    && ( get_post_type() === 'product' || get_post_type() === 'tour' )
+                ) ) :
+
                 $existing_buttons[] = [
                     'link-to'=>$button['button']['existing_button'],
                     'text'=>$button['button']['existing_button__text'],
