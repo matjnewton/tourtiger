@@ -33,10 +33,13 @@ class Side_Buttons
                 $existing_buttons[] = [
                     'link-to'=>$button['button']['existing_button'],
                     'text'=>$button['button']['existing_button__text'],
+                    'display-on'=>$button['button']['display-on'],
                     'icon'=> $svg
                 ];
             elseif ( $button['button']['button_type'] === 'custom-link' && !empty($button['button']['custom_link']) ) :
                 $button['button']['custom_link']['icon'] = $svg;
+                $button['button']['custom_link']['display-on'] = $button['button']['display-on'];
+
                 $custom_buttons[] = $button['button']['custom_link'];
             endif;
 
@@ -56,6 +59,10 @@ class Side_Buttons
 
         foreach ( $custom_buttons as $button ) :
 
+            if ( $button['display-on'] === 'all-pages'
+                || $button['display-on'] === 'tour-pages' && ( get_post_type() === 'product' || get_post_type() === 'tour' )
+            ) :
+
             $icon = $button['icon'];
             $link = $button['url'];
             $text = $button['title'];
@@ -68,6 +75,8 @@ class Side_Buttons
                     </div>
                 </div>
             <?php
+
+            endif;
         endforeach;
 
         echo "</div>";
