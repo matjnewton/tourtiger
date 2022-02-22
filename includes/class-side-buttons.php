@@ -55,11 +55,18 @@ class Side_Buttons
         echo "<div class='side-buttons-wrapper'>";
 
         foreach ( $custom_buttons as $button ) :
-            print_r_html($button);
+            
+            $icon = $button['icon'];
+            $link = $button['url'];
+            $text = $button['title'];
+            $target = $button['target'] === '_blank' ? 'target="_blank"' : '';
 
             ?>
-
-
+                <div class="featured-tours">
+                    <div class="view-tour-btn">
+                        <a href="<?=$link?>" class="link" <?=$target?>><?=$icon?><?=$text?></a>
+                    </div>
+                </div>
             <?php
         endforeach;
 
