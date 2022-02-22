@@ -436,6 +436,10 @@ function tourtiger_footer(){
     require(CHILD_DIR.'/tourtiger-footer_gpm.php');
 }
 
+add_action('genesis_after_footer', function(){
+    include get_stylesheet_directory() . '/includes/class-side-buttons.php';
+});
+
 /*layout settings*/
 //* Force content-sidebar layout setting
 //add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );

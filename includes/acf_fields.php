@@ -2724,6 +2724,7 @@ tour_finder',
             'required' => 0,
             'conditional_logic' => 0,
             'button_label'=>'Add button',
+            'max'=>1,
             'sub_fields' => array(
                 array(
                     'key' => 'field_2I9ned8fuudhvhkd0cd',
@@ -2740,7 +2741,8 @@ tour_finder',
                                 'existing'=>'Existing',
                                 'custom-link'=>'Custom link'
                             ],
-                            'wrapper'=>['width'=>25]
+                            'wrapper'=>['width'=>25],
+                            'default_value'=>'existing'
                         ),
                         array(
                             "key"=> "field_eodofoijvf0008hje",
@@ -2762,6 +2764,34 @@ tour_finder',
                             'wrapper'=>['width'=>25]
                         ),
                         array(
+                            "key"=> "field_eodofoijvuhdyjfire",
+                            "label"=> "Button text",
+                            "name"=> "existing_button__text",
+                            "type"=> "text",
+                            'wrapper'=>['width'=>25],
+                            'default_value'=>'Book now',
+                            'conditional_logic'=>[
+                                [
+                                    [
+                                        'field' => 'field_e8udufuhue89990wdfdc',
+                                        'operator' => '==',
+                                        'value' => 'existing',
+                                    ]
+                                ]
+                            ],
+                        ),
+                        array(
+                            "key"=> "field_eodofoijuhryfjfire",
+                            "label"=> "Button icon (svg)",
+                            "name"=> "button__icon",
+                            'wrapper'=>['width'=>25],
+                            'mime_types' => 'svg',
+                            'type' => 'image',
+                            'return_format' => 'id',
+                            'preview_size' => 'thumbnail',
+                            'library' => 'all',
+                        ),
+                        array(
                             "key"=> "field_uwdhhd7w9fc90d0",
                             "label"=> "Existing button",
                             "name"=> "custom_link",
@@ -2776,6 +2806,18 @@ tour_finder',
                                 ]
                             ],
                             'wrapper'=>['width'=>25]
+                        ),
+                        array(
+                            "key"=> "field_uwdhhd7w8rufyr7",
+                            "label"=> "Display on",
+                            "name"=> "display-on",
+                            "type"=> "select",
+                            'choices'=>[
+                                'all-pages'=>'All pages',
+                                'tour-pages'=>'Tour pages'
+                            ],
+                            'wrapper'=>['width'=>25],
+                            'default_value'=>'all-pages'
                         ),
                     ),
                 )
