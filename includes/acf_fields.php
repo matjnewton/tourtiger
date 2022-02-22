@@ -2777,6 +2777,17 @@ tour_finder',
                             ],
                             'wrapper'=>['width'=>25]
                         ),
+                        array(
+                            "key"=> "field_uwdhhd7w8rufyr7",
+                            "label"=> "Display on",
+                            "name"=> "display-on",
+                            "type"=> "select",
+                            'choices'=>[
+                                'all-pages'=>'All pages',
+                                'product-pages'=>'Product-pages'
+                            ],
+                            'wrapper'=>['width'=>25]
+                        ),
                     ),
                 )
             )
