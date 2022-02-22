@@ -20,10 +20,12 @@
 
         if ( $existing_button.length ) {
 
+            // const $icon = el['icon'];
+
             const $new_button = $(`<div class="featured-tours">
                             <div class="view-tour-btn">
                                 <a href="#" class="link">
-                                    ${el['text']}</a>
+                                    ${el['icon']}${el['text']}</a>
                             </div>
                         </div>`);
 

@@ -26,9 +26,16 @@ class Side_Buttons
 
         foreach ( $side_buttons as $button ) :
             if ( $button['button']['button_type'] === 'existing' && !empty($button['button']['existing_button']) ) :
+
+                $svg = '';
+
+                if ( !empty($button['button']['button__icon']) )
+                    $svg = self::get_button_icon_svg( $button['button']['button__icon'] );
+
                 $existing_buttons[] = [
                     'link-to'=>$button['button']['existing_button'],
-                    'text'=>$button['button']['existing_button__text']
+                    'text'=>$button['button']['existing_button__text'],
+                    'icon'=> $svg
                 ];
             endif;
 
@@ -42,6 +49,11 @@ class Side_Buttons
 
             echo "<script src='$script_src'></script>";
         endif;
+    }
+
+    private static function get_button_icon_svg( $svg_id ){
+        $file = get_attached_file( $svg_id );
+        return file_get_contents( $file );
     }
 
     private static function add_side_buttons_script_data( $existing_buttons ) {

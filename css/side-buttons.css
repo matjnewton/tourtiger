@@ -1,12 +1,22 @@
 .side-buttons-wrapper {
     position: fixed;
-    right: -2rem;
+    right: -4rem;
     top: 50%;
     transform: rotate(90deg)
 }
 
+.side-buttons-wrapper svg {
+    width: 1.5rem;
+    margin-right: 5px;
+}
+
+.side-buttons-wrapper a {
+    border-radius: 3px;
+    box-shadow: 1px 1px 10px grey;
+}
+
 @media (max-width:767px) {
     .side-buttons-wrapper {
-        right: -3rem;
+        right: -3.5rem;
     }
 }
