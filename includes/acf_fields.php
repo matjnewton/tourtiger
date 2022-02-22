@@ -2704,7 +2704,86 @@ tour_finder',
         )
       ),
 
-      //tiger live TAB
+        array (
+            'key' => 'field_2I9yegfh746frthfj',
+            'label' => 'Side buttons',
+            'name' => '',
+            'type' => 'tab',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'placement' => 'top',
+            'endpoint' => 0,
+        ),
+
+        array (
+            'key' => 'field_2I9ne9rifjduhf7e6e',
+            'label' => 'Button',
+            'name' => 'side_buttons',
+            'type' => 'repeater',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'button_label'=>'Add button',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_2I9ned8fuudhvhkd0cd',
+                    'label' => 'Button',
+                    'name' => 'button',
+                    'type' => 'group',
+                    'sub_fields' => array(
+                        array(
+                            "key"=> "field_e8udufuhue89990wdfdc",
+                            "label"=> "Button type",
+                            "name"=> "button_type",
+                            "type"=> "select",
+                            "choices"=> [
+                                'existing'=>'Existing',
+                                'custom-link'=>'Custom link'
+                            ],
+                            'wrapper'=>['width'=>25]
+                        ),
+                        array(
+                            "key"=> "field_eodofoijvf0008hje",
+                            "label"=> "Existing button",
+                            "name"=> "existing_button",
+                            "type"=> "select",
+                            "choices"=> [
+                                'book-now'=>'Book now',
+                            ],
+                            'conditional_logic'=>[
+                                [
+                                    [
+                                        'field' => 'field_e8udufuhue89990wdfdc',
+                                        'operator' => '==',
+                                        'value' => 'existing',
+                                    ]
+                                ]
+                            ],
+                            'wrapper'=>['width'=>25]
+                        ),
+                        array(
+                            "key"=> "field_uwdhhd7w9fc90d0",
+                            "label"=> "Existing button",
+                            "name"=> "custom_link",
+                            "type"=> "link",
+                            'conditional_logic'=>[
+                                [
+                                    [
+                                        'field' => 'field_e8udufuhue89990wdfdc',
+                                        'operator' => '==',
+                                        'value' => 'custom-link',
+                                    ]
+                                ]
+                            ],
+                            'wrapper'=>['width'=>25]
+                        ),
+                    ),
+                )
+            )
+        ),
+
+
+        //tiger live TAB
       array (
         'key' => 'field_29n1993k03',
         'label' => 'Tiger LIVE',
