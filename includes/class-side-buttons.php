@@ -105,11 +105,3 @@ class Side_Buttons
 }
 
 new Side_Buttons();
-
-
-
-/**
- * 1. Develop for book-now button
- *
- *
- */
