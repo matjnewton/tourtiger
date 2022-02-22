@@ -2784,7 +2784,7 @@ tour_finder',
                             "type"=> "select",
                             'choices'=>[
                                 'all-pages'=>'All pages',
-                                'product-pages'=>'Product-pages'
+                                'product-pages'=>'Product pages'
                             ],
                             'wrapper'=>['width'=>25]
                         ),
