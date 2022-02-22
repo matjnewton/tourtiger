@@ -55,7 +55,7 @@ class Side_Buttons
         echo "<div class='side-buttons-wrapper'>";
 
         foreach ( $custom_buttons as $button ) :
-            
+
             $icon = $button['icon'];
             $link = $button['url'];
             $text = $button['title'];
