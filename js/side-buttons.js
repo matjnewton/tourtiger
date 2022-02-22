@@ -13,7 +13,10 @@
     }
 
     function renderBookNowButton( el ){
-        let $existing_button = $('#booking [data-button-id]')
+        let $existing_button = $('#booking [data-button-id]');
+
+        if ( !$existing_button.length )
+            $existing_button = $('#booking [data-iframe-popup]');
 
         if ( !$existing_button.length )
             $existing_button = $('#booking2');
