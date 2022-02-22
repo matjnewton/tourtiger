@@ -1,0 +1,12 @@
+.side-buttons-wrapper {
+    position: fixed;
+    right: -2rem;
+    top: 50%;
+    transform: rotate(90deg)
+}
+
+@media (max-width:767px) {
+    .side-buttons-wrapper {
+        right: -3rem;
+    }
+}
