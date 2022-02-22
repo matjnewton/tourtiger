@@ -20,35 +20,62 @@ class Side_Buttons
 
         self::add_styles_inline();
 
-        echo "<div class='side-buttons-wrapper'></div>";
-
         $existing_buttons = [];
+        $custom_buttons = [];
 
         foreach ( $side_buttons as $button ) :
+
+            $svg = '';
+            if ( !empty($button['button']['button__icon']) )
+                $svg = self::get_button_icon_svg( $button['button']['button__icon'] );
+
             if ( $button['button']['button_type'] === 'existing' && !empty($button['button']['existing_button']) ) :
-
-                $svg = '';
-
-                if ( !empty($button['button']['button__icon']) )
-                    $svg = self::get_button_icon_svg( $button['button']['button__icon'] );
-
                 $existing_buttons[] = [
                     'link-to'=>$button['button']['existing_button'],
                     'text'=>$button['button']['existing_button__text'],
                     'icon'=> $svg
                 ];
+            elseif ( $button['button']['button_type'] === 'custom-link' && !empty($button['button']['custom_link']) ) :
+                $button['button']['custom_link']['icon'] = $svg;
+                $custom_buttons[] = $button['button']['custom_link'];
             endif;
 
         endforeach;
 
-        if ( count( $existing_buttons ) ) :
+        if ( count( $existing_buttons ) )
+            self::add_existing_buttons( $existing_buttons );
 
-            self::add_side_buttons_script_data( $existing_buttons );
+        if ( count($custom_buttons) )
+            self::add_custom_buttons( $custom_buttons );
+    }
 
-            $script_src = get_stylesheet_directory_uri() . '/js/side-buttons.js';
 
-            echo "<script src='$script_src'></script>";
-        endif;
+    private static function add_custom_buttons( $custom_buttons ){
+
+        echo "<div class='side-buttons-wrapper'>";
+
+        foreach ( $custom_buttons as $button ) :
+            print_r_html($button);
+
+            ?>
+
+
+            <?php
+        endforeach;
+
+        echo "</div>";
+
+    }
+
+
+    private static function add_existing_buttons( $existing_buttons ){
+        echo "<div class='side-buttons-wrapper'></div>";
+
+        self::add_side_buttons_script_data( $existing_buttons );
+
+        $script_src = get_stylesheet_directory_uri() . '/js/side-buttons.js';
+
+        echo "<script src='$script_src'></script>";
     }
 
     private static function get_button_icon_svg( $svg_id ){
