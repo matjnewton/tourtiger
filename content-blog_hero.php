@@ -40,7 +40,7 @@ if( have_rows('hero_area', 'option') ):
                                     : ''
                             );
 
-                        print_r_html(get_sub_field('hero_image'));
+                        // print_r_html(get_sub_field('hero_image'));
 
                              if( $images ): ?>
                              <div id="slider" class="flexslider">

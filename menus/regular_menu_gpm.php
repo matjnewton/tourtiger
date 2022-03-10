@@ -15,7 +15,7 @@ $menu_obj = wp_get_nav_menu_object($menu_name);
 
   if (false && $menu_template) :
 
-print_r_html([get_registered_nav_menus(),$menu_name, $menu_obj, $menu_template_parts]);
+// print_r_html([get_registered_nav_menus(),$menu_name, $menu_obj, $menu_template_parts]);
 exit;
 
  else :
