@@ -814,6 +814,10 @@
                                 $rb2 = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_reason_to_book_2', true );
                                 $third_party = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_third_party', true );
                                 $mobd = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_multi_option_button_dropdown', true );
+
+                                if ( $button_type === 'flybook-button' ) :
+                                    $flybook_button_id = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_flybook-button-id', true );
+                                endif;
                     ?>
                     <?php if($bbt && !$mobd):       ?>
                     <?php include(locate_template('buttons/sidebar_btn_gpm.php' )); ?>

@@ -1,7 +1,32 @@
                             <?php
-                                include(locate_template('includes/integrate_vars_gpm.php' ));
-                            ?>
-                            <?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
+                            $integrate_xola = get_option( 'options_integrate_xola_with_this_website' );
+                            $integrate_peek = get_option( 'options_integrate_peek_with_this_website' );
+                            $integrate_fareharbor = get_option( 'options_fareharbor' );
+                            $fareharbor_shortname = get_option( 'options_fareharbor_shortname' );
+                            $integrate_getinsellout = get_option( 'options_getinsellout' );
+                            $getinsellout_data_pn = get_option( 'options_getinsellout_data_pn' );
+                            $getinsellout_data_url = get_option( 'options_getinsellout_data_url' );
+                            $getinsellout_data_evt = get_option( 'options_getinsellout_data_evt' );
+                            $integrate_trekksoft = get_option( 'options_trekksoft' );
+                            $integrate_rezdy = get_option( 'options_rezdy' );
+                            $integrate_zaui = get_option( 'options_zaui' );
+                            $integrate_regiondo = get_option( 'options_regiondo' );
+                            $integrate_orioly = get_option( 'options_orioly' );
+                            $flybook_account_id = get_field('the_fly_book_account_id','apikey');
+                            $third_party = $third_party ?? '';
+                            $bbt = $bbt ?? '';
+                            $bbl = $bbl ?? '';
+
+                            $button_type = $button_type ?? '';
+
+                            if ( $button_type === 'flybook-button' && $flybook_account_id && isset($flybook_button_id) ) :
+                                    $button_id = $flybook_button_id;
+                                    ?>
+                                    <a href="#" class='book-btn2 flybook-book-now-button fb-widget-type-frontend fb-default-category-id-0 fb-account-id-<?=$flybook_account_id?> fb-entity-config-id-<?=$button_id?> fb-domain-go.theflybook.com fb-protocol-https'><?=$bbt?></a>
+                                    <link rel='stylesheet' href='https://go.theflybook.com/content/bootstrapper/flybookbootstrap.css' />
+                                    <script src='https://go.theflybook.com/custom/bootstrapper/flybookbootstrap.js'></script>
+                                    <?php
+                            elseif($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
 
                                 <?php if($third_party == "xola-single-item"): ?>
                                 <?php
