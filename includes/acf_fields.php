@@ -8760,7 +8760,7 @@ tour_finder',
                 'name' => 'class',
                 'type' => 'text',
                 'required' => 0,
-                'placeholder' => 'class1 class2 class3 etc',
+                'placeholder' => '',
                 'wrapper' => array(
                   'width' => 34
                 ),
@@ -8777,6 +8777,13 @@ tour_finder',
                       'value' => 'booking-hound',
                     ),
                   ),
+                    array (
+                        array (
+                            'field' => 'field_539f6a270a9f6',
+                            'operator' => '==',
+                            'value' => 'custom',
+                        ),
+                    ),
                 ),
               ),
               array (
