@@ -841,6 +841,8 @@
                                 case 'content_editor':
                                 case 'text_area':
                                     $content = get_post_meta( get_the_ID(), 'sidebar_1_' . $sr_count . '_content', true );
+
+                                    $content = do_shortcode($content);
                     ?>
                     <div class="widget-item book-tour-wrapper_product_row">
                     <?php echo $content; ?>
