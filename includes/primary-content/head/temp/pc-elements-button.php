@@ -7,14 +7,18 @@ $button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
 ?>
 
 <div class="pc_hero-area__action">
-  <?php if ($button_one_type === 'the_fly_booking' && $the_fly_book_account_id) : ?>
+  <?php if ($button_one_type === 'the_fly_booking' && $the_fly_book_account_id) :
+
+      $product_id = get_sub_field( 'pc_cta_button_flybook_product_id' );
+
+      ?>
     <button
       class='
         flybook-book-now-button
         fb-widget-type-frontend
         fb-default-category-id-0
         fb-account-id-<?=$the_fly_book_account_id?>
-        fb-entity-config-id-
+        fb-entity-config-id-<?=$product_id?>
         fb-domain-go.theflybook.com
         fb-protocol-https
         pc_hero-area__action-btn
@@ -32,14 +36,16 @@ $button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
 
 	<?php if ( $cta_button_text_addt ) : ?>
     <?php $cta_button_url_addt = get_sub_field( 'pc_cta_button_url_addt' ) ? get_sub_field( 'pc_cta_button_url_addt' ) : '#.'; ?>
-    <?php if ($button_two_type === 'the_fly_booking' && $the_fly_book_account_id) : ?>
+    <?php if ($button_two_type === 'the_fly_booking' && $the_fly_book_account_id) :
+            $product_id = get_sub_field( 'pc_cta_button_flybook_product_id_addt' );
+            ?>
       <button
           class='
           flybook-book-now-button
           fb-widget-type-frontend
           fb-default-category-id-0
           fb-account-id-<?=$the_fly_book_account_id?>
-          fb-entity-config-id-
+          fb-entity-config-id-<?=$product_id?>
           fb-domain-go.theflybook.com
           fb-protocol-https
           pc_hero-area__action-btn
@@ -61,14 +67,16 @@ $button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
 	<?php endif; ?>
     <?php if ( $cta_button_text_addt2 ) : ?>
         <?php $cta_button_url_addt2 = get_sub_field( 'pc_cta_button_url_addt2' ) ? get_sub_field( 'pc_cta_button_url_addt2' ) : '#.'; ?>
-        <?php if ($button_three_type === 'the_fly_booking' && $the_fly_book_account_id) : ?>
+        <?php if ($button_three_type === 'the_fly_booking' && $the_fly_book_account_id) :
+            $product_id = get_sub_field( 'pc_cta_button_flybook_product_id_addt2' );
+            ?>
             <button
                     class='
           flybook-book-now-button
           fb-widget-type-frontend
           fb-default-category-id-0
           fb-account-id-<?=$the_fly_book_account_id?>
-          fb-entity-config-id-
+          fb-entity-config-id-<?=$product_id?>
           fb-domain-go.theflybook.com
           fb-protocol-https
           pc_hero-area__action-btn
