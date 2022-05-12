@@ -1362,6 +1362,36 @@ acf_add_local_field_group(array (
 							'choices' => get_hero_area_button_options(),
 						),
 						array (
+							'key' => 'pc2131987653y7ew',
+							'label' => 'Flybook Product ID',
+							'name' => 'pc_cta_button_flybook_product_id',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'the_fly_booking'
+									)
+								),
+							),
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
 							'key' => 'pc2131012133',
 							'label' => 'CTA Button link',
 							'name' => 'pc_cta_button_url',
@@ -1376,20 +1406,20 @@ acf_add_local_field_group(array (
 										'value' => 'Custom'
 									)
 								),
-                array (
-                  array (
-                    'field' => 'pc_ha_014',
-                    'operator' => '==',
-                    'value' => 'iframe-popup'
-                  )
-                ),
-                array (
-                  array (
-                    'field' => 'pc_ha_014',
-                    'operator' => '==',
-                    'value' => 'new-tab'
-                  )
-                )
+								array (
+								  array (
+									'field' => 'pc_ha_014',
+									'operator' => '==',
+									'value' => 'iframe-popup'
+								  )
+								),
+								array (
+								  array (
+									'field' => 'pc_ha_014',
+									'operator' => '==',
+									'value' => 'new-tab'
+								  )
+								)
 							),
 							'wrapper' => array (
 								'width' => '33',
@@ -1634,6 +1664,36 @@ acf_add_local_field_group(array (
 							'choices' => get_hero_area_button_options(),
 						),
 						array (
+							'key' => 'pc213198765y6t5w',
+							'label' => 'Flybook Product ID',
+							'name' => 'pc_cta_button_flybook_product_id',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014_addt',
+										'operator' => '==',
+										'value' => 'the_fly_booking'
+									)
+								),
+							),
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
 							'key' => 'pc2131012133_addt',
 							'label' => 'CTA Button link',
 							'name' => 'pc_cta_button_url_addt',
@@ -1725,6 +1785,36 @@ acf_add_local_field_group(array (
                             ),
                             'choices' => get_hero_area_button_options(),
                         ),
+						array (
+							'key' => 'pc2136wte5d67w',
+							'label' => 'Flybook Product ID',
+							'name' => 'pc_cta_button_flybook_product_id',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014_addt2',
+										'operator' => '==',
+										'value' => 'the_fly_booking'
+									)
+								),
+							),
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
                         array (
                             'key' => 'pc2131012133_addt2',
                             'label' => 'CTA Button link',
