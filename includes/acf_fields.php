@@ -99,7 +99,7 @@ if( function_exists('acf_add_local_field_group') ):
                   'id' => '',
                 ),
                 'preview_size' => 'medium',
-                'library' => 'uploadedTo',
+                'library' => 'all',
                 'return_format' => 'array',
                 'min_width' => 0,
                 'min_height' => 0,
