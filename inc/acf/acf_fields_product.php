@@ -684,6 +684,22 @@ function get_sidebar_widget_local_field( $id = '1234QWERasdf' ) {
 }
 
 
+function get_hero_area_button_options_version_2() {
+    $the_fly_booking_api = get_field('the_fly_book_account_id','apikey');
+
+    $array = [
+        'Custom' => 'Custom',
+        'Link to Featured tours' => 'Link to Featured tours',
+        'Use as third party integration Link' => 'Use as third party integration Link',
+        'Play Video' => 'Play Video',
+        'Search Box' => 'Search Box',
+    ];
+
+    if ($the_fly_booking_api)
+        $array['flybook-button'] = 'The Fly Book Button';
+
+    return $array;
+}
 
 if( function_exists('acf_add_local_field_group') ):
 
@@ -1081,19 +1097,35 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'choices' => array (
-								'Custom' => 'Custom',
-								'Link to Featured tours' => 'Link to Featured tours',
-								'Use as third party integration Link' => 'Use as third party integration Link',
-								'Play Video' => 'Play Video',
-								'Search Box' => 'Search Box',
-							),
+							'choices' => get_hero_area_button_options_version_2(),
 							'other_choice' => 0,
 							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'vertical',
 							'allow_null' => 0,
 						),
+                        array (
+                            'key' => 'flybook_539862f34e567ytr5',
+                            'label' => 'Product (button) ID',
+                            'name' => 'flybook-button-id',
+                            'type' => 'text',
+                            'instructions'=>'<a href="'. get_stylesheet_directory_uri() .'/images/flybook-product-id-tip.jpg" target="_blank">(?)</a>',
+                            'required' => 0,
+                            'conditional_logic' => array (
+                                array (
+                                    array (
+                                        'field' => 'field_55bfcc9bbd46c',
+                                        'operator' => '!=',
+                                        'value' => '1',
+                                    ),
+                                    array (
+                                        'field' => 'field_53d247c8b4b03',
+                                        'operator' => '==',
+                                        'value' => 'flybook-button',
+                                    ),
+                                ),
+                            ),
+                        ),
 						array (
 							'key' => 'field_563fa26092016',
 							'label' => 'Search Box Options',

@@ -1,4 +1,4 @@
-<?php 
+<?php
 // acf field for product
 
 if( function_exists('acf_add_local_field_group') ):
@@ -732,14 +732,14 @@ acf_add_local_field_group(array (
 							'disabled' => 0,
 						),
 					),
-				),	
+				),
 				// Sub-Headline
 				array (
 					'key' => '57fe33ac7b26f_sub_headline',
 					'name' => 'primary_content_sub_headline',
 					'label' => 'Sub-Headline',
 					'display' => 'row',
-					'sub_fields' => array (	
+					'sub_fields' => array (
 						array (
 							'key' => 'field_538caa676f58c_sub_headline_text',
 							'label' => 'Text',
@@ -795,7 +795,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 						),//end seo
 					),
-				),			
+				),
 				// Alert Box
 				array (
 					'key' => '57fe33ac7b26f_alert_box',
@@ -950,7 +950,7 @@ acf_add_local_field_group(array (
 								),
 
 							),//end subfield maingallery
-						), 
+						),
 					),
 				),//end maingallery
 
@@ -1121,7 +1121,7 @@ acf_add_local_field_group(array (
 						),//end repeat
 					),
 				),//end expand content
-				
+
 				//Images/Video
 				array (
 					'key' => '57fe33ac7b26f_images_video_row',
@@ -2325,7 +2325,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-							
+
 							),//end sub
 						),//end repeater
 					),
@@ -2408,7 +2408,7 @@ acf_add_local_field_group(array (
 								),
 							),
 						),//end repeater
-						
+
 					 ), //end sub field
 					//'collapsed' => '',
 				),// end highlights
@@ -4323,7 +4323,7 @@ acf_add_local_field_group(array (
 							'layout' => 'row',
 							'button_label' => 'Add new Link',
 							'sub_fields' => array (
-								
+
 									array (
 										'key' => 'field_57fce1a63863b_links',
 										'label' => 'icon',
@@ -5082,7 +5082,7 @@ acf_add_local_field_group(array (
 			),
 		),
 // ends sidebar area
-	
+
 
 
 	//Featured Tours
@@ -5437,4 +5437,4 @@ acf_add_local_field_group(array (
 
 
 
-endif; 
+endif;

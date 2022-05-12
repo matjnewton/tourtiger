@@ -8567,6 +8567,24 @@ tour_finder',
     'description' => '',
   ));
 
+function get_hero_area_button_options_version_1() {
+    $the_fly_booking_api = get_field('the_fly_book_account_id','apikey');
+
+    $array = [
+        'Custom'        => 'Custom',
+        'custom-in-new-tab'=> 'Custom Link - open in new tab',
+        'iframe-popup'  => 'Popup iFrame',
+        'booking-hound' => 'Booking Hound API',
+        'Link to form'  => 'Link to form',
+        'Use as third party integration Link' => 'Use as third party integration Link',
+    ];
+
+    if ($the_fly_booking_api)
+        $array['flybook-button'] = 'The Fly Book Button';
+
+    return $array;
+}
+
   acf_add_local_field_group(array (
     'key' => 'group_557b163031036',
     'title' => 'On Page Sidebars',
@@ -8645,15 +8663,7 @@ tour_finder',
                   'class' => '',
                   'id' => '',
                 ),
-                'choices' => array (
-                  'Custom'        => 'Custom',
-                  'custom-in-new-tab'=> 'Custom Link - open in new tab',
-                  'iframe-popup'  => 'Popup iFrame',
-                  'booking-hound' => 'Booking Hound API',
-                  'flybook-button' => 'Flybook button',
-                  'Link to form'  => 'Link to form',
-                  'Use as third party integration Link' => 'Use as third party integration Link',
-                ),
+                'choices' => get_hero_area_button_options_version_1(),
                 'other_choice' => 0,
                 'save_other_choice' => 0,
                 'default_value' => '',
