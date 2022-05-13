@@ -4218,18 +4218,35 @@ acf_add_local_field_group(array (
 								'class' => '',
 								'id' => '',
 							),
-							'choices' => array (
-								'Custom' => 'Custom',
-								'iframe-popup' => 'iFrame popup',
-								'Link to form' => 'Link to form',
-								'Use as third party integration Link' => 'Use as third party integration Link'
-							),
+							'choices' => get_product_sidebar_button_options(),
 							'other_choice' => 0,
 							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'vertical',
 							'allow_null' => 0,
 						),
+                        array (
+                            'key' => 'flybook_5398ywtd655c55',
+                            'label' => 'Product (button) ID',
+                            'name' => 'flybook-button-id',
+                            'type' => 'text',
+                            'instructions'=>'<a href="'. get_stylesheet_directory_uri() .'/images/flybook-product-id-tip.jpg" target="_blank">(?)</a>',
+                            'required' => 0,
+                            'conditional_logic' => array (
+                                array (
+                                    array (
+                                        'field' => 'field_55c88bbf2b1f0_pr',
+                                        'operator' => '!=',
+                                        'value' => '1',
+                                    ),
+                                    array (
+                                        'field' => 'field_539f6a270a9f6_pr',
+                                        'operator' => '==',
+                                        'value' => 'the_fly_booking',
+                                    ),
+                                ),
+                            ),
+                        ),
 						array (
 							'key' => 'field_5614fbf3fe02e_pr',
 							'label' => 'Third party',

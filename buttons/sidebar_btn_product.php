@@ -209,7 +209,26 @@ elseif ( $integrate_atlasx_with_this_website && ( $button_type == 'Use as third 
 
     <?php
 
-else:
+elseif ( $button_type == 'the_fly_booking' ) :
+
+    $the_fly_book_account_id = get_field('the_fly_book_account_id','apikey');
+    $product_id = get_sub_field( 'flybook-button-id' );
+
+    ?>
+        <div class="book-btn2-product-title">
+            <span class='
+                flybook-book-now-button
+                fb-widget-type-frontend
+                fb-default-category-id-0
+                fb-account-id-<?=$the_fly_book_account_id?>
+                fb-entity-config-id-<?=$product_id?>
+                fb-domain-go.theflybook.com
+                fb-protocol-https
+                pc_hero-area__action-btn'><?=$bbt;?></span>
+        </div>
+    <?php
+
+else :
 
     $dz_btn_attrs = '';
 

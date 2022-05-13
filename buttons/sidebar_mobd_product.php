@@ -1,23 +1,23 @@
                         <?php
                             include(locate_template('includes/integrate_vars.php' ));
                         ?>
-                        <?php 
+                        <?php
                         $check_user_id_xola = get_field('check_user_id_xola', 'options');
                         $integrate_atlasx_with_this_website = get_field('integrate_atlasx_with_this_website', 'options');
                         ?>
                         <div class="book-btn2-product btn-group">
                               <button type="button" class="btn-default dropdown-toggle book-btn2-inner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"<?php if($cta_button_radius): echo ' style="border-radius:'.$cta_button_radius.'px"'; endif;?>>
                                 <div class="book-btn2-product-title">
-                                    <span><?php echo $bbt; ?></span> 
+                                    <span><?php echo $bbt; ?></span>
                                     <span class="caret"></span>
                                 </div>
                               </button>
-                        
+
                             <?php if( have_rows('button_sub_options') ): ?>
                             <?php $smobd_counter = 0; ?>
 
                             	<ul class="dropdown-menu" data-checker="sidebar_mobd_product">
-                            	<?php while( have_rows('button_sub_options') ): the_row(); 
+                            	<?php while( have_rows('button_sub_options') ): the_row();
                             		$button_text = get_sub_field('button_text');
                                     $link = get_sub_field('link');
                                     $smobd_counter++;
@@ -25,7 +25,7 @@
                             		?>
                             		<li>
                             		<?php if($integrate_xola && ($button_type == 'Use as third party integration Link')): ?>
-                                        
+
                                         <?php if($third_party == "xola-single-item"): ?>
                                         <?php
                                             $xsi = explode(",",$link);
@@ -60,15 +60,15 @@
                                             $format2 = $arr[1];
                                         ?>
                                         <a href="#" id="<?php if($link): echo 'smobd'.$smobd_counter.'_trekksoft_' . $format1; endif; ?>">
-                                        <?php echo $button_text; ?>    
-                                        </a>  
+                                        <?php echo $button_text; ?>
+                                        </a>
             <script>// <![CDATA[
             (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") <?php if($third_party == "tour_details"): ?> .setAttrib("entryPoint", "tour_details") .setAttrib("tourId", "<?php echo $format2; ?>") <?php elseif($third_party == "tour_finder"): ?> .setAttrib("entryPoint", "tour_finder")<?php endif;?> .registerOnClick("#<?php if($link): echo 'smobd'.$smobd_counter.'_trekksoft_' . $format1; endif; ?>"); })();
             // ]]>
             </script>
                             		<?php elseif($integrate_rezdy && ($button_type == 'Use as third party integration Link')): ?>
                             		    <a class="button-booking rezdy rezdy-modal" href="<?php echo $link; ?>"><?php echo $button_text; ?></a>
-                                	
+
                                     <?php elseif($integrate_atlasx_with_this_website && ($button_type == 'Use as third party integration Link')): ?>
                                     <div class="button-booking xola-checkout xola-custom " data-seller="<?php echo $check_user_id_xola; ?>" data-version="2">
                                         <?php echo $button_text; ?></span>

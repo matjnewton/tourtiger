@@ -2272,3 +2272,19 @@ function is_410() {
 }
 
 include get_stylesheet_directory() . '/inc/blocking-links-in-gravity-forms.php';
+
+function get_product_sidebar_button_options() {
+    $the_fly_booking_api = get_field('the_fly_book_account_id','apikey');
+
+    $array = [
+        'Custom' => 'Custom',
+        'iframe-popup' => 'iFrame popup',
+        'Link to form' => 'Link to form',
+        'Use as third party integration Link' => 'Use as third party integration Link'
+    ];
+
+    if ($the_fly_booking_api)
+        $array['the_fly_booking'] = 'The Fly Booking Button';
+
+    return $array;
+}
