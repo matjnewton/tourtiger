@@ -61,7 +61,7 @@ function tourtiger_scripts_method() {
     $theme = wp_get_theme();
     $theme_version = $theme->get( 'Version' );
 
-    if(!is_admin()) {
+    if( !is_admin() ) {
         wp_deregister_script( 'jquery' );
         wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
         wp_deregister_script('jquery-ui');
@@ -126,16 +126,11 @@ function tourtiger_scripts_method() {
 		endif;
 
 		if($integrate_xola):
-        $theme = wp_get_theme();
-		wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
-		wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), $theme->get( 'Version' ), false);
+            wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
+            wp_register_script('xola_crossdomain', get_stylesheet_directory_uri() . '/js/crossdomainfix.js', array(), $theme_version, false);
 		endif;
 
-    $theme = wp_get_theme();
-
-		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), $theme->get( 'Version' ), true);
-
-    wp_enqueue_style('core-styles', $uploads_dir['url'] . '/core-styles.min.css');
+		wp_register_script('mainjs', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), $theme_version, true);
 
 
 		if ( get_field('google_maps','apikey')  ) :

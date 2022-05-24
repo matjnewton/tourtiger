@@ -63,10 +63,23 @@ class Core extends StylingCard {
         ),
         array (
           'key' => 'fc_' . $i . '_iI_48305',
-          'label' => 'Header',
+          'label' => 'Header Background Color',
           'name' => 'header_bg',
           'type' => 'rgba_color',
           'required' => 0,
+        ),
+        array (
+            'key' => 'fc_' . $i . '_iI_48yegdh5',
+            'label' => 'Header Background Gradient',
+            'name' => 'header_bg_gradient',
+            'type' => 'text',
+            'required' => 0,
+            'instructions' => 'Please visit <a href="https://cssgradient.io/" target="_blank">CSS Gradient</a>, create gradient and paste its css here. 
+                <a href="'.get_site_url() . '/wp-content/themes/tourismtiger/images/linear-gradient-tip.jpeg" target="_blank">
+                <i class="fa fa-question-circle-o"></i></a>',
+            'placeholder'=>'linear-gradient(0deg, rgba(136,196,64,1) 0%, rgba(255,241,0,1) 100%)',
+             'prepend' => 'background:',
+             'append' => ';',
         ),
         array (
           'key' => 'fc_' . $i . '_iI_3z396',
@@ -410,7 +423,8 @@ class Core extends StylingCard {
 
         $above_header_bg   = get_sub_field('above_header_bg');
         $above_split_bar   = get_sub_field('above_split_bar');
-        $header_bg         = get_sub_field('header_bg');
+        $header_bg_color    = get_sub_field('header_bg');
+        $header_bg_gradient = get_sub_field('header_bg_gradient');
         $secondary_menu_bg = get_sub_field('secondary_menu_bg');
 
         $sub_menu_bg        = get_sub_field('sub_menu_bg');
@@ -472,13 +486,10 @@ class Core extends StylingCard {
 
         //$css .= '<style>';
 
-        if ($linked_text_color) {
-            $css .= "a > * {color:{$linked_text_color}!important;}";
-        }
+        $css .= $linked_text_color ? "a > * {color:{$linked_text_color}!important;}" : '';
 
-        if ($linked_text_color_hover) {
-            $css .= "a:hover > * {color:{$linked_text_color_hover}!important;}";
-        }
+        $css .= $linked_text_color_hover ? "a:hover > * {color:{$linked_text_color_hover}!important;}" : '';
+
 
 
           if ($nav_btn_bg) {
@@ -494,14 +505,21 @@ class Core extends StylingCard {
           }
 
           $css .= $base_wrapper_bs ? ".site-container{max-width:1440px;margin-left:auto;margin-right:auto;box-shadow:0 1px 4px rgba(0,0,0,0.45);}" : '';
-          $css .= ".site-container{background:{$base_wrapper_bg}}";
+          $css .= $base_wrapper_bg ? ".site-container{background:{$base_wrapper_bg}}" : '';
 
-          $css .= ".above-header{background:{$above_header_bg}}";
-          $css .= ".above-split-bar{color:{$above_split_bar}}";
-          $css .= ".site-container .site-header .header-bar-wrapper{background:{$header_bg}}";
-          $css .= ".site-container .site-header .secondary-menu-wrapper{background:{$secondary_menu_bg};}";
 
-          $css .= ".main-nav-wrapper .genesis-nav-menu .sub-menu .megamenu .sub-menu a,.main-nav-wrapper .genesis-nav-menu > .megamenu > .sm-container > .sm-inner,.main-nav-wrapper .genesis-nav-menu .sub-menu a{background:{$sub_menu_bg};}";
+          $css .= $above_header_bg ? ".above-header{background:{$above_header_bg}}" : '';
+
+          $css .= $above_split_bar ? ".above-split-bar{color:{$above_split_bar}}" : '';
+
+          $css .= $header_bg_color ? "body .site-container .site-header .header-bar-wrapper{background-color:$header_bg_color}" : '';
+
+          $css .= $header_bg_gradient ? "body .site-container .site-header .header-bar-wrapper{background:$header_bg_gradient}" : '';
+
+          $css .= $secondary_menu_bg ? ".site-container .site-header .secondary-menu-wrapper{background:{$secondary_menu_bg};}" : '';
+
+          $css .= $sub_menu_bg ? ".main-nav-wrapper .genesis-nav-menu .sub-menu .megamenu .sub-menu a,.main-nav-wrapper .genesis-nav-menu > .megamenu > .sm-container > .sm-inner,.main-nav-wrapper .genesis-nav-menu .sub-menu a{background:{$sub_menu_bg};}" : '';
+
             $css .= ".main-nav-wrapper .genesis-nav-menu .megamenu > .sm-container a{background:none;}";
             $css .= ".main-nav-wrapper .genesis-nav-menu .megamenu:hover .megalink-wrap > a:after{border-color: transparent transparent {$sub_menu_bg} transparent;}";
             $css .= ".main-nav-wrapper .genesis-nav-menu > .menu-item > .sub-menu:before{border-color: transparent transparent {$sub_menu_darken_bg} transparent;}";
@@ -562,41 +580,43 @@ class Core extends StylingCard {
           $css .= ".trip-item li{border-top:1px solid {$trip_list_item_darken_bg}}";
           $css .= ".trip-item li:first-child{border-top:none}";
 
-          $css .= ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{border:3px solid {$tn_bg}}";
-          $css .= ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:hover{background:{$tn_bg}}";
+          if ( $tn_bg ):
+              $css .= ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{border:3px solid {$tn_bg}}";
+              $css .= ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:hover{background:{$tn_bg}}";
 
-          $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{background:none;color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{background:{$tn_bg};color:#fff;}";
-          $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:link{color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:link{color:#fff}";
-          $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:active{color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:active{color:#fff}";
-          $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:visited{color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:visited{color:#fff}";
+              $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{background:none;color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a{background:{$tn_bg};color:#fff;}";
+              $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:link{color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:link{color:#fff}";
+              $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:active{color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:active{color:#fff}";
+              $css .= $btn_fill ? ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:visited{color:{$tn_bg}}" : ".site-container .featured-tours .view-tour-btn .regiondo-button, .site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .btn-default, .site-container .featured-tours .view-tour-btn .xola-custom, .site-container .featured-tours .view-tour-btn a:visited{color:#fff}";
 
-          $css .= ".site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .open .btn-default{background:{$tn_bg}}";
-          $css .= ".site-container .view-dropdown-wrapper .dropdown-menu{background-color:{$tn_bg}}";
+              $css .= ".site-container .featured-tours .view-dropdown-wrapper .view-dropdown-tour-btn .open .btn-default{background:{$tn_bg}}";
+              $css .= ".site-container .view-dropdown-wrapper .dropdown-menu{background-color:{$tn_bg}}";
 
-          $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:hover{background:{$tn_lighten_bg}}";
-          $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:focus{background:{$tn_lighten_bg}}";
+              $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:hover{background:{$tn_lighten_bg}}";
+              $css .= ".view-dropdown-wrapper .dropdown-menu > li > .xola-custom, .view-dropdown-wrapper .dropdown-menu > li > a:focus{background:{$tn_lighten_bg}}";
 
-          $css .= $featured_area_bs ? ".front-page-section .featured-tours-2, .featured-tours-2 .position-wrapper, .featured-tours-section{box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 15px 0px}" : '';
+              $css .= $featured_area_bs ? ".front-page-section .featured-tours-2, .featured-tours-2 .position-wrapper, .featured-tours-section{box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 15px 0px}" : '';
 
-          $css .= ".tour-2 .btn-tour{border: 3px solid {$tn_bg}}";
-          $css .= $btn_fill ? ".tour-2 .btn-tour{background:{$tn_bg}}" : '';
-          $css .= ".tour-2 .hover-button-tour{background-color:{$tn_bg}}";
+              $css .= ".tour-2 .btn-tour{border: 3px solid {$tn_bg}}";
+              $css .= $btn_fill ? ".tour-2 .btn-tour{background:{$tn_bg}}" : '';
+              $css .= ".tour-2 .hover-button-tour{background-color:{$tn_bg}}";
 
-          $css .= ".site-container .fluid-boxes .view-tour-btn a{border:3px solid {$tn_bg};color:{$tn_bg}}";
-          $css .= $btn_fill ? ".site-container .fluid-boxes .view-tour-btn a{background:{$tn_bg}}" : ".site-container .fluid-boxes .view-tour-btn a{background:none";
+              $css .= ".site-container .fluid-boxes .view-tour-btn a{border:3px solid {$tn_bg};color:{$tn_bg}}";
+              $css .= $btn_fill ? ".site-container .fluid-boxes .view-tour-btn a{background:{$tn_bg}}" : ".site-container .fluid-boxes .view-tour-btn a{background:none";
 
-          $css .= ".site-container .fluid-boxes .view-tour-btn a:link,.site-container .fluid-boxes .view-tour-btn a:active,.site-container .fluid-boxes .view-tour-btn a:visited{color:{$tn_bg}}";
-          $css .= ".site-container .fluid-boxes .view-tour-btn a:hover{background:{$tn_bg}}";
+              $css .= ".site-container .fluid-boxes .view-tour-btn a:link,.site-container .fluid-boxes .view-tour-btn a:active,.site-container .fluid-boxes .view-tour-btn a:visited{color:{$tn_bg}}";
+              $css .= ".site-container .fluid-boxes .view-tour-btn a:hover{background:{$tn_bg}}";
 
-          $css .= ".widget-item .tagcloud a:link,.widget-item .tagcloud a:hover,.widget-item .tagcloud a:active,.widget-item .tagcloud a:visited{background: {$el_accent_bg}}";
+              $css .= $el_accent_bg ? ".widget-item .tagcloud a:link,.widget-item .tagcloud a:hover,.widget-item .tagcloud a:active,.widget-item .tagcloud a:visited{background: {$el_accent_bg}}" : '';
 
-          $css .= ".gform_footer input[type='submit']{border: 3px solid {$tn_bg}}";
-          $css .= $btn_fill ? ".gform_footer input[type='submit']{color:#fff;background:{$tn_bg}}" : ".gform_footer input[type='submit']{color:{$tn_bg}}";
-          $css .= ".gform_footer input[type='submit']:hover{color:#fff;background:{$tn_bg}}";
+              $css .= ".gform_footer input[type='submit']{border: 3px solid {$tn_bg}}";
+              $css .= $btn_fill ? ".gform_footer input[type='submit']{color:#fff;background:{$tn_bg}}" : ".gform_footer input[type='submit']{color:{$tn_bg}}";
+              $css .= ".gform_footer input[type='submit']:hover{color:#fff;background:{$tn_bg}}";
+          endif;
 
-          $css .= ".fluid-boxes .color-variation-1{background-color:{$fl_box_bg_1}}";
-          $css .= ".fluid-boxes .color-variation-2{background-color:{$fl_box_bg_2}}";
-          $css .= ".link-tours .link-tour-wrapper a{background-color:{$trip_link_bg}}";
+          $css .= $fl_box_bg_1 ? ".fluid-boxes .color-variation-1{background-color:{$fl_box_bg_1}}" : '';
+          $css .= $fl_box_bg_2 ? ".fluid-boxes .color-variation-2{background-color:{$fl_box_bg_2}}" : '';
+          $css .= $trip_link_bg ? ".link-tours .link-tour-wrapper a{background-color:{$trip_link_bg}}" : '';
 
         // $css .= '</style>';
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Methods outside any Classes
@@ -22,7 +22,7 @@ add_action( 'admin_print_footer_scripts', 'primary_content_styles_ajax_option_pa
  * And then someone clicks on button 'create card'
  *
  * $name - strung - table name without wp_prefix
- * 
+ *
  * @return intenger
  */
 function pc_add_style( $name = '' ) {
@@ -41,7 +41,7 @@ function pc_add_style( $name = '' ) {
  * Calls then someone clicks on button 'remove card'
  *
  * $name - strung - table name without wp_prefix
- * 
+ *
  * @return intenger
  */
 function pc_remove_style( $name = '' ) {
@@ -59,8 +59,8 @@ function pc_remove_style( $name = '' ) {
  * Get count of rows in database
  *
  * $name - strung - table name without wp_prefix
- * 
- * @return intager 
+ *
+ * @return intager
  */
 function get_pc_styles_count( $name = '' ) {
 	global $wpdb;
@@ -73,21 +73,21 @@ function get_pc_styles_count( $name = '' ) {
 
 
 /**
- * JavaScript functions 
+ * JavaScript functions
  * for option page "Manage styles"
  */
-function primary_content_styles_ajax_option_page() { 
+function primary_content_styles_ajax_option_page() {
 	?>
 	<script>
 		jQuery(document).ready(function($) {
 
-			/** 
+			/**
 			 * AJAX Request
 			 */
 			function request_styles( data, reload ) {
 				jQuery.post( ajaxurl, data, function(response) {
 
-					if ( reload ) { 
+					if ( reload ) {
 						location.reload();
 					}
 
@@ -133,11 +133,11 @@ function primary_content_styles_ajax_option_page() {
 
 
 /**
- * Return list of available styles 
+ * Return list of available styles
  * in Primary Content Area counstructor
- * 
+ *
  * @param  string $name class slug
- * @return array       
+ * @return array
  */
 function get_pc_styles_list( $name = '' ) {
 	$count = get_pc_styles_count( $name );
@@ -146,37 +146,37 @@ function get_pc_styles_list( $name = '' ) {
 	for ( $i = 1; $i <= $count; $i++ ) {
 		$number = $name . '_style-' . create_style_prefix($i);
 		$list[$number] = 'Style ' . $i;
-	}  
+	}
 
 	return $list;
 }
 
 
 /**
- * Call back which builds 
+ * Call back which builds
  * HTML of "Manage styles option page"
  */
 function render_manage_option_page( $field = array() ) {
 
 	$other_attributes = array( 'data-style-object' => $field['styling_group'] );
 
-	$button_add = get_submit_button( 
-		'Add style', 
-		'primary', 
-		'add-style', 
+	$button_add = get_submit_button(
+		'Add style',
+		'primary',
+		'add-style',
 		false,
 		$other_attributes
 	);
 
 	$count = get_pc_styles_count( $field['styling_group'] );
 
-	if ( $count <= 1 ) 
+	if ( $count <= 1 )
 		$other_attributes['disabled'] = 'disabled';
 
-	$button_remove = get_submit_button( 
-		'Remove latest group', 
-		'delete', 
-		'remove-style', 
+	$button_remove = get_submit_button(
+		'Remove latest group',
+		'delete',
+		'remove-style',
 		false,
 		$other_attributes
 	);
@@ -187,24 +187,28 @@ function render_manage_option_page( $field = array() ) {
 		<p><?php echo $button_add . ' ' . $button_remove; ?></p>
 	</form>
 
-<?php 
+<?php
 }
 
-function update_core_styles( $post_id ) {
-  // bail early if no ACF data
-  if( empty($_POST['acf']) ) {
-    return;
-  }
+function inline_core_styles() {
+    $uploads = wp_upload_dir();
+    $path = $uploads['basedir'] . '/core-styles.min.css';
 
-  $css = Core::get_styles();
-  $uploads = wp_upload_dir();
-  $path = $uploads['path'] . '/core-styles.min.css';
+    if ( is_user_logged_in() ) :
+        $css = Core::get_styles();
+        $handle = fopen($path, 'w');
+        fwrite( $handle, $css );
+        fclose( $handle );
+    else :
+        if ( file_exists($path) )
+            $css = file_get_contents($path);
+        else
+            $css = Core::get_styles();
+    endif;
 
-  $handle      = fopen($path, 'w');
-  fwrite($handle, $css);
-  fclose($handle);
+    echo "<style>$css</style>";
 }
-add_action('acf/save_post', 'update_core_styles', 1);
+add_action('wp_head', 'inline_core_styles', 10);
 
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-cards.php' );
 include( get_stylesheet_directory() . '/includes/primary-content/styling/pc-class-styling-core.php' );
