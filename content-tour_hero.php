@@ -56,7 +56,7 @@ if( have_rows('hero_area') ):
                                     endif;
 
                                         ?>
-                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:<?php if($background_placement=='Under Header'): ?>620<?php else: ?>539<?php endif; ?>px;">
+                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:<?php if($background_placement=='Under Header'): ?>620<?php else: ?>539<?php endif; ?>px;">
                                         <div class="container">
                                             <div class="row">
                                             <div class="col-sm-12">

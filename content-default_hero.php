@@ -43,7 +43,7 @@ $hero_content_dropshadow = get_field('hero_content_dropshadow', 'option');
                                     <?php foreach( $images as $slider_image ) :
                                      $simage = aq_resize( $slider_image['url'], 1440, 362, true ) ?: $slider_image['url'];
                                         ?>
-                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:362px;">
+                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:362px;">
                                         <div class="container">
                                             <div class="row">
                                             <div class="col-sm-12">

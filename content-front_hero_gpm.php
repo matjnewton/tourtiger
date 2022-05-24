@@ -47,7 +47,7 @@ $ha_rows = get_post_meta( get_the_ID(), 'hero_area', true );
                                 $simage = aq_resize( $img_url, 1440, 545, true ) ?: $img_url;
 
                                          ?>
-                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:1440px auto; background-position:center center; width:100%; height:539px;">
+                                        <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:539px;">
                                         <div class="tint"></div>
                                         <div class="container">
                                             <div class="row">
