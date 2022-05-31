@@ -107,6 +107,7 @@ class split_nav_walker extends Walker_Nav_Menu {
         $getinsellout_data_evt = get_field('getinsellout_data_evt','option');
         $integrate_trekksoft = get_field('trekksoft','option');
         $integrate_zaui = get_field('zaui','option');
+        $the_fly_book_account_id = get_field('the_fly_book_account_id','apikey');
 
         // get thumbnail
         $thumbnail = '';
@@ -141,7 +142,30 @@ class split_nav_walker extends Walker_Nav_Menu {
             $attributes .= ' class="button-booking zaui-embed-button override"';
         }
 
+        if ( $the_fly_book_account_id && $depth == 0 ) {
 
+            if ( $classes[0] == 'flybook-button' ) {
+                $entity_id = '';
+
+                foreach ($classes as $class) {
+                    if ( preg_match('/(fb-entity-config-id-)([0-9].*)/', $class, $matches ) && $matches[2] ) {
+                        $entity_id = $matches[2];
+                    }
+                }
+
+                $attributes .= ' class="flybook-book-now-button
+                fb-widget-type-frontend
+                fb-default-category-id-0
+                fb-account-id-'. $the_fly_book_account_id . '
+                fb-entity-config-id-'. $entity_id .'
+                fb-domain-go.theflybook.com
+                fb-protocol-https
+                pc_hero-area__action-btn"';
+
+                $attributes .= ' style="padding:0;"';
+            }
+
+        }
 
         if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
