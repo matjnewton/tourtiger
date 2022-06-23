@@ -11,9 +11,11 @@ function checkDisplay() {
 }
 
 function checkSticky() {
-	const e = $(".header-bar-wrapper").height();
-	const $underHeader =  $(".under-header .overlay-slider-content");
-	"fixed" === $(".sticky").css("position") ? $underHeader.css("margin-top", e + "px") : $underHeader.css("margin-top", "0px");
+	if ( $(window).width()>1024 ) {
+		const e = $(".header-bar-wrapper").height();
+		const $underHeader =  $(".under-header .overlay-slider-content");
+		"fixed" === $(".sticky").css("position") ? $underHeader.css("margin-top", e + "px") : $underHeader.css("margin-top", "0px");
+	}
 }
 
 $(window).resize(function () {
@@ -1319,6 +1321,44 @@ var FbBookNowButton = function (config) {
 	}
 
 	adjustBackgroundHeight()
+
+	// ---- xola adjustments for ios ----
+	function xolaAdjustmentsForIos(){
+		if ( is_iOS() ) {
+			console.debug("iOs");
+
+			const $xolaButtons = $('.xola-checkout.xola-custom');
+			console.debug({$xolaButtons})
+
+			if ( $xolaButtons.length ) {
+				$xolaButtons.each( (id, btn)=>{
+					const $button = $(btn);
+					const seller = $button.data('seller');
+					const experience = $button.data('experience');
+
+					console.debug({$button, seller, experience});
+				} )
+			}
+
+		} else {
+			console.debug('Not iOs');
+		}
+	}
+
+	function is_iOS() {
+		return [
+				'iPad Simulator',
+				'iPhone Simulator',
+				'iPod Simulator',
+				'iPad',
+				'iPhone',
+				'iPod'
+			].includes(navigator.platform)
+			// iPad on iOS 13 detection
+			|| (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+	}
+
+	xolaAdjustmentsForIos();
 
 } )( jQuery );
 
