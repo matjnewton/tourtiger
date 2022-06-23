@@ -310,8 +310,10 @@ $(window).resize(function () {
 
 			console.debug({$headerBarWrapper, height: $headerBarWrapper.height()});
 
-			if (!$sticky.length || !$body.hasClass('single')) $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
-			if ( $sticky.length && $body.hasClass('single') ) $si.css('margin-top', 0 + newMarginTop);
+			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+
+			// if (!$sticky.length || !$body.hasClass('single')) $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
+			// if ( $sticky.length && $body.hasClass('single') ) $si.css('margin-top', 0 + newMarginTop);
 
 		}
 	};
