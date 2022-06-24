@@ -310,8 +310,6 @@ $(window).resize(function () {
 				$headerBarWrapper.css('top', adminbar_height );
 			}
 
-			console.debug({$headerBarWrapper, height: $headerBarWrapper.height()});
-
 			$bannerWrapperInner.css('margin-top', 0 + newMarginTop);
 
 			// if (!$sticky.length || !$body.hasClass('single')) $bannerWrapperInner.css('margin-top', 0 + newMarginTop);
@@ -1321,44 +1319,6 @@ var FbBookNowButton = function (config) {
 	}
 
 	adjustBackgroundHeight()
-
-	// ---- xola adjustments for ios ----
-	function xolaAdjustmentsForIos(){
-		if ( is_iOS() ) {
-			console.debug("iOs");
-
-			const $xolaButtons = $('.xola-checkout.xola-custom');
-			console.debug({$xolaButtons})
-
-			if ( $xolaButtons.length ) {
-				$xolaButtons.each( (id, btn)=>{
-					const $button = $(btn);
-					const seller = $button.data('seller');
-					const experience = $button.data('experience');
-
-					console.debug({$button, seller, experience});
-				} )
-			}
-
-		} else {
-			console.debug('Not iOs');
-		}
-	}
-
-	function is_iOS() {
-		return [
-				'iPad Simulator',
-				'iPhone Simulator',
-				'iPod Simulator',
-				'iPad',
-				'iPhone',
-				'iPod'
-			].includes(navigator.platform)
-			// iPad on iOS 13 detection
-			|| (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-	}
-
-	xolaAdjustmentsForIos();
 
 } )( jQuery );
 
