@@ -2310,3 +2310,17 @@ function get_product_sidebar_button_options() {
 
     return $array;
 }
+
+// Remove Yoast SEO plugin columns from posts table
+
+add_filter ( 'manage_edit-post_columns', function ( $columns ) {
+
+    // remove the Yoast SEO columns
+    unset( $columns['wpseo-score'] );
+    unset( $columns['wpseo-title'] );
+    unset( $columns['wpseo-metadesc'] );
+    unset( $columns['wpseo-focuskw'] );
+
+    return $columns;
+
+} );
