@@ -169,6 +169,7 @@
             background-size:cover;
             background-position: 50%;
             background-image:url(<?php echo $himage; ?>);
+            height: 450px;
         }
     }
 

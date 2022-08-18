@@ -101,6 +101,7 @@
     background-size:cover;
     background-position: 50%;
     background-image:url(<?php echo $himage; ?>);
+    height: 450px;
     }
 }
 
@@ -249,6 +250,7 @@ endif; /*end hero_area*/
         background-size:cover;
         background-position: 50%;
         background-image:url(<?php echo $himage; ?>);
+        height: 450px;
     }
 }
 
