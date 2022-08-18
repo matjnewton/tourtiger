@@ -52,7 +52,9 @@ if( have_rows('hero_area') ):
         <?php  echo $search_content; ?>
 
         <div class="flxslider-wrapper content-front3_hero">
-                        <?php $images = get_sub_field( 'image_type' ) === 'Slider images'
+                        <?php
+                        $image_type = get_sub_field( 'image_type' );
+                        $images = $image_type === 'Slider images'
                             ? get_sub_field('hero_slides')
                             : ( get_sub_field( 'image_type' ) === 'Single image'
                                 ? [get_sub_field('hero_image')]
@@ -64,16 +66,16 @@ if( have_rows('hero_area') ):
                             $domain_name = $narray[1];
                             unset($darray, $narray);
                                 ?>
-                                <?php if( $images ): ?>
+                                <?php if( $images && $image_type === 'Slider images' ): ?>
                              <div id="slider" class="flexslider">
                                 <ul class="slides">
                                     <?php foreach( $images as $slider_image ):
 
-                                if( $background_placement=='Under Header' ) :
-                                    $simage = aq_resize( $slider_image['url'], 1440, 620, true ) ?: $slider_image['url'];
-                                else:
-                                    $simage = aq_resize( $slider_image['url'], 1440, 545, true ) ?: $slider_image['url'];
-                                endif;
+                                    if( $background_placement=='Under Header' ) :
+                                        $simage = aq_resize( $slider_image['url'], 1440, 620, true ) ?: $slider_image['url'];
+                                    else:
+                                        $simage = aq_resize( $slider_image['url'], 1440, 545, true ) ?: $slider_image['url'];
+                                    endif;
 
                                          ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:<?php if($background_placement=='Under Header'): ?>620<?php else: ?>539<?php endif; ?>px;">
