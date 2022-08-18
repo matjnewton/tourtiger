@@ -7915,8 +7915,8 @@ ul {
 
 
     .flxslider-wrapper #slider .slides li {
-        height: 225px!important;
-        background-size: auto 225px!important
+        height: 225px;
+        background-size: auto 225px;
     }
     .play-icon {
         width: 50px;
