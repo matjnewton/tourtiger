@@ -34,14 +34,7 @@ include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/acf.php'
 
 
 // To use modified gf plugin version and avoid its updating
-function deactivate_plugin_conditional() {
-    if ( is_plugin_active('gravityforms/gravityforms.php') ) {
-        deactivate_plugins('gravityforms/gravityforms.php');
-    }
-}
-add_action( 'admin_init', 'deactivate_plugin_conditional' );
-
-// deactivate_plugins( '/gravityforms/gravityforms.php' );
+deactivate_plugins( '/gravityforms/gravityforms.php' );
 include_once get_stylesheet_directory() . '/includes/plugins/gravityforms/gravityforms.php';
 
 
