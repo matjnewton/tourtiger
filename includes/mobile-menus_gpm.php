@@ -49,8 +49,8 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
             $attributes .= ' class="test-parent"';
         }*/
 
-    /*if( !empty($item->classes) && 
-        is_array($item->classes) && 
+    /*if( !empty($item->classes) &&
+        is_array($item->classes) &&
         in_array('menu-item-has-children', $item->classes) ){
             $attributes .= ' class="test-parent"';
     }*/
@@ -77,8 +77,13 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
         }
 
         // add custom data attributes for giso
-        if ( $integrate_getinsellout == true && $depth == 0 && ($classes[0] == 'giso-book-btn')) { // remove if statement if depth check is not required
+        if ( isset($integrate_getinsellout) && $integrate_getinsellout == true && $depth == 0 && ($classes[0] == 'giso-book-btn')) { // remove if statement if depth check is not required
             // These lines adds your custom class and attribute
+
+            $getinsellout_data_pn = $getinsellout_data_pn ?? '';
+            $getinsellout_data_url = $getinsellout_data_url ?? '';
+            $getinsellout_data_evt = $getinsellout_data_evt ?? '';
+
             $attributes .= ' class="giso_cb giso_btn"';
             $attributes .= ' data-pn="'.$getinsellout_data_pn.'"';
             $attributes .= ' data-url="'.$getinsellout_data_url.'"';
@@ -97,17 +102,17 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
         }*/
 
 
-        if ( $integrate_rezdy == true && $depth == 0 && ($classes[0] == 'rezdy-book-btn')) {
+        if ( isset($integrate_rezdy) && $integrate_rezdy == true && $depth == 0 && ($classes[0] == 'rezdy-book-btn')) {
             $attributes .= ' class="button-booking rezdy rezdy-modal"';
         }
 
-        if ( $integrate_zaui == true && $depth == 0 && ($classes[0] == 'zaui-book-btn')) {
+        if ( isset($integrate_zaui) && $integrate_zaui == true && $depth == 0 && ($classes[0] == 'zaui-book-btn')) {
             $attributes .= ' onclick="return Zaui.open(event)"';
             $attributes .= ' class="button-booking zaui-embed-button override"';
         }
 
 
-        if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
+        if ( isset($integrate_peek) && $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
             $t_gid = $atts['href'];
             $gid = preg_replace('#^https?://#', '', $t_gid);
             if($classes[1] == 'gift'):
@@ -132,7 +137,7 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
                 $item_output .= '</a>';
                 $item_output .= $args->after;
         }
-        elseif ( $integrate_xola == true && $depth == 0 && ($classes[0] == 'xola-book-btn')) {
+        elseif ( isset($integrate_xola) && $integrate_xola == true && $depth == 0 && ($classes[0] == 'xola-book-btn')) {
             $t_xid = $atts['href'];
             $xid = preg_replace('#^https?://#', '', $t_xid);
             if($classes[1] == 'checkout' || $classes[1] == 'checkout-all' || $classes[1] == 'timeline'):
@@ -140,6 +145,9 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
             elseif($classes[1] == 'gift'):
             $def_class = 'xola-gift';
             endif;
+
+            $class_attribute = $class_attribute ?? '';
+            $id_attribute = $id_attribute ?? '';
 
             $class_attribute .= ' class="'.$def_class.' xola-custom"';
             if($classes[1] == 'checkout-all'):
@@ -155,9 +163,11 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
             $item_output .= '</div>';
             $item_output .= $args->after;
-        } elseif($integrate_fareharbor == true && $depth == 0 && ($classes[0] == 'fareharbor-book-btn')){
+        } elseif(isset($integrate_fareharbor) && $integrate_fareharbor == true && $depth == 0 && ($classes[0] == 'fareharbor-book-btn')){
                 $t_fid = $atts['href'];
                 $fid = preg_replace('#^https?://#', '', $t_fid);
+
+                $fareharbor_shortname = $fareharbor_shortname ?? '';
 
                 if($classes[1] == 'grid'):
                 $h_attribute = ' href="https://fareharbor.com/'.$fareharbor_shortname.'/items/"';
@@ -175,7 +185,7 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
                 $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
                 $item_output .= '</a>';
                 $item_output .= $args->after;
-        } elseif ( $integrate_trekksoft == true && $depth == 0 && ($classes[0] == 'trekksoft-book-btn')) {
+        } elseif ( isset($integrate_trekksoft) && $integrate_trekksoft == true && $depth == 0 && ($classes[0] == 'trekksoft-book-btn')) {
             $trekk_id_temp = $atts['href'];
             $trekk_id = preg_replace('#^https?://#', '', $trekk_id_temp);
             $arr = explode(",",$trekk_id);
@@ -201,7 +211,7 @@ class Wpse8170mobile_Menu_Walker extends Walker_Nav_Menu {
 // ]]></script>';
             endif;
             $item_output .= $args->after;
-        } elseif($integrate_regiondo == true && $depth == 0 && ($classes[0] == 'regiondo-book-btn')) {
+        } elseif( isset($integrate_regiondo) && $integrate_regiondo == true && $depth == 0 && ($classes[0] == 'regiondo-book-btn')) {
             $t_rid = $atts['href'];
             $url_attribute = ' data-url="'.$t_rid.'"';
             $item_output = $args->before;
