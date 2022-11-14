@@ -278,7 +278,7 @@ class GFCommon {
 
 	//Returns the url of the plugin's root folder
 	public static function get_base_url() {
-		return plugins_url( '', __FILE__ );
+        return get_stylesheet_directory_uri().'/includes/plugins/gravityforms';
 	}
 
 	//Returns the physical path of the plugin's root folder
