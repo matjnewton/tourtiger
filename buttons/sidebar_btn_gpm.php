@@ -31,9 +31,9 @@
                                 <?php if($third_party == "xola-single-item"): ?>
                                 <?php
                                     $xsi = explode(",",$bbl);
-                                    $seller = $xsi[0];
-                                    $experience = $xsi[1];
-                                    $version = $xsi[2];
+                                    $seller = $xsi[0] ?? '';
+                                    $experience = $xsi[1] ?? '';
+                                    $version = $xsi[2] ?? '';
                                 ?>
                                     <div class="xola-checkout xola-custom book-btn2" data-seller="<?php echo $seller; ?>" data-experience="<?php echo $experience; ?>" data-version="<?php echo $version; ?>">
                                         <div class="arrow-left"></div>
@@ -75,8 +75,8 @@
                             <?php elseif($integrate_trekksoft && ($button_type == 'Use as third party integration Link')): ?>
                             <?php
                                 $arr = explode(",",$bbl);
-                                $format1 = $arr[0];
-                                $format2 = $arr[1];
+                                $format1 = $arr[0] ?? '';
+                                $format2 = $arr[1] ?? '';
                             ?>
                             <a href="#" class="book-btn2" id="<?php if($bbl): echo 'sbtn_trekksoft_' . $format1; endif; ?>">
                             <?php echo $bbt; ?>
@@ -142,7 +142,7 @@
                                   else :
                                     ?>
 
-                                    <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if($cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2"  <?php if($button_type === 'custom-in-new-tab'): ?>  target="_blank" <?php endif;?>>
+                                    <a <?php if($button_type == 'Link to form'): ?>data-scroll-nav='100'<?php endif; ?> href="<?php if($button_type == 'Link to form'): echo '#'; else: echo $bbl; endif; ?>"<?php if(isset($cta_onclick)&&$cta_onclick): ?> onclick="<?php echo $cta_onclick; ?>"<?php endif; ?> class="book-btn2"  <?php if($button_type === 'custom-in-new-tab'): ?>  target="_blank" <?php endif;?>>
                                         <?php echo $bbt; ?>
                                     </a>
 
