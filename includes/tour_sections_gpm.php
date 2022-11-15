@@ -499,14 +499,16 @@
                                             <?php
                                                 foreach( $images as $image ):
                                             ?>
-                                    <?php
+                                        <?php
                                         $img_url = wp_get_attachment_url($image);
-                                        $thumbnail = aq_resize( $img_url, 250, 250, true );
-                                    ?>
+
+                                        $thumbnail = $img_url ? aq_resize( $img_url, 250, 250, true ) : '';
+                                                if ( $img_url ) :
+                                                ?>
                                                 <a href="<?php echo $img_url; ?>" class="w-inline-block photo-thumbnail">
-                                                    <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']; ?>" class="image-thumb img-responsive" />
+                                                    <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt'] ?? ''; ?>" class="image-thumb img-responsive" />
                                                 </a>
-                                                <?php $gn2++; ?>
+                                                <?php endif; $gn2++; ?>
                                                 <?php endforeach; ?>
                                             </div>
                                         </div>
