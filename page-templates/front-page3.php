@@ -393,8 +393,9 @@ function tourtiger_sub_contents(){ ?>
                     ?> custom-margin-preset2<?php
                endif;
                if ( $custom_bottom_space && !is_array($custom_bottom_space) ) :
-                ?><?=$custom_bottom_space?>"<?php
+                ?><?=$custom_bottom_space?><?php
                endif;
+               ?>"<?php
                if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)):
                    ?> data-scroll-index='110'<?php
                endif; ?>
