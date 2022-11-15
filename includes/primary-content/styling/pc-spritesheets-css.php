@@ -16,7 +16,7 @@ foreach ($keys as $key) :
 endforeach;
 
 foreach ($found_key as $key) :
-    if($key[0]!=="_" && $post_meta[$key][0] == 1) {
+    if(is_array($key) && count($key) && $key[0]!=="_" && !empty($post_meta[$key][0]) && $post_meta[$key][0] == 1) {
         $has_spritesheet = 1;
         break;
     }
