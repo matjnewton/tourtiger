@@ -124,7 +124,7 @@ else :
   $isButtonUp = get_option('button_up', 'option');
 
 
-  $i = isset($col) ? (int)$col : '';
+  $i = isset($col) ? (int)$col : 0;
 
   $address = get_option( $options_address );
   $phone_number = get_option( $options_phone_number );
