@@ -2332,3 +2332,13 @@ add_filter ( 'manage_edit-post_columns', function ( $columns ) {
     return $columns;
 
 } );
+
+
+function tt1_get_first_value_if_array( $value ){
+
+    if ( is_array($value) && isset($value[0]) ) :
+        return $value[0];
+    else :
+        return $value;
+    endif;
+}
