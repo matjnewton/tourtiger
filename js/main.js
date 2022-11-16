@@ -1332,6 +1332,7 @@ var FbBookNowButton = function (config) {
 			let interval = setInterval(()=>{
 				const text = $('text');
 				if ( passed < 100 ) {
+					passed++;
 					if ( text.length && text[0].parentNode.nodeName==="BODY" ) {
 						text.remove();
 						clearInterval(interval)
