@@ -15,16 +15,16 @@
 
 	$row_width = get_sub_field( 'tour_pc-colums--width' );
 
-	if ( $row_width == 'four-five' ) : 
+	if ( $row_width == 'four-five' ) :
 		$tour_column_classes .= ' pc--r__four-five';
-	elseif ( $row_width == 'three-four' ) : 
+	elseif ( $row_width == 'three-four' ) :
 		$tour_column_classes .= ' pc--r__three-four';
-	elseif ( $row_width == 'one-two' ) : 
+	elseif ( $row_width == 'one-two' ) :
 		$tour_column_classes .= ' pc--r__one-two';
 	elseif ( $row_width == 'full' ) :
 		$tour_column_classes .= ' pc--r__full';
 	endif;
-				
+
 	$tour_column_wrap      = get_sub_field( 'tour_pc-colums--wrap' );
 	$tour_column_alignment = get_sub_field( 'tour_pc-colums--alignment' );
 
@@ -42,15 +42,15 @@
 	 */
 	$arrow_type     = get_sub_field( 'tour_pc-arrow-type' );
 	$arrow_settings = '';
-	
+
 	if ( $arrow_type == 'pc-custom-arrow' ) :
 		$tour_column_classes  .= ' ' . $arrow_type;
 
 		$d                    = array();
-		$d['arrows_size']     = get_sub_field( 'tour_pc-arrows-size' ); 
-		$d['arrows_weight']   = get_sub_field( 'tour_pc-arrows-weight' ); 
-		$d['arrows_position'] = get_sub_field( 'tour_pc-arrows-position' ); 
-		$d['arrows_color']    = get_sub_field( 'tour_pc-arrows-color' ); 
+		$d['arrows_size']     = get_sub_field( 'tour_pc-arrows-size' );
+		$d['arrows_weight']   = get_sub_field( 'tour_pc-arrows-weight' );
+		$d['arrows_position'] = get_sub_field( 'tour_pc-arrows-position' );
+		$d['arrows_color']    = get_sub_field( 'tour_pc-arrows-color' );
 
 		$tour_column_classes .= ' arrows_size_' . $d['arrows_size'];
 		$tour_column_classes .= ' arrows_weight_' . $d['arrows_weight'];
@@ -64,8 +64,8 @@
 		$tour_column_classes .= ' pc--r__scroll js-new-slider';
 	}
 
-	if ( $tour_column_wrap == 'wrap' ) 
-		$tour_column_classes .= ' pc--r__alignment--' . $tour_column_alignment;
+	if ( $tour_column_wrap == 'wrap' )
+		$tour_column_classes .= ' pc--r__alignment--' . tt1_get_first_value_if_array($tour_column_alignment);
 
 	if ( get_sub_field( 'tour_pc-colums--margin' ) == 'none' ) {
 		$tour_column_classes .= ' pc--r__mar-none';

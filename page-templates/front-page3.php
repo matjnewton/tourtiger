@@ -385,7 +385,21 @@ function tourtiger_sub_contents(){ ?>
                 $custom_bottom_space = get_sub_field('bottom_space_options');
         ?>
         <?php $section_count++; ?>
-            <section class="front-page-section fps<?php echo $section_count; ?><?php if($custom_margin_presets == "50px 0px 40px 0px"): ?> custom-margin-preset1<?php endif; ?><?php if($custom_margin_presets == "0px 0px 0px 0px"): ?> custom-margin-preset2<?php endif;?> <?=$custom_bottom_space?>"<?php if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)): ?> data-scroll-index='110'<?php endif; ?>>
+            <section class="front-page-section fps<?php echo $section_count; ?><?php
+               if($custom_margin_presets == "50px 0px 40px 0px"):
+                   ?> custom-margin-preset1<?php
+               endif;
+               if($custom_margin_presets == "0px 0px 0px 0px"):
+                    ?> custom-margin-preset2<?php
+               endif;
+               if ( $custom_bottom_space && !is_array($custom_bottom_space) ) :
+                    ?><?=$custom_bottom_space?><?php
+               endif;
+               ?>"<?php
+               if( is_array($custom_options) && in_array('Linked to Hero CTA', $custom_options)):
+                    ?> data-scroll-index='110'<?php
+               endif; ?>
+            >
 
             <?php if($heading): ?>
                 <div class="container">

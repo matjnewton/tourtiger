@@ -82,7 +82,7 @@ class Redirect410
         return '';
     }
 
-    private static function is_trashed_post_of_page() {
+    private static function is_trashed_post_of_page( $slug ) {
         $query_post = new \WP_Query([
             'post_type' => 'any',
             'post_status' => 'trash',

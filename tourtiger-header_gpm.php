@@ -46,7 +46,7 @@ if($custom_header == true): ?>
                     $hero_video_webm = get_post_meta( get_the_ID(), 'hero_area_' . $fha_count . '_hero_video_webm', true );
                     $hero_video_ogv = get_post_meta( get_the_ID(), 'hero_area_' . $fha_count . '_hero_video_ogv', true );
                     $full_video_poster = get_post_meta( get_the_ID(), 'hero_area_' . $fha_count . '_video_poster', true );
-                    $poster_url = wp_get_attachment_url( $full_video_poster,'full'); //get img URL
+                    $poster_url = wp_get_attachment_url( $full_video_poster); //get img URL
                 break;
             endswitch;
     endforeach;
@@ -54,9 +54,9 @@ if($custom_header == true): ?>
 ?>
 <div class="banner-wrapper<?php
 
-    if ( $background_placement=='Under Header' ) :
+    if ( isset($background_placement) && $background_placement=='Under Header' ) :
         echo " under-header";
-    elseif ( $background_placement=='Down Below Header' ) :
+    elseif ( isset($background_placement) && $background_placement=='Down Below Header' ) :
         echo " below-header";
     else :
         echo " no-banner";
@@ -64,12 +64,14 @@ if($custom_header == true): ?>
     endif;
 ?>"<?php
 
-    if ( false && $background_placement=='Under Header' && $hero_video) :
-        ?> style="max-width:1980px; max-height:620px; margin-left:auto; margin-right:auto;"<?php
-    endif;
+    if ( 1 === 2 ) :
+        if ( isset($background_placement) && $background_placement=='Under Header' && isset($hero_video) && $hero_video) :
+            ?> style="max-width:1980px; max-height:620px; margin-left:auto; margin-right:auto;"<?php
+        endif;
 
-     if  ( false && $background_placement=='Down Below Header' && $hero_video) :
-         ?> style="max-width:1440px; max-height:545px; margin-left:auto; margin-right:auto;"<?php
+         if  ( isset($background_placement) && $background_placement=='Down Below Header' && isset($hero_video) && $hero_video) :
+             ?> style="max-width:1440px; max-height:545px; margin-left:auto; margin-right:auto;"<?php
+         endif;
      endif;
      ?>>
 <div class="tint under-header-tint"></div>
@@ -78,17 +80,19 @@ if($custom_header == true): ?>
     $sticky_menu = get_option( 'options_sticky_menu' );
     $all_caps = get_option( 'options_all_caps_on_menu' );
 ?>
-<?php if($background_placement=='Under Header' && $hero_video): ?>
+<?php if(  isset($background_placement) && $background_placement=='Under Header' && isset($hero_video)): ?>
 <?php
-    $poster = aq_resize( $poster_url, 1440, 620, true );
+    $poster = isset($poster_url) ? aq_resize( $poster_url, 1440, 620, true ) : "";
     ?>
 <video autoplay loop muted poster="<?php if($poster): echo $poster; endif; ?>" id="video1" style="width:100%; height:auto; position:absolute; z-index:0;">
-                <source src="<?php echo $hero_video; ?>" type="video/mp4">
-                <source src="<?php echo $hero_video_webm; ?>" type="video/webm">
-                <source src="<?php echo $hero_video_ogv; ?>" type="video/ogv">
+                <source src="<?php echo $hero_video ?? ''; ?>" type="video/mp4">
+                <source src="<?php echo $hero_video_webm ?? ''; ?>" type="video/webm">
+                <source src="<?php echo $hero_video_ogv ?? ''; ?>" type="video/ogv">
             </video>
 <?php endif; ?>
-    <div class="header-bar-wrapper<?php if($sticky_menu == true): ?> sticky<?php endif; ?><?php if($background_placement=='Under Header' && $slides_images && !$sticky_menu): ?> pos-abs<?php endif; ?>">
+    <div class="header-bar-wrapper<?php if($sticky_menu == true): ?> sticky<?php endif; ?>
+<?php if(isset($background_placement) && $background_placement=='Under Header' && isset($slides_images)
+        && $slides_images && !$sticky_menu): ?> pos-abs<?php endif; ?>">
     <div class="header-bar">
         <?php
         $logo_covers_both_menus = get_option( 'options_logo_covers_both_menus' );
@@ -162,7 +166,7 @@ if($custom_header == true): ?>
 
                                  <?php
 
-                                 if($use_media_mob && $social_media && ($use_media == true)): ?>
+                                 if($use_media_mob && $social_media && isset($use_media) && $use_media == true): ?>
                                     <div class="social-media social-media-mobile col-xs-4 hidden-sm">
                                         <ul class="genesis-nav-menu">
                                             <?php include(locate_template('partials/social_media_gpm.php' )); ?>
@@ -197,7 +201,7 @@ if($custom_header == true): ?>
 $hero_image_attrs = '';
 $hero_image_class = '';
 
-if ( $background_placement === 'Down Below Header - full image' ) :
+if ( isset($background_placement) && $background_placement === 'Down Below Header - full image' ) :
     $bha_rows = get_post_meta( get_the_ID(), 'hero_area', true );
 
     foreach( (array) $bha_rows as $bha_count => $bha_row ):
@@ -206,7 +210,7 @@ if ( $background_placement === 'Down Below Header - full image' ) :
             $img = (int) get_post_meta( get_the_ID(), 'hero_area_' . $bha_count . '_hero_image', true );
             $hero_image_src = wp_get_attachment_image_src( $img,'full');
 
-                if ( !empty($hero_image_src) && is_array($hero_image_src) && $bha_count===0 ) :
+                if ( isset($hero_image_src) && is_array($hero_image_src) && $bha_count===0 ) :
                     $hero_image_attrs .= 'data-bg-height="' . $hero_image_src[2].'"';
                     $hero_image_attrs .= ' data-bg-width="' . $hero_image_src[1].'"';
 
@@ -221,15 +225,16 @@ endif;
 ?>
 
 <div class="banner-wrapper-inner <?=$hero_image_class?>" <?=$hero_margin_top_zero?> <?=$hero_image_attrs?>>
-    <?php if($background_placement=='Down Below Header' && $hero_video): ?>
+    <?php if ( isset($background_placement) && $background_placement=='Down Below Header' && $hero_video): ?>
     <?php
-    $poster = aq_resize( $poster_url, 1440, 545, true );
+    $poster = isset($poster_url) ? aq_resize( $poster_url, 1440, 545, true ) : '';
     ?>
 <video autoplay loop muted poster="<?php if($poster): echo $poster; endif; ?>" id="video1" style="width:100%; height:auto; position:absolute; z-index:0;">
                 <source src="<?php echo $hero_video; ?>" type="video/mp4">
             </video>
 <?php endif; ?>
-<div class="tint below-header-tint"<?php if($background_placement=='Down Below Header' && $hero_video): ?> style="height:545px;"<?php endif; ?>></div>
+<div class="tint below-header-tint"<?php if(isset($background_placement) && $background_placement=='Down Below Header'
+    && isset($hero_video) && $hero_video): ?> style="height:545px;"<?php endif; ?>></div>
 <?php
 $queried_post_type = get_query_var('post_type');
 

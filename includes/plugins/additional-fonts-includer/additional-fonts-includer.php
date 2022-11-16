@@ -1,8 +1,8 @@
-<?php  
+<?php
 /**
  * Additional Font Includer
  *
- * This Class allows you upload new fonts 
+ * This Class allows you upload new fonts
  * and use them with ACF Typography
  */
 
@@ -11,11 +11,11 @@
  * Allows to upload fonts sources
  */
 function afi_add_myme_types($mime_types){
-    $mime_types['svg']   = 'image/svg+xml'; 
-    $mime_types['eot']   = 'application/octet-stream'; 
-    $mime_types['ttf']   = 'application/octet-stream'; 
-    $mime_types['woff']  = 'application/font-woff'; 
-    $mime_types['woff2'] = 'application/octet-stream'; 
+    $mime_types['svg']   = 'image/svg+xml';
+    $mime_types['eot']   = 'application/octet-stream';
+    $mime_types['ttf']   = 'application/octet-stream';
+    $mime_types['woff']  = 'application/font-woff';
+    $mime_types['woff2'] = 'application/octet-stream';
     return $mime_types;
 }
 
@@ -26,14 +26,14 @@ add_filter('upload_mimes', 'afi_add_myme_types', 1, 1);
  * Root
  */
 $additional_font_includer_path = get_stylesheet_directory() . '/includes/plugins/additional-fonts-includer';
-define( 'ADI_PATH', $additional_font_includer_path ); 
+define( 'ADI_PATH', $additional_font_includer_path );
 
 
 /**
  * Root URI
  */
 $additional_font_includer_path_uri = get_stylesheet_directory_uri() . '/includes/plugins/additional-fonts-includer';
-define( 'ADI_PATH_URI', $additional_font_includer_path_uri ); 
+define( 'ADI_PATH_URI', $additional_font_includer_path_uri );
 
 
 /**
@@ -48,7 +48,7 @@ include_once ( ADI_PATH . '/class-afincluder.php' );
  */
 function get_aifonts_from_dir( $font = '', $include = false ) {
 	$available_fonts = array();
-	$uploads_dir     = wp_upload_dir(); 
+	$uploads_dir     = wp_upload_dir();
 	$root            = $uploads_dir['basedir'] . '/aif';
 
   if (!file_exists($root))
@@ -59,8 +59,8 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 
 	$is_google       = is_google_font_exist($font);
 
-	foreach ( $items as $key => $value ) : 
-		if ( substr($value, -3) === 'css' ): 
+	foreach ( $items as $key => $value ) :
+		if ( substr($value, -3) === 'css' ):
 			$value = explode('.', $value);
 			$name = $value[0];
 			$available_fonts['aif_'.$name] = $name;
@@ -80,11 +80,11 @@ function get_aifonts_from_dir( $font = '', $include = false ) {
 	} else {
 		return false;
 	}
-} 
+}
 
 
 /**
- * Check whether the font 
+ * Check whether the font
  * has been loaded on the page
  */
 function is_font_loaded( $font = '' ) {
@@ -94,9 +94,9 @@ function is_font_loaded( $font = '' ) {
 	// $storage     = ADI_PATH . '/temp-' . $_COOKIE['unic-user'] . '.json';
 	// $jsonArray   = array();
 	// $jsonFile    = file_get_contents( $storage );
-	
+
 	// if ( $jsonFile ) :
-	// 	$jsonArray = json_decode( $jsonFile, true );	
+	// 	$jsonArray = json_decode( $jsonFile, true );
 
 	// 	if ( array_key_exists( $font, $jsonArray) )
 	// 		return true;
@@ -127,16 +127,16 @@ function is_font_loaded( $font = '' ) {
  * @return boolean       [description]
  */
 function is_aifont_exist( $font = '' ) {
-	$uploads_dir = wp_upload_dir(); 
+	$uploads_dir = wp_upload_dir();
 	$root        = $uploads_dir['basedir'] . '/aif';
-	$file        = $root . '/' . $font . '.css'; 
+	$file        = $root . '/' . $font . '.css';
 
 	if (file_exists($file)) {
 		return true;
 	} else {
 		return false;
 	}
-} 
+}
 
 
 /**
@@ -153,15 +153,15 @@ function is_google_font_exist( $font = '' ) {
 	$valid     = false;
 
 	for ( $i = 0; $i <= $jsonCount; $i++ ) :
-		$ii = $jsonItems[$i];
+		$ii = $jsonItems[$i] ?? '';
 
-		if ( $ii['family'] == $font ) :
+		if ( $ii && isset($ii['family']) && $ii['family'] == $font ) :
 			$valid = true;
-		endif;	
+		endif;
 	endfor;
 
 	return $valid;
-} 
+}
 
 
 /**
@@ -170,7 +170,7 @@ function is_google_font_exist( $font = '' ) {
  */
 function aif_delete_font( $font = '' ) {
 	$available_fonts = array();
-	$uploads_dir     = wp_upload_dir(); 
+	$uploads_dir     = wp_upload_dir();
 	$directory       = $uploads_dir['basedir'];
 	$file            = $directory . '/aif/' . $font . '.css';
 
@@ -199,7 +199,7 @@ function clear_unnessesarily_fonts_in_json() {
 	fclose($handle);
 
 	return true;
-} 
+}
 
 /**
  * Update GF JSON file
@@ -223,7 +223,7 @@ function update_fonts_in_json( $font = '' ) {
 
 			if ( $ii['family'] == $family ) :
 				$valid = false;
-			endif;	
+			endif;
 
 			if ( $font != '' && $font == $ii['family'] ) :
 				unset($jsonItems[$i]);
@@ -261,7 +261,7 @@ function aif_check_source_urls($name = '') {
 	$string = preg_split('/http:|https:/', $file_path);
 	$string = $string[1];
 
-	$uploads_dir     = wp_upload_dir(); 
+	$uploads_dir     = wp_upload_dir();
 	$directory       = $uploads_dir['basedir'];
 	$file            = $directory . '/aif/' . $name . '.css';
 
@@ -279,7 +279,7 @@ function aif_check_source_urls($name = '') {
  * Update URLs in source files
  */
 function aif_update_source_urls($name = '') {
-	$uploads_dir = wp_upload_dir(); 
+	$uploads_dir = wp_upload_dir();
 	$directory   = $uploads_dir['basedir'];
 	$file        = $directory . '/aif/' . $name . '.css';
 	$file_handle = file_get_contents($file);

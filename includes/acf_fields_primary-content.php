@@ -472,16 +472,16 @@ if(function_exists('acf_add_options_sub_page')) {
  * @param  string $font - ACF Field
  * @return array        - [0] - Link to Google font; [1] - css styles
  */
-function pc_init_font_css( $font = '' ) {
-	if ( $font ) {
-		$css = array( false, '' );
+function pc_init_font_css( $font = [] ) {
+    $css = ['', ''];
 
-		if ( $font['font-family'] ) {
+	if ( is_array($font) && count($font) ) {
+		if ( isset($font['font-family'])&&$font['font-family'] ) {
 			$is_custom_font = get_aifonts_from_dir( $font['font-family'], true );
 
 			if ( ! is_font_loaded( $font['font-family'] ) ) :
 				if ( !$is_custom_font ) {
-					$css[0] = $font['font-family'] ? "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');" : false;
+					$css[0] = "</style><style>@import url('https://fonts.googleapis.com/css?family=" . $font['font-family'] . "');";
 				} else {
 					$css[0] = "</style>{$is_custom_font}<style>";
 				}
@@ -490,18 +490,15 @@ function pc_init_font_css( $font = '' ) {
 			$css[1] .= "font-family:'" . $font['font-family'] . "';";
 		}
 
-		$css[1] .= $font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
-		$css[1] .= $font['font_size'] ? "font-size:" . $font['font_size'] . "px;" : '';
-		$css[1] .= $font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
-		$css[1] .= $font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
-		$css[1] .= $font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
-		$css[1] .= $font['letter_spacing'] ? "letter-spacing:" .$font['letter_spacing'] . "px;" : '';
-
-		return $css;
-
-	} else {
-		return false;
+		$css[1] .= isset($font['font-weight'])&&$font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
+		$css[1] .= isset($font['font_size'])&&$font['font_size'] ? "font-size:" . $font['font_size'] . "px;" : '';
+		$css[1] .= isset($font['line_height'])&&$font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
+		$css[1] .= isset($font['font_style'])&&$font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
+		$css[1] .= isset($font['text_align'])&&$font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
+		$css[1] .= isset($font['letter_spacing'])&&$font['letter_spacing'] ? "letter-spacing:" .$font['letter_spacing'] . "px;" : '';
 	}
+
+    return $css;
 }
 
 /**
@@ -510,11 +507,14 @@ function pc_init_font_css( $font = '' ) {
  * @param  string $color      Color value
  * @param  string $background Color value
  * @param  string $border     Color value
- * @return string             return string with styles
+ * @return array             return string with styles
  */
-function pc_content_init_form( $font='', $color='', $background='', $border='' ) {
 
-	if ( $font['font-family'] ) {
+function pc_content_init_form( $font=[], $color='', $background='', $border='' ) {
+
+    $css = ['', ''];
+
+	if ( isset($font['font-family']) && $font['font-family'] ) {
 		$is_custom_font = get_aifonts_from_dir( $font['font-family'], true );
 
 		if ( ! is_font_loaded( $font['font-family'] ) ) :
@@ -528,12 +528,12 @@ function pc_content_init_form( $font='', $color='', $background='', $border='' )
 	 	$css[1] .= "font-family:'" . $font['font-family'] . "';";
 	}
 
-	$css[1] .= $font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
-	$css[1] .= $font['font_size'] ? "font-size:" . $font['font_size'] . "px;" : '';
-	$css[1] .= $font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
-	$css[1] .= $font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
-	$css[1] .= $font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
-	$css[1] .= $font['letter_spacing'] ? "letter-spacing:" . $font['letter_spacing'] . "px;" : '';
+	$css[1] .= isset($font['font-weight'])&&$font['font-weight'] ? "font-weight:" . $font['font-weight'] . ";" : '';
+	$css[1] .= isset($font['font_size'])&&$font['font_size'] ? "font-size:" . $font['font_size'] . "px;" : '';
+	$css[1] .= isset($font['line_height'])&&$font['line_height'] ? "line-height:" . $font['line_height'] . "px;" : '';
+	$css[1] .= isset($font['font_style'])&&$font['font_style'] ? "font-style:" . $font['font_style'] . ";" : '';
+	$css[1] .= isset($font['text_align'])&&$font['text_align'] ? "text-align:" . $font['text_align'] . ";" : '';
+	$css[1] .= isset($font['letter_spacing'])&&$font['letter_spacing'] ? "letter-spacing:" . $font['letter_spacing'] . "px;" : '';
 
 	$css[1] .= $color ? 'color:' . $color . ';' : '';
 	$css[1] .= $background ? 'background-color:' . $background . ';' : '';
@@ -834,10 +834,10 @@ function get_font_corner_style( $field = '' ) {
  * @param  string $field sub field value
  * @return array - 0 - defaul; 1 - hover
  */
-function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_color = '' ) {
-	$css = false;
+function get_font_mouseover_effect_styles( $field = [], $font_color = '', $bg_color = '' ) {
+	$css = ['', ''];
 
-	if ( $$field  ) {
+	if ( $field  ) {
 
 		$css = array();
 
@@ -860,7 +860,7 @@ function get_font_mouseover_effect_styles( $field = '', $font_color = '', $bg_co
  */
 function get_font_border_styles( $style = '', $color = '', $width = '' ) {
 
-	$css = false;
+	$css = ['', ''];
 
 	if ( $style == 'yes' || $style == 'hover' ) {
 

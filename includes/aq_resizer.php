@@ -63,7 +63,7 @@ if(!class_exists('Aq_Resize')) {
          * Run, forest.
          */
         public function process( $url, $width = null, $height = null, $crop = null, $single = true, $upscale = false ) {
-          
+
             try {
                 // Validate inputs.
                 if (!$url)
@@ -80,23 +80,23 @@ if(!class_exists('Aq_Resize')) {
                 $upload_info = wp_upload_dir();
                 $upload_dir = $upload_info['basedir'];
                 $upload_url = $upload_info['baseurl'];
-                
+
                 $http_prefix = "http://";
                 $https_prefix = "https://";
                 $relative_prefix = "//"; // The protocol-relative URL
-                
-                /* if the $url scheme differs from $upload_url scheme, make them match 
+
+                /* if the $url scheme differs from $upload_url scheme, make them match
                    if the schemes differe, images don't show up. */
                 if(!strncmp($url,$https_prefix,strlen($https_prefix))){ //if url begins with https:// make $upload_url begin with https:// as well
                     $upload_url = str_replace($http_prefix,$https_prefix,$upload_url);
                 }
                 elseif(!strncmp($url,$http_prefix,strlen($http_prefix))){ //if url begins with http:// make $upload_url begin with http:// as well
-                    $upload_url = str_replace($https_prefix,$http_prefix,$upload_url);      
+                    $upload_url = str_replace($https_prefix,$http_prefix,$upload_url);
                 }
                 elseif(!strncmp($url,$relative_prefix,strlen($relative_prefix))){ //if url begins with // make $upload_url begin with // as well
                     $upload_url = str_replace(array( 0 => "$http_prefix", 1 => "$https_prefix"),$relative_prefix,$upload_url);
                 }
-                
+
 
                 // Check if $img_url is local.
                 if ( false === strpos( $url, $upload_url ) )
@@ -130,7 +130,7 @@ if(!class_exists('Aq_Resize')) {
                     $suffix = "{$dst_w}x{$dst_h}";
                     $dst_rel_path = str_replace( '.' . $ext, '', $rel_path );
                     $destfilename = "{$upload_dir}{$dst_rel_path}-{$suffix}.{$ext}";
-                     
+
                     if ( ! $dims || ( true == $crop && false == $upscale && ( $dst_w < $width || $dst_h < $height ) ) ) {
                         // Can't resize, so return false saying that the action to do could not be processed as planned.
                         throw new Aq_Exception('Unable to resize image because image_resize_dimensions() failed');
@@ -145,7 +145,7 @@ if(!class_exists('Aq_Resize')) {
                         $editor = wp_get_image_editor( $img_path );
 
                         if ( is_wp_error( $editor ) || is_wp_error( $editor->resize( $width, $height, $crop ) ) ) {
-                            throw new Aq_Exception('Unable to get WP_Image_Editor: ' . 
+                            throw new Aq_Exception('Unable to get WP_Image_Editor: ' .
                                                    $editor->get_error_message() . ' (is GD or ImageMagick installed?)');
                         }
 
@@ -180,7 +180,7 @@ if(!class_exists('Aq_Resize')) {
             }
             catch (Aq_Exception $ex) {
                 error_log('Aq_Resize.process() error: ' . $ex->getMessage());
-                
+
                 if ($this->throwOnError) {
                     // Bubble up exception.
                     throw $ex;
@@ -242,7 +242,7 @@ if(!function_exists('aq_resize')) {
         }
         /* WPML Fix */
         $aq_resize = Aq_Resize::getInstance();
-        return $aq_resize->process( $url, $width, $height, $crop, $single, $upscale );
+        return $url ? $aq_resize->process( $url, $width, $height, $crop, $single, $upscale ) : $url;
     }
 }
 

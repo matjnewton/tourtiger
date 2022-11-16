@@ -63,7 +63,7 @@ if( have_rows('hero_area') ):
                             //$domain_name = $_SERVER['HTTP_HOST'];
                             $darray = explode('.', $_SERVER['HTTP_HOST']);
                             $narray = array_reverse($darray);
-                            $domain_name = $narray[1];
+                            $domain_name = array_key_exists(1, $narray) ? $narray[1] : '';
                             unset($darray, $narray);
                                 ?>
                                 <?php if( $images && $image_type === 'Slider images' ): ?>

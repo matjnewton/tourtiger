@@ -1,5 +1,7 @@
 <?php
 
+define( 'DISALLOW_FILE_EDIT', true );
+
 // no acf
 
 // ACF with all features support integration
@@ -30,7 +32,15 @@ function acf_settings_dir() {
 
 }
 
- include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/acf.php';
+include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/acf.php';
+
+
+if ( is_plugin_active('gravityforms/gravityforms.php') ) {
+    deactivate_plugins('gravityforms/gravityforms.php');
+} else {
+    include_once get_stylesheet_directory() . '/includes/plugins/gravityforms/gravityforms.php';
+}
+
 
 if ( ! class_exists( 'acf' ) )
     return;
@@ -2324,3 +2334,13 @@ add_filter ( 'manage_edit-post_columns', function ( $columns ) {
     return $columns;
 
 } );
+
+
+function tt1_get_first_value_if_array( $value ){
+
+    if ( is_array($value) && isset($value[0]) ) :
+        return $value[0];
+    else :
+        return $value;
+    endif;
+}

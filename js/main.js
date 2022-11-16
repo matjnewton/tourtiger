@@ -1320,5 +1320,30 @@ var FbBookNowButton = function (config) {
 
 	adjustBackgroundHeight()
 
+
+	//-------- remove <text>&ZeroWidthSpace; </text>
+
+	function ZeroWidthSpace(){
+		const text = $('text');
+		if ( text.length && text[0].parentNode.nodeName==="BODY" ) {
+			text.remove();
+		} else {
+			let passed = 0;
+			let interval = setInterval(()=>{
+				const text = $('text');
+				if ( passed < 100 ) {
+					if ( text.length && text[0].parentNode.nodeName==="BODY" ) {
+						text.remove();
+						clearInterval(interval)
+					}
+				} else {
+					clearInterval(interval)
+				}
+			}, 500);
+		}
+	}
+
+	ZeroWidthSpace()
+
 } )( jQuery );
 

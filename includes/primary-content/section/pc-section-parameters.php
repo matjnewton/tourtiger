@@ -1,6 +1,6 @@
 <?php
 
-if ( $count == false || $count === null ) $count = 0;
+if (empty($count) || $count == false) $count = 0;
 
 $paddings = get_sub_field( 'tour_pc-section_pad' );
 
@@ -13,6 +13,8 @@ if ( count( $paddings ) > 0 && is_array( $paddings ) ) {
 } else {
   $paddings_css = ' pc--s__no-paddings';
 }
+
+$section_count = $section_count ?? '';
 
 $tour_section_bg = get_sub_field( 'tour_pc-bg__select' );
 $tour_section_classes = 'pc--s pc--s_id-' . $section_count . $paddings_css;
@@ -101,4 +103,4 @@ if ( get_sub_field( 'tour_pc-bd--select' ) != 'none' ) {
 
   ?>
 
-</section> 
+</section>

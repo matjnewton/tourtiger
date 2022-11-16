@@ -6,7 +6,7 @@
 <?php
     $darray = explode('.', $_SERVER['HTTP_HOST']);
     $narray = array_reverse($darray);
-    $domain_name = $narray[1];
+    $domain_name = $narray[1] ?? '';
     unset($darray, $narray);
 ?>
 .banner-wrapper{

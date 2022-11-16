@@ -2,14 +2,16 @@
 
 /**
  * Init styles for each styling element of content card
- * @param  string $cc_style 
+ * @param  string $cc_style
  * @return array with counter
  */
 function get_pc_content_card_style( $cc_style ) {
-	
+
+    $cc_styles_arr = array();
+
 		if ( have_rows( $cc_style, 'option' ) ) {
 
-			while ( have_rows( $cc_style, 'option' ) ) { 
+			while ( have_rows( $cc_style, 'option' ) ) {
 				the_row();
 
 				echo '<style>';
@@ -41,13 +43,8 @@ function get_pc_content_card_style( $cc_style ) {
 				include ( PCA_DIR . '/column/content-card/pc-content-card-init-gallery.php' );
 
 				echo '</style>';
-			} 
-		} 
+			}
+		}
 
 		return $cc_styles_arr;
-
 }
-
-$cc_styles_arr = array();
-
-?>
