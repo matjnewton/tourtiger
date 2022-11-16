@@ -49,8 +49,8 @@ if( have_rows('hero_area', 'option') ):
 
                                     $simage = $bg_full_height || $bg_full_image
                                         ? $slider_image['url'] :
-                                        aq_resize( $slider_image['url'], 1440, 545, true )
-                                            ?: $slider_image['url'];
+	                                    (aq_resize( $slider_image['url'], 1440, 545, true )
+                                            ?: $slider_image['url']);
 
                                         ?>
                                         <li style="background-image:url(<?php echo $simage; ?>); background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%; height:<?=$bg_height?>;">
