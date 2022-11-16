@@ -1,5 +1,7 @@
 <?php
 
+define( 'DISALLOW_FILE_EDIT', true );
+
 // no acf
 
 // ACF with all features support integration
