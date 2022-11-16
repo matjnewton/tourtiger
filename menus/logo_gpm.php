@@ -6,7 +6,7 @@
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                             <?php
 
-                                if($logotype) $logo_image = $logotype;
+                                if(isset($logotype) && $logotype) $logo_image = $logotype;
                                 else $logo_image = get_option( 'options_logo_image' );
                                 $logo_url = wp_get_attachment_url( $logo_image,'full');
                                 $logo = aq_resize( $logo_url, 362, 64, false );
