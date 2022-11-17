@@ -1,5 +1,21 @@
                         <?php
                             include(locate_template('includes/integrate_vars_gpm.php' ));
+
+                        $button_label = $button_label ?? '';
+                        $tl = $tl ?? '';
+                        $tile_count =  $tile_count ?? '';
+                        $use_as_integration_link = $use_as_integration_link ?? '';
+                        $integrate_xola = $integrate_xola ?? '';
+                        $third_party = $third_party ?? '';
+                        $integrate_peek = $integrate_peek ?? '';
+                        $integrate_fareharbor = $integrate_fareharbor ?? '';
+                        $fareharbor_shortname = $fareharbor_shortname ?? '';
+                        $integrate_getinsellout = $integrate_getinsellout ?? '';
+                        $getinsellout_data_pn = $getinsellout_data_pn ?? '';
+                        $getinsellout_data_url = $getinsellout_data_url ?? '';
+                        $integrate_trekksoft = $integrate_trekksoft ?? '';
+                        $getinsellout_data_evt = $getinsellout_data_evt ?? '';
+
                         ?>
                         <div class="view-dropdown-wrapper view-btn-wrapper">
                                 <div class="view-dropdown-tour-btn">
@@ -9,15 +25,15 @@
                               </button>
                             <?php $button_sub_options = get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' . $tile_count . '_button_sub_options', true ); ?>
                             <?php if( $button_sub_options ): ?>
-                            
+
                             	<ul class="dropdown-menu">
-                            	<?php for( $cbd = 0; $cbd < $button_sub_options; $cbd++ ): 
+                            	<?php for( $cbd = 0; $cbd < $button_sub_options; $cbd++ ):
                             		$button_text = esc_html( get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' . $tile_count . '_button_sub_options_' . $cbd . '_button_text', true ));
                             		$link = esc_html( get_post_meta( get_the_ID(), 'tiles_area_' . $tl . '_tiles_' . $tile_count . '_button_sub_options_' . $cbd . '_link', true ));
                             		?>
                             		<li>
                             		<?php if($integrate_xola && $use_as_integration_link): ?>
-                                        
+
                                         <?php if($third_party == "xola-single-item"): ?>
                                         <?php
                                             $xsi = explode(",",$link);
@@ -53,20 +69,20 @@
                                             $format2 = $arr[1];
                                         ?>
                                         <a href="#" id="<?php if($link): echo 'catmobd'.$cbd.'_trekksoft_' . $format1; endif; ?>">
-                                    <?php echo $button_text; ?>    
-                                    </a>  
+                                    <?php echo $button_text; ?>
+                                    </a>
                                     <script>// <![CDATA[
         (function() { var button = new TrekkSoft.Embed.Button(); button .setAttrib("target", "fancy") <?php if($third_party == "tour_details"): ?> .setAttrib("entryPoint", "tour_details") .setAttrib("tourId", "<?php echo $format2; ?>") <?php elseif($third_party == "tour_finder"): ?> .setAttrib("entryPoint", "tour_finder")<?php endif;?> .registerOnClick("#<?php if($link): echo 'catmobd'.$cbd.'_trekksoft_' . $format1; endif; ?>"); })();
         // ]]></script>
-                            		<?php elseif($integrate_rezdy && $use_as_integration_link): ?>
+                            		<?php elseif(isset($integrate_rezdy)&&$integrate_rezdy && $use_as_integration_link): ?>
                             		    <a class="button-booking rezdy rezdy-modal" href="<?php echo $link; ?>">
                                         <?php echo $button_text; ?>
                             		    </a>
-                                    <?php elseif($integrate_zaui && $use_as_integration_link): ?>
+                                    <?php elseif(isset($integrate_zaui)&&$integrate_zaui && $use_as_integration_link): ?>
                                         <a onclick="return Zaui.open(event)" class="button-booking zaui-embed-button override" href="<?php echo $link; ?>">
                                         <?php echo $button_text; ?>
                             		    </a>
-                                    <?php elseif($integrate_regiondo && $use_as_integration_link): ?>
+                                    <?php elseif(isset($integrate_regiondo)&&$integrate_regiondo && $use_as_integration_link): ?>
                                         <a class="regiondo-button" data-url="<?php echo $link; ?>">
                                         <?php echo $button_text; ?>
                                         </a>
@@ -82,6 +98,5 @@
                             </div>
                                 </div><!-- end .view-dropdown-tour-btn-->
                         </div><!-- end .view-btn-wrapper-->
-                        
-                        
-                        
+
+
