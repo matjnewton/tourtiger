@@ -4,7 +4,7 @@ if (empty($count) || $count == false) $count = 0;
 
 $paddings = get_sub_field( 'tour_pc-section_pad' );
 
-if ( count( $paddings ) > 0 && is_array( $paddings ) ) {
+if ( isset($paddings) && is_array( $paddings ) && count( $paddings ) > 0 ) {
   $paddings_css = '';
 
   foreach ( $paddings as $id => $class ) {
