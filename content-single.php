@@ -21,11 +21,12 @@
 
                 <?php
                 $posttags = get_the_tags();
-                $count=0;
-                $len = count($posttags);
 
-                if ($posttags) : ?>
+                if (  isset($posttags) && $posttags && is_array($posttags) ) :
+	                $count=0;
+	                $len = count($posttags);
 
+                    ?>
                 <div class="blog-info-wrapper">
                     <div class="blog-date">
                         <i class="fa fa-calendar"></i>
@@ -53,7 +54,7 @@
 
     <?php if ( '' != get_the_post_thumbnail() ):
       $thumb = get_post_thumbnail_id();
-      $img_url = wp_get_attachment_url( $thumb,'full' ); //get img URL
+      $img_url = wp_get_attachment_url( $thumb ); //get img URL
       echo "<div class='featured-wrapper article-image'><img src='{$img_url}' class='center-block' /></div>";
     endif; ?>
 

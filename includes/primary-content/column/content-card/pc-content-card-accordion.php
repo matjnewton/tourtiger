@@ -1,13 +1,15 @@
-<?php 
+<?php
 $rand = generateRandomString(5);
-$tour_content_content_classes .= ' pc--c__accordion'; 
-$accordion_cound = $accordion_cound === null ? 0 : $accordion_cound + 1;
+$tour_content_content_classes = $tour_content_content_classes ?? '';
+$selection_id = $selection_id ?? '';
+$tour_content_content_classes .= ' pc--c__accordion';
+$accordion_cound = empty($accordion_cound) ? 0 : $accordion_cound + 1;
 $accordion_id = $selection_id . '-accordion-' . $rand;
 ?>
 
 
-<div 
-	class="<?php echo $tour_content_content_classes; ?>" 
+<div
+	class="<?php echo $tour_content_content_classes; ?>"
 	style="<?php echo $tour_content_content_styles; ?>"
 >
 	<script>

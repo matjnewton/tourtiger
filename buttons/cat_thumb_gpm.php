@@ -1,5 +1,28 @@
                         <?php
                             include(locate_template('includes/integrate_vars_gpm.php' ));
+
+                        $button_label = $button_label ?? '';
+                        $tl = $tl ?? '';
+                        $tile_count =  $tile_count ?? '';
+                        $use_as_integration_link = $use_as_integration_link ?? '';
+                        $integrate_xola = $integrate_xola ?? '';
+                        $third_party = $third_party ?? '';
+                        $integrate_peek = $integrate_peek ?? '';
+                        $integrate_fareharbor = $integrate_fareharbor ?? '';
+                        $fareharbor_shortname = $fareharbor_shortname ?? '';
+                        $integrate_getinsellout = $integrate_getinsellout ?? '';
+                        $getinsellout_data_pn = $getinsellout_data_pn ?? '';
+                        $getinsellout_data_url = $getinsellout_data_url ?? '';
+                        $integrate_trekksoft = $integrate_trekksoft ?? '';
+                        $getinsellout_data_evt = $getinsellout_data_evt ?? '';
+                        $mobd = $mobd ?? '';
+                        $link = $link ?? '';
+                        $image = $image ?? '';
+                        $image_url = $image_url ?? '';
+                        $integrate_rezdy = $integrate_rezdy ?? '';
+                        $integrate_zaui = $integrate_zaui ?? '';
+                        $integrate_regiondo = $integrate_regiondo ?? '';
+
                         ?>
                         <?php if($integrate_xola && $use_as_integration_link && !$mobd): ?>
 
@@ -81,5 +104,4 @@
                             </a>
                             <?php endif; ?>
                         <?php endif; ?>
-                        
-                        
+

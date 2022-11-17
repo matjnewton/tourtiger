@@ -6,14 +6,14 @@
  * @var $label - acf text field
  */
 
-$label = $label ? $label : 'Click to view gallery';
-$display_caption = $display_caption ? $display_caption : 0;
+$label = $label ?: 'Click to view gallery';
+$display_caption = $display_caption ?? 0;
 
 /**
  * Check whether the gallery has any images
  */
 if ( $gallery ) :
-  if ($type !== 'grid') :
+  if ( empty($type) || $type !== 'grid') :
     $gallery_id = generateRandomString(5);
     ?>
 
@@ -64,10 +64,10 @@ if ( $gallery ) :
 
     <div class="gallery">
 
-      <div class="gallery--wrapper gallery--count__<?php echo $columns; ?> gallery--onclick__<?php echo $onclick; ?>">
+      <div class="gallery--wrapper gallery--count__<?php echo $columns??''; ?> gallery--onclick__<?php echo $onclick??''; ?>">
         <?php
         foreach ( $gallery as $key => $image ) :
-          if ($onclick === 'source' || $onclick === 'popup') :
+          if (isset($onclick) && ($onclick === 'source' || $onclick === 'popup')) :
             ?>
 
             <a href="<?php echo $image['url']; ?>" class="gallery--item" title="<?php echo $image['alt']; ?>">

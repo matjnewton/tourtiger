@@ -4,7 +4,7 @@ if (empty($count) || $count == false) $count = 0;
 
 $paddings = get_sub_field( 'tour_pc-section_pad' );
 
-if ( count( $paddings ) > 0 && is_array( $paddings ) ) {
+if ( isset($paddings) && is_array( $paddings ) && count( $paddings ) > 0 ) {
   $paddings_css = '';
 
   foreach ( $paddings as $id => $class ) {
@@ -29,7 +29,8 @@ $initial_rows = get_sub_field('load-more-show');
 $load_offset  = get_sub_field('load-more-offset');
 $load_style   = get_sub_field('load-more-style');
 $load_more_id = "{$tour_selection_id}__btn-more";
-$rows_count   = count( get_sub_field( 'tour_pc-rows' ) );
+$rows_fields = get_sub_field( 'tour_pc-rows' );
+$rows_count   = isset($rows_fields) && is_array($rows_fields) ? count( get_sub_field( 'tour_pc-rows' ) ) : 0;
 
 $paddings_css = null;
 
