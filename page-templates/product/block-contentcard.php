@@ -1,8 +1,8 @@
 		<!-- primary_content_content_card layout -->
         <?php if( get_row_layout() == 'primary_content_content_card'):
-	        $primary_content_content_card_style = get_sub_field('primary_content_content_card_style'); 
+	        $primary_content_content_card_style = get_sub_field('primary_content_content_card_style');
 	        $primary_content_content_card_image = get_sub_field('primary_content_content_card_image');
-	        $primary_content_content_card_headline = get_sub_field('primary_content_content_card_headline'); 
+	        $primary_content_content_card_headline = get_sub_field('primary_content_content_card_headline');
 	        $primary_content_content_card_seo_tag = get_sub_field('primary_content_content_card_seo_tag');
 	        $primary_content_content_card_hr_line = get_sub_field('primary_content_content_card_hr_line');
 	        $primary_content_content_card_editor = get_sub_field('primary_content_content_card_editor');
@@ -12,7 +12,7 @@
 	        <?php if ($primary_content_content_card_style == 'Style 1') : ?>
 	        	<div class="product_content_wrapper primary_content_content_card style1">
 	        		<div class="primary_content_content_card_wrap">
-	        			<<?php echo $primary_content_content_card_seo_tag; ?> class="primary_content_subhead primary_content_content_card_headline <?php echo $hr_line;?>"><?php echo $primary_content_content_card_headline; ?></<?php echo $primary_content_content_card_seo_tag; ?>>
+	        			<<?php echo $primary_content_content_card_seo_tag; ?> class="primary_content_subhead primary_content_content_card_headline <?php echo $hr_line??'';?>"><?php echo $primary_content_content_card_headline; ?></<?php echo $primary_content_content_card_seo_tag; ?>>
 	        		</div>
 	        		<?php if ($primary_content_content_card_hr_line) {  ?>
 						<hr class="primary_content_content_card_hr_line">
@@ -58,5 +58,5 @@
 		        </div>
 		    <?php endif; ?>
 
-	        <?php 
-	    endif;?> 
+	        <?php
+	    endif;?>
