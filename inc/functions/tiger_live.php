@@ -5,7 +5,7 @@
 function get_rezdy_tour_select($field) {
 	$field['choices'] = array();
     $field['choices']['0'] = 'no sync';
-    
+
 	global $wpdb;
     $table = $wpdb->prefix."options";
     $query = "SELECT * FROM ".$table." WHERE `option_name` =  'options_check_user_id'";
@@ -37,7 +37,7 @@ function get_rezdy_tour_select($field) {
 
     return $field;
 
-} 
+}
 add_filter('acf/load_field/name=our_tours_rezdy', 'get_rezdy_tour_select');
 add_filter('acf/load_field/name=our_tours_rezdy_group', 'get_rezdy_tour_select');//group
 
@@ -62,7 +62,7 @@ function get_cpt_tours_select($field) {
 	 	$field['choices'][ $res->ID ] = $res->post_title.' ('.$res->post_type.')';
 	 }
 	 return $field;
-} 
+}
 add_filter('acf/load_field/name=our_tours', 'get_cpt_tours_select');
 add_filter('acf/load_field/name=our_tours_group', 'get_cpt_tours_select');//group
 add_filter('acf/load_field/name=our_tours_group_xola', 'get_cpt_tours_select');//group
@@ -71,8 +71,8 @@ function get_cpt_tours_select_checker($field) {
 	$field['choices'] = array();
 
 	$tours_array = array();
-	$our_tours = array(); 
-	$our_tours_group = array(); 
+	$our_tours = array();
+	$our_tours_group = array();
 
 	$integrate_xola_with_this_website = get_field('integrate_xola_with_this_website', 'option');
 	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
@@ -81,40 +81,40 @@ function get_cpt_tours_select_checker($field) {
 	$integrate_atlasx = get_field('integrate_atlasx_with_this_website', 'option');
 
 	//atlas
-	if( have_rows('matching_products_xola', 'option') && $integrate_atlasx ): 
-		while( have_rows('matching_products_xola', 'option') ): the_row(); 
+	if( have_rows('matching_products_xola', 'option') && $integrate_atlasx ):
+		while( have_rows('matching_products_xola', 'option') ): the_row();
 			$our_tours[] = get_sub_field('our_tours_forxola');
-		endwhile; 
+		endwhile;
 	endif;
 
 	//xola
-	if( have_rows('matching_products_xola', 'option') && $integrate_xola_with_this_website ): 
-		while( have_rows('matching_products_xola', 'option') ): the_row(); 
+	if( have_rows('matching_products_xola', 'option') && $integrate_xola_with_this_website ):
+		while( have_rows('matching_products_xola', 'option') ): the_row();
 			$our_tours[] = get_sub_field('our_tours_forxola');
-		endwhile; 
+		endwhile;
 	endif;
 
 	// rezdy
-	if( have_rows('matching_products', 'option') && $integrate_rezdy_with_this_website ): 
-		while( have_rows('matching_products', 'option') ): the_row(); 
+	if( have_rows('matching_products', 'option') && $integrate_rezdy_with_this_website ):
+		while( have_rows('matching_products', 'option') ): the_row();
 			$our_tours[] = get_sub_field('our_tours');
-		endwhile; 
+		endwhile;
 	endif;
 
 	// rezdy Group
-	if( have_rows('matching_products_group', 'option') && $integrate_rezdy_with_this_website ): 
-		while( have_rows('matching_products_group', 'option') ): the_row(); 
+	if( have_rows('matching_products_group', 'option') && $integrate_rezdy_with_this_website ):
+		while( have_rows('matching_products_group', 'option') ): the_row();
 			$our_tours_group[] = get_sub_field('our_tours_group');
-		endwhile; 
+		endwhile;
 	endif;
 	if ($rezdy_group_tours) {
 		$our_tours = array_merge($our_tours,$our_tours_group);
 	}
 	//Xola group
-	if( have_rows('matching_products_group_xola', 'option') && $integrate_xola_with_this_website ): 
-		while( have_rows('matching_products_group_xola', 'option') ): the_row(); 
+	if( have_rows('matching_products_group_xola', 'option') && $integrate_xola_with_this_website ):
+		while( have_rows('matching_products_group_xola', 'option') ): the_row();
 			$our_tours_group[] = get_sub_field('our_tours_group_xola');
-		endwhile; 
+		endwhile;
 	endif;
 	if ($xola_group_tours) {
 		//$our_tours = array_merge($our_tours,$our_tours_group);
@@ -125,12 +125,12 @@ function get_cpt_tours_select_checker($field) {
 	 	$field['choices'][ $res ] = get_the_title( $res ).' ('.$post_type.')';
 	 }
 	 return $field;
-} 
+}
 add_filter('acf/load_field/name=our_tours_checker', 'get_cpt_tours_select_checker');
 
 function get_cpt_tours_select_checker_group($field) {
 	$field['choices'] = array();
-	$our_tours_group = array(); 
+	$our_tours_group = array();
 
 	$integrate_xola_with_this_website = get_field('integrate_xola_with_this_website', 'option');
 	$integrate_rezdy_with_this_website = get_field('rezdy', 'option');
@@ -150,12 +150,12 @@ function get_cpt_tours_select_checker_group($field) {
 	    $xola = json_decode($json);
 	    foreach($xola->data as $key=>$product){
 	    	$field['choices'][ $product->id ] = $product->name;
-	    }	
+	    }
 	} else {
 		 $field['choices']['0'] = 'not available';
 	}
 	return $field;
-} 
+}
 add_filter('acf/load_field/name=our_tours_checker_forgroup', 'get_cpt_tours_select_checker_group');
 
 // xola
@@ -176,13 +176,13 @@ function get_cpt_tours_select_xola($field) {
 	 	$field['choices'][ $res->ID ] = $res->post_title.' ('.$res->post_type.')';
 	 }
 	 return $field;
-} 
-add_filter('acf/load_field/name=our_tours_forxola', 'get_cpt_tours_select_xola'); 
+}
+add_filter('acf/load_field/name=our_tours_forxola', 'get_cpt_tours_select_xola');
 
 function get_api_xola_tour($field) {
 	$field['choices'] = array();
     $field['choices']['0'] = 'no sync';
-    
+
 	global $wpdb;
     $table = $wpdb->prefix."options";
     $query = "SELECT * FROM ".$table." WHERE `option_name` =  'options_check_user_id_xola'";
@@ -192,17 +192,21 @@ function get_api_xola_tour($field) {
     //$api_key = get_field('field_n1993k2903', 'option'); 5605b264926705ac758b45c8
     $product_url = "https://silent.xola.com/api/experiences?_format=json&seller=".$api_key;
 
-    $json = file_get_contents($product_url);
-    $xola = json_decode($json);
-    //$rezdy_tour_name = array();
-    foreach($xola->data as $key=>$product){
-    	//$rezdy_tour_name[] = $product->name;
-    	$field['choices'][ $product->id ] = $product->name;
-    }
+	if ( file_exists($product_url) ) :
+
+	    $json = file_get_contents($product_url);
+	    $xola = json_decode($json);
+	    //$rezdy_tour_name = array();
+	    foreach($xola->data as $key=>$product){
+	        //$rezdy_tour_name[] = $product->name;
+	        $field['choices'][ $product->id ] = $product->name;
+	    }
+
+	endif;
 
     return $field;
 
-} 
+}
 
 add_filter('acf/load_field/name=our_tours_apixola', 'get_api_xola_tour');
 add_filter('acf/load_field/name=our_tours_xola_group', 'get_api_xola_tour');
@@ -243,16 +247,16 @@ function save_sync() {
 
 					$postid_group = $matching_product_group['field_57eb6b9ad8aaf_group'];
 					$productcode_group = $matching_product_group['field_57eb6b9ad8aaf_rezdy_group'];
-					
+
 					update_field('productcode_group', $productcode_group, $postid_group);
 					update_field('enable_group_product', true, $postid_group);
 					// no sync
-					if ($productcode_group[0] === "0" ) {  
+					if ($productcode_group[0] === "0" ) {
 						// print_r($productcode_group[0] );
 						// die();
 						update_field('enable_group_product', false, $postid_group);
 					} else {
-						update_field('productcode', null, $postid_group); // execude in single 
+						update_field('productcode', null, $postid_group); // execude in single
 					}
 				}
 		}
@@ -274,12 +278,12 @@ function save_sync() {
 					update_field('productcode_group', $productcode_group, $postid_group);
 					update_field('enable_group_product', true, $postid_group);
 					// no sync
-					if ($productcode_group[0] === "0" ) {  
+					if ($productcode_group[0] === "0" ) {
 						// print_r($productcode_group[0] );
 						// die();
 						update_field('enable_group_product', false, $postid_group);
 					} else {
-						update_field('productcode', null, $postid_group); // execude in single 
+						update_field('productcode', null, $postid_group); // execude in single
 					}
 				}
 		}
@@ -305,6 +309,6 @@ add_action('acf/save_post', 'save_sync', 20);
 // 				}
 // 		}
 
-// 	} 
+// 	}
 // }
 // add_action('acf/save_post', 'save_rezdy_sync', 20);
