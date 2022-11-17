@@ -28,9 +28,12 @@
                 <div class="blog-tag"><?php
 
                 $posttags = get_the_tags();
-                $count=0;
-                $len = count($posttags);
-                if ($posttags) { ?>
+
+                if (isset($posttags) && $posttags && is_array($posttags)) {
+	                $len = count($posttags);
+	                $count=0;
+
+                    ?>
                     <i class="fa fa-tags"></i>
                     <?php foreach($posttags as $tag) {
                         $count++;
