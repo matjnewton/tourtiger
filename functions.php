@@ -554,7 +554,7 @@ function acf_load_third_party_field_choices( $field ) {
     $choices = get_field('zozi_values', 'option', false);
     endif;
     // explode the value so that each line is a new array piece
-    $choices = explode("\n", $choices);
+    $choices = explode("\n", $choices??'');
 
 
     // remove any unwanted white space
