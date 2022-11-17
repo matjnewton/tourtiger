@@ -29,7 +29,8 @@ $initial_rows = get_sub_field('load-more-show');
 $load_offset  = get_sub_field('load-more-offset');
 $load_style   = get_sub_field('load-more-style');
 $load_more_id = "{$tour_selection_id}__btn-more";
-$rows_count   = count( get_sub_field( 'tour_pc-rows' ) );
+$rows_fields = get_sub_field( 'tour_pc-rows' );
+$rows_count   = isset($rows_fields) && is_array($rows_fields) ? count( get_sub_field( 'tour_pc-rows' ) ) : 0;
 
 $paddings_css = null;
 
