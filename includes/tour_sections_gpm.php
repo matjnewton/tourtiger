@@ -212,7 +212,7 @@
                                 $thumbnail = aq_resize( $img_url, 250, 250, true );
                             ?>
                                         <a href="<?php echo $img_url; ?>" class="w-inline-block photo-thumbnail">
-                                            <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']; ?>" class="image-thumb img-responsive" />
+                                            <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']??''; ?>" class="image-thumb img-responsive" />
                                         </a>
                                         <?php
                                             endforeach;
