@@ -11,7 +11,7 @@ define( 'DISALLOW_FILE_EDIT', true );
 function acf_settings_path() {
 
     // update path
-    $path = get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/';
+	$path = get_stylesheet_directory() . '/includes/plugins/acf-6.0.4/'; // former acf-5.7.13
 
     // return
     return $path;
@@ -25,15 +25,16 @@ function acf_settings_path() {
 function acf_settings_dir() {
 
     // update path
-    $dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-5.7.13/';
+	$dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-6.0.4/'; // former acf-5.7.13
 
     // return
     return $dir;
 
 }
 
-include_once get_stylesheet_directory() . '/includes/plugins/acf-5.7.13/acf.php';
+include_once get_stylesheet_directory() . '/includes/plugins/acf-6.0.4/acf.php'; // former acf-5.7.13
 
+add_filter('acf/settings/show_admin', '__return_false');
 
 if ( is_plugin_active('gravityforms/gravityforms.php') ) {
     deactivate_plugins('gravityforms/gravityforms.php');
