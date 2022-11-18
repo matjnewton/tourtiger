@@ -1,15 +1,15 @@
-<?php //if ( ! is_page_template( 'page-templates/test-pc.php' ) ) : ?>  
+<?php //if ( ! is_page_template( 'page-templates/test-pc.php' ) ) : ?>
     <?php if(have_rows('footer_snippets', 'option')): ?>
-                            
+
     <?php while(have_rows('footer_snippets', 'option')): the_row(); ?>
-                               
+
     <?php $snippet = get_sub_field('snippet'); ?>
     <?php if($snippet):
-    echo $snippet;                             
+    echo $snippet;
     endif; ?>
-                                       
-    <?php endwhile; ?> 
-                            
+
+    <?php endwhile; ?>
+
     <?php endif; ?>
 
     <?php if(have_rows('sections_area')): ?>
@@ -41,7 +41,7 @@
     	var moretext = '<?php echo $open_label; ?>';
     	var lesstext = '<?php echo $close_label; ?>';
     	var startEl = $('.slideouttrigger').siblings("p");
-    	
+
     	if(!$('.slideouttrigger').hasClass('active')){
                 $('.slideouttrigger').clone(true).appendTo(startEl);
             }
@@ -64,27 +64,27 @@
             });
     });
     </script>
-                        <?php endif; ?>   
+                        <?php endif; ?>
                     <?php endif; ?>
-                      
+
                 <?php endwhile; ?>
             <?php endif; ?>
-                            
+
         <?php endwhile; ?>
     <?php endif; ?>
 <?php //endif; ?>
 
 <?php if(have_rows('page_specific_footer_snippets', 'option')): ?>
 <?php while(have_rows('page_specific_footer_snippets', 'option')): the_row(); ?>
-<?php 
+<?php
     $page_id = get_sub_field('page');
-    $snippet = get_sub_field('snippet'); 
+    $snippet = get_sub_field('snippet');
 ?>
 <?php
     $queried_object = get_queried_object();
-   if ($snippet && ($queried_object->ID == $page_id)):
+   if ( isset($queried_object) && $queried_object && $snippet && ($queried_object->ID == $page_id)):
         echo $snippet;
-   endif;    
+   endif;
 ?>
 <?php endwhile; ?>
 <?php endif; ?>
