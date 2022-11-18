@@ -31,10 +31,11 @@ function get_rezdy_tour_select($field) {
 	    $json = file_get_contents($product_url);
 	    $rezdy = json_decode($json);
 	    $rezdy_tour_name = array();
-	    foreach($rezdy->products as $key=>$product){
-	        $rezdy_tour_name[] = $product->name;
-	        $field['choices'][ $product->productCode ] = $product->name;
-	    }
+		if ( $rezdy )
+		    foreach($rezdy->products as $key=>$product){
+		        $rezdy_tour_name[] = $product->name;
+		        $field['choices'][ $product->productCode ] = $product->name;
+		    }
 	endif;
 
     return $field;
