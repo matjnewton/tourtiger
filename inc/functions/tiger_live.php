@@ -27,13 +27,16 @@ function get_rezdy_tour_select($field) {
     //$api_key = get_field('field_n1993k2903', 'option');
     $product_url = "https://api.rezdy.com/v1".$rezdy_category."/products?limit=100&apiKey=".$api_key;
 
-    $json = file_get_contents($product_url);
-    $rezdy = json_decode($json);
-    $rezdy_tour_name = array();
-    foreach($rezdy->products as $key=>$product){
-    	$rezdy_tour_name[] = $product->name;
-    	$field['choices'][ $product->productCode ] = $product->name;
-    }
+	if ( file_exists($product_url) ) :
+	    $json = file_get_contents($product_url);
+	    $rezdy = json_decode($json);
+	    $rezdy_tour_name = array();
+		if ( $rezdy )
+		    foreach($rezdy->products as $key=>$product){
+		        $rezdy_tour_name[] = $product->name;
+		        $field['choices'][ $product->productCode ] = $product->name;
+		    }
+	endif;
 
     return $field;
 
