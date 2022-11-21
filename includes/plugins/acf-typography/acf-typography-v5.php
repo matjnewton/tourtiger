@@ -368,9 +368,14 @@ class acf_field_typography extends acf_field {
 		// convert value to array
         //$field['value'] = acf_force_type_array($field['value']);
 
+		if ( !is_array($field) )
+			$field = [];
+
 
         // add empty value (allows '' to be selected)
         if( empty($field['value']) ){
+
+	        $field['value'] = [];
 
             $field['value'][''] = '';
             $field['value']['font-family']	 = 	$field['font-family'];
