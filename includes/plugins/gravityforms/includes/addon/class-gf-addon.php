@@ -5948,7 +5948,7 @@ abstract class GFAddOn {
 		if ( class_exists( 'GFCommon' ) ) {
 
             $gf_version = GFCommon::$version;
-            
+
 			$is_correct_version = $gf_version ? version_compare( $gf_version, $min_gravityforms_version, '>=' ) : '';
 
 			return $is_correct_version;

@@ -81,7 +81,8 @@ class GF_Field extends stdClass implements ArrayAccess {
 	 *
 	 * @return bool
 	 */
-	public function offsetExists( $offset ) {
+	public function offsetExists( $offset ): bool
+    {
 		$this->maybe_fire_array_access_deprecation_notice( $offset );
 
 		return isset( $this->$offset );
