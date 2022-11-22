@@ -569,7 +569,7 @@ class GF_Field_Date extends GF_Field {
 		return $this->get_number_dropdown( $name, $id, $selected_value, $tabindex, $disabled_text, $placeholder, 1, 31 );
 	}
 
-	private function get_year_dropdown( $name = '', $id = '', $selected_value = '', $tabindex = '', $disabled_text = '', $placeholder = '', $form ) {
+	private function get_year_dropdown( $name = '', $id = '', $selected_value = '', $tabindex = '', $disabled_text = '', $placeholder = '', $form='' ) {
 		if ( $placeholder == '' ) {
 			$placeholder = esc_html__( 'Year', 'gravityforms' );
 		}
