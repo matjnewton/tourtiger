@@ -62,7 +62,7 @@ class GF_Field_Radio extends GF_Field {
 
 	}
 
-	public function get_radio_choices( $value = '', $disabled_text, $form_id = 0 ) {
+	public function get_radio_choices( $value = '', $disabled_text='', $form_id = 0 ) {
 		$choices = '';
 		$is_entry_detail = $this->is_entry_detail();
 		$is_form_editor  = $this->is_form_editor();
