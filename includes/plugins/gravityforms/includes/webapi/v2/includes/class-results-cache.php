@@ -570,7 +570,7 @@ class GF_Results_Cache {
 	 *
 	 * @return array|mixed
 	 */
-	public function calculate( $form, $search_criteria = array(), $state_array = array(), $args ) {
+	public function calculate( $form, $search_criteria = array(), $state_array = array(), $args = [] ) {
 
 		$args = wp_parse_args( $args, $this->get_default_args() );
 
