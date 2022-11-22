@@ -3033,15 +3033,15 @@ Content-Type: text/html;
 	}
 
 	/**
-	 * @deprecated Deprecated since 1.9. Use GF_Field_Checkbox::get_radio_choices() instead.
-	 *
 	 * @param GF_Field_Radio $field
 	 * @param string         $value
 	 * @param                $disabled_text
 	 *
 	 * @return mixed
+	 *@deprecated Deprecated since 1.9. Use GF_Field_Checkbox::get_radio_choices() instead.
+	 *
 	 */
-	public static function get_radio_choices( $field, $value = '', $disabled_text ) {
+	public static function get_radio_choices($field, $value = '', $disabled_text='' ) {
 		_deprecated_function( 'get_radio_choices', '1.9', 'GF_Field_Checkbox::get_radio_choices' );
 
 		return $field->get_radio_choices( $value, $disabled_text );
