@@ -10545,7 +10545,7 @@ main.content .col-sm-12 section {
 }
 
 .tour-2:hover .tile-image {
-    filter: blur(1px);
+    filter: blur(2px);
 }
 @media (min-width:768px) {
     .tour-2 .name-wrapper {
