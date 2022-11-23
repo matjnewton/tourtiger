@@ -10540,8 +10540,12 @@ main.content .col-sm-12 section {
     left: 0
 }
 
+.tour-2 .tile-image {
+    transition: .3s filter;
+}
+
 .tour-2:hover .tile-image {
-    filter: blur(2px);
+    filter: blur(1px);
 }
 @media (min-width:768px) {
     .tour-2 .name-wrapper {
