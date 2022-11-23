@@ -9322,10 +9322,6 @@ main.content .col-sm-12 section {
     display: block
 }
 
-.tile-image:hover {
-    filter: blur(2px);
-}
-
 .xola-custom.tile-image:hover {
     cursor: pointer
 }
@@ -10541,6 +10537,10 @@ main.content .col-sm-12 section {
     right: 0;
     bottom: 0;
     left: 0
+}
+
+.tour-2:hover .tile-image {
+    filter: blur(2px);
 }
 @media (min-width:768px) {
     .tour-2 .name-wrapper {
