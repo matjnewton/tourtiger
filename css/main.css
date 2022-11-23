@@ -11518,10 +11518,14 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
 .pc--c__col.pc--c__editor h6,
 .pc--c__col.pc--c__editor p {margin: 1rem;}
 
+.site-container .book-btn-wrapper .btn-default.book-btn,
+.site-container .banner .book-btn {
+    transition: .3s backdrop-filter;
+}
 
 .site-container .book-btn-wrapper .btn-default.book-btn:hover,
 .site-container .banner .book-btn:hover {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(3px);
 }
 
 
