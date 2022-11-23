@@ -11521,6 +11521,7 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
 .site-container .book-btn-wrapper .btn-default.book-btn,
 .site-container .banner .book-btn {
     transition: .3s backdrop-filter;
+    backdrop-filter: blur(2px)
 }
 
 .site-container .book-btn-wrapper .btn-default.book-btn:hover,
