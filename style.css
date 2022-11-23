@@ -401,7 +401,8 @@ html body .sidebar_links_options_wrap a {
 .hero-elements-wrapper .subheadline {
     font-size: 28px!important;
     text-shadow: rgba(0, 0, 0, .77) 3px 3px 12px!important;
-    font-weight: 600!important
+    font-weight: 600!important;
+    backdrop-filter: blur(2px);
 }
 
 @media (max-width:400px) {
