@@ -1798,6 +1798,12 @@ function add_noindex_metatag(){
 add_action('wp_head', 'add_noindex_metatag');
 
 
+function tourismtiger_year_shortcode() {
+    return date('Y');
+}
+add_shortcode('year', 'tourismtiger_year_shortcode');
+
+
 function set_styling_class($classes) {
 	global $post;
 
