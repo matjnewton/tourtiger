@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.16.2
+Version: 1.16.3
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -399,9 +399,9 @@ html body .sidebar_links_options_wrap a {
 }
 
 .hero-elements-wrapper .subheadline {
-    font-size: 28px!important;
-    text-shadow: rgba(0, 0, 0, .77) 3px 3px 12px!important;
-    font-weight: 600!important;
+    font-size: 28px;
+    text-shadow: rgba(0, 0, 0, .77) 3px 3px 12px;
+    font-weight: 600;
     backdrop-filter: blur(2px);
 }
 
