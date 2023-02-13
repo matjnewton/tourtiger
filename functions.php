@@ -1755,6 +1755,11 @@ if ( function_exists( 'add_image_size' ) ) {
 // 	endif;
 // }
 
+add_action('admin_enqueue_scripts', function(){
+    wp_register_script( 'image-shortcode', get_stylesheet_directory_uri() . '/js/image-shortcode.js?v=' . wp_get_theme()->get( 'Version' ) , array('jquery'), null, true);
+    wp_enqueue_script('image-shortcode');
+});
+
 /* update dgamoni */
 include_once 'inc/load.php';
 
