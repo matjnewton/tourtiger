@@ -588,7 +588,7 @@ include_once(dirname(__FILE__).'/includes/acf_fields.php');
 /* multiple menus export */
 include_once(dirname(__FILE__).'/includes/acf/pc-acf-menu-template.php');
 
-//include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
+include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
 include_once(dirname(__FILE__).'/includes/menus_gpm.php');
 include_once(dirname(__FILE__).'/includes/mobile-menus_gpm.php');
 require_once(dirname(__FILE__).'/includes/aq_resizer.php');
@@ -1670,30 +1670,6 @@ function my_acf_format_value( $value, $post_id, $field ) {
 
 add_filter('acf/format_value/type=textarea', 'my_acf_format_value', 10, 3);
 
-/*shortcodes*/
-
-function a_func($atts, $content = null) {
-shortcode_atts(array('href'=>'','text'=>''),$atts);
-return '<a href="'.$atts['href'].'">'.$atts['text'].'</a>';
-}
-add_shortcode('a', 'a_func');
-
-function b_func($atts, $content = null) {
-shortcode_atts(array('text'=>''),$atts);
-return '<strong>'.$atts['text'].'</strong>';
-}
-add_shortcode('b', 'b_func');
-
-//Google Maps Shortcode
-function do_googleMaps($atts, $content = null) {
-   extract(shortcode_atts(array(
-      "width" => '600',
-      "height" => '450',
-      "src" => ''
-   ), $atts));
-   return '<div class="video-responsive"><iframe width="'.$width.'" height="'.$height.'" frameborder="0" src="'.$src.'" style="border:0" allowfullscreen></iframe></div>';
-}
-add_shortcode("googlemap", "do_googleMaps");
 
 // Удаление параметра ver из добавляемых скриптов и стилей
 function rem_wp_ver_css_js( $src ) {
@@ -1802,11 +1778,6 @@ function add_noindex_metatag(){
 }
 add_action('wp_head', 'add_noindex_metatag');
 
-
-function tourismtiger_year_shortcode() {
-    return date('Y');
-}
-add_shortcode('year', 'tourismtiger_year_shortcode');
 
 
 function set_styling_class($classes) {
@@ -1927,44 +1898,6 @@ function init_template_post_type(){
         'menu_icon'          => 'dashicons-welcome-widgets-menus'
     ) );
 
-}
-
-
-
-/**
- * Hours table shortcode
- */
-add_shortcode( 'flybook-embeddable-button', 'shortcode_flybook_embeddable_button' );
-function shortcode_flybook_embeddable_button( $attrs ) {
-    $attrs = shortcode_atts( array(
-      'account' => '',
-      'target' => ''
-    ), $attrs );
-
-    return "<div id='FlybookButton{$attrs['target']}-{$attrs['account']}-tickets' data-flybook-embeddable-button='{$attrs['target']}' data-flybook-account='{$attrs['account']}'>";
-}
-
-
-
-/**
- * Booking hound api button
- */
-add_shortcode( 'booking-hound-button', 'booking_hound_button' );
-function booking_hound_button( $attrs ) {
-    $attrs = shortcode_atts( array(
-      'label'     => 'BOOK NOW',
-      'api-hash'  => get_field('booking_hound_hash', 'apikey'), // e.g. 90520c81-fb74-4cba-9abd-475413eff10a
-      'item-code' => '', // tngbh-script-1710134223
-      'id'        => 0,  // 1
-      'class'     => ''  // 'class1 class2 class3'
-    ), $attrs );
-
-    if ( $attrs['api-hash'] && $attrs['item-code'] ) :
-    	wp_enqueue_script('booking_hound_api');
-    	return "<div bt='{$attrs['label']}' data-classes='{$attrs['class']}' og='{$attrs['api-hash']}' fs='https://booking.bookinghound.com/rezfe/' id='{$attrs['item-code']}' uniqueId='{$attrs['id']}' mode='ap'></div>";
-    else :
-    	return "<!-- Booking hound API code ain't work. API Hash: {$attrs['api-hash']}; Item code: {$attrs['item-code']}; Id: {$attrs['id']}. -->";
-    endif;
 }
 
 
