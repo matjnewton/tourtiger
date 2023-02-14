@@ -16,15 +16,20 @@
 
     $('.acf-icon.-pencil.dark').on('click', (e)=>{
         const $currentTarget = $(e.currentTarget);
-        const $wrapper = $currentTarget.closest('.image-wrap');
-        const $image = $wrapper.find('img');
-        const src = $image.attr('src');
-        console.debug({$currentTarget, src});
+        const $wrapper = $currentTarget.closest('.acf-input');
+        const $acf_input = $wrapper.find('input');
+        const id = $acf_input.val();
 
-
+        let interval = setInterval(()=>{
+            let $modal_input = $('.media-modal-content [data-name="image_shortcode"] input');
+            if ( $modal_input.length ) {
+                $modal_input.val('[image id=' + id + ']');
+                copyShortcodeToClipboard();
+                clearInterval(interval);
+            }
+        }, 500);
 
     });
-
 
     wp.media.view.Modal.prototype.on('open', function() {
         const $input = $("#acf-field_attachment-details-shortcode");

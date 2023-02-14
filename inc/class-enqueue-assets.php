@@ -22,6 +22,9 @@ class Theme_Assets
     public static function add_image_shortcode_script(){
         wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js', array('jquery'), TT_THEME_VERSION, true);
         wp_enqueue_script('image-shortcode');
+//        wp_localize_script( 'image-shortcode', 'wp_json', [
+//            'route'=>site_url() . '/wp-json/ttv1/'
+//        ]);
     }
 
     public static function set_styling_class($classes) {

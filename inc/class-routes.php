@@ -25,7 +25,10 @@ class WP_Routes
     public static function ttv1_get_media_id( WP_REST_Request $request ){
         $parameters = $request->get_query_params();
 
-        if ( is_array($parameters) && isset($parameters['url']) ) :
+        if ( is_array($parameters) && isset($parameters['src']) ) :
+            $parameters['id'] = attachment_url_to_postid($parameters['src']);
+            wp_send_json_success(["Route has been connected!", '$parameters'=>$parameters]);
+        elseif ( is_array($parameters) && isset($parameters['url']) ) :
             $parameters['id'] = attachment_url_to_postid($parameters['url']);
             wp_send_json_success(["Route has been connected!", '$parameters'=>$parameters]);
         else :
