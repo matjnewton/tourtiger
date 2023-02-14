@@ -22,9 +22,6 @@ class Theme_Assets
     public static function add_image_shortcode_script(){
         wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js', array('jquery'), TT_THEME_VERSION, true);
         wp_enqueue_script('image-shortcode');
-//        wp_localize_script( 'image-shortcode', 'wp_json', [
-//            'route'=>site_url() . '/wp-json/ttv1/'
-//        ]);
     }
 
     public static function set_styling_class($classes) {
@@ -44,11 +41,10 @@ class Theme_Assets
     }
 
     public static function load_theme_scripts() {
-        wp_register_script('spectrum_js', THEME_URL . '/js/spectrum.js', array('jquery'), '1.3.4', true);
-        wp_register_style('spectrum_style', THEME_URL .'/css/spectrum.css', array(),'20120285', 'all');
+        wp_register_script('spectrum_js', THEME_URL . '/js/spectrum.js', array('jquery'), TT_THEME_VERSION, true);
+        wp_register_style('spectrum_style', THEME_URL .'/css/spectrum.css', array(),TT_THEME_VERSION);
         wp_enqueue_style( 'spectrum_style' );
         wp_enqueue_script( 'spectrum_js' );
-        wp_enqueue_style( 'style-theme', THEME_URL . '/style.css?=theme_ver'.wp_get_theme()->get( 'Version' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
         wp_deregister_style( 'tourtiger' );
     }
 
