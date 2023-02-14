@@ -12,10 +12,15 @@ class Theme_Assets
         add_action('init', __CLASS__.'::load_theme_scripts', 999);
         add_filter('body_class', __CLASS__.'::set_styling_class', 10, 1);
         add_action('admin_enqueue_scripts', __CLASS__ . '::add_image_shortcode_script');
+        add_action('wp_enqueue_scripts', __CLASS__.'::different_fixes');
+    }
+
+    public static function different_fixes() {
+        wp_enqueue_script('hero-position-fix', THEME_URL. '/js/hero-position-fix.js', NULL, TT_THEME_VERSION, true);
     }
 
     public static function add_image_shortcode_script(){
-        wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js?v=' . TT_THEME_VERSION , array('jquery'), null, true);
+        wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js', array('jquery'), TT_THEME_VERSION, true);
         wp_enqueue_script('image-shortcode');
     }
 
