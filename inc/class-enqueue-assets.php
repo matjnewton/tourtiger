@@ -10,6 +10,29 @@ class Theme_Assets
         add_action('wp_head', __CLASS__.'::tourtiger_background_inline_css', 49);
         //add_action('wp_head', __CLASS__.'::tourtiger_inline_css', 50);
         add_action('init', __CLASS__.'::load_theme_scripts', 999);
+        add_filter('body_class', __CLASS__.'::set_styling_class', 10, 1);
+        add_action('admin_enqueue_scripts', __CLASS__ . '::add_image_shortcode_script');
+    }
+
+    public static function add_image_shortcode_script(){
+        wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js?v=' . TT_THEME_VERSION , array('jquery'), null, true);
+        wp_enqueue_script('image-shortcode');
+    }
+
+    public static function set_styling_class($classes) {
+        if ( is_singular( 'product' ) && get_field( 'is_dzv_prodpage_style' ) ) :
+            $classes[] = get_field( 'dzv_prodpage_style' );
+        endif;
+
+        if ( is_singular( 'testimonial' ) && get_field('is-style') ) :
+            $classes[] = get_field( 'testimonial-style' );
+        endif;
+
+        if ( is_page_template( 'page-templates/testimonials.php' ) && get_field('is_dzv_teti_style') ) :
+            $classes[] = get_field( 'dzv_teti_style' );
+        endif;
+
+        return $classes;
     }
 
     public static function load_theme_scripts() {

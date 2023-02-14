@@ -387,10 +387,6 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'product-slider', 757, 484, false );
 }
 
-add_action('admin_enqueue_scripts', function(){
-    wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js?v=' . wp_get_theme()->get( 'Version' ) , array('jquery'), null, true);
-    wp_enqueue_script('image-shortcode');
-});
 
 /* update dgamoni */
 include_once 'inc/load.php';
@@ -418,7 +414,6 @@ endif;
 
 add_filter('body_class','add_motto_class_mobile');
 function add_motto_class_mobile( $classes ) {
-
 	if( get_field( 'motto_mobile', 'options' ) )
 		$classes[] = 'show-motto-mobile';
 
@@ -426,7 +421,6 @@ function add_motto_class_mobile( $classes ) {
 }
 
 function add_noindex_metatag(){
-	global $post;
 	$single_testimonial = get_field( 'is_single_testimonial', 'option' );
 
 	if ( is_page_template( 'page-templates/testimonials.php' ) && $single_testimonial ) :
@@ -435,127 +429,8 @@ function add_noindex_metatag(){
 }
 add_action('wp_head', 'add_noindex_metatag');
 
-
-
-function set_styling_class($classes) {
-	global $post;
-
-	if ( is_singular( 'product' ) && get_field( 'is_dzv_prodpage_style' ) ) :
-		$classes[] = get_field( 'dzv_prodpage_style' );
-	endif;
-
-	if ( is_singular( 'testimonial' ) && get_field('is-style') ) :
-	    $classes[] = get_field( 'testimonial-style' );
-	endif;
-
-	if ( is_page_template( 'page-templates/testimonials.php' ) && get_field('is_dzv_teti_style') ) :
-	    $classes[] = get_field( 'dzv_teti_style' );
-	endif;
-
-	return $classes;
-}
-add_filter('body_class', 'set_styling_class');
-
-
-
-/**
- * Example post type
- *
- * Change Template to post type name and template to Slugname
- *
- * @package TourismTiger_Theme
- * @author  tourismtiger
- */
-
-add_action('init', 'init_template_post_type');
-
-function init_template_post_type(){
-
-    register_taxonomy('template-type', array('template'), array(
-        'label'                 => 'Template type',
-        'labels'                => array(
-            'name'              => 'Template types',
-            'singular_name'     => 'Template type',
-            'search_items'      => 'Search Template types',
-            'all_items'         => 'All Types'
-        ),
-        'public'                => true,
-        'show_in_nav_menus'     => false,
-        'show_ui'               => true,
-        'show_tagcloud'         => false,
-        'hierarchical'          => true,
-        'show_admin_column'     => false,
-        'has_archive'           => true,
-    ) );
-
-    /**
-     * Setup default categories
-     */
-    wp_insert_term( 'Sidebar widget', 'template-type', array( 'slug' => 'sidebar-widget' ) );
-
-    register_post_type('template', array(
-        'labels'                 => array(
-            'name'               => 'Templates',
-            'singular_name'      => 'Template',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new Template',
-            'edit_item'          => 'Edit Template',
-            'new_item'           => 'New Template',
-            'view_item'          => 'View Template',
-            'search_items'       => 'Find Template',
-            'not_found'          => 'There are not any Template',
-            'not_found_in_trash' => 'There are not any Template in trash',
-            'parent_item_colon'  => '',
-            'menu_name'          => 'Templates'
-
-        ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => true,
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 20,
-        'supports'           => array('title'),
-        'menu_icon'          => 'dashicons-welcome-widgets-menus'
-    ) );
-
-    wp_insert_term( 'Menu template', 'template-type', array( 'slug' => 'menu-template' ) );
-
-    register_post_type('template', array(
-        'labels'                 => array(
-            'name'               => 'Templates',
-            'singular_name'      => 'Template',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new Template',
-            'edit_item'          => 'Edit Template',
-            'new_item'           => 'New Template',
-            'view_item'          => 'View Template',
-            'search_items'       => 'Find Template',
-            'not_found'          => 'There are not any Template',
-            'not_found_in_trash' => 'There are not any Template in trash',
-            'parent_item_colon'  => '',
-            'menu_name'          => 'Templates'
-
-        ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => true,
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 20,
-        'supports'           => array('title'),
-        'menu_icon'          => 'dashicons-welcome-widgets-menus'
-    ) );
-
-}
+// Add template post type
+include THEME_PATH . '/inc/class-template-post-type.php';
 
 
 /**
