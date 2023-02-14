@@ -1,7 +1,5 @@
 !( function($){ $( function() {
 
-    console.debug("Connected!");
-
     $('.media-frame-content').on('click', '.attachment', (e)=>{
         const $target = $(e.target);
         let id = $target.closest('.attachment').data('id');
@@ -15,6 +13,17 @@
             $input.attr('value','[image id=' + id + ']');
         copyShortcodeToClipboard();
     })
+
+    $('.acf-icon.-pencil.dark').on('click', (e)=>{
+        const $currentTarget = $(e.currentTarget);
+        const $wrapper = $currentTarget.closest('.image-wrap');
+        const $image = $wrapper.find('img');
+        const src = $image.attr('src');
+        console.debug({$currentTarget, src});
+
+
+
+    });
 
 
     wp.media.view.Modal.prototype.on('open', function() {

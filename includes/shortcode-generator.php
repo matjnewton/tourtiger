@@ -36,7 +36,11 @@ function image_shortcode( $atts ) {
             ob_start();
 
             ?>
-            <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image?>") no-repeat center center;background-size:<?php echo $atts['size'];?>;}</style>
+            <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image?>") no-repeat center center;
+                    background-size:<?php echo $atts['size'];?>;
+                    height: 350px;
+                    width: auto;
+                }</style>
             <div class="image--shortcode">
                 <div class="image--shortcode-background <?=$id?>" <?php echo $attrs; ?>></div>
             </div>
