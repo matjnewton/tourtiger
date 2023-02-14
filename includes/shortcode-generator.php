@@ -23,23 +23,23 @@ function image_shortcode( $atts ) {
 
 
     if ($atts['id']) :
-        $image = wp_get_attachment_image_url($atts['id'], '350-size');
+        $image = wp_get_attachment_image_src($atts['id'], '350-size');
 
-        if ($image) :
+        if ( $image && is_array($image)) :
             $id = generate_random_only_letters_string();
-            $attrs = '';
 
-            if ($atts['width'] && $atts['height']) :
+            if ( $atts['width'] && $atts['height'] ) :
                 $attrs = 'style="width: '.$atts['width'].'px; height: '.$atts['height'].'px;"';
+            else :
+                $attrs = 'style="width: '.$image[2].'px; height: '.$image[1].'px;"';
             endif;
 
             ob_start();
 
             ?>
-            <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image?>") no-repeat center center;
+            <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image[0]?>") no-repeat center center;
                     background-size:<?php echo $atts['size'];?>;
-                    height: 350px;
-                    width: auto;
+                    margin: auto;
                 }</style>
             <div class="image--shortcode">
                 <div class="image--shortcode-background <?=$id?>" <?php echo $attrs; ?>></div>
