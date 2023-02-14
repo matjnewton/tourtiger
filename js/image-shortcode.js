@@ -28,7 +28,6 @@
                 clearInterval(interval);
             }
         }, 500);
-
     });
 
     wp.media.view.Modal.prototype.on('open', function() {
