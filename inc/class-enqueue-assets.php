@@ -9,6 +9,16 @@ class Theme_Assets
         add_action( 'wp_enqueue_scripts', __CLASS__ . '::tourtiger_scripts_method', 999 );
         add_action('wp_head', __CLASS__.'::tourtiger_background_inline_css', 49);
         //add_action('wp_head', __CLASS__.'::tourtiger_inline_css', 50);
+        add_action('init', __CLASS__.'::load_theme_scripts', 999);
+    }
+
+    public static function load_theme_scripts() {
+        wp_register_script('spectrum_js', THEME_URL . '/js/spectrum.js', array('jquery'), '1.3.4', true);
+        wp_register_style('spectrum_style', THEME_URL .'/css/spectrum.css', array(),'20120285', 'all');
+        wp_enqueue_style( 'spectrum_style' );
+        wp_enqueue_script( 'spectrum_js' );
+        wp_enqueue_style( 'style-theme', THEME_URL . '/style.css?=theme_ver'.wp_get_theme()->get( 'Version' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
+        wp_deregister_style( 'tourtiger' );
     }
 
     public static function tourtiger_background_inline_css() {
