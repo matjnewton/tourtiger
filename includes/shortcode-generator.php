@@ -109,6 +109,9 @@ function do_googleMaps($atts, $content = null) {
         "height" => '450',
         "src" => ''
     ), $atts));
+    $width = $atts['width'] ?? '';
+    $height = $atts['height'] ?? '';
+    $src = $atts['src'] ?? '';
     return '<div class="video-responsive"><iframe width="'.$width.'" height="'.$height.'" frameborder="0" src="'.$src.'" style="border:0" allowfullscreen></iframe></div>';
 }
 add_shortcode("googlemap", "do_googleMaps");
