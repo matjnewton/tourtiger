@@ -4,37 +4,16 @@ define( 'DISALLOW_FILE_EDIT', true );
 define ('THEME_PATH', get_stylesheet_directory());
 define ('THEME_URL', get_stylesheet_directory_uri());
 
-// no acf
 
-// ACF with all features support integration
-// 1. customize ACF path
- add_filter('acf/settings/path', 'acf_settings_path');
+ add_filter('acf/settings/path', function() {
+     return THEME_PATH . '/includes/plugins/acf-6.0.4/';
+ });
 
-function acf_settings_path() {
+ add_filter('acf/settings/dir', function () {
+     return get_stylesheet_directory_uri() . '/includes/plugins/acf-6.0.4/';
+ });
 
-    // update path
-	$path = THEME_PATH . '/includes/plugins/acf-6.0.4/'; // former acf-5.7.13
-
-    // return
-    return $path;
-
-}
-
-
-// 2. customize ACF dir
- add_filter('acf/settings/dir', 'acf_settings_dir');
-
-function acf_settings_dir() {
-
-    // update path
-	$dir = get_stylesheet_directory_uri() . '/includes/plugins/acf-6.0.4/'; // former acf-5.7.13
-
-    // return
-    return $dir;
-
-}
-
-include_once THEME_PATH . '/includes/plugins/acf-6.0.4/acf.php'; // former acf-5.7.13
+include_once THEME_PATH . '/includes/plugins/acf-6.0.4/acf.php';
 
 add_filter('acf/settings/show_admin', '__return_false');
 
@@ -57,199 +36,16 @@ include_once( THEME_PATH . '/includes/plugins/additional-fonts-includer/addition
 
 include_once( THEME_PATH . '/includes/hawaiifun-api.php' );
 
-
-// include_once( THEME_PATH . '/includes/acf/acf_fields_product.php' );
-// include_once( THEME_PATH . '/includes/functions/product_functions.php' );
-// include_once( THEME_PATH . '/includes/post_types/cpt_product.php' );
-
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'tourtiger' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
 define( 'CHILD_THEME_VERSION', '2.0.2' );
 
-
-add_action( 'wp_enqueue_scripts', 'tourtiger_scripts_method', 999 );
-function tourtiger_scripts_method() {
-
-    $theme = wp_get_theme();
-    $theme_version = $theme->get( 'Version' );
-
-    if( !is_admin() ) {
-        wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
-        wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"), false, null, true);
-        wp_register_script( 'jquery', ("https://code.jquery.com/jquery-2.2.4.min.js"), false, null, true);
-        wp_deregister_script('jquery-ui');
-        wp_register_script('jquery-ui',("https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"), false, null, true);
-
-        wp_register_script('bootstrapjs', THEME_URL . '/js/bootstrap.min.js', array('jquery'), null, true);
-        wp_register_style('bootstrap', THEME_URL .'/css/main.min.css', array(), $theme_version, 'all');
-		$uploads_dir = wp_upload_dir();
-        wp_register_style('theme_prdctn', $uploads_dir['baseurl'] . '/wp-sass-cache/theme.css', array(),'all');
-        wp_register_style('compass', THEME_URL .'/css/screen.css', array(),null, 'all');
-        wp_register_style('bootstrap_select', THEME_URL .'/css/bootstrap-select.css', array(),null, 'all');
-        wp_register_style('magnific_popup_css', THEME_URL .'/css/magnific-popup.css', array(),null, 'all');
-        wp_register_style('flexslider_css', THEME_URL .'/css/flexslider.css', array(),null, 'all');
-        //wp_enqueue_style( 'bootstrap', THEME_URL . '/css/bootstrap.css', array(),'20120285', 'all' );
-		//wp_enqueue_script( 'bootstrap-js', THEME_URL . '/js/bootstrap.min.js', array('jquery'), 'v3.1.1', true );
-		//wp_register_script('ie_row_fix', THEME_URL . '/js/ie-row-fix.js', array('jquery'), '1.0', true);
-
-		wp_register_script('respond', THEME_URL . '/js/respond.min.js', array('jquery'), null, true);
-		wp_register_script('respond_matchmedia', THEME_URL . '/js/respond.matchmedia.addListener.min.js', array('jquery'), null, true);
-		wp_register_script('booking_hound_api', THEME_URL . '/js/booking-hound-api.js', array(), false, true);
-
-		wp_register_script('raty', THEME_URL . '/js/jquery.raty.min.js', array('jquery'), null, true);
-		wp_register_script('scrollit', THEME_URL . '/js/scrollIt.min.js', array('jquery'), null, true);
-		wp_register_script('magnific_popup', THEME_URL . '/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
-		wp_register_script('flexslider_js', THEME_URL . '/js/jquery.flexslider-min.js', array('jquery'), null, true);
-
-//		wp_register_script('slick-slider-old', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), null, true);
-
-        wp_register_script('slick-slider', THEME_URL . '/js/slick.js', array('jquery'), null, true);
-
-		wp_register_script('match_height', THEME_URL . '/js/jquery.matchHeight-min.js', array('jquery'), null, true);
-		wp_register_script('modernizr', THEME_URL . '/js/modernizr.js', array('jquery'), null, false);
-		wp_register_script('browser_selector', THEME_URL . '/js/css_browser_selector.js', array('jquery'), null, false);
-		//wp_register_script('vendor', THEME_URL . '/js/vendor.js', array('jquery'), '2.8.3', false);
-		//wp_register_script('plugins', THEME_URL . '/js/plugins.js', array('jquery'), '2.8.3', false);
-
-		wp_register_script('bootstrap_selectjs', THEME_URL . '/js/bootstrap-select.js', array('jquery'), null, true);
-		//wp_register_script('customjs', THEME_URL . '/js/server-custom.js', array('jquery'), '1.2.8', true);
-		wp_register_script('custom_two', THEME_URL . '/js/custom2.js', array('jquery'), null, true);
-		wp_register_script('colorbox', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/jquery.colorbox-min.js"), array('jquery'), null, true);
-		wp_register_script('application1', ("https://d3v829qmdl4tvv.cloudfront.net/lightbox/application1.js"), array('jquery'), null, true);
-		//wp_register_script('rezdy_modal', ("https://tilbatours.rezdy.com/pluginJs?script=modal"), array('jquery'), null, true);
-		wp_register_script('rezdy_modal', THEME_URL . '/inc/init_api/js/rezdy.min.js', array('jquery'), null, true);
-
-		$integrate_orioly = get_field('orioly','option');
-		$integrate_trekksoft = get_field('trekksoft','option');
-		$trekksoft_account = get_field('trekksoft_account','option');
-		$integrate_xola = get_field('integrate_xola_with_this_website','option');
-		$integrate_rezdy = get_field('rezdy','option');
-		$integrate_regiondo = get_field('regiondo','option');
-		$integrate_zozi = get_field('zozi','option');
-
-		if($integrate_orioly):
-        wp_register_script('orioly', ("https://book-now.orioly.com/scripts/book.js"), array(), null, true);
-        endif;
-
-		if($integrate_trekksoft && $trekksoft_account):
-		wp_register_script('trekksoft', ("//$trekksoft_account.trekksoft.com/en/api/public"), array('jquery'), null, false);
-		endif;
-
-		if($integrate_xola):
-            wp_register_script('xola_checkout', ("https://xola.com/checkout.js"), array(), null, false);
-            // wp_register_script('xola_checkout', WQS_XOLA_URL . "/js/checkout.js", array(), $theme_version, true);
-            wp_register_script('xola_crossdomain', THEME_URL . '/js/crossdomainfix.js', array(), $theme_version, false);
-		endif;
-
-		wp_register_script('mainjs', THEME_URL . '/js/main.js', array('jquery'), $theme_version, true);
+define('TT_THEME_VERSION', wp_get_theme()->get( 'Version' ));
 
 
-		if ( get_field('google_maps','apikey')  ) :
-		  wp_register_script( "api-key-maps", "https://maps.googleapis.com/maps/api/js?key=" . get_field('google_maps','apikey'), array(), null, true);
-		endif;
-
-
-		if($integrate_regiondo):
-		wp_register_script('regiondo_btn', ("https://cdn.regiondo.net/js/integration/regiondo-button.js"), array(), null, true);
-		endif;
-
-		if($integrate_zozi):
-		wp_register_script('zozi_btn', ("https://a.zozi.com/assets/widgets/bookit.js"), array(), null, true);
-		wp_register_script('zozi_lightbox_btn_launcher', ("https://a.zozi.com/assets/widgets/lightbox-button-launcher.js"), array(), null, true);
-		endif;
-
-		wp_enqueue_script( 'jquery' );
-		/*wp_register_script('ie8js', THEME_URL .'/js/ie8.js', array('jquery'), '1.0', false);
-		wp_enqueue_script( 'ie8js' );
-        wp_script_add_data( 'ie8js', 'conditional', 'IE 8' );*/
-		wp_enqueue_script( 'bootstrapjs' );
-		//wp_enqueue_script( 'ie_row_fix' );
-		$integrate_getinsellout = get_field('getinsellout','option');
-		if($integrate_getinsellout):
-		wp_enqueue_script('colorbox');
-		wp_enqueue_script('application1');
-		endif;
-
-		if($integrate_orioly):
-		wp_enqueue_script('orioly');
-		endif;
-
-		if($integrate_trekksoft && $trekksoft_account):
-		wp_enqueue_script('trekksoft');
-		endif;
-
-		if($integrate_rezdy):
-		wp_enqueue_script('rezdy_modal');
-		endif;
-
-		//if($integrate_xola):
-		wp_enqueue_script('xola_checkout');
-		wp_enqueue_script('xola_crossdomain');
-		//endif;
-
-		if($integrate_regiondo):
-		wp_enqueue_script('regiondo_btn');
-		endif;
-
-		if($integrate_zozi):
-		wp_enqueue_script('zozi_btn');
-		wp_enqueue_script('zozi_lightbox_btn_launcher');
-		endif;
-
-		wp_enqueue_style('bootstrap');
-		wp_enqueue_style('compass');
-		wp_enqueue_style('bootstrap_select');
-		wp_enqueue_style('magnific_popup_css');
-		wp_enqueue_style('flexslider_css');
-		$spctrmdev = get_option('spctrmdev', '0');
-		if (!empty($spctrmdev) || !$spctrmdev == '0'):
-		//wp_enqueue_style( 'theme', THEME_URL . '/theme.scss.php' );
-      wp_enqueue_style('theme_prdctn');
-		else:
-		wp_enqueue_style('theme_prdctn');
-		endif;
-		wp_enqueue_script( 'respond' );
-
-		wp_enqueue_script( 'respond_matchmedia' );
-		wp_enqueue_script( 'raty' );
-		wp_enqueue_script( 'scrollit' );
-		wp_enqueue_script( 'magnific_popup' );
-		wp_enqueue_script( 'flexslider_js' );
-
-
-		wp_enqueue_script( 'match_height' );
-		wp_enqueue_script( 'modernizr' );
-		//wp_enqueue_script('browser_selector');
-		//wp_enqueue_script( 'vendor' );
-		//wp_enqueue_script( 'plugins' );
-
-		wp_enqueue_script('bootstrap_selectjs');
-		//wp_enqueue_script( 'customjs' );
-		//wp_enqueue_script( 'custom_two' );
-		wp_enqueue_script('slick-slider');
-		wp_enqueue_script( 'mainjs' );
-
-		wp_localize_script( 'mainjs', 'global_vars', array(
-			'postid'  => get_the_ID(),
-			'nonce'   => wp_create_nonce( 'nonce' ),
-			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			'hawaiifun' => get_field('is-hawaiifun', 'option'),
-			'permalink' => get_permalink(get_the_ID()),
-			'themeurl' => THEME_URL,
-			'googlemaps' => get_field('google_maps','apikey'),
-			'gf_public' => get_field('gf_public_key','apikey'),
-			'gf_private' => get_field('gf_private_key','apikey'),
-			'siteurl' => get_bloginfo('url'),
-			'is_admin' => current_user_can('edit_posts')
-		) );
-
-		if ( is_page_template( 'page-templates/test-pc.php' ) )
-			wp_enqueue_script( 'api-key-maps' );
-	}
-}
+// Include theme assets
+include THEME_PATH . '/inc/class-enqueue-assets.php';
 
 function bgmpShortcodeCalled()
 {
@@ -287,12 +83,6 @@ function orioly_script_loader_tag( $tag, $handle ){
 }
 add_filter( 'script_loader_tag', 'orioly_script_loader_tag', 10 ,2 );
 
-//* Enqueue Lato Google font
-/*add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
-function genesis_sample_google_fonts() {
-	wp_enqueue_style( 'google-font-lato', '//fonts.googleapis.com/css?family=Lato:300,700', array(), CHILD_THEME_VERSION );
-}*/
-
 //* Add HTML5 markup structure
 add_theme_support( 'html5' );
 
@@ -327,71 +117,29 @@ return '<section class="secondary-nav-wrapper"><div class="hidden-xs container">
 
 }
 
-add_action( 'wp_footer', 'mycustom_post_info', 9 );
-function mycustom_post_info(){
-
-}
-
-/*add_theme_support( 'custom-header', array(
-	'default-text-color'     => 'ffffff',
-	'height'                 => 164,
-	'width'                  => 320,
-) );*/
-
-
-
-//* Register widget areas
-/*genesis_register_sidebar( array(
-	'id'          => 'home-top',
-	'name'        => __( 'Home - Top', 'tourtiger' ),
-	'description' => __( 'This is the top section of the homepage.', 'tourtiger' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'home-middle-left',
-	'name'        => __( 'Home - Middle Left', 'tourtiger' ),
-	'description' => __( 'This is the middle left section of the homepage.', 'tourtiger' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'home-middle-right',
-	'name'        => __( 'Home - Middle Right', 'tourtiger' ),
-	'description' => __( 'This is the middle right section of the homepage.', 'tourtiger' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'home-bottom',
-	'name'        => __( 'Home - Bottom', 'tourtiger' ),
-	'description' => __( 'This is the bottom section of the homepage.', 'tourtiger' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'after-entry',
-	'name'        => __( 'After Entry', 'tourtiger' ),
-	'description' => __( 'This is the after entry section.', 'tourtiger' ),
-) );*/
-
 /** Unregister default sidebars */
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 
 if ( function_exists('register_sidebar') ) {
-register_sidebar(array(
-'name' => 'Above Sidebar',
-'id' => 'above-sidebar',
-'before_widget' => '<div class="widget-item book-tour-wrapper_product_row">',
-'after_widget' => '</div>',
-'before_title' => '<h2>',
-'after_title' => '</h2>',
-));
+    register_sidebar(array(
+    'name' => 'Above Sidebar',
+    'id' => 'above-sidebar',
+    'before_widget' => '<div class="widget-item book-tour-wrapper_product_row">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+    ));
 
-register_sidebar(array(
-'name' => 'Below Sidebar',
-'id' => 'below-sidebar',
-'before_widget' => '<div class="widget-item book-tour-wrapper_product_row">',
-'after_widget' => '</div>',
-'before_title' => '<h2>',
-'after_title' => '</h2>',
-));
-
-
+    register_sidebar(array(
+    'name' => 'Below Sidebar',
+    'id' => 'below-sidebar',
+    'before_widget' => '<div class="widget-item book-tour-wrapper_product_row">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+    ));
 }
 
 function jptweak_remove_share() {
@@ -449,29 +197,6 @@ add_action('genesis_after_footer', function(){
     include THEME_PATH . '/includes/class-side-buttons.php';
 });
 
-/*layout settings*/
-//* Force content-sidebar layout setting
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
-
-//* Force sidebar-content layout setting
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content' );
-
-//* Force content-sidebar-sidebar layout setting
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar_sidebar' );
-
-//* Force sidebar-sidebar-content layout setting
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_sidebar_sidebar_content' );
-
-//* Force sidebar-content-sidebar layout setting
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content_sidebar' );
-
-//* Force full-width-content layout setting
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
-
-//* Remove content/sidebar layout
-//genesis_unregister_layout( 'content-sidebar' );
-
 //* Remove sidebar/content layout
 genesis_unregister_layout( 'sidebar-content' );
 
@@ -484,9 +209,6 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 //* Remove sidebar/content/sidebar layout
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 
-//* Remove full-width content layout
-//genesis_unregister_layout( 'full-width-content' );
-
 // Add Read More Link to Excerpts
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
@@ -494,17 +216,6 @@ function get_read_more_link() {
    return '<div class="clear"><a href="' . get_permalink() . '" class="blog-continue-reading" target="_blank">Continue Reading</a></div>';
 }
 
-/*acf functions*/
-
-/*function my_acf_options_page_settings( $settings )
-{
-	$settings['title'] = 'Global';
-	$settings['pages'] = array('Sidebar', 'Footer', 'Company details', 'Code snippets');
-
-	return $settings;
-}
-
-add_filter('acf/options_page/settings', 'my_acf_options_page_settings');*/
 if(function_exists('acf_add_options_page')) {
 
 	acf_add_options_page();
@@ -559,26 +270,18 @@ function acf_load_third_party_field_choices( $field ) {
     // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices??'');
 
-
     // remove any unwanted white space
     $choices = array_map('trim', $choices);
 
-
     // loop through array and add to field 'choices'
-    if( is_array($choices) ) {
-
+    if( is_array( $choices ) ) {
         foreach( $choices as $choice ) {
-
             $field['choices'][ $choice ] = $choice;
-
         }
-
     }
-
 
     // return the field
     return $field;
-
 }
 
 add_filter('acf/load_field/name=third_party', 'acf_load_third_party_field_choices');
@@ -594,200 +297,6 @@ include_once(dirname(__FILE__).'/includes/shortcode-generator.php');
 include_once(dirname(__FILE__).'/includes/menus_gpm.php');
 include_once(dirname(__FILE__).'/includes/mobile-menus_gpm.php');
 require_once(dirname(__FILE__).'/includes/aq_resizer.php');
-
-function tourtiger_background_inline_css() {
-
-		echo '<!-- Custom CSS Styles -->' . "\n";
-        echo '<style type="text/css">' . "\n";
-        require(CHILD_DIR.'/background_gpm.php');
-        echo '</style>' . "\n";
-		echo '<!-- End Custom CSS -->' . "\n";
-		echo "\n"; }
-
-add_action('wp_head', 'tourtiger_background_inline_css', 49);
-
-//if(!function_exists('kirki_autoload_classes')){
-function tourtiger_inline_css() {
-
-		echo '<!-- Custom CSS Styles -->' . "\n";
-        echo '<style type="text/css">' . "\n";
-
-        $wbgc = get_option('wbgc');
-        if($wbgc != '' && $wbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container {background: '.$wbgc.'; }' . "\n";
-        elseif($wbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container {background: none; }' . "\n";
-        endif;
-
-        $ahabgc = get_option('ahabgc');
-        if($ahabgc != '' && $ahabgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.above-header {background: '.$ahabgc.'; }' . "\n";
-        elseif($ahabgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.above-header {background: none; }' . "\n";
-        endif;
-
-        $hbgc = get_option('hbgc');
-        if($hbgc != '' && $hbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .site-header .header-bar, .site-container .site-header .header-bar-wrapper{background: '.$hbgc.'; }' . "\n";
-        elseif($hbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .site-header .header-bar, .site-container .site-header .header-bar-wrapper{background: none; }' . "\n";
-        endif;
-
-
-
-        $pmsbgc = get_option('pmsbgc');
-        if($pmsbgc != '' && $pmsbgc != 'rgba(0, 0, 0, 0)'):
-        echo ' .main-nav-wrapper .genesis-nav-menu .sub-menu a{background: '.$pmsbgc.';}' . "\n";
-        elseif($pmsbgc == 'rgba(0, 0, 0, 0)'):
-        echo '.main-nav-wrapper .genesis-nav-menu .sub-menu a{background: none;}' . "\n";
-        endif;
-
-        $mnhctabgc= get_option('mnhctabgc');
-        if($mnhctabgc != '' && $mnhctabgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .genesis-nav-menu .book-btn  {background: '.$mnhctabgc.'; }' . "\n";
-        elseif($mnhctabgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .genesis-nav-menu .book-btn {background: none;}' . "\n";
-        endif;
-
-        $bwsmbgc = get_option('bwsmbgc');
-        if($bwsmbgc != '' && $bwsmbgc != 'rgba(0, 0, 0, 0)'):
-        echo ' .secondary-nav-wrapper .container{background: '.$bwsmbgc.';}' . "\n";
-        elseif($bwsmbgc == 'rgba(0, 0, 0, 0)'):
-        echo '.secondary-nav-wrapper .container{background: none;}' . "\n";
-        endif;
-
-
-        $smsbgc = get_option('smsbgc');
-        if($smsbgc != '' && $smsbgc != 'rgba(0, 0, 0, 0)'):
-        echo ' .secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background: '.$smsbgc.';}' . "\n";
-        elseif($smsbgc == 'rgba(0, 0, 0, 0)'):
-        echo '.secondary-nav-wrapper .genesis-nav-menu .sub-menu a{background: none;}' . "\n";
-        endif;
-
-        $mtbbgc = get_option('mtbbgc');
-        if($mtbbgc != '' && $mtbbgc != 'rgba(0, 0, 0, 0)'):
-        echo ' .navbar .navbar-toggle{background: '.$mtbbgc.';}' . "\n";
-        elseif($mtbbgc == 'rgba(0, 0, 0, 0)'):
-        echo '.navbar .navbar-toggle{background: none;}' . "\n";
-        endif;
-
-        $mtbhbgc = get_option('mtbhbgc');
-        if($mtbhbgc != '' && $mtbhbgc != 'rgba(0, 0, 0, 0)'):
-        echo ' .navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus{background: '.$mtbhbgc.';}' . "\n";
-        elseif($mtbhbgc == 'rgba(0, 0, 0, 0)'):
-        echo '.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus{background: none;}' . "\n";
-        endif;
-
-        $himgt= get_option('himgt');
-        if($himgt != '' && $himgt != 'rgba(0, 0, 0, 0)'):
-        echo '	.tint{background: '.$himgt.'; }' . "\n";
-        elseif($himgt == 'rgba(0, 0, 0, 0)'):
-        echo '	.tint{background: none; }' . "\n";
-        endif;
-
-        $timgt= get_option('timgt');
-        if($timgt != '' && $timgt != 'rgba(0, 0, 0, 0)'):
-        echo '	.tile-tint{background: '.$timgt.'; }' . "\n";
-        elseif($timgt == 'rgba(0, 0, 0, 0)'):
-        echo '	.tile-tint{background: none; }' . "\n";
-        endif;
-
-        $htbgc= get_option('htbgc');
-        if($htbgc != '' && $htbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.banner-top h1 span, .banner-top h2 span, .tour-2 .name {background: '.$htbgc.'; }' . "\n";
-        elseif($htbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.banner-top h1 span, .banner-top h2 span, .tour-2 .name {background: none; }' . "\n";
-        endif;
-
-        $hcbgc= get_option('hcbgc');
-        if($hcbgc != '' && $hcbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.banner-top li span, .banner-top p span {background: '.$hcbgc.' !important; }' . "\n";
-        elseif($hcbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.banner-top li span, .banner-top p span {background: none !important; }' . "\n";
-        endif;
-
-        $hctabgc= get_option('hctabgc');
-        if($hctabgc != '' && $hctabgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .book-btn-wrapper .dropdown-menu, .site-container .book-btn-wrapper .btn-default.book-btn, .site-container .book-btn  {background: '.$hctabgc.'; }' . "\n";
-        elseif($hctabgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .book-btn-wrapper .dropdown-menu, .site-container .book-btn-wrapper .btn-default.book-btn, .site-container .book-btn {background: none;}' . "\n";
-        endif;
-
-        $podfbgc= get_option('podfbgc');
-        if($podfbgc != '' && $podfbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.home .banner-bottom .container {background: '.$podfbgc.'; }' . "\n";
-        elseif($podfbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.home .banner-bottom .container {background: none; }' . "\n";
-        endif;
-
-        $podtbgc= get_option('podtbgc');
-        if($podtbgc != '' && $podtbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.banner-bottom .container {background: '.$podtbgc.'; }' . "\n";
-        elseif($podtbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.banner-bottom .container {background: none; }' . "\n";
-        endif;
-
-        $ftabgc= get_option('ftabgc');
-        if($ftabgc != '' && $ftabgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .featured-tours .view-tour-btn .xola-custom, .view-tour-btn a {background: '.$ftabgc.'; }' . "\n";
-        elseif($ftabgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .featured-tours .view-tour-btn .xola-custom, .view-tour-btn a {background: none; }' . "\n";
-        endif;
-
-        $cabgc= get_option('cabgc');
-        if($cabgc != '' && $cabgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-inner .content {background: '.$cabgc.'; }' . "\n";
-        elseif($cabgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-inner .content {background: none; }' . "\n";
-        endif;
-
-        $facbgc= get_option('facbgc');
-        if($facbgc != '' && $facbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.featured-tours .container, .featured-tours-2 .position-wrapper, .featured-section .container {background: '.$facbgc.'; }' . "\n";
-        elseif($facbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.featured-tours .container, .featured-tours-2 .position-wrapper, .featured-section .container {background: none; }' . "\n";
-        endif;
-
-        $ccbgc= get_option('ccbgc');
-        if($ccbgc != '' && $ccbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.testimonials .container, .reasons .container, .single-tour .left-col, .page-template-default .left-col, .page-template-page-templatestestimonials-php .left-col, .page-template-page-templatestours-php .left-col, .blog-left-col, .faq-page-content .container, .team-members .container, .single-tour .right-col>div, .page-template-default .right-col>div, .page-template-page-templatestestimonials-php .right-col>div, .page-template-page-templatestours-php .right-col>div, .single-tour .right-col .testimonials, .page-template-default .right-col .testimonials, .blog-right-col>div, .classic-itinerary-list .num-wrapper .itinery-num{background: '.$ccbgc.'; }' . "\n";
-        elseif($ccbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.testimonials .container, .reasons .container, .single-tour .left-col, .page-template-default .left-col, .page-template-page-templatestestimonials-php .left-col, .page-template-page-templatestours-php .left-col, .blog-left-col, .faq-page-content .container, .team-members .container, .single-tour .right-col>div, .page-template-default .right-col>div, .page-template-page-templatestestimonials-php .right-col>div, .page-template-page-templatestours-php .right-col>div, .single-tour .right-col .testimonials, .page-template-default .right-col .testimonials, .blog-right-col>div, .classic-itinerary-list .num-wrapper .itinery-num{background: none; }' . "\n";
-        endif;
-
-        $cctabgc= get_option('cctabgc');
-        if($cctabgc != '' && $cctabgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .book-tour-wrapper{background: '.$cctabgc.'; }' . "\n";
-        elseif($cctabgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-container .book-tour-wrapper{background: none; }' . "\n";
-        endif;
-
-        $scbgc= get_option('scbgc');
-        if($scbgc != '' && $scbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.subscribe .container{background: '.$scbgc.'; }' . "\n";
-        elseif($scbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.subscribe .container{background: none; }' . "\n";
-        endif;
-
-        $tlib = get_option('tlib');
-        if($tlib != '' && $tlib != 'rgba(0, 0, 0, 0)'):
-        echo '	.trip-list .trip-item{background: '.$tlib.'; }' . "\n";
-        elseif($tlib == 'rgba(0, 0, 0, 0)'):
-        echo '	.trip-list .trip-item{background: none; }' . "\n";
-        endif;
-
-        $fbgc= get_option('fbgc');
-        if($fbgc != '' && $fbgc != 'rgba(0, 0, 0, 0)'):
-        echo '	.site-footer{background: '.$fbgc.'; }' . "\n";
-        elseif($fbgc == 'rgba(0, 0, 0, 0)'):
-        echo '	.site-footer{background: none; }' . "\n";
-        endif;
-
-		echo '</style>' . "\n";
-		echo '<!-- End Custom CSS -->' . "\n";
-		echo "\n"; }
-
-//add_action('wp_head', 'tourtiger_inline_css', 50);
 
 add_action('admin_menu', 'themeoptions_admin_menu'); //action to display the menu
 function themeoptions_admin_menu()
@@ -1362,14 +871,10 @@ function color_picker_option_update()
 
 add_action( 'customize_register', 'tourtiger_customize_register' );
 
-//}/*end of if function_exists kirki*/
 
 function tourtiger_customize_register( $wp_customize ) {
-
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'background_image' );
-
-
 }
 
 function language_selector_flags(){
@@ -1383,17 +888,8 @@ function language_selector_flags(){
     }
 }
 
-//include_once(dirname(__FILE__).'/includes/kirki_fields.php');
-
 add_filter('acf/compatibility/field_wrapper_class', '__return_true');
-// Include the class (unless you are using the script as a plugin)
-//require_once( 'wp-sass-master/wp-sass.php' );
 
-// enqueue a .less style sheet
-//if ( ! is_admin() )
-    //wp_enqueue_style( 'theme', THEME_URL . '/theme.scss' );
-//else
-	//wp_enqueue_style( 'theme', THEME_URL . '/theme.scss.php' );
 add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open' );
 function wrap_gform_cdata_open( $content = '' ) {
 	$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
@@ -1472,17 +968,6 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
             $attributes .= ' data-url="'.$getinsellout_data_url.'"';
             $attributes .= ' data-evt="'.$getinsellout_data_evt.'"';
         }
-
-        // add custom data attributes for peek
-        /*if ( $integrate_peek == true && $depth == 0 && ($classes[0] == 'peek-book-btn')) {
-            $t_gid = $atts['href'];
-            $gid = preg_replace('#^https?://#', '', $t_gid);
-            $attributes .= ' href="'.$gid.'"';
-            $attributes .= ' class="peek-book-button-flat"';
-            $attributes .= ' data-purchase-type="activity"';
-            $attributes .= ' data-button-text="'.$item->title.'"';
-            $attributes .= ' data-activity-gid="'.$gid.'"';
-        }*/
 
         if ( $integrate_rezdy == true && $depth == 0 && ($classes[0] == 'rezdy-book-btn')) {
             $attributes .= ' class="button-booking rezdy rezdy-modal"';
@@ -1720,19 +1205,6 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'product-slider', 757, 484, false );
 }
 
-/**
- * Include google maps api key in end if all scripts in admin panel
- */
-
-// add_action( 'admin_enqueue_scripts', 'google_maps_api_in_admin_panel', 999 );
-// function google_maps_api_in_admin_panel() {
-
-// 	if ( get_field('google_maps','apikey') ) :
-// 		wp_register_script( "api-key-maps-admin", "https://maps.googleapis.com/maps/api/js?key=" . get_field('google_maps','apikey'), array(), null, true);
-// 		wp_enqueue_script("api-key-maps-admin");
-// 	endif;
-// }
-
 add_action('admin_enqueue_scripts', function(){
     wp_register_script( 'image-shortcode', THEME_URL . '/js/image-shortcode.js?v=' . wp_get_theme()->get( 'Version' ) , array('jquery'), null, true);
     wp_enqueue_script('image-shortcode');
@@ -1741,24 +1213,25 @@ add_action('admin_enqueue_scripts', function(){
 /* update dgamoni */
 include_once 'inc/load.php';
 
-if ( class_exists( 'WooCommerce' ) ):
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+if ( class_exists( 'WooCommerce' ) ) :
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+    remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
-add_action('woocommerce_before_main_content', 'tourtiger_theme_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'tourtiger_theme_wrapper_end', 10);
+    add_action('woocommerce_before_main_content', 'tourtiger_theme_wrapper_start', 10);
+    add_action('woocommerce_after_main_content', 'tourtiger_theme_wrapper_end', 10);
 
-function tourtiger_theme_wrapper_start() {
-  echo '<section class="tour-page-content"><div class="container"><div class="row"><div class="col-sm-12">';
-}
 
-function tourtiger_theme_wrapper_end() {
-  echo '</div></div></div></section>';
-}
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
+    function tourtiger_theme_wrapper_start() {
+      echo '<section class="tour-page-content"><div class="container"><div class="row"><div class="col-sm-12">';
+    }
+
+    function tourtiger_theme_wrapper_end() {
+      echo '</div></div></div></section>';
+    }
+    add_action( 'after_setup_theme', 'woocommerce_support' );
+    function woocommerce_support() {
+        add_theme_support( 'woocommerce' );
+    }
 endif;
 
 add_filter('body_class','add_motto_class_mobile');
@@ -2119,15 +1592,7 @@ function pagination_appear() {
 // Different Fixes
 function different_fixes() {
     $theme = wp_get_theme();
-
     wp_enqueue_script('hero-position-fix', THEME_URL. '/js/hero-position-fix.js', NULL, $theme->get( 'Version' ), true);
-
-  //  wp_enqueue_script(' forms-with-capcha-fix', THEME_URL. '/js/forms-with-capcha-fix.min.js', NULL, $theme->get( 'Version' ), true);
-
-
-    // wp_enqueue_script('transmit-style-1-to-gform', THEME_URL. '/js/transmit-style-1-to-gform.js', NULL, $theme->get( 'Version' ), true);
-    /* This inserts file that copy pulsing button feature to the form submit button  */
-
 }
  add_action('wp_enqueue_scripts', 'different_fixes');
 
@@ -2222,16 +1687,6 @@ function add_peek_integration() {
 }
 
 add_action('wp_head', 'add_peek_integration');
-//
-//function check_if_spritesheet_are_used() {
-//    $spritesheets = get_field('spritesheets', 'acf-options-spritesheets');
-//    var_dump($spritesheets);
-//}
-//
-//// check_if_spritesheet_are_used();
-//
-//// add_action('pre_get_posts', 'check_if_spritesheet_are_used');
-
 
 
 /**
