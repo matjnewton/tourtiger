@@ -480,6 +480,6 @@ function tt1_get_first_value_if_array( $value ){
 }
 
 
-// Rest API routes
+// Rest API routes - mute while not needed
 
-include THEME_PATH . '/inc/class-routes.php';
+// include THEME_PATH . '/inc/class-routes.php';
