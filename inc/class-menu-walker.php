@@ -7,6 +7,8 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
+        $item->title = do_shortcode($item->title);
+
         $class_names = $value = '';
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -236,7 +238,7 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
         $output .= apply_filters( 'walker_nav_menu_end_el', null, $item, $depth, $args );
-        if($classes[0] == 'megamenu'){
+        if( $classes[0] == 'megamenu' ){
             $output .= "</div></div></li>\n";
         } else {
             $output .= "</li>\n";

@@ -2087,3 +2087,18 @@ nav {
 .after_post_content_on_post_page .book-tour-wrapper.text-center {margin:0}
 
 [data-anchor] {cursor:pointer}
+
+#menu-main-nav a {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#menu-main-nav a .image--shortcode-background {
+    max-height: 3rem;
+    max-width: 4rem;
+    margin: -0.75rem 5px 0;
+    border-radius: 5px;
+}
+#menu-main-nav .menu-item:hover a .image--shortcode-background {
+    opacity: .7;
+}
