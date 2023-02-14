@@ -30,21 +30,31 @@ function image_shortcode( $atts ) {
 
             if ( $atts['width'] && $atts['height'] ) :
                 $attrs = 'style="width: '.$atts['width'].'px; height: '.$atts['height'].'px;"';
-            else :
+            elseif ( $image[2] && $image[1]) :
                 $attrs = 'style="width: '.$image[2].'px; height: '.$image[1].'px;"';
+            else :
+                $attrs = '';
             endif;
 
             ob_start();
 
-            ?>
-            <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image[0]?>") no-repeat center center;
-                    background-size:<?php echo $atts['size'];?>;
-                    margin: auto;
-                }</style>
-            <div class="image--shortcode">
-                <div class="image--shortcode-background <?=$id?>" <?php echo $attrs; ?>></div>
-            </div>
-            <?php
+            if ( strpos($image[0], '.svg') && !$attrs ) :
+                ?>
+                    <div class="image--shortcode">
+                        <div class="image--shortcode-background svg-image"><img src="<?=$image[0]?>" alt=""></div>
+                    </div>
+                <?php
+            else :
+                ?>
+                <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image[0]?>") no-repeat center center;
+                        background-size:<?php echo $atts['size'];?>;
+                        margin: auto;
+                    }</style>
+                <div class="image--shortcode">
+                    <div class="image--shortcode-background <?=$id?>" <?php echo $attrs; ?>></div>
+                </div>
+                <?php
+            endif;
             return ob_get_clean();
         endif;
     endif;

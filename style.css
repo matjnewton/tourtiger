@@ -2099,6 +2099,14 @@ nav {
     margin: -0.75rem 5px 0;
     border-radius: 5px;
 }
-#menu-main-nav .menu-item:hover a .image--shortcode-background {
+#menu-main-nav .menu-item a:hover .image--shortcode-background {
     opacity: .7;
+}
+
+#menu-main-nav a .image--shortcode-background.svg-image {
+    margin: -2px 5px 0;
+}
+
+#menu-main-nav a .image--shortcode-background.svg-image img {
+    height: 1.5rem;
 }
