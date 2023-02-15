@@ -31,7 +31,7 @@ class Theme_Assets
         if ( isset($GLOBALS['sub-menu_inline']) && $GLOBALS['sub-menu_inline'] ) :
 
             $background_style = self::fetch_submenu_background() ?: 'background: white';
-        
+
             ?>
                 <style>
                     #menu-main-nav .sub-menu_inline:hover > .sub-menu {
@@ -49,6 +49,10 @@ class Theme_Assets
                         justify-content: space-between;
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background {
+                        max-height: 50px;
+                        margin: auto;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background.svg-image {
                         max-height: unset;
                         max-width: unset;
                         text-align: center;
