@@ -18,8 +18,9 @@ class Theme_Assets
 
     public static function add_assets_in_footer(){
         if ( isset($GLOBALS['sub-menu_inline']) && $GLOBALS['sub-menu_inline'] ) :
-            
-            $background_style = self::get_cached_data() ?: self::fetch_submenu_background();
+
+            $background_style = self::get_cached_data()
+                ?: (self::fetch_submenu_background() ?: 'background: white');
 
             ?>
                 <style>
@@ -42,9 +43,6 @@ class Theme_Assets
 //                'fetched'=>getdate()[0],
 //                '$check_interval'=>$check_interval
 //            ];
-//
-//            print_r_html(['$data'=>$data]);
-//
 //            set_transient( 'sub-menu_inline_background', $data, $check_interval );
 
         return false;
@@ -67,7 +65,7 @@ class Theme_Assets
             return trim($part);
         endif;
 
-        return true;
+        return false;
     }
 
     public static function different_fixes() {
