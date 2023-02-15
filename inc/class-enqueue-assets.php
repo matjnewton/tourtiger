@@ -28,8 +28,17 @@ class Theme_Assets
                         display: flex;
                         justify-content: center;
                         width: 100vw;
-                        right: -41vw; /** calculate with js **/
                         <?=$background_style?>
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a {
+                        height:100%;
+                        border: none;
+                    }
+                    .main-nav-wrapper .genesis-nav-menu > .menu-item.sub-menu_inline > .sub-menu > .menu-item {
+                        border-top: none;
+                    }
+                    .main-nav-wrapper .genesis-nav-menu > .menu-item.sub-menu_inline > .sub-menu {
+                        border-bottom: none;
                     }
                 </style>
             <?php
