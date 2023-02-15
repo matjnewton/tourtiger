@@ -18,6 +18,8 @@ class Theme_Assets
 
     public static function add_assets_in_footer(){
         if ( isset($GLOBALS['sub-menu_inline']) && $GLOBALS['sub-menu_inline'] ) :
+            
+            $background_style = self::get_cached_data() ?: self::fetch_submenu_background();
 
             ?>
                 <style>
@@ -26,10 +28,46 @@ class Theme_Assets
                         justify-content: center;
                         width: 100vw;
                         right: -41vw; /** calculate with js **/
+                        <?=$background_style?>
                     }
                 </style>
             <?php
         endif;
+    }
+
+    private static function get_cached_data(){ // @todo maybe...
+//            $check_interval = YEAR_IN_SECONDS;
+//            $data = [
+//                'background'=>$background_style,
+//                'fetched'=>getdate()[0],
+//                '$check_interval'=>$check_interval
+//            ];
+//
+//            print_r_html(['$data'=>$data]);
+//
+//            set_transient( 'sub-menu_inline_background', $data, $check_interval );
+
+        return false;
+    }
+
+    private static function fetch_submenu_background(){
+        $upload_dir = wp_upload_dir();
+        $dir = apply_filters( 'wp_sass_cache_path', trailingslashit( $upload_dir[ 'basedir' ] ) . 'wp-sass-cache' );
+        $file = $dir . '/theme.css';
+
+        if ( file_exists( $dir ) && file_exists( $file ) ) :
+            $content = file_get_contents( $file );
+
+            $style_pos_1 = strpos($content, '.main-nav-wrapper .genesis-nav-menu .sub-menu a');
+            $part = substr($content, $style_pos_1 + 1 + strlen('.main-nav-wrapper .genesis-nav-menu .sub-menu a'));
+            $style_pos_2 = strpos($part, '{');
+            $part = substr($part, $style_pos_2 + 1);
+            $style_pos_3 = strpos($part, '}');
+            $part = substr($part, 1, $style_pos_3 - 1);
+            return trim($part);
+        endif;
+
+        return true;
     }
 
     public static function different_fixes() {
