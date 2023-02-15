@@ -13,6 +13,23 @@ class Theme_Assets
         add_filter('body_class', __CLASS__.'::set_styling_class', 10, 1);
         add_action('admin_enqueue_scripts', __CLASS__ . '::add_image_shortcode_script');
         add_action('wp_enqueue_scripts', __CLASS__.'::different_fixes');
+        add_action( 'wp_footer', __CLASS__ . '::add_assets_in_footer' );
+    }
+
+    public static function add_assets_in_footer(){
+        if ( isset($GLOBALS['sub-menu_inline']) && $GLOBALS['sub-menu_inline'] ) :
+
+            ?>
+                <style>
+                    #menu-main-nav .sub-menu_inline > .sub-menu {
+                        display: flex;
+                        justify-content: center;
+                        width: 100vw;
+                        right: -41vw; /** calculate with js **/
+                    }
+                </style>
+            <?php
+        endif;
     }
 
     public static function different_fixes() {
@@ -180,7 +197,7 @@ class Theme_Assets
             wp_enqueue_style('flexslider_css');
             $spctrmdev = get_option('spctrmdev', '0');
 
-            if (!empty($spctrmdev) || !$spctrmdev == '0') :
+            if ( !empty($spctrmdev) || !$spctrmdev == '0' ) :
                 wp_enqueue_style('theme_prdctn');
             else:
                 wp_enqueue_style('theme_prdctn');

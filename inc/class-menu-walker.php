@@ -14,6 +14,10 @@ class Wpse8170_Menu_Walker extends Walker_Nav_Menu {
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
+        if ( in_array('sub-menu_inline', $classes) ) :
+            $GLOBALS['sub-menu_inline'] = 1;
+        endif;
+
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
