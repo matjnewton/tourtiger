@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.16.3
+Version: 1.16.4
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -65,10 +65,6 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 .main-nav-wrapper {
     display: flex;
     justify-content: flex-end;
-}
-
-.menu-main-nav-container {
-    padding-top: 0!important;
 }
 
 .article-image {
@@ -2089,12 +2085,23 @@ nav {
     grid-auto-flow: column;
 }
 
-#menu-main-nav a .image--shortcode-background {
+.menu-main-nav-container .menu-item a {
+    display: flex;
+}
+
+#menu-main-nav a .image--shortcode-background,
+.menu-main-nav-container a .image--shortcode-background {
     max-height: 3rem;
     max-width: 4rem;
     margin: -0.75rem 5px 0;
     border-radius: 5px;
 }
+
+.menu-main-nav-container .menu-item a .image--shortcode-background.svg-image {
+    width: 100%;
+    margin: 0 5px 0;
+}
+
 #menu-main-nav .menu-item a:hover .image--shortcode-background {
     opacity: .7;
 }
@@ -2106,3 +2113,10 @@ nav {
 #menu-main-nav a .image--shortcode-background.svg-image svg {
     height: 1.5rem;
 }
+
+@media (max-width:1024px) {
+    html {
+        position: absolute;
+    }
+}
+

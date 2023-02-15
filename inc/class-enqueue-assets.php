@@ -67,6 +67,20 @@ class Theme_Assets
                     #menu-main-nav .sub-menu_inline > .sub-menu {
                         border-bottom: none;
                     }
+                    .navbar-collapse .mobile-nav .sub-menu_inline .sub-menu.dropdown-menu a {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .navbar-collapse .mobile-nav .sub-menu_inline .sub-menu.dropdown-menu a .image--shortcode {
+                        order: 2;
+                    }
+                    .navbar-collapse .mobile-nav .sub-menu_inline .sub-menu.dropdown-menu a .image--shortcode .image--shortcode-background.svg-image {
+                        margin: 0 3rem;
+                    }
+                    .navbar-collapse .mobile-nav .sub-menu_inline .sub-menu.dropdown-menu a .image--shortcode .image--shortcode-background svg {
+                        height: 3rem;
+                        margin: -1rem 0;
+                    }
                 </style>
             <?php
 
@@ -95,6 +109,7 @@ class Theme_Assets
                 #menu-main-nav .menu-item > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g path {
                     stroke: <?=$hover_text_color?>;
                     fill: <?=$hover_text_color?>;
+                }
             </style>
         <?php
     }

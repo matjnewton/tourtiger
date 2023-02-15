@@ -38,7 +38,7 @@ function image_shortcode( $atts ) {
 
             ob_start();
 
-            if ( strpos($image[0], '.svg') && !$attrs ) : // TODO: check
+            if ( strpos($image[0], '.svg') && !$attrs ) :
                 $path = get_attached_file($atts['id']);
 
                 if ( file_exists($path) ) :
