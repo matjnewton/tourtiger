@@ -17,17 +17,24 @@ class Theme_Assets
     }
 
     public static function add_assets_in_footer(){
-        if ( isset($GLOBALS['sub-menu_inline']) && $GLOBALS['sub-menu_inline'] ) :
 
-            $background_style = self::get_cached_data()
-                ?: (self::fetch_submenu_background() ?: 'background: white');
+        $font_styles = self::fetch_font_styles();
 
+        if ( $font_styles ) :
+            $text_color = $font_styles['text-color'];
+            $hover_text_color = $font_styles['hover-text-color'];
+        else :
             $text_color = 'white';
             $hover_text_color = '#0a84c7';
+        endif;
 
+        if ( isset($GLOBALS['sub-menu_inline']) && $GLOBALS['sub-menu_inline'] ) :
+
+            $background_style = self::fetch_submenu_background() ?: 'background: white';
+        
             ?>
                 <style>
-                    #menu-main-nav .sub-menu_inline > .sub-menu {
+                    #menu-main-nav .sub-menu_inline:hover > .sub-menu {
                         display: flex;
                         justify-content: center;
                         width: calc( 100vw + 10px );
@@ -48,25 +55,7 @@ class Theme_Assets
                         margin: auto auto 10px;
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background svg {
-                        fill: <?=$text_color?>;
                         height: 50px;
-                    }
-                    #menu-main-nav .sub-menu_inline > .sub-menu a:hover .image--shortcode .image--shortcode-background svg {
-                        fill: <?=$hover_text_color?>;
-                    }
-                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background svg g {
-                        stroke: <?=$text_color?>;
-                    }
-                    #menu-main-nav .sub-menu_inline > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g {
-                        stroke: <?=$hover_text_color?>;
-                    }
-                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background svg g path {
-                        stroke: <?=$text_color?>;
-                        fill: <?=$text_color?>;
-                    }
-                    #menu-main-nav .sub-menu_inline > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g path {
-                        stroke: <?=$hover_text_color?>;
-                        fill: <?=$hover_text_color?>;
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu > .menu-item {
                         border-top: none;
@@ -80,18 +69,61 @@ class Theme_Assets
             wp_enqueue_script('sub-menu-inline', THEME_URL. '/js/sub-menu-inline.js', ['jquery'], TT_THEME_VERSION, true);
 
         endif;
+
+        ?>
+            <style>
+                #menu-main-nav .menu-item > .sub-menu a .image--shortcode .image--shortcode-background svg {
+                    fill: <?=$text_color?>;
+                }
+                #menu-main-nav .menu-item > .sub-menu a:hover .image--shortcode .image--shortcode-background svg {
+                    fill: <?=$hover_text_color?>;
+                }
+                #menu-main-nav  .menu-item > .sub-menu a .image--shortcode .image--shortcode-background svg g {
+                    stroke: <?=$text_color?>;
+                }
+                #menu-main-nav .menu-item > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g {
+                    stroke: <?=$hover_text_color?>;
+                }
+                #menu-main-nav .menu-item > .sub-menu a .image--shortcode .image--shortcode-background svg g path {
+                    stroke: <?=$text_color?>;
+                    fill: <?=$text_color?>;
+                }
+                #menu-main-nav .menu-item > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g path {
+                    stroke: <?=$hover_text_color?>;
+                    fill: <?=$hover_text_color?>;
+            </style>
+        <?php
     }
 
-    private static function get_cached_data(){ // @todo maybe...
-//            $check_interval = YEAR_IN_SECONDS;
-//            $data = [
-//                'background'=>$background_style,
-//                'fetched'=>getdate()[0],
-//                '$check_interval'=>$check_interval
-//            ];
-//            set_transient( 'sub-menu_inline_background', $data, $check_interval );
+    private static function fetch_font_styles(): ?array
+    {
+        if ( class_exists('Styles_Plugin') ) :
+            $styles = (new \Styles_Plugin)->get_css();
 
-        return false;
+            if ( $styles ) :
+                $result = [];
+                $find_styles = [
+                    'text-color'=>'.styles .main-nav-wrapper .genesis-nav-menu .sub-menu a',
+                    'hover-text-color'=>'.styles .main-nav-wrapper .genesis-nav-menu .sub-menu a:hover'
+                ];
+
+                foreach ( $find_styles as $key => $style ) :
+                    $pos = strpos($styles, $style);
+                    $part = substr($styles, $pos + strlen($style));
+                    $pos = strpos($part, '{');
+                    $part = substr($part, $pos);
+                    $pos = strpos($part, '}');
+                    $part = substr($part, 1, $pos - 1);
+                    $pos = strpos($part, 'color:');
+                    $part = substr($part, $pos + 6);
+                    $result[$key] = $part;
+                endforeach;
+
+                return $result;
+            endif;
+        endif;
+
+        return null;
     }
 
     private static function fetch_submenu_background(){
@@ -102,16 +134,17 @@ class Theme_Assets
         if ( file_exists( $dir ) && file_exists( $file ) ) :
             $content = file_get_contents( $file );
 
-            $style_pos_1 = strpos($content, '.main-nav-wrapper .genesis-nav-menu .sub-menu a');
-            $part = substr($content, $style_pos_1 + 1 + strlen('.main-nav-wrapper .genesis-nav-menu .sub-menu a'));
-            $style_pos_2 = strpos($part, '{');
-            $part = substr($part, $style_pos_2 + 1);
-            $style_pos_3 = strpos($part, '}');
-            $part = substr($part, 1, $style_pos_3 - 1);
+            $pos = strpos($content, '.main-nav-wrapper .genesis-nav-menu .sub-menu a');
+            $part = substr($content, $pos + 1 + strlen('.main-nav-wrapper .genesis-nav-menu .sub-menu a'));
+            $pos = strpos($part, '{');
+            $part = substr($part, $pos + 1);
+            $pos = strpos($part, '}');
+            $part = substr($part, 1, $pos - 1);
+
             return trim($part);
         endif;
 
-        return false;
+        return null;
     }
 
     public static function different_fixes() {
