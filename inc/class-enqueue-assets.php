@@ -33,6 +33,16 @@ class Theme_Assets
                     #menu-main-nav .sub-menu_inline > .sub-menu a {
                         height:100%;
                         border: none;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background {
+                        max-height: unset;
+                        max-width: unset;
+                        text-align: center;
+                        margin: auto auto 10px;
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu > .menu-item {
                         border-top: none;

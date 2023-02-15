@@ -38,12 +38,18 @@ function image_shortcode( $atts ) {
 
             ob_start();
 
-            if ( strpos($image[0], '.svg') && !$attrs ) :
-                ?>
-                    <div class="image--shortcode">
-                        <div class="image--shortcode-background svg-image"><img src="<?=$image[0]?>" alt=""></div>
-                    </div>
-                <?php
+            if ( strpos($image[0], '.svg') && !$attrs ) : // TODO: check
+                $path = get_attached_file($atts['id']);
+
+                if ( file_exists($path) ) :
+                    $content = file_get_contents($path);
+                    ?>
+                        <div class="image--shortcode">
+                            <div class="image--shortcode-background svg-image"><?=$content?></div>
+                        </div>
+                    <?php
+                endif;
+
             else :
                 ?>
                 <style>.image--shortcode-background.<?=$id?> {background: url("<?=$image[0]?>") no-repeat center center;
