@@ -27,21 +27,24 @@ class Theme_Assets
                     #menu-main-nav .sub-menu_inline > .sub-menu {
                         display: flex;
                         justify-content: center;
-                        width: 100vw;
+                        width: calc( 100vw + 10px );
                         <?=$background_style?>
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu a {
                         height:100%;
                         border: none;
                     }
-                    .main-nav-wrapper .genesis-nav-menu > .menu-item.sub-menu_inline > .sub-menu > .menu-item {
+                    #menu-main-nav .sub-menu_inline > .sub-menu > .menu-item {
                         border-top: none;
                     }
-                    .main-nav-wrapper .genesis-nav-menu > .menu-item.sub-menu_inline > .sub-menu {
+                    #menu-main-nav .sub-menu_inline > .sub-menu {
                         border-bottom: none;
                     }
                 </style>
             <?php
+
+            wp_enqueue_script('sub-menu-inline', THEME_URL. '/js/sub-menu-inline.js', ['jquery'], TT_THEME_VERSION, true);
+
         endif;
     }
 
