@@ -75,11 +75,12 @@ class Theme_Assets
                         order: 2;
                     }
                     .navbar-collapse .mobile-nav .sub-menu_inline .sub-menu.dropdown-menu a .image--shortcode .image--shortcode-background.svg-image {
-                        margin: 0 3rem;
+                        margin: 0 3rem 0 0;
                     }
                     .navbar-collapse .mobile-nav .sub-menu_inline .sub-menu.dropdown-menu a .image--shortcode .image--shortcode-background svg {
                         height: 3rem;
                         margin: -1rem 0;
+                        width: 100%;
                     }
                 </style>
             <?php
