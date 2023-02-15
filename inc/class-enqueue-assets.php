@@ -22,6 +22,9 @@ class Theme_Assets
             $background_style = self::get_cached_data()
                 ?: (self::fetch_submenu_background() ?: 'background: white');
 
+            $text_color = 'white';
+            $hover_text_color = '#0a84c7';
+
             ?>
                 <style>
                     #menu-main-nav .sub-menu_inline > .sub-menu {
@@ -43,6 +46,27 @@ class Theme_Assets
                         max-width: unset;
                         text-align: center;
                         margin: auto auto 10px;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background svg {
+                        fill: <?=$text_color?>;
+                        height: 50px;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a:hover .image--shortcode .image--shortcode-background svg {
+                        fill: <?=$hover_text_color?>;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background svg g {
+                        stroke: <?=$text_color?>;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g {
+                        stroke: <?=$hover_text_color?>;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a .image--shortcode .image--shortcode-background svg g path {
+                        stroke: <?=$text_color?>;
+                        fill: <?=$text_color?>;
+                    }
+                    #menu-main-nav .sub-menu_inline > .sub-menu a:hover .image--shortcode .image--shortcode-background svg g path {
+                        stroke: <?=$hover_text_color?>;
+                        fill: <?=$hover_text_color?>;
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu > .menu-item {
                         border-top: none;

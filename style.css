@@ -2100,9 +2100,9 @@ nav {
 }
 
 #menu-main-nav a .image--shortcode-background.svg-image {
-    margin: -2px 5px 0;
+    margin: 0 5px 0;
 }
 
-#menu-main-nav a .image--shortcode-background.svg-image img {
+#menu-main-nav a .image--shortcode-background.svg-image svg {
     height: 1.5rem;
 }

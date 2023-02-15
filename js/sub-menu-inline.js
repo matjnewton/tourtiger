@@ -2,7 +2,7 @@
 
 !( function($){ $( function() {
 
-    setTimeout( init, 10 );
+    setTimeout( init, 500 );
 
     function init() {
 
