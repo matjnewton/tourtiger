@@ -8,7 +8,7 @@
 
     function init() {
 
-        if ( $(window).width() > 1024 ) {
+        if ( $(window).width() > 991 ) {
             const $items = $('#menu-main-nav .sub-menu_inline')
 
             $items.each(id => {

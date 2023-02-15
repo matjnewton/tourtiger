@@ -82,6 +82,9 @@ class Theme_Assets
                         margin: -1rem 0;
                         width: 100%;
                     }
+                    .site-header .logo {
+                        z-index: 10;
+                    }
                 </style>
             <?php
 
