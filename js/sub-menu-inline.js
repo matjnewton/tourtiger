@@ -21,7 +21,7 @@
                 $sub_menu.css({left: '-' + position + 'px'});
 
                 $sub_menu.append($(`<style>
-                .main-nav-wrapper .genesis-nav-menu>.menu-item>.sub-menu:before {
+                .main-nav-wrapper .genesis-nav-menu>.menu-item.sub-menu_inline>.sub-menu:before {
                     right: calc( 100vw - ${ position + title_width - 7 }px );
                 }            
                 </style>`))
