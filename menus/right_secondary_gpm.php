@@ -10,7 +10,7 @@
                         $use_media = get_option( 'options_use_social_media_in_main_nav' );
                         $social_media = get_option( 'options_social_media' );
                         if($social_media && ($use_media == true)): ?>
-                        <div class="social-media <?php if($call_on_mobile==false):?>hidden-xs<?php endif;?>">
+                        <div class="social-media<?php if($call_on_mobile==false):?> hidden-xs<?php endif;?>">
                         <ul class="genesis-nav-menu">
                            <?php include(locate_template('partials/social_media_gpm.php' )); ?>
                         </ul>
@@ -25,7 +25,7 @@ if ( $phone_number && ! $custom_phone_html ) :
   $phone = preg_replace('/\D+/', '', $phone_number);
   ?>
 
-  <div class="phone <?php if($call_on_mobile==false):?>hidden-xs<?php endif;?>" style="text-align: right">
+  <div class="phone<?php if($call_on_mobile==false):?> hidden-xs<?php endif;?>"<?php if($call_on_mobile==false):?> style="text-align: right"<?php endif;?>>
     <i class="fa fa-phone"></i>
     <a href="tel:<?php echo $phone; ?>"  style="text-align: right">
       <?php echo $phone_number; ?>
