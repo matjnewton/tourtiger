@@ -479,6 +479,10 @@ function tt1_get_first_value_if_array( $value ){
     endif;
 }
 
+// Disabling comments
+
+ include THEME_PATH . '/inc/class-disabling-comments.php';
+
 
 // Rest API routes - mute while not needed
 
