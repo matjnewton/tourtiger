@@ -38,6 +38,7 @@ class Theme_Assets
                         display: flex;
                         justify-content: center;
                         width: calc( 100vw + 10px );
+                        top: calc(100% + 8px);
                         <?=$background_style?>
                     }
                     #menu-main-nav .sub-menu_inline > .sub-menu a {
