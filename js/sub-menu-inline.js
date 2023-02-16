@@ -19,11 +19,15 @@
                 const title_width = Math.round($title.width());
 
                 $sub_menu.css({left: '-' + position + 'px'});
+                const nav_wrapper_height = $('.main-nav-wrapper').height();
 
                 $sub_menu.append($(`<style>
                 .main-nav-wrapper .genesis-nav-menu>.menu-item.sub-menu_inline>.sub-menu:before {
                     right: calc( 100vw - ${ position + title_width - 7 }px );
-                }            
+                } 
+                #menu-main-nav .sub-menu_inline:hover > .sub-menu {
+                    top: ${nav_wrapper_height + 'px'};
+                }           
                 </style>`))
             });
         }
