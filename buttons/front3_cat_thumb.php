@@ -2,7 +2,7 @@
                             include(locate_template('includes/integrate_vars.php' ));
                         ?>
                         <?php if($integrate_xola && $use_as_integration_link): ?>
-                            
+
                             <?php if($third_party == "xola-single-item"): ?>
                             <?php
                                 $xsi = explode(",",$link);
@@ -68,6 +68,18 @@
                                 <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />
                                 <div class="tile-tint"></div>
                                 <div class="tile-tint2"></div>
+                                <div class="name-wrapper">
+                                    <div class="name">
+                                        <strong>
+				                            <?php echo $headline; ?>
+                                        </strong>
+                                    </div>
+                                </div>
+
+                                <div class="btn-tour">
+                                    <div class="txt-button-tour"><?php if($button_label): echo $button_label; else: echo "View Tour"; endif; ?></div>
+                                    <div class="hover-button-tour"></div>
+                                </div>
                             </a>
                             <?php endif; ?>
                         <?php endif; ?>
