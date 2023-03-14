@@ -10632,21 +10632,6 @@ function get_hero_area_button_options_version_1() {
                             'layout' => 'horizontal',
                             'toggle' => 0,
                           ),
-	                        array (
-		                        'key' => 'field_wtdgeyhfu',
-		                        'label' => 'Image hover effect',
-		                        'name' => 'image-hover-effect',
-		                        'type' => 'radio',
-		                        'required' => 0,
-		                        'conditional_logic' => 0,
-		                        'choices'=>[
-			                        'zoom-in'=>'Zoom in',
-			                        'blur'=>'Blur',
-			                        'grayscale-to-colors'=>'Grayscale to colors'
-		                        ],
-		                        'allow_null'=>1,
-		                        'layout'=> 'horizontal',
-	                        ),
                           array (
                             'key' => 'field_561d6b95137d2',
                             'label' => 'Image',

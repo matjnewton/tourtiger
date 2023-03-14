@@ -26,7 +26,7 @@
                     right: calc( 100vw - ${ position + title_width - 7 }px );
                 } 
                 #menu-main-nav .sub-menu_inline:hover > .sub-menu {
-                    top: ${nav_wrapper_height + 'px'};
+                    top: calc(${nav_wrapper_height + 'px'} - 2rem);
                 }           
                 </style>`))
             });
