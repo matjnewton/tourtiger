@@ -940,7 +940,7 @@ acf_add_local_field_group(array (
                                       'required' => 0,
                                       'conditional_logic' => '',
                                       'wrapper' => array (
-                                        'width' => '33%',
+                                        'width' => '23%',
                                         'class' => '',
                                         'id' => '',
                                       ),
@@ -954,6 +954,24 @@ acf_add_local_field_group(array (
                                       'default_value' => 'no-circle',
                                       'layout' => 'horizontal',
                                     ),
+//                                      array (
+//                                          'key' => 'field_twgy6e7yru8',
+//                                          'label' => 'Image hover effect',
+//                                          'name' => 'image-hover-effect',
+//                                          'type' => 'radio',
+//                                          'required' => 0,
+//                                          'conditional_logic' => 0,
+//                                          'choices'=>[
+//                                              'zoom-in'=>'Zoom in',
+//                                              'blur'=>'Blur',
+//                                              'grayscale-to-colors'=>'Grayscale to colors'
+//                                          ],
+//                                          'wrapper' => array (
+//                                              'width' => '43%',
+//                                          ),
+//                                          'allow_null'=>1,
+//                                          'layout'=> 'horizontal',
+//                                      ),
                                       array (
                                           'key' => 'field_5824928siviert',
                                           'label' => 'Use spritesheet',
@@ -1069,7 +1087,7 @@ acf_add_local_field_group(array (
                                       'required' => '',
                                       'conditional_logic' => '',
                                       'wrapper' => array (
-                                        'width' => '50',
+                                        'width' => '20',
                                         'class' => '',
                                         'id' => '',
                                       ),
@@ -1089,7 +1107,7 @@ acf_add_local_field_group(array (
                                       'required' => '',
                                       'conditional_logic' => '',
                                       'wrapper' => array (
-                                        'width' => '50',
+                                        'width' => '20',
                                         'class' => '',
                                         'id' => '',
                                       ),
@@ -1109,7 +1127,7 @@ acf_add_local_field_group(array (
                                       'required' => '',
                                       'conditional_logic' => '',
                                       'wrapper' => array (
-                                        'width' => '50',
+                                        'width' => '20',
                                         'class' => '',
                                         'id' => '',
                                       ),

@@ -523,117 +523,122 @@ function tourtiger_sub_contents(){ ?>
             </div><!-- end .reasons-->
                             </div><!-- end .container-->
     <?php endif; ?>
-                            <?php if( get_row_layout() == 'map'): ?>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12">
+    <?php if( get_row_layout() == 'map'): ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
 
-                                <?php $custom_heading = get_sub_field('custom_heading'); ?>
-                                <?php
-                                    $center = get_sub_field('map_center_address');
-                                    $zoom = get_sub_field('zoom');
-                                 ?>
-                                <?php $content = '[bgmp-map center="'.$center.'" zoom="'.$zoom.'"]'; ?>
-                            <div class="map">
-                                <?php if($custom_heading): ?>
-                                <h2 class="custom-heading">
-                                    <?php echo $custom_heading; ?>
-                                </h2>
+        <?php $custom_heading = get_sub_field('custom_heading'); ?>
+        <?php
+            $center = get_sub_field('map_center_address');
+            $zoom = get_sub_field('zoom');
+         ?>
+        <?php $content = '[bgmp-map center="'.$center.'" zoom="'.$zoom.'"]'; ?>
+    <div class="map">
+        <?php if($custom_heading): ?>
+        <h2 class="custom-heading">
+            <?php echo $custom_heading; ?>
+        </h2>
+        <?php endif; ?>
+        <?php echo do_shortcode( $content ) ?>
+
+    </div>
+
+                </div>
+            </div>
+        </div><!-- end .container-->
+    <?php endif; ?>
+
+    <?php if( get_row_layout() == 'fluid_boxes'): ?>
+    <div class="container-fluid fluid-boxes">
+        <div class="row even-grid">
+            <?php if( have_rows('boxes_set') ): ?>
+                <?php $n = 0; ?>
+                <?php while ( have_rows('boxes_set') ) : the_row(); ?>
+                <?php $n++; ?>
+                    <?php if( get_row_layout() == 'content_button'): ?>
+                    <?php
+                        $pull = get_sub_field('pull');
+                        $color_style = get_sub_field('background_color_style');
+                        $heading = get_sub_field('heading');
+                        $textarea = get_sub_field('textarea');
+                        $button_text = get_sub_field('button_text');
+                        $button_link = get_sub_field('button_link');
+                        $open_in_iframe = get_sub_field('open_in_iframe');
+                        ?>
+                        <div class="col-sm-6 s-item<?php if( (is_array($pull) && in_array('left', $pull)) && !(is_array($pull) && in_array('right', $pull))): ?> box-left<?php elseif( (is_array($pull) && in_array('right', $pull)) && !(is_array($pull) && in_array('left', $pull))): ?> box-right<?php endif; ?><?php if($color_style == 'Variation-1'): ?> color-variation-1<?php elseif($color_style == 'Variation-2'): ?> color-variation-2<?php endif; ?>">
+                            <div class="inner-wrapper center-block">
+                                <?php if($heading): ?>
+                                <h2><?php echo $heading; ?></h2>
                                 <?php endif; ?>
-                                <?php echo do_shortcode( $content ) ?>
-
-                            </div>
-
-                                        </div>
-                                    </div>
-                                </div><!-- end .container-->
-                            <?php endif; ?>
-
-                            <?php if( get_row_layout() == 'fluid_boxes'): ?>
-                            <div class="container-fluid fluid-boxes">
-                            	<div class="row even-grid">
-                                	<?php if( have_rows('boxes_set') ): ?>
-                                        <?php $n = 0; ?>
-                                        <?php while ( have_rows('boxes_set') ) : the_row(); ?>
-                                        <?php $n++; ?>
-                                            <?php if( get_row_layout() == 'content_button'): ?>
-                                            <?php
-                                                $pull = get_sub_field('pull');
-                                                $color_style = get_sub_field('background_color_style');
-                                                $heading = get_sub_field('heading');
-                                                $textarea = get_sub_field('textarea');
-                                                $button_text = get_sub_field('button_text');
-                                                $button_link = get_sub_field('button_link');
-                                                $open_in_iframe = get_sub_field('open_in_iframe');
-                                                ?>
-                                    <div class="col-sm-6 s-item<?php if( (is_array($pull) && in_array('left', $pull)) && !(is_array($pull) && in_array('right', $pull))): ?> box-left<?php elseif( (is_array($pull) && in_array('right', $pull)) && !(is_array($pull) && in_array('left', $pull))): ?> box-right<?php endif; ?><?php if($color_style == 'Variation-1'): ?> color-variation-1<?php elseif($color_style == 'Variation-2'): ?> color-variation-2<?php endif; ?>">
-                                    	<div class="inner-wrapper center-block">
-                                        	<?php if($heading): ?>
-                                            <h2><?php echo $heading; ?></h2>
-                                            <?php endif; ?>
-                                            <?php if($textarea): ?>
-                                            <p><?php echo $textarea; ?></p>
-                                            <?php endif; ?>
-                                            <?php if($button_text): ?>
-                                            <div class="view-btn-wrapper"> <?php //@todo:?>
-                                                <div class="view-tour-btn">
-                                                    <a <?php if($open_in_iframe):?>class="iframe-opener"<?php  endif; ?>href="<?php if($button_link): echo $button_link; else: ?>#<?php endif; ?>" <?php if($open_in_iframe):?>target="iframe1"<?php endif;?>>
-                                                    <?php echo $button_text; ?>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-
-                                            <?php endif; ?>
-                                    	</div>
-
-                                	</div>
-                                            <?php endif;/*end content_button*/ ?>
-                                            <?php if( get_row_layout() == 'image'): ?>
-                                            <?php
-                                                $pull = get_sub_field('pull');
-                                                $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
-                                                ?>
-                                            <?php if($image_url): ?>
-                                    <div class="col-sm-6 s-item<?php if( is_array($pull) && in_array('left', $pull)): ?> box-left<?php elseif(is_array($pull) && in_array('right', $pull)): ?> box-right<?php endif; ?>" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover; background-position:center center; min-height:410px;"></div>
-                                            <?php endif; ?>
-                                            <?php endif; /*end image*/ ?>
-                                            <?php if((($n % 2) == 0)): ?>
-                                            <hr class="col-sm-12" />
-                                            <?php endif; ?>
-                                        <?php endwhile; ?>
-                                    <?php endif; ?>
-                            	</div><!-- .row-->
-                            </div>
-                            <?php endif; ?>
-
-                            <?php if( get_row_layout() == 'image_gallery'): ?>
-                            <div class="container-fluid fluid-gallery photo-gallery">
-                                    <div class="row">
-                                <?php $images = get_sub_field('gallery'); ?>
-                                <?php if( $images ): ?>
-                                        <?php foreach( $images as $image ): ?>
-                            <?php
-                                $img_url = $image['url'];
-                                $thumbnail = aq_resize( $img_url, 384, 288, true );
-                            ?>
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <a href="<?php echo $img_url; ?>" class="photo-thumbnail">
-                                            <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive" />
+                                <?php if($textarea): ?>
+                                <p><?php echo $textarea; ?></p>
+                                <?php endif; ?>
+                                <?php if($button_text): ?>
+                                <div class="view-btn-wrapper"> <?php //@todo:?>
+                                    <div class="view-tour-btn">
+                                        <a <?php if($open_in_iframe):?>class="iframe-opener"<?php  endif; ?>href="<?php if($button_link): echo $button_link; else: ?>#<?php endif; ?>" <?php if($open_in_iframe):?>target="iframe1"<?php endif;?>>
+                                        <?php echo $button_text; ?>
                                         </a>
                                     </div>
-                                        <?php endforeach; ?>
-                                <?php endif; ?>
-                                    </div>
-                            </div><!-- end .container-fluid-->
-                            <?php endif; /*end image_gallery*/ ?>
+                                </div>
 
-                            <?php if( get_row_layout() == 'tour_boxes'): ?>
-                            <div class="container">
-                                <div class="featured-tours-2">
-                                <div class="row">
-                                    <?php global $post; ?>
-                                    <?php
+
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                        <?php endif;/*end content_button*/ ?>
+                        <?php if( get_row_layout() == 'image'): ?>
+                        <?php
+                            $pull = get_sub_field('pull');
+                            $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
+                            ?>
+                        <?php if($image_url): ?>
+                        <div class="col-sm-6 s-item<?php if( is_array($pull) && in_array('left', $pull)): ?> box-left<?php elseif(is_array($pull) && in_array('right', $pull)): ?> box-right<?php endif; ?>" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover; background-position:center center; min-height:410px;"></div>
+                                <?php endif; ?>
+                                <?php endif; /*end image*/ ?>
+                                <?php if((($n % 2) == 0)): ?>
+                                <hr class="col-sm-12" />
+                                <?php endif; ?>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            </div><!-- .row-->
+                        </div>
+                        <?php endif; ?>
+
+            <?php if( get_row_layout() == 'image_gallery'): ?>
+            <div class="container-fluid fluid-gallery photo-gallery">
+                    <div class="row">
+                <?php $images = get_sub_field('gallery'); ?>
+                <?php if( $images ): ?>
+                        <?php foreach( $images as $image ): ?>
+            <?php
+                $img_url = $image['url'];
+                $thumbnail = aq_resize( $img_url, 384, 288, true );
+            ?>
+                    <div class="col-xs-6 col-sm-6 col-md-3">
+                        <a href="<?php echo $img_url; ?>" class="photo-thumbnail">
+                            <img src="<?php echo $thumbnail; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive" />
+                        </a>
+                    </div>
+                        <?php endforeach; ?>
+                <?php endif; ?>
+                    </div>
+            </div><!-- end .container-fluid-->
+            <?php endif; /*end image_gallery*/ ?>
+
+            <?php if( get_row_layout() == 'tour_boxes'):
+
+            $image_hover_effect = get_sub_field('image-hover-effect');
+            $image_hover_class = $image_hover_effect ? 'image-hover-effect_'.$image_hover_effect : '';
+
+            ?>
+                <div class="container">
+                    <div class="featured-tours-2">
+                    <div class="row <?=$image_hover_class ?>">
+                        <?php global $post; ?>
+                        <?php
                     $number_of_columns = get_sub_field('number_of_columns');
                     $col = 0;
                     if($number_of_columns):
