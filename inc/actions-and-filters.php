@@ -386,6 +386,37 @@ add_action('wp_head', function(){
    echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
 }, 12);
 // =====================================================================================================================
+/** Fix issue with "Styles" plugin:
+ * https://trello.com/c/Mh2fHxnw/4503-styles-go-off-when-updating-logo-ttv1
+ * An attempt of saving new favicon caused styles crash.
+ * Solution:
+ * 1. hide "Customize" from menu
+ * 2. Add separate field for site icon
+ * **/
+
+add_action('admin_footer', function(){
+	?>
+    <style>
+        .hide-if-no-customize {
+            display: none;
+        }
+    </style>
+	<?php
+});
+
+add_filter('get_site_icon_url', function( $url, $size, $blog_id ){
+
+	$disable_favicons = get_field('disable_favicons', 'option');
+
+	if ( $disable_favicons )
+		return null;
+
+	if ( $fav_id = get_field('favicons_image', 'option') ) :
+		return wp_get_attachment_image_url( $fav_id, $size );
+	endif;
+
+	return $url;
+}, 10000, 3);
 
 
 // =====================================================================================================================
