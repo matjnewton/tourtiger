@@ -1534,6 +1534,14 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'placement' => 'top',
         'endpoint' => 0,
       ),
+	    array (
+		    'key' => 'field_yweh52r4te64yr9w',
+		    'label' => 'Logo image',
+		    'name' => 'logo_image_accordion',
+		    'type' => 'accordion',
+		    'instructions' => '',
+		    'required' => 0,
+	    ),
       array (
         'key' => 'field_53c13d6555a10',
         'label' => 'Use Logo Image',
@@ -1583,6 +1591,14 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'mime_types' => '',
       ),
 	    array (
+		    'key' => 'field_ywehfudisdopfkc',
+		    'label' => 'Site Icon',
+		    'name' => 'site icon_accordion',
+		    'type' => 'accordion',
+		    'instructions' => '',
+		    'required' => 0,
+	    ),
+	    array (
 		    'key' => 'field_yegdthfu',
 		    'label' => 'Disable Site Icon (Favicon)',
 		    'name' => 'disable_favicons',
@@ -1629,6 +1645,15 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
 		    'max_height' => 0,
 		    'max_size' => 0,
 		    'mime_types' => '',
+	    ),
+	    array (
+		    'key' => 'field_yweyeufyw67r89kc',
+		    'label' => 'Site Icon',
+		    'name' => 'site_icon_accordion_endpoint',
+		    'type' => 'accordion',
+			'endpoint'=>1,
+		    'instructions' => '',
+		    'required' => 0,
 	    ),
       array (
         'key' => 'field_53c13d8d55a11',
