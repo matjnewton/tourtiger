@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$tour_content_content_classes .= ' pc--c__testimonial';
 	$pc_content_testimonial = 'tour_pc-coltype--testimonial_ob';
 
@@ -9,27 +9,27 @@
 	}
 
 	if( get_sub_field( $pc_content_testimonial ) ) : ?>
-		<div 
-			class="<?php echo $tour_content_content_classes; ?>" 
+		<div
+			class="<?php echo $tour_content_content_classes; ?>"
 			style="<?php echo $tour_content_content_styles; ?>">
 			<div class="pc--c__testimonial--slider js-new-slider">
-				
-			 	<?php foreach( get_sub_field( $pc_content_testimonial ) as $post_object): ?>
-					<div class="pc--c__testimonial--item" align="center">
 
-						<?php if ( 
-							get_field( 'photo', $post_object->ID )  
+			 	<?php foreach( get_sub_field( $pc_content_testimonial ) as $post_object): ?>
+					<div class="pc--c__testimonial--item" style="text-align: center;max-width: 100vw">
+
+						<?php if (
+							get_field( 'photo', $post_object->ID )
 							&& in_array( 'logo', $cc_style__test_show )
 						) { ?>
 							<div class="pc--c__testimonial--logo">
-								<img 
-									src="<?php echo get_field( 'photo', $post_object->ID ); ?>" 
+								<img
+									src="<?php echo get_field( 'photo', $post_object->ID ); ?>"
 									alt="<?php echo get_the_title($post_object->ID); ?>" />
 							</div>
 						<?php } ?>
 
-						<?php if ( 
-							get_the_title($post_object->ID) 
+						<?php if (
+							get_the_title($post_object->ID)
 							&& in_array( 'title', $cc_style__test_show )
 						) { ?>
 							<h3 class="pc--c__testimonial--title">
@@ -37,8 +37,8 @@
 							</h3>
 						<?php } ?>
 
-						<?php if ( 
-							get_field( 'testimonial_quote', $post_object->ID ) 
+						<?php if (
+							get_field( 'testimonial_quote', $post_object->ID )
 							&& in_array( 'excerpt', $cc_style__test_show )
 						) { ?>
 							<p class="pc--c__testimonial--description">
@@ -46,13 +46,13 @@
 							</p>
 						<?php } ?>
 
-						<?php if ( 
-							get_field( 'testimonial_link', $post_object->ID ) 
+						<?php if (
+							get_field( 'testimonial_link', $post_object->ID )
 							&& in_array( 'link', $cc_style__test_show )
 						) { ?>
-							<a 
-								target="_blank" 
-								href="<?php echo get_field( 'testimonial_link', $post_object->ID ); ?>" 
+							<a
+								target="_blank"
+								href="<?php echo get_field( 'testimonial_link', $post_object->ID ); ?>"
 								class="pc--c__testimonial--link">
 								<?php echo get_field( 'testimonial_link_anchor_text', $post_object->ID ); ?>
 							</a>
