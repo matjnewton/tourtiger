@@ -1,6 +1,7 @@
 <?php
     $phone_number = get_option( 'options_phone_number' );
-    $call_on_mobile = get_field( 'click_to_call', 'option' );
+    $call_on_mobile = get_field( 'click_to_call', 'option' ); // phone number
+    $social_media_mobile = get_field('social_media_on_mobile', 'option');
 ?>
 
 <?php if(function_exists('icl_object_id')): ?>
@@ -10,7 +11,7 @@
                         $use_media = get_option( 'options_use_social_media_in_main_nav' );
                         $social_media = get_option( 'options_social_media' );
                         if($social_media && ($use_media == true)): ?>
-                        <div class="social-media<?php if($call_on_mobile==false):?> hidden-xs<?php endif;?>">
+                        <div class="social-media<?php if($social_media_mobile==false):?> hidden-xs<?php endif;?>">
                         <ul class="genesis-nav-menu">
                            <?php include(locate_template('partials/social_media_gpm.php' )); ?>
                         </ul>

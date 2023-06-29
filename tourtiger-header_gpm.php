@@ -99,10 +99,14 @@ if($custom_header == true): ?>
         $secondary_menu = get_option( 'options_include_secondary_menu' );
         if(($secondary_menu == true) && ($logo_covers_both_menus == false)): ?>
         <div class="secondary-menu-wrapper">
-            <?php $call_on_mobile = get_field( 'click_to_call', 'option' );
-            $moto_mobile = get_field('motto_mobile', 'option'); ?>
+            <?php
+            $call_on_mobile = get_field( 'click_to_call', 'option' ); // phone number option
+            $moto_mobile = get_field('motto_mobile', 'option');
+            $social_media_mobile = get_field('social_media_on_mobile', 'option');
+            ?>
             <div class="<?php
-            if(!function_exists('icl_object_id')&&($call_on_mobile==false)&&!$moto_mobile):?>hidden-xs <?php endif;?>container">
+            if(!function_exists('icl_object_id')&&($call_on_mobile==false)&&!$moto_mobile&&!$social_media_mobile)
+                :?>hidden-xs <?php endif;?>container">
             <?php include(locate_template('menus/secondary_menu_gpm.php' )); ?>
             </div>
         </div>

@@ -1852,7 +1852,7 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         ),
         array (
             'key' => 'field_571b51f415fc4',
-            'label' => 'Phone number and social icons (if "Use Social media in Header" enabled) on mobile',
+            'label' => 'Phone number on mobile',
             'name' => 'click_to_call',
             'type' => 'true_false',
             'instructions' => '',
@@ -1961,6 +1961,21 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'message' => '',
         'default_value' => 0,
       ),
+
+    array (
+        'key' => 'field_536t5duhy10ienmd',
+        'label' => 'Social media on mobile',
+        'name' => 'social_media_on_mobile',
+        'type' => 'true_false',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array (
+            'width' => 50,
+        ),
+        'message' => 'Show',
+        'default_value' => 0,
+    ),
 
     array (
         'key' => 'field_53c6d1a6110ienmd',
