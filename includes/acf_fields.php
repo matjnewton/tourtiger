@@ -1850,22 +1850,22 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
             'name' => 'custom_phone_html_in_footer',
             'type' => 'true_false',
         ),
-      array (
-        'key' => 'field_571b51f415fc4',
-        'label' => 'Phone number on mobile',
-        'name' => 'click_to_call',
-        'type' => 'true_false',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array (
-          'width' => '100',
-          'class' => '',
-          'id' => '',
+        array (
+            'key' => 'field_571b51f415fc4',
+            'label' => 'Phone number and social icons (if enabled) on mobile',
+            'name' => 'click_to_call',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '100',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => 'Show',
+            'default_value' => 0,
         ),
-        'message' => 'Show',
-        'default_value' => 0,
-      ),
       array (
         'key' => 'field_537dde9d5c368',
         'label' => 'Social media',
@@ -1976,8 +1976,6 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         'message' => '',
         'default_value' => 0,
     ),
-
-
       array (
         'key' => 'field_552061311b125',
         'label' => 'Keep Search Box',

@@ -5,7 +5,7 @@
 <div class="row">
 
     <div class="col-xs-12 col-sm-6<?php if ($call_on_mobile==false): ?> hidden-xs<?php endif;?>">
-            <div class="above-split-bar test" <?php if ($call_on_mobile==false): ?>style="text-align: left;"<?php endif;?>>
+            <div class="above-split-bar" <?php if ($call_on_mobile==false): ?>style="text-align: left;"<?php endif;?>>
                 <?php echo $motto;?>
             </div>
     </div>
