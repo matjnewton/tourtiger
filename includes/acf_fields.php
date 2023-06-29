@@ -1852,7 +1852,7 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
         ),
         array (
             'key' => 'field_571b51f415fc4',
-            'label' => 'Phone number and social icons (if enabled) on mobile',
+            'label' => 'Phone number and social icons (if "Use Social media in Header" enabled) on mobile',
             'name' => 'click_to_call',
             'type' => 'true_false',
             'instructions' => '',
@@ -1949,7 +1949,7 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
       ),
       array (
         'key' => 'field_53c6d1a611004',
-        'label' => 'Use Social media in Main nav',
+        'label' => 'Use Social media in Header',
         'name' => 'use_social_media_in_main_nav',
         'type' => 'true_false',
         'instructions' => '',
@@ -1964,7 +1964,7 @@ In the Spritesheet Stylesheet you will be able to find class names associated wi
 
     array (
         'key' => 'field_53c6d1a6110ienmd',
-        'label' => 'Use Social media in mobile header',
+        'label' => 'Use Social media in Main nav on mobile',
         'name' => 'use_social_media_in_mobile_header',
         'type' => 'true_false',
         'instructions' => '',
