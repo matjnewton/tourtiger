@@ -10,7 +10,7 @@
 		$cc_style__test_show = get_sub_field( 'cc_style__test_show' );
 	}
 
-    $cc_style__test_show = $cc_style__test_show ?? '';
+    $cc_style__test_show = $cc_style__test_show ?? [];
 
 if( get_sub_field( $pc_content_testimonial ) ) : ?>
 		<div
@@ -23,6 +23,7 @@ if( get_sub_field( $pc_content_testimonial ) ) : ?>
 
 						<?php if (
 							get_field( 'photo', $post_object->ID )
+							&& in_array( 'logo', $cc_style__test_show )
 						) { ?>
 							<div class="pc--c__testimonial--logo">
 								<img
@@ -33,6 +34,7 @@ if( get_sub_field( $pc_content_testimonial ) ) : ?>
 
 						<?php if (
 							get_the_title($post_object->ID)
+							&& in_array( 'title', $cc_style__test_show )
 						) { ?>
 							<h3 class="pc--c__testimonial--title">
 								<?php echo get_the_title($post_object->ID); ?>
@@ -41,6 +43,7 @@ if( get_sub_field( $pc_content_testimonial ) ) : ?>
 
 						<?php if (
 							get_field( 'testimonial_quote', $post_object->ID )
+							&& in_array( 'excerpt', $cc_style__test_show )
 						) { ?>
 							<p class="pc--c__testimonial--description">
 								<?php echo get_field( 'testimonial_quote', $post_object->ID ); ?>
@@ -49,6 +52,7 @@ if( get_sub_field( $pc_content_testimonial ) ) : ?>
 
 						<?php if (
 							get_field( 'testimonial_link', $post_object->ID )
+							&& in_array( 'link', $cc_style__test_show )
 						) { ?>
 							<a
 								target="_blank"

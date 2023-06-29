@@ -1407,7 +1407,7 @@ div.pc--c__accordion + div.pc--c__accordion {
 
 .pc--c__testimonial--slider .pc--c__testimonial--link {
     font-weight: 300;
-    color: #726d6d !important;
+    color: #726d6d;
     font-size: 18px;
     text-decoration: underline
 }
