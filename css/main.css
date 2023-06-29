@@ -3769,7 +3769,6 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 }
 
 .text-hide {
-    font: 0/0 a;
     color: transparent;
     text-shadow: none;
     background-color: transparent;
@@ -3781,7 +3780,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 }
 
 @-ms-viewport {
-    width: device-width
+    width: 100vw;
 }
 
 @media (max-width:767px) {
