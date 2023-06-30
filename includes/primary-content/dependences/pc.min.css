@@ -2170,6 +2170,12 @@ div.pc--c__accordion + div.pc--c__accordion {
     padding: 0
 }
 
+@media (max-width: 767px) {
+    .slick-list {
+        max-width: calc(100vw - 30px);
+    }
+}
+
 .slick-list:focus {
     outline: none
 }

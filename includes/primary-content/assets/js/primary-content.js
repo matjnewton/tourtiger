@@ -266,17 +266,16 @@ window.onload = function () {
           adaptiveHeight: true
         });
 
-        if ( $(window).width()>768 ) // done so due to undiscovered bug of slick slider
-          $('.pc--c__testimonial--slider.js-new-slider').not('.slick-slider').slick({
-            swipe: false,
-            arrows: false,
-            dots: true,
-            adaptiveHeight: true,
-            fade: true,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000,
-          });
+        $('.pc--c__testimonial--slider.js-new-slider').not('.slick-slider').slick({
+          swipe: false,
+          arrows: false,
+          dots: true,
+          adaptiveHeight: true,
+          fade: true,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 5000,
+        });
 
         $('#slider .slides').not('.slick-slider').slick({
           swipe: false,
