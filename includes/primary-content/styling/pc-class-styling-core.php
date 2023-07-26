@@ -149,29 +149,28 @@ class Core extends StylingCard {
           'type' => 'rgba_color',
           'required' => 0,
         ),
-
         array (
-          'key' => 'fc_' . $i . '_iI_7n851',
+          'key' => 'fc_' . $i . '_iI_7nwe851',
           'label' => 'Hero CTA Button',
           'name' => 'hero_cta_bg',
           'type' => 'rgba_color',
           'required' => 0,
         ),
-        array (
-          'key' => 'fc_' . $i . '_CH_7n851',
-          'label' => 'Hero CTA Lighten Button',
-          'name' => 'hero_cta_lighten_bg',
-          'type' => 'rgba_color',
-          'required' => 0,
-          'instruction' => 'Usually it is 10% lightener than Hero CTA Lighten Button'
-        ),
-        array (
-          'key' => 'fc_' . $i . '_iI_8m942',
-          'label' => 'Hero CTA Button fill',
-          'name' => 'hero_cta_fill',
-          'type' => 'true_false',
-          'required' => 0,
-        ),
+		array (
+			'key' => 'fc_' . $i . '_iI_7sd76ey51',
+			'label' => 'Hero CTA Button on Mouseover',
+			'name' => 'hero_cta_hover_bg',
+			'type' => 'rgba_color',
+			'required' => 0,
+		),
+		array (
+			'key' => 'fc_' . $i . '_CH_7ween851',
+			'label' => 'Hero CTA Lighten Button',
+			'name' => 'hero_cta_lighten_bg',
+			'type' => 'rgba_color',
+			'required' => 0,
+			'instruction' => 'Usually it is 10% lightener than Hero CTA Lighten Button'
+		),
         array (
           'key' => 'fc_' . $i . '_iI_7n851',
           'label' => 'Content CTA Button',
@@ -440,8 +439,8 @@ class Core extends StylingCard {
         $mob_tog_btn_bg_h = get_sub_field('mob_tog_btn_bg_h');
 
         $hero_cta_bg         = get_sub_field('hero_cta_bg');
+		$hero_cta_hover_bg   = get_sub_field('hero_cta_hover_bg');
         $hero_cta_lighten_bg = get_sub_field('hero_cta_lighten_bg');
-        $hero_cta_fill       = get_sub_field('hero_cta_fill');
         $hero_cta_content_bg = get_sub_field('hero_cta_content_bg');
         $hero_cta_darken_content_bg  = get_sub_field('hero_cta_darken_content_bg');
         $hero_cta_lighten_content_bg = get_sub_field('hero_cta_lighten_content_bg');
@@ -552,12 +551,14 @@ class Core extends StylingCard {
 
           $css .= ".tile-tint{background:{$tile_image_tint}}";
 
-          $css .= $hero_cta_fill ? ".site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{background:none;border-width:3px;}.site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn:hover{background:{$hero_cta_fill}}" : ".site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{background:{$hero_cta_bg}}";
             $css .= ".site-container .book-tour-wrapper .btn-default.book-btn, .site-container .tour-page-content .book-btn{background:{$hero_cta_content_bg}}";
             $css .= ".site-container .book-tour-wrapper .book-btn2, .site-container .book-btn-wrapper .btn-default.book-btn2{background-color:{$hero_cta_lighten_content_bg}}";
             $css .= ".site-container .book-tour-wrapper .book-btn2:hover{background-color:{$hero_cta_darken_content_bg}}";
             $css .= ".booking-sidebar .arrow-left{border-right: 10px solid {$hero_cta_darken_content_bg}}";
             $css .= ".booking-sidebar .arrow-right{border-left: 10px solid {$hero_cta_darken_content_bg}}";
+
+			$css .= $hero_cta_bg ? ".site-container .book-btn-wrapper .btn-default.book-btn, .site-container .banner .book-btn{background:$hero_cta_bg;transition:.3s}" : "";
+			$css .= $hero_cta_hover_bg  ? ".site-container .book-btn-wrapper .btn-default.book-btn:hover, .site-container .banner .book-btn:hover{background:$hero_cta_hover_bg}" : "";
 
           $css .= ".booking-sidebar .trigger-txt{color:#000}";
           $css .= ".book-btn-wrapper .dropdown-menu > li > .regiondo-button, .site-container .book-btn-wrapper .dropdown-menu, .book-btn-wrapper .dropdown-menu > li > a.zaui-embed-button, .book-btn-wrapper .dropdown-menu > li > a.giso_btn{background-color:rgba({$hero_cta_bg}, 1)}";
