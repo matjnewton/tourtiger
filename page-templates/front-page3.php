@@ -121,21 +121,21 @@ function tourtiger_sub_contents(){ ?>
                 <img alt="<?=$image?>" src="<?=$image?>" class="img-responsive" />
                 <div class="tile-tint"></div>
                 <div class="tile-tint2"></div>
+                <div class="name-wrapper">
+                    <div class="name">
+                        <strong>
+                            <?php the_title(); ?>
+                        </strong>
+                    </div>
+                </div>
+                <div class="btn-tour">
+                    <div class="txt-button-tour"><?php if($button_label): echo $button_label; else: echo "View Tour"; endif; ?></div>
+                    <div class="hover-button-tour"></div>
+                </div>
             </a>
             <?php
         }
         ?>
-                    <div class="name-wrapper">
-                        <div class="name">
-                            <strong>
-                                <?php the_title(); ?>
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="btn-tour">
-                        <div class="txt-button-tour"><?php if($button_label): echo $button_label; else: echo "View Tour"; endif; ?></div>
-                        <div class="hover-button-tour"></div>
-                    </div>
 
                     </div>
                             </div>
