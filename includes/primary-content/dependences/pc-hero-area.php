@@ -1392,6 +1392,36 @@ acf_add_local_field_group(array (
 							'disabled' => 0,
 						),
 						array (
+							'key' => 'pc2131sduhfyri',
+							'label' => 'Flybook Category ID',
+							'name' => 'pc_cta_button_flybook_category_id',
+							'type' => 'text',
+							'instructions' => '',
+							'default_value'=>0,
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'the_fly_booking'
+									)
+								),
+							),
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
 							'key' => 'pc2131012133',
 							'label' => 'CTA Button link',
 							'name' => 'pc_cta_button_url',

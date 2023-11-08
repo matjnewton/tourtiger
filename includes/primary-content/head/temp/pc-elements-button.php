@@ -10,13 +10,14 @@ $button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
   <?php if ($button_one_type === 'the_fly_booking' && $the_fly_book_account_id) :
 
       $product_id = get_sub_field( 'pc_cta_button_flybook_product_id' );
+      $category_id = get_sub_field( 'pc_cta_button_flybook_category_id' ) ?: 0;
 
       ?>
     <button
       class='
         flybook-book-now-button
         fb-widget-type-frontend
-        fb-default-category-id-0
+        fb-default-category-id-<?=$category_id?>
         fb-account-id-<?=$the_fly_book_account_id?>
         fb-entity-config-id-<?=$product_id?>
         fb-domain-go.theflybook.com
@@ -38,12 +39,13 @@ $button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
     <?php $cta_button_url_addt = get_sub_field( 'pc_cta_button_url_addt' ) ? get_sub_field( 'pc_cta_button_url_addt' ) : '#.'; ?>
     <?php if ($button_two_type === 'the_fly_booking' && $the_fly_book_account_id) :
             $product_id = get_sub_field( 'pc_cta_button_flybook_product_id_addt' );
+            $category_id = get_sub_field( 'pc_cta_button_flybook_category_id_addt' ) ?: 0;
             ?>
       <button
           class='
           flybook-book-now-button
           fb-widget-type-frontend
-          fb-default-category-id-0
+          fb-default-category-id-<?=$category_id?>
           fb-account-id-<?=$the_fly_book_account_id?>
           fb-entity-config-id-<?=$product_id?>
           fb-domain-go.theflybook.com
@@ -69,12 +71,13 @@ $button_three_type = get_sub_field( 'pc_button_link_type_addt2' );
         <?php $cta_button_url_addt2 = get_sub_field( 'pc_cta_button_url_addt2' ) ? get_sub_field( 'pc_cta_button_url_addt2' ) : '#.'; ?>
         <?php if ($button_three_type === 'the_fly_booking' && $the_fly_book_account_id) :
             $product_id = get_sub_field( 'pc_cta_button_flybook_product_id_addt2' );
+            $category_id = get_sub_field( 'pc_cta_button_flybook_category_id_addt2' ) ?: 0;
             ?>
             <button
                     class='
           flybook-book-now-button
           fb-widget-type-frontend
-          fb-default-category-id-0
+          fb-default-category-id-<?=$category_id?>
           fb-account-id-<?=$the_fly_book_account_id?>
           fb-entity-config-id-<?=$product_id?>
           fb-domain-go.theflybook.com
