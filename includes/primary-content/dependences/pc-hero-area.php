@@ -1724,6 +1724,36 @@ acf_add_local_field_group(array (
 							'disabled' => 0,
 						),
 						array (
+							'key' => 'pc21318wueu938iyri',
+							'label' => 'Flybook Category ID',
+							'name' => 'pc_cta_button_flybook_category_id_addt',
+							'type' => 'text',
+							'instructions' => '',
+							'default_value'=>0,
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'the_fly_booking'
+									)
+								),
+							),
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
 							'key' => 'pc2131012133_addt',
 							'label' => 'CTA Button link',
 							'name' => 'pc_cta_button_url_addt',
@@ -1837,6 +1867,36 @@ acf_add_local_field_group(array (
 								'id' => '',
 							),
 							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'formatting' => 'none',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+						array (
+							'key' => 'pc2131swe76y38yri',
+							'label' => 'Flybook Category ID',
+							'name' => 'pc_cta_button_flybook_category_id_addt2',
+							'type' => 'text',
+							'instructions' => '',
+							'default_value'=>0,
+							'required' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'pc_ha_014',
+										'operator' => '==',
+										'value' => 'the_fly_booking'
+									)
+								),
+							),
+							'wrapper' => array (
+								'width' => '33',
+								'class' => '',
+								'id' => '',
+							),
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
