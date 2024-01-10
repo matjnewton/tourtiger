@@ -302,7 +302,7 @@ class GFAPI {
 			$value = sprintf( "'%s'", $value );
 		}
 		$in_str_arr = array_fill( 0, count( $form_ids ), '%d' );
-		$in_str     = join( $in_str_arr, ',' );
+		$in_str     = is_array($in_str_arr) ? join( $in_str_arr, ',' ) : '';
 		$result     = $wpdb->query(
 			$wpdb->prepare(
 				"
