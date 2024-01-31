@@ -90,6 +90,7 @@ if($custom_header == true): ?>
                 <source src="<?php echo $hero_video_ogv ?? ''; ?>" type="video/ogv">
             </video>
 <?php endif; ?>
+    <?php $sub_header = get_field( 'sub_header', 'option' ); ?>
     <div class="header-bar-wrapper<?php if($sticky_menu == true): ?> sticky<?php endif; ?>
 <?php if(isset($background_placement) && $background_placement=='Under Header' && isset($slides_images)
         && $slides_images && !$sticky_menu): ?> pos-abs<?php endif; ?>">
@@ -198,6 +199,25 @@ if($custom_header == true): ?>
                 </div>
             </div>
         </div>
+        <?php if ($sub_header) :
+            $sub_header_background_color = get_field( 'sub_header_background_color', 'option' );
+            $sub_header_text_color = get_field( 'sub_header_text_color', 'option' );
+
+            $style = '<style>';
+            $style .= ".sub-header > * {margin:0} .sub-header {padding: 5px}";
+            if ( $sub_header_background_color ) :
+                $style .=".sub-header{background-color:$sub_header_background_color}";
+            endif;
+
+            if ( $sub_header_text_color ) :
+                $style .=".sub-header{color:$sub_header_text_color}";
+            endif;
+            $style .= '</style>';
+
+            ?>
+            <?=$style?>
+            <div class="sub-header"><?=$sub_header?></div>
+        <?php endif; ?>
     </div><!-- end .header-bar-->
     </div><!-- end .header-bar-wrapper-->
 
