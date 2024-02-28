@@ -4,13 +4,13 @@
 ?>
 <div class="row">
 
-    <div class="col-xs-12 col-sm-6<?php if ($call_on_mobile==false): ?> hidden-xs<?php endif;?>">
+    <div class="col-xs-6 col-sm-6<?php if ($call_on_mobile==false): ?> hidden-xs<?php endif;?>">
             <div class="above-split-bar" <?php if ($call_on_mobile==false): ?>style="text-align: left;"<?php endif;?>>
                 <?php echo $motto;?>
             </div>
     </div>
 
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-6 col-sm-6">
             <div class="above-split-bar">
             <?php include(locate_template('menus/right_secondary_gpm.php' )); ?>
             </div>
