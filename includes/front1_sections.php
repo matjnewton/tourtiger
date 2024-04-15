@@ -853,7 +853,6 @@
                                 ?>
                                 <?php while( have_rows('columns_set') ): the_row();
                                     $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
-                                    //$image = aq_resize( $image_url, 377, 377, true );
                                     $link = get_sub_field('link');
                                     $p++;
                                     ?>

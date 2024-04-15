@@ -112,9 +112,9 @@ function tourtiger_sub_contents(){ ?>
             $thumb = get_post_thumbnail_id();
             $img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
             if($col==6):
-            $image = aq_resize( $img_url, 568, 377, true );
+                $image = str_contains($img_url, '.gif') ? $img_url : aq_resize( $img_url, 568, 377, true );
             else:
-            $image = aq_resize( $img_url, 377, 377, true ); //resize & crop img
+                $image = str_contains($img_url, '.gif') ? $img_url : aq_resize( $img_url, 377, 377, true );
             endif;
             ?>
             <a href="<?php the_permalink() ?>" class="tile-image">
@@ -1005,7 +1005,6 @@ $testimonials_background_id;
                                 ?>
                                 <?php while( have_rows('columns_set') ): the_row();
                                     $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
-                                    //$image = aq_resize( $image_url, 377, 377, true );
                                     $link = get_sub_field('link');
 //                                    $p++;
                                     ?>

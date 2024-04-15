@@ -1,9 +1,9 @@
                 <?php
                     $image_url = wp_get_attachment_url( get_sub_field('image'),'full');
                     if($col==6):
-                    $image = aq_resize( $image_url, 568, 377, true );
+                        $image = str_contains($image_url, '.gif') ? $image_url : aq_resize( $image_url, 568, 377, true );
                     else:
-                    $image = aq_resize( $image_url, 377, 377, true );
+                        $image = str_contains($image_url, '.gif') ? $image_url : aq_resize( $image_url, 377, 377, true );
                     endif;
 
                     $headline = get_sub_field('heading');
