@@ -11149,7 +11149,6 @@ ul {
 .page-template-page-templatesfront-page3-php .banner-top h1,
 .page-template-page-templatesfront-page3-php .banner-top h2 {
     margin-top: 0;
-    backdrop-filter: blur(2px);
 }
 
 @media(max-width:480px) {
