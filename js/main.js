@@ -1344,7 +1344,19 @@ var FbBookNowButton = function (config) {
 		}
 	}
 
-	ZeroWidthSpace()
+	ZeroWidthSpace();
+
+
+	//-------------------- FAQ accordion
+	function faq_accordions(){
+		$(".questions .question").click(function() {
+			$(this).next(".answer").slideToggle();
+			$(this).parent().toggleClass("active");
+		});
+	}
+
+	faq_accordions();
+
 
 } )( jQuery );
 

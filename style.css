@@ -3,7 +3,7 @@ Theme Name: tourtiger
 Theme URI: http://tourtiger.wpengine.com
 Description: child theme of genesis from git
 Author: tourtiger
-Version: 1.16.6.29
+Version: 1.16.7
 Template: genesis
 Text Domain: tt1
 Template Version: 2.0.27
@@ -2142,3 +2142,43 @@ nav {
     width: 100%;
 }
 
+/* ------------- FAQs accordions ------ */
+
+.page-template-faq-page .answer {
+    display: none;
+}
+
+.page-template-faq-page .questions .qa {
+    cursor: pointer;
+}
+
+.page-template-faq-page .questions .qa.active .answer {
+    display: block;
+    padding: 5px;
+}
+
+.page-template-faq-page .questions .qa .question {
+    padding: 5px 30px 5px 10px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.page-template-faq-page .questions .qa .question .icon {
+    display: inline-block;
+    margin-right: 0;
+    position: absolute;
+    right: 25px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.page-template-faq-page .questions .qa .question .icon-minus,
+.page-template-faq-page .questions .qa.active .icon-plus {
+    display: none;
+}
+
+.page-template-faq-page .questions .qa.active .icon-minus {
+    display: inline-block;
+}

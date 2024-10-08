@@ -21,7 +21,7 @@ function tourtiger_sub_contents(){ ?>
                         <?php echo $headline; ?>
                         </h2>
                         <?php endif; ?>
-                                    
+
                         <?php if($text_area): ?>
                         <p>
                         <?php echo $text_area; ?>
@@ -34,16 +34,16 @@ function tourtiger_sub_contents(){ ?>
     <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
-                        
+
 <section class="tour-page-content faq-page-content">
-        
+
         <div class="container">
             <div class="row">
                 <div class="<?php if ( 'content-sidebar' == $site_layout ): ?>col-sm-6<?php elseif( 'full-width-content' == $site_layout ): ?>col-sm-12<?php endif; ?>">
                     <?php
                     if( have_rows('question_answer_section') ): ?>
     <div class="questions-wrapper">
-    <?php                
+    <?php
     while ( have_rows('question_answer_section') ) : the_row(); ?>
         <section class="questions">
         <?php
@@ -58,21 +58,21 @@ function tourtiger_sub_contents(){ ?>
                         <?php if(have_rows('question_answer_pair')): ?>
                         <div>
                             <?php while(have_rows('question_answer_pair')): the_row(); ?>
-                                <?php 
+                                <?php
                                     $question = get_sub_field('question');
                                     $answer = get_sub_field('answer');
                                  ?>
-                                
-                                <p>
-                                    <strong><?php echo $question; ?></strong>
-                                    <?php echo $answer; ?>
-                                </p>
-                                
+
+                                <div class="qa">
+                                    <div class="question"><?php echo $question; ?><div class="icon icon-plus">+</div><div class="icon icon-minus">-</div></div>
+                                    <div class="answer"><?php echo $answer; ?></div>
+                                </div>
+
                             <?php endwhile; ?>
-                        </div>        
+                        </div>
                         <?php endif; ?>
-                    
-        <?php            
+
+        <?php
         endif; ?>
         </section>
     <?php
@@ -90,11 +90,11 @@ function tourtiger_sub_contents(){ ?>
             </div>
         </div>
     </section>
-    
+
     <?php global $post; ?>
-            
+
             <?php if(get_field('tiles_area')): ?>
-            
+
             <?php while(has_sub_field('tiles_area')): ?>
             <?php
                 $section_headline = get_sub_field('section_headline');
@@ -113,7 +113,7 @@ function tourtiger_sub_contents(){ ?>
                 </div>
             </div>
             <div class="row even-grid">
-                <?php 
+                <?php
                     $col = 0;
                     switch ($number_of_columns) {
                         case 1:
@@ -133,11 +133,11 @@ function tourtiger_sub_contents(){ ?>
                             break;
                     }
                     ?>
-                    
+
                     <?php
                         if (have_rows('tiles')):
                         while(have_rows('tiles')): the_row();
-                        
+
                         if( get_row_layout() == 'tours' ):
                             $pulled_specific = get_sub_field('pull_specific_from');
                             if($pulled_specific):
@@ -157,35 +157,35 @@ function tourtiger_sub_contents(){ ?>
                             </div>
                         <?php
                         endif;
-                        
+
                         if( get_row_layout() == 'testimonials' ):
-                            $pulled_specific = get_sub_field('pull_specific_from'); 
-                            
+                            $pulled_specific = get_sub_field('pull_specific_from');
+
                             if($pulled_specific):
                                 $post = $pulled_specific;
         				        setup_postdata( $post ); ?>
         				        <div class="<?php if($col==5): ?>five-cols <?php else: ?>col-sm-<?php echo $col; ?><?php endif; ?>">
         				        <?php get_template_part( 'content', 'home_tstmls' ); ?>
         				        </div>
-        				        <?php 
+        				        <?php
         				        wp_reset_postdata();
                             endif;
                         endif;
-                         
+
                         endwhile;
                         endif;
-                       ?> 
-                    
-                           
+                       ?>
+
+
                 </div>
             </div>
-    </section>           
+    </section>
                 <?php endwhile; ?>
-            
+
             <?php endif; ?>
-    
+
     <?php //get_sidebar('subscribe'); ?>
-    
+
 <?php }
 
 remove_action('genesis_sidebar', 'genesis_do_sidebar');
