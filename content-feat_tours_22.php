@@ -6,6 +6,7 @@ $button_label = get_sub_field('button_label');
     <?php if (has_post_thumbnail()) {
         $thumb = get_post_thumbnail_id();
         $img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
+        $sub_title = get_field('sub-title');
 
         if( $col==6 ):
             $image = str_contains($img_url, '.gif') ? $img_url : aq_resize( $img_url, 568, 377, true );
@@ -22,6 +23,9 @@ $button_label = get_sub_field('button_label');
                     <strong>
                         <?php the_title(); ?>
                     </strong>
+                    <div class="sub-title">
+                        <?php if($sub_title): echo $sub_title; endif; ?>
+                    </div>
                 </div>
             </div>
             <div class="btn-tour">

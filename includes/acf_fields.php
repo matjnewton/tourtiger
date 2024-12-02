@@ -4258,6 +4258,34 @@ tour_finder',
     'description' => '',
   ));
 
+    acf_add_local_field_group(array (
+        'key' => 'group_sd8u790wifjh096c4d',
+        'title' => 'Sub title',
+        'fields' => array (
+            array (
+                'key' => 'field_sdcuj9vf2bd5d',
+                'label' => 'Sub title',
+                'name' => 'sub-title',
+                'type' => 'text',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'tour',
+                ),
+            ),
+        ),
+        'menu_order' => 10,
+        'position' => 'side',
+        'label_placement' => 'top',
+        'hide_on_screen' => '',
+        'active' => 1,
+        'description' => '',
+    ));
+
   acf_add_local_field_group(array (
     'key' => 'group_557b16309a5a4',
     'title' => 'Page Sections',
