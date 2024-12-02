@@ -4,6 +4,12 @@ define( 'DISALLOW_FILE_EDIT', true );
 define ('THEME_PATH', get_stylesheet_directory());
 define ('THEME_URL', get_stylesheet_directory_uri());
 
+add_filter( 'gu_override_dot_org', function( $overrides ) {
+    return array_merge( $overrides, [
+        'tourtiger'
+    ] );
+});
+
 
  add_filter('acf/settings/path', function() {
      return THEME_PATH . '/includes/plugins/acf-6.0.4/';
