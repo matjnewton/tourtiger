@@ -268,11 +268,14 @@ else :
 
   <div class="col-sm-3<?php if($i<9): ?> col-sm-offset-<?php $i=9-$i; echo $i; ?><?php endif; ?>">
     <?php $i+=4; ?>
+    <?php
+    $search_box = get_option( 'options_keep_search_box' );
+    $social_media = get_option( 'options_social_media' );
+    if ( $search_box || $social_media ) : ?>
     <div class="utilities-wrapper-container">
       <div class="utilities-wrapper">
         <?php
-        $search_box = get_option( 'options_keep_search_box' );
-        if($search_box == true):
+        if( $search_box == true):
           ?>
           <div class="search-form-wrapper">
             <form method="get" id="searchform" class="main-searchform" action="#">
@@ -283,8 +286,7 @@ else :
         <?php endif; ?>
 
         <?php
-        $social_media = get_option( 'options_social_media' );
-        if($social_media):
+        if( $social_media ):
           ?>
           <ul class="social-wrapper">
             <?php include(locate_template('partials/social_media_gpm.php' )); ?>
@@ -293,6 +295,7 @@ else :
 
       </div>
     </div><!-- utilities-wrapper-container-->
+    <?php endif; ?>
     <div class="copyright">
           <?php if ( $text =  get_field('copyright-text','option') ) :
               echo $text;
