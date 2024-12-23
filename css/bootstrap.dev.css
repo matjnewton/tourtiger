@@ -9820,6 +9820,7 @@ footer .main-searchform input[type="text"]:focus {
   text-align: center;
   text-transform: uppercase;
   margin-top: 42px;
+  min-width: max-content;
 }
 @media (min-width: 768px) {
   .copyright {

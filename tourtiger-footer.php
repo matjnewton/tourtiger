@@ -182,8 +182,11 @@
       </div><!-- utilities-wrapper-container-->
       <div class="copyright">
         <p>
-          Copyright &copy; <?php echo date('Y'); ?>
-        </p>
+            <?php if ( $text =  get_field('copyright-text','option') ) :
+                echo $text;
+            else: ?>
+          <p>Copyright &copy; <?php echo date('Y'); ?></p>
+          <?php endif; ?>
         <?php
         $integrate_getinsellout = get_field('getinsellout','option');
         if($integrate_getinsellout): ?>
@@ -367,8 +370,11 @@
           </div><!-- utilities-wrapper-container-->
           <div class="copyright">
             <p>
-              Copyright &copy; <?php echo date('Y'); ?>
-            </p>
+                <?php if ( $text =  get_field('copyright-text','option') ) :
+                    echo $text;
+                else: ?>
+              <p>Copyright &copy; <?php echo date('Y'); ?></p>
+              <?php endif; ?>
             <?php
             $integrate_getinsellout = get_field('getinsellout','option');
             if($integrate_getinsellout): ?>

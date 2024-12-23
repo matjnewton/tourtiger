@@ -3885,6 +3885,23 @@ tour_finder',
         ),
         'message' => 'Show Button-top?',
       ),
+
+        array(
+            'key' => 'field_sduhytegd67s0eb18',
+            'label' => 'Copyright text',
+            'name' => 'copyright-text',
+            'type' => 'wysiwyg',
+            'media_upload' => 0,
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '50%',
+                'class' => '',
+                'id' => '',
+            ),
+            'instructions' => 'If not set, the current year will be displayed preceeding with "Copyright &copy;".',
+        ),
+
       array (
         'key' => 'field_LeNiN5320eb18',
         'label' => 'Background color',

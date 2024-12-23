@@ -196,9 +196,9 @@ else :
           break;
         case 'additional':
           $content = get_option( $footer_areas . '_' . $fa_count . '_content' );
-          $i+=4;
+          $i+=3;
           ?>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <?php echo $content;  ?>
           </div>
           <?php
@@ -266,7 +266,7 @@ else :
         endif;
     ?>
 
-  <div class="col-sm-2<?php if($i<10): ?> col-sm-offset-<?php $i=10-$i; echo $i; ?><?php endif; ?>">
+  <div class="col-sm-3<?php if($i<9): ?> col-sm-offset-<?php $i=9-$i; echo $i; ?><?php endif; ?>">
     <?php $i+=4; ?>
     <div class="utilities-wrapper-container">
       <div class="utilities-wrapper">
@@ -294,9 +294,11 @@ else :
       </div>
     </div><!-- utilities-wrapper-container-->
     <div class="copyright">
-      <p>
-        Copyright &copy; <?php echo date('Y'); ?>
-      </p>
+          <?php if ( $text =  get_field('copyright-text','option') ) :
+              echo $text;
+          else: ?>
+            <p>Copyright &copy; <?php echo date('Y'); ?></p>
+          <?php endif; ?>
       <?php
       $integrate_getinsellout = get_option( 'options_getinsellout' );
       if($integrate_getinsellout): ?>
