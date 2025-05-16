@@ -44,8 +44,9 @@
 @media (max-width:480px){
     .banner-wrapper{
         background: url(<?php echo $himage_xs; ?>), linear-gradient(0deg,#FFF,#CCC);
-        background-size:480px auto;
-        background-position: 0% 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
     }
 }
 @media (min-width:481px){
