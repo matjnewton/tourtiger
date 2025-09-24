@@ -63,6 +63,48 @@ function tourtiger_archive() {
 
                                 do_action( 'genesis_after_endwhile' );
                             endif;
+
+
+
+                            // Add schema data
+                            $testimonials = $wp_query->posts;
+
+                            if ( count($testimonials) ) :
+                                add_action( 'wp_footer', function () use ($testimonials) {
+
+                                    $reviews = array();
+                                    foreach ( $testimonials as $t ) {
+                                        $author_name = get_post_meta( $t->ID, 'testimonial_author', true ) ?: $t->post_title;
+                                        $body = strip_tags(get_field('full_testimonial', $t->ID));
+                                        $body = str_replace("\n", '', $body);
+
+                                        $reviews[] = array(
+                                            "@type" => "Review",
+                                            "author" => array(
+                                                "@type" => "Person",
+                                                "name" => $author_name,
+                                            ),
+                                            "reviewBody"   => $body,
+                                            "itemReviewed" => array(
+                                                "@type" => "Organization",
+                                                "name"  => get_bloginfo( 'name' ),
+                                            ),
+                                        );
+                                    }
+
+                                    $schema = array(
+                                        "@context"  => "https://schema.org",
+                                        "@type"     => "WebPage",
+                                        "name"      => get_the_title(),
+                                        "url"       => get_permalink(),
+                                        "hasPart"   => $reviews,
+                                    );
+
+                                    echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) . '</script>';
+                                } );
+
+                            endif;
+
                             wp_reset_query();
                             ?>
                         </div>
